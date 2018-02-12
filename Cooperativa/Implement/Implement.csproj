@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE5DDE2E-F621-444B-9B23-E4A1E7638264}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Implement</RootNamespace>
+    <AssemblyName>Implement</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccionistasImpl.cs" />
+    <Compile Include="AdjuntosImpl.cs" />
+    <Compile Include="AuditoriasImpl.cs" />
+    <Compile Include="BarriosLocalidadesImpl.cs" />
+    <Compile Include="CallesLocalidadesImpl.cs" />
+    <Compile Include="CodigosPostalesLocalidadesImpl.cs" />
+    <Compile Include="Conexion.cs" />
+    <Compile Include="DepartamentosImpl.cs" />
+    <Compile Include="DetallesAuditoriaImpl.cs" />
+    <Compile Include="DetallesColumnasTablasImpl.cs" />
+    <Compile Include="DetallesIvaImpl.cs" />
+    <Compile Include="LecturasConceptosImpl.cs" />
+    <Compile Include="LecturasModosImpl.cs" />
+    <Compile Include="MedidoresModelosImpl.cs" />
+    <Compile Include="DistritosImpl.cs" />
+    <Compile Include="DomiciliosEntidadesImpl.cs" />
+    <Compile Include="DomiciliosImpl.cs" />
+    <Compile Include="DominiosImpl.cs" />
+    <Compile Include="EmpresasImpl.cs" />
+    <Compile Include="EstadosImpl.cs" />
+    <Compile Include="ExcepcionesImpl.cs" />
+    <Compile Include="FabricantesImpl.cs" />
+    <Compile Include="FuncionalidadesFormulariosImpl.cs" />
+    <Compile Include="FuncionalidadesImpl.cs" />
+    <Compile Include="FuncionalidadesUsuariosImpl.cs" />
+    <Compile Include="GruposDetallesImpl.cs" />
+    <Compile Include="TelefonosEntidadesImpl.cs" />
+    <Compile Include="TiposGruposImpl.cs" />
+    <Compile Include="LocalidadesImpl.cs" />
+    <Compile Include="MedidoresImpl.cs" />
+    <Compile Include="MedidoresSuministrosImpl.cs" />
+    <Compile Include="MenuItemsImpl.cs" />
+    <Compile Include="MenuItemsUsuariosImpl.cs" />
+    <Compile Include="ObservacionesImpl.cs" />
+    <Compile Include="PaisesImpl.cs" />
+    <Compile Include="ParametrosGeneralesImpl.cs" />
+    <Compile Include="PersonasImpl.cs" />
+    <Compile Include="PersonasSectoresImpl.cs" />
+    <Compile Include="ProvinciasImpl.cs" />
+    <Compile Include="PruebaImpl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AreasImpl.cs" />
+    <Compile Include="RolesFuncionalidadesImpl.cs" />
+    <Compile Include="RolesImpl.cs" />
+    <Compile Include="RolesMenuItemsImpl.cs" />
+    <Compile Include="SectoresImpl.cs" />
+    <Compile Include="ServiciosCategoriasImpl.cs" />
+    <Compile Include="ServiciosImpl.cs" />
+    <Compile Include="GruposImpl.cs" />
+    <Compile Include="ServiciosRutasImpl.cs" />
+    <Compile Include="ServiciosZonasImpl.cs" />
+    <Compile Include="SubsistemaImpl.cs" />
+    <Compile Include="SuministrosImpl.cs" />
+    <Compile Include="TablasImpl.cs" />
+    <Compile Include="TelefonosImpl.cs" />
+    <Compile Include="TipoConexionServiciosImpl.cs" />
+    <Compile Include="TiposBarriosLocalidadesImpl.cs" />
+    <Compile Include="TiposIdentificadoresImpl.cs" />
+    <Compile Include="TiposIvaImpl.cs" />
+    <Compile Include="TiposLocalidadesImpl.cs" />
+    <Compile Include="TiposMedidoresFabricantesImpl.cs" />
+    <Compile Include="TiposMedidoresImpl.cs" />
+    <Compile Include="TiposObservacionesTablasImpl.cs" />
+    <Compile Include="UsuariosImpl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{30b38eed-bf12-4118-8492-53051e87d716}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

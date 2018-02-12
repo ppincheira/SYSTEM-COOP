@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E6E3656-EED9-4B5F-832C-A0CC3264872B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GesServicios</RootNamespace>
+    <AssemblyName>GesServicios</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FormsAuxiliares">
+      <HintPath>..\..\..\..\..\Documents\GitHub\Cooperativa\Cooperativa\Referencias\FormsAuxiliares.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="controles\forms\frmLecturasModosCrudAux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmLecturasModosCrudAux.Designer.cs">
+      <DependentUpon>frmLecturasModosCrudAux.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles\forms\frmSuministrosCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmSuministrosCrud.Designer.cs">
+      <DependentUpon>frmSuministrosCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles\forms\frmSuministrosAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmSuministrosAdmin.designer.cs">
+      <DependentUpon>frmSuministrosAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles\forms\frmLecturasConceptosCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmLecturasConceptosCrud.Designer.cs">
+      <DependentUpon>frmLecturasConceptosCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles\forms\frmLecturasModosCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmTiposConexionesCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmTiposConexionesCrud.Designer.cs">
+      <DependentUpon>frmTiposConexionesCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles\forms\frmMedidoresMasivosCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmMedidoresMasivosCrud.Designer.cs">
+      <DependentUpon>frmMedidoresMasivosCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles\forms\frmCategoriasCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmCategoriasCrud.designer.cs">
+      <DependentUpon>frmCategoriasCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles\forms\frmMedidoresCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmMedidoresCrud.Designer.cs">
+      <DependentUpon>frmMedidoresCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles\forms\frmMedidoresModelosCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmMedidoresModelosCrud.Designer.cs">
+      <DependentUpon>frmMedidoresModelosCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles\forms\frmRutasCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmRutasCrud.Designer.cs">
+      <DependentUpon>frmRutasCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles\forms\frmTiposMedidoresCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmTiposMedidoresCrud.Designer.cs">
+      <DependentUpon>frmTiposMedidoresCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppProcesos\AppProcesos.csproj">
+      <Project>{713451e2-581c-4099-b5ca-15e95f3f0a16}</Project>
+      <Name>AppProcesos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{CBADE339-921E-4277-971C-D80D69751C74}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controles\Controles.csproj">
+      <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{30B38EED-BF12-4118-8492-53051E87D716}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\service\Service.csproj">
+      <Project>{86fb2f28-828e-4d75-8656-fe5f83fa1d11}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="controles\forms\frmLecturasModosCrudAux.resx">
+      <DependentUpon>frmLecturasModosCrudAux.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmSuministrosAdmin.resx">
+      <DependentUpon>frmSuministrosAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmLecturasConceptosCrud.resx">
+      <DependentUpon>frmLecturasConceptosCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmLecturasModosCrud.resx">
+      <DependentUpon>frmLecturasModosCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmMedidoresMasivosCrud.resx">
+      <DependentUpon>frmMedidoresMasivosCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmCategoriasCrud.resx">
+      <DependentUpon>frmCategoriasCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmMedidoresCrud.resx">
+      <DependentUpon>frmMedidoresCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmMedidoresModelosCrud.resx">
+      <DependentUpon>frmMedidoresModelosCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmRutasCrud.resx">
+      <DependentUpon>frmRutasCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmSuministrosCrud.resx">
+      <DependentUpon>frmSuministrosCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmTiposConexionesCrud.resx">
+      <DependentUpon>frmTiposConexionesCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmTiposMedidoresCrud.resx">
+      <DependentUpon>frmTiposMedidoresCrud.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

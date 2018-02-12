@@ -1,0 +1,10 @@
+C:\GitHub\Cooperativa\Cooperativa\GesConfiguracion\bin\Debug\GesConfiguracion.dll
+C:\GitHub\Cooperativa\Cooperativa\GesConfiguracion\bin\Debug\GesConfiguracion.pdb
+C:\GitHub\Cooperativa\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csprojResolveAssemblyReference.cache
+C:\GitHub\Cooperativa\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csproj.CoreCompileInputs.cache
+C:\GitHub\Cooperativa\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.dll
+C:\GitHub\Cooperativa\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.pdb
+C:\Users\Pablo Pincheira\Downloads\Cooperativa (3)\Cooperativa\Cooperativa\GesConfiguracion\bin\Debug\GesConfiguracion.dll
+C:\Users\Pablo Pincheira\Downloads\Cooperativa (3)\Cooperativa\Cooperativa\GesConfiguracion\bin\Debug\GesConfiguracion.pdb
+C:\Users\Pablo Pincheira\Downloads\Cooperativa (3)\Cooperativa\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.dll
+C:\Users\Pablo Pincheira\Downloads\Cooperativa (3)\Cooperativa\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.pdb

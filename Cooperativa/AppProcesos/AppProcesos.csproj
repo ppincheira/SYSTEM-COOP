@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{713451E2-581C-4099-B5CA-15E95F3F0A16}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppProcesos</RootNamespace>
+    <AssemblyName>AppProcesos</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="formsAuxiliares\buscador\IVistaBuscador.cs" />
+    <Compile Include="formsAuxiliares\buscador\UIBuscador.cs" />
+    <Compile Include="formsAuxiliares\formAdmin\IVistaFormAdmin.cs" />
+    <Compile Include="formsAuxiliares\formAdmin\UIFormAdmin.cs" />
+    <Compile Include="formsAuxiliares\frmCalles\IVistaCallesCrud.cs" />
+    <Compile Include="formsAuxiliares\frmCalles\UICallesCrud.cs" />
+    <Compile Include="formsAuxiliares\frmClientes\UIClientesCrud.cs" />
+    <Compile Include="formsAuxiliares\frmClientes\IVistaClientesCrud.cs" />
+    <Compile Include="formsAuxiliares\frmCodigoPostal\IVistaCodigoPostalCrud.cs" />
+    <Compile Include="formsAuxiliares\frmCodigoPostal\UICodigoPostalCrud.cs" />
+    <Compile Include="formsAuxiliares\frmCrudGrilla\IVistaCrudGrilla.cs" />
+    <Compile Include="formsAuxiliares\frmCrudGrilla\UICrudGrilla.cs" />
+    <Compile Include="formsAuxiliares\frmDomicilios\IVistaDomiciliosCrud.cs" />
+    <Compile Include="formsAuxiliares\frmDomicilios\UIDomiciliosCrud.cs" />
+    <Compile Include="formsAuxiliares\frmLogin\IVistaLogin.cs" />
+    <Compile Include="formsAuxiliares\frmLogin\UILogin.cs" />
+    <Compile Include="formsAuxiliares\frmMiniListado\UIMiniListado.cs" />
+    <Compile Include="formsAuxiliares\frmMiniListado\IVistaMiniListado.cs" />
+    <Compile Include="formsAuxiliares\frmObservaciones\IVistaObservaciones.cs" />
+    <Compile Include="formsAuxiliares\frmObservaciones\IVistaObservacionesCrud.cs" />
+    <Compile Include="formsAuxiliares\frmObservaciones\UIObservaciones.cs" />
+    <Compile Include="formsAuxiliares\frmObservaciones\UIObservacionesCrud.cs" />
+    <Compile Include="formsAuxiliares\frmTelefonos\IVistaTelefonos.cs" />
+    <Compile Include="formsAuxiliares\frmTelefonos\IVistaTelefonosCrud.cs" />
+    <Compile Include="formsAuxiliares\frmTelefonos\UITelefonos.cs" />
+    <Compile Include="formsAuxiliares\frmTelefonos\UITelefonosCrud.cs" />
+    <Compile Include="formsAuxiliares\frmFabricantes\IVistaFabricantesCrud.cs" />
+    <Compile Include="formsAuxiliares\principal\IVistaPrincipal.cs" />
+    <Compile Include="formsAuxiliares\principal\UIPrincipal.cs" />
+    <Compile Include="formsAuxiliares\frmFabricantes\UIFabricantesCrud.cs" />
+    <Compile Include="gesSeguridad\frmPersonasCrud\IVistaPersonasCrud.cs" />
+    <Compile Include="gesSeguridad\frmPersonasCrud\UIPersonasCrud.cs" />
+    <Compile Include="gesSeguridad\frmUsuariosCrud\IVistaUsuariosCrud.cs" />
+    <Compile Include="gesSeguridad\frmUsuariosCrud\UIUsuariosCrud.cs" />
+    <Compile Include="gesServicios\frmCategoriasCrud\IVistaCategoriasCrud.cs" />
+    <Compile Include="gesServicios\frmCategoriasCrud\UICategoriasCrud.cs" />
+    <Compile Include="gesServicios\frmLecturasConceptosCrud\IVistaLecturasConceptosCrud.cs" />
+    <Compile Include="gesServicios\frmLecturasConceptosCrud\UILecturasConceptosCrud.cs" />
+    <Compile Include="gesServicios\frmLecturasModosCrud\IVistaLecturasModosCrud.cs" />
+    <Compile Include="gesServicios\frmLecturasModosCrud\UILecturasModosCrud.cs" />
+    <Compile Include="gesServicios\frmMedidoresCrud\IVistaMedidoresMasivosCrud.cs" />
+    <Compile Include="gesServicios\frmMedidoresCrud\IVistaMedidoresCrud.cs" />
+    <Compile Include="gesServicios\frmMedidoresCrud\UIMedidoresMasivosCrud.cs" />
+    <Compile Include="gesServicios\frmMedidoresCrud\UIMedidoresCrud.cs" />
+    <Compile Include="gesServicios\frmMedidoresModelosCrud\IVistaMedidoresModelosCrud.cs" />
+    <Compile Include="gesServicios\frmMedidoresModelosCrud\UIMedidoresModelosCrud.cs" />
+    <Compile Include="gesServicios\frmMedidoresTiposCrud\IVistaTiposMedidoresCrud.cs" />
+    <Compile Include="gesServicios\frmMedidoresTiposCrud\UITiposMedidoresCrud.cs" />
+    <Compile Include="gesServicios\frmRutasCrud\IVistaRutasCrud.cs" />
+    <Compile Include="gesServicios\frmRutasCrud\UIRutasCrud.cs" />
+    <Compile Include="gesServicios\frmSuministrosAdmin\IVistaSuministrosAdmin.cs" />
+    <Compile Include="gesServicios\frmSuministrosAdmin\UISuministrosAdmin.cs" />
+    <Compile Include="gesServicios\frmSuministrosCrud\IVistaSuministrosCrud.cs" />
+    <Compile Include="gesServicios\frmSuministrosCrud\UISuministrosCrud.cs" />
+    <Compile Include="gesServicios\frmTiposConexionesCrud\IVistaTiposConexionesCrud.cs" />
+    <Compile Include="gesServicios\frmTiposConexionesCrud\UITiposConexionesCrud.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{cbade339-921e-4277-971c-d80d69751c74}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controles\Controles.csproj">
+      <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{30b38eed-bf12-4118-8492-53051e87d716}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\service\Service.csproj">
+      <Project>{86fb2f28-828e-4d75-8656-fe5f83fa1d11}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="adminComprobantes\" />
+    <Folder Include="adminSuministros\" />
+    <Folder Include="cuentasCorrientes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

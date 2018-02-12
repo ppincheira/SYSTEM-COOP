@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26FF4718-4F3B-48E5-9CC6-513E266DE5CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FormsAuxiliares</RootNamespace>
+    <AssemblyName>FormsAuxiliares</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABM.Designer.cs">
+      <DependentUpon>frmABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminGeneral.Designer.cs">
+      <DependentUpon>frmAdminGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscador.Designer.cs">
+      <DependentUpon>frmBuscador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCallesCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCallesCrud.Designer.cs">
+      <DependentUpon>frmCallesCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientesCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientesCrud.Designer.cs">
+      <DependentUpon>frmClientesCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCodigoPostalCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCodigoPostalCrud.Designer.cs">
+      <DependentUpon>frmCodigoPostalCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrudGrilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDomiciliosCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDomiciliosCrud.Designer.cs">
+      <DependentUpon>frmDomiciliosCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFabricantesCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFabricantesCrud.Designer.cs">
+      <DependentUpon>frmFabricantesCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormAdminMini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormAdminMini.Designer.cs">
+      <DependentUpon>frmFormAdminMini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMiniListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMiniListado.Designer.cs">
+      <DependentUpon>frmMiniListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmObservacionesAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmObservacionesCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmObservacionesCrud.Designer.cs">
+      <DependentUpon>frmObservacionesCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTelefonosAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTelefonosCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTelefonosCrud.designer.cs">
+      <DependentUpon>frmTelefonosCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmABM.resx">
+      <DependentUpon>frmABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminGeneral.resx">
+      <DependentUpon>frmAdminGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscador.resx">
+      <DependentUpon>frmBuscador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCallesCrud.resx">
+      <DependentUpon>frmCallesCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientesCrud.resx">
+      <DependentUpon>frmClientesCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCodigoPostalCrud.resx">
+      <DependentUpon>frmCodigoPostalCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrudGrilla.resx">
+      <DependentUpon>frmCrudGrilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDomiciliosCrud.resx">
+      <DependentUpon>frmDomiciliosCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFabricantesCrud.resx">
+      <DependentUpon>frmFabricantesCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormAdmin.resx">
+      <DependentUpon>frmFormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormAdminMini.resx">
+      <DependentUpon>frmFormAdminMini.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMiniListado.resx">
+      <DependentUpon>frmMiniListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmObservacionesAdmin.resx">
+      <DependentUpon>frmObservacionesAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmObservacionesCrud.resx">
+      <DependentUpon>frmObservacionesCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTelefonosAdmin.resx">
+      <DependentUpon>frmTelefonosAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTelefonosCrud.resx">
+      <DependentUpon>frmTelefonosCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppProcesos\AppProcesos.csproj">
+      <Project>{713451e2-581c-4099-b5ca-15e95f3f0a16}</Project>
+      <Name>AppProcesos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{cbade339-921e-4277-971c-d80d69751c74}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controles\Controles.csproj">
+      <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GesSeguridad\GesSeguridad.csproj">
+      <Project>{4f833e59-47e3-46c7-be0b-48d8572cabc5}</Project>
+      <Name>GesSeguridad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GesServicios\GesServicios.csproj">
+      <Project>{6e6e3656-eed9-4b5f-832c-a0cc3264872b}</Project>
+      <Name>GesServicios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{30b38eed-bf12-4118-8492-53051e87d716}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\service\Service.csproj">
+      <Project>{86fb2f28-828e-4d75-8656-fe5f83fa1d11}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

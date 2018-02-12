@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Controles</RootNamespace>
+    <AssemblyName>Controles</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="btnPersonalizado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnAccionesSuministros.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnAceptar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnAnular.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnCancelar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnEditar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnEliminar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnExportar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnImprimir.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnLogin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnNuevo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnSalir.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnVer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\gesButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\gesControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\gesGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\gesMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\gesPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\gesStatusStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\gesTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\gesToolBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\gpbGrupo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\mnuMenuPrincipal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\pnlPanelContenedor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\pnlPanelEstado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\sstBarraEstado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\tabSolapas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\chkBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\cmbLista.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\gesCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\gesComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\gesGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\gesRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\gesTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\grdGrillaAdmin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\grdGrillaEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\radioBtn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\trvMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fecha\dtpFecha.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fecha\gesDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="form\gesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="labels\gesLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="labels\lblEtiqueta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="labels\lblTitulo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lblPersonalizado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="objects\gesToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="objects\tttEtiqueta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\Iconos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Iconos.resx</DependentUpon>
+    </Compile>
+    <Compile Include="textBoxes\gesTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="textBoxes\txtCuit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="textBoxes\txtDescripcion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="textBoxes\txtDescripcionCorta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="textBoxes\txtEmail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="textBoxes\txtMoneda.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="textBoxes\txtNumeric.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="textBoxes\txtObservaciones.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="textBoxes\txtPassword.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="textBoxes\txtFiltro.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="util\Enumerados.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="datos\gesComboBox.resx">
+      <DependentUpon>gesComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="datos\gesGrid.resx">
+      <DependentUpon>gesGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\gesForm.resx">
+      <DependentUpon>gesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Iconos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Iconos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{30b38eed-bf12-4118-8492-53051e87d716}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel1-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\add_row-24.png" />
+    <Content Include="Resources\editar.png" />
+    <Content Include="Resources\eliminar.png" />
+    <Content Include="Resources\excel.png" />
+    <Content Include="Resources\imprimir.png" />
+    <Content Include="Resources\nuevo.png" />
+    <Content Include="Resources\salida.png" />
+    <Content Include="Resources\ver.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
