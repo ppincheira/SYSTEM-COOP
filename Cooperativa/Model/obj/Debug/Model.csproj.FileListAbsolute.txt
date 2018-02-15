@@ -23,5 +23,6 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debu
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.pdb
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.pdb
