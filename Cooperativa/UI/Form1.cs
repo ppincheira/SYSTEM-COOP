@@ -271,5 +271,14 @@ namespace UI
             frmbus.Text = "Administrador de Modos Lecturas";
             frmbus.ShowDialog();
         }
+
+        private void btnTiposComprobantes_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "TCO";
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+            frmbus.ShowDialog();
+        }
     }
 }

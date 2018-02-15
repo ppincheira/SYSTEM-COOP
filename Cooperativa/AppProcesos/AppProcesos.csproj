@@ -92,6 +92,8 @@
     <Compile Include="formsAuxiliares\principal\IVistaPrincipal.cs" />
     <Compile Include="formsAuxiliares\principal\UIPrincipal.cs" />
     <Compile Include="formsAuxiliares\frmFabricantes\UIFabricantesCrud.cs" />
+    <Compile Include="gesConfiguracion\frmTiposComprobantesCrud\IVistaTiposComprobantesCrud.cs" />
+    <Compile Include="gesConfiguracion\frmTiposComprobantesCrud\UITiposComprobantesCrud.cs" />
     <Compile Include="gesSeguridad\frmPersonasCrud\IVistaPersonasCrud.cs" />
     <Compile Include="gesSeguridad\frmPersonasCrud\UIPersonasCrud.cs" />
     <Compile Include="gesSeguridad\frmUsuariosCrud\IVistaUsuariosCrud.cs" />

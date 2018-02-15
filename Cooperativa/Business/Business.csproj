@@ -103,6 +103,7 @@
     <Compile Include="FuncionalidadesFormulariosBus.cs" />
     <Compile Include="FuncionalidadesUsuariosBus.cs" />
     <Compile Include="TelefonosEntidadesBus.cs" />
+    <Compile Include="TiposComprobanteBus.cs" />
     <Compile Include="TiposGruposBus.cs" />
     <Compile Include="GruposDetallesBus.cs" />
     <Compile Include="LocalidadesBus.cs" />

@@ -189,7 +189,7 @@ namespace Implement
                 cn.Open();
                 string sqlSelect = " SELECT DCT.* FROM  DETALLES_COLUMNAS_TABLAS DCT " +
                 " INNER JOIN TABLAS t on t.TAB_CODIGO = dct.TAB_CODIGO "+
-                " WHERE T.TAB_NOMBRE = '" + name+"'";
+                " WHERE T.TAB_NOMBRE = '" + name+"' ORDER BY DCT.DCT_NRO_ORDEN";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -226,7 +226,7 @@ namespace Implement
                 cn.Open();
                 string sqlSelect = " SELECT DCT.* FROM  DETALLES_COLUMNAS_TABLAS DCT " +
                 " INNER JOIN TABLAS t on t.TAB_CODIGO = dct.TAB_CODIGO " +
-                " WHERE T.TAB_CODIGO = '" + codigo + "'";
+                " WHERE T.TAB_CODIGO = '" + codigo + "'ORDER BY DCT.DCT_NRO_ORDEN"; 
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
