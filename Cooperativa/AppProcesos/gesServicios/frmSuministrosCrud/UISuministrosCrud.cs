@@ -115,8 +115,10 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             _vista.strRazonSocial = oEmpresa.EmpRazonSocial;
             _vista.strEmpDocumentoNumero = oEmpresa.EmpDocumentoNumero;
             CargarSocio(oEmpresa.EmpNumero);
-            CargarTipoIva(oEmpresa.TivCodigo);
-            CargarTipoDni(oEmpresa.TidCodigo);
+            _vista.strRespIva = oEmpresa.TivCodigo;
+                //CargarTipoIva(oEmpresa.TivCodigo);
+            _vista.strTipoDoc = oEmpresa.TidCodigo;
+            //CargarTipoDni(oEmpresa.TidCodigo);
             CargarDomicilio(oEmpresa.EmpNumero);
 
         }
@@ -143,10 +145,6 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
         }
         public void CargarDomicilio(long idEntidad)
         {
-            long id;
-            //DomiciliosEntidades oDomcilioEntidad = new DomiciliosEntidades();
-            //DomiciliosEntidadesBus oDomicilioEntidadBus = new DomiciliosEntidadesBus();
-            //oDomcilioEntidad = oDomicilioEntidadBus.DomiciliosEntidadesGetByCodReg(idEntidad, ");
             Domicilios oDomicilio = new Domicilios();
             DomiciliosBus oDomicilioBus = new DomiciliosBus();
             //oDomicilio = oDomicilioBus.DomiciliosGetById(id);
@@ -158,12 +156,18 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                     + " Dpto:" + oDomicilio.DomDepartamento;
             }
 
-            //_vista.lgCodigoDomicilio = oDomicilio.DomCodigo;
         }
-        private void CargarCategorias()
+        public Domicilios CargarDomicilioSum(long idEntidad, string tabCodigo)
+        {
+            Domicilios oDomicilio = new Domicilios();
+            DomiciliosBus oDomicilioBus = new DomiciliosBus();
+            //oDomicilio = oDomicilioBus.DomiciliosGetById(id);
+            return oDomicilioBus.DomiciliosGetByCodigoRegistroDefecto(idEntidad, tabCodigo);
+        }
+        public void CargarCategorias()
         {
             ServiciosCategoriasBus oCategoriasBus = new ServiciosCategoriasBus();
-            oUtil.CargarCombo(_vista.Categoria, oCategoriasBus.ServiciosCategoriasGetbySrv(_vista.Servicio.Text), "SCA_NUMERO", "SCA_DESCRIPCION", "SELECCIONE..");
+            oUtil.CargarCombo(_vista.Categoria, oCategoriasBus.ServiciosCategoriasGetbySrv(_vista.Servicio.SelectedValue.ToString()), "SCA_NUMERO", "SCA_DESCRIPCION", "SELECCIONE..");
         }
 
     }

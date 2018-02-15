@@ -6,6 +6,8 @@ using Service;
 using System;
 using System.Windows.Forms;
 using FormsAuxiliares;
+using Business;
+
 namespace GesServicios.controles.forms
 {
     public partial class frmSuministrosCrud : gesForm, IVistaSuministrosCrud
@@ -237,13 +239,14 @@ namespace GesServicios.controles.forms
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("100047", "100048", "100049", "0", "0", "100050");
             Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "CLI";
+            oAdmin.TabCodigo = "CLIE";
             oAdmin.Tipo = Admin.enumTipoForm.Selector;
 
-            frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
+            frmFormAdmin frmbus = new frmFormAdmin(oAdmin, oPermiso);
             if (frmbus.ShowDialog() == DialogResult.OK)
             {
                 string id = frmbus.striRdoCodigo;
+
                 _oSuministrosCrud.CargarCliente(long.Parse(id));
             }
         }
@@ -264,23 +267,33 @@ namespace GesServicios.controles.forms
 
         private void btnDomicilio_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("31", "32", "33", "0", "0", "0");
+            Domicilios oDomicilio = new Domicilios();
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "DOM";
-            oAdmin.Tipo = Admin.enumTipoForm.Selector;
-            //frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
-            //if (frmbus.ShowDialog() == DialogResult.OK)
-            //{
-            //    string nombre = frmbus.striRdoCodigo;
-            //}
+            oAdmin.TabCodigo = "DOMB";
+            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
+            oAdmin.CodigoRegistro = txtEmpNumero.Text;
+            oAdmin.TabCodigoRegistro = "CLIE";
+            oAdmin.FiltroCampos = "DE.DEN_CODIGO_REGISTRO&";
+            oAdmin.FiltroValores = txtEmpNumero.Text + "&";
+            FormsAuxiliares.frmFormAdmin oFrmAdminMini = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+            if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
+            {
+                string id = oFrmAdminMini.striRdoCodigo;
+                oDomicilio = _oSuministrosCrud.CargarDomicilioSum(long.Parse(txtEmpNumero.Text), "CLIE");
+                if (oDomicilio.DomCodigo != 0 && oDomicilio.DomCodigo != null)
+                {
+                    txtDomCodigo.Text = oDomicilio.DomCodigo.ToString();
+                    CallesLocalidadesBus oCalleBus = new CallesLocalidadesBus();
+                    txtCalle.Text = oCalleBus.CallesLocalidadesGetById(oDomicilio.CalNumero).CalDescripcion;
+                    txtCalleNumero.Text = oDomicilio.DomNumero.ToString();
+                    txtDepartamento.Text = oDomicilio.DomDepartamento.ToString();
+                    txtBloque.Text = oDomicilio.DomBloque.ToString();
+                    txtPiso.Text = oDomicilio.DomPiso.ToString();
+                }
 
+            }
         }
-
-        private void lblNumeroProv_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -300,6 +313,11 @@ namespace GesServicios.controles.forms
                                 this.FindForm().Name);
             }
 
+        }
+
+        private void cmbServicio_Leave(object sender, EventArgs e)
+        {
+            _oSuministrosCrud.CargarCategorias();
         }
     }
 
