@@ -31,3 +31,19 @@ C:\Users\Pablo Pincheira\Downloads\Cooperativa (3)\Cooperativa\Cooperativa\AppPr
 C:\Users\Pablo Pincheira\Downloads\Cooperativa (3)\Cooperativa\Cooperativa\AppProcesos\obj\Debug\AppProcesos.csprojResolveAssemblyReference.cache
 C:\Users\Pablo Pincheira\Downloads\Cooperativa (3)\Cooperativa\Cooperativa\AppProcesos\obj\Debug\AppProcesos.dll
 C:\Users\Pablo Pincheira\Downloads\Cooperativa (3)\Cooperativa\Cooperativa\AppProcesos\obj\Debug\AppProcesos.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\AppProcesos.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\AppProcesos.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Business.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Controles.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Service.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Implement.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Business.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Controles.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Service.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Implement.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.csprojResolveAssemblyReference.cache
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.pdb
