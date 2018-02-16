@@ -36,7 +36,7 @@ namespace FormsAuxiliares
         public long empNumero
         {
             get { return _EmpNumero; }
-            set { _EmpNumero = value; }
+            set { _EmpNumero = value; this.lblNumero.Text = value.ToString(); }
         }
         public string strRazonSocial
         {
@@ -191,11 +191,60 @@ namespace FormsAuxiliares
             set { _CodigoObservacion= value; }
         }
 
-        #endregion
+        public long lgAccNumero
+        {
+            get { return (this.lblAccNumero.Text!=""?long.Parse(this.lblAccNumero.Text):0); }
+            set { this.lblAccNumero.Text=value.ToString(); }
+        }
 
+        public cmbLista cmbiDistrito
+        {
+            get { return this.cmbDistrito; }
+            set { this.cmbDistrito= value; }
+        }
 
+        public dtpFecha dtpiFechaAltaAccionista
+        {
+            get { return this.dtpFechaAltaAccionista; }
+            set { this.dtpFechaAltaAccionista = value; }
+        }
 
-        public frmClientesCrud(Int32 EmpNumero)
+        public dtpFecha dtpiFechaBajaAccionista
+        {
+            get { return this.dtpFechaBajaAccionista; }
+            set { this.dtpFechaBajaAccionista = value; }
+        }
+
+        public string strClienteBaja
+        {
+            get { return this.chkBajaCliente.Checked ? "S" : "N"; }
+            set { this.chkBajaCliente.Checked = value == "S" ? true : false; }
+        }
+
+        public string strAccionistaBaja
+        {
+            get { return this.chkBajaAccionista.Checked ? "S" : "N"; }
+            set { this.chkBajaAccionista.Checked = value == "S" ? true : false; }
+        }
+
+        public string strProveedorBaja
+        {
+            get { return this.chkBajaProveedor.Checked ? "S" : "N"; }
+            set { this.chkBajaProveedor.Checked = value == "S" ? true : false; }
+        }
+
+        public string strEsSocio
+        {
+            get { return this.chkEsSocio.Checked ? "S" : "N"; }
+            set { this.chkEsSocio.Checked = value == "S" ? true : false; }
+        }
+
+       
+    #endregion
+
+        #region << EVENTOS >>
+
+    public frmClientesCrud(Int32 EmpNumero)
         {
             InitializeComponent();
             _EmpNumero = EmpNumero;
@@ -211,6 +260,9 @@ namespace FormsAuxiliares
             oUtil = new Utility();
             _oClientesCrud.ObtenerId(_EmpNumero);
             this.rbEmpresa.Checked = true;
+            
+
+            
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -222,7 +274,7 @@ namespace FormsAuxiliares
                 //if (this.VALIDARFORM)
                 //{
                 //    
-                     _oClientesCrud.Guardar();
+                     _oClientesCrud.Guardar(_Accion);
                      DialogResult = DialogResult.OK;
                      this.Close();
                 //}
@@ -296,8 +348,6 @@ namespace FormsAuxiliares
             //else
             //    NuevoDomicilio();
         }
-
-
         private void btnTelefono_Click(object sender, EventArgs e)
         {
             NuevoTelefono();
@@ -329,6 +379,29 @@ namespace FormsAuxiliares
 
             NuevaObservacion();
         }
+        private void chkEsSocio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkEsSocio.Checked)
+                this.gbEsSocio.Enabled = true;
+            else
+                this.gbEsSocio.Enabled = false;
+        }
+        private void chkBajaAccionista_CheckedChanged(object sender, EventArgs e)
+        {
+            _oClientesCrud.FechaBajaAccionista(this.chkBajaAccionista.Checked);
+        }
+        private void chkBajaCliente_CheckedChanged(object sender, EventArgs e)
+        {
+            _oClientesCrud.FechaBajaCliente(this.chkBajaCliente.Checked);
+        }
+        private void chkBajaProveedor_CheckedChanged(object sender, EventArgs e)
+        {
+            _oClientesCrud.FechaBajaProveedor(this.chkBajaProveedor.Checked);
+        }
+
+        #endregion
+
+        #region << METODOS >>
 
         private void EditarDomicilio()
         {
@@ -451,5 +524,15 @@ namespace FormsAuxiliares
 
         }
 
+
+
+
+
+        #endregion
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

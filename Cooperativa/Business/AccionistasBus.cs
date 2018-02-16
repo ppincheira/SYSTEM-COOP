@@ -10,7 +10,7 @@ namespace Business
 {
     public class AccionistasBus
     {
-        public int AccionistasAdd(Accionistas oAccionistas)
+        public long AccionistasAdd(Accionistas oAccionistas)
         {
             AccionistasImpl oAccionistasImpl = new AccionistasImpl();
             return oAccionistasImpl.AccionistasAdd(oAccionistas);
@@ -34,6 +34,11 @@ namespace Business
             return oAccionistasImpl.AccionistasGetById(Id);
         }
 
+        public Accionistas AccionistasGetByEmpNumero(long EmpNumero)
+        {
+            AccionistasImpl oAccionistasImpl = new AccionistasImpl();
+            return oAccionistasImpl.AccionistasGetById(EmpNumero);
+        }
         public List<Accionistas> AccionistasGetAll()
         {
             AccionistasImpl oAccionistasImpl = new AccionistasImpl();

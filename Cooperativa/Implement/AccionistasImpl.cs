@@ -13,24 +13,45 @@ namespace Implement
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
-        private int response;
-        public int AccionistasAdd(Accionistas oAcc)
+        private long response;
+        public long AccionistasAdd(Accionistas oAcc)
 		{
 			try
 			{
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                // Secuencia ACC_NUMERO
+                string query =
 
-                ds = new DataSet();
-                cmd = new OracleCommand("insert into Accionistas(ACC_FECHA_ALTA, DIS_NUMERO, " +
-                    "ACC_FECHA_BAJA, EST_CODIGO, EMP_NUMERO) " +
-                    "values("+oAcc.AccFechaAlta+", "+oAcc.DisNumero+", "+
-                    oAcc.AccFechaBaja+", '"+oAcc.EstCodigo+"', "+oAcc.EmpNumero+"')",cn);
-                adapter = new OracleDataAdapter(cmd);
-                response = cmd.ExecuteNonQuery();
+                    " DECLARE IDTEMP NUMBER(15,0); " +
+                    " BEGIN " +
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('ACC_NUMERO')) into IDTEMP from dual; " +
+                    " INSERT INTO ACCIONISTAS(ACC_NUMERO,ACC_FECHA_ALTA,DIS_NUMERO, " +
+                    " ACC_FECHA_BAJA, EST_CODIGO, EMP_NUMERO) " +
+                    " VALUES(IDTEMP,'" + oAcc.AccFechaAlta.Value.ToString("dd/MM/yyyy") + "'," +
+                    " " + oAcc.DisNumero + ", ";
+                if (oAcc.AccFechaBaja == null)
+                    query = query + "null,";
+                else
+                    query = query + ",'" + oAcc.AccFechaBaja.Value.ToString("dd/MM/yyyy") + "' , ";
+                query = query +"'" +oAcc.EstCodigo + "', " + oAcc.EmpNumero + ") RETURNING IDTEMP INTO :id;" +
+                    " END;";
+
+                cmd = new OracleCommand(query, cn);
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
+
+
+
+
+                cmd.ExecuteNonQuery();
+                response = long.Parse(cmd.Parameters[":id"].Value.ToString());
                 cn.Close();
+
                 return response;
             }
 			catch(Exception ex)
@@ -48,10 +69,10 @@ namespace Implement
                 cn.Open();
                 ds = new DataSet();
                 cmd = new OracleCommand("update Accionistas " +
-                    "SET ACC_FECHA_ALTA=" + oAcc.AccFechaAlta + "," +
+                    "SET ACC_FECHA_ALTA='" + oAcc.AccFechaAlta.Value.ToString("dd/MM/yyyy") + "'," +
                     "DIS_NUMERO = " + oAcc.DisNumero + ", " +
-                    "ACC_FECHA_BAJA = " + oAcc.AccFechaBaja + ", '" +
-                    "EST_CODIGO = " + oAcc.EstCodigo + ", " +
+                    "ACC_FECHA_BAJA = '" + oAcc.AccFechaBaja.Value.ToString("dd/MM/yyyy") + "', " +
+                    "EST_CODIGO = '" + oAcc.EstCodigo + "', " +
                     "EMP_NUMERO = " + oAcc.EmpNumero + 
                     "WHERE ACC_NUMERO=" + oAcc.AccNumero , cn);
                 adapter = new OracleDataAdapter(cmd);
@@ -95,8 +116,8 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from Accionistas " +
-                    "WHERE ACC_NUMERO=" +Id.ToString();
+                string sqlSelect = "SELECT * FROM ACCIONISTAS " +
+                    "WHERE EMP_NUMERO=" +Id.ToString();
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -117,6 +138,37 @@ namespace Implement
 			}
 		}
 
+
+
+        public Accionistas AccionistasGetByEmpNumero(long EmpNumero)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Accionistas " +
+                    "WHERE EMP_NUMERO=" + EmpNumero;
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                dt = ds.Tables[0];
+                Accionistas NewEnt = new Accionistas();
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow dr = dt.Rows[0];
+                    NewEnt = CargarAccionistas(dr);
+                }
+                return NewEnt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<Accionistas> AccionistasGetAll()
 		{
             List<Accionistas> lstAccionistas = new List<Accionistas>();

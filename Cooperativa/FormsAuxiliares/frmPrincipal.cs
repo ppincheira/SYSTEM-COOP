@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Controles;
 using AppProcesos.formsAuxiliares.principal;
 using Controles.form;
+using Model;
 
 namespace FormsAuxiliares
 {
@@ -61,16 +62,18 @@ namespace FormsAuxiliares
             this.trvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trvMenu.Location = new System.Drawing.Point(0, 0);
             this.trvMenu.Name = "trvMenu";
-            this.trvMenu.Size = new System.Drawing.Size(341, 599);
+            this.trvMenu.Size = new System.Drawing.Size(341, 592);
             this.trvMenu.TabIndex = 0;
+            this.trvMenu.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvMenu_NodeMouseDoubleClick);
             // 
             // mnuMenuPrincipal
             // 
+            this.mnuMenuPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnuMenuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem});
             this.mnuMenuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuMenuPrincipal.Name = "mnuMenuPrincipal";
-            this.mnuMenuPrincipal.Size = new System.Drawing.Size(1022, 24);
+            this.mnuMenuPrincipal.Size = new System.Drawing.Size(1022, 28);
             this.mnuMenuPrincipal.TabIndex = 1;
             this.mnuMenuPrincipal.Text = "mnuMenuPrincipal";
             // 
@@ -80,44 +83,45 @@ namespace FormsAuxiliares
             this.cambiarClaveToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // cambiarClaveToolStripMenuItem
             // 
             this.cambiarClaveToolStripMenuItem.Name = "cambiarClaveToolStripMenuItem";
-            this.cambiarClaveToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.cambiarClaveToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.cambiarClaveToolStripMenuItem.Text = "Cambiar clave";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // sstBarraEstado
             // 
+            this.sstBarraEstado.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.sstBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.sstBarraEstado.Location = new System.Drawing.Point(0, 623);
+            this.sstBarraEstado.Location = new System.Drawing.Point(0, 620);
             this.sstBarraEstado.Name = "sstBarraEstado";
-            this.sstBarraEstado.Size = new System.Drawing.Size(1022, 22);
+            this.sstBarraEstado.Size = new System.Drawing.Size(1022, 25);
             this.sstBarraEstado.TabIndex = 2;
             this.sstBarraEstado.Text = "sstBarraEstado";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // pnlPanelContenedor1
             // 
             this.pnlPanelContenedor1.Controls.Add(this.trvMenu);
             this.pnlPanelContenedor1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlPanelContenedor1.Location = new System.Drawing.Point(0, 24);
+            this.pnlPanelContenedor1.Location = new System.Drawing.Point(0, 28);
             this.pnlPanelContenedor1.Name = "pnlPanelContenedor1";
-            this.pnlPanelContenedor1.Size = new System.Drawing.Size(341, 599);
+            this.pnlPanelContenedor1.Size = new System.Drawing.Size(341, 592);
             this.pnlPanelContenedor1.TabIndex = 3;
             // 
             // frmPrincipal
@@ -147,8 +151,73 @@ namespace FormsAuxiliares
         {
             _oPrincipal.InicializarArbol();
         }
+
+ 
+
+
+
+        #endregion
+        #region << METODOS >>
+
+        private void AbrirFormulario()
+        {
+
+            string strFormulario = _oPrincipal.FormularioActivo(this.trvMenu.SelectedNode);
+            switch (strFormulario)
+            {
+                case "frmFabricantes":
+                    Console.WriteLine("Case 1");
+                    break;
+                case "frmTiposMedidores":
+                    Console.WriteLine("Case 2");
+                    break;
+                case "frmModelosMedidiores":
+                    Console.WriteLine("Case 1");
+                    break;
+                case "frmTelefonos":
+                    Console.WriteLine("Case 2");
+                    break;
+                case "frmCalles":
+                    Console.WriteLine("Case 1");
+                    break;
+                case "frmDomicilios":
+                    FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+                    Admin oAdmin = new Admin();
+                    oAdmin.TabCodigo = "DOMB";
+
+                    FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+                    frmbus.ShowDialog();
+
+                    break;
+                case "frmObservaciones":
+                    Console.WriteLine("Case 1");
+                    break;
+                case "frmRutas":
+                    Console.WriteLine("Case 2");
+                    break;
+                case "frmCategorias":
+                    Console.WriteLine("Case 1");
+                    break;
+                case "frmSuministros":
+                    Console.WriteLine("Case 2");
+                    break;
+                case "frmConceptosLecturas":
+                    Console.WriteLine("Case 2");
+                    break;
+                case "frmModosLecturas":
+                    Console.WriteLine("Case 2");
+                    break;
+                case "frmClientes":
+                    Console.WriteLine("Case 2");
+                    break;
+
+            }
+        }
         #endregion
 
-      
+        private void trvMenu_NodeMouseDoubleClick(object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e)
+        {
+            AbrirFormulario();
+        }
     }
 }

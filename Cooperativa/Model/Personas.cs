@@ -20,8 +20,8 @@ namespace Model
         public virtual string PrsApellido { get; set; }
         public virtual string PrsNombre { get; set; }
         public virtual string PrsEstadoCivil { get; set; }
-        public virtual string PrsTipoDoc { get; set; }
-        public virtual string PrsNumeroDoc { get; set; }
+        public virtual string TidCodigo { get; set; }
+        public virtual string PrsDocumentoNumero { get; set; }
         public virtual string PrsSexo { get; set; }
         public virtual DateTime PrsFechaNacimiento { get; set; }
         public virtual int LocNumeroNacimiento { get; set; }

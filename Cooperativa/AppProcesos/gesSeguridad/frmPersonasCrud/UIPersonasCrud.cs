@@ -35,10 +35,10 @@ namespace AppProcesos.gesSeguridad.frmPersonasCrud
                 _vista.cmbPrsSexo.SelectedValue = oPersonas.PrsSexo;
                 _vista.cmbPrsCargo.SelectedValue = oPersonas.PrsCargo;
                 _vista.cmbPrsBaja.SelectedValue = oPersonas.PrsMotivoBaja;
-                _vista.cmbPrsTpoDni.SelectedValue = oPersonas.PrsTipoDoc;
+                _vista.cmbPrsTpoDni.SelectedValue = oPersonas.TidCodigo;
                 _vista.strPrsApellido = oPersonas.PrsApellido;
                 _vista.strPrsNombre = oPersonas.PrsNombre;
-                _vista.strPrsNroDocumento = oPersonas.PrsNumeroDoc;
+                _vista.strPrsNroDocumento = oPersonas.PrsDocumentoNumero;
                 _vista.datPrsNacimiento = oPersonas.PrsFechaNacimiento;
                 _vista.datPrsIngreso = oPersonas.PrsFechaIngreso;
                 _vista.datPrsBaja = oPersonas.PrsFechaBaja;
@@ -63,11 +63,11 @@ namespace AppProcesos.gesSeguridad.frmPersonasCrud
             oPersonas.PrsSexo =_vista.cmbPrsSexo.SelectedValue.ToString();
             oPersonas.PrsCargo = _vista.cmbPrsCargo.SelectedValue.ToString();
             oPersonas.PrsMotivoBaja = _vista.cmbPrsBaja.SelectedValue.ToString();
-            oPersonas.PrsTipoDoc =_vista.cmbPrsTpoDni.SelectedValue.ToString();            
+            oPersonas.TidCodigo =_vista.cmbPrsTpoDni.SelectedValue.ToString();            
             oPersonas.PrsNumero = _vista.logPrsNumero;
             oPersonas.PrsApellido = _vista.strPrsApellido;
             oPersonas.PrsNombre = _vista.strPrsNombre;
-            oPersonas.PrsNumeroDoc = _vista.strPrsNroDocumento;
+            oPersonas.PrsDocumentoNumero = _vista.strPrsNroDocumento;
             oPersonas.PrsFechaNacimiento = _vista.datPrsNacimiento;
             oPersonas.PrsFechaIngreso = _vista.datPrsIngreso;
             oPersonas.PrsFechaBaja = _vista.datPrsBaja;

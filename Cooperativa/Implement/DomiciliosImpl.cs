@@ -46,10 +46,6 @@ namespace Implement
                     OracleDbType = OracleDbType.Int64,
                     Direction = ParameterDirection.Output
                 });
-
-
-
-
                 cmd.ExecuteNonQuery();
                 response = long.Parse(cmd.Parameters[":id"].Value.ToString());
                 cn.Close();

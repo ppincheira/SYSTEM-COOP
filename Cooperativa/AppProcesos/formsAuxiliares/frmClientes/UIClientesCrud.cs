@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AppProcesos.formsAuxiliares.frmClientes
 {
@@ -33,10 +34,13 @@ namespace AppProcesos.formsAuxiliares.frmClientes
 
         public void Inicializar(long empNumero, Enumeration.Acciones oAccion )
         {
-
+            FechaBajaAccionista(false);
+            FechaBajaCliente(false);
+            FechaBajaProveedor(false);
             CargarTipoIva();
             CargarEstadoCredito();
             CargarTiposDni();
+            CargarDistritos();
             _vista.lgCodigoDomicilio = 0;
             _vista.lgCodigoEmail = 0;
             _vista.lgCodigoTelefono = 0;
@@ -53,8 +57,14 @@ namespace AppProcesos.formsAuxiliares.frmClientes
                 _vista.dtpiFechaAlta.Value = oEmpresa.EmpFechaAlta.Value;
                 _vista.dtpiFechaAltaCli.Value = oEmpresa.EmpFechaAltaCli.Value;
                 _vista.dtpiFechaAltaPro.Value = oEmpresa.EmpFechaAltaPro;
-                _vista.dtpiFechaBajaCli.Value = oEmpresa.EmpFechaBajaCli.Value;
-                _vista.dtpiFechaBajaPro.Value = oEmpresa.EmpFechaBajaPro.Value;
+
+                if (_vista.strClienteBaja == "S")
+                    _vista.dtpiFechaBajaCli.Value = oEmpresa.EmpFechaBajaCli.Value;
+          
+                if (_vista.strProveedorBaja == "S")
+                    _vista.dtpiFechaBajaPro.Value = oEmpresa.EmpFechaBajaPro.Value;
+                
+                EsSocio_Carga(empNumero);
                 _vista.empNumero = empNumero;
                 _vista.intNumeroTransporte = oEmpresa.EmpNumeroTransporte;
                 _vista.strApellido = oEmpresa.EmpApellidos;
@@ -72,10 +82,90 @@ namespace AppProcesos.formsAuxiliares.frmClientes
                 _vista.strProveedor = oEmpresa.EmpProveedor;
                 _vista.strRazonSocial = oEmpresa.EmpRazonSocial;
                 _vista.strTitularCheques = oEmpresa.EmpTitularCheques;
+
             }
         }
 
-        
+        public void FechaBajaCliente(bool estado) {
+
+            if (estado)
+            {
+                _vista.dtpiFechaBajaCli.Format = DateTimePickerFormat.Custom;
+                _vista.dtpiFechaBajaCli.CustomFormat = "dd/MM/yyyy";
+                _vista.dtpiFechaBajaCli.Value = DateTime.Now;
+                _vista.dtpiFechaBajaCli.Enabled = true;
+            }
+            else
+            {
+                _vista.dtpiFechaBajaCli.Format = DateTimePickerFormat.Custom;
+                _vista.dtpiFechaBajaCli.CustomFormat = " ";
+                _vista.dtpiFechaBajaCli.Value = DateTime.FromOADate(0);
+                _vista.dtpiFechaBajaCli.Enabled = false;
+                _vista.dtpiFechaBajaCli.Checked = false;
+            }
+        }
+
+
+        public void FechaBajaProveedor(bool estado)
+        {
+
+            if (estado)
+            {
+                _vista.dtpiFechaBajaPro.Format = DateTimePickerFormat.Custom;
+                _vista.dtpiFechaBajaPro.CustomFormat = "dd/MM/yyyy";
+                _vista.dtpiFechaBajaPro.Value = DateTime.Now;
+                _vista.dtpiFechaBajaPro.Enabled = true;
+            }
+            else
+            {
+                _vista.dtpiFechaBajaPro.Format = DateTimePickerFormat.Custom;
+                _vista.dtpiFechaBajaPro.CustomFormat = " ";
+                _vista.dtpiFechaBajaPro.Value = DateTime.FromOADate(0);
+                _vista.dtpiFechaBajaPro.Enabled = false;
+                _vista.dtpiFechaBajaPro.Checked = false;
+            }
+        }
+
+
+
+        public void FechaBajaAccionista(bool estado)
+        {
+
+            if (estado)
+            {
+                _vista.dtpiFechaBajaAccionista.Format = DateTimePickerFormat.Custom;
+                _vista.dtpiFechaBajaAccionista.CustomFormat = "dd/MM/yyyy";
+                _vista.dtpiFechaBajaAccionista.Value = DateTime.Now;
+                _vista.dtpiFechaBajaAccionista.Enabled = true;
+              
+            }
+            else
+            {
+                _vista.dtpiFechaBajaAccionista.Format = DateTimePickerFormat.Custom;
+                _vista.dtpiFechaBajaAccionista.CustomFormat = " ";
+                _vista.dtpiFechaBajaAccionista.Value = DateTime.FromOADate(0);
+                _vista.dtpiFechaBajaAccionista.Enabled = false;
+                _vista.dtpiFechaBajaAccionista.Checked = false;
+               
+            }
+        }
+
+        private void EsSocio_Carga(long EmpNumero)
+        {
+
+            AccionistasBus oAccionistaBus = new AccionistasBus();
+            Accionistas oAccionista = new Accionistas();
+            oAccionista = oAccionistaBus.AccionistasGetByEmpNumero(EmpNumero);
+            if (oAccionista.DisNumero != 0) {
+                _vista.strEsSocio = "S";
+                _vista.dtpiFechaAltaAccionista.Value = oAccionista.AccFechaAlta.Value;
+                _vista.cmbiDistrito.SelectedValue = oAccionista.DisNumero;
+                _vista.lgAccNumero = oAccionista.AccNumero;
+                
+            }
+
+
+        }
 
 
 
@@ -137,14 +227,19 @@ namespace AppProcesos.formsAuxiliares.frmClientes
             EstadosBus oEstadoBus = new EstadosBus();
             oUtil.CargarCombo(_vista.cmbiEstadoCredito, oEstadoBus.EstadosGetByFilterDT("EMPRESAS", "EST_CODIGO_CREDITO"), "EST_CODIGO", "EST_DESCRIPCION", "SELECCIONE.."); 
         }
-        
+        private void CargarDistritos()
+        {
+            DistritosBus oDistritoBus = new DistritosBus();
+            oUtil.CargarCombo(_vista.cmbiDistrito,oDistritoBus.DistritosGetAllDT(),"DIS_NUMERO","DIS_DESCRIPCION","SELECCIONE DISTRITO");
+        }
+
         private void CargarTiposDni()
         {
             TiposIdentificadoresBus oTipoIdentificadoresBus = new TiposIdentificadoresBus();
             oUtil.CargarCombo(_vista.cmbiTipoDocumento, oTipoIdentificadoresBus.TiposIdentificadoresGetAllDT(), "tid_codigo", "tid_descripcion", "..");
         }
 
-        public void Guardar()
+        public void Guardar(Enumeration.Acciones oAccion)
         {
             Empresas oEmpresa = new Empresas();
             EmpresasBus oEmpresaBus = new EmpresasBus();
@@ -175,8 +270,38 @@ namespace AppProcesos.formsAuxiliares.frmClientes
             oEmpresa.TidCodigo = _vista.cmbiTipoDocumento.SelectedValue.ToString();
             oEmpresa.TivCodigo = _vista.cmbiTipoIva.SelectedValue.ToString();
             oEmpresa.UsrNumeroCarga = 1;//Falta definir
-            oEmpresaBus.EmpresasAdd(oEmpresa);
+            if (oAccion == Enumeration.Acciones.New)
+                oEmpresaBus.EmpresasAdd(oEmpresa);
+            else
+                oEmpresaBus.EmpresasUpdate(oEmpresa);
+
+            if (_vista.strEsSocio == "S")
+            {
+
+                if (int.Parse(_vista.cmbiDistrito.SelectedValue.ToString()) > 0)
+                {
+
+                    Accionistas oAccionista = new Accionistas();
+                    AccionistasBus oAccionistasBus = new AccionistasBus();
+                    oAccionista.AccFechaAlta = _vista.dtpiFechaAltaAccionista.Value;
+                    oAccionista.DisNumero = long.Parse(_vista.cmbiDistrito.SelectedValue.ToString());
+                    oAccionista.EstCodigo = "H";
+                    oAccionista.EmpNumero = _vista.empNumero;
+
+                    if (_vista.strAccionistaBaja == "S")
+                        oAccionista.AccFechaBaja = _vista.dtpiFechaBajaAccionista.Value;
+
+                    if (_vista.lgAccNumero != 0)
+                        oAccionistasBus.AccionistasUpdate(oAccionista);
+                    else
+                        _vista.lgAccNumero = oAccionistasBus.AccionistasAdd(oAccionista);
+                }
+
+
+            }
         }
+
+
 
     }
 }

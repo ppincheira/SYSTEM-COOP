@@ -40,6 +40,14 @@ namespace AppProcesos.formsAuxiliares.frmClientes
         long lgCodigoTelefono { get; set; }
         long lgCodigoEmail { get; set; }
         long lgCodigoObservacion { get; set; }
+        string strEsSocio { get; set; }
+        long lgAccNumero { get; set; }
+        cmbLista cmbiDistrito { get; set; }
+        dtpFecha dtpiFechaAltaAccionista { get; set; }
+        dtpFecha dtpiFechaBajaAccionista { get; set; }
+        string strClienteBaja { get; set; }
+        string strProveedorBaja { get; set; }
+        string strAccionistaBaja { get; set; }
 
     }
 }

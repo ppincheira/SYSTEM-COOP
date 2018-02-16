@@ -34,8 +34,8 @@ namespace Implement
                                                              " PRS_APELLIDO, " +
                                                              " PRS_NOMBRE," +
                                                              " PRS_ESTADO_CIVIL," +
-                                                             " PRS_TIPO_DOC, " +
-                                                             " PRS_NUMERO_DOC, " +
+                                                             " TID_CODIGO, " +
+                                                             " PRS_DOCUMENTO_NUMERO, " +
                                                              " PRS_SEXO, " +
                                                              " PRS_FECHA_NACIMIENTO, " +
                                                              " LOC_NUMERO_NACIMIENTO, " +
@@ -49,8 +49,8 @@ namespace Implement
                                                    "values( '" + oPersona.PrsApellido + "', '"
                                                               + oPersona.PrsNombre + "', '"
                                                               + oPersona.PrsEstadoCivil + "', '"
-                                                              + oPersona.PrsTipoDoc + "', '"
-                                                              + oPersona.PrsNumeroDoc + "', '"
+                                                              + oPersona.TidCodigo + "', '"
+                                                              + oPersona.PrsDocumentoNumero + "', '"
                                                               + oPersona.PrsSexo + "', '"
                                                               + "TO_DATE('" + oPersona.PrsFechaNacimiento + "', 'DD/MM/YYYY HH24:MI:SS'), '"
                                                               + oPersona.LocNumeroNacimiento + "', '"
@@ -84,8 +84,8 @@ namespace Implement
                                                 "PRS_APELLIDO='" + oPersona.PrsApellido + "'," +
                                                 "PRS_NOMBRE='" + oPersona.PrsNombre + "'," +
                                                 "PRS_ESTADO_CIVIL='" + oPersona.PrsEstadoCivil + "'," +
-                                                "PRS_TIPO_DOC='" + oPersona.PrsTipoDoc + "'," +
-                                                "PRS_NUMERO_DOC='" + oPersona.PrsNumeroDoc + "'," +
+                                                "TID_CODIGO='" + oPersona.TidCodigo + "'," +
+                                                "PRS_DOCUMENTO_NUMERO='" + oPersona.PrsDocumentoNumero + "'," +
                                                 "PRS_SEXO='" + oPersona.PrsSexo + "'," +
                                                 "PRS_FECHA_NACIMIENTO=TO_DATE('" + oPersona.PrsFechaNacimiento + "', 'DD/MM/YYYY HH24:MI:SS'), " +
                                                 "LOC_NUMERO_NACIMIENTO='" + oPersona.LocNumeroNacimiento + "', " +
@@ -203,9 +203,8 @@ namespace Implement
                 oObjeto.PrsApellido = dr["PRS_APELLIDO"].ToString();
                 oObjeto.PrsNombre = dr["PRS_NOMBRE"].ToString();
                 oObjeto.PrsEstadoCivil = dr["PRS_ESTADO_CIVIL"].ToString();
-                oObjeto.PrsTipoDoc = dr["PRS_TIPO_DOC"].ToString();
-                oObjeto.PrsNumeroDoc = dr["PRS_NUMERO_DOC"].ToString();
-                oObjeto.PrsTipoDoc = dr["PRS_TIPO_DOC"].ToString();
+                oObjeto.PrsDocumentoNumero = dr["PRS_DOCUMENTO_NUMERO"].ToString();
+                oObjeto.TidCodigo = dr["TID_CODIGO"].ToString();
                 oObjeto.PrsSexo = dr["PRS_SEXO"].ToString();
                 if (dr["PRS_FECHA_NACIMIENTO"].ToString() != "")
                     oObjeto.PrsFechaNacimiento = DateTime.Parse(dr["PRS_FECHA_NACIMIENTO"].ToString());

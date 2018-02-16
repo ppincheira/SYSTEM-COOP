@@ -374,6 +374,7 @@ namespace FormsAuxiliares
             this.dgBusqueda.AllowUserToAddRows = false;
             this.dgBusqueda.Location = new System.Drawing.Point(6, 19);
             this.dgBusqueda.Name = "dgBusqueda";
+            this.dgBusqueda.ReadOnly = true;
             this.dgBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgBusqueda.Size = new System.Drawing.Size(913, 312);
             this.dgBusqueda.TabIndex = 0;
@@ -466,8 +467,8 @@ namespace FormsAuxiliares
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                 //No Borrar este comentario es la llama original
                 //oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
-                if (this.dgBusqueda.RowCount > 0)
-                    dgBusqueda.CurrentCell = dgBusqueda.Rows[0].Cells[1];
+                //if (this.dgBusqueda.RowCount > 0)
+                //    dgBusqueda.CurrentCell = dgBusqueda.Rows[0].Cells[1];
                 //No Borrar este comentario es la llama original
                 //oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
                 switch (_oAdmin.TabCodigo)

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Implement;
 using Model;
+using System.Data;
 
 namespace Business
 {
@@ -38,6 +39,11 @@ namespace Business
         {
             DistritosImpl oDistritosImpl = new DistritosImpl();
             return oDistritosImpl.DistritosGetAll();
+        }
+        public DataTable DistritosGetAllDT()
+        {
+            DistritosImpl oDistritosImpl = new DistritosImpl();
+            return oDistritosImpl.DistritosGetAllDT();
         }
     }
 }

@@ -99,7 +99,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from MenuItems " +
+                string sqlSelect = "select * from MENU_ITEMS " +
                     "where MNI_CODIGO='" + Id + "' ";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);

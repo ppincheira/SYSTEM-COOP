@@ -169,7 +169,8 @@ namespace Implement
                     oObjeto.FunDescripcion = dr["FUN_DESCRIPCION"].ToString();
                     oObjeto.FunDescripcion = dr["FUN_FUNCIONALIDAD"].ToString();
                     oObjeto.SbsCodigo = dr["SBS_CODIGO"].ToString();
-                    oObjeto.ffoCodigo = int.Parse(dr["FFO_CODIGO"].ToString()) ;
+                    if (dr["FFO_CODIGO"]!=null)
+                        oObjeto.ffoCodigo = int.Parse(dr["FFO_CODIGO"].ToString()) ;
                     return oObjeto;
                 }
                 catch (Exception ex)

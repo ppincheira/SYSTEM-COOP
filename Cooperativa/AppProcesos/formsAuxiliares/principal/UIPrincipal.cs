@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business;
+using Model;
 using System.Windows.Forms;
 using AppProcesos.formsAuxiliares.principal;
 
@@ -26,7 +27,7 @@ namespace AppProcesos.formsAuxiliares.principal
         {
             MenuItemsBus oMenuBus = new MenuItemsBus();
 
-            DataTable dt = oMenuBus.MenuItemsGetByIdCodigo("0001");
+            DataTable dt = oMenuBus.MenuItemsGetByIdCodigo("SRV");
             // Crear un DataView con los Nodos que dependen del Nodo padre pasado como parámetro.
             DataView dataViewHijos = new DataView(dt);
             dataViewHijos.RowFilter = dt.Columns["MNI_CODIGO_PADRE"].ColumnName + " = " + indicePadre;
@@ -35,8 +36,8 @@ namespace AppProcesos.formsAuxiliares.principal
             foreach (DataRowView dataRowCurrent in dataViewHijos)
             {
                 TreeNode nuevoNodo = new TreeNode();
-                nuevoNodo.Text = dataRowCurrent["FRM_NOMBRE"].ToString().Trim();
-
+                nuevoNodo.Text = dataRowCurrent["MNI_DESCRIPCION"].ToString().Trim();
+                nuevoNodo.Tag = dataRowCurrent["MNI_CODIGO"].ToString();
                 // si el parámetro nodoPadre es nulo es porque es la primera llamada, son los Nodos
                 // del primer nivel que no dependen de otro nodo.
                 if (nodePadre == null)
@@ -54,5 +55,29 @@ namespace AppProcesos.formsAuxiliares.principal
                 CrearNodosDelPadre(Int32.Parse(dataRowCurrent["MNI_CODIGO"].ToString()), nuevoNodo);
             }
         }
+
+
+        public string FormularioActivo(TreeNode node)
+        {
+            string rtdo = "";
+
+            Model.MenuItems oMenuItem = new MenuItems();
+            MenuItemsBus oMenuItemBus = new MenuItemsBus();
+            oMenuItem = oMenuItemBus.MenuItemsGetById(node.Tag.ToString());
+            Funcionalidades ofuncionalidad = new Funcionalidades();
+            FuncionalidadesBus oFuncionalidadBus = new FuncionalidadesBus();
+            ofuncionalidad = oFuncionalidadBus.FuncionalidadesGetById(oMenuItem.FunCodigo);
+            FuncionalidadesFormularios oFunForm = new FuncionalidadesFormularios();
+            FuncionalidadesFormulariosBus oFunFormBus = new FuncionalidadesFormulariosBus();
+            oFunForm = oFunFormBus.FuncionalidadesFormulariosGetById(ofuncionalidad.ffoCodigo);
+
+            rtdo = oFunForm.FfoNombre;
+            return rtdo;
+        }
+
+
+
+
+
     }
 }
