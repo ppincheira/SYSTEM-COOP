@@ -32,8 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FormsAuxiliares">
+      <HintPath>..\..\..\..\CoopeDesarrollo\Cooperativa\Cooperativa\Referencias\FormsAuxiliares.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,7 +48,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="controles\forms\frmTiposComprobantesCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmTiposComprobantesCrud.designer.cs">
+      <DependentUpon>frmTiposComprobantesCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppProcesos\AppProcesos.csproj">
+      <Project>{713451e2-581c-4099-b5ca-15e95f3f0a16}</Project>
+      <Name>AppProcesos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{cbade339-921e-4277-971c-d80d69751c74}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controles\Controles.csproj">
+      <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\service\Service.csproj">
+      <Project>{86fb2f28-828e-4d75-8656-fe5f83fa1d11}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="controles\forms\frmTiposComprobantesCrud.resx">
+      <DependentUpon>frmTiposComprobantesCrud.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -60,6 +60,7 @@
             this.btnPersonas = new Controles.btnPersonalizado();
             this.btnUsuarios = new Controles.btnPersonalizado();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnTiposComprobantes = new Controles.btnPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             // 
             this.dgvTest.Location = new System.Drawing.Point(12, 306);
             this.dgvTest.Name = "dgvTest";
-            this.dgvTest.Size = new System.Drawing.Size(240, 150);
+            this.dgvTest.Size = new System.Drawing.Size(240, 55);
             this.dgvTest.TabIndex = 0;
             // 
             // button1
@@ -406,11 +407,23 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // btnTiposComprobantes
+            // 
+            this.btnTiposComprobantes.ForeColor = System.Drawing.Color.Green;
+            this.btnTiposComprobantes.Location = new System.Drawing.Point(138, 401);
+            this.btnTiposComprobantes.Name = "btnTiposComprobantes";
+            this.btnTiposComprobantes.Size = new System.Drawing.Size(172, 23);
+            this.btnTiposComprobantes.TabIndex = 26;
+            this.btnTiposComprobantes.Text = "TIPOS COMPROBANTES";
+            this.btnTiposComprobantes.UseVisualStyleBackColor = true;
+            this.btnTiposComprobantes.Click += new System.EventHandler(this.btnTiposComprobantes_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 521);
+            this.Controls.Add(this.btnTiposComprobantes);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnPersonas);
@@ -485,6 +498,7 @@
         private Controles.btnPersonalizado btnPersonas;
         private Controles.btnPersonalizado btnUsuarios;
         private System.Windows.Forms.Button button3;
+        private Controles.btnPersonalizado btnTiposComprobantes;
     }
 }
 

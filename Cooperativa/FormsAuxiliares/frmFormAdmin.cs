@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using GesServicios.controles.forms;
 using static Model.Admin;
 using GesSeguridad.controles.forms;
+using GesConfiguracion;
 
 namespace FormsAuxiliares
 {
@@ -783,6 +784,11 @@ namespace FormsAuxiliares
                     if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
+                case "TCO":
+                    frmTiposComprobantesCrud oFrmTcoCrud = new frmTiposComprobantesCrud("", "H");
+                    if (oFrmTcoCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
                 case "":
                     Console.WriteLine("Case 2");
                     break;
@@ -855,6 +861,13 @@ namespace FormsAuxiliares
                     int idPersona = Convert.ToInt32(row.Cells[0].Value);
                     frmPersonasCrud oFrmPerCrud = new frmPersonasCrud(idPersona, "E");
                     if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
+                case "TCO":
+                    string id = row.Cells[0].Value.ToString();
+                    frmTiposComprobantesCrud oFrmTcoCrud = new frmTiposComprobantesCrud(id, "E");
+                    oFrmTcoCrud.editar = "SI";
+                    if (oFrmTcoCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "":

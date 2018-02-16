@@ -54,7 +54,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -246,6 +246,10 @@
     <ProjectReference Include="..\Controles\Controles.csproj">
       <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>
       <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GesConfiguracion\GesConfiguracion.csproj">
+      <Project>{86806f56-8625-4be6-ae83-efca3c606def}</Project>
+      <Name>GesConfiguracion</Name>
     </ProjectReference>
     <ProjectReference Include="..\GesSeguridad\GesSeguridad.csproj">
       <Project>{4f833e59-47e3-46c7-be0b-48d8572cabc5}</Project>
