@@ -14,6 +14,7 @@ namespace FormsAuxiliares
     {
 
         private UIPrincipal _oPrincipal;
+        public string _subSistema;
         private Controles.contenedores.mnuMenuPrincipal mnuMenuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarClaveToolStripMenuItem;
@@ -39,6 +40,7 @@ namespace FormsAuxiliares
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeComponent();
             _oPrincipal = new UIPrincipal(this);
+            _subSistema = subsistema;
         }
 
 
@@ -149,7 +151,8 @@ namespace FormsAuxiliares
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            _oPrincipal.InicializarArbol();
+            _oPrincipal.InicializarArbol(_subSistema);
+            _oPrincipal.DesplegarArbol();
         }
 
  
@@ -185,8 +188,9 @@ namespace FormsAuxiliares
                     Admin oAdmin = new Admin();
                     oAdmin.TabCodigo = "DOMB";
 
-                    FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
-                    frmbus.ShowDialog();
+                    FormsAuxiliares.frmFormAdmin frm = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+                    frm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+                    frm.ShowDialog();
 
                     break;
                 case "frmObservaciones":

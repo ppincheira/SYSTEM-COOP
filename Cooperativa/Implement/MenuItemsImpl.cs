@@ -212,7 +212,7 @@ namespace Implement
         }
 
 
-        public DataTable MenuItemsGetByIdCodigo(string codigo)
+        public DataTable MenuItemsGetBySubSisCodigo(string codigo)
         {
             try
             {

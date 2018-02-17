@@ -48,7 +48,7 @@ namespace Business
         public DataTable MenuItemsGetByIdCodigo(string codigo)
         {
             MenuItemsImpl oMenuItemsImp = new MenuItemsImpl();
-            return oMenuItemsImp.MenuItemsGetByIdCodigo(codigo);
+            return oMenuItemsImp.MenuItemsGetBySubSisCodigo(codigo);
         }
     }
 }

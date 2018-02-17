@@ -19,15 +19,15 @@ namespace AppProcesos.formsAuxiliares.principal
         {
             _vista = vista;
         }
-        public void InicializarArbol() {
-            CrearNodosDelPadre(-1, null);
+        public void InicializarArbol( string subSistema) {
+            CrearNodosDelPadre(-1, null,subSistema);
         }
 
-        public void CrearNodosDelPadre(int indicePadre, TreeNode nodePadre)
+        public void CrearNodosDelPadre(int indicePadre, TreeNode nodePadre, string subSistema)
         {
             MenuItemsBus oMenuBus = new MenuItemsBus();
 
-            DataTable dt = oMenuBus.MenuItemsGetByIdCodigo("SRV");
+            DataTable dt = oMenuBus.MenuItemsGetByIdCodigo(subSistema);
             // Crear un DataView con los Nodos que dependen del Nodo padre pasado como parámetro.
             DataView dataViewHijos = new DataView(dt);
             dataViewHijos.RowFilter = dt.Columns["MNI_CODIGO_PADRE"].ColumnName + " = " + indicePadre;
@@ -52,8 +52,13 @@ namespace AppProcesos.formsAuxiliares.principal
 
                 // Llamada recurrente al mismo método para agregar los Hijos del Nodo recién agregado.
 
-                CrearNodosDelPadre(Int32.Parse(dataRowCurrent["MNI_CODIGO"].ToString()), nuevoNodo);
+                CrearNodosDelPadre(Int32.Parse(dataRowCurrent["MNI_CODIGO"].ToString()), nuevoNodo, subSistema);
             }
+        }
+
+        public void DesplegarArbol() {
+
+            _vista.oTreeNode.ExpandAll();
         }
 
 
