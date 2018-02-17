@@ -41,6 +41,7 @@ namespace FormsAuxiliares
             InitializeComponent();
             _oPrincipal = new UIPrincipal(this);
             _subSistema = subsistema;
+           
         }
 
 

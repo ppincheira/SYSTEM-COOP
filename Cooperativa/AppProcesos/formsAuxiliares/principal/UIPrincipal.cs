@@ -20,6 +20,8 @@ namespace AppProcesos.formsAuxiliares.principal
             _vista = vista;
         }
         public void InicializarArbol( string subSistema) {
+           
+
             CrearNodosDelPadre(-1, null,subSistema);
         }
 

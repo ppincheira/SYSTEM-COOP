@@ -259,8 +259,11 @@ namespace FormsAuxiliares
                 //obtener la persona del login
                 ;
                     frmPrincipal frm = new frmPrincipal(_Subsistema);
-                frm.Text = _Subsistema;
-                frm.toolStripStatusLabel1.Text = _Subsistema + _oLogin.nombreUsuario(usuario);
+                Subsistema oSubSistema = new Subsistema();
+                SubsistemaBus oSubSistemaBus = new SubsistemaBus();
+                oSubSistema = oSubSistemaBus.SubsistemaGetById(_Subsistema);
+                frm.Text = oSubSistema.SbsNombre;
+                frm.toolStripStatusLabel1.Text = oSubSistema.SbsNombre +" - "+ _oLogin.nombreUsuario(usuario);
                 frm.Show();
             }
         }
