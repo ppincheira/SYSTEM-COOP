@@ -26,9 +26,9 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             TipoConexionServiciosBus oTiposConexiones = new TipoConexionServiciosBus();
             oUtil.CargarCombo(_vista.TipoConexion, oTiposConexiones.TipoConexionServiciosGetAllDT(), "TCS_CODIGO", "TCS_DESCRIPCION", "SELECCIONE..");
 
-            //// Obtengo los Fabricantes
-            //FabricantesBus oFabricantes = new FabricantesBus();
-            //oUtil.CargarCombo(_vista.FabNumero, oFabricantes.FabricantesGetAllDT(), "FAB_NUMERO", "FAB_DESCRIPCION", "SELECCIONE..");
+            //// Obtengo las Zonas
+            GruposBus oZonas = new GruposBus();
+            oUtil.CargarCombo(_vista.Zona, oZonas.GruposGetByFilter("2"), "GRP_CODIGO", "GRP_DESCRIPCION", "SELECCIONE..");
 
             //// Obtengo los grupos del Tipo de medidores
             //TiposMedidoresBus oTiposMedidores = new TiposMedidoresBus();
@@ -168,6 +168,11 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
         {
             ServiciosCategoriasBus oCategoriasBus = new ServiciosCategoriasBus();
             oUtil.CargarCombo(_vista.Categoria, oCategoriasBus.ServiciosCategoriasGetbySrv(_vista.Servicio.SelectedValue.ToString()), "SCA_NUMERO", "SCA_DESCRIPCION", "SELECCIONE..");
+        }
+        public void CargarRutas()
+        {
+            //ServiciosCategoriasBus oCategoriasBus = new ServiciosCategoriasBus();
+            //oUtil.CargarCombo(_vista.Categoria, oCategoriasBus.ServiciosCategoriasGetbySrv(_vista.Servicio.SelectedValue.ToString()), "SCA_NUMERO", "SCA_DESCRIPCION", "SELECCIONE..");
         }
 
     }

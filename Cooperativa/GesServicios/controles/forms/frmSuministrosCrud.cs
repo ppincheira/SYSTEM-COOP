@@ -281,7 +281,7 @@ namespace GesServicios.controles.forms
             {
                 string id = oFrmAdminMini.striRdoCodigo;
                 oDomicilio = _oSuministrosCrud.CargarDomicilioSum(long.Parse(txtEmpNumero.Text), "CLIE");
-                if (oDomicilio.DomCodigo != 0 && oDomicilio.DomCodigo != null)
+                if (oDomicilio.DomCodigo != 0)
                 {
                     txtDomCodigo.Text = oDomicilio.DomCodigo.ToString();
                     CallesLocalidadesBus oCalleBus = new CallesLocalidadesBus();
@@ -318,6 +318,12 @@ namespace GesServicios.controles.forms
         private void cmbServicio_Leave(object sender, EventArgs e)
         {
             _oSuministrosCrud.CargarCategorias();
+        }
+
+        private void cmbZona_Leave(object sender, EventArgs e)
+        {
+            _oSuministrosCrud.CargarRutas();
+
         }
     }
 

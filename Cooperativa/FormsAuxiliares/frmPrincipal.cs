@@ -201,7 +201,13 @@ namespace FormsAuxiliares
                     Console.WriteLine("Case 2");
                     break;
                 case "frmCategorias":
-                    Console.WriteLine("Case 1");
+                    FuncionalidadesFoms oCatPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+                    Admin oCatAdmin = new Admin();
+                    oCatAdmin.TabCodigo = "SCAT";
+                    FormsAuxiliares.frmFormAdminMini frmCat = new FormsAuxiliares.frmFormAdminMini(oCatAdmin, oCatPermiso);
+                    frmCat.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+                    frmCat.ShowDialog();
+                    //Console.WriteLine("Case 1");
                     break;
                 case "frmSuministros":
                     Console.WriteLine("Case 2");
