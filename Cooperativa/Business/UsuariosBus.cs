@@ -44,5 +44,10 @@ namespace Business
             UsuariosImpl oUsuariosImpl = new UsuariosImpl();
             return oUsuariosImpl.UsuariosLogin(user, password);
         }
+        public Usuarios PersonaUsuarios(string idPersona)
+        {
+            UsuariosImpl oUsuariosImpl = new UsuariosImpl();
+            return oUsuariosImpl.PersonaUsuarios(idPersona);
+        }
     }
 }

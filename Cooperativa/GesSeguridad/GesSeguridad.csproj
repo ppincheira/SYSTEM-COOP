@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FormsAuxiliares">
-      <HintPath>..\..\..\..\..\Documents\GitHub\Cooperativa\Cooperativa\Referencias\FormsAuxiliares.dll</HintPath>
+      <HintPath>..\Referencias\FormsAuxiliares.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,6 +70,10 @@
     <ProjectReference Include="..\Controles\Controles.csproj">
       <Project>{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}</Project>
       <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{30b38eed-bf12-4118-8492-53051e87d716}</Project>
+      <Name>Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\service\Service.csproj">
       <Project>{86fb2f28-828e-4d75-8656-fe5f83fa1d11}</Project>

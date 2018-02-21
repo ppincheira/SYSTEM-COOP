@@ -15,6 +15,8 @@ namespace Implement
         private OracleCommand cmd;
         private DataSet ds;
         private int response;
+        private string sql;
+
         public int UsuariosAdd(Usuarios oUsuarios)
         {
             try
@@ -24,24 +26,29 @@ namespace Implement
                 cn.Open();
 
                 ds = new DataSet();
-                cmd = new OracleCommand("insert into Usuarios(USR_NUMERO, " +
-                                                             "PRS_NUMERO, " +
-                                                             "USR_NOMBRE, " +
-                                                             "USR_BLOQUEADO, " +
-                                                             "USR_CLAVE, " +
-                                                             "USR_FECHA_ALTA,  " +
-                                                             "USR_FECHA_BAJA,  " +
-                                                             "USR_PERFIL " +
-                                                             "EST_CODIGO )" +
-                                                    "values(pkg_secuencias.fnc_prox_secuencia('USR_NUMERO'), '"
-                                                               + oUsuarios.PrsNumero + "', '"
-                                                               + oUsuarios.UsrNombre + "', '"
-                                                               + oUsuarios.UsrBloqueado + "', '"
-                                                               + oUsuarios.UsrClave + "', "
-                                                               + "TO_DATE('" + oUsuarios.UsrFechaAlta + "', 'DD/MM/YYYY HH24:MI:SS'), "
-                                                               + "TO_DATE('" + oUsuarios.UsrFechaBaja + "', 'DD/MM/YYYY HH24:MI:SS'), '"
-                                                               + oUsuarios.UsrPerfil + "', '"
-                                                               + oUsuarios.EstCodigo + "')", cn);
+                sql =  "insert into Usuarios(USR_NUMERO, " +
+                                            "PRS_NUMERO, " +
+                                            "USR_NOMBRE, " +
+                                            "USR_BLOQUEADO, " +
+                                            "USR_CLAVE, " +
+                                            "USR_FECHA_ALTA,  " +
+                                            "USR_FECHA_BAJA,  " +
+                                            "USR_PERFIL, " +
+                                            "EST_CODIGO )" +
+                                "values(pkg_secuencias.fnc_prox_secuencia('USR_NUMERO'), '"
+                                            + oUsuarios.PrsNumero + "', '"
+                                            + oUsuarios.UsrNombre + "', '"
+                                            + oUsuarios.UsrBloqueado + "', '"
+                                            + oUsuarios.UsrClave + "', "
+                                            + "TO_DATE('" + oUsuarios.UsrFechaAlta + "', 'DD/MM/YYYY HH24:MI:SS'), "
+                                            + "TO_DATE('" + oUsuarios.UsrFechaBaja + "', 'DD/MM/YYYY HH24:MI:SS'), '"
+                                            + oUsuarios.UsrPerfil + "', '"
+                                            + oUsuarios.EstCodigo + "')";
+                Console.WriteLine("sql");
+                Console.WriteLine("sql  " + sql);
+                Console.WriteLine("sql");
+
+                cmd = new OracleCommand(sql, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -61,16 +68,20 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                cmd = new OracleCommand("update Usuarios SET " +
-                                                "PRS_NUMERO='" + oUsuarios.PrsNumero + "'," +
-                                                "USR_NOMRE='" + oUsuarios.UsrNombre + "'," +
-                                                "USR_BLOQUEADO='" + oUsuarios.UsrBloqueado + "'," +
-                                                "USR_CLAVE='" + oUsuarios.UsrClave + "'," +
-                                                "USR_FECHA_ALTA=TO_DATE('" + oUsuarios.UsrFechaAlta + "', 'DD/MM/YYYY HH24:MI:SS'), " +
-                                                "USR_FECHA_BAJA=TO_DATE('" + oUsuarios.UsrFechaBaja + "', 'DD/MM/YYYY HH24:MI:SS'), " +
-                                                "USR_PERFIL='" + oUsuarios.UsrPerfil + "'," +
-                                                "EST_CODIGO='" + oUsuarios.EstCodigo + "' " +
-                                          "WHERE USR_NUMERO='" + oUsuarios.UsrNumero + "' ", cn);
+                sql = "update Usuarios SET " +
+                            "PRS_NUMERO='" + oUsuarios.PrsNumero + "'," +
+                            "USR_NOMBRE='" + oUsuarios.UsrNombre + "'," +
+                            "USR_BLOQUEADO='" + oUsuarios.UsrBloqueado + "'," +
+                            "USR_CLAVE='" + oUsuarios.UsrClave + "'," +
+                            "USR_FECHA_ALTA=TO_DATE('" + oUsuarios.UsrFechaAlta + "', 'DD/MM/YYYY HH24:MI:SS'), " +
+                            "USR_FECHA_BAJA=TO_DATE('" + oUsuarios.UsrFechaBaja + "', 'DD/MM/YYYY HH24:MI:SS'), " +
+                            "USR_PERFIL='" + oUsuarios.UsrPerfil + "'," +
+                            "EST_CODIGO='" + oUsuarios.EstCodigo + "' " +
+                        "WHERE USR_NUMERO='" + oUsuarios.UsrNumero + "' ";
+                cmd = new OracleCommand(sql, cn);
+                Console.WriteLine("sql");
+                Console.WriteLine("sql  " + sql);
+                Console.WriteLine("sql");
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -182,6 +193,37 @@ namespace Implement
             }
         }
 
+        public Usuarios PersonaUsuarios(string idPersona)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = " select * from Usuarios " +
+                                   " where prs_numero='" + idPersona + "'" +
+                                   " and est_codigo = 'H' ";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                dt = ds.Tables[0];
+                Usuarios NewEnt = new Usuarios();
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow dr = dt.Rows[0];
+                    NewEnt = CargarUsuarios(dr);
+                }
+                return NewEnt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public List<Usuarios> UsuariosGetAll()
         {
             List<Usuarios> lstUsuarios = new List<Usuarios>();
@@ -227,12 +269,15 @@ namespace Implement
                 oObjeto.UsrNombre = dr["USR_NOMBRE"].ToString();
                 oObjeto.UsrBloqueado = dr["USR_BLOQUEADO"].ToString();
                 oObjeto.UsrClave = dr["USR_CLAVE"].ToString();
+
+                Console.WriteLine("dR USR_FECHA_BAJA.ToString()  -" + dr["USR_FECHA_BAJA"].ToString()+"-");
+
                 if (dr["USR_FECHA_ALTA"].ToString() != "")
                     oObjeto.UsrFechaAlta = DateTime.Parse(dr["USR_FECHA_ALTA"].ToString());
                 if (dr["USR_FECHA_BAJA"].ToString() != "")
                     oObjeto.UsrFechaBaja = DateTime.Parse(dr["USR_FECHA_BAJA"].ToString());
-                oObjeto.UsrBloqueado = dr["USR_PERFIL"].ToString();
-                oObjeto.UsrBloqueado = dr["EST_CODIGO"].ToString();
+                oObjeto.UsrPerfil = dr["USR_PERFIL"].ToString();
+                oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
 
                 return oObjeto;
             }
