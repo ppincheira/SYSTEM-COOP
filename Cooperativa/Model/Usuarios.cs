@@ -24,8 +24,8 @@ namespace Model
         public virtual string UsrNombre { get; set; }
         public virtual string UsrBloqueado { get; set; }
         public virtual string UsrClave { get; set; }
-        public virtual DateTime UsrFechaAlta { get; set; }
-        public virtual DateTime UsrFechaBaja { get; set; }
+        public virtual DateTime? UsrFechaAlta { get; set; }
+        public virtual DateTime? UsrFechaBaja { get; set; }
         public virtual string UsrPerfil { get; set; }
         public virtual string EstCodigo { get; set; }
         /*        public virtual IList<Empresa> Empresas { get; set; }

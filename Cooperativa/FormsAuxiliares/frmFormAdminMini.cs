@@ -482,7 +482,7 @@ namespace FormsAuxiliares
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "USUS":
-                    frmUsuariosCrud ofrmUsu = new frmUsuariosCrud(0, "I");
+                    frmUsuariosCrud ofrmUsu = new frmUsuariosCrud(0, "I", 0);
                     if (ofrmUsu.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
@@ -533,7 +533,7 @@ namespace FormsAuxiliares
                     break;
                 case "USUS":
                     int idUsus = Convert.ToInt32(row.Cells[0].Value);
-                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsus, "V");
+                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsus, "V", 0);
                     if (oFrmUsuCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
@@ -584,7 +584,7 @@ namespace FormsAuxiliares
                     break;
                 case "USUS":
                     int idUsu = Convert.ToInt32(row.Cells[0].Value);
-                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "B");
+                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "B", 0);
                     _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
             }
@@ -665,7 +665,7 @@ namespace FormsAuxiliares
                     break;
                 case "USUS":
                     int idUsu = Convert.ToInt32(row.Cells[0].Value);
-                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "E");
+                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "E", 0);
                     if (oFrmUsuCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;

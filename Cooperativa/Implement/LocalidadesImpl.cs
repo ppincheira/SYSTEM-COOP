@@ -164,7 +164,8 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 string sqlSelect = "SELECT LOC_NUMERO, LOC_DESCRIPCION, PRV_CODIGO, TLO_CODIGO  FROM LOCALIDADES" +
-                    " WHERE  PRV_CODIGO='"+Codigo+"'";
+                    " WHERE  PRV_CODIGO='"+Codigo+"'" +
+                    " ORDER BY LOC_DESCRIPCION ";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();

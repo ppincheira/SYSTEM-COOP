@@ -709,6 +709,7 @@
             this.cmbZona.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbZona.Size = new System.Drawing.Size(221, 21);
             this.cmbZona.TabIndex = 36;
+            this.cmbZona.Leave += new System.EventHandler(this.cmbZona_Leave);
             // 
             // lblTipoMedidor
             // 

@@ -8,7 +8,7 @@ namespace Business
     public class PersonasBus
     {
 
-        public int PersonasAdd(Personas oPersonas)
+        public long PersonasAdd(Personas oPersonas)
         {
             PersonasImpl oPersonasImpl = new PersonasImpl();
             return oPersonasImpl.PersonasAdd(oPersonas);
