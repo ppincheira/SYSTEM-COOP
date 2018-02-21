@@ -42,6 +42,11 @@ namespace FormsAuxiliares
             get { return this.dgBusqueda; }
             set { this.dgBusqueda = value; }
         }
+        public grdGrillaAdmin grillaFiltro
+        {
+            get { return this.dgBusqueda; }
+            set { this.dgBusqueda = value; }
+        }
         public DateTime fechaDesde
         {
             get { return this.dtpFechaDesde.Value; }
@@ -53,6 +58,16 @@ namespace FormsAuxiliares
             set { this.dtpFechaHasta.Value = value; }
         }
         public cmbLista comboBuscar
+        {
+            get { return this.cmbBuscar; }
+            set { this.cmbBuscar = value; }
+        }
+        public cmbLista comboBuscarA
+        {
+            get { return this.cmbBuscar; }
+            set { this.cmbBuscar = value; }
+        }
+        public cmbLista comboOpcionesA
         {
             get { return this.cmbBuscar; }
             set { this.cmbBuscar = value; }
@@ -77,6 +92,37 @@ namespace FormsAuxiliares
         {
             get { return _strRdoCodigo; }
             set { _strRdoCodigo = value; }
+        }
+
+        public string striValor1
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
+        }
+        public string striValor2
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
+        }
+        public string striValor3
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
+        }
+        public string striValor4
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
+        }
+        public string striValor5
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
+        }
+        public string striValor6
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
         }
 
 
@@ -109,14 +155,12 @@ namespace FormsAuxiliares
         {
             try
             {
-
                 _oFormAdmin.Inicializar(_oAdmin);
                 _oUtil = new Utility();
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                 //_oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
                 //if (this.dgBusqueda.RowCount > 0)
                 //    dgBusqueda.CurrentCell = dgBusqueda.Rows[0].Cells[1];
-
                 switch (_oAdmin.TabCodigo)
                 {
                     case "SCAT":

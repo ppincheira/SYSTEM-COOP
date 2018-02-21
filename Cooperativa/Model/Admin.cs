@@ -19,7 +19,7 @@ namespace Model
         /// </summary>
         public virtual string CodigoRegistro { get; set; }
         /// <summary>
-        /// Campo para aociar Clase origen Ejmplo Clientes
+        /// Campo para asociar Clase origen Ejmplo Clientes
         /// </summary>
         public virtual string TabCodigoRegistro { get; set; }
         /// <summary>
@@ -43,6 +43,22 @@ namespace Model
         /// Filtros de Campos
         /// </summary>
         public virtual string FiltroCampos { get; set; }
+        /// <summary>
+        /// El Operador de la consulta
+        /// ("1", "IGUAL");
+        /// ("2", "DISTINTO");
+        /// ("3", "MENOR");
+        /// ("4", "MENOR O IGUAL ");
+        /// ("5", "MAYOR");
+        /// ("6", "MAYOR O IGUAL ");
+        /// ("7", "CONTENIDO");
+        /// ("8", "EMPIEZA CON");
+        /// ("9", "TERMINA CON");
+        /// ("10", "ENTRE DOS VALORES");
+        /// ("11", "EN LISTA");
+        /// ("12", "NO EN LISTA");
+        /// </summary>
+        public virtual string FiltroOperador { get; set; }
         /// <summary>
         /// Valos del Filtro Anterior
         /// </summary>
