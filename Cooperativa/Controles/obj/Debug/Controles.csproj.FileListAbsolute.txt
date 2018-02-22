@@ -1,0 +1,14 @@
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Controles.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Controles.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Model.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Model.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.datos.gesComboBox.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.datos.gesGrid.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.form.gesForm.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.Resources.Iconos.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.pdb

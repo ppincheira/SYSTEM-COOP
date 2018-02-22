@@ -231,7 +231,7 @@ namespace FormsAuxiliares
             // 
             this.gpbGrupo4.Controls.Add(this.lblCantidad);
             this.gpbGrupo4.Controls.Add(this.dgBusqueda);
-            this.gpbGrupo4.Location = new System.Drawing.Point(5, 141);
+            this.gpbGrupo4.Location = new System.Drawing.Point(5, 144);
             this.gpbGrupo4.Name = "gpbGrupo4";
             this.gpbGrupo4.Size = new System.Drawing.Size(932, 351);
             this.gpbGrupo4.TabIndex = 1;
@@ -243,13 +243,14 @@ namespace FormsAuxiliares
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Location = new System.Drawing.Point(7, 333);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(64, 17);
+            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
             this.lblCantidad.TabIndex = 2;
             this.lblCantidad.Text = "Cantidad";
             // 
             // dgBusqueda
             // 
             this.dgBusqueda.AllowUserToAddRows = false;
+            this.dgBusqueda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgBusqueda.Location = new System.Drawing.Point(6, 19);
             this.dgBusqueda.Name = "dgBusqueda";
             this.dgBusqueda.ReadOnly = true;
@@ -278,10 +279,10 @@ namespace FormsAuxiliares
             this.tabPageBuscador.Controls.Add(this.gpbGrupo3);
             this.tabPageBuscador.Controls.Add(this.gpbFecha);
             this.tabPageBuscador.Controls.Add(this.gpbFiltro);
-            this.tabPageBuscador.Location = new System.Drawing.Point(4, 25);
+            this.tabPageBuscador.Location = new System.Drawing.Point(4, 22);
             this.tabPageBuscador.Name = "tabPageBuscador";
             this.tabPageBuscador.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBuscador.Size = new System.Drawing.Size(931, 116);
+            this.tabPageBuscador.Size = new System.Drawing.Size(931, 119);
             this.tabPageBuscador.TabIndex = 0;
             this.tabPageBuscador.UseVisualStyleBackColor = true;
             // 
@@ -302,7 +303,7 @@ namespace FormsAuxiliares
             this.cmbEstado.Location = new System.Drawing.Point(55, 13);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.cmbEstado.Size = new System.Drawing.Size(188, 24);
+            this.cmbEstado.Size = new System.Drawing.Size(188, 21);
             this.cmbEstado.TabIndex = 8;
             // 
             // lblEEstado
@@ -310,7 +311,7 @@ namespace FormsAuxiliares
             this.lblEEstado.AutoSize = true;
             this.lblEEstado.Location = new System.Drawing.Point(6, 16);
             this.lblEEstado.Name = "lblEEstado";
-            this.lblEEstado.Size = new System.Drawing.Size(52, 17);
+            this.lblEEstado.Size = new System.Drawing.Size(40, 13);
             this.lblEEstado.TabIndex = 8;
             this.lblEEstado.Text = "Estado";
             // 
@@ -393,6 +394,7 @@ namespace FormsAuxiliares
             this.btnEditar.Size = new System.Drawing.Size(40, 40);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -424,7 +426,7 @@ namespace FormsAuxiliares
             this.lblEFechaHasta.AutoSize = true;
             this.lblEFechaHasta.Location = new System.Drawing.Point(8, 61);
             this.lblEFechaHasta.Name = "lblEFechaHasta";
-            this.lblEFechaHasta.Size = new System.Drawing.Size(88, 17);
+            this.lblEFechaHasta.Size = new System.Drawing.Size(68, 13);
             this.lblEFechaHasta.TabIndex = 11;
             this.lblEFechaHasta.Text = "Fecha Hasta";
             // 
@@ -433,7 +435,7 @@ namespace FormsAuxiliares
             this.lblEFechaDesde.AutoSize = true;
             this.lblEFechaDesde.Location = new System.Drawing.Point(5, 23);
             this.lblEFechaDesde.Name = "lblEFechaDesde";
-            this.lblEFechaDesde.Size = new System.Drawing.Size(92, 17);
+            this.lblEFechaDesde.Size = new System.Drawing.Size(71, 13);
             this.lblEFechaDesde.TabIndex = 10;
             this.lblEFechaDesde.Text = "Fecha Desde";
             // 
@@ -443,7 +445,7 @@ namespace FormsAuxiliares
             this.dtpFechaHasta.Location = new System.Drawing.Point(97, 58);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.dtpFechaHasta.Size = new System.Drawing.Size(94, 22);
+            this.dtpFechaHasta.Size = new System.Drawing.Size(94, 20);
             this.dtpFechaHasta.TabIndex = 9;
             // 
             // dtpFechaDesde
@@ -452,7 +454,7 @@ namespace FormsAuxiliares
             this.dtpFechaDesde.Location = new System.Drawing.Point(97, 21);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.dtpFechaDesde.Size = new System.Drawing.Size(95, 22);
+            this.dtpFechaDesde.Size = new System.Drawing.Size(95, 20);
             this.dtpFechaDesde.TabIndex = 8;
             // 
             // gpbFiltro
@@ -475,7 +477,7 @@ namespace FormsAuxiliares
             this.txtFiltro.Location = new System.Drawing.Point(105, 58);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtFiltro.Size = new System.Drawing.Size(256, 22);
+            this.txtFiltro.Size = new System.Drawing.Size(256, 20);
             this.txtFiltro.TabIndex = 3;
             this.txtFiltro.TextoVacio = "<Descripcion>";
             this.txtFiltro.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -488,7 +490,7 @@ namespace FormsAuxiliares
             this.cmbBuscar.Location = new System.Drawing.Point(105, 16);
             this.cmbBuscar.Name = "cmbBuscar";
             this.cmbBuscar.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.cmbBuscar.Size = new System.Drawing.Size(256, 24);
+            this.cmbBuscar.Size = new System.Drawing.Size(256, 21);
             this.cmbBuscar.TabIndex = 2;
             // 
             // lblEtiqueta2
@@ -496,7 +498,7 @@ namespace FormsAuxiliares
             this.lblEtiqueta2.AutoSize = true;
             this.lblEtiqueta2.Location = new System.Drawing.Point(42, 61);
             this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(57, 17);
+            this.lblEtiqueta2.Size = new System.Drawing.Size(45, 13);
             this.lblEtiqueta2.TabIndex = 1;
             this.lblEtiqueta2.Text = "FILTRO";
             // 
@@ -505,7 +507,7 @@ namespace FormsAuxiliares
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Location = new System.Drawing.Point(3, 19);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(99, 17);
+            this.lblFiltro.Size = new System.Drawing.Size(78, 13);
             this.lblFiltro.TabIndex = 0;
             this.lblFiltro.Text = "FILTRAR POR";
             // 
@@ -521,10 +523,10 @@ namespace FormsAuxiliares
             this.tabPageAvanzada.Controls.Add(this.grdGrillaFiltro);
             this.tabPageAvanzada.Controls.Add(this.cmbOpcionesA);
             this.tabPageAvanzada.Controls.Add(this.cmbBuscarA);
-            this.tabPageAvanzada.Location = new System.Drawing.Point(4, 25);
+            this.tabPageAvanzada.Location = new System.Drawing.Point(4, 22);
             this.tabPageAvanzada.Name = "tabPageAvanzada";
             this.tabPageAvanzada.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAvanzada.Size = new System.Drawing.Size(931, 116);
+            this.tabPageAvanzada.Size = new System.Drawing.Size(931, 119);
             this.tabPageAvanzada.TabIndex = 1;
             this.tabPageAvanzada.Text = "Avanzada";
             this.tabPageAvanzada.UseVisualStyleBackColor = true;
@@ -537,7 +539,7 @@ namespace FormsAuxiliares
             this.txtValor1.MaxLength = 20;
             this.txtValor1.Name = "txtValor1";
             this.txtValor1.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtValor1.Size = new System.Drawing.Size(204, 22);
+            this.txtValor1.Size = new System.Drawing.Size(204, 20);
             this.txtValor1.TabIndex = 14;
             this.txtValor1.TextoVacio = "<Descripcion>";
             this.txtValor1.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -550,7 +552,7 @@ namespace FormsAuxiliares
             this.txtValor6.MaxLength = 20;
             this.txtValor6.Name = "txtValor6";
             this.txtValor6.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtValor6.Size = new System.Drawing.Size(65, 22);
+            this.txtValor6.Size = new System.Drawing.Size(65, 20);
             this.txtValor6.TabIndex = 13;
             this.txtValor6.TextoVacio = "<Descripcion>";
             this.txtValor6.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -563,7 +565,7 @@ namespace FormsAuxiliares
             this.txtValor5.MaxLength = 20;
             this.txtValor5.Name = "txtValor5";
             this.txtValor5.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtValor5.Size = new System.Drawing.Size(65, 22);
+            this.txtValor5.Size = new System.Drawing.Size(65, 20);
             this.txtValor5.TabIndex = 12;
             this.txtValor5.TextoVacio = "<Descripcion>";
             this.txtValor5.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -576,7 +578,7 @@ namespace FormsAuxiliares
             this.txtValor4.MaxLength = 20;
             this.txtValor4.Name = "txtValor4";
             this.txtValor4.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtValor4.Size = new System.Drawing.Size(65, 22);
+            this.txtValor4.Size = new System.Drawing.Size(65, 20);
             this.txtValor4.TabIndex = 11;
             this.txtValor4.TextoVacio = "<Descripcion>";
             this.txtValor4.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -589,7 +591,7 @@ namespace FormsAuxiliares
             this.txtValor3.MaxLength = 20;
             this.txtValor3.Name = "txtValor3";
             this.txtValor3.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtValor3.Size = new System.Drawing.Size(65, 22);
+            this.txtValor3.Size = new System.Drawing.Size(65, 20);
             this.txtValor3.TabIndex = 10;
             this.txtValor3.TextoVacio = "<Descripcion>";
             this.txtValor3.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -602,7 +604,7 @@ namespace FormsAuxiliares
             this.txtValor2.MaxLength = 20;
             this.txtValor2.Name = "txtValor2";
             this.txtValor2.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtValor2.Size = new System.Drawing.Size(65, 22);
+            this.txtValor2.Size = new System.Drawing.Size(65, 20);
             this.txtValor2.TabIndex = 9;
             this.txtValor2.TextoVacio = "<Descripcion>";
             this.txtValor2.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -636,7 +638,7 @@ namespace FormsAuxiliares
             this.cmbOpcionesA.Location = new System.Drawing.Point(6, 37);
             this.cmbOpcionesA.Name = "cmbOpcionesA";
             this.cmbOpcionesA.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.cmbOpcionesA.Size = new System.Drawing.Size(204, 24);
+            this.cmbOpcionesA.Size = new System.Drawing.Size(204, 21);
             this.cmbOpcionesA.TabIndex = 3;
             this.cmbOpcionesA.SelectedIndexChanged += new System.EventHandler(this.cmbOpcionesA_SelectedIndexChanged);
             // 
@@ -647,12 +649,12 @@ namespace FormsAuxiliares
             this.cmbBuscarA.Location = new System.Drawing.Point(6, 9);
             this.cmbBuscarA.Name = "cmbBuscarA";
             this.cmbBuscarA.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.cmbBuscarA.Size = new System.Drawing.Size(204, 24);
+            this.cmbBuscarA.Size = new System.Drawing.Size(204, 21);
             this.cmbBuscarA.TabIndex = 2;
             // 
             // frmFormAdmin
             // 
-            this.ClientSize = new System.Drawing.Size(946, 499);
+            this.ClientSize = new System.Drawing.Size(946, 513);
             this.Controls.Add(this.tabAdmin);
             this.Controls.Add(this.gpbGrupo4);
             this.Name = "frmFormAdmin";
@@ -1200,6 +1202,6 @@ namespace FormsAuxiliares
             CargarOpciones(this.cmbOpcionesA.SelectedValue.ToString());
         }
 
-   
+
     }
 }
