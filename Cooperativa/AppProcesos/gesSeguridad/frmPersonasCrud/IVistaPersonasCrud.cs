@@ -12,13 +12,14 @@ namespace AppProcesos.gesSeguridad.frmPersonasCrud
         cmbLista cmbPrsSexo { get; set; }
         cmbLista cmbPrsTpoDni { get; set; }
         string strPrsNroDocumento { get; set; }
-        DateTime datPrsNacimiento { get; set; }
-        string strPrsLocalidad { get; set; }
-        DateTime datPrsIngreso { get; set; }
+        DateTime datPrsNacimiento { get; set; }    
+        DateTime? datPrsIngreso { get; set; }
         string strPrsCuil { get; set; }
         string strPrsLegajo { get; set; }
         cmbLista cmbPrsCargo { get; set; }
-        DateTime datPrsBaja { get; set; }
+        cmbLista cmbPrsLocalidad { get; set; }
+        cmbLista cmbPrsProvincia { get; set; }
+        DateTime? datPrsBaja { get; set; }
         cmbLista cmbPrsBaja { get; set; }          
         Boolean booPrsEstado { get; set; }
     }

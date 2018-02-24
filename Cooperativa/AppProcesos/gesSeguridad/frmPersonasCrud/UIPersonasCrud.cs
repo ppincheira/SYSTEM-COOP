@@ -2,6 +2,7 @@
 using Model;
 using Service;
 using System.Windows.Forms;
+using System;
 
 namespace AppProcesos.gesSeguridad.frmPersonasCrud
 {
@@ -17,6 +18,12 @@ namespace AppProcesos.gesSeguridad.frmPersonasCrud
         }
         public void Inicializar()
         {
+            ProvinciasBus oProvinciasBus = new ProvinciasBus();
+            oUtil.CargarCombo(_vista.cmbPrsProvincia, oProvinciasBus.ProvinciasGetByFilter("ARG"), "PRV_CODIGO", "PRV_DESCRIPCION", "Seleccione Provincia");
+            _vista.cmbPrsProvincia.SelectedValue = "NQ";
+            LocalidadesBus oLocalidadesBus = new LocalidadesBus();          
+            oUtil.CargarCombo(_vista.cmbPrsLocalidad, oLocalidadesBus.LocalidadesGetByProvincia(_vista.cmbPrsLocalidad.SelectedValue.ToString()), "LOC_NUMERO", "LOC_DESCRIPCION", "Seleccione Localidad");
+
             DominiosBus oDonBus = new DominiosBus();
             oUtil.CargarCombo(_vista.cmbPrsCivil, oDonBus.DominiosGetByFilter("ESTADO_CIVIL_PER"), "dmn_valor", "dmn_descripcion", "Seleccione Estado");
             oUtil.CargarCombo(_vista.cmbPrsSexo, oDonBus.DominiosGetByFilter("SEXO_PER"), "dmn_valor", "dmn_descripcion", "Seleccione Sexo");                        
@@ -33,12 +40,22 @@ namespace AppProcesos.gesSeguridad.frmPersonasCrud
                 oPersonas = oPersonasBus.PersonasGetById(_vista.logPrsNumero);
                 _vista.cmbPrsCivil.SelectedValue = oPersonas.PrsEstadoCivil;
                 _vista.cmbPrsSexo.SelectedValue = oPersonas.PrsSexo;
-                _vista.cmbPrsCargo.SelectedValue = oPersonas.PrsCargo;
-                _vista.cmbPrsBaja.SelectedValue = oPersonas.PrsMotivoBaja;
-                _vista.cmbPrsTpoDni.SelectedValue = oPersonas.TidCodigo;
+                if (!string.IsNullOrEmpty(oPersonas.PrsCargo))
+                    _vista.cmbPrsCargo.SelectedValue = oPersonas.PrsCargo;                
+                if (!string.IsNullOrEmpty(oPersonas.PrsMotivoBaja))
+                    _vista.cmbPrsBaja.SelectedValue = oPersonas.PrsMotivoBaja;
+                if (!string.IsNullOrEmpty(oPersonas.LocNumeroNacimiento.ToString()))
+                {                                      
+                    Localidades oLocalidades = new Localidades();                 
+                    oLocalidades = oLocalidadesBus.LocalidadesGetById(int.Parse(oPersonas.LocNumeroNacimiento.ToString()));
+                    _vista.cmbPrsProvincia.SelectedValue = oLocalidades.PrvCodigo;
+                    oUtil.CargarCombo(_vista.cmbPrsLocalidad, oLocalidadesBus.LocalidadesGetByProvincia(oLocalidades.PrvCodigo), "LOC_NUMERO", "LOC_DESCRIPCION", "Seleccione Localidad");                    
+                    _vista.cmbPrsLocalidad.SelectedValue = oPersonas.LocNumeroNacimiento;                    
+                }                    
+                _vista.cmbPrsTpoDni.SelectedValue = oPersonas.PrsTipoDoc;
                 _vista.strPrsApellido = oPersonas.PrsApellido;
                 _vista.strPrsNombre = oPersonas.PrsNombre;
-                _vista.strPrsNroDocumento = oPersonas.PrsDocumentoNumero;
+                _vista.strPrsNroDocumento = oPersonas.PrsNumeroDoc;
                 _vista.datPrsNacimiento = oPersonas.PrsFechaNacimiento;
                 _vista.datPrsIngreso = oPersonas.PrsFechaIngreso;
                 _vista.datPrsBaja = oPersonas.PrsFechaBaja;
@@ -53,26 +70,40 @@ namespace AppProcesos.gesSeguridad.frmPersonasCrud
                 _vista.booPrsEstado = true; ;
         }
 
-        public void Guardar()
+        public void CambioProvincia()
+        {            
+            LocalidadesBus oLocalidadesBus = new LocalidadesBus();
+            oUtil.CargarCombo(_vista.cmbPrsLocalidad, oLocalidadesBus.LocalidadesGetByProvincia(_vista.cmbPrsProvincia.SelectedValue.ToString()), "LOC_NUMERO", "LOC_DESCRIPCION", "Seleccione Localidad");
+        }
+
+        public long Guardar()
         {
-            long rtdo;
+            long logResultado;
             Personas oPersonas = new Personas();
             PersonasBus oPersonasBus = new PersonasBus();
 
             oPersonas.PrsEstadoCivil = _vista.cmbPrsCivil.SelectedValue.ToString();
             oPersonas.PrsSexo =_vista.cmbPrsSexo.SelectedValue.ToString();
-            oPersonas.PrsCargo = _vista.cmbPrsCargo.SelectedValue.ToString();
-            oPersonas.PrsMotivoBaja = _vista.cmbPrsBaja.SelectedValue.ToString();
-            oPersonas.TidCodigo =_vista.cmbPrsTpoDni.SelectedValue.ToString();            
+
+            if (_vista.cmbPrsCargo.SelectedValue.ToString() != "0")
+                oPersonas.PrsCargo = _vista.cmbPrsCargo.SelectedValue.ToString();
+
+            if (_vista.cmbPrsBaja.SelectedValue.ToString() != "0")
+                oPersonas.PrsMotivoBaja = _vista.cmbPrsBaja.SelectedValue.ToString();
+
+            oPersonas.PrsTipoDoc =_vista.cmbPrsTpoDni.SelectedValue.ToString();            
             oPersonas.PrsNumero = _vista.logPrsNumero;
             oPersonas.PrsApellido = _vista.strPrsApellido;
             oPersonas.PrsNombre = _vista.strPrsNombre;
-            oPersonas.PrsDocumentoNumero = _vista.strPrsNroDocumento;
+            oPersonas.PrsNumeroDoc = _vista.strPrsNroDocumento;
             oPersonas.PrsFechaNacimiento = _vista.datPrsNacimiento;
             oPersonas.PrsFechaIngreso = _vista.datPrsIngreso;
             oPersonas.PrsFechaBaja = _vista.datPrsBaja;
             oPersonas.PrsLegajo = _vista.strPrsLegajo;
             oPersonas.PrsCuil = _vista.strPrsCuil;
+            if (int.Parse(_vista.cmbPrsLocalidad.SelectedValue.ToString()) > 0)
+                oPersonas.LocNumeroNacimiento = int.Parse(_vista.cmbPrsLocalidad.SelectedValue.ToString());
+
             if (_vista.booPrsEstado)
                 oPersonas.EstCodigo = "H";
             else
@@ -80,11 +111,14 @@ namespace AppProcesos.gesSeguridad.frmPersonasCrud
 
             if (_vista.logPrsNumero == 0)
             {
-                rtdo = oPersonasBus.PersonasAdd(oPersonas);                
+                logResultado = oPersonasBus.PersonasAdd(oPersonas);
+                Console.WriteLine("El numero de persona creado " + logResultado);
+                return logResultado;               
             }
             else
             {
-                rtdo = (oPersonasBus.PersonasUpdate(oPersonas)) ? oPersonas.PrsNumero : 0;               
+                logResultado = (oPersonasBus.PersonasUpdate(oPersonas)) ? oPersonas.PrsNumero : 0;
+                return logResultado;
             }
         }
 
@@ -96,6 +130,12 @@ namespace AppProcesos.gesSeguridad.frmPersonasCrud
             oPersonas.EstCodigo = "B";
             return oPersonasBus.PersonasUpdate(oPersonas);
         }
+        public int ConsultarUsuario(long idPersona)
+        {
 
+            UsuariosBus oUsuariosBus = new UsuariosBus();
+            Usuarios oUsuarios = oUsuariosBus.PersonaUsuarios(idPersona.ToString());          
+            return oUsuarios.UsrNumero;
+        }
     }
 }

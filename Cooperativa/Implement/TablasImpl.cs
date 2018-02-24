@@ -197,9 +197,136 @@ namespace Implement
 			}
 		}
 
+        public DataTable TablasBusquedaGetAllFilter(string Tabla, string Campos, string filterTabla, Admin oAdmin)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                //CAMPOS DE LA TABLA DE LA BASE DE DATOS
+                string[] filterCamp=null;
+                if (oAdmin.FiltroCampos!=null)
+                    filterCamp = System.Text.RegularExpressions.Regex.Split(oAdmin.FiltroCampos, "&");
+                //EL OPERADOR SELECCIONADO
+                string[] filterOp=null;
+                if (oAdmin.FiltroOperador != null)
+                   filterOp = System.Text.RegularExpressions.Regex.Split(oAdmin.FiltroOperador, "&");
+                //VALORES CARGADOS EN EL FORMULARIO
+                string[] filterV=null;
+                if (oAdmin.FiltroValores != null)
+                    filterV = System.Text.RegularExpressions.Regex.Split(oAdmin.FiltroValores, "&");
 
-        public DataTable TablasBusquedaGetAllFilter(string Tabla, string Campos, string filterCampos, string filterValores, string filterTabla )
-         {
+                cn.Open();
+                string sqlSelect = "SELECT  " + Campos + " FROM " + Tabla;
+
+                sqlSelect = sqlSelect + " where  1=1";
+                for (int i = 0; i < filterCamp.Length; i++)
+                {
+
+                    if (filterV[i].Contains("%") && filterV[i] != "")
+                    {
+                        string[] filterFecha = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
+
+                        sqlSelect += " AND (" + filterCamp[i] + " >=to_date('" + filterFecha[0] + "','dd/mm/yyyy')";
+                        sqlSelect += " AND ";
+                        sqlSelect += filterCamp[i] + " <=to_date('" + filterFecha[1] + "','dd/mm/yyyy'))";
+                    }
+                    else
+                    {
+
+
+                        if (filterCamp[i] != "")
+
+                            switch (filterOp[i])
+                            {
+                                case "1":
+                                    sqlSelect += " AND " + filterCamp[i] + "=" + "'" + filterV[i] + "'";
+                                    break;
+                                case "2":
+                                    sqlSelect += " AND " + filterCamp[i] + "<>" + "" + filterV[i] + "";
+                                    break;
+                                case "3":
+                                    sqlSelect += " AND " + filterCamp[i] + "<" + "" + filterV[i] + "";
+                                    break;
+                                case "4":
+                                    sqlSelect += " AND " + filterCamp[i] + "<=" + "" + filterV[i] + "";
+                                    break;
+                                case "5":
+                                    sqlSelect += " AND " + filterCamp[i] + ">" + "" + filterV[i] + "";
+                                    break;
+                                case "6":
+                                    sqlSelect += " AND " + filterCamp[i] + ">=" + "" + filterV[i] + "";
+                                    break;
+                                case "7":
+                                    sqlSelect += " AND " + filterCamp[i] + " like " + "'%" + filterV[i] + "%'";
+                                    break;
+                                case "8":
+                                    sqlSelect += " AND " + filterCamp[i] + " like " + "'" + filterV[i] + "%'";
+                                    break;
+                                case "9":
+                                    sqlSelect += " AND " + filterCamp[i] + " like " + "'%" + filterV[i] + "'";
+                                    break;
+                                case "10":
+                                    string[] filterOp2 = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
+                                    sqlSelect += " AND " + filterCamp[i] + " in " + "(";
+                                    for (int j = 0; j < filterOp2.Length; j++)
+                                    {
+                                        sqlSelect += "'" + filterOp2[j] + "',";
+                                    }
+                                    sqlSelect = sqlSelect.Remove(sqlSelect.Length, 1);
+                                    sqlSelect += ")";
+                                    break;
+
+                                case "11":
+                                    string[] filterOp3 = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
+                                    sqlSelect += " AND " + filterCamp[i] + " in " + "(";
+                                    for (int j = 0; j < filterOp3.Length; j++)
+                                    {
+                                        sqlSelect += "'" + filterOp3[j] + "',";
+                                    }
+                                    sqlSelect = sqlSelect.Remove(sqlSelect.Length, 1);
+                                    sqlSelect += ")";
+                                    break;
+                                case "12":
+
+                                    string[] filterOp4 = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
+                                    sqlSelect += " AND " + filterCamp[i] + " not in " + "(";
+                                    for (int j = 0; j < filterOp4.Length; j++)
+                                    {
+                                        sqlSelect += "'" + filterOp4[j] + "',";
+                                    }
+                                    sqlSelect = sqlSelect.Remove(sqlSelect.Length, 1);
+                                    sqlSelect += ")";
+                                    break;
+                            }
+                        
+                    }
+                }
+
+
+                if ((filterTabla != null) && (filterTabla != ""))
+                    sqlSelect = sqlSelect + " AND " + filterTabla;
+
+
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt = new DataTable();
+                return dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
+
+        public DataTable TablasBusquedaGetAllFilter(string Tabla, string Campos, string filterCampos, string filterValores, string filterTabla)
+        {
             try
             {
                 DataSet ds = new DataSet();
@@ -209,27 +336,28 @@ namespace Implement
                 string[] filterCamp = System.Text.RegularExpressions.Regex.Split(filterCampos, "&");
                 //VALORES CARGADOS EN EL FORMULARIO
                 string[] filterV = System.Text.RegularExpressions.Regex.Split(filterValores, "&");
-                
+
                 cn.Open();
-                string sqlSelect = "SELECT  "+Campos+" FROM " + Tabla;
-                 
-                    sqlSelect=sqlSelect+" where  1=1";
-                    for (int i = 0; i < filterCamp.Length; i++)
+                string sqlSelect = "SELECT  " + Campos + " FROM " + Tabla;
+
+                sqlSelect = sqlSelect + " where  1=1";
+                for (int i = 0; i < filterCamp.Length; i++)
+                {
+
+                    if (filterV[i].Contains("%") && filterV[i] != "")
                     {
+                        string[] filterFecha = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
 
-                        if  (filterV[i].Contains("%") && filterV[i] != "")
-                        {
-                            string[] filterFecha = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
-
-                            sqlSelect += " AND ("+filterCamp[i] + " >=to_date('" + filterFecha[0] + "','dd/mm/yyyy')";
-                            sqlSelect += " AND ";
-                            sqlSelect += filterCamp[i] + " <=to_date('" + filterFecha[1]+ "','dd/mm/yyyy'))";
-                        }
-                        else { 
-                            if  (filterCamp[i]!="")
-                               sqlSelect += " AND "+filterCamp[i] + " like '%" + filterV[i]+"%'";
-                        }
+                        sqlSelect += " AND (" + filterCamp[i] + " >=to_date('" + filterFecha[0] + "','dd/mm/yyyy')";
+                        sqlSelect += " AND ";
+                        sqlSelect += filterCamp[i] + " <=to_date('" + filterFecha[1] + "','dd/mm/yyyy'))";
                     }
+                    else
+                    {
+                        if (filterCamp[i] != "")
+                            sqlSelect += " AND " + filterCamp[i] + " like '%" + filterV[i] + "%'";
+                    }
+                }
 
 
                 if ((filterTabla != null) && (filterTabla != ""))

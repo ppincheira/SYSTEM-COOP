@@ -163,24 +163,49 @@ namespace Implement
                 }
             }
 
+            public DataTable ProvinciasGetByFilter(string Codigo)
+            {
+                try
+                {
 
-            //public DataTable ProvinciasGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
-            //{
-            //    try
-            //    {
-            //        DataTable DTPartes;
-            //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "ProvinciasGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
-            //        DTPartes = DSPartes.Tables[0];
-            //        DSPartes.Tables.RemoveAt(0);
-            //        return DTPartes;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        throw ex;
-            //    }
-            //}
-            #endregion
+                    ds = new DataSet();
+                    Conexion oConexion = new Conexion();
+                    OracleConnection cn = oConexion.getConexion();
+                    cn.Open();
+                    string sqlSelect = " SELECT PRV_CODIGO, PRV_DESCRIPCION  FROM PROVINCIAS " +
+                                       " WHERE  PAI_CODIGO='" + Codigo + "'" +
+                                       " ORDER BY PRV_DESCRIPCION ";
+                    cmd = new OracleCommand(sqlSelect, cn);
+                    adapter = new OracleDataAdapter(cmd);
+                    cmd.ExecuteNonQuery();
+                    adapter.Fill(ds);
+                    DataTable dt = new DataTable();
+                    return dt = ds.Tables[0];
 
-        }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+        //public DataTable ProvinciasGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
+        //{
+        //    try
+        //    {
+        //        DataTable DTPartes;
+        //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "ProvinciasGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
+        //        DTPartes = DSPartes.Tables[0];
+        //        DSPartes.Tables.RemoveAt(0);
+        //        return DTPartes;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+        #endregion
+
+    }
 }
 

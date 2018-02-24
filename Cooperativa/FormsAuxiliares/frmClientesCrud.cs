@@ -436,6 +436,7 @@ namespace FormsAuxiliares
             oAdmin.CodigoRegistro = _EmpNumero.ToString();
             oAdmin.TabCodigoRegistro = "CLIE";
             oAdmin.FiltroCampos = "DE.DEN_CODIGO_REGISTRO&";
+            oAdmin.FiltroOperador = "1&";
             oAdmin.FiltroValores = _EmpNumero.ToString()+"&";
             FormsAuxiliares.frmFormAdmin oFrmAdminMini = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
             if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
@@ -477,6 +478,7 @@ namespace FormsAuxiliares
             oAdmin.CodigoRegistro = _EmpNumero.ToString();
             oAdmin.TabCodigoRegistro = "CLIE";
             oAdmin.FiltroCampos = "TEL_CODIGO_REGISTRO&";
+            oAdmin.FiltroOperador = "1&";
             oAdmin.FiltroValores = _EmpNumero.ToString() + "&";
             FormsAuxiliares.frmFormAdminMini oFrmAdminMini = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
@@ -495,6 +497,7 @@ namespace FormsAuxiliares
             oAdmin.CodigoRegistro = _EmpNumero.ToString();
             oAdmin.TabCodigoRegistro = "CLIE";
             oAdmin.FiltroCampos = "TEL_CODIGO_REGISTRO&";
+            oAdmin.FiltroOperador = "1&";
             oAdmin.FiltroValores = _EmpNumero.ToString() + "&";
             FormsAuxiliares.frmFormAdminMini oFrmAdminMini = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
@@ -514,6 +517,7 @@ namespace FormsAuxiliares
             oAdmin.CodigoRegistro = _EmpNumero.ToString();
             oAdmin.TabCodigoRegistro = "CLIE";
             oAdmin.FiltroCampos = "TEL_CODIGO_REGISTRO&";
+            oAdmin.FiltroOperador = "1&";
             oAdmin.FiltroValores = _EmpNumero.ToString() + "&";
             FormsAuxiliares.frmFormAdminMini oFrmAdminMini = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             if (oFrmAdminMini.ShowDialog() == DialogResult.OK)

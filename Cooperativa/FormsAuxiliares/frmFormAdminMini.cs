@@ -42,6 +42,11 @@ namespace FormsAuxiliares
             get { return this.dgBusqueda; }
             set { this.dgBusqueda = value; }
         }
+        public grdGrillaAdmin grillaFiltro
+        {
+            get { return this.dgBusqueda; }
+            set { this.dgBusqueda = value; }
+        }
         public DateTime fechaDesde
         {
             get { return this.dtpFechaDesde.Value; }
@@ -53,6 +58,16 @@ namespace FormsAuxiliares
             set { this.dtpFechaHasta.Value = value; }
         }
         public cmbLista comboBuscar
+        {
+            get { return this.cmbBuscar; }
+            set { this.cmbBuscar = value; }
+        }
+        public cmbLista comboBuscarA
+        {
+            get { return this.cmbBuscar; }
+            set { this.cmbBuscar = value; }
+        }
+        public cmbLista comboOpcionesA
         {
             get { return this.cmbBuscar; }
             set { this.cmbBuscar = value; }
@@ -77,6 +92,37 @@ namespace FormsAuxiliares
         {
             get { return _strRdoCodigo; }
             set { _strRdoCodigo = value; }
+        }
+
+        public string striValor1
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
+        }
+        public string striValor2
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
+        }
+        public string striValor3
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
+        }
+        public string striValor4
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
+        }
+        public string striValor5
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
+        }
+        public string striValor6
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
         }
 
 
@@ -109,14 +155,12 @@ namespace FormsAuxiliares
         {
             try
             {
-
                 _oFormAdmin.Inicializar(_oAdmin);
                 _oUtil = new Utility();
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                 //_oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
                 //if (this.dgBusqueda.RowCount > 0)
                 //    dgBusqueda.CurrentCell = dgBusqueda.Rows[0].Cells[1];
-
                 switch (_oAdmin.TabCodigo)
                 {
                     case "SCAT":
@@ -438,7 +482,7 @@ namespace FormsAuxiliares
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "USUS":
-                    frmUsuariosCrud ofrmUsu = new frmUsuariosCrud(0, "I");
+                    frmUsuariosCrud ofrmUsu = new frmUsuariosCrud(0, "I", 0);
                     if (ofrmUsu.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
@@ -489,7 +533,7 @@ namespace FormsAuxiliares
                     break;
                 case "USUS":
                     int idUsus = Convert.ToInt32(row.Cells[0].Value);
-                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsus, "V");
+                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsus, "V", 0);
                     if (oFrmUsuCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
@@ -540,7 +584,7 @@ namespace FormsAuxiliares
                     break;
                 case "USUS":
                     int idUsu = Convert.ToInt32(row.Cells[0].Value);
-                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "B");
+                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "B", 0);
                     _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
             }
@@ -621,7 +665,7 @@ namespace FormsAuxiliares
                     break;
                 case "USUS":
                     int idUsu = Convert.ToInt32(row.Cells[0].Value);
-                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "E");
+                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "E", 0);
                     if (oFrmUsuCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
