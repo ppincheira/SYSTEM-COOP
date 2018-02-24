@@ -171,8 +171,17 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
         }
         public void CargarRutas()
         {
-            //ServiciosCategoriasBus oCategoriasBus = new ServiciosCategoriasBus();
-            //oUtil.CargarCombo(_vista.Categoria, oCategoriasBus.ServiciosCategoriasGetbySrv(_vista.Servicio.SelectedValue.ToString()), "SCA_NUMERO", "SCA_DESCRIPCION", "SELECCIONE..");
+            //Rutas pertenecientes a zona seleccionada es el grupo (GRP_CODIGO) cuyo tipo de grupo de zonas (TGR_CODIGO)"2"
+            // Las Rutas estan relacionads con las zonas en Gupos_detalles (GRD_CODIGO_REGISTRO=SRU_NUMERO)
+
+            // Obtengo de grupos_detalles las rutas guardadas en codigo_registro y para cada registro busco la ruta y armo la lista
+            // o sea juntar las rutas de una determinada zona
+            Grupos oZona = new Grupos();
+            GruposBus oZonaBus = new GruposBus();
+            oZona = oZonaBus.GruposGetById(long.Parse(_vista.Zona.SelectedValue.ToString()));
+
+            ServiciosRutasBus oRutasBus = new ServiciosRutasBus();
+            oUtil.CargarCombo(_vista.Ruta, oRutasBus.ServiciosRutasGetByGrupo(oZona.GrpCodigo,"2"), "SRU_NUMERO", "SRU_DESCRIPCION", "SELECCIONE..");
         }
 
     }

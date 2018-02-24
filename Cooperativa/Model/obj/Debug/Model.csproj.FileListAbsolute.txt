@@ -6,3 +6,8 @@ D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.pdb
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.pdb

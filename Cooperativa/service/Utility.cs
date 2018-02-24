@@ -334,7 +334,7 @@ namespace Service
 
                     if (control is Controles.datos.cmbLista)
                         if (((Controles.datos.cmbLista)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.datos.cmbLista)control).TabIndex <= index
-                             && (((Controles.datos.cmbLista)control).Text == "" || ((Controles.datos.cmbLista)control).SelectedIndex < 0))
+                             && (((Controles.datos.cmbLista)control).Text == "" || ((Controles.datos.cmbLista)control).SelectedIndex <= 0))
                         {
 
                             ((Controles.datos.cmbLista)control).BackColor = System.Drawing.Color.Red;

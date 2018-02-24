@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using Implement;
 using Model;
 
@@ -35,5 +36,10 @@ namespace Business
             ServiciosRutasImpl oServiciosRutasImpl = new ServiciosRutasImpl();
             return oServiciosRutasImpl.ServiciosRutasGetAll();
         }
-    }
+        public DataTable ServiciosRutasGetByGrupo(long Grupo, string TipoGrupo)
+        {
+            ServiciosRutasImpl oServiciosRutasImpl = new ServiciosRutasImpl();
+            return oServiciosRutasImpl.ServiciosRutasGetByGrupo(Grupo, TipoGrupo);
+        }
+   }
 }

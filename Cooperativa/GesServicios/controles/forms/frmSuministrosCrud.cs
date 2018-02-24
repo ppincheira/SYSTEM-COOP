@@ -271,7 +271,7 @@ namespace GesServicios.controles.forms
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "DOMB";
-            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
+            oAdmin.Tipo = Admin.enumTipoForm.Selector;
             oAdmin.CodigoRegistro = txtEmpNumero.Text;
             oAdmin.TabCodigoRegistro = "CLIE";
             oAdmin.FiltroCampos = "DE.DEN_CODIGO_REGISTRO&";
@@ -324,6 +324,11 @@ namespace GesServicios.controles.forms
         {
             _oSuministrosCrud.CargarRutas();
 
+        }
+
+        private void cmbRuta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.txtOrdenRuta.Enabled=true;
         }
     }
 

@@ -730,6 +730,7 @@
             this.cmbRuta.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbRuta.Size = new System.Drawing.Size(165, 21);
             this.cmbRuta.TabIndex = 35;
+            this.cmbRuta.SelectedIndexChanged += new System.EventHandler(this.cmbRuta_SelectedIndexChanged);
             // 
             // lblOrdenRuta
             // 
@@ -988,6 +989,7 @@
             this.txtDepartamento.Location = new System.Drawing.Point(649, 52);
             this.txtDepartamento.MaxLength = 4;
             this.txtDepartamento.Name = "txtDepartamento";
+            this.txtDepartamento.ReadOnly = true;
             this.txtDepartamento.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDepartamento.Size = new System.Drawing.Size(64, 20);
             this.txtDepartamento.TabIndex = 49;
@@ -1043,6 +1045,7 @@
             this.txtBloque.Location = new System.Drawing.Point(500, 51);
             this.txtBloque.MaxLength = 4;
             this.txtBloque.Name = "txtBloque";
+            this.txtBloque.ReadOnly = true;
             this.txtBloque.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtBloque.Size = new System.Drawing.Size(64, 20);
             this.txtBloque.TabIndex = 48;
@@ -1079,6 +1082,7 @@
             this.txtProvLoc.Location = new System.Drawing.Point(300, 15);
             this.txtProvLoc.MaxLength = 50;
             this.txtProvLoc.Name = "txtProvLoc";
+            this.txtProvLoc.ReadOnly = true;
             this.txtProvLoc.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtProvLoc.Size = new System.Drawing.Size(264, 20);
             this.txtProvLoc.TabIndex = 45;
@@ -1101,6 +1105,7 @@
             this.txtCalle.Location = new System.Drawing.Point(50, 48);
             this.txtCalle.MaxLength = 50;
             this.txtCalle.Name = "txtCalle";
+            this.txtCalle.ReadOnly = true;
             this.txtCalle.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtCalle.Size = new System.Drawing.Size(221, 20);
             this.txtCalle.TabIndex = 43;
@@ -1123,6 +1128,7 @@
             this.txtBarrio.Location = new System.Drawing.Point(610, 15);
             this.txtBarrio.MaxLength = 50;
             this.txtBarrio.Name = "txtBarrio";
+            this.txtBarrio.ReadOnly = true;
             this.txtBarrio.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtBarrio.Size = new System.Drawing.Size(219, 20);
             this.txtBarrio.TabIndex = 41;
@@ -1145,6 +1151,7 @@
             this.txtDomCodigo.Location = new System.Drawing.Point(56, 19);
             this.txtDomCodigo.MaxLength = 50;
             this.txtDomCodigo.Name = "txtDomCodigo";
+            this.txtDomCodigo.ReadOnly = true;
             this.txtDomCodigo.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDomCodigo.Size = new System.Drawing.Size(111, 20);
             this.txtDomCodigo.TabIndex = 39;

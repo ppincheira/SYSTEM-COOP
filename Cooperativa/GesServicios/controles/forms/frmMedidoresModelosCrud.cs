@@ -42,25 +42,25 @@ namespace GesServicios.controles.forms
 
         public int? Digitos
         {
-            get { return int.Parse(TextBoxDigitos.Text); }
+            get { return string.IsNullOrEmpty(TextBoxDigitos.Text) ? 0 : int.Parse(TextBoxDigitos.Text); }
             set { TextBoxDigitos.Text = value.ToString(); }
         }
 
         public int? Decimales
         {
-            get { return int.Parse(TextBoxDecimales.Text); }
+            get { return string.IsNullOrEmpty(TextBoxDecimales.Text) ? 0 : int.Parse(TextBoxDecimales.Text); }
             set { TextBoxDecimales.Text = value.ToString(); }
         }
 
         public int? CantHilos
         {
-            get { return int.Parse(TextBoxCantHilos.Text); }
+            get { return string.IsNullOrEmpty(TextBoxCantHilos.Text) ? 0 : int.Parse(TextBoxCantHilos.Text); }
             set { TextBoxCantHilos.Text = value.ToString(); }
         }
 
         public int? KWVueltas
         {
-            get { return int.Parse(TextBoxKWVueltas.Text); }
+            get { return string.IsNullOrEmpty(TextBoxKWVueltas.Text) ? 0 : int.Parse(TextBoxKWVueltas.Text); }
             set { TextBoxKWVueltas.Text = value.ToString(); }
         }
 
@@ -72,13 +72,13 @@ namespace GesServicios.controles.forms
 
         public int? Clase
         {
-            get { return int.Parse(TextBoxClase.Text); }
+            get { return string.IsNullOrEmpty(TextBoxClase.Text)?0:int.Parse(TextBoxClase.Text); }
             set { TextBoxClase.Text = value.ToString(); }
         }
 
         public decimal? Registrador
         {
-            get { return decimal.Parse(TextBoxRegistrador.Text); }
+            get { return string.IsNullOrEmpty(TextBoxRegistrador.Text) ? 0 : decimal.Parse(TextBoxRegistrador.Text); }
             set { TextBoxRegistrador.Text = value.ToString(); }
         }
 
@@ -173,7 +173,7 @@ namespace GesServicios.controles.forms
             try
             {
                 this.VALIDARFORM = true;
-                oUtil.ValidarFormularioEP(this, this, 4);
+                oUtil.ValidarFormularioEP(this, this, 14);
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;
@@ -212,6 +212,5 @@ namespace GesServicios.controles.forms
             }
 
         }
-
     }
 }

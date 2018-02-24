@@ -468,10 +468,11 @@ namespace FormsAuxiliares
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                 //No Borrar este comentario es la llama original
                 //oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
-                //if (this.dgBusqueda.RowCount > 0)
-                //    dgBusqueda.CurrentCell = dgBusqueda.Rows[0].Cells[1];
+                if (this.dgBusqueda.RowCount > 0)
+                    dgBusqueda.CurrentCell = dgBusqueda.Rows[0].Cells[1];
                 //No Borrar este comentario es la llama original
                 //oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
+
                 switch (_oAdmin.TabCodigo)
                 {
                     case "PERB":
