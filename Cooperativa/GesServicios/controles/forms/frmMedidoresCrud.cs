@@ -85,6 +85,11 @@ namespace GesServicios.controles.forms
             set { this.cmbMmoCodigo = value; }
         }
 
+        public cmbLista LemCodigo
+        {
+            get { return this.cmbLmeCodigo; }
+            set { this.cmbLmeCodigo = value; }
+        }
         //public decimal Registrador { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         #endregion

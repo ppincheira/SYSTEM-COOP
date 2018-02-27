@@ -44,3 +44,6 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.csproj.Gen
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\FormsAuxiliares.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll

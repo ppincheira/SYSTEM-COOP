@@ -17,6 +17,7 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
         int UsrNumero { get; set; } 
         DateTime FechaCarga { get; set; }
         cmbLista MmoCodigo { get; set; }
+        cmbLista LemCodigo { get; set; }
 
     }
 }

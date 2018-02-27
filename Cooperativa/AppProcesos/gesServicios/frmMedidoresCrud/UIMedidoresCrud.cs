@@ -26,6 +26,10 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
             EmpresasBus oEmpresas = new EmpresasBus();
             oUtil.CargarCombo(_vista.NumeroProv, oEmpresas.EmpresasGetAllDT(), "EMP_NUMERO", "EMP_RAZON_SOCIAL", "SELECCIONE..");
 
+            //Obtengo los Modos de lectura de medidores
+            LecturasModosBus oLeModo = new LecturasModosBus();
+            oUtil.CargarCombo(_vista.LemCodigo, oLeModo.LecturasModosGetAllDT(), "LEM_CODIGO", "LEM_DESCRIPCION", "SELECCIONE..");
+
 
             if (_vista.Numero != 0)
             {
@@ -66,6 +70,7 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
             oMMO.UsrNumero = _vista.UsrNumero;
             oMMO.MedFechaCarga = _vista.FechaCarga;
             oMMO.MmoCodigo = short.Parse(_vista.MmoCodigo.SelectedValue.ToString());
+            oMMO.LemCodigo = long.Parse(_vista.LemCodigo.SelectedValue.ToString());
 
             if (_vista.Numero == 0)
                 oMMO.MedNumero =  oMMOBus.MedidoresAdd(oMMO);

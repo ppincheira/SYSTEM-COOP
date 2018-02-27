@@ -33,6 +33,10 @@
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gbDatos = new Controles.contenedores.gesGroup();
+            this.TextBoxGisY = new Controles.textBoxes.txtDescripcion();
+            this.TextBoxGisX = new Controles.textBoxes.txtDescripcion();
+            this.TextBoxFactorCalib = new Controles.textBoxes.txtDescripcion();
+            this.TextBoxDigitos = new Controles.textBoxes.txtDescripcion();
             this.TextBoxNumeroSerie = new Controles.textBoxes.gesTextBox();
             this.dtpFechaCarga = new Controles.Fecha.dtpFecha();
             this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
@@ -47,10 +51,8 @@
             this.lblEstado = new Controles.labels.lblEtiqueta();
             this.lblDigitos = new Controles.labels.lblEtiqueta();
             this.lbDescripcion = new Controles.labels.lblEtiqueta();
-            this.TextBoxDigitos = new Controles.textBoxes.txtDescripcion();
-            this.TextBoxFactorCalib = new Controles.textBoxes.txtDescripcion();
-            this.TextBoxGisX = new Controles.textBoxes.txtDescripcion();
-            this.TextBoxGisY = new Controles.textBoxes.txtDescripcion();
+            this.cmbLmeCodigo = new Controles.datos.cmbLista();
+            this.lblLecturaModo = new Controles.labels.lblEtiqueta();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +89,8 @@
             // 
             // gbDatos
             // 
+            this.gbDatos.Controls.Add(this.cmbLmeCodigo);
+            this.gbDatos.Controls.Add(this.lblLecturaModo);
             this.gbDatos.Controls.Add(this.TextBoxGisY);
             this.gbDatos.Controls.Add(this.TextBoxGisX);
             this.gbDatos.Controls.Add(this.TextBoxFactorCalib);
@@ -112,6 +116,58 @@
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
             // 
+            // TextBoxGisY
+            // 
+            this.TextBoxGisY.BackColor = System.Drawing.Color.Red;
+            this.TextBoxGisY.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.TextBoxGisY.Location = new System.Drawing.Point(427, 133);
+            this.TextBoxGisY.MaxLength = 50;
+            this.TextBoxGisY.Name = "TextBoxGisY";
+            this.TextBoxGisY.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.TextBoxGisY.Size = new System.Drawing.Size(150, 20);
+            this.TextBoxGisY.TabIndex = 6;
+            this.TextBoxGisY.TextoVacio = "<Descripcion>";
+            this.TextBoxGisY.TipoControl = Controles.util.Enumerados.enumTipos.Decimal;
+            // 
+            // TextBoxGisX
+            // 
+            this.TextBoxGisX.BackColor = System.Drawing.Color.Red;
+            this.TextBoxGisX.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.TextBoxGisX.Location = new System.Drawing.Point(72, 133);
+            this.TextBoxGisX.MaxLength = 50;
+            this.TextBoxGisX.Name = "TextBoxGisX";
+            this.TextBoxGisX.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.TextBoxGisX.Size = new System.Drawing.Size(150, 20);
+            this.TextBoxGisX.TabIndex = 5;
+            this.TextBoxGisX.TextoVacio = "<Descripcion>";
+            this.TextBoxGisX.TipoControl = Controles.util.Enumerados.enumTipos.Decimal;
+            // 
+            // TextBoxFactorCalib
+            // 
+            this.TextBoxFactorCalib.BackColor = System.Drawing.Color.White;
+            this.TextBoxFactorCalib.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.TextBoxFactorCalib.Location = new System.Drawing.Point(427, 101);
+            this.TextBoxFactorCalib.MaxLength = 50;
+            this.TextBoxFactorCalib.Name = "TextBoxFactorCalib";
+            this.TextBoxFactorCalib.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.TextBoxFactorCalib.Size = new System.Drawing.Size(150, 20);
+            this.TextBoxFactorCalib.TabIndex = 4;
+            this.TextBoxFactorCalib.TextoVacio = "<Descripcion>";
+            this.TextBoxFactorCalib.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            // 
+            // TextBoxDigitos
+            // 
+            this.TextBoxDigitos.BackColor = System.Drawing.Color.Red;
+            this.TextBoxDigitos.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.TextBoxDigitos.Location = new System.Drawing.Point(72, 101);
+            this.TextBoxDigitos.MaxLength = 50;
+            this.TextBoxDigitos.Name = "TextBoxDigitos";
+            this.TextBoxDigitos.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.TextBoxDigitos.Size = new System.Drawing.Size(116, 20);
+            this.TextBoxDigitos.TabIndex = 3;
+            this.TextBoxDigitos.TextoVacio = "<Descripcion>";
+            this.TextBoxDigitos.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
+            // 
             // TextBoxNumeroSerie
             // 
             this.TextBoxNumeroSerie.BackColor = System.Drawing.Color.Red;
@@ -131,7 +187,7 @@
             this.dtpFechaCarga.Name = "dtpFechaCarga";
             this.dtpFechaCarga.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.dtpFechaCarga.Size = new System.Drawing.Size(165, 20);
-            this.dtpFechaCarga.TabIndex = 9;
+            this.dtpFechaCarga.TabIndex = 10;
             // 
             // lblEtiqueta1
             // 
@@ -163,7 +219,7 @@
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.chkEstado.Size = new System.Drawing.Size(73, 17);
-            this.chkEstado.TabIndex = 10;
+            this.chkEstado.TabIndex = 11;
             this.chkEstado.Text = "Habilitado";
             this.chkEstado.UseVisualStyleBackColor = true;
             // 
@@ -250,57 +306,26 @@
             this.lbDescripcion.TabIndex = 0;
             this.lbDescripcion.Text = "Numero de Serie:";
             // 
-            // TextBoxDigitos
+            // cmbLmeCodigo
             // 
-            this.TextBoxDigitos.BackColor = System.Drawing.Color.White;
-            this.TextBoxDigitos.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.TextBoxDigitos.Location = new System.Drawing.Point(72, 101);
-            this.TextBoxDigitos.MaxLength = 50;
-            this.TextBoxDigitos.Name = "TextBoxDigitos";
-            this.TextBoxDigitos.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.TextBoxDigitos.Size = new System.Drawing.Size(116, 20);
-            this.TextBoxDigitos.TabIndex = 3;
-            this.TextBoxDigitos.TextoVacio = "<Descripcion>";
-            this.TextBoxDigitos.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
+            this.cmbLmeCodigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbLmeCodigo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbLmeCodigo.FormattingEnabled = true;
+            this.cmbLmeCodigo.Location = new System.Drawing.Point(427, 173);
+            this.cmbLmeCodigo.Name = "cmbLmeCodigo";
+            this.cmbLmeCodigo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.cmbLmeCodigo.Size = new System.Drawing.Size(165, 21);
+            this.cmbLmeCodigo.TabIndex = 9;
+            this.cmbLmeCodigo.Text = "<Seleccione Modelo>";
             // 
-            // TextBoxFactorCalib
+            // lblLecturaModo
             // 
-            this.TextBoxFactorCalib.BackColor = System.Drawing.Color.White;
-            this.TextBoxFactorCalib.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.TextBoxFactorCalib.Location = new System.Drawing.Point(427, 101);
-            this.TextBoxFactorCalib.MaxLength = 50;
-            this.TextBoxFactorCalib.Name = "TextBoxFactorCalib";
-            this.TextBoxFactorCalib.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.TextBoxFactorCalib.Size = new System.Drawing.Size(150, 20);
-            this.TextBoxFactorCalib.TabIndex = 4;
-            this.TextBoxFactorCalib.TextoVacio = "<Descripcion>";
-            this.TextBoxFactorCalib.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
-            // 
-            // TextBoxGisX
-            // 
-            this.TextBoxGisX.BackColor = System.Drawing.Color.Red;
-            this.TextBoxGisX.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.TextBoxGisX.Location = new System.Drawing.Point(72, 133);
-            this.TextBoxGisX.MaxLength = 50;
-            this.TextBoxGisX.Name = "TextBoxGisX";
-            this.TextBoxGisX.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.TextBoxGisX.Size = new System.Drawing.Size(150, 20);
-            this.TextBoxGisX.TabIndex = 5;
-            this.TextBoxGisX.TextoVacio = "<Descripcion>";
-            this.TextBoxGisX.TipoControl = Controles.util.Enumerados.enumTipos.Decimal;
-            // 
-            // TextBoxGisY
-            // 
-            this.TextBoxGisY.BackColor = System.Drawing.Color.White;
-            this.TextBoxGisY.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.TextBoxGisY.Location = new System.Drawing.Point(427, 133);
-            this.TextBoxGisY.MaxLength = 50;
-            this.TextBoxGisY.Name = "TextBoxGisY";
-            this.TextBoxGisY.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.TextBoxGisY.Size = new System.Drawing.Size(150, 20);
-            this.TextBoxGisY.TabIndex = 6;
-            this.TextBoxGisY.TextoVacio = "<Descripcion>";
-            this.TextBoxGisY.TipoControl = Controles.util.Enumerados.enumTipos.Decimal;
+            this.lblLecturaModo.AutoSize = true;
+            this.lblLecturaModo.Location = new System.Drawing.Point(312, 176);
+            this.lblLecturaModo.Name = "lblLecturaModo";
+            this.lblLecturaModo.Size = new System.Drawing.Size(91, 13);
+            this.lblLecturaModo.TabIndex = 26;
+            this.lblLecturaModo.Text = "Modo de Lectura:";
             // 
             // frmMedidoresCrud
             // 
@@ -343,5 +368,7 @@
         private Controles.textBoxes.txtDescripcion TextBoxGisX;
         private Controles.textBoxes.txtDescripcion TextBoxFactorCalib;
         private Controles.textBoxes.txtDescripcion TextBoxDigitos;
+        private Controles.datos.cmbLista cmbLmeCodigo;
+        private Controles.labels.lblEtiqueta lblLecturaModo;
     }
 }

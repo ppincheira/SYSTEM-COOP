@@ -20,5 +20,6 @@ namespace Model {
         public virtual int UsrNumero { get; set; }
         public virtual DateTime MedFechaCarga { get; set; }
         public virtual short? MmoCodigo { get; set; }
+        public virtual long LemCodigo { get; set; }
     }
 }

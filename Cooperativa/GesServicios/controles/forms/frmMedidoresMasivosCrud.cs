@@ -90,6 +90,11 @@ namespace GesServicios.controles.forms
             set { this.cmbMmoCodigo = value; }
         }
 
+        public cmbLista LemCodigo
+        {
+            get { return this.cmbLmeCodigo; }
+            set { this.cmbLmeCodigo = value; }
+        }
 
         #endregion
         public frmMedidoresMasivosCrud(long NumeroMedidor, string Estado, int Usuario)
@@ -132,7 +137,7 @@ namespace GesServicios.controles.forms
             try
             {
                 this.VALIDARFORM = true;
-                oUtil.ValidarFormularioEP(this, this, 10);
+                oUtil.ValidarFormularioEP(this, this, 11);
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;

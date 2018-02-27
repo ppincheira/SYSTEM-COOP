@@ -253,6 +253,7 @@ namespace GesServicios.controles.forms
 
         private void btnMedidor_Click(object sender, EventArgs e)
         {
+            Medidores oMedidor = new Medidores();
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10100", "10101", "10102", "10104", "10105", "10103");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "MED";
@@ -261,6 +262,7 @@ namespace GesServicios.controles.forms
             if (frmbus.ShowDialog() == DialogResult.OK)
             {
                 string nombre = frmbus.striRdoCodigo;
+                //oMedidor = _oSuministrosCrud.CargarMedidor();
             }
 
         }
