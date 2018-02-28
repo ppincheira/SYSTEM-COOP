@@ -85,6 +85,9 @@
     <Compile Include="Auditorias.cs" />
     <Compile Include="BarriosLocalidades.cs" />
     <Compile Include="CallesLocalidades.cs" />
+    <Compile Include="LecturasModosConceptos.cs" />
+    <Compile Include="LecturasSuministrosItems.cs" />
+    <Compile Include="LecturasSuministros.cs" />
     <Compile Include="CodigosPostalesLocalidades.cs" />
     <Compile Include="Departamentos.cs" />
     <Compile Include="DetallesAuditoria.cs" />
