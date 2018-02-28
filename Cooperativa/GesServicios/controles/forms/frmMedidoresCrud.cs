@@ -30,8 +30,8 @@ namespace GesServicios.controles.forms
         }
         public long NumeroSerie
         {
-            get { return long.Parse(this.gesTextBoxNumeroSerie.Text); }
-            set { this.gesTextBoxNumeroSerie.Text = value.ToString(); }
+            get { return long.Parse(this.TextBoxNumeroSerie.Text); }
+            set { this.TextBoxNumeroSerie.Text = value.ToString(); }
         }
 
         public cmbLista NumeroProv
@@ -41,8 +41,8 @@ namespace GesServicios.controles.forms
         }
         public int Digitos
         {
-            get { return int.Parse(gesTextBoxDigitos.Text); }
-            set { gesTextBoxDigitos.Text = value.ToString(); }
+            get { return int.Parse(TextBoxDigitos.Text); }
+            set { TextBoxDigitos.Text = value.ToString(); }
         }
         public string EstCodigo
         {
@@ -52,20 +52,20 @@ namespace GesServicios.controles.forms
 
         public double FactorCalib
         {
-            get { return double.Parse(gesTextBoxFactorCalib.Text); }
-            set { gesTextBoxFactorCalib.Text = value.ToString(); }
+            get { return double.Parse(TextBoxFactorCalib.Text); }
+            set { TextBoxFactorCalib.Text = value.ToString(); }
         }
 
         public decimal? GisX
         {
-            get { return string.IsNullOrEmpty(gesTextBoxGisX.Text) ? null : (decimal?)Convert.ToDecimal(gesTextBoxGisX.Text); }
-            set { gesTextBoxGisX.Text = value.ToString(); }
+            get { return string.IsNullOrEmpty(TextBoxGisX.Text) ? null : (decimal?)Convert.ToDecimal(TextBoxGisX.Text); }
+            set { TextBoxGisX.Text = value.ToString(); }
         }
 
         public decimal? GisY
         {
-            get { return string.IsNullOrEmpty(gesTextBoxGisY.Text) ? null : (decimal?)Convert.ToDecimal(gesTextBoxGisY.Text); }
-            set { gesTextBoxGisY.Text = value.ToString(); }
+            get { return string.IsNullOrEmpty(TextBoxGisY.Text) ? null : (decimal?)Convert.ToDecimal(TextBoxGisY.Text); }
+            set { TextBoxGisY.Text = value.ToString(); }
         }
 
         public int UsrNumero
@@ -85,6 +85,11 @@ namespace GesServicios.controles.forms
             set { this.cmbMmoCodigo = value; }
         }
 
+        public cmbLista LemCodigo
+        {
+            get { return this.cmbLmeCodigo; }
+            set { this.cmbLmeCodigo = value; }
+        }
         //public decimal Registrador { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         #endregion

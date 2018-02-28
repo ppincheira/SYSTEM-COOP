@@ -167,6 +167,31 @@ namespace Implement
             }
         }
 
+        public DataTable ServiciosRutasGetByGrupo(long Grupo, string TipoGrupo)
+        {
+            List<ServiciosRutas> lstServiciosRutas = new List<ServiciosRutas>();
+            try
+            {
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Servicios_Rutas inner join grupos_detalles gd " +
+                    "on grd_codigo_registro=sru_numero inner join grupos g on g.grp_codigo=gd.grp_codigo " +
+                    "where gd.grp_codigo="+Grupo.ToString()+" and tgr_codigo='"+TipoGrupo+"'";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private ServiciosRutas CargarServiciosRutas(DataRow dr)
         {
             try

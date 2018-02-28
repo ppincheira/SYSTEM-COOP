@@ -253,6 +253,7 @@ namespace GesServicios.controles.forms
 
         private void btnMedidor_Click(object sender, EventArgs e)
         {
+            Medidores oMedidor = new Medidores();
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10100", "10101", "10102", "10104", "10105", "10103");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "MED";
@@ -261,6 +262,7 @@ namespace GesServicios.controles.forms
             if (frmbus.ShowDialog() == DialogResult.OK)
             {
                 string nombre = frmbus.striRdoCodigo;
+                //oMedidor = _oSuministrosCrud.CargarMedidor();
             }
 
         }
@@ -271,7 +273,7 @@ namespace GesServicios.controles.forms
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "DOMB";
-            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
+            oAdmin.Tipo = Admin.enumTipoForm.Selector;
             oAdmin.CodigoRegistro = txtEmpNumero.Text;
             oAdmin.TabCodigoRegistro = "CLIE";
             oAdmin.FiltroCampos = "DE.DEN_CODIGO_REGISTRO&";
@@ -324,6 +326,11 @@ namespace GesServicios.controles.forms
         {
             _oSuministrosCrud.CargarRutas();
 
+        }
+
+        private void cmbRuta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.txtOrdenRuta.Enabled=true;
         }
     }
 

@@ -185,7 +185,7 @@ namespace FormsAuxiliares
                     Console.WriteLine("Case 1");
                     break;
                 case "frmDomicilios":
-                    FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+                    FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("31", "32", "33", "35", "36", "34");
                     Admin oAdmin = new Admin();
                     oAdmin.TabCodigo = "DOMB";
 
@@ -201,7 +201,7 @@ namespace FormsAuxiliares
                     Console.WriteLine("Case 2");
                     break;
                 case "frmCategorias":
-                    FuncionalidadesFoms oCatPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+                    FuncionalidadesFoms oCatPermiso = new FuncionalidadesFoms("100011", "100012", "100013", "100016", "100014", "100015");
                     Admin oCatAdmin = new Admin();
                     oCatAdmin.TabCodigo = "SCAT";
                     FormsAuxiliares.frmFormAdminMini frmCat = new FormsAuxiliares.frmFormAdminMini(oCatAdmin, oCatPermiso);
@@ -213,10 +213,20 @@ namespace FormsAuxiliares
                     Console.WriteLine("Case 2");
                     break;
                 case "frmConceptosLecturas":
-                    Console.WriteLine("Case 2");
+                    FuncionalidadesFoms oCLPermiso = new FuncionalidadesFoms("100031", "100032", "100033", "100035", "100036", "100034");
+                    Admin oCLAdmin = new Admin();
+                    oCLAdmin.TabCodigo = "LEC";
+                    FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oCLAdmin, oCLPermiso);
+                    frmbus.Text = "Administrador Lecturas Conceptos";
+                    frmbus.ShowDialog();
                     break;
                 case "frmModosLecturas":
-                    Console.WriteLine("Case 2");
+                    FuncionalidadesFoms oMLPermiso = new FuncionalidadesFoms("100041", "100042", "100043", "100045", "100046", "100044");
+                    Admin oMLAdmin = new Admin();
+                    oMLAdmin.TabCodigo = "LEM";
+                    FormsAuxiliares.frmFormAdminMini frmML = new FormsAuxiliares.frmFormAdminMini(oMLAdmin, oMLPermiso);
+                    frmML.Text = "Administrador de Modos Lecturas";
+                    frmML.ShowDialog();
                     break;
                 case "frmClientes":
                     Console.WriteLine("Case 2");

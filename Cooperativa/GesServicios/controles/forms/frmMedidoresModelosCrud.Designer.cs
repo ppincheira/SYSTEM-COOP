@@ -38,7 +38,6 @@
             this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.cmbTipoConexion = new Controles.datos.cmbLista();
             this.cmbTipoMedidor = new Controles.datos.cmbLista();
-            this.TextBoxAmperaje = new Controles.textBoxes.gesTextBox();
             this.TextBoxRegistrador = new Controles.NumericTextBox();
             this.TextBoxKWVueltas = new Controles.NumericTextBox();
             this.TextBoxDecimales = new Controles.NumericTextBox();
@@ -63,6 +62,7 @@
             this.txtDescripcionCorta = new Controles.textBoxes.txtDescripcionCorta();
             this.txtDescripcion = new Controles.textBoxes.txtDescripcionCorta();
             this.lbDescripcion = new Controles.labels.lblEtiqueta();
+            this.TextBoxAmperaje = new Controles.textBoxes.txtDescripcion();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.SuspendLayout();
@@ -99,12 +99,12 @@
             // 
             // gbDatos
             // 
+            this.gbDatos.Controls.Add(this.TextBoxAmperaje);
             this.gbDatos.Controls.Add(this.dtpFechaCarga);
             this.gbDatos.Controls.Add(this.lblTipoMedidor);
             this.gbDatos.Controls.Add(this.lblEtiqueta1);
             this.gbDatos.Controls.Add(this.cmbTipoConexion);
             this.gbDatos.Controls.Add(this.cmbTipoMedidor);
-            this.gbDatos.Controls.Add(this.TextBoxAmperaje);
             this.gbDatos.Controls.Add(this.TextBoxRegistrador);
             this.gbDatos.Controls.Add(this.TextBoxKWVueltas);
             this.gbDatos.Controls.Add(this.TextBoxDecimales);
@@ -142,7 +142,7 @@
             this.dtpFechaCarga.Name = "dtpFechaCarga";
             this.dtpFechaCarga.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.dtpFechaCarga.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaCarga.TabIndex = 13;
+            this.dtpFechaCarga.TabIndex = 14;
             // 
             // lblTipoMedidor
             // 
@@ -171,7 +171,7 @@
             this.cmbTipoConexion.Name = "cmbTipoConexion";
             this.cmbTipoConexion.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbTipoConexion.Size = new System.Drawing.Size(165, 21);
-            this.cmbTipoConexion.TabIndex = 10;
+            this.cmbTipoConexion.TabIndex = 11;
             // 
             // cmbTipoMedidor
             // 
@@ -182,21 +182,7 @@
             this.cmbTipoMedidor.Name = "cmbTipoMedidor";
             this.cmbTipoMedidor.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbTipoMedidor.Size = new System.Drawing.Size(165, 21);
-            this.cmbTipoMedidor.TabIndex = 12;
-            // 
-            // TextBoxAmperaje
-            // 
-            this.TextBoxAmperaje.BackColor = System.Drawing.Color.White;
-            this.TextBoxAmperaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TextBoxAmperaje.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.TextBoxAmperaje.Location = new System.Drawing.Point(110, 130);
-            this.TextBoxAmperaje.MaxLength = 15;
-            this.TextBoxAmperaje.Name = "TextBoxAmperaje";
-            this.TextBoxAmperaje.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.TextBoxAmperaje.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxAmperaje.TabIndex = 6;
-            this.TextBoxAmperaje.TextoVacio = "<Descripcion>";
-            this.TextBoxAmperaje.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            this.cmbTipoMedidor.TabIndex = 13;
             // 
             // TextBoxRegistrador
             // 
@@ -204,7 +190,7 @@
             this.TextBoxRegistrador.Location = new System.Drawing.Point(433, 165);
             this.TextBoxRegistrador.Name = "TextBoxRegistrador";
             this.TextBoxRegistrador.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxRegistrador.TabIndex = 8;
+            this.TextBoxRegistrador.TabIndex = 9;
             // 
             // TextBoxKWVueltas
             // 
@@ -228,7 +214,7 @@
             this.TextBoxClase.Location = new System.Drawing.Point(110, 165);
             this.TextBoxClase.Name = "TextBoxClase";
             this.TextBoxClase.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxClase.TabIndex = 7;
+            this.TextBoxClase.TabIndex = 8;
             // 
             // TextBoxCantHilos
             // 
@@ -286,7 +272,7 @@
             this.cmbTipoContador.Name = "cmbTipoContador";
             this.cmbTipoContador.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbTipoContador.Size = new System.Drawing.Size(165, 21);
-            this.cmbTipoContador.TabIndex = 9;
+            this.cmbTipoContador.TabIndex = 10;
             // 
             // cmbFabricante
             // 
@@ -297,7 +283,7 @@
             this.cmbFabricante.Name = "cmbFabricante";
             this.cmbFabricante.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbFabricante.Size = new System.Drawing.Size(165, 21);
-            this.cmbFabricante.TabIndex = 11;
+            this.cmbFabricante.TabIndex = 12;
             // 
             // lblTipoConexion
             // 
@@ -426,6 +412,19 @@
             this.lbDescripcion.TabIndex = 0;
             this.lbDescripcion.Text = "Descripción:";
             // 
+            // TextBoxAmperaje
+            // 
+            this.TextBoxAmperaje.BackColor = System.Drawing.Color.Red;
+            this.TextBoxAmperaje.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.TextBoxAmperaje.Location = new System.Drawing.Point(110, 133);
+            this.TextBoxAmperaje.MaxLength = 50;
+            this.TextBoxAmperaje.Name = "TextBoxAmperaje";
+            this.TextBoxAmperaje.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.TextBoxAmperaje.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxAmperaje.TabIndex = 7;
+            this.TextBoxAmperaje.TextoVacio = "<Descripcion>";
+            this.TextBoxAmperaje.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
+            // 
             // frmMedidoresModelosCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,7 +464,6 @@
         private Controles.labels.lblEtiqueta lblDecimales;
         private Controles.labels.lblEtiqueta lblCantHilos;
         private Controles.labels.lblEtiqueta lblDigitos;
-        private Controles.textBoxes.gesTextBox TextBoxAmperaje;
         private Controles.NumericTextBox TextBoxRegistrador;
         private Controles.NumericTextBox TextBoxClase;
         private Controles.labels.lblEtiqueta lblRegistrador;
@@ -479,5 +477,6 @@
         private Controles.labels.lblEtiqueta lblEtiqueta1;
         private Controles.datos.cmbLista cmbTipoConexion;
         private Controles.datos.cmbLista cmbTipoContador;
+        private Controles.textBoxes.txtDescripcion TextBoxAmperaje;
     }
 }

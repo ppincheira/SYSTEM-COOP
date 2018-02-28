@@ -48,14 +48,14 @@
             this.tabSumnistros = new Controles.contenedores.tabSolapas();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblEtiqueta12 = new Controles.labels.lblEtiqueta();
-            this.txtDescripcion12 = new Controles.textBoxes.txtDescripcion();
+            this.txtFabricanteMedidor = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta11 = new Controles.labels.lblEtiqueta();
-            this.txtDescripcion11 = new Controles.textBoxes.txtDescripcion();
+            this.txtTipoMedidor = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta10 = new Controles.labels.lblEtiqueta();
-            this.txtDescripcion10 = new Controles.textBoxes.txtDescripcion();
+            this.txtMedidorModelo = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta9 = new Controles.labels.lblEtiqueta();
             this.btnMedidor = new Controles.buttons.btnGeneral();
-            this.txtDescripcion9 = new Controles.textBoxes.txtDescripcion();
+            this.txtMedNumeroSerie = new Controles.textBoxes.txtDescripcion();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnNuevaObs = new Controles.buttons.btnNuevo();
             this.txtObservaciones = new Controles.textBoxes.txtDescripcion();
@@ -115,6 +115,8 @@
             this.lblEtiqueta4 = new Controles.labels.lblEtiqueta();
             this.txtDomCodigo = new Controles.textBoxes.txtDescripcion();
             this.btnDomicilio = new Controles.buttons.btnGeneral();
+            this.lblEtiqueta16 = new Controles.labels.lblEtiqueta();
+            this.txtLecturaModoMedidor = new Controles.textBoxes.txtDescripcion();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.tabSumnistros.SuspendLayout();
@@ -263,7 +265,7 @@
             this.cmbTipoConexion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbTipoConexion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbTipoConexion.FormattingEnabled = true;
-            this.cmbTipoConexion.Location = new System.Drawing.Point(102, 5);
+            this.cmbTipoConexion.Location = new System.Drawing.Point(108, 5);
             this.cmbTipoConexion.Name = "cmbTipoConexion";
             this.cmbTipoConexion.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbTipoConexion.Size = new System.Drawing.Size(165, 21);
@@ -314,15 +316,17 @@
             // tabPage1
             // 
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.lblEtiqueta16);
+            this.tabPage1.Controls.Add(this.txtLecturaModoMedidor);
             this.tabPage1.Controls.Add(this.lblEtiqueta12);
-            this.tabPage1.Controls.Add(this.txtDescripcion12);
+            this.tabPage1.Controls.Add(this.txtFabricanteMedidor);
             this.tabPage1.Controls.Add(this.lblEtiqueta11);
-            this.tabPage1.Controls.Add(this.txtDescripcion11);
+            this.tabPage1.Controls.Add(this.txtTipoMedidor);
             this.tabPage1.Controls.Add(this.lblEtiqueta10);
-            this.tabPage1.Controls.Add(this.txtDescripcion10);
+            this.tabPage1.Controls.Add(this.txtMedidorModelo);
             this.tabPage1.Controls.Add(this.lblEtiqueta9);
             this.tabPage1.Controls.Add(this.btnMedidor);
-            this.tabPage1.Controls.Add(this.txtDescripcion9);
+            this.tabPage1.Controls.Add(this.txtMedNumeroSerie);
             this.tabPage1.Controls.Add(this.cmbTipoConexion);
             this.tabPage1.Controls.Add(this.lblTipoConexion);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -343,19 +347,19 @@
             this.lblEtiqueta12.TabIndex = 62;
             this.lblEtiqueta12.Text = "Fabricante:";
             // 
-            // txtDescripcion12
+            // txtFabricanteMedidor
             // 
-            this.txtDescripcion12.BackColor = System.Drawing.Color.White;
-            this.txtDescripcion12.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtDescripcion12.Enabled = false;
-            this.txtDescripcion12.Location = new System.Drawing.Point(430, 58);
-            this.txtDescripcion12.MaxLength = 50;
-            this.txtDescripcion12.Name = "txtDescripcion12";
-            this.txtDescripcion12.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtDescripcion12.Size = new System.Drawing.Size(221, 20);
-            this.txtDescripcion12.TabIndex = 61;
-            this.txtDescripcion12.TextoVacio = "<Descripcion>";
-            this.txtDescripcion12.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            this.txtFabricanteMedidor.BackColor = System.Drawing.Color.White;
+            this.txtFabricanteMedidor.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtFabricanteMedidor.Enabled = false;
+            this.txtFabricanteMedidor.Location = new System.Drawing.Point(430, 58);
+            this.txtFabricanteMedidor.MaxLength = 50;
+            this.txtFabricanteMedidor.Name = "txtFabricanteMedidor";
+            this.txtFabricanteMedidor.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtFabricanteMedidor.Size = new System.Drawing.Size(221, 20);
+            this.txtFabricanteMedidor.TabIndex = 61;
+            this.txtFabricanteMedidor.TextoVacio = "<Descripcion>";
+            this.txtFabricanteMedidor.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lblEtiqueta11
             // 
@@ -366,19 +370,19 @@
             this.lblEtiqueta11.TabIndex = 60;
             this.lblEtiqueta11.Text = "Tipo:";
             // 
-            // txtDescripcion11
+            // txtTipoMedidor
             // 
-            this.txtDescripcion11.BackColor = System.Drawing.Color.White;
-            this.txtDescripcion11.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtDescripcion11.Enabled = false;
-            this.txtDescripcion11.Location = new System.Drawing.Point(102, 64);
-            this.txtDescripcion11.MaxLength = 50;
-            this.txtDescripcion11.Name = "txtDescripcion11";
-            this.txtDescripcion11.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtDescripcion11.Size = new System.Drawing.Size(179, 20);
-            this.txtDescripcion11.TabIndex = 59;
-            this.txtDescripcion11.TextoVacio = "<Descripcion>";
-            this.txtDescripcion11.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            this.txtTipoMedidor.BackColor = System.Drawing.Color.White;
+            this.txtTipoMedidor.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtTipoMedidor.Enabled = false;
+            this.txtTipoMedidor.Location = new System.Drawing.Point(108, 64);
+            this.txtTipoMedidor.MaxLength = 50;
+            this.txtTipoMedidor.Name = "txtTipoMedidor";
+            this.txtTipoMedidor.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtTipoMedidor.Size = new System.Drawing.Size(179, 20);
+            this.txtTipoMedidor.TabIndex = 59;
+            this.txtTipoMedidor.TextoVacio = "<Descripcion>";
+            this.txtTipoMedidor.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lblEtiqueta10
             // 
@@ -389,19 +393,19 @@
             this.lblEtiqueta10.TabIndex = 58;
             this.lblEtiqueta10.Text = "Modelo";
             // 
-            // txtDescripcion10
+            // txtMedidorModelo
             // 
-            this.txtDescripcion10.BackColor = System.Drawing.Color.White;
-            this.txtDescripcion10.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtDescripcion10.Enabled = false;
-            this.txtDescripcion10.Location = new System.Drawing.Point(430, 32);
-            this.txtDescripcion10.MaxLength = 50;
-            this.txtDescripcion10.Name = "txtDescripcion10";
-            this.txtDescripcion10.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtDescripcion10.Size = new System.Drawing.Size(221, 20);
-            this.txtDescripcion10.TabIndex = 57;
-            this.txtDescripcion10.TextoVacio = "<Descripcion>";
-            this.txtDescripcion10.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            this.txtMedidorModelo.BackColor = System.Drawing.Color.White;
+            this.txtMedidorModelo.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtMedidorModelo.Enabled = false;
+            this.txtMedidorModelo.Location = new System.Drawing.Point(430, 32);
+            this.txtMedidorModelo.MaxLength = 50;
+            this.txtMedidorModelo.Name = "txtMedidorModelo";
+            this.txtMedidorModelo.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtMedidorModelo.Size = new System.Drawing.Size(221, 20);
+            this.txtMedidorModelo.TabIndex = 57;
+            this.txtMedidorModelo.TextoVacio = "<Descripcion>";
+            this.txtMedidorModelo.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lblEtiqueta9
             // 
@@ -414,7 +418,7 @@
             // 
             // btnMedidor
             // 
-            this.btnMedidor.Location = new System.Drawing.Point(295, 36);
+            this.btnMedidor.Location = new System.Drawing.Point(301, 36);
             this.btnMedidor.Margin = new System.Windows.Forms.Padding(2);
             this.btnMedidor.Name = "btnMedidor";
             this.btnMedidor.Size = new System.Drawing.Size(39, 19);
@@ -423,19 +427,19 @@
             this.btnMedidor.UseVisualStyleBackColor = true;
             this.btnMedidor.Click += new System.EventHandler(this.btnMedidor_Click);
             // 
-            // txtDescripcion9
+            // txtMedNumeroSerie
             // 
-            this.txtDescripcion9.BackColor = System.Drawing.Color.White;
-            this.txtDescripcion9.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtDescripcion9.Enabled = false;
-            this.txtDescripcion9.Location = new System.Drawing.Point(102, 35);
-            this.txtDescripcion9.MaxLength = 50;
-            this.txtDescripcion9.Name = "txtDescripcion9";
-            this.txtDescripcion9.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtDescripcion9.Size = new System.Drawing.Size(188, 20);
-            this.txtDescripcion9.TabIndex = 55;
-            this.txtDescripcion9.TextoVacio = "<Descripcion>";
-            this.txtDescripcion9.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            this.txtMedNumeroSerie.BackColor = System.Drawing.Color.White;
+            this.txtMedNumeroSerie.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtMedNumeroSerie.Enabled = false;
+            this.txtMedNumeroSerie.Location = new System.Drawing.Point(108, 35);
+            this.txtMedNumeroSerie.MaxLength = 50;
+            this.txtMedNumeroSerie.Name = "txtMedNumeroSerie";
+            this.txtMedNumeroSerie.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtMedNumeroSerie.Size = new System.Drawing.Size(188, 20);
+            this.txtMedNumeroSerie.TabIndex = 55;
+            this.txtMedNumeroSerie.TextoVacio = "<Descripcion>";
+            this.txtMedNumeroSerie.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // tabPage2
             // 
@@ -730,6 +734,7 @@
             this.cmbRuta.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbRuta.Size = new System.Drawing.Size(165, 21);
             this.cmbRuta.TabIndex = 35;
+            this.cmbRuta.SelectedIndexChanged += new System.EventHandler(this.cmbRuta_SelectedIndexChanged);
             // 
             // lblOrdenRuta
             // 
@@ -988,6 +993,7 @@
             this.txtDepartamento.Location = new System.Drawing.Point(649, 52);
             this.txtDepartamento.MaxLength = 4;
             this.txtDepartamento.Name = "txtDepartamento";
+            this.txtDepartamento.ReadOnly = true;
             this.txtDepartamento.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDepartamento.Size = new System.Drawing.Size(64, 20);
             this.txtDepartamento.TabIndex = 49;
@@ -1043,6 +1049,7 @@
             this.txtBloque.Location = new System.Drawing.Point(500, 51);
             this.txtBloque.MaxLength = 4;
             this.txtBloque.Name = "txtBloque";
+            this.txtBloque.ReadOnly = true;
             this.txtBloque.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtBloque.Size = new System.Drawing.Size(64, 20);
             this.txtBloque.TabIndex = 48;
@@ -1079,6 +1086,7 @@
             this.txtProvLoc.Location = new System.Drawing.Point(300, 15);
             this.txtProvLoc.MaxLength = 50;
             this.txtProvLoc.Name = "txtProvLoc";
+            this.txtProvLoc.ReadOnly = true;
             this.txtProvLoc.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtProvLoc.Size = new System.Drawing.Size(264, 20);
             this.txtProvLoc.TabIndex = 45;
@@ -1101,6 +1109,7 @@
             this.txtCalle.Location = new System.Drawing.Point(50, 48);
             this.txtCalle.MaxLength = 50;
             this.txtCalle.Name = "txtCalle";
+            this.txtCalle.ReadOnly = true;
             this.txtCalle.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtCalle.Size = new System.Drawing.Size(221, 20);
             this.txtCalle.TabIndex = 43;
@@ -1123,6 +1132,7 @@
             this.txtBarrio.Location = new System.Drawing.Point(610, 15);
             this.txtBarrio.MaxLength = 50;
             this.txtBarrio.Name = "txtBarrio";
+            this.txtBarrio.ReadOnly = true;
             this.txtBarrio.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtBarrio.Size = new System.Drawing.Size(219, 20);
             this.txtBarrio.TabIndex = 41;
@@ -1145,6 +1155,7 @@
             this.txtDomCodigo.Location = new System.Drawing.Point(56, 19);
             this.txtDomCodigo.MaxLength = 50;
             this.txtDomCodigo.Name = "txtDomCodigo";
+            this.txtDomCodigo.ReadOnly = true;
             this.txtDomCodigo.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDomCodigo.Size = new System.Drawing.Size(111, 20);
             this.txtDomCodigo.TabIndex = 39;
@@ -1161,6 +1172,29 @@
             this.btnDomicilio.Text = "...";
             this.btnDomicilio.UseVisualStyleBackColor = true;
             this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
+            // 
+            // lblEtiqueta16
+            // 
+            this.lblEtiqueta16.AutoSize = true;
+            this.lblEtiqueta16.Location = new System.Drawing.Point(11, 100);
+            this.lblEtiqueta16.Name = "lblEtiqueta16";
+            this.lblEtiqueta16.Size = new System.Drawing.Size(91, 13);
+            this.lblEtiqueta16.TabIndex = 64;
+            this.lblEtiqueta16.Text = "Modo de Lectura:";
+            // 
+            // txtLecturaModoMedidor
+            // 
+            this.txtLecturaModoMedidor.BackColor = System.Drawing.Color.White;
+            this.txtLecturaModoMedidor.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtLecturaModoMedidor.Enabled = false;
+            this.txtLecturaModoMedidor.Location = new System.Drawing.Point(108, 93);
+            this.txtLecturaModoMedidor.MaxLength = 50;
+            this.txtLecturaModoMedidor.Name = "txtLecturaModoMedidor";
+            this.txtLecturaModoMedidor.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtLecturaModoMedidor.Size = new System.Drawing.Size(221, 20);
+            this.txtLecturaModoMedidor.TabIndex = 63;
+            this.txtLecturaModoMedidor.TextoVacio = "<Descripcion>";
+            this.txtLecturaModoMedidor.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // frmSuministrosCrud
             // 
@@ -1261,7 +1295,7 @@
         private Controles.textBoxes.txtDescripcionCorta txtBloque;
         private Controles.textBoxes.txtDescripcionCorta txtCalleNumero;
         private Controles.labels.lblEtiqueta lblEtiqueta9;
-        private Controles.textBoxes.txtDescripcion txtDescripcion9;
+        private Controles.textBoxes.txtDescripcion txtMedNumeroSerie;
         private Controles.textBoxes.gesTextBox txtVoltaje;
         private Controles.labels.lblEtiqueta lblVoltaje;
         private Controles.textBoxes.gesTextBox txtConsumoEstimado;
@@ -1273,16 +1307,18 @@
         private Controles.labels.lblEtiqueta lblPotenciaL1;
         private Controles.textBoxes.txtDescripcionCorta txtPotenciaL2;
         private Controles.labels.lblEtiqueta lblEtiqueta12;
-        private Controles.textBoxes.txtDescripcion txtDescripcion12;
+        private Controles.textBoxes.txtDescripcion txtFabricanteMedidor;
         private Controles.labels.lblEtiqueta lblEtiqueta11;
-        private Controles.textBoxes.txtDescripcion txtDescripcion11;
+        private Controles.textBoxes.txtDescripcion txtTipoMedidor;
         private Controles.labels.lblEtiqueta lblEtiqueta10;
-        private Controles.textBoxes.txtDescripcion txtDescripcion10;
+        private Controles.textBoxes.txtDescripcion txtMedidorModelo;
         private Controles.labels.lblEtiqueta lblEtiqueta15;
         private Controles.textBoxes.txtDescripcion txtTipoDoc;
         private Controles.labels.lblEtiqueta lblEtiqueta14;
         private Controles.textBoxes.txtDescripcion txtEmpDocumentoNumero;
         private Controles.textBoxes.txtDescripcion txtRespIva;
         private Controles.labels.lblEtiqueta lblEtiqueta13;
+        private Controles.labels.lblEtiqueta lblEtiqueta16;
+        private Controles.textBoxes.txtDescripcion txtLecturaModoMedidor;
     }
 }

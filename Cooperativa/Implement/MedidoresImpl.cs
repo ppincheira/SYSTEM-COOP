@@ -30,12 +30,12 @@ namespace Implement
                     " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('MED_NUMERO')) into IDTEMP from dual; " +
                     "insert into Medidores" +
                     "(MED_NUMERO, MED_NUMEROSERIE, EMP_NUMERO_PROVEEDOR, MED_DIGITOS, EST_CODIGO, " +
-                    "MED_FACTOR_CALIB, GIS_X, GIS_Y, USR_NUMERO, MED_FECHA_CARGA, MMO_CODIGO) " +
+                    "MED_FACTOR_CALIB, GIS_X, GIS_Y, USR_NUMERO, MED_FECHA_CARGA, MMO_CODIGO, LEM_CODIGO) " +
                     "values(IDTEMP," + oMed.MedNumeroserie + "," + oMed.EmpNumeroProveedor + "," +
                     oMed.MedDigitos + ",'" + oMed.EstCodigo + "'," + oMed.MedFactorCalib + "," +
                     (oMed.GisX == null ? "null" : oMed.GisX.ToString()) + "," + 
                     (oMed.GisY == null ? "null" : oMed.GisY.ToString()) + "," + oMed.UsrNumero + ",'" + 
-                    oMed.MedFechaCarga.ToString("dd/MM/yyyy") + "'," + oMed.MmoCodigo +
+                    oMed.MedFechaCarga.ToString("dd/MM/yyyy") + "'," + oMed.MmoCodigo +  "," +oMed.LemCodigo +
                     ") RETURNING IDTEMP INTO :id;" +
                     " END;";
                 cmd = new OracleCommand(query, cn);
@@ -75,7 +75,7 @@ namespace Implement
                     ", GIS_Y=" + (oMed.GisY == null ? "null" : oMed.GisY.ToString()) +
                     ", USR_NUMERO=" + oMed.UsrNumero +
                     ", MED_FECHA_CARGA='" + oMed.MedFechaCarga.ToString("dd/MM/yyyy") +
-                    "', MMO_CODIGO=" + oMed.MmoCodigo +
+                    "', MMO_CODIGO=" + oMed.MmoCodigo + ", LEM_CODIGO=" + oMed.LemCodigo +
                     " WHERE MED_NUMERO=" + oMed.MedNumero, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
@@ -217,6 +217,7 @@ namespace Implement
                     oObjeto.MedFechaCarga = DateTime.Parse(dr["MED_FECHA_CARGA"].ToString());
                 if (dr["MMO_CODIGO"].ToString() != "")
                     oObjeto.MmoCodigo = short.Parse(dr["MMO_CODIGO"].ToString());
+                oObjeto.LemCodigo = long.Parse(dr["LEM_CODIGO"].ToString());
                 return oObjeto;
             }
             catch (Exception ex)

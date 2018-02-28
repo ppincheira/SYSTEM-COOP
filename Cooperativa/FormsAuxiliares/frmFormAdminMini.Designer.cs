@@ -114,6 +114,7 @@
             // 
             this.dgBusqueda.AllowUserToAddRows = false;
             this.dgBusqueda.AllowUserToDeleteRows = false;
+            this.dgBusqueda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgBusqueda.Location = new System.Drawing.Point(6, 19);
             this.dgBusqueda.MultiSelect = false;
             this.dgBusqueda.Name = "dgBusqueda";

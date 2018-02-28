@@ -53,6 +53,8 @@
             this.lblSerieHasta = new Controles.labels.lblEtiqueta();
             this.lblDigitos = new Controles.labels.lblEtiqueta();
             this.lblSerieDesde = new Controles.labels.lblEtiqueta();
+            this.cmbLmeCodigo = new Controles.datos.cmbLista();
+            this.lblLecturaModo = new Controles.labels.lblEtiqueta();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +90,8 @@
             // 
             // gbDatos
             // 
+            this.gbDatos.Controls.Add(this.cmbLmeCodigo);
+            this.gbDatos.Controls.Add(this.lblLecturaModo);
             this.gbDatos.Controls.Add(this.gesTextBoxFactorCalib);
             this.gbDatos.Controls.Add(this.gesTextBoxNumeroSerieHasta);
             this.gbDatos.Controls.Add(this.gesTextBoxNumeroSerieDesde);
@@ -195,7 +199,7 @@
             this.dtpFechaCarga.Name = "dtpFechaCarga";
             this.dtpFechaCarga.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.dtpFechaCarga.Size = new System.Drawing.Size(165, 20);
-            this.dtpFechaCarga.TabIndex = 9;
+            this.dtpFechaCarga.TabIndex = 10;
             // 
             // lblEtiqueta1
             // 
@@ -227,7 +231,7 @@
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.chkEstado.Size = new System.Drawing.Size(73, 17);
-            this.chkEstado.TabIndex = 10;
+            this.chkEstado.TabIndex = 11;
             this.chkEstado.Text = "Habilitado";
             this.chkEstado.UseVisualStyleBackColor = true;
             // 
@@ -323,6 +327,27 @@
             this.lblSerieDesde.TabIndex = 0;
             this.lblSerieDesde.Text = "Numero de Serie Inicial:";
             // 
+            // cmbLmeCodigo
+            // 
+            this.cmbLmeCodigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbLmeCodigo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbLmeCodigo.FormattingEnabled = true;
+            this.cmbLmeCodigo.Location = new System.Drawing.Point(427, 187);
+            this.cmbLmeCodigo.Name = "cmbLmeCodigo";
+            this.cmbLmeCodigo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.cmbLmeCodigo.Size = new System.Drawing.Size(165, 21);
+            this.cmbLmeCodigo.TabIndex = 9;
+            this.cmbLmeCodigo.Text = "<Seleccione Modelo>";
+            // 
+            // lblLecturaModo
+            // 
+            this.lblLecturaModo.AutoSize = true;
+            this.lblLecturaModo.Location = new System.Drawing.Point(312, 190);
+            this.lblLecturaModo.Name = "lblLecturaModo";
+            this.lblLecturaModo.Size = new System.Drawing.Size(91, 13);
+            this.lblLecturaModo.TabIndex = 28;
+            this.lblLecturaModo.Text = "Modo de Lectura:";
+            // 
             // frmMedidoresMasivosCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,5 +391,7 @@
         private Controles.labels.lblEtiqueta lblSerieDesde;
         private Controles.textBoxes.gesTextBox gesTextBoxNumeroSerieHasta;
         private Controles.labels.lblEtiqueta lblSerieHasta;
+        private Controles.datos.cmbLista cmbLmeCodigo;
+        private Controles.labels.lblEtiqueta lblLecturaModo;
     }
 }
