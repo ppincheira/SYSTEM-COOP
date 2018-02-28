@@ -30,20 +30,21 @@ namespace Business
             TelefonosImpl oTelefonosImpl = new TelefonosImpl();
             return oTelefonosImpl.TelefonosGetById(Id);
         }
-
-
         public Telefonos TelefonosGetByCodigoRegistroDefecto(long CodigoRegistro, string TabCodigo, Enumeration.TelefonosTipos Tipo)
         {
             TelefonosImpl oTelefonosImpl = new TelefonosImpl();
             return oTelefonosImpl.TelefonosGetByCodigoRegistroDefecto(CodigoRegistro, TabCodigo, Tipo);
         }
-
+        public DataTable TelefonosGetByCodigoRegistroDT(long CodigoRegistro, string TabCodigo, Enumeration.TelefonosTipos Tipo)
+        {
+            TelefonosImpl oTelefonosImpl = new TelefonosImpl();
+            return oTelefonosImpl.TelefonosGetByCodigoRegistroDT(CodigoRegistro, TabCodigo, Tipo);
+        }
         public List<Telefonos> TelefonosGetAll()
         {
             TelefonosImpl oTelefonosImpl = new TelefonosImpl();
             return oTelefonosImpl.TelefonosGetAll();
         }
-
         public DataTable TelefonosGetByFilter(string tabCodigo, string telCodigoRegistro)
         {
             TelefonosImpl oTelefonosImpl = new TelefonosImpl();

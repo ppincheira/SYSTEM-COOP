@@ -183,6 +183,37 @@ namespace Implement
                 throw ex;
             }
         }
+        /// <summary>
+        ///Este metodo trae el Domicilio por Defecto 
+        /// </summary>
+        /// <param name="CodigoRegistro"></param>
+        /// <param name="TabCodigo"></param>
+        /// <returns></returns>
+        public DataTable DomiciliosGetByCodigoRegistroDT(long CodigoRegistro, string TabCodigo)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = " SELECT D.* FROM DOMICILIOS D " +
+                " INNER JOIN DOMICILIOS_ENTIDADES DE ON DE.DOM_CODIGO = D.DOM_CODIGO " +
+                " WHERE DE.DEN_CODIGO_REGISTRO =" + CodigoRegistro +
+                " AND DE.TAB_CODIGO = '" + TabCodigo + "'";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                dt = ds.Tables[0];
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public List<Domicilios> DomiciliosGetAll()
 		{

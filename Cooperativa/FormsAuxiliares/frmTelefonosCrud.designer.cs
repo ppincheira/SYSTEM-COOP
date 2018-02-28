@@ -41,7 +41,7 @@
             this.chkPorDefecto = new Controles.datos.chkBox();
             this.txtNombreContacto = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
-            this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
+            this.lblEmail = new Controles.labels.lblEtiqueta();
             this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.txtNumeroTelefono = new Controles.textBoxes.txtDescripcionCorta();
             this.lblNumeroTelefono = new Controles.labels.lblEtiqueta();
@@ -100,7 +100,7 @@
             this.gesDatos.Controls.Add(this.chkPorDefecto);
             this.gesDatos.Controls.Add(this.txtNombreContacto);
             this.gesDatos.Controls.Add(this.lblEtiqueta3);
-            this.gesDatos.Controls.Add(this.lblEtiqueta2);
+            this.gesDatos.Controls.Add(this.lblEmail);
             this.gesDatos.Controls.Add(this.lblEtiqueta1);
             this.gesDatos.Controls.Add(this.txtNumeroTelefono);
             this.gesDatos.Controls.Add(this.lblNumeroTelefono);
@@ -180,14 +180,14 @@
             this.lblEtiqueta3.TabIndex = 11;
             this.lblEtiqueta3.Text = "Nombre Contacto:";
             // 
-            // lblEtiqueta2
+            // lblEmail
             // 
-            this.lblEtiqueta2.AutoSize = true;
-            this.lblEtiqueta2.Location = new System.Drawing.Point(80, 165);
-            this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(46, 17);
-            this.lblEtiqueta2.TabIndex = 10;
-            this.lblEtiqueta2.Text = "Email:";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(80, 165);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(46, 17);
+            this.lblEmail.TabIndex = 10;
+            this.lblEmail.Text = "Email:";
             // 
             // lblEtiqueta1
             // 
@@ -248,7 +248,7 @@
 
         private Controles.labels.lblEtiqueta lblNumeroTelefono;               
         private Controles.labels.lblEtiqueta lblEtiqueta3;        
-        private Controles.labels.lblEtiqueta lblEtiqueta2;        
+        private Controles.labels.lblEtiqueta lblEmail;        
         private Controles.labels.lblEtiqueta lblEtiqueta1;
 
         private Controles.datos.chkBox chkPorDefecto;

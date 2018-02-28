@@ -188,6 +188,40 @@ namespace Implement
                 throw ex;
             }
         }
+
+        public DataTable TelefonosGetByCodigoRegistroDT(long CodigoRegistro, string TabCodigo, Enumeration.TelefonosTipos Tipo)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = " SELECT * " +
+                                   " FROM   telefonos " +
+                                   " WHERE  TAB_CODIGO ='" + TabCodigo + "' " +
+                                   " AND TEL_CODIGO_REGISTRO=" + CodigoRegistro + " ";
+                if (Tipo == Enumeration.TelefonosTipos.Telefono)
+                    sqlSelect = sqlSelect + " AND  TEL_EMAIL IS NULL " +
+                    " AND TEL_NUMERO IS NOT NULL ";
+                else
+                    sqlSelect = sqlSelect + " AND  TEL_EMAIL IS NOT NULL " +
+                                   " AND TEL_NUMERO IS NULL ";
+
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                dt = ds.Tables[0];
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<Telefonos> TelefonosGetAll()
         {
             List<Telefonos> lstTelefonos = new List<Telefonos>();

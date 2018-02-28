@@ -1,6 +1,7 @@
 ﻿using Controles.datos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
 {
     public interface IVistaFormAdmin
     {
-
+        Model.Admin oiAdmin { get; set; }
         Boolean grupoFecha { get; set; }
         Boolean grupoEstado { get; set; }
         grdGrillaAdmin grilla { get; set; }
@@ -19,6 +20,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
         cmbLista comboBuscar { get; set; }
         cmbLista comboBuscarA { get; set; }
         cmbLista comboOpcionesA { get; set; }
+        DataTable dtiFiltro { get; set; }
         string filtro { get; set; }
         cmbLista comboEstado { get; set; }
         string cantidad { set; }

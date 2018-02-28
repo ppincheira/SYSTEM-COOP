@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using static Model.Admin;
 using System.Reflection;
 using GesSeguridad.controles.forms;
+using System.Data;
 
 namespace FormsAuxiliares
 {
@@ -22,10 +23,17 @@ namespace FormsAuxiliares
         public string _strRdoCodigo;
         Utility _oUtil;
         private UIFormAdmin _oFormAdmin;
+        private DataTable _dtFiltro;
 
         #endregion
 
         #region Implementation of IVistaAdminMini
+
+        public Admin oiAdmin
+        {
+            get { return _oAdmin; }
+            set { _oAdmin = value; }
+        }
         public Boolean grupoEstado
         {
             get { return this.gpbGrupoEstado.Visible; }
@@ -81,6 +89,12 @@ namespace FormsAuxiliares
         {
             get { return this.cmbEstado; }
             set { this.cmbEstado = value; }
+        }
+
+        public DataTable dtiFiltro
+        {
+            get { return _dtFiltro; }
+            set { _dtFiltro = value; }
         }
         public string cantidad
         {
@@ -465,12 +479,12 @@ namespace FormsAuxiliares
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "TETE":
-                    frmTelefonosCrud oFrmTel = new frmTelefonosCrud(0, _oAdmin.TabCodigo, _oAdmin.CodigoRegistro, "I");
+                    frmTelefonosCrud oFrmTel = new frmTelefonosCrud(0, _oAdmin, "I");
                     if (oFrmTel.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "TEEM":
-                    frmTelefonosCrud oFrmTeem = new frmTelefonosCrud(0, _oAdmin.TabCodigo, _oAdmin.CodigoRegistro, "I");
+                    frmTelefonosCrud oFrmTeem = new frmTelefonosCrud(0, _oAdmin, "I");
                     if (oFrmTeem.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;

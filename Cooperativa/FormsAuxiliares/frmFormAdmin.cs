@@ -30,11 +30,17 @@ namespace FormsAuxiliares
         Utility _oUtil;
         public string _strRdoCodigo;
         private UIFormAdmin _oFormAdmin;
+        private DataTable _dtFiltro;
         #endregion
 
         #region << Implementation of IVistaFormAdmin >>
 
 
+        public Admin oiAdmin
+        {
+            get { return _oAdmin; }
+            set { _oAdmin = value; }
+        }
         public Boolean grupoEstado
         {
             get { return this.gpbGrupoEstado.Enabled; }
@@ -51,7 +57,6 @@ namespace FormsAuxiliares
             get {  return this.dgBusqueda; }
             set { this.dgBusqueda = value; }
         }
-
         public grdGrillaAdmin grillaFiltro
         {
             get { return this.grdGrillaFiltro; }
@@ -77,11 +82,15 @@ namespace FormsAuxiliares
             get { return  this.cmbBuscarA; }
             set {this.cmbBuscarA = value; }
         }
-
         public cmbLista comboOpcionesA
         {
             get { return this.cmbOpcionesA; }
             set { this.cmbOpcionesA = value; }
+        }
+        public DataTable dtiFiltro
+        {
+            get { return _dtFiltro; }
+            set { _dtFiltro = value; }
         }
         public string filtro
         {
@@ -168,11 +177,12 @@ namespace FormsAuxiliares
         private cmbLista cmbOpcionesA;
         private cmbLista cmbBuscarA;
         private Controles.textBoxes.txtDescripcionCorta txtValor1;
-        private Controles.textBoxes.txtDescripcionCorta txtValor6;
         private Controles.textBoxes.txtDescripcionCorta txtValor5;
         private Controles.textBoxes.txtDescripcionCorta txtValor4;
         private Controles.textBoxes.txtDescripcionCorta txtValor3;
         private Controles.textBoxes.txtDescripcionCorta txtValor2;
+        private Controles.textBoxes.txtDescripcionCorta txtValor6;
+        private Controles.buttons.btnGeneral btnEliminar;
         private Controles.datos.grdGrillaAdmin dgBusqueda;
 
         private void InitializeComponent()
@@ -205,6 +215,7 @@ namespace FormsAuxiliares
             this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
             this.lblFiltro = new Controles.labels.lblEtiqueta();
             this.tabPageAvanzada = new System.Windows.Forms.TabPage();
+            this.btnEliminar = new Controles.buttons.btnGeneral();
             this.txtValor1 = new Controles.textBoxes.txtDescripcionCorta();
             this.txtValor6 = new Controles.textBoxes.txtDescripcionCorta();
             this.txtValor5 = new Controles.textBoxes.txtDescripcionCorta();
@@ -281,8 +292,10 @@ namespace FormsAuxiliares
             this.tabPageBuscador.Location = new System.Drawing.Point(4, 25);
             this.tabPageBuscador.Name = "tabPageBuscador";
             this.tabPageBuscador.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageBuscador.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabPageBuscador.Size = new System.Drawing.Size(931, 116);
             this.tabPageBuscador.TabIndex = 0;
+            this.tabPageBuscador.Text = "Principal";
             this.tabPageBuscador.UseVisualStyleBackColor = true;
             // 
             // gpbGrupoEstado
@@ -479,6 +492,7 @@ namespace FormsAuxiliares
             this.txtFiltro.TabIndex = 3;
             this.txtFiltro.TextoVacio = "<Descripcion>";
             this.txtFiltro.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // cmbBuscar
             // 
@@ -511,6 +525,7 @@ namespace FormsAuxiliares
             // 
             // tabPageAvanzada
             // 
+            this.tabPageAvanzada.Controls.Add(this.btnEliminar);
             this.tabPageAvanzada.Controls.Add(this.txtValor1);
             this.tabPageAvanzada.Controls.Add(this.txtValor6);
             this.tabPageAvanzada.Controls.Add(this.txtValor5);
@@ -529,6 +544,16 @@ namespace FormsAuxiliares
             this.tabPageAvanzada.Text = "Avanzada";
             this.tabPageAvanzada.UseVisualStyleBackColor = true;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(154, 89);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(43, 23);
+            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.Text = "-";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // txtValor1
             // 
             this.txtValor1.BackColor = System.Drawing.Color.White;
@@ -537,21 +562,21 @@ namespace FormsAuxiliares
             this.txtValor1.MaxLength = 20;
             this.txtValor1.Name = "txtValor1";
             this.txtValor1.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtValor1.Size = new System.Drawing.Size(204, 22);
-            this.txtValor1.TabIndex = 14;
-            this.txtValor1.TextoVacio = "<Descripcion>";
+            this.txtValor1.Size = new System.Drawing.Size(235, 22);
+            this.txtValor1.TabIndex = 12;
+            this.txtValor1.TextoVacio = "Filtro";
             this.txtValor1.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // txtValor6
             // 
             this.txtValor6.BackColor = System.Drawing.Color.White;
             this.txtValor6.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtValor6.Location = new System.Drawing.Point(76, 90);
+            this.txtValor6.Location = new System.Drawing.Point(81, 90);
             this.txtValor6.MaxLength = 20;
             this.txtValor6.Name = "txtValor6";
             this.txtValor6.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtValor6.Size = new System.Drawing.Size(65, 22);
-            this.txtValor6.TabIndex = 13;
+            this.txtValor6.Size = new System.Drawing.Size(70, 22);
+            this.txtValor6.TabIndex = 17;
             this.txtValor6.TextoVacio = "<Descripcion>";
             this.txtValor6.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -563,8 +588,8 @@ namespace FormsAuxiliares
             this.txtValor5.MaxLength = 20;
             this.txtValor5.Name = "txtValor5";
             this.txtValor5.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtValor5.Size = new System.Drawing.Size(65, 22);
-            this.txtValor5.TabIndex = 12;
+            this.txtValor5.Size = new System.Drawing.Size(70, 22);
+            this.txtValor5.TabIndex = 16;
             this.txtValor5.TextoVacio = "<Descripcion>";
             this.txtValor5.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -572,12 +597,12 @@ namespace FormsAuxiliares
             // 
             this.txtValor4.BackColor = System.Drawing.Color.White;
             this.txtValor4.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtValor4.Location = new System.Drawing.Point(145, 65);
+            this.txtValor4.Location = new System.Drawing.Point(164, 65);
             this.txtValor4.MaxLength = 20;
             this.txtValor4.Name = "txtValor4";
             this.txtValor4.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtValor4.Size = new System.Drawing.Size(65, 22);
-            this.txtValor4.TabIndex = 11;
+            this.txtValor4.Size = new System.Drawing.Size(77, 22);
+            this.txtValor4.TabIndex = 15;
             this.txtValor4.TextoVacio = "<Descripcion>";
             this.txtValor4.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -585,12 +610,12 @@ namespace FormsAuxiliares
             // 
             this.txtValor3.BackColor = System.Drawing.Color.White;
             this.txtValor3.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtValor3.Location = new System.Drawing.Point(76, 65);
+            this.txtValor3.Location = new System.Drawing.Point(85, 65);
             this.txtValor3.MaxLength = 20;
             this.txtValor3.Name = "txtValor3";
             this.txtValor3.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtValor3.Size = new System.Drawing.Size(65, 22);
-            this.txtValor3.TabIndex = 10;
+            this.txtValor3.Size = new System.Drawing.Size(75, 22);
+            this.txtValor3.TabIndex = 14;
             this.txtValor3.TextoVacio = "<Descripcion>";
             this.txtValor3.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -602,17 +627,17 @@ namespace FormsAuxiliares
             this.txtValor2.MaxLength = 20;
             this.txtValor2.Name = "txtValor2";
             this.txtValor2.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtValor2.Size = new System.Drawing.Size(65, 22);
-            this.txtValor2.TabIndex = 9;
+            this.txtValor2.Size = new System.Drawing.Size(76, 22);
+            this.txtValor2.TabIndex = 13;
             this.txtValor2.TextoVacio = "<Descripcion>";
             this.txtValor2.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(160, 90);
+            this.btnAgregar.Location = new System.Drawing.Point(198, 89);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(50, 23);
-            this.btnAgregar.TabIndex = 6;
+            this.btnAgregar.Size = new System.Drawing.Size(43, 23);
+            this.btnAgregar.TabIndex = 19;
             this.btnAgregar.Text = "+";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -622,33 +647,33 @@ namespace FormsAuxiliares
             this.grdGrillaFiltro.AllowDrop = true;
             this.grdGrillaFiltro.AllowUserToAddRows = false;
             this.grdGrillaFiltro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdGrillaFiltro.Location = new System.Drawing.Point(216, 3);
+            this.grdGrillaFiltro.Location = new System.Drawing.Point(247, 3);
             this.grdGrillaFiltro.MultiSelect = false;
             this.grdGrillaFiltro.Name = "grdGrillaFiltro";
             this.grdGrillaFiltro.ReadOnly = true;
             this.grdGrillaFiltro.RowTemplate.Height = 24;
-            this.grdGrillaFiltro.Size = new System.Drawing.Size(712, 110);
+            this.grdGrillaFiltro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdGrillaFiltro.Size = new System.Drawing.Size(681, 110);
             this.grdGrillaFiltro.TabIndex = 5;
             // 
             // cmbOpcionesA
             // 
             this.cmbOpcionesA.FormattingEnabled = true;
-            this.cmbOpcionesA.Location = new System.Drawing.Point(6, 37);
+            this.cmbOpcionesA.Location = new System.Drawing.Point(6, 35);
             this.cmbOpcionesA.Name = "cmbOpcionesA";
             this.cmbOpcionesA.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.cmbOpcionesA.Size = new System.Drawing.Size(204, 24);
-            this.cmbOpcionesA.TabIndex = 3;
+            this.cmbOpcionesA.Size = new System.Drawing.Size(235, 24);
+            this.cmbOpcionesA.TabIndex = 11;
             this.cmbOpcionesA.SelectedIndexChanged += new System.EventHandler(this.cmbOpcionesA_SelectedIndexChanged);
             // 
             // cmbBuscarA
             // 
-            this.cmbBuscarA.BackColor = System.Drawing.Color.White;
             this.cmbBuscarA.FormattingEnabled = true;
             this.cmbBuscarA.Location = new System.Drawing.Point(6, 9);
             this.cmbBuscarA.Name = "cmbBuscarA";
             this.cmbBuscarA.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.cmbBuscarA.Size = new System.Drawing.Size(204, 24);
-            this.cmbBuscarA.TabIndex = 2;
+            this.cmbBuscarA.Size = new System.Drawing.Size(235, 24);
+            this.cmbBuscarA.TabIndex = 10;
             // 
             // frmFormAdmin
             // 
@@ -687,6 +712,7 @@ namespace FormsAuxiliares
                 InitializeComponent();
                 AsignarFuncionalidad(oPerForm);
                 _oAdmin = oAdmin;
+
                 _oFormAdmin = new UIFormAdmin(this);
             }
             catch (Exception ex)
@@ -997,6 +1023,22 @@ namespace FormsAuxiliares
                     break;
                 case "8":
                     this.txtValor1.Visible = true;
+                    this.txtValor2.Visible = false;
+                    this.txtValor3.Visible = false;
+                    this.txtValor4.Visible = false;
+                    this.txtValor5.Visible = false;
+                    this.txtValor6.Visible = false;
+                    break;
+                case "9":
+                    this.txtValor1.Visible = true;
+                    this.txtValor2.Visible = false;
+                    this.txtValor3.Visible = false;
+                    this.txtValor4.Visible = false;
+                    this.txtValor5.Visible = false;
+                    this.txtValor6.Visible = false;
+                    break;
+                case "10":
+                    this.txtValor1.Visible = true;
                     this.txtValor2.Visible = true;
                     this.txtValor3.Visible = true;
                     this.txtValor1.Visible = false;
@@ -1004,7 +1046,7 @@ namespace FormsAuxiliares
                     this.txtValor5.Visible = false;
                     this.txtValor6.Visible = false;
                     break;
-                case "9":
+                case "11":
                     this.txtValor1.Visible = false;
                     this.txtValor2.Visible = true;
                     this.txtValor3.Visible = true;
@@ -1012,7 +1054,7 @@ namespace FormsAuxiliares
                     this.txtValor5.Visible = true;
                     this.txtValor6.Visible = true;
                     break;
-                case "10":
+                case "12":
                     this.txtValor1.Visible = false;
                     this.txtValor2.Visible = true;
                     this.txtValor3.Visible = true;
@@ -1192,14 +1234,66 @@ namespace FormsAuxiliares
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            _oFormAdmin.CargarDataTable();
-        }
+            string msje = "";
+            bool band = false;
+            if (this.cmbBuscarA.SelectedValue.ToString() == "0")
+            {
+                msje += "Debe seleccionar Parametro de Busqueda \n" ;
+                band = true;
+            }
 
+
+            if (this.cmbOpcionesA.SelectedValue.ToString() == "0")
+            {
+                msje += "Debe seleccionar el operador \n";
+                band = true;
+            }
+
+            switch (this.cmbOpcionesA.SelectedValue.ToString())
+            {
+                case "10":
+                if ((this.txtValor2.Text == "") && (this.txtValor3.Text == "")) {
+                    msje += "Deben estar completos los dos Valores \n";
+                    this.txtValor2.Focus();
+                    band = true;
+                }
+                break;
+                case "11":
+                if ((this.txtValor2.Text == "") && (this.txtValor3.Text == "") && (this.txtValor4.Text == "") && (this.txtValor5.Text == "") && (this.txtValor6.Text == ""))
+                {
+                    msje += "Deben estar completos los valores para la lista \n";
+                    band = true;  
+                }
+                break;
+                case "12":
+                if ((this.txtValor2.Text == "") && (this.txtValor3.Text == "") && (this.txtValor4.Text == "") && (this.txtValor5.Text == "") && (this.txtValor6.Text == "")) {
+                    msje += "Deben estar completos los valores para la lista \n";
+                    band = true;
+                }
+                break;
+                default:
+                if (this.txtValor1.Text == "") { 
+                    msje += "El Valor debe estar completo \n";
+                    band = true;
+                }
+                break;                            
+            }
+            if (band)
+                MessageBox.Show(msje, "Buscador Avanzado",MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+            else
+                _oFormAdmin.CargarDataTable();
+        }
         private void cmbOpcionesA_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarOpciones(this.cmbOpcionesA.SelectedValue.ToString());
         }
-
-   
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.grillaFiltro.CurrentRow;
+            if (row != null)
+            {
+                _oFormAdmin.Eliminar(row.Index);
+            }
+        }
     }
 }

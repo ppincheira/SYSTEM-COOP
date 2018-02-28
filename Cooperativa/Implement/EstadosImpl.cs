@@ -177,7 +177,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "SELECT * FROM ESTADOS " +
+                string sqlSelect = "SELECT EST_CODIGO,EST_DESCRIPCION FROM ESTADOS " +
                 " where  TAB_NOMBRE='" + tabNombre+"'"+
                 " AND EST_COLUMNA_TABLA='"+ estColumnaTabla+"'";
 

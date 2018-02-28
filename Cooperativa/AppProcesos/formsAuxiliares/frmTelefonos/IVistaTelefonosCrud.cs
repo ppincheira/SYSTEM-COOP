@@ -16,7 +16,6 @@ namespace AppProcesos.formsAuxiliares.frmTelefonos
         Boolean telDefecto { get; set; }        
         string telEmail { get; set; }
         string telNombreContacto { get; set; }
-        string tabCodigo { get; set; }       
-        string telCodigoRegistro { get; set; }
+      
     }
 }

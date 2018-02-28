@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Implement;
 using Model;
-
+using System.Data;
 
 namespace Business
 {
@@ -38,6 +38,11 @@ namespace Business
             return oDomiciliosImpl.DomiciliosGetByCodigoRegistroDefecto(CodigoRegistro, TabCodigo);
         }
 
+        public DataTable DomiciliosGetByCodigoRegistroDT(long CodigoRegistro, string TabCodigo)
+        {
+            DomiciliosImpl oDomiciliosImpl = new DomiciliosImpl();
+            return oDomiciliosImpl.DomiciliosGetByCodigoRegistroDT(CodigoRegistro, TabCodigo);
+        }
         public List<Domicilios> DomiciliosGetAll()
         {
             DomiciliosImpl oDomiciliosImpl = new DomiciliosImpl();

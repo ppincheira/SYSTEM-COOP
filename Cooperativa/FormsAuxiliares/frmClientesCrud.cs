@@ -33,6 +33,11 @@ namespace FormsAuxiliares
 
 
         #region Implementation of IVistaClientesCrud
+        public radioBtn rbiEmpresa {
+            get { return this.rbEmpresa; }
+            set { this.rbEmpresa = value; }
+       }
+
         public long empNumero
         {
             get { return _EmpNumero; }
@@ -215,36 +220,51 @@ namespace FormsAuxiliares
             set { this.dtpFechaBajaAccionista = value; }
         }
 
-        public string strClienteBaja
-        {
-            get { return this.chkBajaCliente.Checked ? "S" : "N"; }
-            set { this.chkBajaCliente.Checked = value == "S" ? true : false; }
-        }
+        //public string strClienteBaja
+        //{
+        //    get { return this.chkBajaCliente.Checked ? "S" : "N"; }
+        //    set { this.chkBajaCliente.Checked = value == "S" ? true : false; }
+        //}
 
-        public string strAccionistaBaja
-        {
-            get { return this.chkBajaAccionista.Checked ? "S" : "N"; }
-            set { this.chkBajaAccionista.Checked = value == "S" ? true : false; }
-        }
+        //public string strAccionistaBaja
+        //{
+        //    get { return this.chkBajaAccionista.Checked ? "S" : "N"; }
+        //    set { this.chkBajaAccionista.Checked = value == "S" ? true : false; }
+        //}
 
-        public string strProveedorBaja
-        {
-            get { return this.chkBajaProveedor.Checked ? "S" : "N"; }
-            set { this.chkBajaProveedor.Checked = value == "S" ? true : false; }
-        }
+        //public string strProveedorBaja
+        //{
+        //    get { return this.chkBajaProveedor.Checked ? "S" : "N"; }
+        //    set { this.chkBajaProveedor.Checked = value == "S" ? true : false; }
+        //}
 
         public string strEsSocio
         {
             get { return this.chkEsSocio.Checked ? "S" : "N"; }
             set { this.chkEsSocio.Checked = value == "S" ? true : false; }
         }
+        public Controles.buttons.btnGeneral btniDomicilio {
+            get { return this.rbEmpresa.Checked? this.btnDomicilio: this.btnDomicilioI; }
+            set { this.btnDomicilio = value; this.btnDomicilioI = value; }
+        }
+        
+        public Controles.buttons.btnGeneral btniTelefono {
+            get { return this.rbEmpresa.Checked ? this.btnTelefono : this.btnTelefonosI; }
+            set { this.btnTelefono = value; this.btnTelefonosI = value; }
+        }
+        
+        public Controles.buttons.btnGeneral btniEmail {
+            get { return this.rbEmpresa.Checked ? this.btnEmail: this.btnEmailI; }
+            set { this.btnEmail = value; this.btnEmailI = value; }
+        }
+     
 
-       
-    #endregion
+
+        #endregion
 
         #region << EVENTOS >>
 
-    public frmClientesCrud(Int32 EmpNumero)
+        public frmClientesCrud(Int32 EmpNumero)
         {
             InitializeComponent();
             _EmpNumero = EmpNumero;
@@ -386,17 +406,35 @@ namespace FormsAuxiliares
             else
                 this.gbEsSocio.Enabled = false;
         }
-        private void chkBajaAccionista_CheckedChanged(object sender, EventArgs e)
+        private void chkEsCliente_CheckedChanged(object sender, EventArgs e)
         {
-            _oClientesCrud.FechaBajaAccionista(this.chkBajaAccionista.Checked);
+            if (this.chkEsCliente.Checked)
+                this.gbCliente.Enabled = true;
+            else
+                this.gbCliente.Enabled = false;
         }
-        private void chkBajaCliente_CheckedChanged(object sender, EventArgs e)
+        private void chkEsProveedor_CheckedChanged(object sender, EventArgs e)
         {
-            _oClientesCrud.FechaBajaCliente(this.chkBajaCliente.Checked);
+            if (this.chkEsProveedor.Checked)
+                this.gbProveedor.Enabled = true;
+            else
+                this.gbProveedor.Enabled = false;
         }
-        private void chkBajaProveedor_CheckedChanged(object sender, EventArgs e)
+        //private void chkBajaAccionista_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    _oClientesCrud.FechaBajaAccionista(this.chkBajaAccionista.Checked);
+        //}
+        //private void chkBajaCliente_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    _oClientesCrud.FechaBajaCliente(this.chkBajaCliente.Checked);
+        //}
+        //private void chkBajaProveedor_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    _oClientesCrud.FechaBajaProveedor(this.chkBajaProveedor.Checked);
+        //}
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            _oClientesCrud.FechaBajaProveedor(this.chkBajaProveedor.Checked);
+            this.Close();
         }
 
         #endregion
@@ -432,7 +470,11 @@ namespace FormsAuxiliares
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "DOMB";
-            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
+            if (lgCodigoDomicilio == 0)
+                oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
+            else
+                oAdmin.Tipo = Admin.enumTipoForm.Filtro;
+
             oAdmin.CodigoRegistro = _EmpNumero.ToString();
             oAdmin.TabCodigoRegistro = "CLIE";
             oAdmin.FiltroCampos = "DE.DEN_CODIGO_REGISTRO&";
@@ -452,7 +494,11 @@ namespace FormsAuxiliares
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             AdminObs oAdmin = new AdminObs();
             oAdmin.TabCodigo = "CLIE";
-            oAdmin.Tipo = AdminObs.enumTipoForm.FiltroAndAlta;
+            if (this.lgCodigoObservacion==0)
+                oAdmin.Tipo = AdminObs.enumTipoForm.FiltroAndAlta;
+            else
+                oAdmin.Tipo = AdminObs.enumTipoForm.Filtro;
+
             oAdmin.CodigoRegistro = _EmpNumero.ToString();
             oAdmin.TabCodigoRegistro = "CLIE";
             oAdmin.FiltroCampos = "OBS_CODIGO_REGISTRO&";
@@ -473,7 +519,12 @@ namespace FormsAuxiliares
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
-            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
+
+            if (this.lgCodigoEmail==0)
+                oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
+            else
+                oAdmin.Tipo = Admin.enumTipoForm.Filtro;
+
             oAdmin.TabCodigo = "TETE";
             oAdmin.CodigoRegistro = _EmpNumero.ToString();
             oAdmin.TabCodigoRegistro = "CLIE";
@@ -484,15 +535,19 @@ namespace FormsAuxiliares
             if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
             {
                 string id = oFrmAdminMini.striRdoCodigo;
-                _oClientesCrud.CargarTelefono(_EmpNumero,"CLIE");
+                
             }
+            _oClientesCrud.CargarTelefono(_EmpNumero, "CLIE");
         }
 
 
         private void EditarTelefono() {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
-            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndEditar;
+            if (this.lgCodigoTelefono==0)
+                oAdmin.Tipo = Admin.enumTipoForm.FiltroAndEditar;
+            else
+                oAdmin.Tipo = Admin.enumTipoForm.Filtro;
             oAdmin.TabCodigo = "TETE";
             oAdmin.CodigoRegistro = _EmpNumero.ToString();
             oAdmin.TabCodigoRegistro = "CLIE";
@@ -503,8 +558,9 @@ namespace FormsAuxiliares
             if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
             {
                 string id = oFrmAdminMini.striRdoCodigo;
-                _oClientesCrud.CargarTelefono(_EmpNumero, "CLIE");
+               
             }
+            _oClientesCrud.CargarTelefono(_EmpNumero, "CLIE");
         }
 
         private void NuevoEmail()
@@ -512,7 +568,11 @@ namespace FormsAuxiliares
 
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
-            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
+            if (this.lgCodigoEmail==0)
+                oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
+            else
+                oAdmin.Tipo = Admin.enumTipoForm.Filtro;
+
             oAdmin.TabCodigo = "TEEM";
             oAdmin.CodigoRegistro = _EmpNumero.ToString();
             oAdmin.TabCodigoRegistro = "CLIE";
@@ -523,10 +583,15 @@ namespace FormsAuxiliares
             if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
             {
                 string id = oFrmAdminMini.striRdoCodigo;
-                _oClientesCrud.CargarTelefono(_EmpNumero, "CLIE");
+              
             }
+            _oClientesCrud.CargarTelefono(_EmpNumero, "CLIE");
 
         }
+
+
+
+
 
 
 
@@ -534,9 +599,6 @@ namespace FormsAuxiliares
 
         #endregion
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+      
     }
 }

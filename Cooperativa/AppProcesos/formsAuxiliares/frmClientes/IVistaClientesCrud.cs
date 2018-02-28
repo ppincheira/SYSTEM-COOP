@@ -45,9 +45,13 @@ namespace AppProcesos.formsAuxiliares.frmClientes
         cmbLista cmbiDistrito { get; set; }
         dtpFecha dtpiFechaAltaAccionista { get; set; }
         dtpFecha dtpiFechaBajaAccionista { get; set; }
-        string strClienteBaja { get; set; }
-        string strProveedorBaja { get; set; }
-        string strAccionistaBaja { get; set; }
+        //string strClienteBaja { get; set; }
+        //string strProveedorBaja { get; set; }
+        //string strAccionistaBaja { get; set; }
 
-    }
+        Controles.buttons.btnGeneral btniTelefono { get; set; }
+        Controles.buttons.btnGeneral btniDomicilio { get; set; }
+        Controles.buttons.btnGeneral btniEmail{ get; set; }
+
+}
 }

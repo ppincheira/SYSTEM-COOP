@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controles.form;
 using Controles.datos;
+using Model;
 
 namespace FormsAuxiliares
 {
@@ -20,8 +21,7 @@ namespace FormsAuxiliares
         UITelefonosCrud _oTelefonosCrud;
         Utility oUtility;
         long _Codigo;
-        string _TabCodigo;
-        string _CodigoRegistro;       
+        Admin _oAdmin;
         string _Accion;
 
         #endregion
@@ -62,29 +62,17 @@ namespace FormsAuxiliares
         {
             get { return this.txtNombreContacto.Text; }
             set { this.txtNombreContacto.Text = value; }
-        }
-        public String tabCodigo
-        {
-            get { return _TabCodigo; }
-            set { _TabCodigo = value; }
-        }
-
-        public string telCodigoRegistro
-        {
-            get { return _CodigoRegistro; }
-            set { _CodigoRegistro = value; }
-        }       
+        }      
         #endregion
 
         #region << EVENTOS >>
 
-        public frmTelefonosCrud(long Codigo, string TabCodigo, string CodigoRegistro, string Accion)
+        public frmTelefonosCrud(long Codigo, Admin oAdmin, string Accion)
         {
             InitializeComponent();
             _oTelefonosCrud = new UITelefonosCrud(this);
+            _oAdmin = oAdmin;
             _Codigo = Codigo;
-            _TabCodigo = TabCodigo;
-            _CodigoRegistro = CodigoRegistro;
             _Accion = Accion;
         }
         private void frmTelefonosCrud_Load(object sender, EventArgs e)
@@ -106,6 +94,22 @@ namespace FormsAuxiliares
                     this.gesDatos.Enabled = false;
                     this.btnAceptar.Enabled = false;
                 }
+
+                if (_oAdmin.TabCodigo == "TETE")
+                {
+                    this.txtEmail.Visible = false;
+                    this.lblEmail.Visible = false;    
+                }
+                if (_oAdmin.TabCodigo == "TEEM")
+                {
+                    this.lblEmail.Location = this.lblNumeroTelefono.Location;
+                    this.txtEmail.Location = this.txtNumeroTelefono.Location;
+                    this.txtNumeroTelefono.Visible = false;
+                    this.lblNumeroTelefono.Visible = false;
+                }
+
+
+
             }
             catch (Exception ex)
             {
@@ -130,7 +134,7 @@ namespace FormsAuxiliares
                     {
                         DialogResult = DialogResult.OK;
                         Cursor.Current = Cursors.WaitCursor;
-                        _oTelefonosCrud.Guardar();
+                        _oTelefonosCrud.Guardar(_oAdmin);
                         Cursor.Current = Cursors.Default;
                         this.Close();
                     }

@@ -81,11 +81,23 @@ namespace Implement
                     "EMP_FECHA_BAJA_CLI, EMP_CATEGORIA_MONOTRIBUTO, TID_CODIGO, EMP_DOCUMENTO_NUMERO, " +
                     "EMP_FECHA_ALTA, USR_NUMERO_CARGA, EMP_APELLIDOS, EMP_NOMBRES, EST_CODIGO_PRO, EST_CODIGO_CLI, " +
                     "EMP_LIMITE_CREDITO, EST_CODIGO_CREDITO, EMP_NUMERO_TRANSPORTE, PRS_NUMERO) " +
-                    "values("+ oEmp.EmpNumero+", '" + oEmp.EmpRazonSocial + "', '"+
-                    oEmp.EmpDenominacionComercial + "', '"+oEmp.EmpCuit + "', '"+ oEmp.TivCodigo + "', '"+ 
-                    oEmp.EmpFechaAltaPro.ToString("dd/MM/yyyy") + "', '" + oEmp.EmpFechaBajaPro.Value.ToString("dd/MM/yyyy") + "', '" + oEmp.EmpObservacion + "', '" + 
-                    oEmp.EmpTitularCheques + "', '" + oEmp.EmpPropia + "', '" + oEmp.EmpProveedor + "', '" + 
-                    oEmp.EmpCliente + "', '" + oEmp.EmpFechaAltaCli.Value.ToString("dd/MM/yyyy") + "', '" + oEmp.EmpFechaBajaCli.Value.ToString("dd/MM/yyyy") + "', '" + 
+                    "values(" + oEmp.EmpNumero + ", '" + oEmp.EmpRazonSocial + "', '" +
+                    oEmp.EmpDenominacionComercial + "', '" + oEmp.EmpCuit + "', '" + oEmp.TivCodigo + "', '" +
+                    oEmp.EmpFechaAltaPro.ToString("dd/MM/yyyy") + "', ";
+                    if (oEmp.EmpFechaBajaPro == null)
+                        query = query + "null";
+                    else
+                        query = query + "'" + oEmp.EmpFechaBajaPro.Value.ToString("dd/MM/yyyy") +"'";
+
+                    query = query + ", '" + oEmp.EmpObservacion + "', '" +
+                    oEmp.EmpTitularCheques + "', '" + oEmp.EmpPropia + "', '" + oEmp.EmpProveedor + "', '" +
+                    oEmp.EmpCliente + "', '" + oEmp.EmpFechaAltaCli.Value.ToString("dd/MM/yyyy") + "', ";
+                    if (oEmp.EmpFechaBajaCli == null)
+                        query = query + "null";
+                    else
+                        query = query +"'"+oEmp.EmpFechaBajaCli.Value.ToString("dd/MM/yyyy") +"'";
+
+                    query = query + ", '" + 
                     oEmp.EmpCategoriaMonotributo + "', '" + oEmp.TidCodigo + "', '" + oEmp.EmpDocumentoNumero + "','" + 
                     oEmp.EmpFechaAlta.Value.ToString("dd/MM/yyyy") + "', " + oEmp.UsrNumeroCarga + ", '" + oEmp.EmpApellidos + "', '" + 
                     oEmp.EmpNombres + "', '" + oEmp.EstCodigoPro + "', '" + oEmp.EstCodigoCli + "', " + 

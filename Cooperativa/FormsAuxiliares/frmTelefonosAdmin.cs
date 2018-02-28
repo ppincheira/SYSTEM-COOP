@@ -266,7 +266,8 @@ namespace FormsAuxiliares
         {
             try
             {
-                frmTelefonosCrud ofrmTel = new frmTelefonosCrud(0, _tabCodigo, _telCodigoRegistro, "I");
+                Admin oAdmin = new Admin();
+                frmTelefonosCrud ofrmTel = new frmTelefonosCrud(0, oAdmin, "I");
                 if (ofrmTel.ShowDialog() == DialogResult.OK)
                     _oUITelefonos.CargarGrilla();
             }
@@ -287,7 +288,8 @@ namespace FormsAuxiliares
             {
                 DataGridViewRow row = this.grdGrillaAdmin.CurrentRow;
                 long id = Convert.ToInt64(row.Cells[0].Value);
-                frmTelefonosCrud ofrmTel = new frmTelefonosCrud(id, _tabCodigo, _telCodigoRegistro, "E");
+                Admin oAdmin = new Admin();
+                frmTelefonosCrud ofrmTel = new frmTelefonosCrud(id, oAdmin, "E");
                 if (ofrmTel.ShowDialog() == DialogResult.OK)
                     _oUITelefonos.CargarGrilla();
             }
@@ -337,7 +339,8 @@ namespace FormsAuxiliares
             {
                 DataGridViewRow row = this.grdGrillaAdmin.CurrentRow;
                 long id = Convert.ToInt64(row.Cells[0].Value);
-                frmTelefonosCrud ofrmObs = new frmTelefonosCrud(id, _tabCodigo, _telCodigoRegistro, "V");
+                Admin oAdmin = new Admin();
+                frmTelefonosCrud ofrmObs = new frmTelefonosCrud(id,oAdmin, "V");
                 ofrmObs.Show();
             }
             catch (Exception ex)

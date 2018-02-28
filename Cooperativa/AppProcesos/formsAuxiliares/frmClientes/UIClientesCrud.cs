@@ -3,6 +3,7 @@ using Model;
 using Service;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,9 +35,9 @@ namespace AppProcesos.formsAuxiliares.frmClientes
 
         public void Inicializar(long empNumero, Enumeration.Acciones oAccion )
         {
-            FechaBajaAccionista(false);
-            FechaBajaCliente(false);
-            FechaBajaProveedor(false);
+            //FechaBajaAccionista(false);
+            //FechaBajaCliente(false);
+            //FechaBajaProveedor(false);
             CargarTipoIva();
             CargarEstadoCredito();
             CargarTiposDni();
@@ -45,6 +46,9 @@ namespace AppProcesos.formsAuxiliares.frmClientes
             _vista.lgCodigoEmail = 0;
             _vista.lgCodigoTelefono = 0;
             _vista.lgCodigoObservacion = 0;
+            _vista.btniEmail.BackColor = System.Drawing.Color.Gray;
+            _vista.btniTelefono.BackColor = System.Drawing.Color.Gray;
+            _vista.btniDomicilio.BackColor = System.Drawing.Color.Gray;
             if (oAccion !=Enumeration.Acciones.New)
             {
                 EmpresasBus oEmpBus = new EmpresasBus();
@@ -57,13 +61,16 @@ namespace AppProcesos.formsAuxiliares.frmClientes
                 _vista.dtpiFechaAlta.Value = oEmpresa.EmpFechaAlta.Value;
                 _vista.dtpiFechaAltaCli.Value = oEmpresa.EmpFechaAltaCli.Value;
                 _vista.dtpiFechaAltaPro.Value = oEmpresa.EmpFechaAltaPro;
-
-                if (_vista.strClienteBaja == "S")
+                if (_vista.dtpiFechaBajaCli.Checked)
                     _vista.dtpiFechaBajaCli.Value = oEmpresa.EmpFechaBajaCli.Value;
-          
-                if (_vista.strProveedorBaja == "S")
+                else
+                    _vista.dtpiFechaBajaCli.Value = DateTime.FromOADate(0);
+
+                if (_vista.dtpiFechaBajaPro.Checked)
                     _vista.dtpiFechaBajaPro.Value = oEmpresa.EmpFechaBajaPro.Value;
-                
+                else
+                    _vista.dtpiFechaBajaPro.Value= DateTime.FromOADate(0);
+
                 EsSocio_Carga(empNumero);
                 _vista.empNumero = empNumero;
                 _vista.intNumeroTransporte = oEmpresa.EmpNumeroTransporte;
@@ -152,7 +159,6 @@ namespace AppProcesos.formsAuxiliares.frmClientes
 
         private void EsSocio_Carga(long EmpNumero)
         {
-
             AccionistasBus oAccionistaBus = new AccionistasBus();
             Accionistas oAccionista = new Accionistas();
             oAccionista = oAccionistaBus.AccionistasGetByEmpNumero(EmpNumero);
@@ -160,26 +166,28 @@ namespace AppProcesos.formsAuxiliares.frmClientes
                 _vista.strEsSocio = "S";
                 _vista.dtpiFechaAltaAccionista.Value = oAccionista.AccFechaAlta.Value;
                 _vista.cmbiDistrito.SelectedValue = oAccionista.DisNumero;
-                _vista.lgAccNumero = oAccionista.AccNumero;
-                
+                _vista.lgAccNumero = oAccionista.AccNumero;   
             }
-
-
         }
-
-
-
         public void CargarEmail(long CodigoRegistro, string TabCodigo)
         {
             Telefonos oTelefono = new Telefonos();
             TelefonosBus oTelefonoBus = new TelefonosBus();
 
             oTelefono = oTelefonoBus.TelefonosGetByCodigoRegistroDefecto(CodigoRegistro, TabCodigo, Enumeration.TelefonosTipos.Email);
+            _vista.lgCodigoEmail = oTelefono.TelCodigo;
             Dominios oDominio = new Dominios();
             DominiosBus oDomBus = new DominiosBus();
             oDominio = oDomBus.DominiosGetById("CARGO_CONTACTO_TEL", oTelefono.TelCargo);
-      
+            DataTable dtEmail = new DataTable();
+            dtEmail = oTelefonoBus.TelefonosGetByCodigoRegistroDT(CodigoRegistro, TabCodigo, Enumeration.TelefonosTipos.Email);
             _vista.strEmail = oTelefono.TelEmail+" - "+oDominio.DmnDescripcion ;
+            _vista.btniEmail.Text = "...[" + dtEmail.Rows.Count + "]";
+            if (dtEmail.Rows.Count > 1)
+                _vista.btniEmail.BackColor = System.Drawing.Color.Green;
+            else
+                _vista.btniEmail.BackColor = System.Drawing.Color.Gray;
+
         }
 
         public void CargarDomicilio(long CodigoRegistro,string tabCodigo)
@@ -193,18 +201,34 @@ namespace AppProcesos.formsAuxiliares.frmClientes
                 + " Dpto:" + oDomicilio.DomDepartamento;
             }
             _vista.lgCodigoDomicilio = oDomicilio.DomCodigo;
+            DataTable dtDomicilio = new DataTable();
+            dtDomicilio = oDomicilioBus.DomiciliosGetByCodigoRegistroDT(CodigoRegistro, tabCodigo);
+            _vista.btniDomicilio.Text = "...[" + dtDomicilio.Rows.Count + "]";
+            if (dtDomicilio.Rows.Count > 1)
+                _vista.btniDomicilio.BackColor = System.Drawing.Color.Green;
+            else
+                _vista.btniDomicilio.BackColor = System.Drawing.Color.Gray;
         }
 
         public void CargarTelefono(long CodigoRegistro, string TabCodigo)
         {
             Telefonos oTelefono = new Telefonos();
             TelefonosBus oTelefonoBus = new TelefonosBus();
-
+            
             oTelefono = oTelefonoBus.TelefonosGetByCodigoRegistroDefecto(CodigoRegistro, TabCodigo, Enumeration.TelefonosTipos.Telefono);
+            _vista.lgCodigoTelefono = oTelefono.TelCodigo;
             Dominios oDominio = new Dominios();
             DominiosBus oDomBus = new DominiosBus();
             oDominio = oDomBus.DominiosGetById("CARGO_CONTACTO_TEL", oTelefono.TelCargo);
             _vista.strTelefono = oTelefono.TelNumero + " - " +oDominio.DmnDescripcion  ;
+            DataTable dtTelefono = new DataTable();
+            dtTelefono = oTelefonoBus.TelefonosGetByCodigoRegistroDT(CodigoRegistro, TabCodigo, Enumeration.TelefonosTipos.Telefono);
+            _vista.btniTelefono.Text = "...[" + dtTelefono.Rows.Count + "]";
+            if (dtTelefono.Rows.Count > 1)
+                _vista.btniTelefono.BackColor = System.Drawing.Color.Green;
+            else
+                _vista.btniTelefono.BackColor = System.Drawing.Color.Gray;
+
         }
 
         public void CargarObservaciones(long CodigoRegistro, string TabCodigo)
@@ -252,8 +276,10 @@ namespace AppProcesos.formsAuxiliares.frmClientes
             oEmpresa.EmpFechaAlta = _vista.dtpiFechaAlta.Value;
             oEmpresa.EmpFechaAltaCli = _vista.dtpiFechaAltaCli.Value;
             oEmpresa.EmpFechaAltaPro = _vista.dtpiFechaAltaPro.Value;
-            oEmpresa.EmpFechaBajaCli = _vista.dtpiFechaBajaCli.Value;
-            oEmpresa.EmpFechaBajaPro = _vista.dtpiFechaBajaPro.Value;
+            if (_vista.dtpiFechaBajaCli.Checked)
+                oEmpresa.EmpFechaBajaCli = _vista.dtpiFechaBajaCli.Value;
+            if (_vista.dtpiFechaBajaPro.Checked)
+                oEmpresa.EmpFechaBajaPro = _vista.dtpiFechaBajaPro.Value;
             oEmpresa.EmpLimiteCredito = _vista.dblLimiteCredito;
             oEmpresa.EmpNombres = _vista.strNombre;
             oEmpresa.EmpNumero = _vista.empNumero;
@@ -287,17 +313,13 @@ namespace AppProcesos.formsAuxiliares.frmClientes
                     oAccionista.DisNumero = long.Parse(_vista.cmbiDistrito.SelectedValue.ToString());
                     oAccionista.EstCodigo = "H";
                     oAccionista.EmpNumero = _vista.empNumero;
-
-                    if (_vista.strAccionistaBaja == "S")
+                    if (_vista.dtpiFechaBajaAccionista.Checked)
                         oAccionista.AccFechaBaja = _vista.dtpiFechaBajaAccionista.Value;
-
                     if (_vista.lgAccNumero != 0)
                         oAccionistasBus.AccionistasUpdate(oAccionista);
                     else
                         _vista.lgAccNumero = oAccionistasBus.AccionistasAdd(oAccionista);
                 }
-
-
             }
         }
 

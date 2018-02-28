@@ -120,7 +120,7 @@
             this.cmbProvincia.Location = new System.Drawing.Point(120, 122);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.cmbProvincia.Size = new System.Drawing.Size(151, 21);
+            this.cmbProvincia.Size = new System.Drawing.Size(151, 24);
             this.cmbProvincia.TabIndex = 7;
             this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
@@ -130,7 +130,7 @@
             this.lblEtiqueta16.Location = new System.Drawing.Point(4, 123);
             this.lblEtiqueta16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEtiqueta16.Name = "lblEtiqueta16";
-            this.lblEtiqueta16.Size = new System.Drawing.Size(80, 13);
+            this.lblEtiqueta16.Size = new System.Drawing.Size(103, 17);
             this.lblEtiqueta16.TabIndex = 44;
             this.lblEtiqueta16.Text = "Provincia Nac.:";
             // 
@@ -142,19 +142,18 @@
             this.cmbLocalidad.Location = new System.Drawing.Point(405, 122);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.cmbLocalidad.Size = new System.Drawing.Size(173, 21);
+            this.cmbLocalidad.Size = new System.Drawing.Size(173, 24);
             this.cmbLocalidad.TabIndex = 8;
             // 
             // txtNroDocumento
             // 
-            //this.txtNroDocumento.AllowSpace = false;
             this.txtNroDocumento.BackColor = System.Drawing.Color.White;
             this.txtNroDocumento.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtNroDocumento.Location = new System.Drawing.Point(405, 87);
             this.txtNroDocumento.MaxLength = 20;
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.txtNroDocumento.Size = new System.Drawing.Size(173, 20);
+            this.txtNroDocumento.Size = new System.Drawing.Size(173, 22);
             this.txtNroDocumento.TabIndex = 6;
             this.txtNroDocumento.TextoVacio = "<Descripcion>";
             this.txtNroDocumento.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -164,7 +163,7 @@
             this.lblEtiqueta15.AutoSize = true;
             this.lblEtiqueta15.Location = new System.Drawing.Point(299, 251);
             this.lblEtiqueta15.Name = "lblEtiqueta15";
-            this.lblEtiqueta15.Size = new System.Drawing.Size(43, 13);
+            this.lblEtiqueta15.Size = new System.Drawing.Size(56, 17);
             this.lblEtiqueta15.TabIndex = 42;
             this.lblEtiqueta15.Text = "Estado:";
             // 
@@ -174,7 +173,7 @@
             this.lblEtiqueta14.Location = new System.Drawing.Point(299, 123);
             this.lblEtiqueta14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEtiqueta14.Name = "lblEtiqueta14";
-            this.lblEtiqueta14.Size = new System.Drawing.Size(82, 13);
+            this.lblEtiqueta14.Size = new System.Drawing.Size(106, 17);
             this.lblEtiqueta14.TabIndex = 39;
             this.lblEtiqueta14.Text = "Localidad Nac.:";
             // 
@@ -183,20 +182,19 @@
             this.lblEtiqueta13.AutoSize = true;
             this.lblEtiqueta13.Location = new System.Drawing.Point(5, 219);
             this.lblEtiqueta13.Name = "lblEtiqueta13";
-            this.lblEtiqueta13.Size = new System.Drawing.Size(42, 13);
+            this.lblEtiqueta13.Size = new System.Drawing.Size(55, 17);
             this.lblEtiqueta13.TabIndex = 38;
             this.lblEtiqueta13.Text = "Legajo:";
             // 
             // txtLegajo
             // 
-            //this.txtLegajo.AllowSpace = false;
             this.txtLegajo.BackColor = System.Drawing.Color.White;
             this.txtLegajo.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtLegajo.Location = new System.Drawing.Point(122, 217);
             this.txtLegajo.MaxLength = 8;
             this.txtLegajo.Name = "txtLegajo";
             this.txtLegajo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.txtLegajo.Size = new System.Drawing.Size(151, 20);
+            this.txtLegajo.Size = new System.Drawing.Size(151, 22);
             this.txtLegajo.TabIndex = 13;
             this.txtLegajo.TextoVacio = "<Descripcion>";
             this.txtLegajo.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -206,7 +204,7 @@
             this.lblEtiqueta12.AutoSize = true;
             this.lblEtiqueta12.Location = new System.Drawing.Point(299, 187);
             this.lblEtiqueta12.Name = "lblEtiqueta12";
-            this.lblEtiqueta12.Size = new System.Drawing.Size(38, 13);
+            this.lblEtiqueta12.Size = new System.Drawing.Size(50, 17);
             this.lblEtiqueta12.TabIndex = 36;
             this.lblEtiqueta12.Text = "Cargo:";
             // 
@@ -216,7 +214,7 @@
             this.cmbCargo.Location = new System.Drawing.Point(405, 185);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.cmbCargo.Size = new System.Drawing.Size(173, 21);
+            this.cmbCargo.Size = new System.Drawing.Size(173, 24);
             this.cmbCargo.TabIndex = 12;
             // 
             // lblEtiqueta11
@@ -224,7 +222,7 @@
             this.lblEtiqueta11.AutoSize = true;
             this.lblEtiqueta11.Location = new System.Drawing.Point(299, 155);
             this.lblEtiqueta11.Name = "lblEtiqueta11";
-            this.lblEtiqueta11.Size = new System.Drawing.Size(27, 13);
+            this.lblEtiqueta11.Size = new System.Drawing.Size(35, 17);
             this.lblEtiqueta11.TabIndex = 34;
             this.lblEtiqueta11.Text = "Cuil:";
             // 
@@ -236,7 +234,7 @@
             this.txtCuil.MaxLength = 15;
             this.txtCuil.Name = "txtCuil";
             this.txtCuil.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtCuil.Size = new System.Drawing.Size(173, 20);
+            this.txtCuil.Size = new System.Drawing.Size(173, 22);
             this.txtCuil.TabIndex = 10;
             this.txtCuil.TextoVacio = "<Descripcion>";
             this.txtCuil.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -246,7 +244,7 @@
             this.lblEtiqueta10.AutoSize = true;
             this.lblEtiqueta10.Location = new System.Drawing.Point(299, 219);
             this.lblEtiqueta10.Name = "lblEtiqueta10";
-            this.lblEtiqueta10.Size = new System.Drawing.Size(66, 13);
+            this.lblEtiqueta10.Size = new System.Drawing.Size(85, 17);
             this.lblEtiqueta10.TabIndex = 32;
             this.lblEtiqueta10.Text = "Motivo Baja:";
             // 
@@ -256,7 +254,7 @@
             this.cmbMotivoBaja.Location = new System.Drawing.Point(405, 217);
             this.cmbMotivoBaja.Name = "cmbMotivoBaja";
             this.cmbMotivoBaja.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.cmbMotivoBaja.Size = new System.Drawing.Size(173, 21);
+            this.cmbMotivoBaja.Size = new System.Drawing.Size(173, 24);
             this.cmbMotivoBaja.TabIndex = 14;
             // 
             // dtpFechaBaja
@@ -267,7 +265,7 @@
             this.dtpFechaBaja.Name = "dtpFechaBaja";
             this.dtpFechaBaja.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.dtpFechaBaja.ShowCheckBox = true;
-            this.dtpFechaBaja.Size = new System.Drawing.Size(152, 20);
+            this.dtpFechaBaja.Size = new System.Drawing.Size(152, 22);
             this.dtpFechaBaja.TabIndex = 15;
             // 
             // lblEtiqueta9
@@ -275,7 +273,7 @@
             this.lblEtiqueta9.AutoSize = true;
             this.lblEtiqueta9.Location = new System.Drawing.Point(5, 251);
             this.lblEtiqueta9.Name = "lblEtiqueta9";
-            this.lblEtiqueta9.Size = new System.Drawing.Size(79, 13);
+            this.lblEtiqueta9.Size = new System.Drawing.Size(103, 17);
             this.lblEtiqueta9.TabIndex = 30;
             this.lblEtiqueta9.Text = "Fecha de Baja:";
             // 
@@ -283,19 +281,20 @@
             // 
             this.dtpFechaIngreso.Checked = false;
             this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(122, 185);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(122, 183);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.dtpFechaIngreso.ShowCheckBox = true;
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(151, 20);
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(151, 22);
             this.dtpFechaIngreso.TabIndex = 11;
+           
             // 
             // lblEtiqueta8
             // 
             this.lblEtiqueta8.AutoSize = true;
             this.lblEtiqueta8.Location = new System.Drawing.Point(5, 187);
             this.lblEtiqueta8.Name = "lblEtiqueta8";
-            this.lblEtiqueta8.Size = new System.Drawing.Size(93, 13);
+            this.lblEtiqueta8.Size = new System.Drawing.Size(122, 17);
             this.lblEtiqueta8.TabIndex = 28;
             this.lblEtiqueta8.Text = "Fecha de Ingreso:";
             // 
@@ -305,7 +304,7 @@
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(121, 153);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(151, 20);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(151, 22);
             this.dtpFechaNacimiento.TabIndex = 9;
             // 
             // lblEtiqueta7
@@ -313,7 +312,7 @@
             this.lblEtiqueta7.AutoSize = true;
             this.lblEtiqueta7.Location = new System.Drawing.Point(5, 155);
             this.lblEtiqueta7.Name = "lblEtiqueta7";
-            this.lblEtiqueta7.Size = new System.Drawing.Size(111, 13);
+            this.lblEtiqueta7.Size = new System.Drawing.Size(145, 17);
             this.lblEtiqueta7.TabIndex = 26;
             this.lblEtiqueta7.Text = "Fecha de Nacimiento:";
             // 
@@ -322,7 +321,7 @@
             this.lblEtiqueta6.AutoSize = true;
             this.lblEtiqueta6.Location = new System.Drawing.Point(299, 60);
             this.lblEtiqueta6.Name = "lblEtiqueta6";
-            this.lblEtiqueta6.Size = new System.Drawing.Size(34, 13);
+            this.lblEtiqueta6.Size = new System.Drawing.Size(43, 17);
             this.lblEtiqueta6.TabIndex = 21;
             this.lblEtiqueta6.Text = "Sexo:";
             // 
@@ -332,7 +331,7 @@
             this.cmbSexo.Location = new System.Drawing.Point(405, 54);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.cmbSexo.Size = new System.Drawing.Size(173, 21);
+            this.cmbSexo.Size = new System.Drawing.Size(173, 24);
             this.cmbSexo.TabIndex = 4;
             // 
             // lblEtiqueta5
@@ -340,7 +339,7 @@
             this.lblEtiqueta5.AutoSize = true;
             this.lblEtiqueta5.Location = new System.Drawing.Point(299, 91);
             this.lblEtiqueta5.Name = "lblEtiqueta5";
-            this.lblEtiqueta5.Size = new System.Drawing.Size(85, 13);
+            this.lblEtiqueta5.Size = new System.Drawing.Size(111, 17);
             this.lblEtiqueta5.TabIndex = 19;
             this.lblEtiqueta5.Text = "Nro.Documento:";
             // 
@@ -349,7 +348,7 @@
             this.lblEtiqueta4.AutoSize = true;
             this.lblEtiqueta4.Location = new System.Drawing.Point(4, 91);
             this.lblEtiqueta4.Name = "lblEtiqueta4";
-            this.lblEtiqueta4.Size = new System.Drawing.Size(31, 13);
+            this.lblEtiqueta4.Size = new System.Drawing.Size(40, 17);
             this.lblEtiqueta4.TabIndex = 17;
             this.lblEtiqueta4.Text = "Tipo:";
             // 
@@ -359,7 +358,7 @@
             this.cmbTipo.Location = new System.Drawing.Point(121, 87);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.cmbTipo.Size = new System.Drawing.Size(150, 21);
+            this.cmbTipo.Size = new System.Drawing.Size(150, 24);
             this.cmbTipo.TabIndex = 5;
             // 
             // lblEtiqueta3
@@ -367,7 +366,7 @@
             this.lblEtiqueta3.AutoSize = true;
             this.lblEtiqueta3.Location = new System.Drawing.Point(4, 60);
             this.lblEtiqueta3.Name = "lblEtiqueta3";
-            this.lblEtiqueta3.Size = new System.Drawing.Size(65, 13);
+            this.lblEtiqueta3.Size = new System.Drawing.Size(85, 17);
             this.lblEtiqueta3.TabIndex = 15;
             this.lblEtiqueta3.Text = "Estado Civil:";
             // 
@@ -377,7 +376,7 @@
             this.cmbEstadoCivil.Location = new System.Drawing.Point(121, 54);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
             this.cmbEstadoCivil.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.cmbEstadoCivil.Size = new System.Drawing.Size(150, 21);
+            this.cmbEstadoCivil.Size = new System.Drawing.Size(150, 24);
             this.cmbEstadoCivil.TabIndex = 3;
             // 
             // lblEtiqueta2
@@ -385,7 +384,7 @@
             this.lblEtiqueta2.AutoSize = true;
             this.lblEtiqueta2.Location = new System.Drawing.Point(299, 27);
             this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(47, 13);
+            this.lblEtiqueta2.Size = new System.Drawing.Size(62, 17);
             this.lblEtiqueta2.TabIndex = 13;
             this.lblEtiqueta2.Text = "Nombre:";
             // 
@@ -394,7 +393,7 @@
             this.lblEtiqueta1.AutoSize = true;
             this.lblEtiqueta1.Location = new System.Drawing.Point(4, 27);
             this.lblEtiqueta1.Name = "lblEtiqueta1";
-            this.lblEtiqueta1.Size = new System.Drawing.Size(47, 13);
+            this.lblEtiqueta1.Size = new System.Drawing.Size(62, 17);
             this.lblEtiqueta1.TabIndex = 12;
             this.lblEtiqueta1.Text = "Apellido:";
             // 
@@ -407,7 +406,7 @@
             this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.txtNombre.Size = new System.Drawing.Size(173, 20);
+            this.txtNombre.Size = new System.Drawing.Size(173, 22);
             this.txtNombre.TabIndex = 2;
             this.txtNombre.TextoVacio = "<Descripcion>";
             this.txtNombre.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -421,7 +420,7 @@
             this.txtApellido.MaxLength = 30;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.txtApellido.Size = new System.Drawing.Size(150, 20);
+            this.txtApellido.Size = new System.Drawing.Size(150, 22);
             this.txtApellido.TabIndex = 1;
             this.txtApellido.TextoVacio = "<Descripcion>";
             this.txtApellido.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -432,7 +431,7 @@
             this.chkHabilitado.Location = new System.Drawing.Point(405, 251);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
+            this.chkHabilitado.Size = new System.Drawing.Size(93, 21);
             this.chkHabilitado.TabIndex = 16;
             this.chkHabilitado.Text = "Habilitado";
             this.chkHabilitado.UseVisualStyleBackColor = true;

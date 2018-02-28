@@ -38,17 +38,19 @@ namespace AppProcesos.formsAuxiliares.frmTelefonos
                 TelefonosBus oTelBus = new TelefonosBus();
                 oTel = oTelBus.TelefonosGetById(_vista.telCodigo);
                 _vista.telNumero = oTel.TelNumero;
+
                 if (oTel.TelDefecto == "S")
                     _vista.telDefecto = true;
                 else
                     _vista.telDefecto = false;
+
                 _vista.telEmail = oTel.TelEmail;
                 _vista.telNombreContacto = oTel.TelNombreContacto;
                 _vista.telCargo.SelectedValue = oTel.TelCargo; ;
                 _vista.telTipo.SelectedValue = oTel.TelTipo;
             }                  
         }
-        public void Guardar()
+        public void Guardar(Admin oAdmin)
         {           
             long rtdo;
             Telefonos oTel = new Telefonos();
@@ -60,8 +62,8 @@ namespace AppProcesos.formsAuxiliares.frmTelefonos
             oTel.TelTipo = _vista.telTipo.SelectedValue.ToString();
             oTel.TelEmail = _vista.telEmail;
             oTel.TelNombreContacto = _vista.telNombreContacto;
-            oTel.TabCodigo = _vista.tabCodigo;
-            oTel.TelCodigoRegistro = _vista.telCodigoRegistro;
+            oTel.TabCodigo = oAdmin.TabCodigoRegistro;
+            oTel.TelCodigoRegistro = oAdmin.CodigoRegistro;
             if (_vista.telDefecto)
                 oTel.TelDefecto = "S";
             else

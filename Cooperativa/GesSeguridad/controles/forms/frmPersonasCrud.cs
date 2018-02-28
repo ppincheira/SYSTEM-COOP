@@ -280,8 +280,10 @@ namespace GesSeguridad.controles.forms
                                 this.FindForm().Name);
             }
         }
+
+
         #endregion
 
-
+   
     }
 }
