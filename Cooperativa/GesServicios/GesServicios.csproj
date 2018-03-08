@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="controles\forms\frmLecturasCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmLecturasCrud.Designer.cs">
+      <DependentUpon>frmLecturasCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="controles\forms\frmLecturasModosCrudAux.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="controles\forms\frmLecturasCrud.resx">
+      <DependentUpon>frmLecturasCrud.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmLecturasModosCrudAux.resx">
       <DependentUpon>frmLecturasModosCrudAux.cs</DependentUpon>
     </EmbeddedResource>

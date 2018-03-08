@@ -32,3 +32,4 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\o
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.csproj.GenerateResource.Cache
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmLecturasCrud.resources

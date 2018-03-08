@@ -102,6 +102,8 @@
     <Compile Include="gesServicios\frmCategoriasCrud\UICategoriasCrud.cs" />
     <Compile Include="gesServicios\frmLecturasConceptosCrud\IVistaLecturasConceptosCrud.cs" />
     <Compile Include="gesServicios\frmLecturasConceptosCrud\UILecturasConceptosCrud.cs" />
+    <Compile Include="gesServicios\frmLecturasCrud\IVistaLecturasCrud.cs" />
+    <Compile Include="gesServicios\frmLecturasCrud\UILecturasCrud.cs" />
     <Compile Include="gesServicios\frmLecturasModosCrud\IVistaLecturasModosCrud.cs" />
     <Compile Include="gesServicios\frmLecturasModosCrud\UILecturasModosCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresCrud\IVistaMedidoresMasivosCrud.cs" />
