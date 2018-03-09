@@ -10,8 +10,13 @@ namespace AppProcesos.gesServicios.frmLecturasCrud
     interface IVistaLecturasCrud
     {
 
-        long lemCodigo { get; set; }                
-        grdGrillaEdit conceptos { get; set; }
+        long lemCodigo { get; set; }
+        string strSuministro { get; set; }
+        string strRuta { get; set; }
+        string strNroOrden { get; set; }
+        string strNroSuministro { get; set; }
+
+        grdGrillaEdit grdiLecturas { get; set; }
 
 
     }
