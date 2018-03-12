@@ -20,3 +20,5 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\o
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.csproj.GenerateResource.Cache
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll

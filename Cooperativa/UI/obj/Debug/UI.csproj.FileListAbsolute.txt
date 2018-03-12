@@ -11,7 +11,6 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\C
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\FormsAuxiliares.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesConfiguracion.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesServicios.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Model.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Implement.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\AppProcesos.dll
@@ -24,7 +23,6 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\F
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesConfiguracion.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesServicios.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Model.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Implement.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\AppProcesos.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Service.pdb

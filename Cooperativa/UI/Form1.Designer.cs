@@ -61,21 +61,24 @@
             this.btnUsuarios = new Controles.btnPersonalizado();
             this.button3 = new System.Windows.Forms.Button();
             this.btnTiposComprobantes = new Controles.btnPersonalizado();
+            this.btnSumLec = new Controles.btnPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTest
             // 
-            this.dgvTest.Location = new System.Drawing.Point(12, 306);
+            this.dgvTest.Location = new System.Drawing.Point(16, 377);
+            this.dgvTest.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTest.Name = "dgvTest";
-            this.dgvTest.Size = new System.Drawing.Size(240, 55);
+            this.dgvTest.Size = new System.Drawing.Size(320, 68);
             this.dgvTest.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(342, 292);
+            this.button1.Location = new System.Drawing.Point(456, 359);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 28);
+            this.button1.Size = new System.Drawing.Size(167, 34);
             this.button1.TabIndex = 8;
             this.button1.Text = " BUSCADOR";
             this.button1.UseVisualStyleBackColor = true;
@@ -83,9 +86,10 @@
             // 
             // buttonCrudGrilla
             // 
-            this.buttonCrudGrilla.Location = new System.Drawing.Point(342, 321);
+            this.buttonCrudGrilla.Location = new System.Drawing.Point(456, 395);
+            this.buttonCrudGrilla.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCrudGrilla.Name = "buttonCrudGrilla";
-            this.buttonCrudGrilla.Size = new System.Drawing.Size(125, 24);
+            this.buttonCrudGrilla.Size = new System.Drawing.Size(167, 30);
             this.buttonCrudGrilla.TabIndex = 8;
             this.buttonCrudGrilla.Text = "CrudGrilla";
             this.buttonCrudGrilla.UseVisualStyleBackColor = true;
@@ -93,9 +97,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(342, 246);
+            this.button2.Location = new System.Drawing.Point(456, 303);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 40);
+            this.button2.Size = new System.Drawing.Size(167, 49);
             this.button2.TabIndex = 10;
             this.button2.Text = "OBSERVACIONES";
             this.button2.UseVisualStyleBackColor = true;
@@ -103,9 +108,10 @@
             // 
             // btnRutas
             // 
-            this.btnRutas.Location = new System.Drawing.Point(342, 364);
+            this.btnRutas.Location = new System.Drawing.Point(456, 448);
+            this.btnRutas.Margin = new System.Windows.Forms.Padding(4);
             this.btnRutas.Name = "btnRutas";
-            this.btnRutas.Size = new System.Drawing.Size(125, 27);
+            this.btnRutas.Size = new System.Drawing.Size(167, 33);
             this.btnRutas.TabIndex = 11;
             this.btnRutas.Text = "RUTAS";
             this.btnRutas.UseVisualStyleBackColor = true;
@@ -114,9 +120,10 @@
             // btnPersonalizado4
             // 
             this.btnPersonalizado4.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado4.Location = new System.Drawing.Point(342, 139);
+            this.btnPersonalizado4.Location = new System.Drawing.Point(456, 171);
+            this.btnPersonalizado4.Margin = new System.Windows.Forms.Padding(4);
             this.btnPersonalizado4.Name = "btnPersonalizado4";
-            this.btnPersonalizado4.Size = new System.Drawing.Size(125, 23);
+            this.btnPersonalizado4.Size = new System.Drawing.Size(167, 28);
             this.btnPersonalizado4.TabIndex = 12;
             this.btnPersonalizado4.Text = "CALLES";
             this.btnPersonalizado4.UseVisualStyleBackColor = true;
@@ -125,9 +132,10 @@
             // btnPersonalizado3
             // 
             this.btnPersonalizado3.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado3.Location = new System.Drawing.Point(12, 263);
+            this.btnPersonalizado3.Location = new System.Drawing.Point(16, 324);
+            this.btnPersonalizado3.Margin = new System.Windows.Forms.Padding(4);
             this.btnPersonalizado3.Name = "btnPersonalizado3";
-            this.btnPersonalizado3.Size = new System.Drawing.Size(100, 37);
+            this.btnPersonalizado3.Size = new System.Drawing.Size(133, 46);
             this.btnPersonalizado3.TabIndex = 9;
             this.btnPersonalizado3.Text = "observaciones";
             this.btnPersonalizado3.UseVisualStyleBackColor = true;
@@ -136,9 +144,10 @@
             // btnPersonalizado2
             // 
             this.btnPersonalizado2.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado2.Location = new System.Drawing.Point(342, 110);
+            this.btnPersonalizado2.Location = new System.Drawing.Point(456, 135);
+            this.btnPersonalizado2.Margin = new System.Windows.Forms.Padding(4);
             this.btnPersonalizado2.Name = "btnPersonalizado2";
-            this.btnPersonalizado2.Size = new System.Drawing.Size(125, 23);
+            this.btnPersonalizado2.Size = new System.Drawing.Size(167, 28);
             this.btnPersonalizado2.TabIndex = 7;
             this.btnPersonalizado2.Text = "DOMICILIOS";
             this.btnPersonalizado2.UseVisualStyleBackColor = true;
@@ -147,9 +156,10 @@
             // btnPersonalizado1
             // 
             this.btnPersonalizado1.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado1.Location = new System.Drawing.Point(12, 86);
+            this.btnPersonalizado1.Location = new System.Drawing.Point(16, 106);
+            this.btnPersonalizado1.Margin = new System.Windows.Forms.Padding(4);
             this.btnPersonalizado1.Name = "btnPersonalizado1";
-            this.btnPersonalizado1.Size = new System.Drawing.Size(129, 23);
+            this.btnPersonalizado1.Size = new System.Drawing.Size(172, 28);
             this.btnPersonalizado1.TabIndex = 6;
             this.btnPersonalizado1.Text = "btnPersonalizado1";
             this.btnPersonalizado1.UseVisualStyleBackColor = true;
@@ -159,17 +169,19 @@
             // 
             this.btnPersonalizado8.ForeColor = System.Drawing.Color.Green;
             this.btnPersonalizado8.Location = new System.Drawing.Point(0, 0);
+            this.btnPersonalizado8.Margin = new System.Windows.Forms.Padding(4);
             this.btnPersonalizado8.Name = "btnPersonalizado8";
-            this.btnPersonalizado8.Size = new System.Drawing.Size(100, 23);
+            this.btnPersonalizado8.Size = new System.Drawing.Size(133, 28);
             this.btnPersonalizado8.TabIndex = 21;
             this.btnPersonalizado8.Text = "completar";
             // 
             // btnPersonalizado9
             // 
             this.btnPersonalizado9.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado9.Location = new System.Drawing.Point(342, 292);
+            this.btnPersonalizado9.Location = new System.Drawing.Point(456, 359);
+            this.btnPersonalizado9.Margin = new System.Windows.Forms.Padding(4);
             this.btnPersonalizado9.Name = "btnPersonalizado9";
-            this.btnPersonalizado9.Size = new System.Drawing.Size(125, 23);
+            this.btnPersonalizado9.Size = new System.Drawing.Size(167, 28);
             this.btnPersonalizado9.TabIndex = 7;
             this.btnPersonalizado9.Text = "MEDIDORES";
             this.btnPersonalizado9.UseVisualStyleBackColor = true;
@@ -177,9 +189,10 @@
             // btnPersonalizado5
             // 
             this.btnPersonalizado5.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado5.Location = new System.Drawing.Point(342, 51);
+            this.btnPersonalizado5.Location = new System.Drawing.Point(456, 63);
+            this.btnPersonalizado5.Margin = new System.Windows.Forms.Padding(4);
             this.btnPersonalizado5.Name = "btnPersonalizado5";
-            this.btnPersonalizado5.Size = new System.Drawing.Size(125, 23);
+            this.btnPersonalizado5.Size = new System.Drawing.Size(167, 28);
             this.btnPersonalizado5.TabIndex = 13;
             this.btnPersonalizado5.Text = "TELEFONOS";
             this.btnPersonalizado5.UseVisualStyleBackColor = true;
@@ -188,9 +201,10 @@
             // btnPersonalizado6
             // 
             this.btnPersonalizado6.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado6.Location = new System.Drawing.Point(342, 80);
+            this.btnPersonalizado6.Location = new System.Drawing.Point(456, 98);
+            this.btnPersonalizado6.Margin = new System.Windows.Forms.Padding(4);
             this.btnPersonalizado6.Name = "btnPersonalizado6";
-            this.btnPersonalizado6.Size = new System.Drawing.Size(125, 23);
+            this.btnPersonalizado6.Size = new System.Drawing.Size(167, 28);
             this.btnPersonalizado6.TabIndex = 14;
             this.btnPersonalizado6.Text = "CODIGO POSTAL";
             this.btnPersonalizado6.UseVisualStyleBackColor = true;
@@ -199,9 +213,10 @@
             // btnPersonalizado7
             // 
             this.btnPersonalizado7.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado7.Location = new System.Drawing.Point(342, 22);
+            this.btnPersonalizado7.Location = new System.Drawing.Point(456, 27);
+            this.btnPersonalizado7.Margin = new System.Windows.Forms.Padding(4);
             this.btnPersonalizado7.Name = "btnPersonalizado7";
-            this.btnPersonalizado7.Size = new System.Drawing.Size(125, 23);
+            this.btnPersonalizado7.Size = new System.Drawing.Size(167, 28);
             this.btnPersonalizado7.TabIndex = 15;
             this.btnPersonalizado7.Text = "CLIENTES";
             this.btnPersonalizado7.UseVisualStyleBackColor = true;
@@ -211,11 +226,11 @@
             // 
             this.gesTextBox1.BackColor = System.Drawing.Color.White;
             this.gesTextBox1.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBox1.Location = new System.Drawing.Point(35, 125);
-            this.gesTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.gesTextBox1.Location = new System.Drawing.Point(47, 154);
+            this.gesTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gesTextBox1.Name = "gesTextBox1";
             this.gesTextBox1.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.gesTextBox1.Size = new System.Drawing.Size(76, 20);
+            this.gesTextBox1.Size = new System.Drawing.Size(100, 22);
             this.gesTextBox1.TabIndex = 16;
             this.gesTextBox1.TextoVacio = "<Descripcion>";
             this.gesTextBox1.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -225,11 +240,11 @@
             // 
             this.gesTextBox2.BackColor = System.Drawing.Color.White;
             this.gesTextBox2.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBox2.Location = new System.Drawing.Point(52, 158);
-            this.gesTextBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.gesTextBox2.Location = new System.Drawing.Point(69, 194);
+            this.gesTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gesTextBox2.Name = "gesTextBox2";
             this.gesTextBox2.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.gesTextBox2.Size = new System.Drawing.Size(76, 20);
+            this.gesTextBox2.Size = new System.Drawing.Size(100, 22);
             this.gesTextBox2.TabIndex = 17;
             this.gesTextBox2.TextoVacio = "<Descripcion>";
             this.gesTextBox2.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -238,20 +253,21 @@
             // 
             this.gesTextBox3.BackColor = System.Drawing.Color.White;
             this.gesTextBox3.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBox3.Location = new System.Drawing.Point(52, 183);
-            this.gesTextBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.gesTextBox3.Location = new System.Drawing.Point(69, 225);
+            this.gesTextBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gesTextBox3.Name = "gesTextBox3";
             this.gesTextBox3.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.gesTextBox3.Size = new System.Drawing.Size(76, 20);
+            this.gesTextBox3.Size = new System.Drawing.Size(100, 22);
             this.gesTextBox3.TabIndex = 18;
             this.gesTextBox3.TextoVacio = "<Descripcion>";
             this.gesTextBox3.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // btnTiposMedidores
             // 
-            this.btnTiposMedidores.Location = new System.Drawing.Point(342, 397);
+            this.btnTiposMedidores.Location = new System.Drawing.Point(456, 489);
+            this.btnTiposMedidores.Margin = new System.Windows.Forms.Padding(4);
             this.btnTiposMedidores.Name = "btnTiposMedidores";
-            this.btnTiposMedidores.Size = new System.Drawing.Size(125, 27);
+            this.btnTiposMedidores.Size = new System.Drawing.Size(167, 33);
             this.btnTiposMedidores.TabIndex = 19;
             this.btnTiposMedidores.Text = "Tipos de Medidores";
             this.btnTiposMedidores.UseVisualStyleBackColor = true;
@@ -259,9 +275,10 @@
             // 
             // btnFabricantes
             // 
-            this.btnFabricantes.Location = new System.Drawing.Point(342, 430);
+            this.btnFabricantes.Location = new System.Drawing.Point(456, 529);
+            this.btnFabricantes.Margin = new System.Windows.Forms.Padding(4);
             this.btnFabricantes.Name = "btnFabricantes";
-            this.btnFabricantes.Size = new System.Drawing.Size(125, 27);
+            this.btnFabricantes.Size = new System.Drawing.Size(167, 33);
             this.btnFabricantes.TabIndex = 20;
             this.btnFabricantes.Text = "Fabricantes";
             this.btnFabricantes.UseVisualStyleBackColor = true;
@@ -270,9 +287,10 @@
             // btnMedidoresModelos
             // 
             this.btnMedidoresModelos.ForeColor = System.Drawing.Color.Green;
-            this.btnMedidoresModelos.Location = new System.Drawing.Point(342, 168);
+            this.btnMedidoresModelos.Location = new System.Drawing.Point(456, 207);
+            this.btnMedidoresModelos.Margin = new System.Windows.Forms.Padding(4);
             this.btnMedidoresModelos.Name = "btnMedidoresModelos";
-            this.btnMedidoresModelos.Size = new System.Drawing.Size(125, 35);
+            this.btnMedidoresModelos.Size = new System.Drawing.Size(167, 43);
             this.btnMedidoresModelos.TabIndex = 12;
             this.btnMedidoresModelos.Text = "MODELOS DE MEDIDORES";
             this.btnMedidoresModelos.UseVisualStyleBackColor = true;
@@ -281,9 +299,10 @@
             // btnMedidores
             // 
             this.btnMedidores.ForeColor = System.Drawing.Color.Green;
-            this.btnMedidores.Location = new System.Drawing.Point(211, 51);
+            this.btnMedidores.Location = new System.Drawing.Point(281, 63);
+            this.btnMedidores.Margin = new System.Windows.Forms.Padding(4);
             this.btnMedidores.Name = "btnMedidores";
-            this.btnMedidores.Size = new System.Drawing.Size(125, 23);
+            this.btnMedidores.Size = new System.Drawing.Size(167, 28);
             this.btnMedidores.TabIndex = 12;
             this.btnMedidores.Text = "MEDIDORES";
             this.btnMedidores.UseVisualStyleBackColor = true;
@@ -292,9 +311,10 @@
             // categorias
             // 
             this.categorias.ForeColor = System.Drawing.Color.Green;
-            this.categorias.Location = new System.Drawing.Point(211, 22);
+            this.categorias.Location = new System.Drawing.Point(281, 27);
+            this.categorias.Margin = new System.Windows.Forms.Padding(4);
             this.categorias.Name = "categorias";
-            this.categorias.Size = new System.Drawing.Size(125, 23);
+            this.categorias.Size = new System.Drawing.Size(167, 28);
             this.categorias.TabIndex = 22;
             this.categorias.Text = "CATEGORIAS";
             this.categorias.UseVisualStyleBackColor = true;
@@ -303,9 +323,10 @@
             // btnMedidoresMasivos
             // 
             this.btnMedidoresMasivos.ForeColor = System.Drawing.Color.Green;
-            this.btnMedidoresMasivos.Location = new System.Drawing.Point(211, 80);
+            this.btnMedidoresMasivos.Location = new System.Drawing.Point(281, 98);
+            this.btnMedidoresMasivos.Margin = new System.Windows.Forms.Padding(4);
             this.btnMedidoresMasivos.Name = "btnMedidoresMasivos";
-            this.btnMedidoresMasivos.Size = new System.Drawing.Size(125, 39);
+            this.btnMedidoresMasivos.Size = new System.Drawing.Size(167, 48);
             this.btnMedidoresMasivos.TabIndex = 12;
             this.btnMedidoresMasivos.Text = "ALTA MASIVA DE MEDIDORES";
             this.btnMedidoresMasivos.UseVisualStyleBackColor = true;
@@ -314,9 +335,10 @@
             // btnTiposConexiones
             // 
             this.btnTiposConexiones.ForeColor = System.Drawing.Color.Green;
-            this.btnTiposConexiones.Location = new System.Drawing.Point(211, 125);
+            this.btnTiposConexiones.Location = new System.Drawing.Point(281, 154);
+            this.btnTiposConexiones.Margin = new System.Windows.Forms.Padding(4);
             this.btnTiposConexiones.Name = "btnTiposConexiones";
-            this.btnTiposConexiones.Size = new System.Drawing.Size(125, 23);
+            this.btnTiposConexiones.Size = new System.Drawing.Size(167, 28);
             this.btnTiposConexiones.TabIndex = 12;
             this.btnTiposConexiones.Text = "Tipos de Conexiones";
             this.btnTiposConexiones.UseVisualStyleBackColor = true;
@@ -324,10 +346,10 @@
             // 
             // btnDeptos
             // 
-            this.btnDeptos.Location = new System.Drawing.Point(228, 152);
-            this.btnDeptos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeptos.Location = new System.Drawing.Point(304, 187);
+            this.btnDeptos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeptos.Name = "btnDeptos";
-            this.btnDeptos.Size = new System.Drawing.Size(94, 20);
+            this.btnDeptos.Size = new System.Drawing.Size(125, 25);
             this.btnDeptos.TabIndex = 8;
             this.btnDeptos.Text = "Departamentos";
             this.btnDeptos.UseVisualStyleBackColor = true;
@@ -335,9 +357,10 @@
             // 
             // btnLectura
             // 
-            this.btnLectura.Location = new System.Drawing.Point(342, 461);
+            this.btnLectura.Location = new System.Drawing.Point(456, 567);
+            this.btnLectura.Margin = new System.Windows.Forms.Padding(4);
             this.btnLectura.Name = "btnLectura";
-            this.btnLectura.Size = new System.Drawing.Size(125, 27);
+            this.btnLectura.Size = new System.Drawing.Size(167, 33);
             this.btnLectura.TabIndex = 20;
             this.btnLectura.Text = "Lecturas de Conceptos";
             this.btnLectura.UseVisualStyleBackColor = true;
@@ -345,10 +368,10 @@
             // 
             // btnTiposIva
             // 
-            this.btnTiposIva.Location = new System.Drawing.Point(228, 176);
-            this.btnTiposIva.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTiposIva.Location = new System.Drawing.Point(304, 217);
+            this.btnTiposIva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTiposIva.Name = "btnTiposIva";
-            this.btnTiposIva.Size = new System.Drawing.Size(94, 20);
+            this.btnTiposIva.Size = new System.Drawing.Size(125, 25);
             this.btnTiposIva.TabIndex = 8;
             this.btnTiposIva.Text = "Tipos de Iva";
             this.btnTiposIva.UseVisualStyleBackColor = true;
@@ -356,9 +379,10 @@
             // 
             // btnServicios
             // 
-            this.btnServicios.Location = new System.Drawing.Point(228, 201);
+            this.btnServicios.Location = new System.Drawing.Point(304, 247);
+            this.btnServicios.Margin = new System.Windows.Forms.Padding(4);
             this.btnServicios.Name = "btnServicios";
-            this.btnServicios.Size = new System.Drawing.Size(94, 24);
+            this.btnServicios.Size = new System.Drawing.Size(125, 30);
             this.btnServicios.TabIndex = 8;
             this.btnServicios.Text = "Servicios";
             this.btnServicios.UseVisualStyleBackColor = true;
@@ -366,10 +390,10 @@
             // 
             // btnSuministros
             // 
-            this.btnSuministros.Location = new System.Drawing.Point(228, 230);
-            this.btnSuministros.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSuministros.Location = new System.Drawing.Point(304, 283);
+            this.btnSuministros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSuministros.Name = "btnSuministros";
-            this.btnSuministros.Size = new System.Drawing.Size(94, 22);
+            this.btnSuministros.Size = new System.Drawing.Size(125, 27);
             this.btnSuministros.TabIndex = 11;
             this.btnSuministros.Text = "Suministros";
             this.btnSuministros.UseVisualStyleBackColor = true;
@@ -378,9 +402,10 @@
             // btnPersonas
             // 
             this.btnPersonas.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonas.Location = new System.Drawing.Point(185, 263);
+            this.btnPersonas.Location = new System.Drawing.Point(247, 324);
+            this.btnPersonas.Margin = new System.Windows.Forms.Padding(4);
             this.btnPersonas.Name = "btnPersonas";
-            this.btnPersonas.Size = new System.Drawing.Size(125, 23);
+            this.btnPersonas.Size = new System.Drawing.Size(167, 28);
             this.btnPersonas.TabIndex = 23;
             this.btnPersonas.Text = "PERSONAS";
             this.btnPersonas.UseVisualStyleBackColor = true;
@@ -389,9 +414,10 @@
             // btnUsuarios
             // 
             this.btnUsuarios.ForeColor = System.Drawing.Color.Green;
-            this.btnUsuarios.Location = new System.Drawing.Point(52, 217);
+            this.btnUsuarios.Location = new System.Drawing.Point(69, 267);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(125, 23);
+            this.btnUsuarios.Size = new System.Drawing.Size(167, 28);
             this.btnUsuarios.TabIndex = 24;
             this.btnUsuarios.Text = "USUARIOS";
             this.btnUsuarios.UseVisualStyleBackColor = true;
@@ -399,9 +425,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(342, 494);
+            this.button3.Location = new System.Drawing.Point(456, 608);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 27);
+            this.button3.Size = new System.Drawing.Size(167, 33);
             this.button3.TabIndex = 25;
             this.button3.Text = "Modos Lecturas";
             this.button3.UseVisualStyleBackColor = true;
@@ -410,19 +437,33 @@
             // btnTiposComprobantes
             // 
             this.btnTiposComprobantes.ForeColor = System.Drawing.Color.Green;
-            this.btnTiposComprobantes.Location = new System.Drawing.Point(138, 401);
+            this.btnTiposComprobantes.Location = new System.Drawing.Point(184, 494);
+            this.btnTiposComprobantes.Margin = new System.Windows.Forms.Padding(4);
             this.btnTiposComprobantes.Name = "btnTiposComprobantes";
-            this.btnTiposComprobantes.Size = new System.Drawing.Size(172, 23);
+            this.btnTiposComprobantes.Size = new System.Drawing.Size(229, 28);
             this.btnTiposComprobantes.TabIndex = 26;
             this.btnTiposComprobantes.Text = "TIPOS COMPROBANTES";
             this.btnTiposComprobantes.UseVisualStyleBackColor = true;
             this.btnTiposComprobantes.Click += new System.EventHandler(this.btnTiposComprobantes_Click);
             // 
+            // btnSumLec
+            // 
+            this.btnSumLec.ForeColor = System.Drawing.Color.Green;
+            this.btnSumLec.Location = new System.Drawing.Point(194, 600);
+            this.btnSumLec.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSumLec.Name = "btnSumLec";
+            this.btnSumLec.Size = new System.Drawing.Size(167, 28);
+            this.btnSumLec.TabIndex = 27;
+            this.btnSumLec.Text = "Suministros";
+            this.btnSumLec.UseVisualStyleBackColor = true;
+            this.btnSumLec.Click += new System.EventHandler(this.btnSumLec_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 521);
+            this.ClientSize = new System.Drawing.Size(639, 641);
+            this.Controls.Add(this.btnSumLec);
             this.Controls.Add(this.btnTiposComprobantes);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnUsuarios);
@@ -456,6 +497,7 @@
             this.Controls.Add(this.btnPersonalizado8);
             this.Controls.Add(this.btnPersonalizado2);
             this.Controls.Add(this.btnPersonalizado1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -499,6 +541,7 @@
         private Controles.btnPersonalizado btnUsuarios;
         private System.Windows.Forms.Button button3;
         private Controles.btnPersonalizado btnTiposComprobantes;
+        private Controles.btnPersonalizado btnSumLec;
     }
 }
 

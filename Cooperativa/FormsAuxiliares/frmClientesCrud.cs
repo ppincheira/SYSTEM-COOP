@@ -403,18 +403,7 @@ namespace FormsAuxiliares
             else
                 this.gbProveedor.Enabled = false;
         }
-        //private void chkBajaAccionista_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    _oClientesCrud.FechaBajaAccionista(this.chkBajaAccionista.Checked);
-        //}
-        //private void chkBajaCliente_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    _oClientesCrud.FechaBajaCliente(this.chkBajaCliente.Checked);
-        //}
-        //private void chkBajaProveedor_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    _oClientesCrud.FechaBajaProveedor(this.chkBajaProveedor.Checked);
-        //}
+      
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -41,7 +41,7 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliare
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesServicios.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Model.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Service.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Implement.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll

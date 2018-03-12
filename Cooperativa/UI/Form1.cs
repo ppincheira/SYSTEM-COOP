@@ -280,5 +280,15 @@ namespace UI
             FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
             frmbus.ShowDialog();
         }
+
+        private void btnSumLec_Click(object sender, EventArgs e)
+        {
+
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10001", "10002", "10003", "10005", "10006", "10004");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "SUML";
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+            frmbus.ShowDialog();
+        }
     }
 }
