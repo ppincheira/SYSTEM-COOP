@@ -280,5 +280,11 @@ namespace UI
             FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
             frmbus.ShowDialog();
         }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("ROL", "CODIGO", false);
+            frmbus.ShowDialog();
+        }
     }
 }

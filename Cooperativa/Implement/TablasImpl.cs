@@ -15,7 +15,7 @@ using Model;
 
 namespace Implement
 {
-	public class TablasImpl
+    public class TablasImpl
     {
         #region Tablas methods
         private OracleDataAdapter adapter;
@@ -23,38 +23,38 @@ namespace Implement
         private DataSet ds;
         private int response;
         public int TablasAdd(Tablas oTablas)
-		{
-			try
-			{
+        {
+            try
+            {
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
 
                 ds = new DataSet();
                 cmd = new OracleCommand("insert into TABLAS(TAB_CODIGO, TAB_NOMBRE, TAB_DESCRIPCION, TAB_QUERY_JOIN) " +
-                    "values('"+oTablas.TabCodigo+"', '"+oTablas.TabNombre+"', '"+oTablas.TabDescripcion+"','"+oTablas.TabQueryJoin+"','"+oTablas.TabQueryFilter + "')",cn);
+                    "values('" + oTablas.TabCodigo + "', '" + oTablas.TabNombre + "', '" + oTablas.TabDescripcion + "','" + oTablas.TabQueryJoin + "','" + oTablas.TabQueryFilter + "')", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
                 return response;
             }
-			catch(Exception ex)
-			{
-				throw ex;
-			}
-		}
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public bool TablasUpdate(Tablas oTablas)
-		{
-			try
-			{
+        {
+            try
+            {
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
                 cmd = new OracleCommand("update TABLAS " +
-                    "SET TAB_CODIGO='" + oTablas.TabCodigo + "',"+
-                    "TAB_NOMBRE='"+ oTablas.TabNombre + "'," +
+                    "SET TAB_CODIGO='" + oTablas.TabCodigo + "'," +
+                    "TAB_NOMBRE='" + oTablas.TabNombre + "'," +
                     "TAB_DESCRIPCION= '" + oTablas.TabDescripcion + "' " +
 
                     "WHERE TAB_CODIGO='" + oTablas.TabCodigo + "'", cn);
@@ -62,90 +62,90 @@ namespace Implement
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
                 if (response > 0)
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-			}
-			catch(Exception ex)
-			{
-				throw ex;
-			}
-		}
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public bool TablasDelete(String Id)
-		{
+        {
 
 
-                try
+            try
+            {
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                ds = new DataSet();
+                cmd = new OracleCommand("DELETE TABLAS" +
+                    "WHERE TAB_CODIGO='" + Id + "'", cn);
+                adapter = new OracleDataAdapter(cmd);
+                response = cmd.ExecuteNonQuery();
+                cn.Close();
+                if (response > 0)
                 {
-                    Conexion oConexion = new Conexion();
-                    OracleConnection cn = oConexion.getConexion();
-                    cn.Open();
-                    ds = new DataSet();
-                    cmd = new OracleCommand("DELETE TABLAS" +
-                        "WHERE TAB_CODIGO='" + Id + "'",cn);
-                    adapter = new OracleDataAdapter(cmd);
-                    response = cmd.ExecuteNonQuery();
-                    cn.Close();
-                    if (response > 0)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    return true;
                 }
-                catch (Exception ex)
+                else
                 {
-                    throw ex;
+                    return false;
                 }
-               
-	
-		}
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
 
         public Tablas TablasGetById(string Id)
-		{
-			try
-			{
+        {
+            try
+            {
                 DataSet ds = new DataSet();
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
 
                 string sqlSelect = "select * from tablas " +
-                    "where TAB_CODIGO='"+ Id+"'";
+                    "where TAB_CODIGO='" + Id + "'";
 
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
                 adapter.Fill(ds);
-           
-               
+
+
                 DataTable dt;
                 dt = ds.Tables[0];
-            
+
                 Tablas NewEnt = new Tablas();
 
-				if(dt.Rows.Count > 0)
-				{
-					DataRow dr = dt.Rows[0];
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow dr = dt.Rows[0];
                     NewEnt = CargarTablas(dr);
-				}
-				return NewEnt;
-			}
-			catch(Exception ex)
-			{
-				throw ex;
-			}
-		}
+                }
+                return NewEnt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public List<Tablas> TablasGetAll()
-		{
+        {
             List<Tablas> lstTablas = new List<Tablas>();
             try
             {
@@ -159,17 +159,17 @@ namespace Implement
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
                 adapter.Fill(ds);
-                DataTable dt = new DataTable() ;
+                DataTable dt = new DataTable();
                 dt = ds.Tables[0];
                 if (dt.Rows.Count > 0)
                 {
-                  for (int i = 0; dt.Rows.Count > i; i++)
-                  {
-                            DataRow dr = dt.Rows[i];
-                            Tablas NewEnt = new Tablas();
-                            NewEnt = CargarTablas(dr);
-                            lstTablas.Add(NewEnt);
-                  }
+                    for (int i = 0; dt.Rows.Count > i; i++)
+                    {
+                        DataRow dr = dt.Rows[i];
+                        Tablas NewEnt = new Tablas();
+                        NewEnt = CargarTablas(dr);
+                        lstTablas.Add(NewEnt);
+                    }
                 }
                 return lstTablas;
             }
@@ -177,12 +177,12 @@ namespace Implement
             {
                 throw ex;
             }
-		}
+        }
 
         private Tablas CargarTablas(DataRow dr)
-		{
-			try
-			{
+        {
+            try
+            {
                 Tablas oObjeto = new Tablas();
                 oObjeto.TabCodigo = dr["TAB_CODIGO"].ToString();
                 oObjeto.TabNombre = dr["TAB_NOMBRE"].ToString();
@@ -190,12 +190,12 @@ namespace Implement
                 oObjeto.TabQueryJoin = dr["TAB_QUERY_JOIN"].ToString();
                 oObjeto.TabQueryFilter = dr["TAB_QUERY_FILTER"].ToString();
                 return oObjeto;
-			}
-			catch(Exception ex)
-			{
-				throw ex;
-			}
-		}
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public DataTable TablasBusquedaGetAllFilter(string Tabla, string Campos, string filterTabla, Admin oAdmin)
         {
@@ -205,15 +205,15 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 //CAMPOS DE LA TABLA DE LA BASE DE DATOS
-                string[] filterCamp=null;
-                if (oAdmin.FiltroCampos!=null)
+                string[] filterCamp = null;
+                if (oAdmin.FiltroCampos != null)
                     filterCamp = System.Text.RegularExpressions.Regex.Split(oAdmin.FiltroCampos, "&");
                 //EL OPERADOR SELECCIONADO
-                string[] filterOp=null;
+                string[] filterOp = null;
                 if (oAdmin.FiltroOperador != null)
-                   filterOp = System.Text.RegularExpressions.Regex.Split(oAdmin.FiltroOperador, "&");
+                    filterOp = System.Text.RegularExpressions.Regex.Split(oAdmin.FiltroOperador, "&");
                 //VALORES CARGADOS EN EL FORMULARIO
-                string[] filterV=null;
+                string[] filterV = null;
                 if (oAdmin.FiltroValores != null)
                     filterV = System.Text.RegularExpressions.Regex.Split(oAdmin.FiltroValores, "&");
 
@@ -300,7 +300,7 @@ namespace Implement
                                     sqlSelect += ")";
                                     break;
                             }
-                        
+
                     }
                 }
 
@@ -413,14 +413,14 @@ namespace Implement
 
 
                 cn.Open();
-//               Muestra la estructura de la tabla PERSONAS
+                //               Muestra la estructura de la tabla PERSONAS
                 String[] tableRestrictions = new String[2];
                 tableRestrictions[1] = "PERSONAS";
                 DataTable table = cn.GetSchema("Columns", tableRestrictions);
                 DisplayData(table);
                 VerDataTable(table);
                 Console.WriteLine("Press any key to continue.");
- //             Muestra la columna ARE_CODIGO de la tabla AREAS
+                //             Muestra la columna ARE_CODIGO de la tabla AREAS
                 tableRestrictions = new String[3];
                 tableRestrictions[1] = "AREAS";
                 tableRestrictions[2] = "ARE_CODIGO";
@@ -431,7 +431,7 @@ namespace Implement
                 //Console.ReadKey();
                 //OracleCommand cmd = new OracleCommand(comando, cn);
                 //cmd.ExecuteNonQuery();
-                return ;
+                return;
             }
             catch (Exception ex)
             {
@@ -451,8 +451,8 @@ namespace Implement
                 //               Muestra la estructura de la tabla PERSONAS
                 String[] tableRestrictions = new String[2];
                 tableRestrictions[1] = tabla;
-                return  cn.GetSchema("Columns", tableRestrictions);
-  
+                return cn.GetSchema("Columns", tableRestrictions);
+
             }
             catch (Exception ex)
             {
@@ -462,6 +462,8 @@ namespace Implement
         }
         public bool TablaActualizaGrid(string tabla, string[] columnas, string[] valores, string criterio, string operacion)
         {
+            string listaCampos = "";
+            string listaValores = "";
             string comando = "";
             switch (operacion)
             {
@@ -482,8 +484,8 @@ namespace Implement
 
                 case "I":
                     comando = "insert into " + tabla;
-                    string listaCampos = "";
-                    string listaValores = "";
+                    listaCampos = "";
+                    listaValores = "";
                     for (int pos = 0; pos < columnas.Length; pos++)
                     {
                         listaCampos += columnas[pos];
@@ -497,6 +499,45 @@ namespace Implement
                     };
                     comando += " ( " + listaCampos + ") values(" + listaValores + ")";
                     break;
+                    /*
+                     * ESTE METODO SE AGREGO PARA PODER INSERTAR REGISTROS QUE DEPENDAN DE LA CLAVE POR SECUENCIA
+                     * LA SECUENCIA TINE QUE TENER EL MISMO NOMBRE QUE EL CAMPO CLAVE 
+                     */
+                case "IN":
+                    {
+                        criterio = criterio.Substring(0, criterio.Length - 3);
+                        listaCampos = "";
+                        listaValores = "";
+                        for (int pos = 0; pos < columnas.Length; pos++)
+                        {
+                            listaCampos += columnas[pos];
+                            listaValores += "'" + valores[pos] + "'";
+                            if (columnas.Length > pos + 1)
+                            {
+                                listaCampos += ", ";
+                                listaValores += ", ";
+
+                            }
+                        };
+                        comando += " ( ROL_CODIGO, " + listaCampos + ") values(IDTEMP," + listaValores + ")";
+
+
+                        /*             query = " DECLARE IDTEMP NUMBER(15,0); " +
+                                   " BEGIN " +
+                                   " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('" +
+                                   criterio +
+                                   "')) into IDTEMP from dual; " +
+                                   "insert into " + tabla + comando + "RETURNING IDTEMP INTO :id;END;";                */
+
+                        comando = " DECLARE IDTEMP NUMBER(15,0); " +
+                       " BEGIN " +
+                       " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('" +
+                       criterio +
+                       "')) into IDTEMP from dual; " +
+                       "insert into " + tabla + comando + "RETURNING IDTEMP INTO :id;END;";
+
+                    }
+                    break;
                 default: return false;
             }
             try
@@ -506,16 +547,25 @@ namespace Implement
 
                 cn.Open();
                 OracleCommand cmd = new OracleCommand(comando, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
                 cmd.ExecuteNonQuery();
                 return true;
             }
             catch (Exception ex)
             {
                 throw ex;
-                
+
             }
 
         }
+
+
 
         #endregion
 
