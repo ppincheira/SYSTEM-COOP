@@ -1,9 +1,7 @@
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Controles.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Controles.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Model.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Model.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.datos.gesComboBox.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.datos.gesGrid.resources

@@ -7,7 +7,6 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\b
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Model.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Service.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Implement.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Oracle.DataAccess.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\AppProcesos.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Business.pdb
@@ -15,8 +14,8 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\b
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Model.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Service.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Implement.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.csprojResolveAssemblyReference.cache
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmLecturasCrud.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmLecturasModosCrudAux.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmSuministrosAdmin.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmLecturasConceptosCrud.resources
@@ -32,4 +31,3 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\o
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.csproj.GenerateResource.Cache
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmLecturasCrud.resources
