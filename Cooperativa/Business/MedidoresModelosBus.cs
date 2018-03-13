@@ -45,5 +45,15 @@ namespace Business
             MedidoresModelosImpl oMedidoresModelosImpl = new MedidoresModelosImpl();
             return oMedidoresModelosImpl.MedidoresModelosGetAllDT();
         }
+        public DataTable MedidoresModelosGetByDT(string campoFiltro, int valorFiltro)
+        {
+            MedidoresModelosImpl oMedidoresModelosImpl = new MedidoresModelosImpl();
+            return oMedidoresModelosImpl.MedidoresModelosGetByDT(campoFiltro, valorFiltro);
+        }
+        public DataTable MedidoresModelosGetByDT(string campoFiltro, string valorFiltro)
+        {
+            MedidoresModelosImpl oMedidoresModelosImpl = new MedidoresModelosImpl();
+            return oMedidoresModelosImpl.MedidoresModelosGetByDT(campoFiltro, valorFiltro);
+        }
     }
 }

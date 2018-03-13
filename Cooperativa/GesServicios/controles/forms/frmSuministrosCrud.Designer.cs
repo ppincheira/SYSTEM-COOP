@@ -47,6 +47,8 @@
             this.lblNumeroProv = new Controles.labels.lblEtiqueta();
             this.tabSumnistros = new Controles.contenedores.tabSolapas();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblEtiqueta16 = new Controles.labels.lblEtiqueta();
+            this.txtLecturaModoMedidor = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta12 = new Controles.labels.lblEtiqueta();
             this.txtFabricanteMedidor = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta11 = new Controles.labels.lblEtiqueta();
@@ -115,8 +117,6 @@
             this.lblEtiqueta4 = new Controles.labels.lblEtiqueta();
             this.txtDomCodigo = new Controles.textBoxes.txtDescripcion();
             this.btnDomicilio = new Controles.buttons.btnGeneral();
-            this.lblEtiqueta16 = new Controles.labels.lblEtiqueta();
-            this.txtLecturaModoMedidor = new Controles.textBoxes.txtDescripcion();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.tabSumnistros.SuspendLayout();
@@ -270,6 +270,7 @@
             this.cmbTipoConexion.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbTipoConexion.Size = new System.Drawing.Size(165, 21);
             this.cmbTipoConexion.TabIndex = 10;
+            this.cmbTipoConexion.SelectedIndexChanged += new System.EventHandler(this.cmbTipoConexion_SelectedIndexChanged);
             // 
             // lblTipoConexion
             // 
@@ -337,6 +338,29 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Medidores";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lblEtiqueta16
+            // 
+            this.lblEtiqueta16.AutoSize = true;
+            this.lblEtiqueta16.Location = new System.Drawing.Point(11, 100);
+            this.lblEtiqueta16.Name = "lblEtiqueta16";
+            this.lblEtiqueta16.Size = new System.Drawing.Size(91, 13);
+            this.lblEtiqueta16.TabIndex = 64;
+            this.lblEtiqueta16.Text = "Modo de Lectura:";
+            // 
+            // txtLecturaModoMedidor
+            // 
+            this.txtLecturaModoMedidor.BackColor = System.Drawing.Color.White;
+            this.txtLecturaModoMedidor.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtLecturaModoMedidor.Enabled = false;
+            this.txtLecturaModoMedidor.Location = new System.Drawing.Point(108, 93);
+            this.txtLecturaModoMedidor.MaxLength = 50;
+            this.txtLecturaModoMedidor.Name = "txtLecturaModoMedidor";
+            this.txtLecturaModoMedidor.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtLecturaModoMedidor.Size = new System.Drawing.Size(221, 20);
+            this.txtLecturaModoMedidor.TabIndex = 63;
+            this.txtLecturaModoMedidor.TextoVacio = "<Descripcion>";
+            this.txtLecturaModoMedidor.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lblEtiqueta12
             // 
@@ -418,6 +442,7 @@
             // 
             // btnMedidor
             // 
+            this.btnMedidor.Enabled = false;
             this.btnMedidor.Location = new System.Drawing.Point(301, 36);
             this.btnMedidor.Margin = new System.Windows.Forms.Padding(2);
             this.btnMedidor.Name = "btnMedidor";
@@ -1172,29 +1197,6 @@
             this.btnDomicilio.Text = "...";
             this.btnDomicilio.UseVisualStyleBackColor = true;
             this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
-            // 
-            // lblEtiqueta16
-            // 
-            this.lblEtiqueta16.AutoSize = true;
-            this.lblEtiqueta16.Location = new System.Drawing.Point(11, 100);
-            this.lblEtiqueta16.Name = "lblEtiqueta16";
-            this.lblEtiqueta16.Size = new System.Drawing.Size(91, 13);
-            this.lblEtiqueta16.TabIndex = 64;
-            this.lblEtiqueta16.Text = "Modo de Lectura:";
-            // 
-            // txtLecturaModoMedidor
-            // 
-            this.txtLecturaModoMedidor.BackColor = System.Drawing.Color.White;
-            this.txtLecturaModoMedidor.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtLecturaModoMedidor.Enabled = false;
-            this.txtLecturaModoMedidor.Location = new System.Drawing.Point(108, 93);
-            this.txtLecturaModoMedidor.MaxLength = 50;
-            this.txtLecturaModoMedidor.Name = "txtLecturaModoMedidor";
-            this.txtLecturaModoMedidor.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtLecturaModoMedidor.Size = new System.Drawing.Size(221, 20);
-            this.txtLecturaModoMedidor.TabIndex = 63;
-            this.txtLecturaModoMedidor.TextoVacio = "<Descripcion>";
-            this.txtLecturaModoMedidor.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // frmSuministrosCrud
             // 

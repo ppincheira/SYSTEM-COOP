@@ -38,6 +38,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
         string strTipoDoc { get; set; }
         string strEmpDocumentoNumero { get; set; }
         long numSocio { get; set; }
+        long numMedidor { get; set; }
 
     }
 }

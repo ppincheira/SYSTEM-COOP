@@ -223,3 +223,18 @@ Error: ORA-01830: date format picture ends before converting entire input string
 Usuario: 1
 Subsistema: ALL
 Terminal: 1
+Fecha: 27/02/2018 01:01:47 p.m.
+Error: ORA-01830: date format picture ends before converting entire input string
+Usuario: 1
+Subsistema: ALL
+Terminal: 1
+Fecha: 27/02/2018 01:02:16 p.m.
+Error: ORA-01830: date format picture ends before converting entire input string
+Usuario: 1
+Subsistema: ALL
+Terminal: 1
+Fecha: 27/02/2018 01:02:23 p.m.
+Error: ORA-01830: date format picture ends before converting entire input string
+Usuario: 1
+Subsistema: ALL
+Terminal: 1

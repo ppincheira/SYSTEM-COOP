@@ -41,5 +41,15 @@ namespace Business
             MedidoresImpl oMedidoresImpl = new MedidoresImpl();
             return oMedidoresImpl.MedidoresGetAllDT();
         }
+        public DataTable MedidoresGetAllDT(short modelo)
+        {
+            MedidoresImpl oMedidoresImpl = new MedidoresImpl();
+            return oMedidoresImpl.MedidoresGetAllDT(modelo);
+        }
+        public DataTable MedidoresGetByTCyServ(string TcsCodigo, string SrvCodigo)
+        {
+            MedidoresImpl oMedidoresImpl = new MedidoresImpl();
+            return oMedidoresImpl.MedidoresGetByTCyServ(TcsCodigo, SrvCodigo);
+        }
     }
 }

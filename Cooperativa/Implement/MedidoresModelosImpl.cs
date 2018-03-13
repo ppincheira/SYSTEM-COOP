@@ -31,13 +31,13 @@ namespace Implement
                         " insert into Medidores_Modelos" +
                         "(MMO_CODIGO, MMO_DESCRIPCION, MMO_DESCRIPCION_CORTA, MMO_DIGITOS, " +
                         "MMO_DECIMALES, MMO_CANT_HILOS, MMO_KW_VUELTAS, MMO_AMPERAJE, " +
-                        "MMO_CLASE, MMO_REGISTRADOR, MMO_TIPO_CONTADOR, MMO_TIPO_CONEXION, " +
+                        "MMO_CLASE, MMO_REGISTRADOR, MMO_TIPO_CONTADOR, TCS_CODIGO, " +
                         "FAB_NUMERO, TME_CODIGO, USR_NUMERO, MMO_FECHA_CARGA, EST_CODIGO) " +
                         "values(IDTEMP,'" + oMMO.MMoDescripcion + "','" +
                         oMMO.MMoDescripcionCorta + "'," + oMMO.MMoDigitos + "," +
                         oMMO.MMoDecimales + "," + oMMO.MMoCantHilos + "," + oMMO.MMoKwVueltas + ",'" +
                         oMMO.MMoAmperaje + "'," + oMMO.MMoClase + "," + oMMO.MMoRegistrador + ",'" +
-                        oMMO.MMoTipoContador + "','" + oMMO.MMoTipoConexion + "'," +
+                        oMMO.MMoTipoContador + "','" + oMMO.TCSCodigo + "'," +
                         oMMO.FabNumero + "," + oMMO.TmeCodigo + "," + oMMO.UsrNumero + ",'" +
                         oMMO.MMoFechaCarga.ToString("dd/MM/yyyy") + "','" + oMMO.EstCodigo + "') RETURNING IDTEMP INTO :id;" +
                         " END;";
@@ -79,7 +79,7 @@ namespace Implement
                     "', MMO_CLASE=" + oMMO.MMoClase +
                     ", MMO_REGISTRADOR=" + oMMO.MMoRegistrador +
                     ", MMO_TIPO_CONTADOR='" + oMMO.MMoTipoContador +
-                    "', MMO_TIPO_CONEXION='" + oMMO.MMoTipoConexion +
+                    "', TCS_CODIGO='" + oMMO.TCSCodigo +
                     "', FAB_NUMERO=" + oMMO.FabNumero +
                     ", TME_CODIGO=" + oMMO.TmeCodigo +
                     ", USR_NUMERO=" + oMMO.UsrNumero +
@@ -189,7 +189,6 @@ namespace Implement
                 List<MedidoresModelos> lstMedidoresModelos = new List<MedidoresModelos>();
                 try
                 {
-
                     ds = new DataSet();
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
@@ -207,7 +206,51 @@ namespace Implement
                 }
             }
 
-        private MedidoresModelos CargarMedidoresModelos(DataRow dr)
+            public DataTable MedidoresModelosGetByDT(string campoFiltro, int valorFiltro)
+            {
+                List<MedidoresModelos> lstMedidoresModelos = new List<MedidoresModelos>();
+                try
+                {
+                    ds = new DataSet();
+                    Conexion oConexion = new Conexion();
+                    OracleConnection cn = oConexion.getConexion();
+                    cn.Open();
+                    string sqlSelect = "select * from Medidores_Modelos where " + campoFiltro + "=" + valorFiltro;
+                    cmd = new OracleCommand(sqlSelect, cn);
+                    adapter = new OracleDataAdapter(cmd);
+                    cmd.ExecuteNonQuery();
+                    adapter.Fill(ds);
+                    return ds.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+            public DataTable MedidoresModelosGetByDT(string campoFiltro, string valorFiltro)
+            {
+                List<MedidoresModelos> lstMedidoresModelos = new List<MedidoresModelos>();
+                try
+                {
+                    ds = new DataSet();
+                    Conexion oConexion = new Conexion();
+                    OracleConnection cn = oConexion.getConexion();
+                    cn.Open();
+                    string sqlSelect = "select * from Medidores_Modelos where " + campoFiltro + "=" + valorFiltro+"'";
+                    cmd = new OracleCommand(sqlSelect, cn);
+                    adapter = new OracleDataAdapter(cmd);
+                    cmd.ExecuteNonQuery();
+                    adapter.Fill(ds);
+                    return ds.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+            private MedidoresModelos CargarMedidoresModelos(DataRow dr)
             {
                 try
                 {
@@ -229,7 +272,7 @@ namespace Implement
                     if (dr["MMO_REGISTRADOR"].ToString() != "")
                         oObjeto.MMoRegistrador = decimal.Parse(dr["MMO_REGISTRADOR"].ToString());
                     oObjeto.MMoTipoContador = dr["MMO_TIPO_CONTADOR"].ToString();
-                    oObjeto.MMoTipoConexion = dr["MMO_TIPO_CONEXION"].ToString();
+                    oObjeto.TCSCodigo = dr["TCS_CODIGO"].ToString();
                     oObjeto.FabNumero = int.Parse(dr["FAB_NUMERO"].ToString());
                     oObjeto.TmeCodigo = int.Parse(dr["TME_CODIGO"].ToString());
                     oObjeto.UsrNumero = int.Parse(dr["USR_NUMERO"].ToString());

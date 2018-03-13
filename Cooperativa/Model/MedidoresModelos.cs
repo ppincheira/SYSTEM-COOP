@@ -18,7 +18,7 @@ namespace Model
         public virtual int? MMoClase { get; set; }
         public virtual decimal? MMoRegistrador { get; set; }
         public virtual string MMoTipoContador { get; set; }
-        public virtual string MMoTipoConexion { get; set; }
+        public virtual string TCSCodigo { get; set; }
         public virtual int FabNumero { get; set; }
         public virtual int TmeCodigo { get; set; }
         public virtual int UsrNumero { get; set; }
