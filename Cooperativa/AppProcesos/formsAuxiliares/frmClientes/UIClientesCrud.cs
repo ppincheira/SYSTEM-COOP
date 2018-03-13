@@ -35,9 +35,6 @@ namespace AppProcesos.formsAuxiliares.frmClientes
 
         public void Inicializar(long empNumero, Enumeration.Acciones oAccion )
         {
-            //FechaBajaAccionista(false);
-            //FechaBajaCliente(false);
-            //FechaBajaProveedor(false);
             CargarTipoIva();
             CargarEstadoCredito();
             CargarTiposDni();

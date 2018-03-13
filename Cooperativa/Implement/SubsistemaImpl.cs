@@ -15,6 +15,7 @@ namespace Implement
             private OracleCommand cmd;
             private DataSet ds;
             private int response;
+
             public int SubsistemaAdd(Subsistema oSub)
             {
                 try
@@ -149,7 +150,33 @@ namespace Implement
                 }
             }
 
-            private Subsistema CargarSubsistema(DataRow dr)
+
+        public DataTable SubsistemaGetDT()
+        {           
+            try
+            {
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Subsistema ";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt = new DataTable();
+                dt = ds.Tables[0];
+                
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private Subsistema CargarSubsistema(DataRow dr)
             {
                 try
                 {

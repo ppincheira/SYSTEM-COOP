@@ -15,7 +15,7 @@ namespace AppProcesos.gesServicios.frmLecturasModosCrud
         DateTime lemFechaCarga { get; set; }                       //N
         cmbLista srvCodigo { get; set; }                           //N
         int usrCodigo { get; set; }                                //Y
-        string estCodigo { get; set; }                             //N
+        string estCodigo { get; set; }                        
         grdGrillaEdit conceptos { get; set; }
 
         void cargarGrilla(LecturasConceptos olc, int rows);

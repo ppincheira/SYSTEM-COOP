@@ -6,7 +6,6 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguraci
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Service.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Model.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Implement.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Oracle.DataAccess.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\AppProcesos.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Business.pdb
@@ -14,12 +13,12 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguraci
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Service.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Model.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Implement.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csprojResolveAssemblyReference.cache
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.frmTiposComprobantesCrud.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csproj.GenerateResource.Cache
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.pdb
+<<<<<<< HEAD
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\GesConfiguracion.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\GesConfiguracion.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\AppProcesos.dll
@@ -44,3 +43,28 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.cs
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csproj.CopyComplete
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.pdb
+=======
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\GesConfiguracion.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\GesConfiguracion.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\AppProcesos.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Business.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Controles.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\FormsAuxiliares.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Service.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Model.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Implement.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Oracle.DataAccess.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\AppProcesos.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Business.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Controles.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Service.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Model.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Implement.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.frmTiposComprobantesCrud.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csproj.GenerateResource.Cache
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.pdb
+>>>>>>> ed353cb770959b645dffc291b1366a2ae71bf198

@@ -102,10 +102,13 @@ namespace FormsAuxiliares
                 }
                 if (_oAdmin.TabCodigo == "TEEM")
                 {
+                  
                     this.lblEmail.Location = this.lblNumeroTelefono.Location;
                     this.txtEmail.Location = this.txtNumeroTelefono.Location;
+                    this.txtEmail.TabIndex = 1;
                     this.txtNumeroTelefono.Visible = false;
                     this.lblNumeroTelefono.Visible = false;
+                    this.txtEmail.Focus();
                 }
 
 
@@ -157,9 +160,6 @@ namespace FormsAuxiliares
         }
         #endregion
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

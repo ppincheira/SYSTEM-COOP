@@ -113,7 +113,6 @@ namespace FormsAuxiliares
         {
             try
             {
-
                 _oCrudGrilla.Inicializar(_Tabla, _campoClave, _claveSecuencia);
             }
             catch (Exception ex)
@@ -369,17 +368,25 @@ namespace FormsAuxiliares
 
         private void btnAceptar1_Click(object sender, EventArgs e)
         {
-            _oCrudGrilla.ActualizaTabla(_Tabla, _campoClave, _claveSecuencia);
-            foreach (DataGridViewRow row in grdGrillaEdit1.Rows)
+            if (MessageBox.Show("Desea Confirmar los cambios que se realizaran?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (!row.IsNewRow && row.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
-                    row.DefaultCellStyle.BackColor = Color.White;
-                if (!row.IsNewRow && row.DefaultCellStyle.BackColor == Color.Red && row.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
-                    row.Visible = false;
+                _oCrudGrilla.ActualizaTabla(_Tabla, _campoClave, _claveSecuencia);
+
+
+                //Retorna los colores de las filas despues de realizar las modificaciones
+                foreach (DataGridViewRow row in grdGrillaEdit1.Rows)
+                {
+                    if (!row.IsNewRow && row.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
+                        row.DefaultCellStyle.BackColor = Color.White;
+                    if (!row.IsNewRow && row.DefaultCellStyle.BackColor == Color.Red && row.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
+                        row.Visible = false;
+                }
+
+
+                // obtener el objeto en cuestion para cada elemento modificado usando el id , por ej AreasGetById(columnaClave)
+                // Hacer un porje Areas Update(area obtenida en el paso anterior)
+                //  this.Close();
             }
-            // obtener el objeto en cuestion para cada elemento modificado usando el id , por ej AreasGetById(columnaClave)
-            // Hacer un porje Areas Update(area obtenida en el paso anterior)
-            this.Close();
 
         }
 
@@ -447,15 +454,16 @@ namespace FormsAuxiliares
             }
 
         }
-
+        
         private void grdGrillaEdit1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (grdGrillaEdit1.CurrentCell.Value.ToString() != temp && grdGrillaEdit1.CurrentRow.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
-            {
-                // se realizo algun cambio y la celda esta sin editar (no esta borrada ni nueva)
-                grdGrillaEdit1.CurrentRow.Cells[grdGrillaEdit1.ColumnCount - 1].Value = "1";
-                grdGrillaEdit1.CurrentRow.DefaultCellStyle.BackColor = Color.Yellow;
-            }
+            if (grdGrillaEdit1.CurrentCell != null)
+                if (grdGrillaEdit1.CurrentCell.Value != null && grdGrillaEdit1.CurrentCell.Value.ToString() != temp && grdGrillaEdit1.CurrentRow.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
+                {
+                    // se realizo algun cambio y la celda esta sin editar (no esta borrada ni nueva)
+                    grdGrillaEdit1.CurrentRow.Cells[grdGrillaEdit1.ColumnCount - 1].Value = "1";
+                    grdGrillaEdit1.CurrentRow.DefaultCellStyle.BackColor = Color.Yellow;
+                }
 
         }
     }

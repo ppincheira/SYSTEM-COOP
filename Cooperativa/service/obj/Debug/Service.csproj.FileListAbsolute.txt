@@ -13,6 +13,7 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\obj\De
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.csproj.ResolveComReference.cache
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.pdb
+<<<<<<< HEAD
 C:\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Service.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Service.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Business.dll
@@ -30,3 +31,20 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.csproj.CoreCompileIn
 C:\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.csproj.CopyComplete
 C:\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.pdb
+=======
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Service.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Service.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Business.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Controles.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Model.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Implement.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Oracle.DataAccess.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Business.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Controles.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Model.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Implement.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.csproj.ResolveComReference.cache
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.pdb
+>>>>>>> ed353cb770959b645dffc291b1366a2ae71bf198

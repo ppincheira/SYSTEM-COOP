@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTelefonosCrud));
             this.gesControles = new Controles.contenedores.gesGroup();
-            this.btnGuardar = new Controles.buttons.btnAceptar();
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gesDatos = new Controles.contenedores.gesGroup();
@@ -52,29 +51,18 @@
             // 
             // gesControles
             // 
-            this.gesControles.Controls.Add(this.btnGuardar);
             this.gesControles.Controls.Add(this.btnCancelar);
             this.gesControles.Controls.Add(this.btnAceptar);
-            this.gesControles.Location = new System.Drawing.Point(7, 215);
+            this.gesControles.Location = new System.Drawing.Point(7, 226);
             this.gesControles.Name = "gesControles";
-            this.gesControles.Size = new System.Drawing.Size(515, 81);
+            this.gesControles.Size = new System.Drawing.Size(515, 70);
             this.gesControles.TabIndex = 3;
             this.gesControles.TabStop = false;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(429, 14);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(80, 60);
-            this.btnGuardar.TabIndex = 9;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(257, 14);
+            this.btnCancelar.Location = new System.Drawing.Point(343, 9);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 60);
             this.btnCancelar.TabIndex = 7;
@@ -84,7 +72,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
-            this.btnAceptar.Location = new System.Drawing.Point(343, 14);
+            this.btnAceptar.Location = new System.Drawing.Point(429, 9);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(80, 60);
             this.btnAceptar.TabIndex = 8;
@@ -259,6 +247,5 @@
         private Controles.datos.cmbLista cmbCargo;
         private Controles.textBoxes.txtEmail txtEmail;
         private Controles.objects.tttEtiqueta tttEtiqueta;
-        private Controles.buttons.btnAceptar btnGuardar;
     }
 }

@@ -220,23 +220,6 @@ namespace FormsAuxiliares
             set { this.dtpFechaBajaAccionista = value; }
         }
 
-        //public string strClienteBaja
-        //{
-        //    get { return this.chkBajaCliente.Checked ? "S" : "N"; }
-        //    set { this.chkBajaCliente.Checked = value == "S" ? true : false; }
-        //}
-
-        //public string strAccionistaBaja
-        //{
-        //    get { return this.chkBajaAccionista.Checked ? "S" : "N"; }
-        //    set { this.chkBajaAccionista.Checked = value == "S" ? true : false; }
-        //}
-
-        //public string strProveedorBaja
-        //{
-        //    get { return this.chkBajaProveedor.Checked ? "S" : "N"; }
-        //    set { this.chkBajaProveedor.Checked = value == "S" ? true : false; }
-        //}
 
         public string strEsSocio
         {

@@ -18,202 +18,188 @@ namespace Implement
         private long response;
 
 
-        //public long LecturasSuministrosAdd(LecturasSuministros oDom)
-        //{
-        //    try
-        //    {
-        //        Conexion oConexion = new Conexion();
-        //        OracleConnection cn = oConexion.getConexion();
-        //        cn.Open();
-        //        string query =
+        public long LecturasSuministrosAdd(LecturasSuministros oLecSum)
+        {
+            try
+            {
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string query =
 
-        //            " DECLARE IDTEMP NUMBER(15,0); " +
-        //            " BEGIN " +
-        //            " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('DOM_CODIGO')) into IDTEMP from dual; " +
-        //            "INSERT INTO DOMICILIOS(DOM_CODIGO,LOC_NUMERO,BAR_NUMERO, CAL_NUMERO, " +
-        //            "CAL_NUMERO_DESDE, CAL_NUMERO_HASTA, DOM_NUMERO, DOM_BLOQUE, DOM_PISO, " +
-        //            "DOM_DEPARTAMENTO, DOM_PARCELA, CPL_NUMERO, DOM_LOTE, DOM_GIS_X, DOM_GIS_Y)" +
-        //            " VALUES(IDTEMP," + oDom.LocNumero + "," + oDom.BarNumero + ", " + oDom.CalNumero + ", " + oDom.CalNumeroDesde + ", " +
-        //            oDom.CalNumeroHasta + ", " + oDom.DomNumero + ", '" + oDom.DomBloque + "', '" +
-        //            oDom.DomPiso + "', '" + oDom.DomDepartamento + "', '" + oDom.DomParcela + "', " +
-        //            oDom.CplNumero + ", '" + oDom.DomLote + "', " + (oDom.DomGisX == null ? "null" : oDom.DomGisX.ToString()) + ", " + (oDom.DomGisY == null ? "null" : oDom.DomGisY.ToString()) +
-        //             ") RETURNING IDTEMP INTO :id;" +
-        //            " END;";
+                    " DECLARE IDTEMP NUMBER(15,0); " +
+                    " BEGIN " +
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('LES_CODIGO')) into IDTEMP from dual; " +
+                    " INSERT INTO LECTURAS_SUMINISTROS(LES_CODIGO,LES_FECHA_ALTA,LES_FECHA_ANTERIOR,"+
+                    " LES_PERIODO, SUM_NUMERO, MED_NUMERO,SRU_NUMERO,LEM_CODIGO, " +
+                    " EST_CODIGO,CBP_NUMERO)" +
+                    " VALUES(IDTEMP,'" + oLecSum.lesFechaAlta+ "','" + oLecSum.lesFechaAnterior + "', '" + oLecSum.lesPeriodo+ "', " + oLecSum.sumNumero +", " +
+                    oLecSum.medNumero + ", " + oLecSum.sruNumero + ", " + oLecSum.lemCodigo + ", '" +
+                    oLecSum.estCodigo + "', " + oLecSum.cbpNumero + ") RETURNING IDTEMP INTO :id;" +
+                    " END;";
 
-        //        cmd = new OracleCommand(query, cn);
-        //        cmd.Parameters.Add(new OracleParameter
-        //        {
-        //            ParameterName = ":id",
-        //            OracleDbType = OracleDbType.Int64,
-        //            Direction = ParameterDirection.Output
-        //        });
-        //        cmd.ExecuteNonQuery();
-        //        response = long.Parse(cmd.Parameters[":id"].Value.ToString());
-        //        cn.Close();
+                cmd = new OracleCommand(query, cn);
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
+                cmd.ExecuteNonQuery();
+                response = long.Parse(cmd.Parameters[":id"].Value.ToString());
+                cn.Close();
 
-        //        return response;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
+                return response;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
 
-        //}
+        }
 
-        //public bool LecturasSuministrosUpdate(LecturasSuministros oDom)
-        //{
-        //    try
-        //    {
-        //        Conexion oConexion = new Conexion();
-        //        OracleConnection cn = oConexion.getConexion();
-        //        cn.Open();
-        //        ds = new DataSet();
-        //        cmd = new OracleCommand("update Domicilios " +
-        //            "SET LOC_NUMERO=" + oDom.LocNumero + ", " +
-        //            "BAR_NUMERO=" + oDom.BarNumero + ", " +
-        //            "CAL_NUMERO=" + oDom.CalNumero + ", " +
-        //            "CAL_NUMERO_DESDE=" + oDom.CalNumeroDesde + ", " +
-        //            "CAL_NUMERO_HASTA=" + oDom.CalNumeroHasta + ", " +
-        //            "DOM_NUMERO=" + oDom.DomNumero + ", " +
-        //            "DOM_BLOQUE='" + oDom.DomBloque + "', " +
-        //            "DOM_PISO='" + oDom.DomPiso + "', " +
-        //            "DOM_DEPARTAMENTO='" + oDom.DomDepartamento + "', " +
-        //            "DOM_PARCELA='" + oDom.DomParcela + "', " +
-        //            "CPL_NUMERO=" + oDom.CplNumero + ", " +
-        //            "DOM_LOTE='" + oDom.DomLote + "', " +
-        //            "DOM_GIS_X=" + (oDom.DomGisX == null ? "null" : oDom.DomGisX.ToString()) + ", " +
-        //            "DOM_GIS_Y=" + (oDom.DomGisY == null ? "null" : oDom.DomGisY.ToString()) +
-        //            " WHERE DOM_CODIGO=" + oDom.DomCodigo, cn);
-        //        adapter = new OracleDataAdapter(cmd);
-        //        response = cmd.ExecuteNonQuery();
-        //        cn.Close();
-        //        return (response > 0);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+        public bool LecturasSuministrosUpdate(LecturasSuministros oLecSum)
+        {
+            try
+            {
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                ds = new DataSet();
+                cmd = new OracleCommand(" UPDATE LECTURAS_SUMINISTROS " +
+                    " SET LES_CODIGO=" + oLecSum.lesCodigo+ ", " +
+                    " LES_FECHA_ALTA='" + oLecSum.lesFechaAlta.ToString("dd/MM/yyyy") + "', " +
+                    " LES_FECHA_ANTERIOR='" + oLecSum.lesFechaAnterior.ToString("dd/MM/yyyy") + "', " +
+                    " LES_PERIODO='" + oLecSum.lesPeriodo + "', " +
+                    " SUM_NUMERO=" + oLecSum.sumNumero + ", " +
+                    " MED_NUMERO=" + oLecSum.medNumero + ", " +
+                    " SRU_NUMERO=" + oLecSum.sruNumero + ", " +
+                    " LEM_CODIGO=" + oLecSum.lemCodigo + ", " +
+                    " EST_CODIGO='" + oLecSum.estCodigo + "', " +
+                    " CBP_NUMERO=" + oLecSum.cbpNumero + " " +
+                    " WHERE LES_CODIGO=" + oLecSum.lesCodigo, cn);
+                adapter = new OracleDataAdapter(cmd);
+                response = cmd.ExecuteNonQuery();
+                cn.Close();
+                return (response > 0);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-        //public bool LecturasSuministrosDelete(long Id)
-        //{
+        public bool LecturasSuministrosDelete(long Id)
+        {
 
-        //    try
-        //    {
-        //        Conexion oConexion = new Conexion();
-        //        OracleConnection cn = oConexion.getConexion();
-        //        cn.Open();
-        //        ds = new DataSet();
-        //        cmd = new OracleCommand("DELETE Domicilios " +
-        //             "WHERE DOM_CODIGO=" + Id.ToString(), cn);
-        //        adapter = new OracleDataAdapter(cmd);
-        //        response = cmd.ExecuteNonQuery();
-        //        cn.Close();
-        //        return (response > 0);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+            try
+            {
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                ds = new DataSet();
+                cmd = new OracleCommand("DELETE LECTURAS_SUMINISTROS " +
+                     "WHERE LES_CODIGO=" + Id.ToString(), cn);
+                adapter = new OracleDataAdapter(cmd);
+                response = cmd.ExecuteNonQuery();
+                cn.Close();
+                return (response > 0);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-        //public LecturasSuministros LecturasSuministrosGetById(long Id)
-        //{
-        //    try
-        //    {
-        //        DataSet ds = new DataSet();
-        //        Conexion oConexion = new Conexion();
-        //        OracleConnection cn = oConexion.getConexion();
-        //        cn.Open();
-        //        string sqlSelect = "select * from Domicilios " +
-        //            "WHERE DOM_CODIGO=" + Id.ToString();
-        //        cmd = new OracleCommand(sqlSelect, cn);
-        //        adapter = new OracleDataAdapter(cmd);
-        //        cmd.ExecuteNonQuery();
-        //        adapter.Fill(ds);
-        //        DataTable dt;
-        //        dt = ds.Tables[0];
-        //        Domicilios NewEnt = new Domicilios();
-        //        if (dt.Rows.Count > 0)
-        //        {
-        //            DataRow dr = dt.Rows[0];
-        //            NewEnt = CargarDomicilios(dr);
-        //        }
-        //        return NewEnt;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+        public LecturasSuministros LecturasSuministrosGetById(long Id)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "SELECT * FROM LECTURAS_SUMINISTROS " +
+                    "WHERE LES_CODIGO=" + Id.ToString();
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                dt = ds.Tables[0];
+                LecturasSuministros NewEnt = new LecturasSuministros();
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow dr = dt.Rows[0];
+                    NewEnt = CargarLecturasSuministros(dr);
+                }
+                return NewEnt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+         }
 
 
-        //public List<Domicilios> DomiciliosGetAll()
-        //{
-        //    List<Domicilios> lstDomicilios = new List<Domicilios>();
-        //    try
-        //    {
+        public List<LecturasSuministros> LecturasSuministrosGetAll()
+        {
+            List<LecturasSuministros> lstLecSum = new List<LecturasSuministros>();
+            try
+            {
 
-        //        ds = new DataSet();
-        //        Conexion oConexion = new Conexion();
-        //        OracleConnection cn = oConexion.getConexion();
-        //        cn.Open();
-        //        string sqlSelect = "select * from Domicilios ";
-        //        cmd = new OracleCommand(sqlSelect, cn);
-        //        adapter = new OracleDataAdapter(cmd);
-        //        cmd.ExecuteNonQuery();
-        //        adapter.Fill(ds);
-        //        DataTable dt = new DataTable();
-        //        dt = ds.Tables[0];
-        //        if (dt.Rows.Count > 0)
-        //        {
-        //            for (int i = 0; dt.Rows.Count > i; i++)
-        //            {
-        //                DataRow dr = dt.Rows[i];
-        //                Domicilios NewEnt = new Domicilios();
-        //                NewEnt = CargarDomicilios(dr);
-        //                lstDomicilios.Add(NewEnt);
-        //            }
-        //        }
-        //        return lstDomicilios;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "SELECT * FROM LECTURAS_SUMINISTROS ";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt = new DataTable();
+                dt = ds.Tables[0];
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; dt.Rows.Count > i; i++)
+                    {
+                        DataRow dr = dt.Rows[i];
+                        LecturasSuministros NewEnt = new LecturasSuministros();
+                        NewEnt =CargarLecturasSuministros(dr);
+                        lstLecSum.Add(NewEnt);
+                    }
+                }
+                return lstLecSum;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-        //private Domicilios CargarDomicilios(DataRow dr)
-        //{
-        //    try
-        //    {
-        //        Domicilios oObjeto = new Domicilios();
-        //        oObjeto.DomCodigo = long.Parse(dr["DOM_CODIGO"].ToString());
-        //        oObjeto.LocNumero = int.Parse(dr["LOC_NUMERO"].ToString());
-        //        oObjeto.BarNumero = long.Parse(dr["BAR_NUMERO"].ToString());
-        //        oObjeto.CalNumero = long.Parse(dr["CAL_NUMERO"].ToString());
-        //        oObjeto.CalNumeroDesde = long.Parse(dr["CAL_NUMERO_DESDE"].ToString());
-        //        oObjeto.CalNumeroHasta = long.Parse(dr["CAL_NUMERO_HASTA"].ToString());
-        //        oObjeto.DomNumero = int.Parse(dr["DOM_NUMERO"].ToString());
-        //        oObjeto.DomBloque = dr["DOM_BLOQUE"].ToString();
-        //        oObjeto.DomPiso = dr["DOM_PISO"].ToString();
-        //        oObjeto.DomDepartamento = dr["DOM_DEPARTAMENTO"].ToString();
-        //        oObjeto.DomParcela = dr["DOM_PARCELA"].ToString();
-        //        if (dr["CPL_NUMERO"].ToString() != "")
-        //            oObjeto.CplNumero = long.Parse(dr["CPL_NUMERO"].ToString());
-        //        oObjeto.DomLote = dr["DOM_LOTE"].ToString();
-        //        if (dr["DOM_GIS_X"].ToString() != "")
-        //            oObjeto.DomGisX = decimal.Parse(dr["DOM_GIS_X"].ToString());
-        //        if (dr["DOM_GIS_Y"].ToString() != "")
-        //            oObjeto.DomGisY = decimal.Parse(dr["DOM_GIS_Y"].ToString());
-        //        return oObjeto;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+        private LecturasSuministros CargarLecturasSuministros(DataRow dr)
+        {
+            try
+            {
+                LecturasSuministros oLecSum = new LecturasSuministros();
+                oLecSum.lesCodigo = long.Parse(dr["LES_CODIGO"].ToString());
+                oLecSum.lesFechaAlta = DateTime.Parse(dr["LES_FECHA_ALTA"].ToString());
+                oLecSum.lesFechaAnterior = DateTime.Parse(dr["LES_FECHA_ANTERIOR"].ToString());
+                oLecSum.lesPeriodo = dr["LES_PERIODO"].ToString();
+                oLecSum.sumNumero = long.Parse(dr["SUM_NUMERO"].ToString());
+                oLecSum.medNumero = int.Parse(dr["MED_NUMERO"].ToString());
+                oLecSum.sruNumero = int.Parse(dr["SRU_NUMERO"].ToString());
+                oLecSum.lemCodigo = long.Parse(dr["LEM_CODIGO"].ToString());
+                oLecSum.estCodigo =dr["EST_CODIGO"].ToString();
+                oLecSum.cbpNumero = long.Parse( dr["EST_CODIGO"].ToString());
+                return oLecSum;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         #endregion
 
