@@ -22,7 +22,7 @@ namespace AppProcesos.gesServicios.frmLecturasCrud
 
         public void Inicializar(long sumNumero)
         {
-
+            
 
         }
     }

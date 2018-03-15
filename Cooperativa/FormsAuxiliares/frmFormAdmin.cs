@@ -31,6 +31,7 @@ namespace FormsAuxiliares
         public string _strRdoCodigo;
         private UIFormAdmin _oFormAdmin;
         private DataTable _dtFiltro;
+        public string _strDatosSeleccionados;
         #endregion
 
         #region << Implementation of IVistaFormAdmin >>
@@ -183,6 +184,7 @@ namespace FormsAuxiliares
         private Controles.textBoxes.txtDescripcionCorta txtValor2;
         private Controles.textBoxes.txtDescripcionCorta txtValor6;
         private Controles.buttons.btnGeneral btnEliminar;
+        private Controles.buttons.btnAceptar btnAceptar;
         private Controles.datos.grdGrillaAdmin dgBusqueda;
 
         private void InitializeComponent()
@@ -226,6 +228,7 @@ namespace FormsAuxiliares
             this.grdGrillaFiltro = new Controles.datos.grdGrillaAdmin();
             this.cmbOpcionesA = new Controles.datos.cmbLista();
             this.cmbBuscarA = new Controles.datos.cmbLista();
+            this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gpbGrupo4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBusqueda)).BeginInit();
             this.tabAdmin.SuspendLayout();
@@ -240,11 +243,12 @@ namespace FormsAuxiliares
             // 
             // gpbGrupo4
             // 
+            this.gpbGrupo4.Controls.Add(this.btnAceptar);
             this.gpbGrupo4.Controls.Add(this.lblCantidad);
             this.gpbGrupo4.Controls.Add(this.dgBusqueda);
             this.gpbGrupo4.Location = new System.Drawing.Point(5, 144);
             this.gpbGrupo4.Name = "gpbGrupo4";
-            this.gpbGrupo4.Size = new System.Drawing.Size(932, 351);
+            this.gpbGrupo4.Size = new System.Drawing.Size(950, 393);
             this.gpbGrupo4.TabIndex = 1;
             this.gpbGrupo4.TabStop = false;
             this.gpbGrupo4.Text = "Datos";
@@ -266,7 +270,7 @@ namespace FormsAuxiliares
             this.dgBusqueda.Name = "dgBusqueda";
             this.dgBusqueda.ReadOnly = true;
             this.dgBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgBusqueda.Size = new System.Drawing.Size(913, 312);
+            this.dgBusqueda.Size = new System.Drawing.Size(938, 312);
             this.dgBusqueda.TabIndex = 0;
             this.dgBusqueda.SelectionChanged += new System.EventHandler(this.dgBusqueda_SelectionChanged);
             this.dgBusqueda.DoubleClick += new System.EventHandler(this.dgBusqueda_DoubleClick);
@@ -280,7 +284,7 @@ namespace FormsAuxiliares
             this.tabAdmin.Location = new System.Drawing.Point(5, 0);
             this.tabAdmin.Name = "tabAdmin";
             this.tabAdmin.SelectedIndex = 0;
-            this.tabAdmin.Size = new System.Drawing.Size(939, 145);
+            this.tabAdmin.Size = new System.Drawing.Size(950, 145);
             this.tabAdmin.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabAdmin.TabIndex = 2;
             // 
@@ -294,7 +298,7 @@ namespace FormsAuxiliares
             this.tabPageBuscador.Name = "tabPageBuscador";
             this.tabPageBuscador.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageBuscador.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabPageBuscador.Size = new System.Drawing.Size(931, 116);
+            this.tabPageBuscador.Size = new System.Drawing.Size(942, 116);
             this.tabPageBuscador.TabIndex = 0;
             this.tabPageBuscador.Text = "Principal";
             this.tabPageBuscador.UseVisualStyleBackColor = true;
@@ -678,9 +682,21 @@ namespace FormsAuxiliares
             this.cmbBuscarA.Size = new System.Drawing.Size(235, 24);
             this.cmbBuscarA.TabIndex = 10;
             // 
+            // btnAceptar
+            // 
+            this.btnAceptar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.Location = new System.Drawing.Point(837, 337);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(107, 50);
+            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Visible = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
             // frmFormAdmin
             // 
-            this.ClientSize = new System.Drawing.Size(946, 513);
+            this.ClientSize = new System.Drawing.Size(967, 540);
             this.Controls.Add(this.tabAdmin);
             this.Controls.Add(this.gpbGrupo4);
             this.Name = "frmFormAdmin";
@@ -728,6 +744,11 @@ namespace FormsAuxiliares
         {
             try
             {
+                if (_oAdmin.Tipo == enumTipoForm.SelectorMultiSeleccion)
+                {
+                    this.dgBusqueda.MultiSelect = true;
+                    this.btnAceptar.Visible = true;
+                }
                 CargarOpciones("1");
                 _oFormAdmin.Inicializar(_oAdmin);
                 _oUtil = new Utility();
@@ -1301,5 +1322,10 @@ namespace FormsAuxiliares
             }
         }
 
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            _strDatosSeleccionados = _oFormAdmin.GuardarSeleccionados();
+            Close();
+        }
     }
 }

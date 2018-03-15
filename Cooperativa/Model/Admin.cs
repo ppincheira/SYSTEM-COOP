@@ -8,7 +8,7 @@ namespace Model
 {
     public class Admin
     {
-        public enum enumTipoForm { Selector, Filtro, Ninguna, FiltroAndAlta, FiltroAndEditar };
+        public enum enumTipoForm { Selector, Filtro, Ninguna, FiltroAndAlta, FiltroAndEditar, SelectorMultiSeleccion };
 
         public Admin()
         {

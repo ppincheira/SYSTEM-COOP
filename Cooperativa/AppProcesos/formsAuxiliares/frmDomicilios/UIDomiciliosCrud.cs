@@ -35,6 +35,10 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
                 DomiciliosBus oDomicilioBus = new DomiciliosBus();
                 CodigosPostalesLocalidadesBus oCodPosLocBus = new CodigosPostalesLocalidadesBus();
                 BarriosLocalidadesBus oBarrioLocBus = new BarriosLocalidadesBus();
+                DomiciliosEntidades oDomicilioEntidad= new DomiciliosEntidades();
+                DomiciliosEntidadesBus oDomicilioEntidadesBus = new DomiciliosEntidadesBus();
+                oDomicilioEntidad = oDomicilioEntidadesBus.DomiciliosEntidadesGetByCodigo(_vista.domCodigo);
+                _vista.cmbiTipo.SelectedValue = oDomicilioEntidad.TdoCodigo;
                 oDomicilio = oDomicilioBus.DomiciliosGetById(_vista.domCodigo);
                 _vista.bloque = oDomicilio.DomBloque;
                 _vista.cmbiLocalidad.SelectedValue = oDomicilio.LocNumero;
