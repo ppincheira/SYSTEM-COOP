@@ -59,11 +59,6 @@ namespace Business
             TablasImpl oTablasImpl = new TablasImpl();
             return oTablasImpl.TablasBusquedaGetAllFilter(oTabla.TabQueryJoin, Campos, filterCampos, filterValores, oTabla.TabQueryFilter);
         }
-                
-
-
-
-
         public bool TablaActualizaGrid(string tabla, string[] columnas, string[] valores, string criterio, string operacion)
         {
             TablasImpl oTablasImpl = new TablasImpl();

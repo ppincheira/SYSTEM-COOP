@@ -22,10 +22,6 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             ServiciosBus oServicios = new ServiciosBus();
             oUtil.CargarCombo(_vista.Servicio, oServicios.ServiciosGetAllDT(), "SRV_CODIGO", "SRV_DESCRIPCION", "SELECCIONE..");
 
-            // Obtengo los grupos del Tipo de conexiones
-            TipoConexionServiciosBus oTiposConexiones = new TipoConexionServiciosBus();
-            oUtil.CargarCombo(_vista.TipoConexion, oTiposConexiones.TipoConexionServiciosGetAllDT(), "TCS_CODIGO", "TCS_DESCRIPCION", "SELECCIONE..");
-
             //// Obtengo las Zonas
             GruposBus oZonas = new GruposBus();
             oUtil.CargarCombo(_vista.Zona, oZonas.GruposGetByFilter("2"), "GRP_CODIGO", "GRP_DESCRIPCION", "SELECCIONE..");
@@ -182,6 +178,27 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
 
             ServiciosRutasBus oRutasBus = new ServiciosRutasBus();
             oUtil.CargarCombo(_vista.Ruta, oRutasBus.ServiciosRutasGetByGrupo(oZona.GrpCodigo,"2"), "SRU_NUMERO", "SRU_DESCRIPCION", "SELECCIONE..");
+        }
+        public void CargarTiposConexiones()
+        {
+            // Obtengo los grupos del Tipo de conexiones
+            TipoConexionServiciosBus oTiposConexiones = new TipoConexionServiciosBus();
+            oUtil.CargarCombo(_vista.TipoConexion, oTiposConexiones.TipoConexionServiciosGetByServicioDT(_vista.Servicio.SelectedValue.ToString()), "TCS_CODIGO", "TCS_DESCRIPCION", "SELECCIONE..");
+        }
+
+        public void CargarMedidor()
+        {
+            // Obtengo los grupos del Tipo de conexiones
+            //MedidoresModelosBus oModelosMed = new MedidoresModelosBus();
+            //oUtil.CargarCombo(_vista.TipoConexion, oTiposConexiones.TipoConexionServiciosGetByServicioDT(_vista.Servicio.SelectedValue.ToString()), "TCS_CODIGO", "TCS_DESCRIPCION", "SELECCIONE..");
+            //oAdmin.TabCodigo = "DOMB";
+            //oAdmin.Tipo = Admin.enumTipoForm.FiltroAndEditar;
+            //oAdmin.CodigoRegistro = _EmpNumero.ToString();
+            //oAdmin.CodigoEditar = _CodigoDomicilio.ToString();
+            //oAdmin.TabCodigoRegistro = "CLIE";
+            //oAdmin.FiltroCampos = "DE.DEN_CODIGO_REGISTRO&";
+            //oAdmin.FiltroValores = _EmpNumero.ToString() + "&";
+
         }
 
     }

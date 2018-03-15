@@ -17,7 +17,7 @@ namespace GesServicios.controles.forms
         UISuministrosCrud _oSuministrosCrud;
         Utility oUtil;
 
-        long _SumNumero;
+        long _SumNumero, _MedNumero;
         string _EstCodigo;
 
         #endregion
@@ -171,10 +171,15 @@ namespace GesServicios.controles.forms
             get { return long.Parse(txtSocio.Text); }
             set { txtSocio.Text = value.ToString(); }
         }
+        public long numMedidor
+        {
+            get { return _MedNumero; }
+            set { _MedNumero = value; }
+        }
         #endregion
         public frmSuministrosCrud(long Suministro, string Estado)
         {
-            _SumNumero = Numero;
+            _SumNumero = Suministro;
             _EstCodigo = Estado;
             //_usrNumero = Usuario;
             _oSuministrosCrud = new UISuministrosCrud(this);
@@ -256,12 +261,20 @@ namespace GesServicios.controles.forms
             Medidores oMedidor = new Medidores();
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10100", "10101", "10102", "10104", "10105", "10103");
             Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "MEDB";
+            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndEditar;
+            oAdmin.CodigoRegistro = _SumNumero.ToString();
+            oAdmin.CodigoEditar = _MedNumero.ToString();
+            oAdmin.TabCodigoRegistro = "SUM";
+            oAdmin.FiltroCampos = "M.MED_NUMERO";
+            oAdmin.FiltroValores = _SumNumero.ToString() + "&";
             oAdmin.TabCodigo = "MED";
             oAdmin.Tipo = Admin.enumTipoForm.Selector;
-            frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
+            frmFormAdmin frmbus = new frmFormAdmin(oAdmin, oPermiso);
             if (frmbus.ShowDialog() == DialogResult.OK)
             {
                 string nombre = frmbus.striRdoCodigo;
+
                 //oMedidor = _oSuministrosCrud.CargarMedidor();
             }
 
@@ -320,12 +333,21 @@ namespace GesServicios.controles.forms
         private void cmbServicio_Leave(object sender, EventArgs e)
         {
             _oSuministrosCrud.CargarCategorias();
+            _oSuministrosCrud.CargarTiposConexiones();
         }
 
         private void cmbZona_Leave(object sender, EventArgs e)
         {
             _oSuministrosCrud.CargarRutas();
 
+        }
+
+        private void cmbTipoConexion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTipoConexion.SelectedIndex > 0)
+                btnMedidor.Enabled = true;
+            else
+                btnMedidor.Enabled = false;
         }
 
         private void cmbRuta_SelectedIndexChanged(object sender, EventArgs e)

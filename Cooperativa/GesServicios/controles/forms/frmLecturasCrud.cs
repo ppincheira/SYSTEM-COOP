@@ -127,22 +127,22 @@ namespace GesServicios.controles.forms
         }
 
         #endregion
-        public frmLecturasCrud(long sumNumero)
+        public frmLecturasCrud()
         {
             InitializeComponent();
+
             _sumNumero = sumNumero;
             if (sumNumero == 0)
                 _oAccion = Enumeration.Acciones.New;
             else
                 _oAccion = Enumeration.Acciones.Edit;
             _oLecturasCrud = new UILecturasCrud(this);
+
         }
 
         private void frmLecturasCrud_Load(object sender, EventArgs e)
         {
-            oUtil = new Utility();
-            _oLecturasCrud.Inicializar(_sumNumero);
-            
+
         }
     }
 }

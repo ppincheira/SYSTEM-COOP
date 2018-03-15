@@ -20,10 +20,12 @@ namespace AppProcesos.gesServicios.frmLecturasCrud
             oUtil = new Utility();
         }
 
+
         public void Inicializar(long sumNumero)
         {
             
 
         }
+
     }
 }

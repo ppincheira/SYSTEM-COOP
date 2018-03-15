@@ -153,7 +153,7 @@ namespace Implement
             }
         }
 
-         public DataTable TipoConexionServiciosGetAllDT()
+        public DataTable TipoConexionServiciosGetAllDT()
         {
             List<TipoConexionServicios> lstTipoConexionServicios = new List<TipoConexionServicios>();
             try
@@ -164,6 +164,28 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 string sqlSelect = "select * from Tipos_Conexiones_Servicios ";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable TipoConexionServiciosGetByServicioDT(string servicio)
+        {
+            List<TipoConexionServicios> lstTipoConexionServicios = new List<TipoConexionServicios>();
+            try
+            {
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Tipos_Conexiones_Servicios where srv_codigo='"+servicio+"'";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();

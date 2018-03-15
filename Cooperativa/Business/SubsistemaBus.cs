@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using Implement;
 using Model;
 
@@ -31,6 +32,11 @@ namespace Business
             return oSubsistemaImp.SubsistemaGetById(Id);
         }
 
+        public DataTable SubsistemaGetDT()
+        {
+            SubsistemaImpl oSubsistemaImp = new SubsistemaImpl();
+            return oSubsistemaImp.SubsistemaGetDT();
+        }
         public List<Subsistema> SubsistemaGetAll()
         {
             SubsistemaImpl oSubsistemaImp = new SubsistemaImpl();

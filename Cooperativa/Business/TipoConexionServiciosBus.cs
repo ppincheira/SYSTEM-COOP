@@ -41,5 +41,10 @@ namespace Business
             TipoConexionServiciosImpl oTipoConexionServiciosImpl = new TipoConexionServiciosImpl();
             return oTipoConexionServiciosImpl.TipoConexionServiciosGetAllDT();
         }
+    public DataTable TipoConexionServiciosGetByServicioDT(string servicio)
+        {
+            TipoConexionServiciosImpl oTipoConexionServiciosImpl = new TipoConexionServiciosImpl();
+            return oTipoConexionServiciosImpl.TipoConexionServiciosGetByServicioDT(servicio);
+        }
     }
 }

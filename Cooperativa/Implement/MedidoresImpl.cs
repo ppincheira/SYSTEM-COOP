@@ -197,6 +197,54 @@ namespace Implement
             }
         }
 
+        public DataTable MedidoresGetAllDT(short modelo)
+        {
+            List<Medidores> lstMedidores = new List<Medidores>();
+            try
+            {
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Medidores where mmo_codigo="+modelo;
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable MedidoresGetByTCyServ(string TcsCodigo, string SrvCodigo)
+        {
+            List<Medidores> lstMedidores = new List<Medidores>();
+            try
+            {
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Medidores m " +
+                    "inner join medidores_modelos mm on m.mmo_codigo=mm.mmo_codigo " +
+                    "inner join tipos_conexiones_servicios tcs on mm.tcs_codigo= tcs.tcs_codigo " +
+                    "where mm.tcs_codigo='" + TcsCodigo + "' and srv_codigo='" + SrvCodigo + "'";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private Medidores CargarMedidores(DataRow dr)
         {
             try

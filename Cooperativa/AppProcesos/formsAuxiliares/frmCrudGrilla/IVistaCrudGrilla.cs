@@ -15,5 +15,6 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
         string filtro { get; set; }
         cmbLista comboEstado { get; set; }
         string cantidad { set; }
+        void Close();
     }
 }

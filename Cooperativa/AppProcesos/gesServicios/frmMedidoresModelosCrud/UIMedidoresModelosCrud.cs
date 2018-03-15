@@ -41,7 +41,7 @@ namespace AppProcesos.gesServicios.frmMedidoresModelosCrud
                 //Obtengo datos de la entidad principal que trabajo
                 oMedidoresModelos = oMedidoresModelosBus.MedidoresModelosGetById(_vista.Codigo);
                 _vista.TipoContador.SelectedValue = oMedidoresModelos.MMoTipoContador;
-                _vista.TipoConexion.SelectedValue = oMedidoresModelos.MMoTipoConexion;
+                _vista.TipoConexion.SelectedValue = oMedidoresModelos.TCSCodigo;
                 _vista.FabNumero.SelectedValue = oMedidoresModelos.FabNumero;
                 _vista.TMeCodigo.SelectedValue = oMedidoresModelos.TmeCodigo;
                 _vista.Descripcion = oMedidoresModelos.MMoDescripcion;
@@ -79,7 +79,7 @@ namespace AppProcesos.gesServicios.frmMedidoresModelosCrud
             oMMO.MMoRegistrador = _vista.Registrador;
             oMMO.MMoFechaCarga = _vista.FechaCarga;
             oMMO.MMoTipoContador = _vista.TipoContador.SelectedValue.ToString();
-            oMMO.MMoTipoConexion = _vista.TipoConexion.SelectedValue.ToString();
+            oMMO.TCSCodigo = _vista.TipoConexion.SelectedValue.ToString();
             oMMO.FabNumero = int.Parse(_vista.FabNumero.SelectedValue.ToString());
             oMMO.TmeCodigo = int.Parse(_vista.TMeCodigo.SelectedValue.ToString());
             oMMO.EstCodigo = _vista.EstCodigo;
