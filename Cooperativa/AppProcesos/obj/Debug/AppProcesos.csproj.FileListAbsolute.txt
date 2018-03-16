@@ -14,21 +14,3 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bi
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.csprojResolveAssemblyReference.cache
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\AppProcesos.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\AppProcesos.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Business.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Controles.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Model.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Service.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Implement.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Oracle.DataAccess.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Business.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Controles.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Model.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Service.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Implement.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.csprojResolveAssemblyReference.cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.csproj.CoreCompileInputs.cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.csproj.CopyComplete
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.pdb
