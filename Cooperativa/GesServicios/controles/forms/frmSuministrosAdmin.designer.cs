@@ -275,6 +275,7 @@
             this.gpbGrupo1.TabIndex = 14;
             this.gpbGrupo1.TabStop = false;
             this.gpbGrupo1.Text = "Datos";
+            this.gpbGrupo1.Enter += new System.EventHandler(this.gpbGrupo1_Enter);
             // 
             // tabSolapas1
             // 

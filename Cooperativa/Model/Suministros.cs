@@ -15,7 +15,7 @@ namespace Model {
         public virtual long ScaNumero { get; set; }
         public virtual long? SumOrdenRuta { get; set; }
         public virtual long EmpNumero { get; set; }
-        public virtual DateTime? SumFechaAlta { get; set; }
+        public virtual DateTime SumFechaAlta { get; set; }
         public virtual string EstCodigo { get; set; }
         public virtual float? SumConsumoEstimado { get; set; }
         public virtual long? SumVoltaje { get; set; }

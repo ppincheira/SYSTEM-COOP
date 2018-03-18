@@ -223,5 +223,10 @@ namespace GesServicios.controles.forms
             this.btnVer.FUN_CODIGO = oPerForm.Ver;
         }
         #endregion
+
+        private void gpbGrupo1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

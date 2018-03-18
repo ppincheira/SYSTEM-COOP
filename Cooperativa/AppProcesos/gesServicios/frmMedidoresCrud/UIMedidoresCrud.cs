@@ -47,6 +47,7 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
                 _vista.GisY = oMedidores.GisY;
                 _vista.UsrNumero = oMedidores.UsrNumero;
                 _vista.FechaCarga = oMedidores.MedFechaCarga;
+                _vista.LemCodigo.SelectedValue = oMedidores.LemCodigo;
             }
         }
 

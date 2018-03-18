@@ -15,7 +15,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
         cmbLista Categoria { get; set; }
         long? OrdenRuta { get; set; }
         long EmpNumero { get; set; }
-        DateTime? FechaAlta { get; set; }
+        DateTime FechaAlta { get; set; }
         string EstCodigo { get; set; }
         float? ConsumoEstimado { get; set; }
         long? Voltaje { get; set; }
@@ -39,6 +39,11 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
         string strEmpDocumentoNumero { get; set; }
         long numSocio { get; set; }
         long numMedidor { get; set; }
+        long numSerieMedidor { get; set; }
+        string strModeloMedidor { get; set; }
+        string strTipoMedidor { get; set; }
+        string strFabricante { get; set; }
+        string strLecturaModo { get; set; }
 
     }
 }
