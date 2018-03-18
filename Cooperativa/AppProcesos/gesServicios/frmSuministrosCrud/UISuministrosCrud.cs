@@ -1,6 +1,7 @@
 ﻿using Business;
 using Model;
 using Service;
+using System;
 
 namespace AppProcesos.gesServicios.frmSuministrosCrud
 {
@@ -153,12 +154,12 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             }
 
         }
-        public Domicilios CargarDomicilioSum(long idEntidad, string tabCodigo)
+        public Domicilios CargarDomicilioSum(long idEntidad)
         {
             Domicilios oDomicilio = new Domicilios();
             DomiciliosBus oDomicilioBus = new DomiciliosBus();
-            //oDomicilio = oDomicilioBus.DomiciliosGetById(id);
-            return oDomicilioBus.DomiciliosGetByCodigoRegistroDefecto(idEntidad, tabCodigo);
+            return oDomicilioBus.DomiciliosGetById(idEntidad);
+            //oDomicilioBus.DomiciliosGetByCodigoRegistroDefecto(idEntidad, tabCodigo);
         }
         public void CargarCategorias()
         {
@@ -186,18 +187,25 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             oUtil.CargarCombo(_vista.TipoConexion, oTiposConexiones.TipoConexionServiciosGetByServicioDT(_vista.Servicio.SelectedValue.ToString()), "TCS_CODIGO", "TCS_DESCRIPCION", "SELECCIONE..");
         }
 
-        public void CargarMedidor()
+        public void CargarMedidor(long Id)
         {
-            // Obtengo los grupos del Tipo de conexiones
-            //MedidoresModelosBus oModelosMed = new MedidoresModelosBus();
-            //oUtil.CargarCombo(_vista.TipoConexion, oTiposConexiones.TipoConexionServiciosGetByServicioDT(_vista.Servicio.SelectedValue.ToString()), "TCS_CODIGO", "TCS_DESCRIPCION", "SELECCIONE..");
-            //oAdmin.TabCodigo = "DOMB";
-            //oAdmin.Tipo = Admin.enumTipoForm.FiltroAndEditar;
-            //oAdmin.CodigoRegistro = _EmpNumero.ToString();
-            //oAdmin.CodigoEditar = _CodigoDomicilio.ToString();
-            //oAdmin.TabCodigoRegistro = "CLIE";
-            //oAdmin.FiltroCampos = "DE.DEN_CODIGO_REGISTRO&";
-            //oAdmin.FiltroValores = _EmpNumero.ToString() + "&";
+            short ModMedidor=0;
+            Medidores oMedidor = new Medidores();
+            MedidoresBus oMedidoresBus = new MedidoresBus();
+            oMedidor = oMedidoresBus.MedidoresGetById(Id);
+            _vista.numSerieMedidor = oMedidor.MedNumeroserie;
+            MedidoresModelos oMedidorModelo = new MedidoresModelos();
+            MedidoresModelosBus oMedModeloBus = new MedidoresModelosBus();
+            if (oMedidor.MmoCodigo.ToString() != "")
+               ModMedidor = short.Parse(oMedidor.MmoCodigo.ToString());
+            oMedidorModelo = oMedModeloBus.MedidoresModelosGetById(ModMedidor);
+            _vista.strModeloMedidor = oMedidorModelo.MMoDescripcion;
+            TiposMedidoresBus oTipoMedBus = new TiposMedidoresBus();
+            _vista.strTipoMedidor = oTipoMedBus.TiposMedidoresGetById(oMedidorModelo.TmeCodigo.ToString()).TmeDescripcion;
+            FabricantesBus oFabricantesBus = new FabricantesBus();
+            _vista.strFabricante = oFabricantesBus.FabricantesGetById(oMedidorModelo.FabNumero).FabDescripcion;
+            LecturasModosBus oLecturasModosBus = new LecturasModosBus();
+            _vista.strLecturaModo = oLecturasModosBus.LecturasModosGetById(oMedidor.LemCodigo).lemDescripcion;
 
         }
 

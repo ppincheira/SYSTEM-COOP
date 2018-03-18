@@ -46,6 +46,7 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
             oMMO.UsrNumero = _vista.UsrNumero;
             oMMO.MedFechaCarga = _vista.FechaCarga;
             oMMO.MmoCodigo = short.Parse(_vista.MmoCodigo.SelectedValue.ToString());
+            oMMO.LemCodigo = long.Parse(_vista.LemCodigo.SelectedValue.ToString());
             for (long NumeroSerie=_vista.NumeroSerieDesde; NumeroSerie <= _vista.NumeroSerieHasta; NumeroSerie++)
             {
                 oMMO.MedNumeroserie = NumeroSerie;

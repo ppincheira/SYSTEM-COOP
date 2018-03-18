@@ -255,7 +255,7 @@ namespace Implement
                 try
                 {
                     MedidoresModelos oObjeto = new MedidoresModelos();
-                    oObjeto.MMoCodigo = long.Parse(dr["MMO_CODIGO"].ToString());
+                    oObjeto.MMoCodigo = short.Parse(dr["MMO_CODIGO"].ToString());
                     oObjeto.MMoDescripcion = dr["MMO_DESCRIPCION"].ToString();
                     oObjeto.MMoDescripcionCorta = dr["MMO_DESCRIPCION_CORTA"].ToString();
                     if (dr["MMO_DIGITOS"].ToString() != "")

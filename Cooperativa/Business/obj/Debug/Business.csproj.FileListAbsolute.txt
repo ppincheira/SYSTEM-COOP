@@ -1,13 +1,3 @@
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Business.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Business.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Implement.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Model.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Oracle.DataAccess.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Implement.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Model.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Business\obj\Debug\Business.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Business\obj\Debug\Business.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Business.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Business.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Implement.dll
@@ -17,6 +7,5 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Implement.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Model.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\Business\obj\Debug\Business.csproj.CopyComplete
 C:\GitHub\SYSTEM-COOP\Cooperativa\Business\obj\Debug\Business.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\Business\obj\Debug\Business.pdb

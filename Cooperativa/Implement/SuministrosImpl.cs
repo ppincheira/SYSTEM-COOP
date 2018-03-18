@@ -28,18 +28,19 @@ namespace Implement
                     " DECLARE IDTEMP NUMBER(15,0); " +
                     " BEGIN " +
                     " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('SUM_NUMERO')) into IDTEMP from dual; " +
-                    " insert into Servicios_Rutas " +
+                    " insert into Suministros " +
                     "(SUM_NUMERO, SRV_CODIGO, TCS_CODIGO, " +
                     "SCA_NUMERO, SUM_ORDEN_RUTA, EMP_NUMERO, SUM_FECHA_ALTA, EST_CODIGO," +
                     "SUM_CONSUMO_ESTIMADO, SUM_VOLTAJE, SUM_CONEXION, SUM_POTENCIA_L1, " +
-                    "SUM_POTENCIA_L2, SUM_POTENCIA_L3, SUM_REGISTRADOR, SUM_PERMITE_CORTE, " +
-                    "SUM_MEDIDO, SRU_NUMERO, SZO_NUMERO) " +
+                    "SUM_POTENCIA_L2, SUM_POTENCIA_L3, SUM_PERMITE_CORTE, " +
+                    "SUM_MEDIDO, SRU_NUMERO, SZO_NUMERO, SUM_PERMITE_FACTURACION, SUM_FECHA_CARGA) " +
                     "values(IDTEMP,'" + oSum.SrvCodigo + "', '" + oSum.TcsCodigo + "'," + oSum.ScaNumero + "," +
-                    oSum.SumOrdenRuta + "," + oSum.EmpNumero + "," + oSum.SumFechaAlta + "," +
-                    oSum.EstCodigo + ",'" + oSum.SumConsumoEstimado + "," + oSum.SumVoltaje + ",'" +
+                    oSum.SumOrdenRuta + "," + oSum.EmpNumero + ",'" + oSum.SumFechaAlta.ToString("dd/MM/yyyy") + "','" +
+                    oSum.EstCodigo + "'," + oSum.SumConsumoEstimado + "," + oSum.SumVoltaje + ",'" +
                     oSum.SumConexion + "'," + oSum.SumPotenciaL1 + "," + oSum.SumPotenciaL2 + "," +
-                    oSum.SumPotenciaL3 + "," + oSum.SumRegistrador + ",'" + oSum.SumPermiteCorte + "', '" +
-                    oSum.SumMedido + "'," + oSum.SruNumero + "," + oSum.SzoNumero + "') RETURNING IDTEMP INTO :id;" +
+                    oSum.SumPotenciaL3 + ",'" + oSum.SumPermiteCorte + "', '" +
+                    oSum.SumMedido + "'," + oSum.SruNumero + "," + oSum.SzoNumero + ", '"+
+                    oSum.SumPermiteFactura+"', '"+DateTime.Now.ToString("dd/MM/yyyy") +"') RETURNING IDTEMP INTO :id;" +
                     " END;";
                 cmd = new OracleCommand(query, cn);
                 cmd.Parameters.Add(new OracleParameter
@@ -73,20 +74,21 @@ namespace Implement
                     "TCS_CODIGO='" + oSum.TcsCodigo + "', " +
                     "SCA_NUMERO=" + oSum.ScaNumero + ", " +
                     "SUM_ORDEN_RUTA=" + oSum.SumOrdenRuta + ", " +
-                    "EMP_NUMERO=" + oSum.EmpNumero + ", " +
-                    "SUM_FECHA_ALTA=" + oSum.SumFechaAlta + ", " +
-                    "EST_CODIGO=" + oSum.EstCodigo + ", " +
+                    "EMP_NUMERO=" + oSum.EmpNumero + ", '" +
+                    "SUM_FECHA_ALTA='" + oSum.SumFechaAlta.ToString("dd/MM/yyyy") + "', " +
+                    "EST_CODIGO='" + oSum.EstCodigo + "', " +
                     "SUM_CONSUMO_ESTIMADO=" + oSum.SumConsumoEstimado + ", " +
                     "SUM_VOLTAJE=" + oSum.SumVoltaje + ", " +
                     "SUM_CONEXION='" + oSum.SumConexion + "', " +
                     "SUM_POTENCIA_L1=" + oSum.SumPotenciaL1 + " " +
                     "SUM_POTENCIA_L2=" + oSum.SumPotenciaL2 + ", " +
                     "SUM_POTENCIA_L3=" + oSum.SumPotenciaL3 + ", " +
-                    "SUM_REGISTRADOR=" + oSum.SumRegistrador + ", " +
                     "SUM_PERMITE_CORTE='" + oSum.SumPermiteCorte + "', " +
                     "SUM_MEDIDO='" + oSum.SumMedido + "', " +
                     "SRU_NUMERO=" + oSum.SruNumero + ", " +
-                    "SZO_NUMERO=" + oSum.SzoNumero +
+                    "SZO_NUMERO=" + oSum.SzoNumero + ", " +
+                    "SUM_FECHA_CARGA='" + oSum.SumFechaCarga.ToString("dd/MM/yyyy") + "', " +
+                    "SUM_PERMITE_FACTURACION='" + oSum.SumPermiteFactura + "' " +
                     "WHERE SUM_NUMERO='" + oSum.SumNumero + "'", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();

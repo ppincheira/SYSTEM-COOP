@@ -264,6 +264,7 @@
             // 
             this.cmbTipoConexion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbTipoConexion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbTipoConexion.BackColor = System.Drawing.Color.Red;
             this.cmbTipoConexion.FormattingEnabled = true;
             this.cmbTipoConexion.Location = new System.Drawing.Point(108, 5);
             this.cmbTipoConexion.Name = "cmbTipoConexion";
@@ -352,10 +353,10 @@
             // 
             this.txtLecturaModoMedidor.BackColor = System.Drawing.Color.White;
             this.txtLecturaModoMedidor.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtLecturaModoMedidor.Enabled = false;
             this.txtLecturaModoMedidor.Location = new System.Drawing.Point(108, 93);
             this.txtLecturaModoMedidor.MaxLength = 50;
             this.txtLecturaModoMedidor.Name = "txtLecturaModoMedidor";
+            this.txtLecturaModoMedidor.ReadOnly = true;
             this.txtLecturaModoMedidor.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtLecturaModoMedidor.Size = new System.Drawing.Size(221, 20);
             this.txtLecturaModoMedidor.TabIndex = 63;
@@ -375,10 +376,10 @@
             // 
             this.txtFabricanteMedidor.BackColor = System.Drawing.Color.White;
             this.txtFabricanteMedidor.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtFabricanteMedidor.Enabled = false;
             this.txtFabricanteMedidor.Location = new System.Drawing.Point(430, 58);
             this.txtFabricanteMedidor.MaxLength = 50;
             this.txtFabricanteMedidor.Name = "txtFabricanteMedidor";
+            this.txtFabricanteMedidor.ReadOnly = true;
             this.txtFabricanteMedidor.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtFabricanteMedidor.Size = new System.Drawing.Size(221, 20);
             this.txtFabricanteMedidor.TabIndex = 61;
@@ -398,10 +399,10 @@
             // 
             this.txtTipoMedidor.BackColor = System.Drawing.Color.White;
             this.txtTipoMedidor.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtTipoMedidor.Enabled = false;
             this.txtTipoMedidor.Location = new System.Drawing.Point(108, 64);
             this.txtTipoMedidor.MaxLength = 50;
             this.txtTipoMedidor.Name = "txtTipoMedidor";
+            this.txtTipoMedidor.ReadOnly = true;
             this.txtTipoMedidor.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtTipoMedidor.Size = new System.Drawing.Size(179, 20);
             this.txtTipoMedidor.TabIndex = 59;
@@ -421,10 +422,10 @@
             // 
             this.txtMedidorModelo.BackColor = System.Drawing.Color.White;
             this.txtMedidorModelo.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtMedidorModelo.Enabled = false;
             this.txtMedidorModelo.Location = new System.Drawing.Point(430, 32);
             this.txtMedidorModelo.MaxLength = 50;
             this.txtMedidorModelo.Name = "txtMedidorModelo";
+            this.txtMedidorModelo.ReadOnly = true;
             this.txtMedidorModelo.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtMedidorModelo.Size = new System.Drawing.Size(221, 20);
             this.txtMedidorModelo.TabIndex = 57;
@@ -456,10 +457,10 @@
             // 
             this.txtMedNumeroSerie.BackColor = System.Drawing.Color.White;
             this.txtMedNumeroSerie.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtMedNumeroSerie.Enabled = false;
             this.txtMedNumeroSerie.Location = new System.Drawing.Point(108, 35);
             this.txtMedNumeroSerie.MaxLength = 50;
             this.txtMedNumeroSerie.Name = "txtMedNumeroSerie";
+            this.txtMedNumeroSerie.ReadOnly = true;
             this.txtMedNumeroSerie.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtMedNumeroSerie.Size = new System.Drawing.Size(188, 20);
             this.txtMedNumeroSerie.TabIndex = 55;
@@ -492,7 +493,7 @@
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.BackColor = System.Drawing.Color.White;
+            this.txtObservaciones.BackColor = System.Drawing.Color.Beige;
             this.txtObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtObservaciones.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtObservaciones.Location = new System.Drawing.Point(16, 21);
@@ -531,19 +532,19 @@
             this.txtVoltaje.BackColor = System.Drawing.Color.Red;
             this.txtVoltaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtVoltaje.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtVoltaje.Location = new System.Drawing.Point(243, 104);
+            this.txtVoltaje.Location = new System.Drawing.Point(563, 83);
             this.txtVoltaje.MaxLength = 15;
             this.txtVoltaje.Name = "txtVoltaje";
             this.txtVoltaje.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtVoltaje.Size = new System.Drawing.Size(100, 20);
-            this.txtVoltaje.TabIndex = 40;
+            this.txtVoltaje.TabIndex = 41;
             this.txtVoltaje.TextoVacio = "<Descripcion>";
             this.txtVoltaje.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
             // 
             // lblVoltaje
             // 
             this.lblVoltaje.AutoSize = true;
-            this.lblVoltaje.Location = new System.Drawing.Point(185, 107);
+            this.lblVoltaje.Location = new System.Drawing.Point(505, 86);
             this.lblVoltaje.Name = "lblVoltaje";
             this.lblVoltaje.Size = new System.Drawing.Size(42, 13);
             this.lblVoltaje.TabIndex = 42;
@@ -554,19 +555,19 @@
             this.txtConsumoEstimado.BackColor = System.Drawing.Color.Red;
             this.txtConsumoEstimado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtConsumoEstimado.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtConsumoEstimado.Location = new System.Drawing.Point(291, 74);
+            this.txtConsumoEstimado.Location = new System.Drawing.Point(611, 53);
             this.txtConsumoEstimado.MaxLength = 15;
             this.txtConsumoEstimado.Name = "txtConsumoEstimado";
             this.txtConsumoEstimado.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.txtConsumoEstimado.Size = new System.Drawing.Size(100, 20);
-            this.txtConsumoEstimado.TabIndex = 41;
+            this.txtConsumoEstimado.TabIndex = 40;
             this.txtConsumoEstimado.TextoVacio = "<Descripcion>";
             this.txtConsumoEstimado.TipoControl = Controles.util.Enumerados.enumTipos.Decimal;
             // 
             // lblConsumoEstimado
             // 
             this.lblConsumoEstimado.AutoSize = true;
-            this.lblConsumoEstimado.Location = new System.Drawing.Point(185, 78);
+            this.lblConsumoEstimado.Location = new System.Drawing.Point(505, 57);
             this.lblConsumoEstimado.Name = "lblConsumoEstimado";
             this.lblConsumoEstimado.Size = new System.Drawing.Size(100, 13);
             this.lblConsumoEstimado.TabIndex = 43;
@@ -575,7 +576,7 @@
             // lblPotenciaL2
             // 
             this.lblPotenciaL2.AutoSize = true;
-            this.lblPotenciaL2.Location = new System.Drawing.Point(427, 83);
+            this.lblPotenciaL2.Location = new System.Drawing.Point(35, 60);
             this.lblPotenciaL2.Name = "lblPotenciaL2";
             this.lblPotenciaL2.Size = new System.Drawing.Size(67, 13);
             this.lblPotenciaL2.TabIndex = 44;
@@ -586,7 +587,7 @@
             this.txtPotenciaL1.BackColor = System.Drawing.Color.Red;
             this.txtPotenciaL1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPotenciaL1.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtPotenciaL1.Location = new System.Drawing.Point(534, 53);
+            this.txtPotenciaL1.Location = new System.Drawing.Point(142, 30);
             this.txtPotenciaL1.MaxLength = 10;
             this.txtPotenciaL1.Name = "txtPotenciaL1";
             this.txtPotenciaL1.Requerido = Controles.util.Enumerados.enumRequerido.NO;
@@ -600,19 +601,19 @@
             this.txtPotenciaL3.BackColor = System.Drawing.Color.Red;
             this.txtPotenciaL3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPotenciaL3.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtPotenciaL3.Location = new System.Drawing.Point(534, 108);
+            this.txtPotenciaL3.Location = new System.Drawing.Point(142, 85);
             this.txtPotenciaL3.MaxLength = 10;
             this.txtPotenciaL3.Name = "txtPotenciaL3";
             this.txtPotenciaL3.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtPotenciaL3.Size = new System.Drawing.Size(100, 20);
-            this.txtPotenciaL3.TabIndex = 38;
+            this.txtPotenciaL3.TabIndex = 39;
             this.txtPotenciaL3.TextoVacio = "<Descripcion>";
             this.txtPotenciaL3.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
             // 
             // lblPotenciaL3
             // 
             this.lblPotenciaL3.AutoSize = true;
-            this.lblPotenciaL3.Location = new System.Drawing.Point(427, 111);
+            this.lblPotenciaL3.Location = new System.Drawing.Point(35, 88);
             this.lblPotenciaL3.Name = "lblPotenciaL3";
             this.lblPotenciaL3.Size = new System.Drawing.Size(67, 13);
             this.lblPotenciaL3.TabIndex = 45;
@@ -621,7 +622,7 @@
             // lblPotenciaL1
             // 
             this.lblPotenciaL1.AutoSize = true;
-            this.lblPotenciaL1.Location = new System.Drawing.Point(427, 56);
+            this.lblPotenciaL1.Location = new System.Drawing.Point(35, 33);
             this.lblPotenciaL1.Name = "lblPotenciaL1";
             this.lblPotenciaL1.Size = new System.Drawing.Size(67, 13);
             this.lblPotenciaL1.TabIndex = 46;
@@ -632,12 +633,12 @@
             this.txtPotenciaL2.BackColor = System.Drawing.Color.Red;
             this.txtPotenciaL2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPotenciaL2.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtPotenciaL2.Location = new System.Drawing.Point(534, 80);
+            this.txtPotenciaL2.Location = new System.Drawing.Point(142, 57);
             this.txtPotenciaL2.MaxLength = 10;
             this.txtPotenciaL2.Name = "txtPotenciaL2";
             this.txtPotenciaL2.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtPotenciaL2.Size = new System.Drawing.Size(100, 20);
-            this.txtPotenciaL2.TabIndex = 39;
+            this.txtPotenciaL2.TabIndex = 38;
             this.txtPotenciaL2.TextoVacio = "<Descripcion>";
             this.txtPotenciaL2.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
             // 
@@ -737,8 +738,8 @@
             this.cmbZona.Name = "cmbZona";
             this.cmbZona.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbZona.Size = new System.Drawing.Size(221, 21);
-            this.cmbZona.TabIndex = 36;
-            this.cmbZona.Leave += new System.EventHandler(this.cmbZona_Leave);
+            this.cmbZona.TabIndex = 35;
+            this.cmbZona.SelectedIndexChanged += new System.EventHandler(this.cmbZona_SelectedIndexChanged);
             // 
             // lblTipoMedidor
             // 
@@ -758,7 +759,7 @@
             this.cmbRuta.Name = "cmbRuta";
             this.cmbRuta.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbRuta.Size = new System.Drawing.Size(165, 21);
-            this.cmbRuta.TabIndex = 35;
+            this.cmbRuta.TabIndex = 36;
             this.cmbRuta.SelectedIndexChanged += new System.EventHandler(this.cmbRuta_SelectedIndexChanged);
             // 
             // lblOrdenRuta
@@ -787,7 +788,7 @@
             this.txtOrdenRuta.Location = new System.Drawing.Point(621, 85);
             this.txtOrdenRuta.MaxLength = 10;
             this.txtOrdenRuta.Name = "txtOrdenRuta";
-            this.txtOrdenRuta.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.txtOrdenRuta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtOrdenRuta.Size = new System.Drawing.Size(92, 20);
             this.txtOrdenRuta.TabIndex = 33;
             this.txtOrdenRuta.TextoVacio = "<Descripcion>";

@@ -17,7 +17,7 @@ namespace GesServicios.controles.forms
         UISuministrosCrud _oSuministrosCrud;
         Utility oUtil;
 
-        long _SumNumero, _MedNumero;
+        long _SumNumero, _MedNumero, _OrdenRuta;
         string _EstCodigo;
 
         #endregion
@@ -49,7 +49,7 @@ namespace GesServicios.controles.forms
 
         public long? OrdenRuta
         {
-            get { return long.Parse(txtOrdenRuta.Text); }
+            get { return string.IsNullOrEmpty(txtOrdenRuta.Text) ? 0 :  long.Parse(txtOrdenRuta.Text); }
             set { txtOrdenRuta.Text = value.ToString(); }
         }
 
@@ -59,7 +59,7 @@ namespace GesServicios.controles.forms
             set { txtEmpNumero.Text = value.ToString(); }
         }
 
-        public DateTime? FechaAlta
+        public DateTime FechaAlta
         {
             get { return DateTime.Parse(dtpFechaAlta.Text); }
             set { dtpFechaAlta.Text = value.ToString(); }
@@ -73,13 +73,13 @@ namespace GesServicios.controles.forms
 
         public float? ConsumoEstimado
         {
-            get { return long.Parse(this.txtConsumoEstimado.Text); }
+            get { return this.txtConsumoEstimado.Text != "" ? float.Parse(this.txtConsumoEstimado.Text) : 0; }
             set { this.txtConsumoEstimado.Text = value.ToString(); }
         }
 
         public long? Voltaje
         {
-            get { return long.Parse(this.txtVoltaje.Text); }
+            get { return string.IsNullOrEmpty(txtVoltaje.Text) ? 0 : long.Parse(txtVoltaje.Text); }
             set { this.txtVoltaje.Text = value.ToString(); }
         }
         public string Conexion
@@ -90,19 +90,19 @@ namespace GesServicios.controles.forms
 
         public double? PotenciaL1
         {
-            get { return double.Parse(txtPotenciaL1.Text); }
+            get { return txtPotenciaL1.Text != "" ? double.Parse(txtPotenciaL1.Text) : 0; }
             set { txtPotenciaL1.Text = value.ToString(); }
         }
 
         public double? PotenciaL2
         {
-            get { return double.Parse(txtPotenciaL2.Text); }
+            get { return txtPotenciaL2.Text != "" ? double.Parse(txtPotenciaL2.Text) : 0; }
             set { txtPotenciaL2.Text = value.ToString(); }
         }
 
         public double? PotenciaL3
         {
-            get { return double.Parse(txtPotenciaL3.Text); }
+            get { return txtPotenciaL3.Text != "" ? double.Parse(txtPotenciaL3.Text) : 0; }
             set { txtPotenciaL3.Text = value.ToString(); }
         }
 
@@ -176,6 +176,31 @@ namespace GesServicios.controles.forms
             get { return _MedNumero; }
             set { _MedNumero = value; }
         }
+        public long numSerieMedidor
+        {
+            get { return long.Parse(txtMedNumeroSerie.Text); }
+            set { txtMedNumeroSerie.Text = value.ToString(); }
+        }
+        public string strModeloMedidor
+        {
+            get { return this.txtMedidorModelo.Text; }
+            set { this.txtMedidorModelo.Text=value; }
+        }
+         public string strTipoMedidor
+        {
+            get { return this.txtTipoMedidor.Text; }
+            set { this.txtTipoMedidor.Text=value; }
+        }
+        public string strFabricante
+        {
+            get { return this.txtFabricanteMedidor.Text; }
+            set { this.txtFabricanteMedidor.Text=value; }
+        }
+        public string strLecturaModo
+        {
+            get { return this.txtLecturaModoMedidor.Text; }
+            set { this.txtLecturaModoMedidor.Text=value; }
+        }
         #endregion
         public frmSuministrosCrud(long Suministro, string Estado)
         {
@@ -183,6 +208,7 @@ namespace GesServicios.controles.forms
             _EstCodigo = Estado;
             //_usrNumero = Usuario;
             _oSuministrosCrud = new UISuministrosCrud(this);
+            _OrdenRuta = 0;
             InitializeComponent();
         }
 
@@ -195,7 +221,7 @@ namespace GesServicios.controles.forms
             try
             {
                 this.VALIDARFORM = true;
-                oUtil.ValidarFormularioEP(this, this, 11);
+                oUtil.ValidarFormularioEP(this, this, 40);
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;
@@ -246,7 +272,9 @@ namespace GesServicios.controles.forms
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "CLIE";
             oAdmin.Tipo = Admin.enumTipoForm.Selector;
-
+            oAdmin.FiltroCampos = "e.emp_cliente&";
+            oAdmin.FiltroOperador = "1&";
+            oAdmin.FiltroValores = "S&";
             frmFormAdmin frmbus = new frmFormAdmin(oAdmin, oPermiso);
             if (frmbus.ShowDialog() == DialogResult.OK)
             {
@@ -261,21 +289,22 @@ namespace GesServicios.controles.forms
             Medidores oMedidor = new Medidores();
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10100", "10101", "10102", "10104", "10105", "10103");
             Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "MEDB";
-            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndEditar;
+            oAdmin.TabCodigo = "MED";
+            oAdmin.Tipo = Admin.enumTipoForm.Selector;
             oAdmin.CodigoRegistro = _SumNumero.ToString();
             oAdmin.CodigoEditar = _MedNumero.ToString();
             oAdmin.TabCodigoRegistro = "SUM";
-            oAdmin.FiltroCampos = "M.MED_NUMERO";
-            oAdmin.FiltroValores = _SumNumero.ToString() + "&";
+            oAdmin.FiltroCampos = "TCS_DESCRIPCION&";
+            oAdmin.FiltroOperador = "1&";
+            oAdmin.FiltroValores = cmbTipoConexion.Text + "&";
             oAdmin.TabCodigo = "MED";
             oAdmin.Tipo = Admin.enumTipoForm.Selector;
             frmFormAdmin frmbus = new frmFormAdmin(oAdmin, oPermiso);
             if (frmbus.ShowDialog() == DialogResult.OK)
             {
-                string nombre = frmbus.striRdoCodigo;
+                string medidor = frmbus.striRdoCodigo;
 
-                //oMedidor = _oSuministrosCrud.CargarMedidor();
+                _oSuministrosCrud.CargarMedidor(long.Parse(medidor));
             }
 
         }
@@ -290,12 +319,13 @@ namespace GesServicios.controles.forms
             oAdmin.CodigoRegistro = txtEmpNumero.Text;
             oAdmin.TabCodigoRegistro = "CLIE";
             oAdmin.FiltroCampos = "DE.DEN_CODIGO_REGISTRO&";
+            oAdmin.FiltroOperador = "1&";
             oAdmin.FiltroValores = txtEmpNumero.Text + "&";
             FormsAuxiliares.frmFormAdmin oFrmAdminMini = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
             if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
             {
                 string id = oFrmAdminMini.striRdoCodigo;
-                oDomicilio = _oSuministrosCrud.CargarDomicilioSum(long.Parse(txtEmpNumero.Text), "CLIE");
+                oDomicilio = _oSuministrosCrud.CargarDomicilioSum(long.Parse(id));
                 if (oDomicilio.DomCodigo != 0)
                 {
                     txtDomCodigo.Text = oDomicilio.DomCodigo.ToString();
@@ -306,7 +336,6 @@ namespace GesServicios.controles.forms
                     txtBloque.Text = oDomicilio.DomBloque.ToString();
                     txtPiso.Text = oDomicilio.DomPiso.ToString();
                 }
-
             }
         }
 
@@ -336,9 +365,15 @@ namespace GesServicios.controles.forms
             _oSuministrosCrud.CargarTiposConexiones();
         }
 
-        private void cmbZona_Leave(object sender, EventArgs e)
+        private void cmbZona_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _oSuministrosCrud.CargarRutas();
+            if (cmbZona.SelectedIndex > 0)
+            {
+                cmbRuta.Enabled = true;
+                _oSuministrosCrud.CargarRutas();
+            }
+           else
+                cmbRuta.Enabled = false;
 
         }
 
