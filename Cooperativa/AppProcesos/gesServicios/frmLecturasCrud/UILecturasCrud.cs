@@ -19,5 +19,13 @@ namespace AppProcesos.gesServicios.frmLecturasCrud
             _vista = vista;
             oUtil = new Utility();
         }
+
+
+        public void Inicializar(long sumNumero)
+        {
+            
+
+        }
+
     }
 }

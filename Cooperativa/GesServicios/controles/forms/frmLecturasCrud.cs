@@ -22,9 +22,7 @@ namespace GesServicios.controles.forms
         UILecturasCrud _oLecturasCrud;
         Utility oUtil;
         long _sumNumero;
-        Enumeration.Acciones _Accion;
-        
-
+        Enumeration.Acciones _oAccion;
         #endregion
 
         #region Implementation of IVistaLecturasCrud
@@ -132,6 +130,14 @@ namespace GesServicios.controles.forms
         public frmLecturasCrud()
         {
             InitializeComponent();
+
+            _sumNumero = sumNumero;
+            if (sumNumero == 0)
+                _oAccion = Enumeration.Acciones.New;
+            else
+                _oAccion = Enumeration.Acciones.Edit;
+            _oLecturasCrud = new UILecturasCrud(this);
+
         }
 
         private void frmLecturasCrud_Load(object sender, EventArgs e)

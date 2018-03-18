@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\GitHub\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Implement.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Implement.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Model.dll
@@ -7,3 +8,13 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAss
 C:\GitHub\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.pdb
+=======
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Implement.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Implement.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAssemblyReference.cache
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.pdb
+>>>>>>> d403c6cde55d2da00bd3172ade8bba3825d56237

@@ -101,6 +101,7 @@ namespace UI
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "CALB";
+            oAdmin.Tipo = Admin.enumTipoForm.SelectorMultiSeleccion;
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.ShowDialog();
         }

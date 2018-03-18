@@ -31,5 +31,6 @@ namespace AppProcesos.formsAuxiliares.formAdmin
         string striValor4 { get; set; }
         string striValor5 { get; set; }
         string striValor6 { get; set; }
+
     }
 }

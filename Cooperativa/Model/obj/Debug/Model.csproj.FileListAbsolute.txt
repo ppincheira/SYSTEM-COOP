@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 C:\GitHub\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.pdb
+=======
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.pdb
+>>>>>>> d403c6cde55d2da00bd3172ade8bba3825d56237

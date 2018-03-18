@@ -136,6 +136,20 @@ namespace AppProcesos.formsAuxiliares.formAdmin
             //_vista.dtiFiltro = dt;
             CargarGrilla(_vista.oiAdmin);
         }
+
+        public string GuardarSeleccionados()
+        {
+           string strDatos = "";
+            DataGridViewSelectedRowCollection Seleccionados = _vista.grilla.SelectedRows;
+
+            foreach (DataGridViewRow item in Seleccionados)
+            {
+                strDatos = strDatos  + item.Cells["CODIGO"].Value.ToString() + "&";
+            }
+
+            return strDatos;
+
+        }
         public void CargarGrilla(Admin oAdmin)
         {
             _oAdmin.FiltroCampos = oAdmin.FiltroCampos != null ? oAdmin.FiltroCampos : "";

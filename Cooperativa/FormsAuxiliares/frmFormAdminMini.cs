@@ -21,6 +21,7 @@ namespace FormsAuxiliares
         public Admin _oAdmin;
         public FuncionalidadesFoms _oPermiso;
         public string _strRdoCodigo;
+        public string _strDatosSeleccionados;
         Utility _oUtil;
         private UIFormAdmin _oFormAdmin;
         private DataTable _dtFiltro;
@@ -52,8 +53,8 @@ namespace FormsAuxiliares
         }
         public grdGrillaAdmin grillaFiltro
         {
-            get { return this.dgBusqueda; }
-            set { this.dgBusqueda = value; }
+            get { return this.grdGrillaFiltro; }
+            set { this.grdGrillaFiltro = value; }
         }
         public DateTime fechaDesde
         {
@@ -72,13 +73,18 @@ namespace FormsAuxiliares
         }
         public cmbLista comboBuscarA
         {
-            get { return this.cmbBuscar; }
-            set { this.cmbBuscar = value; }
+            get { return this.cmbBuscarA; }
+            set { this.cmbBuscarA = value; }
         }
         public cmbLista comboOpcionesA
         {
-            get { return this.cmbBuscar; }
-            set { this.cmbBuscar = value; }
+            get { return this.cmbOpcionesA; }
+            set { this.cmbOpcionesA = value; }
+        }
+        public DataTable dtiFiltro
+        {
+            get { return _dtFiltro; }
+            set { _dtFiltro = value; }
         }
         public string filtro
         {
@@ -91,11 +97,7 @@ namespace FormsAuxiliares
             set { this.cmbEstado = value; }
         }
 
-        public DataTable dtiFiltro
-        {
-            get { return _dtFiltro; }
-            set { _dtFiltro = value; }
-        }
+   
         public string cantidad
         {
 
@@ -108,35 +110,36 @@ namespace FormsAuxiliares
             set { _strRdoCodigo = value; }
         }
 
+
         public string striValor1
         {
-            get { return this.txtFiltro.Text; }
-            set { this.txtFiltro.Text = value; }
+            get { return this.txtValor1.Text; }
+            set { this.txtValor1.Text = value; }
         }
         public string striValor2
         {
-            get { return this.txtFiltro.Text; }
-            set { this.txtFiltro.Text = value; }
+            get { return this.txtValor2.Text; }
+            set { this.txtValor2.Text = value; }
         }
         public string striValor3
         {
-            get { return this.txtFiltro.Text; }
-            set { this.txtFiltro.Text = value; }
+            get { return this.txtValor3.Text; }
+            set { this.txtValor3.Text = value; }
         }
         public string striValor4
         {
-            get { return this.txtFiltro.Text; }
-            set { this.txtFiltro.Text = value; }
+            get { return this.txtValor4.Text; }
+            set { this.txtValor4.Text = value; }
         }
         public string striValor5
         {
-            get { return this.txtFiltro.Text; }
-            set { this.txtFiltro.Text = value; }
+            get { return this.txtValor5.Text; }
+            set { this.txtValor5.Text = value; }
         }
         public string striValor6
         {
-            get { return this.txtFiltro.Text; }
-            set { this.txtFiltro.Text = value; }
+            get { return this.txtValor6.Text; }
+            set { this.txtValor6.Text = value; }
         }
 
 
@@ -169,12 +172,17 @@ namespace FormsAuxiliares
         {
             try
             {
+                if (_oAdmin.Tipo == enumTipoForm.SelectorMultiSeleccion) { 
+                    this.dgBusqueda.MultiSelect = true;
+                    this.btnAceptar.Visible = true;
+                }
+                CargarOpciones("1");
                 _oFormAdmin.Inicializar(_oAdmin);
                 _oUtil = new Utility();
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
-                //_oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
-                //if (this.dgBusqueda.RowCount > 0)
-                //    dgBusqueda.CurrentCell = dgBusqueda.Rows[0].Cells[1];
+               
+                if (this.dgBusqueda.RowCount > 0)
+                    dgBusqueda.CurrentCell = dgBusqueda.Rows[0].Cells[1];
                 switch (_oAdmin.TabCodigo)
                 {
                     case "SCAT":
@@ -383,6 +391,76 @@ namespace FormsAuxiliares
                                 this.FindForm().Name);
             }   
         }
+
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            string msje = "";
+            bool band = false;
+            if (this.cmbBuscarA.SelectedValue.ToString() == "0")
+            {
+                msje += "Debe seleccionar Parametro de Busqueda \n";
+                band = true;
+            }
+
+
+            if (this.cmbOpcionesA.SelectedValue.ToString() == "0")
+            {
+                msje += "Debe seleccionar el operador \n";
+                band = true;
+            }
+
+            switch (this.cmbOpcionesA.SelectedValue.ToString())
+            {
+                case "10":
+                    if ((this.txtValor2.Text == "") && (this.txtValor3.Text == ""))
+                    {
+                        msje += "Deben estar completos los dos Valores \n";
+                        this.txtValor2.Focus();
+                        band = true;
+                    }
+                    break;
+                case "11":
+                    if ((this.txtValor2.Text == "") && (this.txtValor3.Text == "") && (this.txtValor4.Text == "") && (this.txtValor5.Text == "") && (this.txtValor6.Text == ""))
+                    {
+                        msje += "Deben estar completos los valores para la lista \n";
+                        band = true;
+                    }
+                    break;
+                case "12":
+                    if ((this.txtValor2.Text == "") && (this.txtValor3.Text == "") && (this.txtValor4.Text == "") && (this.txtValor5.Text == "") && (this.txtValor6.Text == ""))
+                    {
+                        msje += "Deben estar completos los valores para la lista \n";
+                        band = true;
+                    }
+                    break;
+                default:
+                    if (this.txtValor1.Text == "")
+                    {
+                        msje += "El Valor debe estar completo \n";
+                        band = true;
+                    }
+                    break;
+            }
+            if (band)
+                MessageBox.Show(msje, "Buscador Avanzado", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+            else
+                _oFormAdmin.CargarDataTable();
+        }
+
+        private void cmbOpcionesA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarOpciones(this.cmbOpcionesA.SelectedValue.ToString());
+        }
+
+        private void btnEliminarAvanzada_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.grillaFiltro.CurrentRow;
+            if (row != null)
+            {
+                _oFormAdmin.Eliminar(row.Index);
+            }
+        }
         #endregion
         #region << METODOS >>
         public void AsignarFuncionalidad(FuncionalidadesFoms oPerForm)
@@ -393,6 +471,116 @@ namespace FormsAuxiliares
             this.btnExportar.FUN_CODIGO = oPerForm.Exp;
             this.btnEliminar.FUN_CODIGO = oPerForm.Del;
             this.btnImprimir.FUN_CODIGO = oPerForm.Imp;
+        }
+
+        public void CargarOpciones(string opcion)
+        {
+            switch (opcion)
+            {
+                case "1":
+                    this.txtValor1.Visible = true;
+                    this.txtValor2.Visible = false;
+                    this.txtValor3.Visible = false;
+                    this.txtValor4.Visible = false;
+                    this.txtValor5.Visible = false;
+                    this.txtValor6.Visible = false;
+                    break;
+                case "2":
+                    this.txtValor1.Visible = true;
+                    this.txtValor2.Visible = false;
+                    this.txtValor3.Visible = false;
+                    this.txtValor4.Visible = false;
+                    this.txtValor5.Visible = false;
+                    this.txtValor6.Visible = false;
+                    break;
+                case "3":
+                    this.txtValor1.Visible = true;
+                    this.txtValor2.Visible = false;
+                    this.txtValor3.Visible = false;
+                    this.txtValor4.Visible = false;
+                    this.txtValor5.Visible = false;
+                    this.txtValor6.Visible = false;
+                    break;
+                case "4":
+                    this.txtValor1.Visible = true;
+                    this.txtValor2.Visible = false;
+                    this.txtValor3.Visible = false;
+                    this.txtValor4.Visible = false;
+                    this.txtValor5.Visible = false;
+                    this.txtValor6.Visible = false;
+                    break;
+                case "5":
+                    this.txtValor1.Visible = true;
+                    this.txtValor2.Visible = false;
+                    this.txtValor3.Visible = false;
+                    this.txtValor4.Visible = false;
+                    this.txtValor5.Visible = false;
+                    this.txtValor6.Visible = false;
+                    break;
+                case "6":
+                    this.txtValor1.Visible = true;
+                    this.txtValor2.Visible = false;
+                    this.txtValor3.Visible = false;
+                    this.txtValor4.Visible = false;
+                    this.txtValor5.Visible = false;
+                    this.txtValor6.Visible = false;
+                    break;
+                case "7":
+                    this.txtValor1.Visible = true;
+                    this.txtValor2.Visible = false;
+                    this.txtValor3.Visible = false;
+                    this.txtValor4.Visible = false;
+                    this.txtValor5.Visible = false;
+                    this.txtValor6.Visible = false;
+                    break;
+                case "8":
+                    this.txtValor1.Visible = true;
+                    this.txtValor2.Visible = false;
+                    this.txtValor3.Visible = false;
+                    this.txtValor4.Visible = false;
+                    this.txtValor5.Visible = false;
+                    this.txtValor6.Visible = false;
+                    break;
+                case "9":
+                    this.txtValor1.Visible = true;
+                    this.txtValor2.Visible = false;
+                    this.txtValor3.Visible = false;
+                    this.txtValor4.Visible = false;
+                    this.txtValor5.Visible = false;
+                    this.txtValor6.Visible = false;
+                    break;
+                case "10":
+                    this.txtValor1.Visible = true;
+                    this.txtValor2.Visible = true;
+                    this.txtValor3.Visible = true;
+                    this.txtValor1.Visible = false;
+                    this.txtValor4.Visible = false;
+                    this.txtValor5.Visible = false;
+                    this.txtValor6.Visible = false;
+                    break;
+                case "11":
+                    this.txtValor1.Visible = false;
+                    this.txtValor2.Visible = true;
+                    this.txtValor3.Visible = true;
+                    this.txtValor4.Visible = true;
+                    this.txtValor5.Visible = true;
+                    this.txtValor6.Visible = true;
+                    break;
+                case "12":
+                    this.txtValor1.Visible = false;
+                    this.txtValor2.Visible = true;
+                    this.txtValor3.Visible = true;
+                    this.txtValor4.Visible = true;
+                    this.txtValor5.Visible = true;
+                    this.txtValor6.Visible = true;
+                    break;
+
+
+
+
+
+
+            }
         }
         private void AccionOptativa()
         {
@@ -689,8 +877,16 @@ namespace FormsAuxiliares
 
 
 
+
+
+
+
         #endregion
 
- 
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            _strDatosSeleccionados = _oFormAdmin.GuardarSeleccionados();
+            Close();
+        }
     }
 }

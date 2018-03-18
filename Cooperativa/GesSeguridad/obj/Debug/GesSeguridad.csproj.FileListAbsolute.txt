@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\GesSeguridad.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\GesSeguridad.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\AppProcesos.dll
@@ -23,3 +24,29 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.csproj.Gen
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.pdb
+=======
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\GesSeguridad.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\GesSeguridad.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\AppProcesos.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Controles.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\FormsAuxiliares.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Service.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Business.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Implement.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\AppProcesos.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Controles.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Service.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Business.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Implement.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.csprojResolveAssemblyReference.cache
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.controles.forms.frmPersonasCrud.resources
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.controles.forms.frmUsuariosCrud.resources
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.csproj.GenerateResource.Cache
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.pdb
+>>>>>>> d403c6cde55d2da00bd3172ade8bba3825d56237
