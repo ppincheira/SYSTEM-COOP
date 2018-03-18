@@ -85,6 +85,9 @@
     <Compile Include="Auditorias.cs" />
     <Compile Include="BarriosLocalidades.cs" />
     <Compile Include="CallesLocalidades.cs" />
+    <Compile Include="Conceptos.cs" />
+    <Compile Include="ConceptosTiposComprobantes.cs" />
+    <Compile Include="ConceptosUnidadesMedidas.cs" />
     <Compile Include="LecturasModosConceptos.cs" />
     <Compile Include="LecturasSuministrosItems.cs" />
     <Compile Include="LecturasSuministros.cs" />
@@ -140,6 +143,7 @@
     <Compile Include="TipoConexionServicios.cs" />
     <Compile Include="TiposBarriosLocalidades.cs" />
     <Compile Include="TiposComprobante.cs" />
+    <Compile Include="TiposConceptos.cs" />
     <Compile Include="TiposGrupos.cs" />
     <Compile Include="TiposIdentificadores.cs" />
     <Compile Include="TiposIva.cs" />

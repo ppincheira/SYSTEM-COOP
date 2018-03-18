@@ -62,6 +62,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnTiposComprobantes = new Controles.btnPersonalizado();
             this.btnRoles = new System.Windows.Forms.Button();
+            this.btnConceptos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -429,11 +430,22 @@
             this.btnRoles.UseVisualStyleBackColor = true;
             this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
+            // btnConceptos
+            // 
+            this.btnConceptos.Location = new System.Drawing.Point(185, 463);
+            this.btnConceptos.Name = "btnConceptos";
+            this.btnConceptos.Size = new System.Drawing.Size(125, 27);
+            this.btnConceptos.TabIndex = 28;
+            this.btnConceptos.Text = "Conceptos";
+            this.btnConceptos.UseVisualStyleBackColor = true;
+            this.btnConceptos.Click += new System.EventHandler(this.btnConceptos_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 521);
+            this.Controls.Add(this.btnConceptos);
             this.Controls.Add(this.btnRoles);
             this.Controls.Add(this.btnTiposComprobantes);
             this.Controls.Add(this.button3);
@@ -512,6 +524,7 @@
         private System.Windows.Forms.Button button3;
         private Controles.btnPersonalizado btnTiposComprobantes;
         private System.Windows.Forms.Button btnRoles;
+        private System.Windows.Forms.Button btnConceptos;
     }
 }
 

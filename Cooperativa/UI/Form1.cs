@@ -287,5 +287,14 @@ namespace UI
             FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("ROL", "CODIGO", false);
             frmbus.ShowDialog();
         }
+
+        private void btnConceptos_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "CPTS";
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            frmbus.ShowDialog();
+        }
     }
 }
