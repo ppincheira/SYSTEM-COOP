@@ -43,7 +43,7 @@ namespace UI
 
         private void btnPersonalizado2_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0","0");
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("31", "3", "0", "4", "0","0");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "DOMB";
 
