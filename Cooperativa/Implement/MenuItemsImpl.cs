@@ -130,7 +130,7 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 string sqlSelect = "select * from MENU_ITEMS " +
-                    "where SBS_CODIGO='" + SbsCodigo + "'";
+                    "where SBS_CODIGO='" + SbsCodigo + "' ORDER BY MNI_CODIGO";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -221,7 +221,7 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     string sqlSelect = "select * from MENU_ITEMS " +
-                    " where SBS_CODIGO = '" + codigo + "'";
+                    " where SBS_CODIGO = '" + codigo + "'  ORDER BY MNI_CODIGO";
                     cmd = new OracleCommand(sqlSelect, cn);
                     adapter = new OracleDataAdapter(cmd);
                     cmd.ExecuteNonQuery();

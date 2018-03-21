@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Oracle.DataAccess.Client;
 using System.Configuration;
 using Model;
+
 namespace Implement
 {
     public class UsuariosImpl
@@ -190,6 +191,13 @@ namespace Implement
             catch (Exception ex)
             {
                 throw ex;
+                
+                /*Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);*/
             }
         }
 

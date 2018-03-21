@@ -76,7 +76,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(342, 292);
+            this.button1.Location = new System.Drawing.Point(342, 237);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 28);
             this.button1.TabIndex = 8;
@@ -96,9 +96,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(342, 246);
+            this.button2.Location = new System.Drawing.Point(342, 209);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 40);
+            this.button2.Size = new System.Drawing.Size(125, 22);
             this.button2.TabIndex = 10;
             this.button2.Text = "OBSERVACIONES";
             this.button2.UseVisualStyleBackColor = true;
@@ -150,7 +150,7 @@
             // btnPersonalizado1
             // 
             this.btnPersonalizado1.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado1.Location = new System.Drawing.Point(12, 86);
+            this.btnPersonalizado1.Location = new System.Drawing.Point(3, 29);
             this.btnPersonalizado1.Name = "btnPersonalizado1";
             this.btnPersonalizado1.Size = new System.Drawing.Size(129, 23);
             this.btnPersonalizado1.TabIndex = 6;
@@ -170,7 +170,7 @@
             // btnPersonalizado9
             // 
             this.btnPersonalizado9.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado9.Location = new System.Drawing.Point(342, 292);
+            this.btnPersonalizado9.Location = new System.Drawing.Point(342, 271);
             this.btnPersonalizado9.Name = "btnPersonalizado9";
             this.btnPersonalizado9.Size = new System.Drawing.Size(125, 23);
             this.btnPersonalizado9.TabIndex = 7;
@@ -392,7 +392,7 @@
             // btnUsuarios
             // 
             this.btnUsuarios.ForeColor = System.Drawing.Color.Green;
-            this.btnUsuarios.Location = new System.Drawing.Point(52, 217);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 58);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(125, 23);
             this.btnUsuarios.TabIndex = 24;
@@ -423,9 +423,9 @@
             // 
             // btnRoles
             // 
-            this.btnRoles.Location = new System.Drawing.Point(185, 430);
+            this.btnRoles.Location = new System.Drawing.Point(0, 86);
             this.btnRoles.Name = "btnRoles";
-            this.btnRoles.Size = new System.Drawing.Size(125, 27);
+            this.btnRoles.Size = new System.Drawing.Size(125, 33);
             this.btnRoles.TabIndex = 27;
             this.btnRoles.Text = "Roles";
             this.btnRoles.UseVisualStyleBackColor = true;

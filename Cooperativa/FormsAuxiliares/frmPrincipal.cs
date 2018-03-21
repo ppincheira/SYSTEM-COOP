@@ -167,6 +167,7 @@ namespace FormsAuxiliares
         {
 
             string strFormulario = _oPrincipal.FormularioActivo(this.trvMenu.SelectedNode);
+
             switch (strFormulario)
             {
                 case "frmFabricantes":
