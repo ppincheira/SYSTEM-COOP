@@ -296,5 +296,11 @@ namespace UI
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.ShowDialog();
         }
+
+        private void btnUnidadesMedida_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("UNI", "CODIGO", false);
+            frmbus.ShowDialog();
+        }
     }
 }

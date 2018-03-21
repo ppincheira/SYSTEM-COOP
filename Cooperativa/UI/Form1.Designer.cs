@@ -63,6 +63,7 @@
             this.btnTiposComprobantes = new Controles.btnPersonalizado();
             this.btnRoles = new System.Windows.Forms.Button();
             this.btnConceptos = new System.Windows.Forms.Button();
+            this.btnUnidadesMedida = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -440,11 +441,22 @@
             this.btnConceptos.UseVisualStyleBackColor = true;
             this.btnConceptos.Click += new System.EventHandler(this.btnConceptos_Click);
             // 
+            // btnUnidadesMedida
+            // 
+            this.btnUnidadesMedida.Location = new System.Drawing.Point(3, 397);
+            this.btnUnidadesMedida.Name = "btnUnidadesMedida";
+            this.btnUnidadesMedida.Size = new System.Drawing.Size(125, 27);
+            this.btnUnidadesMedida.TabIndex = 29;
+            this.btnUnidadesMedida.Text = "Unidades de medida";
+            this.btnUnidadesMedida.UseVisualStyleBackColor = true;
+            this.btnUnidadesMedida.Click += new System.EventHandler(this.btnUnidadesMedida_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 521);
+            this.Controls.Add(this.btnUnidadesMedida);
             this.Controls.Add(this.btnConceptos);
             this.Controls.Add(this.btnRoles);
             this.Controls.Add(this.btnTiposComprobantes);
@@ -525,6 +537,7 @@
         private Controles.btnPersonalizado btnTiposComprobantes;
         private System.Windows.Forms.Button btnRoles;
         private System.Windows.Forms.Button btnConceptos;
+        private System.Windows.Forms.Button btnUnidadesMedida;
     }
 }
 
