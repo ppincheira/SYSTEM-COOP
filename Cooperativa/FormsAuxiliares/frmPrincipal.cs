@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Controles;
 using AppProcesos.formsAuxiliares.principal;
 using Controles.form;
+using GesServicios.controles.forms;
 using Model;
 
 namespace FormsAuxiliares
@@ -154,6 +155,7 @@ namespace FormsAuxiliares
         {
             _oPrincipal.InicializarArbol(_subSistema);
             _oPrincipal.DesplegarArbol();
+
         }
 
  
@@ -165,19 +167,120 @@ namespace FormsAuxiliares
 
         private void AbrirFormulario()
         {
+            switch (_subSistema)
+            {
+                case "SRV":
+                    AbrirFormulariosServicios();
+                    break;
 
+                case "CFG":
+                    break;
+
+            }
+            
+            //string strFormulario = _oPrincipal.FormularioActivo(this.trvMenu.SelectedNode);
+
+            //switch (strFormulario)
+            //{
+            //    case "frmFabricantes":
+            //        Console.WriteLine("Case 1");
+            //        break;
+            //    case "frmTiposMedidores":
+            //        Console.WriteLine("Case 2");
+            //        break;
+            //    case "frmModelosMedidiores":
+            //        Console.WriteLine("Case 1");
+            //        break;
+            //    case "frmTelefonos":
+            //        Console.WriteLine("Case 2");
+            //        break;
+            //    case "frmCalles":
+            //        Console.WriteLine("Case 1");
+            //        break;
+            //    case "frmDomicilios":
+            //        FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("31", "32", "33", "35", "36", "34");
+            //        Admin oAdmin = new Admin();
+            //        oAdmin.TabCodigo = "DOMB";
+
+            //        FormsAuxiliares.frmFormAdmin frm = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+            //        frm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            //        frm.ShowDialog();
+
+            //        break;
+            //    case "frmObservaciones":
+            //        Console.WriteLine("Case 1");
+            //        break;
+            //    case "frmRutas":
+            //        Console.WriteLine("Case 2");
+            //        break;
+            //    case "frmCategorias":
+            //        FuncionalidadesFoms oCatPermiso = new FuncionalidadesFoms("100011", "100012", "100013", "100016", "100014", "100015");
+            //        Admin oCatAdmin = new Admin();
+            //        oCatAdmin.TabCodigo = "SCAT";
+            //        FormsAuxiliares.frmFormAdminMini frmCat = new FormsAuxiliares.frmFormAdminMini(oCatAdmin, oCatPermiso);
+            //        frmCat.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            //        frmCat.ShowDialog();
+            //        //Console.WriteLine("Case 1");
+            //        break;
+            //    case "frmSuministros":
+            //        Console.WriteLine("Case 2");
+            //        break;
+            //    case "frmConceptosLecturas":
+            //        FuncionalidadesFoms oCLPermiso = new FuncionalidadesFoms("100031", "100032", "100033", "100035", "100036", "100034");
+            //        Admin oCLAdmin = new Admin();
+            //        oCLAdmin.TabCodigo = "LEC";
+            //        FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oCLAdmin, oCLPermiso);
+            //        frmbus.Text = "Administrador Lecturas Conceptos";
+            //        frmbus.ShowDialog();
+            //        break;
+            //    case "frmModosLecturas":
+            //        FuncionalidadesFoms oMLPermiso = new FuncionalidadesFoms("100041", "100042", "100043", "100045", "100046", "100044");
+            //        Admin oMLAdmin = new Admin();
+            //        oMLAdmin.TabCodigo = "LEM";
+            //        FormsAuxiliares.frmFormAdminMini frmML = new FormsAuxiliares.frmFormAdminMini(oMLAdmin, oMLPermiso);
+            //        frmML.Text = "Administrador de Modos Lecturas";
+            //        frmML.ShowDialog();
+            //        break;
+            //    case "frmClientes":
+            //        Console.WriteLine("Case 2");
+            //        break;
+
+            //}
+        }
+
+        private void AbrirFormulariosServicios() {
             string strFormulario = _oPrincipal.FormularioActivo(this.trvMenu.SelectedNode);
 
             switch (strFormulario)
             {
+                case "frmSuministros":
+                    FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("100101", "100102", "100103", "100105", "100106", "100104");
+                    //Se instancia un objeto de la clase formulario admin al cual se le pasa por parametro el COD_TABLA
+                    frmSuministrosAdmin frmbus = new frmSuministrosAdmin("SUM", oPermiso);
+                    frmbus.ShowDialog();
+                    break;
                 case "frmFabricantes":
-                    Console.WriteLine("Case 1");
+                    FuncionalidadesFoms oFabPermiso = new FuncionalidadesFoms("41", "42", "43", "45", "46", "44");
+                    Admin oFabAdmin = new Admin();
+                    oFabAdmin.TabCodigo = "FAB";
+                    FormsAuxiliares.frmFormAdminMini frmFab = new FormsAuxiliares.frmFormAdminMini(oFabAdmin, oFabPermiso);
+                    frmFab.Text = "Administrador Fabricantes";
+                    frmFab.ShowDialog();
                     break;
                 case "frmTiposMedidores":
-                    Console.WriteLine("Case 2");
+                    FuncionalidadesFoms oTMPermiso = new FuncionalidadesFoms("100021", "100022", "100023", "100025", "100026", "10024");
+                    Admin oAdmin = new Admin();
+                    oAdmin.TabCodigo = "TME";
+                    FormsAuxiliares.frmFormAdminMini frmTM = new FormsAuxiliares.frmFormAdminMini(oAdmin, oTMPermiso);
+                    frmTM.Text = "Administrador Tipos de Medidores";
+                    frmTM.ShowDialog();
                     break;
                 case "frmModelosMedidiores":
-                    Console.WriteLine("Case 1");
+                    FuncionalidadesFoms oMMPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
+                    Admin oMMAdmin = new Admin();
+                    oMMAdmin.TabCodigo = "MEM";
+                    FormsAuxiliares.frmFormAdmin frmMM = new FormsAuxiliares.frmFormAdmin(oMMAdmin, oMMPermiso);
+                    frmMM.ShowDialog();
                     break;
                 case "frmTelefonos":
                     Console.WriteLine("Case 2");
@@ -186,11 +289,11 @@ namespace FormsAuxiliares
                     Console.WriteLine("Case 1");
                     break;
                 case "frmDomicilios":
-                    FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("31", "32", "33", "35", "36", "34");
-                    Admin oAdmin = new Admin();
-                    oAdmin.TabCodigo = "DOMB";
+                    FuncionalidadesFoms oDomPermiso = new FuncionalidadesFoms("31", "32", "33", "35", "36", "34");
+                    Admin oDomAdmin = new Admin();
+                    oDomAdmin.TabCodigo = "DOMB";
 
-                    FormsAuxiliares.frmFormAdmin frm = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+                    FormsAuxiliares.frmFormAdmin frm = new FormsAuxiliares.frmFormAdmin(oDomAdmin, oDomPermiso);
                     frm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
                     frm.ShowDialog();
 
@@ -210,16 +313,13 @@ namespace FormsAuxiliares
                     frmCat.ShowDialog();
                     //Console.WriteLine("Case 1");
                     break;
-                case "frmSuministros":
-                    Console.WriteLine("Case 2");
-                    break;
                 case "frmConceptosLecturas":
                     FuncionalidadesFoms oCLPermiso = new FuncionalidadesFoms("100031", "100032", "100033", "100035", "100036", "100034");
                     Admin oCLAdmin = new Admin();
                     oCLAdmin.TabCodigo = "LEC";
-                    FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oCLAdmin, oCLPermiso);
-                    frmbus.Text = "Administrador Lecturas Conceptos";
-                    frmbus.ShowDialog();
+                    FormsAuxiliares.frmFormAdminMini frmCL = new FormsAuxiliares.frmFormAdminMini(oCLAdmin, oCLPermiso);
+                    frmCL.Text = "Administrador Lecturas Conceptos";
+                    frmCL.ShowDialog();
                     break;
                 case "frmModosLecturas":
                     FuncionalidadesFoms oMLPermiso = new FuncionalidadesFoms("100041", "100042", "100043", "100045", "100046", "100044");
