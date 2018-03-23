@@ -10,6 +10,7 @@ using static Model.Admin;
 using System.Reflection;
 using GesSeguridad.controles.forms;
 using System.Data;
+using GesConfiguracion.controles.forms;
 
 namespace FormsAuxiliares
 {
@@ -686,6 +687,11 @@ namespace FormsAuxiliares
                 case "USUS":
                     frmUsuariosCrud ofrmUsu = new frmUsuariosCrud(0, "I", 0);
                     if (ofrmUsu.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
+                case "CPTS":
+                    frmConceptosCrud oFrmCptCrud = new frmConceptosCrud(0, "I");
+                    if (oFrmCptCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
 

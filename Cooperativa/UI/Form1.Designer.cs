@@ -63,6 +63,7 @@
             this.btnTiposComprobantes = new Controles.btnPersonalizado();
             this.btnRoles = new System.Windows.Forms.Button();
             this.btnConceptos = new System.Windows.Forms.Button();
+            this.btnUnidadesMedida = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(342, 292);
+            this.button1.Location = new System.Drawing.Point(342, 237);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 28);
             this.button1.TabIndex = 8;
@@ -95,9 +96,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(342, 246);
+            this.button2.Location = new System.Drawing.Point(342, 209);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 40);
+            this.button2.Size = new System.Drawing.Size(125, 22);
             this.button2.TabIndex = 10;
             this.button2.Text = "OBSERVACIONES";
             this.button2.UseVisualStyleBackColor = true;
@@ -149,7 +150,7 @@
             // btnPersonalizado1
             // 
             this.btnPersonalizado1.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado1.Location = new System.Drawing.Point(12, 86);
+            this.btnPersonalizado1.Location = new System.Drawing.Point(3, 29);
             this.btnPersonalizado1.Name = "btnPersonalizado1";
             this.btnPersonalizado1.Size = new System.Drawing.Size(129, 23);
             this.btnPersonalizado1.TabIndex = 6;
@@ -169,7 +170,7 @@
             // btnPersonalizado9
             // 
             this.btnPersonalizado9.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado9.Location = new System.Drawing.Point(342, 292);
+            this.btnPersonalizado9.Location = new System.Drawing.Point(342, 271);
             this.btnPersonalizado9.Name = "btnPersonalizado9";
             this.btnPersonalizado9.Size = new System.Drawing.Size(125, 23);
             this.btnPersonalizado9.TabIndex = 7;
@@ -391,7 +392,7 @@
             // btnUsuarios
             // 
             this.btnUsuarios.ForeColor = System.Drawing.Color.Green;
-            this.btnUsuarios.Location = new System.Drawing.Point(52, 217);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 58);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(125, 23);
             this.btnUsuarios.TabIndex = 24;
@@ -422,9 +423,9 @@
             // 
             // btnRoles
             // 
-            this.btnRoles.Location = new System.Drawing.Point(185, 430);
+            this.btnRoles.Location = new System.Drawing.Point(0, 86);
             this.btnRoles.Name = "btnRoles";
-            this.btnRoles.Size = new System.Drawing.Size(125, 27);
+            this.btnRoles.Size = new System.Drawing.Size(125, 33);
             this.btnRoles.TabIndex = 27;
             this.btnRoles.Text = "Roles";
             this.btnRoles.UseVisualStyleBackColor = true;
@@ -440,11 +441,22 @@
             this.btnConceptos.UseVisualStyleBackColor = true;
             this.btnConceptos.Click += new System.EventHandler(this.btnConceptos_Click);
             // 
+            // btnUnidadesMedida
+            // 
+            this.btnUnidadesMedida.Location = new System.Drawing.Point(3, 397);
+            this.btnUnidadesMedida.Name = "btnUnidadesMedida";
+            this.btnUnidadesMedida.Size = new System.Drawing.Size(125, 27);
+            this.btnUnidadesMedida.TabIndex = 29;
+            this.btnUnidadesMedida.Text = "Unidades de medida";
+            this.btnUnidadesMedida.UseVisualStyleBackColor = true;
+            this.btnUnidadesMedida.Click += new System.EventHandler(this.btnUnidadesMedida_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 521);
+            this.Controls.Add(this.btnUnidadesMedida);
             this.Controls.Add(this.btnConceptos);
             this.Controls.Add(this.btnRoles);
             this.Controls.Add(this.btnTiposComprobantes);
@@ -525,6 +537,7 @@
         private Controles.btnPersonalizado btnTiposComprobantes;
         private System.Windows.Forms.Button btnRoles;
         private System.Windows.Forms.Button btnConceptos;
+        private System.Windows.Forms.Button btnUnidadesMedida;
     }
 }
 
