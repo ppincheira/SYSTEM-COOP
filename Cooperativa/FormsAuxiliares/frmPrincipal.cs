@@ -282,17 +282,26 @@ namespace FormsAuxiliares
                     FormsAuxiliares.frmFormAdmin frmMM = new FormsAuxiliares.frmFormAdmin(oMMAdmin, oMMPermiso);
                     frmMM.ShowDialog();
                     break;
-                case "frmTelefonos":
-                    Console.WriteLine("Case 2");
-                    break;
                 case "frmCalles":
-                    Console.WriteLine("Case 1");
+                    FuncionalidadesFoms oCallPermiso = new FuncionalidadesFoms("21", "22", "23", "25", "26", "24");
+                    Admin oCallAdmin = new Admin();
+                    oCallAdmin.TabCodigo = "CALB";
+                    oCallAdmin.Tipo = Admin.enumTipoForm.SelectorMultiSeleccion;
+                    FormsAuxiliares.frmFormAdminMini frmCall = new FormsAuxiliares.frmFormAdminMini(oCallAdmin, oCallPermiso);
+                    frmCall.ShowDialog();
+                    break;
+                case "frmBarrios":
+                    FormsAuxiliares.frmCrudGrilla frmBar = new FormsAuxiliares.frmCrudGrilla("BAR", "NUMERO", true);
+                    frmBar.ShowDialog();
+                    break;
+                case "frmLocalidades":
+                    FormsAuxiliares.frmCrudGrilla frmLoc = new FormsAuxiliares.frmCrudGrilla("LOC", "NUMERO", true);
+                    frmLoc.ShowDialog();
                     break;
                 case "frmDomicilios":
                     FuncionalidadesFoms oDomPermiso = new FuncionalidadesFoms("31", "32", "33", "35", "36", "34");
                     Admin oDomAdmin = new Admin();
                     oDomAdmin.TabCodigo = "DOMB";
-
                     FormsAuxiliares.frmFormAdmin frm = new FormsAuxiliares.frmFormAdmin(oDomAdmin, oDomPermiso);
                     frm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
                     frm.ShowDialog();

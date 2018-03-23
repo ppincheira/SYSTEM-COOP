@@ -64,6 +64,7 @@
             this.btnRoles = new System.Windows.Forms.Button();
             this.btnConceptos = new System.Windows.Forms.Button();
             this.btnUnidadesMedida = new System.Windows.Forms.Button();
+            this.btnBarrios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -451,11 +452,22 @@
             this.btnUnidadesMedida.UseVisualStyleBackColor = true;
             this.btnUnidadesMedida.Click += new System.EventHandler(this.btnUnidadesMedida_Click);
             // 
+            // btnBarrios
+            // 
+            this.btnBarrios.Location = new System.Drawing.Point(3, 440);
+            this.btnBarrios.Name = "btnBarrios";
+            this.btnBarrios.Size = new System.Drawing.Size(125, 27);
+            this.btnBarrios.TabIndex = 30;
+            this.btnBarrios.Text = "Barrios";
+            this.btnBarrios.UseVisualStyleBackColor = true;
+            this.btnBarrios.Click += new System.EventHandler(this.btnBarrios_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 521);
+            this.Controls.Add(this.btnBarrios);
             this.Controls.Add(this.btnUnidadesMedida);
             this.Controls.Add(this.btnConceptos);
             this.Controls.Add(this.btnRoles);
@@ -538,6 +550,7 @@
         private System.Windows.Forms.Button btnRoles;
         private System.Windows.Forms.Button btnConceptos;
         private System.Windows.Forms.Button btnUnidadesMedida;
+        private System.Windows.Forms.Button btnBarrios;
     }
 }
 
