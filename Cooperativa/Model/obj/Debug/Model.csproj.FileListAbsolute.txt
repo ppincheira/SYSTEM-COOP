@@ -1,5 +1,16 @@
+<<<<<<< HEAD
+C:\GitHub\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.pdb
+=======
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.pdb
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.pdb
+<<<<<<< HEAD
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+=======
+>>>>>>> 6663ff05ef074bae14c61c5df1fe6bd8b0b6d443
+>>>>>>> e74b7730ba9ada749efc0334c1e7180fd79b9e4d

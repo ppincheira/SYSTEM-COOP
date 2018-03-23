@@ -116,7 +116,6 @@
     <Compile Include="Help.cs" />
     <Compile Include="Localidades.cs" />
     <Compile Include="Medidores.cs" />
-    <Compile Include="MedidoresSuministros.cs" />
     <Compile Include="MenuItems.cs" />
     <Compile Include="MenuItemsUsuarios.cs" />
     <Compile Include="Observaciones.cs" />
@@ -137,6 +136,7 @@
     <Compile Include="ServiciosZonas.cs" />
     <Compile Include="Subsistema.cs" />
     <Compile Include="Suministros.cs" />
+    <Compile Include="SuministrosMedidores.cs" />
     <Compile Include="Tablas.cs" />
     <Compile Include="Telefonos.cs" />
     <Compile Include="TelefonosEntidades.cs" />

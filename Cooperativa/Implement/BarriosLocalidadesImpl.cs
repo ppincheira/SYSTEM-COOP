@@ -158,7 +158,7 @@ namespace Implement
                 oObjeto.BarNumero = long.Parse(dr["BAR_NUMERO"].ToString());
                 oObjeto.LocNumero = int.Parse(dr["LOC_NUMERO"].ToString());
                 oObjeto.BarDescripcion = dr["BAR_DESCRIPCION"].ToString();
-                oObjeto.TblCodigo = dr["PRV_CODIGO"].ToString();
+                oObjeto.TblCodigo = dr["TBL_CODIGO"].ToString();
                 return oObjeto;
 			}
 			catch(Exception ex)

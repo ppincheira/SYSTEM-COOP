@@ -27,9 +27,9 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             GruposBus oZonas = new GruposBus();
             oUtil.CargarCombo(_vista.Zona, oZonas.GruposGetByFilter("2"), "GRP_CODIGO", "GRP_DESCRIPCION", "SELECCIONE..");
 
-            //// Obtengo los grupos del Tipo de medidores
-            //TiposMedidoresBus oTiposMedidores = new TiposMedidoresBus();
-            //oUtil.CargarCombo(_vista.TMeCodigo, oTiposMedidores.TiposMedidoresGetAllDT(), "TME_CODIGO", "TME_DESCRIPCION", "SELECCIONE..");
+            //// Obtengo los estados de suministros
+            EstadosBus oEstados = new EstadosBus();
+            oUtil.CargarCombo(_vista.EstCodigo, oEstados.EstadosGetByFilterDT("SUMINISTROS", "EST_CODIGO"), "EST_CODIGO", "EST_DESCRIPCION", "SELECCIONE..");
 
             if (_vista.Numero != 0)
             {
@@ -43,7 +43,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                 _vista.OrdenRuta = oSuministros.SumOrdenRuta;
                 _vista.EmpNumero = oSuministros.EmpNumero;
                 _vista.FechaAlta = oSuministros.SumFechaAlta;
-                _vista.EstCodigo = oSuministros.EstCodigo;
+                _vista.EstCodigo.SelectedValue = oSuministros.EstCodigo;
                 _vista.ConsumoEstimado = oSuministros.SumConsumoEstimado;
                 _vista.Voltaje = oSuministros.SumVoltaje;
                 _vista.Conexion = oSuministros.SumConexion;
@@ -75,7 +75,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             oSum.SumOrdenRuta = _vista.OrdenRuta;
             oSum.EmpNumero = _vista.EmpNumero;
             oSum.SumFechaAlta = _vista.FechaAlta;
-            oSum.EstCodigo = _vista.EstCodigo;
+            oSum.EstCodigo = _vista.EstCodigo.SelectedValue.ToString();
             oSum.SumConsumoEstimado = _vista.ConsumoEstimado;
             oSum.SumVoltaje = _vista.Voltaje;
             oSum.SumConexion = _vista.Conexion;
@@ -89,8 +89,30 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             oSum.SumPermiteFactura = _vista.PermiteFactura;
             oSum.SumFechaCarga = _vista.FechaCarga;
 
-            if (_vista.Numero == 0)
+            SuministrosMedidores oSMe = new SuministrosMedidores();
+            SuministrosMedidoresBus oSMeBus = new SuministrosMedidoresBus();
+
+            if (_vista.Numero == 0){
                 oSum.SumNumero =  oSumBus.SuministrosAdd(oSum);
+                DomiciliosEntidades oDEn = new DomiciliosEntidades();
+                DomiciliosEntidadesBus oDEnBus = new DomiciliosEntidadesBus();
+                oDEn.TdoCodigo = "C";
+                oDEn.DenCodigoRegistro = oSum.SumNumero;
+                oDEn.TabCodigo = "SUM";
+                oDEn.DomCodigo = _vista.numDomicilio;
+                oDEnBus.DomiciliosEntidadesAdd(oDEn);
+                oSMe.SmeFechaAlta = oSum.SumFechaAlta;
+                oSMe.EstCodigo = oSum.EstCodigo;
+                oSMe.MedNumero = _vista.numMedidor;
+                oSMe.SumNumero = oSum.SumNumero;
+                oSMe.SmeNumero = oSMeBus.SuministrosMedidoresAdd(oSMe);
+                Medidores oMed = new Medidores();
+                MedidoresBus oMedBus = new MedidoresBus();
+                oMed = oMedBus.MedidoresGetById(oSMe.MedNumero);
+                oMed.EstCodigo = "I";
+                oMedBus.MedidoresUpdate(oMed);
+
+            }
             else
                 rtdo = (oSumBus.SuministrosUpdate(oSum)) ? oSum.SumNumero : 0;
         }
@@ -158,7 +180,9 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
         {
             Domicilios oDomicilio = new Domicilios();
             DomiciliosBus oDomicilioBus = new DomiciliosBus();
-            return oDomicilioBus.DomiciliosGetById(idEntidad);
+            oDomicilio = oDomicilioBus.DomiciliosGetById(idEntidad);
+            _vista.numDomicilio = oDomicilio.DomCodigo;
+            return oDomicilio;
             //oDomicilioBus.DomiciliosGetByCodigoRegistroDefecto(idEntidad, tabCodigo);
         }
         public void CargarCategorias()
@@ -179,6 +203,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
 
             ServiciosRutasBus oRutasBus = new ServiciosRutasBus();
             oUtil.CargarCombo(_vista.Ruta, oRutasBus.ServiciosRutasGetByGrupo(oZona.GrpCodigo,"2"), "SRU_NUMERO", "SRU_DESCRIPCION", "SELECCIONE..");
+
         }
         public void CargarTiposConexiones()
         {
@@ -193,6 +218,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             Medidores oMedidor = new Medidores();
             MedidoresBus oMedidoresBus = new MedidoresBus();
             oMedidor = oMedidoresBus.MedidoresGetById(Id);
+            _vista.numMedidor = Id;
             _vista.numSerieMedidor = oMedidor.MedNumeroserie;
             MedidoresModelos oMedidorModelo = new MedidoresModelos();
             MedidoresModelosBus oMedModeloBus = new MedidoresModelosBus();

@@ -116,7 +116,7 @@
     <Compile Include="TiposGruposImpl.cs" />
     <Compile Include="LocalidadesImpl.cs" />
     <Compile Include="MedidoresImpl.cs" />
-    <Compile Include="MedidoresSuministrosImpl.cs" />
+    <Compile Include="SuministrosMedidoresImpl.cs" />
     <Compile Include="MenuItemsImpl.cs" />
     <Compile Include="MenuItemsUsuariosImpl.cs" />
     <Compile Include="ObservacionesImpl.cs" />
