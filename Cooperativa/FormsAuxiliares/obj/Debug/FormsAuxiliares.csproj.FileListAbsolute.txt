@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csprojResolveAssemblyReference.cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csproj.ResolveComReference.cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmABM.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmAdminGeneral.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmBuscador.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmCallesCrud.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmClientesCrud.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmCodigoPostalCrud.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmCrudGrilla.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmDomiciliosCrud.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\GesServicios.controles.forms.frmFabricantesCrud.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmFormAdmin.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmFormAdminMini.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmLogin.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmMiniListado.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmObservacionesAdmin.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmObservacionesCrud.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmPrincipal.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmTelefonosAdmin.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmTelefonosCrud.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.Properties.Resources.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csproj.GenerateResource.Cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\FormsAuxiliares.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\FormsAuxiliares.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\AppProcesos.dll
@@ -45,104 +21,28 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Model.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Service.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Implement.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csprojResolveAssemblyReference.cache
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csproj.ResolveComReference.cache
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmABM.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmAdminGeneral.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmBuscador.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmCallesCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmClientesCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmCodigoPostalCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmCrudGrilla.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmDomiciliosCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\GesServicios.controles.forms.frmFabricantesCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmFormAdmin.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmFormAdminMini.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmLogin.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmMiniListado.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmObservacionesAdmin.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmObservacionesCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmPrincipal.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmTelefonosAdmin.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmTelefonosCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.Properties.Resources.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csproj.GenerateResource.Cache
+C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.pdb
-=======
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\FormsAuxiliares.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\FormsAuxiliares.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\AppProcesos.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Business.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Controles.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesConfiguracion.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesSeguridad.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesServicios.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Model.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Service.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Implement.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Oracle.DataAccess.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\AppProcesos.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Business.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Controles.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesConfiguracion.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesSeguridad.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesServicios.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Model.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Service.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Implement.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csprojResolveAssemblyReference.cache
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csproj.ResolveComReference.cache
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmABM.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmAdminGeneral.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmBuscador.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmCallesCrud.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmClientesCrud.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmCodigoPostalCrud.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmCrudGrilla.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmDomiciliosCrud.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\GesServicios.controles.forms.frmFabricantesCrud.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmFormAdmin.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmFormAdminMini.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmLogin.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmMiniListado.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmObservacionesAdmin.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmObservacionesCrud.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmPrincipal.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmTelefonosAdmin.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmTelefonosCrud.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.Properties.Resources.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csproj.GenerateResource.Cache
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.pdb
-<<<<<<< HEAD
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\FormsAuxiliares.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\FormsAuxiliares.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\AppProcesos.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Business.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Controles.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesConfiguracion.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesSeguridad.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesServicios.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Model.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Service.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Implement.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Oracle.DataAccess.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\AppProcesos.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Business.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Controles.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesConfiguracion.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesSeguridad.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\GesServicios.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Model.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Service.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\Implement.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csprojResolveAssemblyReference.cache
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csproj.ResolveComReference.cache
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmABM.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmAdminGeneral.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmBuscador.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmCallesCrud.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmClientesCrud.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmCodigoPostalCrud.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmCrudGrilla.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmDomiciliosCrud.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\GesServicios.controles.forms.frmFabricantesCrud.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmFormAdmin.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmFormAdminMini.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmLogin.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmMiniListado.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmObservacionesAdmin.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmObservacionesCrud.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmPrincipal.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmTelefonosAdmin.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.frmTelefonosCrud.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.Properties.Resources.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.csproj.GenerateResource.Cache
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\FormsAuxiliares\obj\Debug\FormsAuxiliares.pdb
-=======
->>>>>>> d403c6cde55d2da00bd3172ade8bba3825d56237
->>>>>>> d8710b75a8e64113b6386e20748423f9e38e37ec

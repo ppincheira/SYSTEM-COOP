@@ -114,7 +114,7 @@
     <Compile Include="GruposDetallesBus.cs" />
     <Compile Include="LocalidadesBus.cs" />
     <Compile Include="MedidoresBus.cs" />
-    <Compile Include="MedidoresSuministrosBus.cs" />
+    <Compile Include="SuministrosMedidoresBus.cs" />
     <Compile Include="MenuItemsBus.cs" />
     <Compile Include="ObservacionesBus.cs" />
     <Compile Include="PaisesBus.cs" />
