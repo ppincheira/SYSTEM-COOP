@@ -73,10 +73,12 @@
             this.lblPotenciaL1 = new Controles.labels.lblEtiqueta();
             this.txtPotenciaL2 = new Controles.textBoxes.txtDescripcionCorta();
             this.gesGroup3 = new Controles.contenedores.gesGroup();
+            this.cmbEstado = new Controles.datos.cmbLista();
             this.chkPermiteFacturacion = new Controles.datos.chkBox();
             this.chkPermiteCorte = new Controles.datos.chkBox();
             this.chkConexion = new Controles.datos.chkBox();
             this.cmbCategoria = new Controles.datos.cmbLista();
+            this.lblEstado = new Controles.labels.lblEtiqueta();
             this.lblCategoria = new Controles.labels.lblEtiqueta();
             this.cmbZona = new Controles.datos.cmbLista();
             this.lblTipoMedidor = new Controles.labels.lblEtiqueta();
@@ -116,8 +118,8 @@
             this.lblEtiqueta4 = new Controles.labels.lblEtiqueta();
             this.txtDomCodigo = new Controles.textBoxes.txtDescripcion();
             this.btnDomicilio = new Controles.buttons.btnGeneral();
-            this.cmbEstado = new Controles.datos.cmbLista();
-            this.lblEstado = new Controles.labels.lblEtiqueta();
+            this.lblRegistrador = new Controles.labels.lblEtiqueta();
+            this.txtRegistrador = new Controles.textBoxes.gesTextBox();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.tabSumnistros.SuspendLayout();
@@ -511,6 +513,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.txtRegistrador);
+            this.tabPage3.Controls.Add(this.lblRegistrador);
             this.tabPage3.Controls.Add(this.txtVoltaje);
             this.tabPage3.Controls.Add(this.lblVoltaje);
             this.tabPage3.Controls.Add(this.txtConsumoEstimado);
@@ -534,7 +538,7 @@
             this.txtVoltaje.BackColor = System.Drawing.Color.White;
             this.txtVoltaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtVoltaje.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtVoltaje.Location = new System.Drawing.Point(563, 83);
+            this.txtVoltaje.Location = new System.Drawing.Point(575, 55);
             this.txtVoltaje.MaxLength = 15;
             this.txtVoltaje.Name = "txtVoltaje";
             this.txtVoltaje.Requerido = Controles.util.Enumerados.enumRequerido.NO;
@@ -546,7 +550,7 @@
             // lblVoltaje
             // 
             this.lblVoltaje.AutoSize = true;
-            this.lblVoltaje.Location = new System.Drawing.Point(505, 86);
+            this.lblVoltaje.Location = new System.Drawing.Point(505, 59);
             this.lblVoltaje.Name = "lblVoltaje";
             this.lblVoltaje.Size = new System.Drawing.Size(42, 13);
             this.lblVoltaje.TabIndex = 42;
@@ -557,7 +561,7 @@
             this.txtConsumoEstimado.BackColor = System.Drawing.Color.Red;
             this.txtConsumoEstimado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtConsumoEstimado.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtConsumoEstimado.Location = new System.Drawing.Point(611, 53);
+            this.txtConsumoEstimado.Location = new System.Drawing.Point(611, 26);
             this.txtConsumoEstimado.MaxLength = 15;
             this.txtConsumoEstimado.Name = "txtConsumoEstimado";
             this.txtConsumoEstimado.Requerido = Controles.util.Enumerados.enumRequerido.SI;
@@ -569,7 +573,7 @@
             // lblConsumoEstimado
             // 
             this.lblConsumoEstimado.AutoSize = true;
-            this.lblConsumoEstimado.Location = new System.Drawing.Point(505, 57);
+            this.lblConsumoEstimado.Location = new System.Drawing.Point(505, 30);
             this.lblConsumoEstimado.Name = "lblConsumoEstimado";
             this.lblConsumoEstimado.Size = new System.Drawing.Size(100, 13);
             this.lblConsumoEstimado.TabIndex = 43;
@@ -586,6 +590,7 @@
             // 
             // txtPotenciaL1
             // 
+            this.txtPotenciaL1.BackColor = System.Drawing.Color.Beige;
             this.txtPotenciaL1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPotenciaL1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPotenciaL1.ColorTextoVacio = System.Drawing.Color.Gray;
@@ -660,6 +665,17 @@
             this.gesGroup3.TabStop = false;
             this.gesGroup3.Text = "Clasificación";
             // 
+            // cmbEstado
+            // 
+            this.cmbEstado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbEstado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(103, 49);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.cmbEstado.Size = new System.Drawing.Size(165, 21);
+            this.cmbEstado.TabIndex = 38;
+            // 
             // chkPermiteFacturacion
             // 
             this.chkPermiteFacturacion.AutoSize = true;
@@ -709,6 +725,15 @@
             this.cmbCategoria.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbCategoria.Size = new System.Drawing.Size(165, 21);
             this.cmbCategoria.TabIndex = 34;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(12, 53);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(43, 13);
+            this.lblEstado.TabIndex = 44;
+            this.lblEstado.Text = "Estado:";
             // 
             // lblCategoria
             // 
@@ -1189,30 +1214,34 @@
             this.btnDomicilio.UseVisualStyleBackColor = true;
             this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
             // 
-            // cmbEstado
+            // lblRegistrador
             // 
-            this.cmbEstado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbEstado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(103, 49);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.cmbEstado.Size = new System.Drawing.Size(165, 21);
-            this.cmbEstado.TabIndex = 38;
+            this.lblRegistrador.AutoSize = true;
+            this.lblRegistrador.Location = new System.Drawing.Point(505, 84);
+            this.lblRegistrador.Name = "lblRegistrador";
+            this.lblRegistrador.Size = new System.Drawing.Size(64, 13);
+            this.lblRegistrador.TabIndex = 42;
+            this.lblRegistrador.Text = "Registrador:";
             // 
-            // lblEstado
+            // txtRegistrador
             // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(12, 53);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(43, 13);
-            this.lblEstado.TabIndex = 44;
-            this.lblEstado.Text = "Estado:";
+            this.txtRegistrador.BackColor = System.Drawing.Color.White;
+            this.txtRegistrador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtRegistrador.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtRegistrador.Location = new System.Drawing.Point(575, 81);
+            this.txtRegistrador.MaxLength = 15;
+            this.txtRegistrador.Name = "txtRegistrador";
+            this.txtRegistrador.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtRegistrador.Size = new System.Drawing.Size(132, 20);
+            this.txtRegistrador.TabIndex = 41;
+            this.txtRegistrador.TextoVacio = "<Descripcion>";
+            this.txtRegistrador.TipoControl = Controles.util.Enumerados.enumTipos.Decimal;
             // 
             // frmSuministrosCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(853, 685);
             this.Controls.Add(this.gesGroup5);
             this.Controls.Add(this.gesGroup4);
@@ -1221,6 +1250,7 @@
             this.Controls.Add(this.gbDatos);
             this.Controls.Add(this.gesGroup2);
             this.Name = "frmSuministrosCrud";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Suministros";
             this.Load += new System.EventHandler(this.frmSuministrosCrud_Load);
             this.gesGroup2.ResumeLayout(false);
@@ -1334,5 +1364,7 @@
         private Controles.textBoxes.txtDescripcion txtLecturaModoMedidor;
         private Controles.datos.cmbLista cmbEstado;
         private Controles.labels.lblEtiqueta lblEstado;
+        private Controles.textBoxes.gesTextBox txtRegistrador;
+        private Controles.labels.lblEtiqueta lblRegistrador;
     }
 }

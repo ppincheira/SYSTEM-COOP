@@ -1,4 +1,9 @@
-<<<<<<< HEAD
+C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.Form1.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\UI.exe.config
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\UI.exe
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\UI.pdb
@@ -6,7 +11,7 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Business.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Controles.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\FormsAuxiliares.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesConfiguracion.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesServicios.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesServicios.exe
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Model.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Implement.dll
@@ -25,46 +30,6 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\AppProcesos.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Service.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesSeguridad.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.Form1.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.exe
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.pdb
-=======
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\UI.exe.config
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\UI.exe
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\UI.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Business.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Controles.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\FormsAuxiliares.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesConfiguracion.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesServicios.exe
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Model.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Implement.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\AppProcesos.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Service.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesSeguridad.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Oracle.DataAccess.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Business.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Controles.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\FormsAuxiliares.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesConfiguracion.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesServicios.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Model.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Implement.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\AppProcesos.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Service.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesSeguridad.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.Form1.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.exe
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.pdb
->>>>>>> 6663ff05ef074bae14c61c5df1fe6bd8b0b6d443
+C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.CopyComplete

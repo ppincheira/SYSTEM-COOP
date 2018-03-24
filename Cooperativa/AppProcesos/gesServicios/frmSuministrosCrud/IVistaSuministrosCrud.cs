@@ -45,6 +45,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
         string strFabricante { get; set; }
         string strLecturaModo { get; set; }
         long numDomicilio { get; set; }
+        double? Registrador { get; set; }
 
     }
 }

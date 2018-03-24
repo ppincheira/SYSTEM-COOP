@@ -15,3 +15,4 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.csprojResolv
 C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.csproj.CopyComplete

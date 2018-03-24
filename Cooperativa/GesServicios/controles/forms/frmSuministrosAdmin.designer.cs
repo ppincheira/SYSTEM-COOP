@@ -396,7 +396,8 @@
             // 
             // frmSuministrosAdmin
             // 
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1284, 749);
             this.Controls.Add(this.gpbFiltro);
             this.Controls.Add(this.gpbGrupo2);
             this.Controls.Add(this.gpbGrupo1);
@@ -405,6 +406,7 @@
             this.Controls.Add(this.gpbGrupo3);
             this.Controls.Add(this.gpbFecha);
             this.Name = "frmSuministrosAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.frmSuministrosAdmin_Load);
             this.gpbGrupoEstado.ResumeLayout(false);
             this.gpbGrupoEstado.PerformLayout();

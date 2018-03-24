@@ -13,3 +13,4 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateR
 C:\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.csproj.CopyComplete
