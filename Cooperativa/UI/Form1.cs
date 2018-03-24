@@ -302,5 +302,11 @@ namespace UI
             FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("UNI", "CODIGO", false);
             frmbus.ShowDialog();
         }
+
+        private void btnBarrios_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("BAR", "NUMERO", true);
+            frmbus.ShowDialog();
+        }
     }
 }
