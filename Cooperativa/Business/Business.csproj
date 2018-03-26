@@ -86,6 +86,7 @@
     <Compile Include="ConceptosBus.cs" />
     <Compile Include="ConceptosTiposComprobantesBus.cs" />
     <Compile Include="ConceptosUnidadesMedidasBus.cs" />
+    <Compile Include="FuncionalidadesRolesBus.cs" />
     <Compile Include="LecturasConceptosBus.cs" />
     <Compile Include="DetallesAuditoriaBus.cs" />
     <Compile Include="DetallesColumnasTablasBus.cs" />

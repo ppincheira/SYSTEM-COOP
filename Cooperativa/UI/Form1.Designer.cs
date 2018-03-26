@@ -65,6 +65,7 @@
             this.btnConceptos = new System.Windows.Forms.Button();
             this.btnUnidadesMedida = new System.Windows.Forms.Button();
             this.btnBarrios = new System.Windows.Forms.Button();
+            this.btnFuncionalidadesRoles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,7 +216,7 @@
             // 
             this.gesTextBox1.BackColor = System.Drawing.Color.White;
             this.gesTextBox1.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBox1.Location = new System.Drawing.Point(35, 125);
+            this.gesTextBox1.Location = new System.Drawing.Point(56, 238);
             this.gesTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.gesTextBox1.Name = "gesTextBox1";
             this.gesTextBox1.Requerido = Controles.util.Enumerados.enumRequerido.NO;
@@ -229,7 +230,7 @@
             // 
             this.gesTextBox2.BackColor = System.Drawing.Color.White;
             this.gesTextBox2.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBox2.Location = new System.Drawing.Point(52, 158);
+            this.gesTextBox2.Location = new System.Drawing.Point(56, 190);
             this.gesTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.gesTextBox2.Name = "gesTextBox2";
             this.gesTextBox2.Requerido = Controles.util.Enumerados.enumRequerido.NO;
@@ -242,7 +243,7 @@
             // 
             this.gesTextBox3.BackColor = System.Drawing.Color.White;
             this.gesTextBox3.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBox3.Location = new System.Drawing.Point(52, 183);
+            this.gesTextBox3.Location = new System.Drawing.Point(56, 214);
             this.gesTextBox3.Margin = new System.Windows.Forms.Padding(2);
             this.gesTextBox3.Name = "gesTextBox3";
             this.gesTextBox3.Requerido = Controles.util.Enumerados.enumRequerido.NO;
@@ -462,11 +463,22 @@
             this.btnBarrios.UseVisualStyleBackColor = true;
             this.btnBarrios.Click += new System.EventHandler(this.btnBarrios_Click);
             // 
+            // btnFuncionalidadesRoles
+            // 
+            this.btnFuncionalidadesRoles.Location = new System.Drawing.Point(0, 129);
+            this.btnFuncionalidadesRoles.Name = "btnFuncionalidadesRoles";
+            this.btnFuncionalidadesRoles.Size = new System.Drawing.Size(125, 33);
+            this.btnFuncionalidadesRoles.TabIndex = 31;
+            this.btnFuncionalidadesRoles.Text = "FuncionalidadesRoles";
+            this.btnFuncionalidadesRoles.UseVisualStyleBackColor = true;
+            this.btnFuncionalidadesRoles.Click += new System.EventHandler(this.btnFuncionalidadesRoles_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 521);
+            this.Controls.Add(this.btnFuncionalidadesRoles);
             this.Controls.Add(this.btnBarrios);
             this.Controls.Add(this.btnUnidadesMedida);
             this.Controls.Add(this.btnConceptos);
@@ -551,6 +563,7 @@
         private System.Windows.Forms.Button btnConceptos;
         private System.Windows.Forms.Button btnUnidadesMedida;
         private System.Windows.Forms.Button btnBarrios;
+        private System.Windows.Forms.Button btnFuncionalidadesRoles;
     }
 }
 

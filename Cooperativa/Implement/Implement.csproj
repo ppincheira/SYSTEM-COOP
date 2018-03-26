@@ -128,7 +128,7 @@
     <Compile Include="PruebaImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AreasImpl.cs" />
-    <Compile Include="RolesFuncionalidadesImpl.cs" />
+    <Compile Include="FuncionalidadesRolesImpl.cs" />
     <Compile Include="RolesImpl.cs" />
     <Compile Include="RolesMenuItemsImpl.cs" />
     <Compile Include="SectoresImpl.cs" />

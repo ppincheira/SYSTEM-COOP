@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 namespace Model {
     
-    public class RolesFuncionalidades {
-        public RolesFuncionalidades()
+    public class FuncionalidadesRoles {
+        public FuncionalidadesRoles()
         {
         }
         public virtual string RolCodigo { get; set; }

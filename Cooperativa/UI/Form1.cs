@@ -308,5 +308,12 @@ namespace UI
             FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("BAR", "NUMERO", true);
             frmbus.ShowDialog();
         }
+
+        private void btnFuncionalidadesRoles_Click(object sender, EventArgs e)
+        {
+          
+            FormsAuxiliares.frmDobleGrillaCrud aux = new FormsAuxiliares.frmDobleGrillaCrud("ROL", "FUN", "FUNCIONALIDADES_ROLES", "ROL_CODIGO&ROL_DESCRIPCION", "FUN_CODIGO&FUN_DESCRIPCION&FFO_CODIGO");
+            aux.ShowDialog();
+        }
     }
 }

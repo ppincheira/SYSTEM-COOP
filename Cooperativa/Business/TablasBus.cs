@@ -76,5 +76,11 @@ namespace Business
             TablasImpl oTablasImpl = new TablasImpl();
             return oTablasImpl.Estructura(tabla);
         }
+
+        public DataTable TablasBusquedaPorCodigo(string tabla, string campos, string criterio, string filterCampos, string filterValores)
+        {
+            TablasImpl oTablasImpl = new TablasImpl();
+            return oTablasImpl.TablasBusquedaPorCodigo(tabla, campos, criterio, filterCampos, filterValores);
+        }
     }
 }
