@@ -23,7 +23,7 @@ namespace Model {
         public virtual double? SumPotenciaL1 { get; set; }
         public virtual double? SumPotenciaL2 { get; set; }
         public virtual double? SumPotenciaL3 { get; set; }
-        public virtual long? SumRegistrador { get; set; }
+        public virtual double? SumRegistrador { get; set; }
         public virtual string SumPermiteCorte { get; set; }
         public virtual string SumMedido { get; set; }
         public virtual long SruNumero { get; set; }

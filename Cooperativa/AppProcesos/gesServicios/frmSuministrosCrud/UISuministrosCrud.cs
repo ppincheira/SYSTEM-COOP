@@ -56,6 +56,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                 _vista.Zona.SelectedValue = oSuministros.SzoNumero;
                 _vista.PermiteFactura = oSuministros.SumPermiteFactura;
                 _vista.FechaCarga = oSuministros.SumFechaCarga;
+                _vista.Registrador = oSuministros.SumRegistrador;
             }
         }
 
@@ -88,6 +89,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             oSum.SzoNumero = int.Parse(_vista.Zona.SelectedValue.ToString());
             oSum.SumPermiteFactura = _vista.PermiteFactura;
             oSum.SumFechaCarga = _vista.FechaCarga;
+            oSum.SumRegistrador = _vista.Registrador;
 
             SuministrosMedidores oSMe = new SuministrosMedidores();
             SuministrosMedidoresBus oSMeBus = new SuministrosMedidoresBus();

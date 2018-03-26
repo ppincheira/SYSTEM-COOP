@@ -206,6 +206,12 @@ namespace GesServicios.controles.forms
             get { return _DomNumero; }
             set { _DomNumero = value; }
         }
+        public double? Registrador
+        {
+            get { return txtRegistrador.Text != "" ? double.Parse(txtRegistrador.Text) : 0; }
+            set { txtRegistrador.Text = value.ToString(); }
+        }
+
         #endregion
         public frmSuministrosCrud(long Suministro, string Estado)
         {

@@ -99,7 +99,7 @@
             this.txtDescripcion.BackColor = System.Drawing.Color.White;
             this.txtDescripcion.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcion.Location = new System.Drawing.Point(6, 82);
-            this.txtDescripcion.MaxLength = 50;
+            this.txtDescripcion.MaxLength = 10;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDescripcion.Size = new System.Drawing.Size(150, 20);

@@ -13,6 +13,7 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateR
 C:\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.pdb
+<<<<<<< HEAD
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Controles.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Controles.pdb
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
@@ -27,3 +28,6 @@ D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.pdb
+=======
+C:\GitHub\SYSTEM-COOP\Cooperativa\Controles\obj\Debug\Controles.csproj.CopyComplete
+>>>>>>> 8a32d47e19d843afd04be10d76f389fe99d917b9

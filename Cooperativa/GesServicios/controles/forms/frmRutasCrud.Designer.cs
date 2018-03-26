@@ -173,10 +173,10 @@
             this.txtDescripcionCorta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcionCorta.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcionCorta.Location = new System.Drawing.Point(149, 64);
-            this.txtDescripcionCorta.MaxLength = 20;
+            this.txtDescripcionCorta.MaxLength = 5;
             this.txtDescripcionCorta.Name = "txtDescripcionCorta";
             this.txtDescripcionCorta.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.txtDescripcionCorta.Size = new System.Drawing.Size(165, 20);
+            this.txtDescripcionCorta.Size = new System.Drawing.Size(73, 20);
             this.txtDescripcionCorta.TabIndex = 2;
             this.txtDescripcionCorta.TextoVacio = "<Descripcion>";
             this.txtDescripcionCorta.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -208,10 +208,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(471, 335);
             this.Controls.Add(this.gesGroup2);
             this.Controls.Add(this.gbDatos);
             this.Name = "frmRutasCrud";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmRutasCrud";
             this.Load += new System.EventHandler(this.frmRutasCrud_Load);
             this.gesGroup2.ResumeLayout(false);
