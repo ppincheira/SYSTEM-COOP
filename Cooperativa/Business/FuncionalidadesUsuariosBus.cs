@@ -30,5 +30,11 @@ namespace Business
             FuncionalidadesUsuariosImpl oFuncionalidadesUsuariosImpl = new FuncionalidadesUsuariosImpl();
             return oFuncionalidadesUsuariosImpl.FuncionalidadesUsuariosGetAll();
         }
+
+        public List<FuncionalidadesUsuarios> FuncionalidadesUsuariosGetById(string id)
+        {
+            FuncionalidadesUsuariosImpl oFuncionalidadesUsuariosImpl = new FuncionalidadesUsuariosImpl();
+            return oFuncionalidadesUsuariosImpl.FuncionalidadesUsuariosGetById(id);
+        }
     }
 }

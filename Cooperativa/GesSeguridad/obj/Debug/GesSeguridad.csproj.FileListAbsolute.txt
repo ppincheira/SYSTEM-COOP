@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\GesSeguridad.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\GesSeguridad.pdb
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\AppProcesos.dll
@@ -23,31 +22,3 @@ D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSegu
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.csproj.GenerateResource.Cache
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.pdb
-=======
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\GesSeguridad.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\GesSeguridad.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\AppProcesos.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Controles.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\FormsAuxiliares.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Model.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Service.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Business.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Implement.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Oracle.DataAccess.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\AppProcesos.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Controles.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Model.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Service.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Business.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\Implement.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.csprojResolveAssemblyReference.cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.controles.forms.frmPersonasCrud.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.controles.forms.frmUsuariosCrud.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.csproj.GenerateResource.Cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.csproj.CoreCompileInputs.cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesSeguridad\obj\Debug\GesSeguridad.csproj.CopyComplete
->>>>>>> 8a32d47e19d843afd04be10d76f389fe99d917b9

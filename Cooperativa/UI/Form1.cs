@@ -315,5 +315,11 @@ namespace UI
             FormsAuxiliares.frmDobleGrillaCrud aux = new FormsAuxiliares.frmDobleGrillaCrud("ROL", "FUN", "FUNCIONALIDADES_ROLES", "ROL_CODIGO&ROL_DESCRIPCION", "FUN_CODIGO&FUN_DESCRIPCION&FFO_CODIGO");
             aux.ShowDialog();
         }
+
+        private void btnFuncionalidadesUsuarios_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmDobleGrillaCrud aux = new FormsAuxiliares.frmDobleGrillaCrud("USR", "FUN", "FUNCIONALIDADES_USUARIOS", "USR_NUMERO&USR_NOMBRE&USR_BLOQUEADO", "FUN_CODIGO&FUN_DESCRIPCION&FFO_CODIGO");
+            aux.ShowDialog();
+        }
     }
 }

@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\GesConfiguracion.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\GesConfiguracion.pdb
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\AppProcesos.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Business.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Controles.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\FormsAuxiliares.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Model.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Service.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Implement.dll
@@ -23,31 +21,3 @@ D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\Ges
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csproj.GenerateResource.Cache
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.pdb
-=======
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csprojResolveAssemblyReference.cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.controles.forms.frmConceptosCrud.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.frmTiposComprobantesCrud.resources
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csproj.GenerateResource.Cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csproj.CoreCompileInputs.cache
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\GesConfiguracion.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\GesConfiguracion.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\AppProcesos.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Business.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Controles.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\FormsAuxiliares.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Model.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Service.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Implement.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Oracle.DataAccess.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\AppProcesos.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Business.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Controles.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Model.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Service.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Implement.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.dll
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.pdb
-C:\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csproj.CopyComplete
->>>>>>> 8a32d47e19d843afd04be10d76f389fe99d917b9
