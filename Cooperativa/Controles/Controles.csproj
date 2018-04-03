@@ -220,7 +220,13 @@
     <Compile Include="lblPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="objects\gesPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="objects\gesToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="objects\pbxImagen.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="objects\tttEtiqueta.cs">

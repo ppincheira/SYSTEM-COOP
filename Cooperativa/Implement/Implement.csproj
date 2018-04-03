@@ -85,6 +85,7 @@
     <Compile Include="BarriosLocalidadesImpl.cs" />
     <Compile Include="CallesLocalidadesImpl.cs" />
     <Compile Include="CodigosPostalesLocalidadesImpl.cs" />
+    <Compile Include="ConceptosFabricadosImpl.cs" />
     <Compile Include="ConceptosImpl.cs" />
     <Compile Include="ConceptosTiposComprobantesImpl.cs" />
     <Compile Include="ConceptosUnidadesMedidasImpl.cs" />

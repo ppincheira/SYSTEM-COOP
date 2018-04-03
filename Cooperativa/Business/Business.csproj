@@ -84,6 +84,7 @@
     <Compile Include="CallesLocalidadesBus.cs" />
     <Compile Include="CodigosPostalesLocalidadesBus.cs" />
     <Compile Include="ConceptosBus.cs" />
+    <Compile Include="ConceptosFabricadosBus.cs" />
     <Compile Include="ConceptosTiposComprobantesBus.cs" />
     <Compile Include="ConceptosUnidadesMedidasBus.cs" />
     <Compile Include="FuncionalidadesRolesBus.cs" />

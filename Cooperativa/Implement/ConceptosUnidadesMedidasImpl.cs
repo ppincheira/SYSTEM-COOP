@@ -188,7 +188,8 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 string sqlSelect = " SELECT cum_codigo,cum_descripcion " +
-                                   " FROM   Conceptos_Unidades_Medidas  " ;
+                                   " FROM   Conceptos_Unidades_Medidas " +
+                                   " ORDER BY cum_descripcion ";
 
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
