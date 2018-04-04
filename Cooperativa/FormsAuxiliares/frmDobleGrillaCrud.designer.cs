@@ -186,6 +186,7 @@
             this.btnCancelar1.Size = new System.Drawing.Size(80, 60);
             this.btnCancelar1.TabIndex = 1;
             this.btnCancelar1.UseVisualStyleBackColor = true;
+            this.btnCancelar1.Click += new System.EventHandler(this.btnCancelar1_Click);
             // 
             // btnAceptar1
             // 

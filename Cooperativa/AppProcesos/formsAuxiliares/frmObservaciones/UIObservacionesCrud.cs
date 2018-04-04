@@ -81,7 +81,7 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
 
                 _vista.adjunto.AdjCodigoRegistro = rtdo.ToString();
                 AdjuntosBus oAdjuntoBus = new AdjuntosBus();
-                if (oAdjuntoBus.AdjuntoExisteByCodigoRegistro(rtdo))
+                if (oAdjuntoBus.AdjuntoExisteByCodigoRegistro(rtdo,"OBS"))
                     oAdjuntoBus.AdjuntoUpdate(_vista.adjunto);
                 else
                     oAdjuntoBus.AdjuntosAdd(_vista.adjunto);

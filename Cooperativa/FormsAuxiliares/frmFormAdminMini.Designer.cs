@@ -96,10 +96,16 @@
             // 
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+<<<<<<< HEAD
             this.btnAceptar.Location = new System.Drawing.Point(516, 294);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(70, 35);
+=======
+            this.btnAceptar.Location = new System.Drawing.Point(688, 362);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(93, 43);
+>>>>>>> c772d18c41e3b1c278b09211b82b7932c85364f3
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Visible = false;
@@ -315,6 +321,7 @@
             this.btnEditar.Size = new System.Drawing.Size(40, 40);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 

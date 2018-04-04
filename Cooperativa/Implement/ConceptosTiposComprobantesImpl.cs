@@ -151,14 +151,19 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = " SELECT c.cpt_numero cpt_numero, " +
+                string sqlSelect = " SELECT c.cpt_numero numero, " +
                                    "        t.tco_codigo codigo," +
                                    "        t.tco_descripcion descripcion " +
                                    " FROM   conceptos_tipos_comprobantes c," +
                                    "        tipos_comprobantes t " +
                                    " WHERE  t.tco_codigo = c.tco_codigo " +
-                                   " AND    cpt_numero =  '" + numero + "' ";
-
+                                   " AND    cpt_numero =  '" + numero + "' " +
+                                   " UNION ALL " +
+                                   " SELECT NULL numero," +
+                                   "        NULL codigo," +
+                                   "        NULL descripcion" +
+                                   " FROM    dual ";
+                Console.WriteLine(sqlSelect);
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();

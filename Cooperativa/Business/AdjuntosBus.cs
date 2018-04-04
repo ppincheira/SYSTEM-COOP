@@ -11,7 +11,7 @@ namespace Business
 {
     public class AdjuntosBus
     {
-        public int AdjuntosAdd(Adjuntos oAdjunto)
+        public long AdjuntosAdd(Adjuntos oAdjunto)
         {
             AdjuntosImpl oAdjuntoImpl = new AdjuntosImpl();
             return oAdjuntoImpl.AdjuntosAdd(oAdjunto);
@@ -35,9 +35,9 @@ namespace Business
             return oAdjuntoImpl.AdjuntosGetById(Id);
         }
 
-        public Boolean AdjuntoExisteByCodigoRegistro(long Id) {
+        public Boolean AdjuntoExisteByCodigoRegistro(long Id,string tabcodigo) {
             AdjuntosImpl oAdjuntoImpl = new AdjuntosImpl();
-            return oAdjuntoImpl.AdjuntoExisteByCodigoRegistro(Id);
+            return oAdjuntoImpl.AdjuntoExisteByCodigoRegistro(Id,tabcodigo);
         }
         public Adjuntos AdjuntosGetByCodigoRegistro(long Id, string TabCodigo)
         {

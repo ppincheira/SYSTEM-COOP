@@ -135,6 +135,44 @@ namespace Implement
             }
         }
 
+        public DataTable RecuperarLecturasConceptosDT(string texto, int posicion)
+        {
+            List<LecturasConceptos> lstLecturasConceptos = new List<LecturasConceptos>();
+            try
+            {
+                string variable = "";
+                switch (posicion)
+                {
+                    case 0:
+                        variable = "LEC_CODIGO";
+                        break;
+                    case 1:
+                        variable = "LEC_DESCRIPCION_CORTA";
+                        break;
+                    case 2:
+                        variable = "LEC_DESCRIPCION";
+                        break;
+                }
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from LECTURAS_CONCEPTOS WHERE " + variable + " = '" + texto.ToUpper() + "'";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt = new DataTable();
+                return dt = ds.Tables[0];
+               
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public bool LecturasConceptosDelete(string Id)
         {
             try

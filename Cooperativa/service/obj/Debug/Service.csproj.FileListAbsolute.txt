@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Service.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Service.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Business.dll
@@ -15,3 +16,35 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.csproj.CoreCompileIn
 C:\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.csproj.CopyComplete
+=======
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Service.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Service.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Business.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Controles.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Model.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Implement.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Oracle.DataAccess.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Business.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Controles.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Model.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\bin\Debug\Implement.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.csproj.ResolveComReference.cache
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Service.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Service.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Business.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Controles.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Implement.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Business.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Controles.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\bin\Debug\Implement.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.csproj.ResolveComReference.cache
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\service\obj\Debug\Service.pdb
+>>>>>>> c772d18c41e3b1c278b09211b82b7932c85364f3

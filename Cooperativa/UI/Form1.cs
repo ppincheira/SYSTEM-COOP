@@ -98,12 +98,19 @@ namespace UI
         private void btnPersonalizado4_Click(object sender, EventArgs e)
         {
 
+            //FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            //Admin oAdmin = new Admin();
+            //oAdmin.TabCodigo = "CALB";
+            //oAdmin.Tipo = Admin.enumTipoForm.SelectorMultiSeleccion;
+            //FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            //frmbus.ShowDialog();
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "CALB";
             oAdmin.Tipo = Admin.enumTipoForm.SelectorMultiSeleccion;
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.ShowDialog();
+
         }
 
         private void btnPersonalizado5_Click(object sender, EventArgs e)
@@ -313,6 +320,12 @@ namespace UI
         {
           
             FormsAuxiliares.frmDobleGrillaCrud aux = new FormsAuxiliares.frmDobleGrillaCrud("ROL", "FUN", "FUNCIONALIDADES_ROLES", "ROL_CODIGO&ROL_DESCRIPCION", "FUN_CODIGO&FUN_DESCRIPCION&FFO_CODIGO");
+            aux.ShowDialog();
+        }
+
+        private void btnFuncionalidadesUsuarios_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmDobleGrillaCrud aux = new FormsAuxiliares.frmDobleGrillaCrud("USR", "FUN", "FUNCIONALIDADES_USUARIOS", "USR_NUMERO&USR_NOMBRE&USR_BLOQUEADO", "FUN_CODIGO&FUN_DESCRIPCION&FFO_CODIGO");
             aux.ShowDialog();
         }
     }

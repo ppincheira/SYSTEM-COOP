@@ -55,7 +55,7 @@ namespace FormsAuxiliares
             oDobleGrilla.CargarGrillaSecundaria();
             if (GrillaPrimaria.SelectedRows == null)
             {
-                string auxy = GrillaPrimaria.SelectedRows[0].Cells[0].ToString();        
+                string auxy = GrillaPrimaria.SelectedRows[0].Cells[0].ToString();
             }
 
         }
@@ -68,28 +68,14 @@ namespace FormsAuxiliares
 
                     oDobleGrilla.Guardar();
                 cambiosPendientes = false;
-            }          
-      //      string auxy = ((grdGrillaEdit)sender).SelectedRows[0].Cells[0].FormattedValue.ToString();
+            }
+            //      string auxy = ((grdGrillaEdit)sender).SelectedRows[0].Cells[0].FormattedValue.ToString();
             oDobleGrilla.CargarGrillaSecundaria();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "FUN";
-            oAdmin.Tipo = Admin.enumTipoForm.SelectorMultiSeleccion;
-            frmFormAdmin frmbus = new frmFormAdmin(oAdmin, oPermiso);
-
-            frmbus.ShowDialog();
-            String recuperado = frmbus._strDatosSeleccionados;
-            if (recuperado != null && recuperado.Length > 0)
-            {
-                recuperado = recuperado.Substring(0, recuperado.Length - 1);
-                oDobleGrilla.agregarRegistros(recuperado);
-                cambiosPendientes = true;
-            }
-
+            cambiosPendientes = oDobleGrilla.agregarRegistros();
         }
 
         private void btnAceptar1_Click(object sender, EventArgs e)
@@ -121,6 +107,17 @@ namespace FormsAuxiliares
                                 e.ToString(),
                                 ((Control)sender).Name,
                                 this.FindForm().Name);
+            }
+        }
+
+        private void btnCancelar1_Click(object sender, EventArgs e)
+        {
+            if (cambiosPendientes)
+            {
+                if (MessageBox.Show("¿Estas por perder los cambios, desea guardarlos?", "Guardar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+                    oDobleGrilla.Guardar();
+                this.Close();
             }
         }
     }

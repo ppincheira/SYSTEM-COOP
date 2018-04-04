@@ -66,6 +66,7 @@
             this.btnUnidadesMedida = new System.Windows.Forms.Button();
             this.btnBarrios = new System.Windows.Forms.Button();
             this.btnFuncionalidadesRoles = new System.Windows.Forms.Button();
+            this.btnFuncionalidadesUsuarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -473,11 +474,22 @@
             this.btnFuncionalidadesRoles.UseVisualStyleBackColor = true;
             this.btnFuncionalidadesRoles.Click += new System.EventHandler(this.btnFuncionalidadesRoles_Click);
             // 
+            // btnFuncionalidadesUsuarios
+            // 
+            this.btnFuncionalidadesUsuarios.Location = new System.Drawing.Point(0, 168);
+            this.btnFuncionalidadesUsuarios.Name = "btnFuncionalidadesUsuarios";
+            this.btnFuncionalidadesUsuarios.Size = new System.Drawing.Size(141, 33);
+            this.btnFuncionalidadesUsuarios.TabIndex = 32;
+            this.btnFuncionalidadesUsuarios.Text = "FuncionalidadesUsuarios";
+            this.btnFuncionalidadesUsuarios.UseVisualStyleBackColor = true;
+            this.btnFuncionalidadesUsuarios.Click += new System.EventHandler(this.btnFuncionalidadesUsuarios_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 521);
+            this.Controls.Add(this.btnFuncionalidadesUsuarios);
             this.Controls.Add(this.btnFuncionalidadesRoles);
             this.Controls.Add(this.btnBarrios);
             this.Controls.Add(this.btnUnidadesMedida);
@@ -564,6 +576,7 @@
         private System.Windows.Forms.Button btnUnidadesMedida;
         private System.Windows.Forms.Button btnBarrios;
         private System.Windows.Forms.Button btnFuncionalidadesRoles;
+        private System.Windows.Forms.Button btnFuncionalidadesUsuarios;
     }
 }
 

@@ -12,6 +12,7 @@ using Business;
 using Controles.form;
 using System.IO;
 using Controles.util;
+using System.ComponentModel;
 
 namespace Service
 {
@@ -31,6 +32,20 @@ namespace Service
 
             return dt.Rows.Count;
         }
+        public int CargarGrillaOrderAsc(Controles.datos.grdGrillaEdit grilla, DataTable dt)
+        {
+            grilla.DataSource = dt;
+            grilla.Sort(grilla.Columns[1],ListSortDirection.Ascending);
+            return dt.Rows.Count;
+        }
+
+        public int CargarGrillaOrderDesc(Controles.datos.grdGrillaEdit grilla, DataTable dt)
+        {
+            grilla.DataSource = dt;
+            grilla.Sort(grilla.Columns[1], ListSortDirection.Descending);
+            return dt.Rows.Count;
+        }
+
 
 
         public void CargarCombo(Controles.datos.cmbLista combo, DataTable dt, string Value, string Text)

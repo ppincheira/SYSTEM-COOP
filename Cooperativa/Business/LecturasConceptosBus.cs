@@ -61,5 +61,10 @@ namespace Business
             LecturasConceptosImpl auxImple = new LecturasConceptosImpl();
             return auxImple.RecuperarLecturasConceptos(texto, posicion);            
         }
+        public DataTable RecuperarLecturasConceptosDT(string texto, int posicion)
+        {
+            LecturasConceptosImpl auxImple = new LecturasConceptosImpl();
+            return auxImple.RecuperarLecturasConceptosDT(texto, posicion);
+        }
     }
 }

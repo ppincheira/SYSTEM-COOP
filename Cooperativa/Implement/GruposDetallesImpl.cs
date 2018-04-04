@@ -77,8 +77,6 @@ namespace Implement
 
         public bool GruposDetallesDelete(long Id)
         {
-
-
             try
             {
                 Conexion oConexion = new Conexion();
@@ -96,8 +94,36 @@ namespace Implement
             {
                 throw ex;
             }
+        }
+
+        public bool GruposDetallesTipoDelete(string CodReg, string CodTipo)
+        {
 
 
+            try
+            {
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                ds = new DataSet();
+                string query = " DELETE grupos_detalles " +
+                               " WHERE  grd_codigo = (select gd.grd_codigo " +
+                                                   " from   grupos_detalles gd, grupos g " +
+                                                   " where  g.grp_codigo = gd.grp_codigo " +
+                                                   " and    gd.grd_codigo_registro='" + CodReg + "' " +
+                                                   " and    g.tgr_codigo ='" + CodTipo + "') ";
+                //Console.WriteLine("DELETE "+ query);
+                cmd = new OracleCommand(query, cn);
+
+                adapter = new OracleDataAdapter(cmd);
+                response = cmd.ExecuteNonQuery();
+                cn.Close();
+                return response > 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public GruposDetalles GruposDetallesGetById(long Id)
@@ -108,8 +134,8 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from Grupos_Detalles " +
-                    "WHERE GRD_CODIGO=" + Id;
+                string sqlSelect = " select * from Grupos_Detalles " +
+                                   " WHERE grd_codigo=" + Id;
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -138,8 +164,9 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from Grupos_Detalles " +
-                    "WHERE GRD_CODIGO_REGISTRO='" + Id + "'";
+                string sqlSelect = " select * " +
+                                   " from Grupos_Detalles " +
+                                   " where grd_codigo_registro='" + Id + "'";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -159,6 +186,40 @@ namespace Implement
                 throw ex;
             }
         }
+
+        public GruposDetalles GruposDetallesGetByTipo(string CodReg,string CodTipo)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = " select gd.* " +
+                                   " from   grupos_detalles gd, grupos g " +
+                                   " where  g.grp_codigo = gd.grp_codigo " +
+                                   " and    gd.grd_codigo_registro='" + CodReg + "' " +
+                                   " and    g.tgr_codigo ='" + CodTipo + "' ";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                dt = ds.Tables[0];
+                GruposDetalles NewEnt = new GruposDetalles();
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow dr = dt.Rows[0];
+                    NewEnt = CargarGruposDetalles(dr);
+                }
+                return NewEnt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public List<GruposDetalles> GruposDetallesGetAll()
         {
             List<GruposDetalles> lstGruposDetalles = new List<GruposDetalles>();

@@ -36,7 +36,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="FormsAuxiliares">
+=======
+    <Reference Include="FormsAuxiliares, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+>>>>>>> c772d18c41e3b1c278b09211b82b7932c85364f3
       <HintPath>..\..\..\Cooperativa\Cooperativa\Referencias\FormsAuxiliares.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -58,11 +63,11 @@
     <Compile Include="controles\forms\frmLecturasCrud.Designer.cs">
       <DependentUpon>frmLecturasCrud.cs</DependentUpon>
     </Compile>
-    <Compile Include="controles\forms\frmLecturasModosCrudAux.cs">
+    <Compile Include="controles\forms\frmLecturasModosCrud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="controles\forms\frmLecturasModosCrudAux.Designer.cs">
-      <DependentUpon>frmLecturasModosCrudAux.cs</DependentUpon>
+    <Compile Include="controles\forms\frmLecturasModosCrud.Designer.cs">
+      <DependentUpon>frmLecturasModosCrud.cs</DependentUpon>
     </Compile>
     <Compile Include="controles\forms\frmSuministrosCrud.cs">
       <SubType>Form</SubType>
@@ -81,9 +86,6 @@
     </Compile>
     <Compile Include="controles\forms\frmLecturasConceptosCrud.Designer.cs">
       <DependentUpon>frmLecturasConceptosCrud.cs</DependentUpon>
-    </Compile>
-    <Compile Include="controles\forms\frmLecturasModosCrud.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="controles\forms\frmTiposConexionesCrud.cs">
       <SubType>Form</SubType>
@@ -155,17 +157,14 @@
     <EmbeddedResource Include="controles\forms\frmLecturasCrud.resx">
       <DependentUpon>frmLecturasCrud.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="controles\forms\frmLecturasModosCrudAux.resx">
-      <DependentUpon>frmLecturasModosCrudAux.cs</DependentUpon>
+    <EmbeddedResource Include="controles\forms\frmLecturasModosCrud.resx">
+      <DependentUpon>frmLecturasModosCrud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmSuministrosAdmin.resx">
       <DependentUpon>frmSuministrosAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmLecturasConceptosCrud.resx">
       <DependentUpon>frmLecturasConceptosCrud.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="controles\forms\frmLecturasModosCrud.resx">
-      <DependentUpon>frmLecturasModosCrud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmMedidoresMasivosCrud.resx">
       <DependentUpon>frmMedidoresMasivosCrud.cs</DependentUpon>

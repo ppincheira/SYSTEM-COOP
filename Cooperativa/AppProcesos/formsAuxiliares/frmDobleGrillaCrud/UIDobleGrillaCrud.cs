@@ -7,6 +7,7 @@ using System.Data;
 using System.Windows.Forms;
 using Controles.datos;
 using Controles.labels;
+using FormsAuxiliares;
 
 namespace AppProcesos.formsAuxiliares.frmCrudGrilla
 {
@@ -144,6 +145,36 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                             MessageBox.Show("Se agregaron " + cantidad + " de registros exitosamente");
                             break;
                         }
+
+                    case "FUNCIONALIDADES_USUARIOS":
+                        {
+                            FuncionalidadesUsuariosBus oUsuariosFun = new FuncionalidadesUsuariosBus();
+                            List<FuncionalidadesUsuarios> listaUF = new List<FuncionalidadesUsuarios>();
+
+                            FuncionalidadesBus oFunBus = new FuncionalidadesBus();
+                            Funcionalidades oFuncionalidades = new Funcionalidades();
+                            FuncionalidadesUsuarios oUF;
+
+                            listaUF = oUsuariosFun.FuncionalidadesUsuariosGetById(clavePrimaria);
+
+
+                            foreach (FuncionalidadesUsuarios b in listaUF)
+                            {
+                                oUsuariosFun.FuncionalidadesUsuariosDelete(b.FunCodigo, b.UsrNumero, b.RolCodigo);
+                            }
+                            int cantidad = 0;
+                            foreach (DataGridViewRow a in _vista.grillaSecundaria.Rows)
+                            {
+                                oUF = new FuncionalidadesUsuarios();
+                                oUF.UsrNumero = int.Parse(clavePrimaria);
+
+                                oUF.FunCodigo = ((DataGridViewTextBoxCell)a.Cells[0]).FormattedValue.ToString();
+                                oUsuariosFun.FuncionalidadesUsuariosAdd(oUF);
+                                cantidad++;
+                            }
+                            MessageBox.Show("Se agregaron " + cantidad + " de registros exitosamente");
+                            break;
+                        }
                 }
 
             }
@@ -153,7 +184,6 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
             }
         }
 
-
         public void Eliminar()
         {
             foreach (DataGridViewRow a in _vista.grillaSecundaria.SelectedRows)
@@ -162,70 +192,91 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
             }
         }
 
-        public void agregarRegistros(string recuperado)
+        public bool agregarRegistros()
         {
-            string[] valores = recuperado.Split('&');
-            switch (tablaNexo)
+            bool salida = false;
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = tablaSecundaria;
+            oAdmin.Tipo = Admin.enumTipoForm.SelectorMultiSeleccion;
+            frmFormAdmin frmbus = new frmFormAdmin(oAdmin, oPermiso);
+
+            frmbus.ShowDialog();
+            String recuperado = frmbus._strDatosSeleccionados;
+            if (recuperado != null && recuperado.Length > 0)
             {
-                case "FUNCIONALIDADES_ROLES":
-                    {
-                        FuncionalidadesBus oFunBus = new FuncionalidadesBus();
-                        Funcionalidades oFuncionalidades = new Funcionalidades();
-                        List<Funcionalidades> listaRF = new List<Funcionalidades>();
+                recuperado = recuperado.Substring(0, recuperado.Length - 1);
 
-                        foreach (string a in valores)
+                string[] valores = recuperado.Split('&');
+                switch (tablaSecundaria)
+                {
+                    case "FUN":
                         {
-                            oFuncionalidades = oFunBus.FuncionalidadesGetById(a);
-                            DataTable dt = (DataTable)_vista.grillaSecundaria.DataSource;
-                            string[] camposCargar = _camposSecundarios.Split('&');
-                            string cargar = "";
-                            foreach (string b in camposCargar)
+                            FuncionalidadesBus oFunBus = new FuncionalidadesBus();
+                            Funcionalidades oFuncionalidades = new Funcionalidades();
+                            List<Funcionalidades> listaRF = new List<Funcionalidades>();
+                            foreach (string a in valores)
                             {
-                                switch (b)
+                                oFuncionalidades = oFunBus.FuncionalidadesGetById(a);
+                                DataTable dt = (DataTable)_vista.grillaSecundaria.DataSource;
+                                string[] camposCargar = _camposSecundarios.Split('&');
+                                string cargar = "";
+                                foreach (string b in camposCargar)
                                 {
-                                    case "FUN_CODIGO":
-                                        {
-                                            cargar = cargar + oFuncionalidades.FunCodigo + "&";
-                                            break;
-                                        }
-                                    case "FUN_DESCRIPCION":
-                                        {
-                                            cargar = cargar + oFuncionalidades.FunDescripcion + "&";
-                                            break;
-                                        }
-                                    case "FUN_FUNCIONALIDAD":
-                                        {
-                                            cargar = cargar + oFuncionalidades.FunFuncionalidad + "&";
-                                            break;
-                                        }
-                                    case "SBS_CODIGO":
-                                        {
-                                            cargar = cargar + oFuncionalidades.SbsCodigo + "&";
-                                            break;
-                                        }
-                                    case "FFO_CODIGO":
-                                        {
-                                            cargar = cargar + oFuncionalidades.ffoCodigo + "&";
-                                            break;
-                                        }
+                                    switch (b)
+                                    {
+                                        case "FUN_CODIGO":
+                                            {
+                                                cargar = cargar + oFuncionalidades.FunCodigo + "&";
+                                                break;
+                                            }
+                                        case "FUN_DESCRIPCION":
+                                            {
+                                                cargar = cargar + oFuncionalidades.FunDescripcion + "&";
+                                                break;
+                                            }
+                                        case "FUN_FUNCIONALIDAD":
+                                            {
+                                                cargar = cargar + oFuncionalidades.FunFuncionalidad + "&";
+                                                break;
+                                            }
+                                        case "SBS_CODIGO":
+                                            {
+                                                cargar = cargar + oFuncionalidades.SbsCodigo + "&";
+                                                break;
+                                            }
+                                        case "FFO_CODIGO":
+                                            {
+                                                cargar = cargar + oFuncionalidades.ffoCodigo + "&";
+                                                break;
+                                            }
+                                    }
                                 }
+                                if (cargar.Length > 0)
+                                    cargar = cargar.Substring(0, cargar.Length - 1);
+                                camposCargar = cargar.Split('&');
+                                dt.Rows.Add(cargar.Split('&'));
                             }
-                            if (cargar.Length > 0)
-                                cargar = cargar.Substring(0, cargar.Length - 1);
-                            camposCargar = cargar.Split('&');
-                            dt.Rows.Add(cargar.Split('&'));
-
+                            break;
                         }
-                        break;
-                    }
+                }
+                salida = true;
             }
+
+            return salida;
+
+
+
+
+
+
         }
 
         public void CargarGrillaSecundaria()
         {
             try
             {
-                clavePrimaria = (string)_vista.grillaPrimaria.SelectedCells[0].Value; ;
+                clavePrimaria = _vista.grillaPrimaria.SelectedCells[0].Value.ToString();
                 _filtroCampos = "";
                 _filtroValores = "";
                 _Campo = "";
@@ -276,6 +327,22 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                             }
                             break;
                         }
+
+                    case "FUNCIONALIDADES_USUARIOS":
+                        {
+                            FuncionalidadesUsuariosBus oFuncionalidadesUsr = new FuncionalidadesUsuariosBus();
+                            List<FuncionalidadesUsuarios> listaUF = oFuncionalidadesUsr.FuncionalidadesUsuariosGetById(clavePrimaria);
+                            FuncionalidadesBus oFunBus = new FuncionalidadesBus();
+                            Funcionalidades oFuncionalidades = new Funcionalidades();
+
+                            foreach (FuncionalidadesUsuarios a in listaUF)
+                            {
+                                oFuncionalidades = oFunBus.FuncionalidadesGetById(a.FunCodigo);
+                                cargarDT(dt, oFuncionalidades);
+                                //dt.Rows.Add(oFuncionalidades.FunCodigo, oFuncionalidades.FunDescripcion, oFuncionalidades.FunFuncionalidad, oFuncionalidades.ffoCodigo);
+                            }
+                            break;
+                        }
                 }
                 _vista.cantidadSecundaria = "Se encontraron: " + oUtil.CargarGrilla(_vista.grillaSecundaria, dt) + " registros";
             }
@@ -290,9 +357,9 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
             string[] columnas = _camposSecundarios.Split('&');
             string[] cargar = new string[(columnas.Length)];
             int control = 0;
-            switch (tablaNexo)
+            switch (tablaSecundaria)
             {
-                case "FUNCIONALIDADES_ROLES":
+                case "FUN":
                     {
                         Funcionalidades oFuncionalidades = (Funcionalidades)oObjeto;
                         foreach (string a in columnas)
@@ -338,6 +405,10 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                         }
                         break;
                     }
+
+
+
+
             }
 
 
@@ -352,7 +423,7 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
             grdGrillaEdit grilla = new grdGrillaEdit();
             _filtroCampos = "";
             _filtroValores = "";
-            string tabla= "";
+            string tabla = "";
             switch (codigo)
             {
                 case "1":
@@ -376,7 +447,7 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
             }
             _filtroCampos = comboBuscar.SelectedValue.ToString();
             TablasBus oTablasBus = new TablasBus();
-            grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo.Replace('&',','), _filtroCampos, _filtroValores);
+            grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo.Replace('&', ','), _filtroCampos, _filtroValores);
             switch (codigo)
             {
                 case "1":
@@ -387,10 +458,10 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                 case "2":
                     {
                         _vista.cantidadSecundaria = "Se encontraron " + _vista.grillaSecundaria.RowCount.ToString() + " registros";
-                        break;                       
+                        break;
                     }
             }
-       
+
         }
 
 
