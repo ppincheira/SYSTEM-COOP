@@ -184,6 +184,7 @@
             this.grdTiposComprobantes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdTiposComprobantes.Size = new System.Drawing.Size(317, 201);
             this.grdTiposComprobantes.TabIndex = 45;
+            this.grdTiposComprobantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTiposComprobantes_CellContentClick);
             // 
             // gesGroup2
             // 

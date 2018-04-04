@@ -239,6 +239,7 @@ namespace FormsAuxiliares
             this.gpbGrupo2.Size = new System.Drawing.Size(748, 831);
             this.gpbGrupo2.TabIndex = 1;
             this.gpbGrupo2.TabStop = false;
+            this.gpbGrupo2.Enter += new System.EventHandler(this.gpbGrupo2_Enter);
             // 
             // grdGrillaEdit1
             // 
@@ -454,7 +455,12 @@ namespace FormsAuxiliares
             }
 
         }
-        
+
+        private void gpbGrupo2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void grdGrillaEdit1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (grdGrillaEdit1.CurrentCell != null)

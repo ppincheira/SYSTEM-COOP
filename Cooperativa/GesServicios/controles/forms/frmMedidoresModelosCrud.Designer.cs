@@ -33,18 +33,17 @@
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gbDatos = new Controles.contenedores.gesGroup();
+            this.TextBoxAmperaje = new Controles.textBoxes.txtDescripcion();
             this.dtpFechaCarga = new Controles.Fecha.dtpFecha();
             this.lblTipoMedidor = new Controles.labels.lblEtiqueta();
             this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.cmbTipoConexion = new Controles.datos.cmbLista();
             this.cmbTipoMedidor = new Controles.datos.cmbLista();
-            this.TextBoxRegistrador = new Controles.NumericTextBox();
             this.TextBoxKWVueltas = new Controles.NumericTextBox();
             this.TextBoxDecimales = new Controles.NumericTextBox();
             this.TextBoxClase = new Controles.NumericTextBox();
             this.TextBoxCantHilos = new Controles.NumericTextBox();
             this.TextBoxDigitos = new Controles.NumericTextBox();
-            this.lblRegistrador = new Controles.labels.lblEtiqueta();
             this.chkEstado = new Controles.datos.chkBox();
             this.lblKWVueltas = new Controles.labels.lblEtiqueta();
             this.cmbTipoContador = new Controles.datos.cmbLista();
@@ -62,7 +61,6 @@
             this.txtDescripcionCorta = new Controles.textBoxes.txtDescripcionCorta();
             this.txtDescripcion = new Controles.textBoxes.txtDescripcionCorta();
             this.lbDescripcion = new Controles.labels.lblEtiqueta();
-            this.TextBoxAmperaje = new Controles.textBoxes.txtDescripcion();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.SuspendLayout();
@@ -105,13 +103,11 @@
             this.gbDatos.Controls.Add(this.lblEtiqueta1);
             this.gbDatos.Controls.Add(this.cmbTipoConexion);
             this.gbDatos.Controls.Add(this.cmbTipoMedidor);
-            this.gbDatos.Controls.Add(this.TextBoxRegistrador);
             this.gbDatos.Controls.Add(this.TextBoxKWVueltas);
             this.gbDatos.Controls.Add(this.TextBoxDecimales);
             this.gbDatos.Controls.Add(this.TextBoxClase);
             this.gbDatos.Controls.Add(this.TextBoxCantHilos);
             this.gbDatos.Controls.Add(this.TextBoxDigitos);
-            this.gbDatos.Controls.Add(this.lblRegistrador);
             this.gbDatos.Controls.Add(this.chkEstado);
             this.gbDatos.Controls.Add(this.lblKWVueltas);
             this.gbDatos.Controls.Add(this.cmbTipoContador);
@@ -135,6 +131,19 @@
             this.gbDatos.TabIndex = 2;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
+            // 
+            // TextBoxAmperaje
+            // 
+            this.TextBoxAmperaje.BackColor = System.Drawing.Color.Red;
+            this.TextBoxAmperaje.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.TextBoxAmperaje.Location = new System.Drawing.Point(110, 133);
+            this.TextBoxAmperaje.MaxLength = 50;
+            this.TextBoxAmperaje.Name = "TextBoxAmperaje";
+            this.TextBoxAmperaje.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.TextBoxAmperaje.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxAmperaje.TabIndex = 7;
+            this.TextBoxAmperaje.TextoVacio = "<Descripcion>";
+            this.TextBoxAmperaje.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
             // 
             // dtpFechaCarga
             // 
@@ -184,14 +193,6 @@
             this.cmbTipoMedidor.Size = new System.Drawing.Size(165, 21);
             this.cmbTipoMedidor.TabIndex = 13;
             // 
-            // TextBoxRegistrador
-            // 
-            this.TextBoxRegistrador.AllowSpace = false;
-            this.TextBoxRegistrador.Location = new System.Drawing.Point(433, 165);
-            this.TextBoxRegistrador.Name = "TextBoxRegistrador";
-            this.TextBoxRegistrador.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxRegistrador.TabIndex = 9;
-            // 
             // TextBoxKWVueltas
             // 
             this.TextBoxKWVueltas.AllowSpace = false;
@@ -231,15 +232,6 @@
             this.TextBoxDigitos.Name = "TextBoxDigitos";
             this.TextBoxDigitos.Size = new System.Drawing.Size(100, 20);
             this.TextBoxDigitos.TabIndex = 3;
-            // 
-            // lblRegistrador
-            // 
-            this.lblRegistrador.AutoSize = true;
-            this.lblRegistrador.Location = new System.Drawing.Point(336, 168);
-            this.lblRegistrador.Name = "lblRegistrador";
-            this.lblRegistrador.Size = new System.Drawing.Size(64, 13);
-            this.lblRegistrador.TabIndex = 22;
-            this.lblRegistrador.Text = "Registrador:";
             // 
             // chkEstado
             // 
@@ -412,19 +404,6 @@
             this.lbDescripcion.TabIndex = 0;
             this.lbDescripcion.Text = "Descripción:";
             // 
-            // TextBoxAmperaje
-            // 
-            this.TextBoxAmperaje.BackColor = System.Drawing.Color.Red;
-            this.TextBoxAmperaje.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.TextBoxAmperaje.Location = new System.Drawing.Point(110, 133);
-            this.TextBoxAmperaje.MaxLength = 50;
-            this.TextBoxAmperaje.Name = "TextBoxAmperaje";
-            this.TextBoxAmperaje.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.TextBoxAmperaje.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxAmperaje.TabIndex = 7;
-            this.TextBoxAmperaje.TextoVacio = "<Descripcion>";
-            this.TextBoxAmperaje.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
-            // 
             // frmMedidoresModelosCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,9 +443,7 @@
         private Controles.labels.lblEtiqueta lblDecimales;
         private Controles.labels.lblEtiqueta lblCantHilos;
         private Controles.labels.lblEtiqueta lblDigitos;
-        private Controles.NumericTextBox TextBoxRegistrador;
         private Controles.NumericTextBox TextBoxClase;
-        private Controles.labels.lblEtiqueta lblRegistrador;
         private Controles.labels.lblEtiqueta lblClase;
         private Controles.labels.lblEtiqueta lblAmperaje;
         private Controles.labels.lblEtiqueta lblTipoContador;

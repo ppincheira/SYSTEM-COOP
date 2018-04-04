@@ -128,6 +128,7 @@ namespace GesServicios.controles.forms
         {
             try
             {
+                FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("31", "32", "33", "0", "0", "34");
                 frmSuministrosCrud oFrmSumCrud = new frmSuministrosCrud(0,"H");
                 if (oFrmSumCrud.ShowDialog() == DialogResult.OK)
                     _oSuministrosAdmin.CargarGrilla(_Tabla);

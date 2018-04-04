@@ -36,3 +36,9 @@ Cooperativa/Implement/obj/Debug/CoreCompileInputs.cache
 Cooperativa/GesServicios/obj/Debug/GesServicios.csprojResolveAssemblyReference.cache
 Cooperativa/GesServicios/obj/Debug/GesServicios.csproj.GenerateResource.Cache
 Cooperativa/GesServicios/obj/Debug/GesServicios.csproj.FileListAbsolute.txt
+*.cache
+*.exe
+Cooperativa/UI/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+*.cache
+*.Cache
+*.cache

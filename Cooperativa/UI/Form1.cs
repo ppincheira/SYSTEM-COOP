@@ -237,7 +237,7 @@ namespace UI
 
         private void btnSuministros_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10001", "10002", "10003", "10005", "10006", "10004");
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("100101", "100102", "100103", "0", "0", "100104");
             //Se instancia un objeto de la clase formulario admin al cual se le pasa por parametro el COD_TABLA
             frmSuministrosAdmin frmbus = new frmSuministrosAdmin("SUM", oPermiso);
             frmbus.ShowDialog();

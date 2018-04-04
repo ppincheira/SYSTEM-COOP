@@ -2,6 +2,8 @@
 using Model;
 using Service;
 using System;
+using System.Collections.Generic;
+using System.Data;
 
 namespace AppProcesos.gesServicios.frmSuministrosCrud
 {
@@ -38,12 +40,20 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                 //Obtengo datos de la entidad principal que trabajo
                 oSuministros = oSuministrosBus.SuministrosGetById(_vista.Numero);
                 _vista.Servicio.SelectedValue = oSuministros.SrvCodigo;
+                CargarTiposConexiones();
                 _vista.TipoConexion.SelectedValue = oSuministros.TcsCodigo;
+                CargarCategorias();
                 _vista.Categoria.SelectedValue = oSuministros.ScaNumero;
+                _vista.EstCodigo.SelectedValue = oSuministros.EstCodigo;
                 _vista.OrdenRuta = oSuministros.SumOrdenRuta;
                 _vista.EmpNumero = oSuministros.EmpNumero;
+                CargarCliente(_vista.EmpNumero);
+
+                Domicilios oDomicilio = new Domicilios();
+                DomiciliosBus oDomicilioBus = new DomiciliosBus();
+                oDomicilio = oDomicilioBus.DomiciliosGetByCodigoRegistroDefecto(oSuministros.SumNumero, "SUM");
+                CargarDomicilioSum(oDomicilio.DomCodigo);
                 _vista.FechaAlta = oSuministros.SumFechaAlta;
-                _vista.EstCodigo.SelectedValue = oSuministros.EstCodigo;
                 _vista.ConsumoEstimado = oSuministros.SumConsumoEstimado;
                 _vista.Voltaje = oSuministros.SumVoltaje;
                 _vista.Conexion = oSuministros.SumConexion;
@@ -52,11 +62,20 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                 _vista.PotenciaL3 = oSuministros.SumPotenciaL3;
                 _vista.PermiteCorte = oSuministros.SumPermiteCorte;
                 _vista.Medido = oSuministros.SumMedido;
-                _vista.Ruta.SelectedValue = oSuministros.SruNumero;
                 _vista.Zona.SelectedValue = oSuministros.SzoNumero;
+                CargarRutas();
+                _vista.Ruta.SelectedValue = oSuministros.SruNumero;
                 _vista.PermiteFactura = oSuministros.SumPermiteFactura;
                 _vista.FechaCarga = oSuministros.SumFechaCarga;
                 _vista.Registrador = oSuministros.SumRegistrador;
+                SuministrosMedidores oSMe = new SuministrosMedidores();
+                SuministrosMedidoresBus oSMeBus = new SuministrosMedidoresBus();
+                oSMe = oSMeBus.SuministrosMedidoresGetBySuministro(oSuministros.SumNumero);
+                _vista.numMedidor = oSMe.MedNumero;
+                CargarMedidor(_vista.numMedidor);
+                CargarGrillaConceptos();
+
+
             }
         }
 
@@ -137,9 +156,9 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             _vista.strEmpDocumentoNumero = oEmpresa.EmpDocumentoNumero;
             CargarSocio(oEmpresa.EmpNumero);
             _vista.strRespIva = oEmpresa.TivCodigo;
-                //CargarTipoIva(oEmpresa.TivCodigo);
+            CargarTipoIva(oEmpresa.TivCodigo);
             _vista.strTipoDoc = oEmpresa.TidCodigo;
-            //CargarTipoDni(oEmpresa.TidCodigo);
+            CargarTipoDni(oEmpresa.TidCodigo);
             CargarDomicilio(oEmpresa.EmpNumero);
 
         }
@@ -178,14 +197,27 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             }
 
         }
-        public Domicilios CargarDomicilioSum(long idEntidad)
+        public void CargarDomicilioSum(long idEntidad)
         {
             Domicilios oDomicilio = new Domicilios();
             DomiciliosBus oDomicilioBus = new DomiciliosBus();
             oDomicilio = oDomicilioBus.DomiciliosGetById(idEntidad);
             _vista.numDomicilio = oDomicilio.DomCodigo;
-            return oDomicilio;
-            //oDomicilioBus.DomiciliosGetByCodigoRegistroDefecto(idEntidad, tabCodigo);
+            CallesLocalidadesBus oCalleBus = new CallesLocalidadesBus();
+            _vista.strCalle = oCalleBus.CallesLocalidadesGetById(oDomicilio.CalNumero).CalDescripcion;
+            _vista.strCalleNumero = oDomicilio.DomNumero.ToString();
+            _vista.strDepartamento = oDomicilio.DomDepartamento.ToString();
+            _vista.strBloque = oDomicilio.DomBloque.ToString();
+            _vista.strPiso = oDomicilio.DomPiso.ToString();
+            BarriosLocalidadesBus oBarriosBus = new BarriosLocalidadesBus();
+            _vista.strBarrio = oBarriosBus.BarriosLocalidadesGetById(oDomicilio.BarNumero).BarDescripcion;
+            Localidades oLoc = new Localidades();
+            LocalidadesBus oLocBus = new LocalidadesBus();
+            oLoc = oLocBus.LocalidadesGetById(oDomicilio.LocNumero);
+            ProvinciasBus oProvinciasBus = new ProvinciasBus();
+            _vista.strProvLoc = oLoc.LocDescripcion.Trim() + " / " + oProvinciasBus.ProvinciasGetById(oLoc.PrvCodigo).PrvDescripcion;
+
+            return ;
         }
         public void CargarCategorias()
         {
@@ -236,6 +268,31 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             _vista.strLecturaModo = oLecturasModosBus.LecturasModosGetById(oMedidor.LemCodigo).lemDescripcion;
 
         }
+        public void CargarGrillaConceptos()
+        {
+            int indice = 0;
+            SuministrosConceptosBus oSCoBus = new SuministrosConceptosBus();
+            DataTable dt = oSCoBus.SuministrosConceptosGetBySuministroDT(_vista.Numero);
+
+            oUtil.CargarGrilla(_vista.grdSumConceptos, dt);
+
+            //_vista.grdSumConceptos.Columns["cpt_numero"].Visible = false;
+            //Cambio los headers por defecto por los definidos en detalles columnas tablas 
+            DetallesColumnasTablasBus oDetalleBus = new DetallesColumnasTablasBus();
+            List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo("SCO");
+            foreach (DetallesColumnasTablas oDetalle in ListDetalle)
+            {
+                _vista.grdSumConceptos.Columns[indice].HeaderText = oDetalle.DctDescripcion.Replace('"', ' ');
+                //_vista.grdSumConceptos.Columns[indice].HeaderText = oDetalle.DctDescripcion.Replace("AS ","");
+                indice++;
+            }
+        }
 
     }
 }
+//select conceptos.*, srv_descripcion from conceptos, inner join conceptos_servicios cs on c.cpt_numero = cs.cpt_numero
+//inner join servicios se on cs.srv_codigo = se.srv_codigo
+//inner join suministros su on su.srv_codigo= se.srv_codigo
+//where conceptos.cpt_numero not in
+//(select c.cpt_numero from conceptos c inner join suministros_conceptos sc on c.cpt_numero = sc.cpt_numero)
+

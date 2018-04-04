@@ -110,6 +110,7 @@
     <Compile Include="FuncionalidadesImpl.cs" />
     <Compile Include="FuncionalidadesUsuariosImpl.cs" />
     <Compile Include="GruposDetallesImpl.cs" />
+    <Compile Include="SuministrosConceptosImpl.cs" />
     <Compile Include="TelefonosEntidadesImpl.cs" />
     <Compile Include="TiposComprobanteImpl.cs" />
     <Compile Include="TiposConceptosImpl.cs" />

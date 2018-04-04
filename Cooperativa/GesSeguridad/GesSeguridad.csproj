@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FormsAuxiliares">
-      <HintPath>..\Referencias\FormsAuxiliares.dll</HintPath>
+      <HintPath>..\..\..\Cooperativa\Cooperativa\Referencias\FormsAuxiliares.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

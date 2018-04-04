@@ -389,5 +389,10 @@ namespace GesConfiguracion.controles.forms
         }
 
         #endregion
+
+        private void grdTiposComprobantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

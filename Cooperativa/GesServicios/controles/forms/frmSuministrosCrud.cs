@@ -21,7 +21,7 @@ namespace GesServicios.controles.forms
         string _EstCodigo;
 
         #endregion
-        #region Implementation of IVistaRutasCrud
+        #region Implementation of IVistaSuministrosCrud
 
 
         public long Numero
@@ -138,8 +138,10 @@ namespace GesServicios.controles.forms
 
         public DateTime FechaCarga
         {
-            get { return DateTime.Parse(dtpFechaAlta.Text); }
-            set { dtpFechaAlta.Text = value.ToString(); }
+            //get { return FechaCarga; }
+            //set { FechaCarga = value; }
+            get { return dtpFechaCarga.Value; }
+            set { dtpFechaCarga.Value = value; }
         }
         public string strRazonSocial
         {
@@ -203,13 +205,53 @@ namespace GesServicios.controles.forms
         }
         public long numDomicilio
         {
-            get { return _DomNumero; }
-            set { _DomNumero = value; }
+            get { return long.Parse(txtDomCodigo.Text); }
+            set { txtDomCodigo.Text = value.ToString(); }
         }
         public double? Registrador
         {
             get { return txtRegistrador.Text != "" ? double.Parse(txtRegistrador.Text) : 0; }
             set { txtRegistrador.Text = value.ToString(); }
+        }
+        public string strProvLoc
+        {
+            get { return this.txtProvLoc.Text; }
+            set { this.txtProvLoc.Text=value; }
+        }
+        public string strBarrio
+        {
+            get { return this.txtBarrio.Text; }
+            set { this.txtBarrio.Text=value; }
+        }
+        public string strCalle
+        {
+            get { return this.txtCalle.Text; }
+            set { this.txtCalle.Text=value; }
+        }
+        public string strCalleNumero
+        {
+            get { return this.txtCalleNumero.Text; }
+            set { this.txtCalleNumero.Text=value; }
+        }
+        public string strBloque
+        {
+            get { return this.txtBloque.Text; }
+            set { this.txtBloque.Text=value; }
+        }
+        public string strPiso
+        {
+            get { return this.txtPiso.Text; }
+            set { this.txtPiso.Text=value; }
+        }
+        public string strDepartamento
+        {
+            get { return this.txtDepartamento.Text; }
+            set { this.txtDepartamento.Text=value; }
+        }
+        public grdGrillaAdmin grdSumConceptos
+        {
+            get { return grdSuministrosConceptos; }
+            set { grdSuministrosConceptos = value; }
         }
 
         #endregion
@@ -219,8 +261,6 @@ namespace GesServicios.controles.forms
             _EstCodigo = Estado;
             //_usrNumero = Usuario;
             _oSuministrosCrud = new UISuministrosCrud(this);
-            //_DomNumero = Domicilio;
-
             InitializeComponent();
         }
 
@@ -299,7 +339,7 @@ namespace GesServicios.controles.forms
         private void btnMedidor_Click(object sender, EventArgs e)
         {
             Medidores oMedidor = new Medidores();
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10100", "10101", "10102", "10104", "10105", "10103");
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10121", "10122", "10123", "0", "0", "10124");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "MED";
             oAdmin.Tipo = Admin.enumTipoForm.Selector;
@@ -323,8 +363,7 @@ namespace GesServicios.controles.forms
 
         private void btnDomicilio_Click(object sender, EventArgs e)
         {
-            Domicilios oDomicilio = new Domicilios();
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("31", "32", "33", "0", "0", "34");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "DOMB";
             oAdmin.Tipo = Admin.enumTipoForm.Selector;
@@ -337,24 +376,7 @@ namespace GesServicios.controles.forms
             if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
             {
                 string id = oFrmAdminMini.striRdoCodigo;
-                oDomicilio = _oSuministrosCrud.CargarDomicilioSum(long.Parse(id));
-                if (oDomicilio.DomCodigo != 0)
-                {
-                    txtDomCodigo.Text = oDomicilio.DomCodigo.ToString();
-                    CallesLocalidadesBus oCalleBus = new CallesLocalidadesBus();
-                    txtCalle.Text = oCalleBus.CallesLocalidadesGetById(oDomicilio.CalNumero).CalDescripcion;
-                    txtCalleNumero.Text = oDomicilio.DomNumero.ToString();
-                    txtDepartamento.Text = oDomicilio.DomDepartamento.ToString();
-                    txtBloque.Text = oDomicilio.DomBloque.ToString();
-                    txtPiso.Text = oDomicilio.DomPiso.ToString();
-                    BarriosLocalidadesBus oBarriosBus = new BarriosLocalidadesBus();
-                    txtBarrio.Text = oBarriosBus.BarriosLocalidadesGetById(oDomicilio.BarNumero).BarDescripcion;
-                    Localidades oLoc = new Localidades();
-                    LocalidadesBus oLocBus = new LocalidadesBus();
-                    oLoc = oLocBus.LocalidadesGetById(oDomicilio.LocNumero);
-                    ProvinciasBus oProvinciasBus = new ProvinciasBus();
-                    txtProvLoc.Text = oLoc.LocDescripcion.Trim() + " / " + oProvinciasBus.ProvinciasGetById(oLoc.PrvCodigo).PrvDescripcion;
-                }
+                _oSuministrosCrud.CargarDomicilioSum(long.Parse(id));
             }
         }
 
@@ -406,6 +428,53 @@ namespace GesServicios.controles.forms
             }
             else
                 cmbRuta.Enabled = false;
+
+        }
+
+        private void btnNuevo1_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+
+            //    long logResultado;
+            //    this.VALIDARFORM = true;
+            //    oUtility.ValidarFormularioEP(this, this, 7);
+            //    if (this.VALIDARFORM && _logCptNumero <= 0)
+            //    {
+            //        Cursor.Current = Cursors.WaitCursor;
+            //        logResultado = _oConceptosCrud.Guardar();
+            //        Cursor.Current = Cursors.Default;
+            //    }
+
+            //    if (_logCptNumero > 0)
+            //    {
+            //        //FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("TCO", "TCO_CODIGO", false);
+            //        //frmbus.ShowDialog();
+
+            //        FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
+            //        Admin oAdmin = new Admin();
+            //        oAdmin.TabCodigo = "TCO";
+            //        oAdmin.Tipo = Admin.enumTipoForm.Selector;
+            //        FormsAuxiliares.frmFormAdminMini frmTcmp = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            //        if (frmTcmp.ShowDialog() == DialogResult.OK)
+            //        {
+            //            string strCodTcmp = frmTcmp.striRdoCodigo;
+            //            Console.WriteLine("--tipocomprobante  -" + strCodTcmp);
+            //            _oConceptosCrud.CargarTipoComprobante(strCodTcmp);
+            //        }
+            //    }
+
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    Cursor.Current = Cursors.Default;
+            //    ManejarError Err = new ManejarError();
+            //    Err.CargarError(ex,
+            //                    e.ToString(),
+            //                    ((Control)sender).Name,
+            //                    this.FindForm().Name);
+            //}
 
         }
 

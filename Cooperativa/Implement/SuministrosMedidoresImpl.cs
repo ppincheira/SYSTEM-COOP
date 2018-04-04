@@ -137,6 +137,36 @@ namespace Implement
                 }
             }
 
+            public SuministrosMedidores SuministrosMedidoresGetBySuministro(long Id)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    Conexion oConexion = new Conexion();
+                    OracleConnection cn = oConexion.getConexion();
+                    cn.Open();
+                    string sqlSelect = "select * from Suministros_Medidores " +
+                         "WHERE SME_FECHA_BAJA IS NULL AND SUM_NUMERO=" + Id.ToString();
+                    cmd = new OracleCommand(sqlSelect, cn);
+                    adapter = new OracleDataAdapter(cmd);
+                    cmd.ExecuteNonQuery();
+                    adapter.Fill(ds);
+                    DataTable dt;
+                    dt = ds.Tables[0];
+                    SuministrosMedidores NewEnt = new SuministrosMedidores();
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow dr = dt.Rows[0];
+                        NewEnt = CargarSuministrosMedidores(dr);
+                    }
+                    return NewEnt;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
             public List<SuministrosMedidores> SuministrosMedidoresGetAll()
             {
                 List<SuministrosMedidores> lstSuministrosMedidores = new List<SuministrosMedidores>();
