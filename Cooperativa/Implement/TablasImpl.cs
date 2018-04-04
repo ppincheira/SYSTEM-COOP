@@ -565,6 +565,57 @@ namespace Implement
 
         }
 
+        public DataTable TablasBusquedaPorCodigo(string tabla, string campos, string criterio, string filterCampos, string filterValores)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                //CAMPOS DE LA TABLA DE LA BASE DE DATOS
+                string[] filterCamp = System.Text.RegularExpressions.Regex.Split(filterCampos, "&");
+                //VALORES CARGADOS EN EL FORMULARIO
+                string[] filterV = System.Text.RegularExpressions.Regex.Split(filterValores, "&");
+
+                cn.Open();
+                string sqlSelect = "SELECT  " + campos + " FROM " + tabla;
+
+                sqlSelect = sqlSelect + " where  1=1";
+                for (int i = 0; i < filterCamp.Length; i++)
+                {
+
+                    if (filterV[i].Contains("%") && filterV[i] != "")
+                    {
+                        string[] filterFecha = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
+
+                        sqlSelect += " AND (" + filterCamp[i] + " >=to_date('" + filterFecha[0] + "','dd/mm/yyyy')";
+                        sqlSelect += " AND ";
+                        sqlSelect += filterCamp[i] + " <=to_date('" + filterFecha[1] + "','dd/mm/yyyy'))";
+                    }
+                    else
+                    {
+                        if (filterCamp[i] != "")
+                            sqlSelect += " AND " + filterCamp[i] + " like '%" + filterV[i] + "%'";
+                    }
+                }
+
+
+                if ((criterio != null) && (criterio != ""))
+                    sqlSelect = sqlSelect + " AND " + criterio;
+
+
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt = new DataTable();
+                return dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
         #endregion

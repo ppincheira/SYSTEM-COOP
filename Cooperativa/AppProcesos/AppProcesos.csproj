@@ -50,6 +50,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FormsAuxiliares">
+      <HintPath>..\Referencias\FormsAuxiliares.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -74,6 +77,8 @@
     <Compile Include="formsAuxiliares\frmCodigoPostal\UICodigoPostalCrud.cs" />
     <Compile Include="formsAuxiliares\frmCrudGrilla\IVistaCrudGrilla.cs" />
     <Compile Include="formsAuxiliares\frmCrudGrilla\UICrudGrilla.cs" />
+    <Compile Include="formsAuxiliares\frmDobleGrillaCrud\IVistaDobleGrillaCrud.cs" />
+    <Compile Include="formsAuxiliares\frmDobleGrillaCrud\UIDobleGrillaCrud.cs" />
     <Compile Include="formsAuxiliares\frmDomicilios\IVistaDomiciliosCrud.cs" />
     <Compile Include="formsAuxiliares\frmDomicilios\UIDomiciliosCrud.cs" />
     <Compile Include="formsAuxiliares\frmLogin\IVistaLogin.cs" />

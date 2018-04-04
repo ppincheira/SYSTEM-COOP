@@ -17,7 +17,7 @@ namespace GesServicios.controles.forms
         UISuministrosCrud _oSuministrosCrud;
         Utility oUtil;
 
-        long _SumNumero, _MedNumero, _OrdenRuta;
+        long _SumNumero, _MedNumero, _DomNumero;
         string _EstCodigo;
 
         #endregion
@@ -65,10 +65,10 @@ namespace GesServicios.controles.forms
             set { dtpFechaAlta.Text = value.ToString(); }
         }
 
-        public string EstCodigo
+        public cmbLista EstCodigo
         {
-            get { return this.chkEstado.Checked ? "H" : "I"; }
-            set { this.chkEstado.Checked = (value == "H"); }
+            get { return cmbEstado; }
+            set { this.cmbEstado = value; }
         }
 
         public float? ConsumoEstimado
@@ -201,6 +201,17 @@ namespace GesServicios.controles.forms
             get { return this.txtLecturaModoMedidor.Text; }
             set { this.txtLecturaModoMedidor.Text=value; }
         }
+        public long numDomicilio
+        {
+            get { return _DomNumero; }
+            set { _DomNumero = value; }
+        }
+        public double? Registrador
+        {
+            get { return txtRegistrador.Text != "" ? double.Parse(txtRegistrador.Text) : 0; }
+            set { txtRegistrador.Text = value.ToString(); }
+        }
+
         #endregion
         public frmSuministrosCrud(long Suministro, string Estado)
         {
@@ -208,7 +219,8 @@ namespace GesServicios.controles.forms
             _EstCodigo = Estado;
             //_usrNumero = Usuario;
             _oSuministrosCrud = new UISuministrosCrud(this);
-            _OrdenRuta = 0;
+            //_DomNumero = Domicilio;
+
             InitializeComponent();
         }
 
@@ -272,9 +284,9 @@ namespace GesServicios.controles.forms
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "CLIE";
             oAdmin.Tipo = Admin.enumTipoForm.Selector;
-            oAdmin.FiltroCampos = "e.emp_cliente&";
-            oAdmin.FiltroOperador = "1&";
-            oAdmin.FiltroValores = "S&";
+            oAdmin.FiltroCampos = "e.emp_cliente&e.est_codigo_cli&";
+            oAdmin.FiltroOperador = "1&1&";
+            oAdmin.FiltroValores = "S&H&";
             frmFormAdmin frmbus = new frmFormAdmin(oAdmin, oPermiso);
             if (frmbus.ShowDialog() == DialogResult.OK)
             {
@@ -294,9 +306,9 @@ namespace GesServicios.controles.forms
             oAdmin.CodigoRegistro = _SumNumero.ToString();
             oAdmin.CodigoEditar = _MedNumero.ToString();
             oAdmin.TabCodigoRegistro = "SUM";
-            oAdmin.FiltroCampos = "TCS_DESCRIPCION&";
-            oAdmin.FiltroOperador = "1&";
-            oAdmin.FiltroValores = cmbTipoConexion.Text + "&";
+            oAdmin.FiltroCampos = "TCS_DESCRIPCION&M.EST_CODIGO&";
+            oAdmin.FiltroOperador = "1&1&";
+            oAdmin.FiltroValores = cmbTipoConexion.Text + "&D&";
             oAdmin.TabCodigo = "MED";
             oAdmin.Tipo = Admin.enumTipoForm.Selector;
             frmFormAdmin frmbus = new frmFormAdmin(oAdmin, oPermiso);
@@ -335,6 +347,13 @@ namespace GesServicios.controles.forms
                     txtDepartamento.Text = oDomicilio.DomDepartamento.ToString();
                     txtBloque.Text = oDomicilio.DomBloque.ToString();
                     txtPiso.Text = oDomicilio.DomPiso.ToString();
+                    BarriosLocalidadesBus oBarriosBus = new BarriosLocalidadesBus();
+                    txtBarrio.Text = oBarriosBus.BarriosLocalidadesGetById(oDomicilio.BarNumero).BarDescripcion;
+                    Localidades oLoc = new Localidades();
+                    LocalidadesBus oLocBus = new LocalidadesBus();
+                    oLoc = oLocBus.LocalidadesGetById(oDomicilio.LocNumero);
+                    ProvinciasBus oProvinciasBus = new ProvinciasBus();
+                    txtProvLoc.Text = oLoc.LocDescripcion.Trim() + " / " + oProvinciasBus.ProvinciasGetById(oLoc.PrvCodigo).PrvDescripcion;
                 }
             }
         }
@@ -361,6 +380,19 @@ namespace GesServicios.controles.forms
 
         private void cmbServicio_Leave(object sender, EventArgs e)
         {
+            Servicios oSer = new Servicios();
+            ServiciosBus oSerBus = new ServiciosBus();
+            oSer = oSerBus.ServiciosGetById(cmbServicio.SelectedValue.ToString());
+            if (oSer.SrvRequiereMedidor=="S")
+            {
+                chkMedido.Checked = true;
+                tabSumnistros.TabPages[0]. Enabled = true;
+            }
+            else
+            {
+                chkMedido.Checked = false;
+                tabSumnistros.TabPages[0].Enabled = false;
+            }
             _oSuministrosCrud.CargarCategorias();
             _oSuministrosCrud.CargarTiposConexiones();
         }
@@ -369,10 +401,10 @@ namespace GesServicios.controles.forms
         {
             if (cmbZona.SelectedIndex > 0)
             {
-                cmbRuta.Enabled = true;
                 _oSuministrosCrud.CargarRutas();
+                cmbRuta.Enabled = cmbRuta.Items.Count > 1;
             }
-           else
+            else
                 cmbRuta.Enabled = false;
 
         }

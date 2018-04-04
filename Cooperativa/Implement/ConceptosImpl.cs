@@ -50,7 +50,12 @@ namespace Implement
                                             " CPT_STOCK_MAXIMO," +
                                             " CPT_STOCK_REPOSICION," +
                                             " TIC_CODIGO, " +
-                                            " EST_CODIGO " +
+                                            " EST_CODIGO, " +
+                                            " CPT_MODIFICABLE_EN_CBTE_IMPORT, " +
+                                            " CPT_MODIFICABLE_EN_CBTE_DESCRI, " +
+                                            " CPT_CODIGO_RECARGO, " +
+                                            " CPT_CODIGO_BONIFICACION, " +
+                                            " CPT_CODIGO_ENVASE_REP " +
                                             " ) " +
                                 "      values(IDTEMP,'"                                          
                                             + oCpt.cptCodigo + "', '"
@@ -73,10 +78,16 @@ namespace Implement
                                             + oCpt.cptStockMaximo + "', '"
                                             + oCpt.cptStockReposicion+ "', '"
                                             + oCpt.ticCodigo + "', '"
-                                            + oCpt.EstCodigo + "') " +
+                                            + oCpt.EstCodigo + "', '"
+                                            + oCpt.cptModificableImporte + "', '"
+                                            + oCpt.cptModificableDescripcion + "', '"
+                                            + oCpt.cptCodigoRecargo + "', '"
+                                            + oCpt.cptCodigoBonificacion + "', '"
+                                            + oCpt.cptCodigoEnvase +
+                                            "') " +
                     " RETURNING IDTEMP INTO :id;" +
                     " END;";
-                Console.WriteLine("query " + query);
+                //Console.WriteLine("query " + query);
                 cmd = new OracleCommand(query, cn);
                 cmd.Parameters.Add(new OracleParameter
                 {
@@ -126,11 +137,16 @@ namespace Implement
                                 "CPT_STOCK_MAXIMO='" + oCpt.cptStockMaximo + "'," +
                                 "CPT_STOCK_REPOSICION='" + oCpt.cptStockReposicion + "'," +
                                 "TIC_CODIGO='" + oCpt.ticCodigo + "'," +
-                                "EST_CODIGO='" + oCpt.EstCodigo + "' " +
+                                "EST_CODIGO='" + oCpt.EstCodigo + "', " +
+                                "CPT_MODIFICABLE_EN_CBTE_IMPORT='" + oCpt.cptModificableImporte + "', " +
+                                "CPT_MODIFICABLE_EN_CBTE_DESCRI='" + oCpt.cptModificableDescripcion + "', " +
+                                "CPT_CODIGO_RECARGO='" + oCpt.cptCodigoRecargo + "', " +
+                                "CPT_CODIGO_BONIFICACION='" + oCpt.cptCodigoBonificacion + "', " +
+                                "CPT_CODIGO_ENVASE_REP='" + oCpt.cptCodigoEnvase + "' " +
                         "WHERE CPT_NUMERO='" + oCpt.cptNumero + "' ";
-                Console.WriteLine("sql");
-                Console.WriteLine("sql  " + sql);
-                Console.WriteLine("sql");
+                //Console.WriteLine("sql");
+                //Console.WriteLine("sql  " + sql);
+                //Console.WriteLine("sql");
                 cmd = new OracleCommand(sql, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
@@ -174,7 +190,7 @@ namespace Implement
                 cn.Open();
                 string sqlSelect = "SELECT * FROM Conceptos " +
                                    "WHERE    CPT_NUMERO=" + Id.ToString();
-                Console.WriteLine("sql");
+                //Console.WriteLine("sql");
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -182,7 +198,7 @@ namespace Implement
                 DataTable dt;
                 dt = ds.Tables[0];
                 Conceptos NewEnt = new Conceptos();
-                Console.WriteLine("sql-"+ sqlSelect);
+                //Console.WriteLine("sql-"+ sqlSelect);
                 if (dt.Rows.Count > 0)
                 {
                     DataRow dr = dt.Rows[0];
@@ -274,6 +290,16 @@ namespace Implement
                     oCpt.ticCodigo = dr["TIC_CODIGO"].ToString();
                 if (dr["EST_CODIGO"].ToString() != "")
                     oCpt.EstCodigo = dr["EST_CODIGO"].ToString();
+                if (dr["CPT_MODIFICABLE_EN_CBTE_IMPORT"].ToString() != "")
+                    oCpt.cptModificableImporte = dr["CPT_MODIFICABLE_EN_CBTE_IMPORT"].ToString();
+                if (dr["CPT_MODIFICABLE_EN_CBTE_DESCRI"].ToString() != "")
+                    oCpt.cptModificableDescripcion = dr["CPT_MODIFICABLE_EN_CBTE_DESCRI"].ToString();
+                if (dr["CPT_CODIGO_RECARGO"].ToString() != "")
+                    oCpt.cptCodigoRecargo = long.Parse(dr["CPT_CODIGO_RECARGO"].ToString());
+                if (dr["CPT_CODIGO_BONIFICACION"].ToString() != "")
+                    oCpt.cptCodigoBonificacion = long.Parse(dr["CPT_CODIGO_BONIFICACION"].ToString());
+                if (dr["CPT_CODIGO_ENVASE_REP"].ToString() != "")
+                    oCpt.cptCodigoEnvase = long.Parse(dr["CPT_CODIGO_ENVASE_REP"].ToString());
 
                 return oCpt;
             }

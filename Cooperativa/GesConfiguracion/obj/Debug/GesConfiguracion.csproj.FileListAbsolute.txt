@@ -3,7 +3,6 @@ D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Ges
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\AppProcesos.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Business.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Controles.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\FormsAuxiliares.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Model.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Service.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Implement.dll

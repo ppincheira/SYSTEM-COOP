@@ -54,6 +54,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FormsAuxiliares, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\FormsAuxiliares.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -107,6 +111,12 @@
     </Compile>
     <Compile Include="frmCrudGrilla.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDobleGrillaCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDobleGrillaCrud.designer.cs">
+      <DependentUpon>frmDobleGrillaCrud.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDomiciliosCrud.cs">
       <SubType>Form</SubType>
@@ -180,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrudGrilla.resx">
       <DependentUpon>frmCrudGrilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDobleGrillaCrud.resx">
+      <DependentUpon>frmDobleGrillaCrud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDomiciliosCrud.resx">
       <DependentUpon>frmDomiciliosCrud.cs</DependentUpon>

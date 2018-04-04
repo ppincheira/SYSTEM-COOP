@@ -30,10 +30,22 @@ namespace Business
             return oGruposDetallesImpl.GruposDetallesGetById(Id);
         }
 
+        public bool GruposDetallesTipoDelete(string CodReg, string CodTipo)
+        {
+            GruposDetallesImpl oGruposDetallesImpl = new GruposDetallesImpl();
+            return oGruposDetallesImpl.GruposDetallesTipoDelete(CodReg, CodTipo);
+        }
+
         public GruposDetalles GruposDetallesGetByCodReg(string Id)
         {
             GruposDetallesImpl oGruposDetallesImpl = new GruposDetallesImpl();
             return oGruposDetallesImpl.GruposDetallesGetByCodReg(Id);
+        }
+
+        public GruposDetalles GruposDetallesGetByTipo(string CodReg,string CodTipo)
+        {
+            GruposDetallesImpl oGruposDetallesImpl = new GruposDetallesImpl();
+            return oGruposDetallesImpl.GruposDetallesGetByTipo(CodReg,CodTipo);
         }
 
         public List<GruposDetalles> GruposDetallesGetAll()

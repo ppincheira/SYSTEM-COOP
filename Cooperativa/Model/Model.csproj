@@ -86,6 +86,7 @@
     <Compile Include="BarriosLocalidades.cs" />
     <Compile Include="CallesLocalidades.cs" />
     <Compile Include="Conceptos.cs" />
+    <Compile Include="ConceptosFabricados.cs" />
     <Compile Include="ConceptosTiposComprobantes.cs" />
     <Compile Include="ConceptosUnidadesMedidas.cs" />
     <Compile Include="LecturasModosConceptos.cs" />
@@ -116,7 +117,6 @@
     <Compile Include="Help.cs" />
     <Compile Include="Localidades.cs" />
     <Compile Include="Medidores.cs" />
-    <Compile Include="MedidoresSuministros.cs" />
     <Compile Include="MenuItems.cs" />
     <Compile Include="MenuItemsUsuarios.cs" />
     <Compile Include="Observaciones.cs" />
@@ -128,7 +128,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provincias.cs" />
     <Compile Include="Roles.cs" />
-    <Compile Include="RolesFuncionalidades.cs" />
+    <Compile Include="FuncionalidadesRoles.cs" />
     <Compile Include="RolesMenuItems.cs" />
     <Compile Include="Sectores.cs" />
     <Compile Include="Servicios.cs" />
@@ -137,6 +137,7 @@
     <Compile Include="ServiciosZonas.cs" />
     <Compile Include="Subsistema.cs" />
     <Compile Include="Suministros.cs" />
+    <Compile Include="SuministrosMedidores.cs" />
     <Compile Include="Tablas.cs" />
     <Compile Include="Telefonos.cs" />
     <Compile Include="TelefonosEntidades.cs" />

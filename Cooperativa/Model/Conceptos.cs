@@ -30,5 +30,11 @@ namespace Model
         public virtual decimal? cptStockReposicion { get; set; }
         public virtual string ticCodigo { get; set; }
         public virtual string EstCodigo { get; set; }
+
+        public virtual string cptModificableImporte { get; set; }
+        public virtual string cptModificableDescripcion { get; set; }
+        public virtual long? cptCodigoRecargo { get; set; }
+        public virtual long? cptCodigoBonificacion { get; set; }
+        public virtual long? cptCodigoEnvase { get; set; }
     }
 }

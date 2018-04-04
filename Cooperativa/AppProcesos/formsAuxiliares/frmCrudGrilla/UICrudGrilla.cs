@@ -167,6 +167,22 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                                         cmb.ValueMember = "SbsCodigo";
                                         break;
                                     }
+                                case "LOCALIDADES":
+                                    {
+                                        LocalidadesBus oLocalidadesBus = new LocalidadesBus();
+                                        cmb.DataSource = oLocalidadesBus.LocalidadesGetAll();
+                                        cmb.DisplayMember = "LocDescripcion";
+                                        cmb.ValueMember = "LocNumero";
+                                        break;
+                                    }
+                                case "TIPOS_BARRIOS_LOCALIDADES":
+                                    {
+                                        TiposBarriosLocalidadesBus oLocalidadesBus = new TiposBarriosLocalidadesBus();
+                                        cmb.DataSource = oLocalidadesBus.TiposBarriosLocalidadesGetAll();
+                                        cmb.DisplayMember = "TblDescripcion";
+                                        cmb.ValueMember = "TblCodigo";
+                                        break;
+                                    }
                                 default: break;
                             }
                             //AGREGA EL LA NUEVA CELDAD
@@ -451,8 +467,16 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                                                 datosOK = valoresCampos[pos].Length > 0 || oCampo.ItemArray[8].ToString() == "Y";
                                         }
                                     }
-                                    if (datosOK && tablasGrd.TablaActualizaGrid(otabla.TabNombre, nombreCampos, valoresCampos, columnaClave + "='" + valorClave + "'", "I"))
+                                    if (claveSecuencia)
+                                    {
+                                        if (datosOK && tablasGrd.TablaActualizaGrid(otabla.TabNombre, nombreCampos, valoresCampos, columnaClave + "='" + valorClave + "'", "IN"))
+                                            row.Cells[_vista.grilla.ColumnCount - 1].Value = "0";
+                                    }
+                                    else
+                                    { 
+                                        if (datosOK && tablasGrd.TablaActualizaGrid(otabla.TabNombre, nombreCampos, valoresCampos, columnaClave + "='" + valorClave + "'", "I"))
                                         row.Cells[_vista.grilla.ColumnCount - 1].Value = "0";
+                                    }
                                     break;
                                 }
                         }

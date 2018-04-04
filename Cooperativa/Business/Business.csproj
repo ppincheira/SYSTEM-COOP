@@ -84,8 +84,10 @@
     <Compile Include="CallesLocalidadesBus.cs" />
     <Compile Include="CodigosPostalesLocalidadesBus.cs" />
     <Compile Include="ConceptosBus.cs" />
+    <Compile Include="ConceptosFabricadosBus.cs" />
     <Compile Include="ConceptosTiposComprobantesBus.cs" />
     <Compile Include="ConceptosUnidadesMedidasBus.cs" />
+    <Compile Include="FuncionalidadesRolesBus.cs" />
     <Compile Include="LecturasConceptosBus.cs" />
     <Compile Include="DetallesAuditoriaBus.cs" />
     <Compile Include="DetallesColumnasTablasBus.cs" />
@@ -114,7 +116,7 @@
     <Compile Include="GruposDetallesBus.cs" />
     <Compile Include="LocalidadesBus.cs" />
     <Compile Include="MedidoresBus.cs" />
-    <Compile Include="MedidoresSuministrosBus.cs" />
+    <Compile Include="SuministrosMedidoresBus.cs" />
     <Compile Include="MenuItemsBus.cs" />
     <Compile Include="ObservacionesBus.cs" />
     <Compile Include="PaisesBus.cs" />
