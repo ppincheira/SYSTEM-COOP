@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFormAdminMini));
             this.gpbGrupo4 = new Controles.contenedores.gpbGrupo();
+            this.btnAceptar = new Controles.buttons.btnAceptar();
             this.lblCantidad = new Controles.labels.lblEtiqueta();
             this.dgBusqueda = new Controles.datos.grdGrillaAdmin();
             this.tabAdmin = new Controles.contenedores.tabSolapas();
@@ -67,7 +68,6 @@
             this.btnAgregar = new Controles.buttons.btnGeneral();
             this.cmbOpcionesA = new Controles.datos.cmbLista();
             this.cmbBuscarA = new Controles.datos.cmbLista();
-            this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gpbGrupo4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBusqueda)).BeginInit();
             this.tabAdmin.SuspendLayout();
@@ -93,6 +93,18 @@
             this.gpbGrupo4.TabIndex = 10;
             this.gpbGrupo4.TabStop = false;
             this.gpbGrupo4.Text = "Datos";
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.Location = new System.Drawing.Point(688, 362);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(93, 43);
+            this.btnAceptar.TabIndex = 3;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Visible = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // lblCantidad
             // 
@@ -321,6 +333,7 @@
             this.btnEditar.Size = new System.Drawing.Size(53, 49);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -546,18 +559,6 @@
             this.cmbBuscarA.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbBuscarA.Size = new System.Drawing.Size(235, 24);
             this.cmbBuscarA.TabIndex = 20;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
-            this.btnAceptar.Location = new System.Drawing.Point(688, 362);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(93, 43);
-            this.btnAceptar.TabIndex = 3;
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Visible = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // frmFormAdminMini
             // 

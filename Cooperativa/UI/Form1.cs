@@ -98,12 +98,19 @@ namespace UI
         private void btnPersonalizado4_Click(object sender, EventArgs e)
         {
 
+            //FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            //Admin oAdmin = new Admin();
+            //oAdmin.TabCodigo = "CALB";
+            //oAdmin.Tipo = Admin.enumTipoForm.SelectorMultiSeleccion;
+            //FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            //frmbus.ShowDialog();
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "CALB";
             oAdmin.Tipo = Admin.enumTipoForm.SelectorMultiSeleccion;
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.ShowDialog();
+
         }
 
         private void btnPersonalizado5_Click(object sender, EventArgs e)

@@ -16,9 +16,7 @@ namespace AppProcesos.gesServicios.frmLecturasModosCrud
         cmbLista srvCodigo { get; set; }                           //N
         int usrCodigo { get; set; }                                //Y
         string estCodigo { get; set; }                        
-        grdGrillaEdit conceptos { get; set; }
-
-        void cargarGrilla(LecturasConceptos olc, int rows);
+        grdGrillaEdit grdiLecturasConceptos { get; set; }
 
     }
 }

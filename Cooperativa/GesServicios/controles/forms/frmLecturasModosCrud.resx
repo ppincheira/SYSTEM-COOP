@@ -117,20 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnCancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAN8SURBVGhD7ZlL
+        0wAADdMBvdUcagAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAN8SURBVGhD7ZlL
         b9NAEMd7QLwk+AoICcSjHJAar5MWicR2IvXAkW9Ar+UIpxY48LpQngLEN2iB0gMHVCrgDOIAiMcNjrQl
         ahwnaZJmmYnGVbu7duLYcRopP+l/iLwz8x9n117bQwMG7AB4Or2rkEmMOQabtk32omiyH0WL/dsmQ//u
         GPpzx9SnCoY2ijEU3jtKmaRuG/pTMLwK4gG1As0+dkxNo3TxUTISDAwsCYY6l8EWnYw+Qum7Bz83sh+m
@@ -152,7 +143,7 @@
   <data name="btnAceptar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKoSURBVGhD1Zmx
+        0wAADdMBvdUcagAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKoSURBVGhD1Zmx
         ktMwEIav4g1oeQGGBwHiuaRIRUVBT8XwCBQM8AoM3RXJDbSkSQdDzxXM8A5pqILZz2cztvJbVhQpoOKb
         OW+8q3/P0mplX9R1XTTSWBLSWBLSGEP1sbpfrRYvq/X8w2w93xg3xq6Fvzf81txj96oYMUhjKI+uLx88
         Xi3emLAfJrA+BnzwJYaKHYo0TlF9qu7NVov3JmTvCotgTyxiqrGmkMYxllfLOzYFXs2uL38JIadhMYnN

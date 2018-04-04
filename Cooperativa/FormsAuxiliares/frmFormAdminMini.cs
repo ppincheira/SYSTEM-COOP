@@ -679,7 +679,7 @@ namespace FormsAuxiliares
                     break;
 
                 case "LEM":
-                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(0, "");
+                    frmLecturasModosCrud oFrmLemCrud = new frmLecturasModosCrud(0, "I");
                     oFrmLemCrud._oFuncionalidad = _oPermiso;
                     if (oFrmLemCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
@@ -787,7 +787,7 @@ namespace FormsAuxiliares
                     break;
                 case "LEM":
                     long idLem = Convert.ToInt64(row.Cells[0].Value);
-                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(idLem, "B");
+                    frmLecturasModosCrud oFrmLemCrud = new frmLecturasModosCrud(idLem, "B");
                     _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "USUS":
@@ -866,7 +866,7 @@ namespace FormsAuxiliares
                     break;
                 case "LEM":
                     long idLem = Convert.ToInt64(row.Cells[0].Value);
-                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(idLem, "E");
+                    frmLecturasModosCrud oFrmLemCrud = new frmLecturasModosCrud(idLem, "E");
                     oFrmLemCrud.bloquearFecha();
                     if (oFrmLemCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
@@ -894,5 +894,7 @@ namespace FormsAuxiliares
             _strDatosSeleccionados = _oFormAdmin.GuardarSeleccionados();
             Close();
         }
+
+     
     }
 }
