@@ -76,6 +76,12 @@ namespace GesServicios.controles.forms
             set { TextBoxClase.Text = value.ToString(); }
         }
 
+        public decimal? Registrador
+        {
+            get { return string.IsNullOrEmpty(TextBoxRegistrador.Text) ? 0 : decimal.Parse(TextBoxRegistrador.Text); }
+            set { TextBoxRegistrador.Text = value.ToString(); }
+        }
+
         public cmbLista TipoContador
         {
             get { return this.cmbTipoContador; }

@@ -31,3 +31,36 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\U
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.exe
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\UI.exe.config
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\UI.exe
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\UI.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\Business.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\Controles.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\FormsAuxiliares.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\GesConfiguracion.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\GesServicios.exe
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\Model.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\Implement.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\AppProcesos.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\Service.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\GesSeguridad.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\Oracle.DataAccess.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\Business.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\Controles.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\FormsAuxiliares.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\GesConfiguracion.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\GesServicios.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\Model.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\Implement.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\AppProcesos.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\Service.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\GesSeguridad.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\obj\Debug\UI.Form1.resources
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\obj\Debug\UI.exe
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\UI\obj\Debug\UI.pdb

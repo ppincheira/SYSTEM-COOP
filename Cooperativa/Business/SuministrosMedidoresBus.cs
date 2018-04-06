@@ -30,12 +30,6 @@ namespace Business
             return oSuministrosMedidoresImpl.SuministrosMedidoresGetById(Id);
         }
 
-        public SuministrosMedidores SuministrosMedidoresGetBySuministro(long Id)
-        {
-            SuministrosMedidoresImpl oSuministrosMedidoresImpl = new SuministrosMedidoresImpl();
-            return oSuministrosMedidoresImpl.SuministrosMedidoresGetBySuministro(Id);
-        }
-
         public List<SuministrosMedidores> SuministrosMedidoresGetAll()
         {
             SuministrosMedidoresImpl oSuministrosMedidoresImpl = new SuministrosMedidoresImpl();

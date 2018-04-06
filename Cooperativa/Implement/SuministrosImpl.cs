@@ -37,7 +37,7 @@ namespace Implement
                     "values(IDTEMP,'" + oSum.SrvCodigo + "', '" + oSum.TcsCodigo + "'," + oSum.ScaNumero + "," +
                     oSum.SumOrdenRuta + "," + oSum.EmpNumero + ",'" + oSum.SumFechaAlta.ToString("dd/MM/yyyy") + "','" +
                     oSum.EstCodigo + "'," + oSum.SumConsumoEstimado + "," + oSum.SumVoltaje + ",'" +
-                    oSum.SumConexion + "'," + oSum.SumPotenciaL1 + "," + oSum.SumPotenciaL2 + "," +
+                    oSum.SumConexion + "'," + oSum.SumPotenciaL1 + "," +
                     oSum.SumPotenciaL3 + "," + oSum.SumRegistrador + ",'"  + oSum.SumPermiteCorte + "', '" +
                     oSum.SumMedido + "'," + oSum.SruNumero + "," + oSum.SzoNumero + ", '"+
                     oSum.SumPermiteFactura+"', '"+DateTime.Now.ToString("dd/MM/yyyy") +"') RETURNING IDTEMP INTO :id;" +
@@ -202,7 +202,7 @@ namespace Implement
                 oObjeto.TcsCodigo = dr["TCS_CODIGO"].ToString();
                 oObjeto.ScaNumero = long.Parse(dr["SCA_NUMERO"].ToString());
                 if (dr["SUM_ORDEN_RUTA"].ToString() != "")
-                    oObjeto.SumOrdenRuta = long.Parse(dr["SUM_ORDEN_RUTA"].ToString());
+                    oObjeto.SumNumero = long.Parse(dr["SUM_ORDEN_RUTA"].ToString());
                 if (dr["EMP_NUMERO"].ToString() != "")
                     oObjeto.EmpNumero = long.Parse(dr["EMP_NUMERO"].ToString());
                 if (dr["SUM_FECHA_ALTA"].ToString() != "")
@@ -225,8 +225,6 @@ namespace Implement
                 oObjeto.SumMedido = dr["SUM_MEDIDO"].ToString();
                 oObjeto.SruNumero = long.Parse(dr["SRU_NUMERO"].ToString());
                 oObjeto.SzoNumero = long.Parse(dr["SZO_NUMERO"].ToString());
-                if (dr["SUM_FECHA_CARGA"].ToString() != "")
-                    oObjeto.SumFechaCarga =DateTime.Parse(dr["SUM_FECHA_CARGA"].ToString());
                 return oObjeto;
             }
             catch (Exception ex)

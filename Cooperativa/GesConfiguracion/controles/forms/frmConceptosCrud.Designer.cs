@@ -139,84 +139,6 @@
             this.gbDatos.TabIndex = 47;
             this.gbDatos.TabStop = false;
             // 
-<<<<<<< HEAD
-            // btnTiposComprobantesB
-            // 
-            this.btnTiposComprobantesB.Location = new System.Drawing.Point(483, 99);
-            this.btnTiposComprobantesB.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTiposComprobantesB.Name = "btnTiposComprobantesB";
-            this.btnTiposComprobantesB.Size = new System.Drawing.Size(21, 19);
-            this.btnTiposComprobantesB.TabIndex = 63;
-            this.btnTiposComprobantesB.Text = "-";
-            this.btnTiposComprobantesB.UseVisualStyleBackColor = true;
-            this.btnTiposComprobantesB.Click += new System.EventHandler(this.btnTiposComprobantesB_Click);
-            // 
-            // btnTiposComprobantesA
-            // 
-            this.btnTiposComprobantesA.Location = new System.Drawing.Point(779, 99);
-            this.btnTiposComprobantesA.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTiposComprobantesA.Name = "btnTiposComprobantesA";
-            this.btnTiposComprobantesA.Size = new System.Drawing.Size(21, 19);
-            this.btnTiposComprobantesA.TabIndex = 8;
-            this.btnTiposComprobantesA.Text = "+";
-            this.btnTiposComprobantesA.UseVisualStyleBackColor = true;
-            this.btnTiposComprobantesA.Click += new System.EventHandler(this.btnTiposComprobantesA_Click);
-            // 
-            // lblEtiqueta3
-            // 
-            this.lblEtiqueta3.AutoSize = true;
-            this.lblEtiqueta3.Location = new System.Drawing.Point(589, 99);
-            this.lblEtiqueta3.Name = "lblEtiqueta3";
-            this.lblEtiqueta3.Size = new System.Drawing.Size(104, 13);
-            this.lblEtiqueta3.TabIndex = 62;
-            this.lblEtiqueta3.Text = "Tipos Comprobantes";
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(484, 329);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
-            this.lblCantidad.TabIndex = 47;
-            this.lblCantidad.Text = "Cantidad";
-            // 
-            // grdTiposComprobantes
-            // 
-            this.grdTiposComprobantes.AllowUserToAddRows = false;
-            this.grdTiposComprobantes.AllowUserToDeleteRows = false;
-            this.grdTiposComprobantes.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdTiposComprobantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.grdTiposComprobantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdTiposComprobantes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.grdTiposComprobantes.Location = new System.Drawing.Point(483, 123);
-            this.grdTiposComprobantes.Name = "grdTiposComprobantes";
-            this.grdTiposComprobantes.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdTiposComprobantes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.grdTiposComprobantes.Size = new System.Drawing.Size(317, 201);
-            this.grdTiposComprobantes.TabIndex = 45;
-            this.grdTiposComprobantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTiposComprobantes_CellContentClick);
-=======
             // gpbImagen
             // 
             this.gpbImagen.Controls.Add(this.btnCargarImagen);
@@ -248,7 +170,6 @@
             this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagen.TabIndex = 0;
             this.pbxImagen.TabStop = false;
->>>>>>> c772d18c41e3b1c278b09211b82b7932c85364f3
             // 
             // gesGroup2
             // 

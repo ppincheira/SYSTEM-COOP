@@ -6,3 +6,7 @@ C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Model\bin\Debu
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Model\bin\Debug\Model.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Model\obj\Debug\Model.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\Model\bin\Debug\Model.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\Model\bin\Debug\Model.pdb
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\Model\obj\Debug\Model.dll
+D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\Model\obj\Debug\Model.pdb

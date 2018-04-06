@@ -15,6 +15,7 @@ namespace AppProcesos.gesServicios.frmMedidoresModelosCrud
         int? KWVueltas { get; set; }
         string Amperaje { get; set; }
         int? Clase { get; set; }
+        decimal? Registrador { get; set; }
         Controles.datos.cmbLista TipoContador { get; set; }
         Controles.datos.cmbLista TipoConexion { get; set; }
         Controles.datos.cmbLista FabNumero { get; set; }

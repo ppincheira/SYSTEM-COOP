@@ -31,12 +31,12 @@ namespace Implement
                         " insert into Medidores_Modelos" +
                         "(MMO_CODIGO, MMO_DESCRIPCION, MMO_DESCRIPCION_CORTA, MMO_DIGITOS, " +
                         "MMO_DECIMALES, MMO_CANT_HILOS, MMO_KW_VUELTAS, MMO_AMPERAJE, " +
-                        "MMO_CLASE, MMO_TIPO_CONTADOR, TCS_CODIGO, " +
+                        "MMO_CLASE, MMO_REGISTRADOR, MMO_TIPO_CONTADOR, TCS_CODIGO, " +
                         "FAB_NUMERO, TME_CODIGO, USR_NUMERO, MMO_FECHA_CARGA, EST_CODIGO) " +
                         "values(IDTEMP,'" + oMMO.MMoDescripcion + "','" +
                         oMMO.MMoDescripcionCorta + "'," + oMMO.MMoDigitos + "," +
                         oMMO.MMoDecimales + "," + oMMO.MMoCantHilos + "," + oMMO.MMoKwVueltas + ",'" +
-                        oMMO.MMoAmperaje + "'," + oMMO.MMoClase + ",'" +
+                        oMMO.MMoAmperaje + "'," + oMMO.MMoClase + "," + oMMO.MMoRegistrador + ",'" +
                         oMMO.MMoTipoContador + "','" + oMMO.TCSCodigo + "'," +
                         oMMO.FabNumero + "," + oMMO.TmeCodigo + "," + oMMO.UsrNumero + ",'" +
                         oMMO.MMoFechaCarga.ToString("dd/MM/yyyy") + "','" + oMMO.EstCodigo + "') RETURNING IDTEMP INTO :id;" +
@@ -77,6 +77,7 @@ namespace Implement
                     ", MMO_KW_VUELTAS=" + oMMO.MMoKwVueltas +
                     ", MMO_AMPERAJE='" + oMMO.MMoAmperaje +
                     "', MMO_CLASE=" + oMMO.MMoClase +
+                    ", MMO_REGISTRADOR=" + oMMO.MMoRegistrador +
                     ", MMO_TIPO_CONTADOR='" + oMMO.MMoTipoContador +
                     "', TCS_CODIGO='" + oMMO.TCSCodigo +
                     "', FAB_NUMERO=" + oMMO.FabNumero +
@@ -268,6 +269,8 @@ namespace Implement
                     oObjeto.MMoAmperaje = dr["MMO_AMPERAJE"].ToString();
                     if (dr["MMO_CLASE"].ToString() != "")
                         oObjeto.MMoClase = int.Parse(dr["MMO_CLASE"].ToString());
+                    if (dr["MMO_REGISTRADOR"].ToString() != "")
+                        oObjeto.MMoRegistrador = decimal.Parse(dr["MMO_REGISTRADOR"].ToString());
                     oObjeto.MMoTipoContador = dr["MMO_TIPO_CONTADOR"].ToString();
                     oObjeto.TCSCodigo = dr["TCS_CODIGO"].ToString();
                     oObjeto.FabNumero = int.Parse(dr["FAB_NUMERO"].ToString());

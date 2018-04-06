@@ -120,22 +120,6 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnAceptar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-<<<<<<< HEAD
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        1QAADdUBPdZY8QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKoSURBVGhD1Zmx
-        ktMwEIav4g1oeQGGBwHiuaRIRUVBT8XwCBQM8AoM3RXJDbSkSQdDzxXM8A5pqILZz2cztvJbVhQpoOKb
-        OW+8q3/P0mplX9R1XTTSWBLSWBLSGEP1sbpfrRYvq/X8w2w93xg3xq6Fvzf81txj96oYMUhjKI+uLx88
-        Xi3emLAfJrA+BnzwJYaKHYo0TlF9qu7NVov3JmTvCotgTyxiqrGmkMYxllfLOzYFXs2uL38JIadhMYnN
-        GGrsMaRR8fBqedcG2h4MnJ4tYykNCml0aeb6ev5TDJYFxgpdG9LYh0AWlEoiB8vILiQJaezgUZ7zP+/C
-        2FPTSRqBxWRBzjHnp9j6FrY0QlNtdMCzgxalEaSxqfM5SmUslNiRfeLAAO0mpYNl4unnJ9L+F9OktB4Y
-        2qqTYocN5sWXZ/XX32/r19+fy99b9qoqDS6A/kQ4Z6MT/61+1+BLAm2u3sEFxDRmsbjigeux6YQ2V+/g
-        gjZXOeZgTDx2dX+H24oPE7BeXTmlJlY8oLGveZjA7WFEOqbiFPGAxr7mQQJ2Aycp6ZiCU8W3bPqa3QQ4
-        +iknyWTt7pFIPNz0NbsJBHedlLtQAQnFw66vOSoBxIcKSSwevAlMTiGmTaigDOLBO4WCFnGIsEziYXwR
-        H1NGfQIziveX0WM3sjGhucSDfyOLaCVUEn1SigdvKwE0TMrRx1gSycVPNXMQ2067SaQWD0Ht9CkHmi6J
-        HOKNsAMNnHKkRHgG8eFHSij+UA+8ypDB/gFoURpBGqH4F1tQ9KvFjrYqlflyt4NA53wSjBUiHqRRwaO0
-        4GV+4OhgMTXVKUeJpVRabN+CVUjjFM0+cbvZlfWRz6VZG9afxDSA+OAbOtfHkMYYaHPp1TlwmMAyPnT/
-        D0hjSUhjOdQXfwAnlTUIEVs8kgAAAABJRU5ErkJggg==
-=======
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
         HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA3UAAAN1AHvkboVAAAABmJLR0QA/wD/AP+gvaeTAAAA
         GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAqhJREFUaEPVmbGS0zAQhq/iDWh5AYYH
@@ -151,7 +135,6 @@
         4UdKKP5QD7zKkMH+AWhRGkEaofgXW1D0q8WOtiqV+XK3g0DnfBKMFSIepFHBo7TgZX7g6GAxNdUpR4ml
         VFps34JVSOMUzT5xu9mV9ZHPpVkb1p/ENID44Bs618eQxhhoc+nVOXCYwDI+dP8PSGNJSGM51Bd/ACeV
         NQgRWzySAAAAAElFTkSuQmCC
->>>>>>> c772d18c41e3b1c278b09211b82b7932c85364f3
 </value>
   </data>
   <data name="btnEliminar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
