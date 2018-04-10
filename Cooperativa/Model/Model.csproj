@@ -137,6 +137,7 @@
     <Compile Include="ServiciosZonas.cs" />
     <Compile Include="Subsistema.cs" />
     <Compile Include="Suministros.cs" />
+    <Compile Include="SuministrosConceptos.cs" />
     <Compile Include="SuministrosMedidores.cs" />
     <Compile Include="Tablas.cs" />
     <Compile Include="Telefonos.cs" />

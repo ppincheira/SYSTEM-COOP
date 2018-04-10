@@ -109,6 +109,7 @@
     <Compile Include="FuncionalidadesBus.cs" />
     <Compile Include="FuncionalidadesFormulariosBus.cs" />
     <Compile Include="FuncionalidadesUsuariosBus.cs" />
+    <Compile Include="SuministrosConceptosBus.cs" />
     <Compile Include="TelefonosEntidadesBus.cs" />
     <Compile Include="TiposComprobanteBus.cs" />
     <Compile Include="TiposConceptosBus.cs" />

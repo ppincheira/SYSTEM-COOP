@@ -1,22 +1,3 @@
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\AppProcesos.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\AppProcesos.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Business.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Controles.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\FormsAuxiliares.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Model.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Service.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Implement.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Oracle.DataAccess.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Business.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Controles.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Model.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Service.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Implement.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.csprojResolveAssemblyReference.cache
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\AppProcesos.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\AppProcesos.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Business.dll
@@ -52,3 +33,22 @@ D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\A
 D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\AppProcesos\obj\Debug\AppProcesos.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\AppProcesos\obj\Debug\AppProcesos.dll
 D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\AppProcesos\obj\Debug\AppProcesos.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\AppProcesos.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\AppProcesos.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Business.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Controles.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\FormsAuxiliares.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Model.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Service.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Implement.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Oracle.DataAccess.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Business.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Controles.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Model.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Service.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\Implement.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\AppProcesos\obj\Debug\AppProcesos.pdb

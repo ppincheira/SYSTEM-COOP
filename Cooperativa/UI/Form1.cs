@@ -328,5 +328,14 @@ namespace UI
             FormsAuxiliares.frmDobleGrillaCrud aux = new FormsAuxiliares.frmDobleGrillaCrud("USR", "FUN", "FUNCIONALIDADES_USUARIOS", "USR_NUMERO&USR_NOMBRE&USR_BLOQUEADO", "FUN_CODIGO&FUN_DESCRIPCION&FFO_CODIGO");
             aux.ShowDialog();
         }
+
+        private void btnPersonalizado9_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10101", "10102", "10103", "10105", "10106", "10104");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "MED";
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+            frmbus.ShowDialog();
+        }
     }
 }

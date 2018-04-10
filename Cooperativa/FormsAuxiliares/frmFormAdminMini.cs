@@ -689,7 +689,7 @@ namespace FormsAuxiliares
                     if (ofrmUsu.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
-                case "CPTS":
+                case "CPT":
                     frmConceptosCrud oFrmCptCrud = new frmConceptosCrud(0, "I");
                     if (oFrmCptCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);

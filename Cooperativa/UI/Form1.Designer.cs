@@ -179,6 +179,7 @@
             this.btnPersonalizado9.TabIndex = 7;
             this.btnPersonalizado9.Text = "MEDIDORES";
             this.btnPersonalizado9.UseVisualStyleBackColor = true;
+            this.btnPersonalizado9.Click += new System.EventHandler(this.btnPersonalizado9_Click);
             // 
             // btnPersonalizado5
             // 

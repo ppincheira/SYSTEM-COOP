@@ -761,7 +761,7 @@
             // 
             // cmbRubro
             // 
-            this.cmbRubro.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbRubro.BackColor = System.Drawing.Color.Red;
             this.cmbRubro.FormattingEnabled = true;
             this.cmbRubro.Location = new System.Drawing.Point(115, 23);
             this.cmbRubro.Name = "cmbRubro";

@@ -1,11 +1,3 @@
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Implement.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Implement.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Model.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Oracle.DataAccess.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Model.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAssemblyReference.cache
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Implement.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Implement.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Model.dll
@@ -22,3 +14,11 @@ D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\I
 D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\Implement\obj\Debug\Implement.dll
 D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\Implement\obj\Debug\Implement.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Implement.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Implement.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Model.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Oracle.DataAccess.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\bin\Debug\Model.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.dll
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Implement\obj\Debug\Implement.pdb
