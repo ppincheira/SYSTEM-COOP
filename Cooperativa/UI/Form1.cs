@@ -161,11 +161,13 @@ namespace UI
 
         private void btnFabricantes_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "FAB";
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
-            frmbus.Text = "Administrador Fabricantes";
+            //FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            //Admin oAdmin = new Admin();
+            //oAdmin.TabCodigo = "FAB";
+            //FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            //frmbus.Text = "Administrador Fabricantes";
+            //frmbus.ShowDialog();
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("FAB", "CODIGO", true);
             frmbus.ShowDialog();
         }
 

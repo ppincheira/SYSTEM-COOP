@@ -78,10 +78,14 @@
             this.chkFraccionado = new Controles.datos.chkBox();
             this.chkControlaStock = new Controles.datos.chkBox();
             this.tabPageTComprobantes = new System.Windows.Forms.TabPage();
+            this.btnEliminarTipoCmp = new Controles.buttons.btnEliminar();
+            this.btnNuevoTipoCmp = new Controles.buttons.btnNuevo();
             this.grdTiposComprobantes = new Controles.datos.grdGrillaEdit();
             this.lblCantidadComprobantes = new Controles.labels.lblEtiqueta();
             this.tabPageComponentes = new System.Windows.Forms.TabPage();
             this.gesFabricado = new Controles.contenedores.gesGroup();
+            this.btnEliminarFabricado = new Controles.buttons.btnEliminar();
+            this.btnNuevoFabricado = new Controles.buttons.btnNuevo();
             this.lblCantidadComponentes = new Controles.labels.lblEtiqueta();
             this.grdFabricado = new Controles.datos.grdGrillaEdit();
             this.chkFabricado = new Controles.datos.chkBox();
@@ -659,6 +663,8 @@
             // 
             // tabPageTComprobantes
             // 
+            this.tabPageTComprobantes.Controls.Add(this.btnEliminarTipoCmp);
+            this.tabPageTComprobantes.Controls.Add(this.btnNuevoTipoCmp);
             this.tabPageTComprobantes.Controls.Add(this.grdTiposComprobantes);
             this.tabPageTComprobantes.Controls.Add(this.lblCantidadComprobantes);
             this.tabPageTComprobantes.Location = new System.Drawing.Point(4, 22);
@@ -669,15 +675,36 @@
             this.tabPageTComprobantes.Text = "Tipos Comprobantes";
             this.tabPageTComprobantes.UseVisualStyleBackColor = true;
             // 
+            // btnEliminarTipoCmp
+            // 
+            this.btnEliminarTipoCmp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarTipoCmp.BackgroundImage")));
+            this.btnEliminarTipoCmp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarTipoCmp.Location = new System.Drawing.Point(523, 218);
+            this.btnEliminarTipoCmp.Name = "btnEliminarTipoCmp";
+            this.btnEliminarTipoCmp.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminarTipoCmp.TabIndex = 2;
+            this.btnEliminarTipoCmp.UseVisualStyleBackColor = false;
+            this.btnEliminarTipoCmp.Click += new System.EventHandler(this.btnEliminarTipoCmp_Click);
+            // 
+            // btnNuevoTipoCmp
+            // 
+            this.btnNuevoTipoCmp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevoTipoCmp.BackgroundImage")));
+            this.btnNuevoTipoCmp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevoTipoCmp.Location = new System.Drawing.Point(522, 6);
+            this.btnNuevoTipoCmp.Name = "btnNuevoTipoCmp";
+            this.btnNuevoTipoCmp.Size = new System.Drawing.Size(40, 40);
+            this.btnNuevoTipoCmp.TabIndex = 1;
+            this.btnNuevoTipoCmp.UseVisualStyleBackColor = false;
+            this.btnNuevoTipoCmp.Click += new System.EventHandler(this.btnNuevoTipoCmp_Click);
+            // 
             // grdTiposComprobantes
             // 
+            this.grdTiposComprobantes.AllowUserToAddRows = false;
             this.grdTiposComprobantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdTiposComprobantes.Location = new System.Drawing.Point(6, 6);
             this.grdTiposComprobantes.Name = "grdTiposComprobantes";
-            this.grdTiposComprobantes.Size = new System.Drawing.Size(559, 251);
+            this.grdTiposComprobantes.Size = new System.Drawing.Size(510, 251);
             this.grdTiposComprobantes.TabIndex = 0;
-            this.grdTiposComprobantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTiposComprobantes_CellClick);
-            this.grdTiposComprobantes.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.grdTiposComprobantes_UserDeletingRow);
             // 
             // lblCantidadComprobantes
             // 
@@ -702,6 +729,8 @@
             // 
             // gesFabricado
             // 
+            this.gesFabricado.Controls.Add(this.btnEliminarFabricado);
+            this.gesFabricado.Controls.Add(this.btnNuevoFabricado);
             this.gesFabricado.Controls.Add(this.lblCantidadComponentes);
             this.gesFabricado.Controls.Add(this.grdFabricado);
             this.gesFabricado.Location = new System.Drawing.Point(6, 39);
@@ -709,6 +738,28 @@
             this.gesFabricado.Size = new System.Drawing.Size(559, 231);
             this.gesFabricado.TabIndex = 19;
             this.gesFabricado.TabStop = false;
+            // 
+            // btnEliminarFabricado
+            // 
+            this.btnEliminarFabricado.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarFabricado.BackgroundImage")));
+            this.btnEliminarFabricado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarFabricado.Location = new System.Drawing.Point(513, 165);
+            this.btnEliminarFabricado.Name = "btnEliminarFabricado";
+            this.btnEliminarFabricado.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminarFabricado.TabIndex = 69;
+            this.btnEliminarFabricado.UseVisualStyleBackColor = false;
+            this.btnEliminarFabricado.Click += new System.EventHandler(this.btnEliminarFabricado_Click);
+            // 
+            // btnNuevoFabricado
+            // 
+            this.btnNuevoFabricado.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevoFabricado.BackgroundImage")));
+            this.btnNuevoFabricado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevoFabricado.Location = new System.Drawing.Point(513, 9);
+            this.btnNuevoFabricado.Name = "btnNuevoFabricado";
+            this.btnNuevoFabricado.Size = new System.Drawing.Size(40, 40);
+            this.btnNuevoFabricado.TabIndex = 68;
+            this.btnNuevoFabricado.UseVisualStyleBackColor = false;
+            this.btnNuevoFabricado.Click += new System.EventHandler(this.btnNuevoFabricado_Click);
             // 
             // lblCantidadComponentes
             // 
@@ -721,13 +772,12 @@
             // 
             // grdFabricado
             // 
+            this.grdFabricado.AllowUserToAddRows = false;
             this.grdFabricado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdFabricado.Location = new System.Drawing.Point(6, 9);
             this.grdFabricado.Name = "grdFabricado";
-            this.grdFabricado.Size = new System.Drawing.Size(547, 196);
+            this.grdFabricado.Size = new System.Drawing.Size(501, 196);
             this.grdFabricado.TabIndex = 0;
-            this.grdFabricado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFabricado_CellClick);
-            this.grdFabricado.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.grdFabricado_UserDeletingRow);
             // 
             // chkFabricado
             // 
@@ -761,7 +811,7 @@
             // 
             // cmbRubro
             // 
-            this.cmbRubro.BackColor = System.Drawing.Color.Red;
+            this.cmbRubro.BackColor = System.Drawing.SystemColors.Window;
             this.cmbRubro.FormattingEnabled = true;
             this.cmbRubro.Location = new System.Drawing.Point(115, 23);
             this.cmbRubro.Name = "cmbRubro";
@@ -1130,5 +1180,9 @@
         private Controles.labels.lblEtiqueta lblCantidadComponentes;
         private Controles.datos.cmbLista cmbRubro;
         private Controles.datos.grdGrillaEdit grdTiposComprobantes;
+        private Controles.buttons.btnEliminar btnEliminarTipoCmp;
+        private Controles.buttons.btnNuevo btnNuevoTipoCmp;
+        private Controles.buttons.btnEliminar btnEliminarFabricado;
+        private Controles.buttons.btnNuevo btnNuevoFabricado;
     }
 }

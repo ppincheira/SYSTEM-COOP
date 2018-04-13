@@ -405,7 +405,7 @@
             // lblEtiqueta12
             // 
             this.lblEtiqueta12.AutoSize = true;
-            this.lblEtiqueta12.Location = new System.Drawing.Point(364, 64);
+            this.lblEtiqueta12.Location = new System.Drawing.Point(10, 149);
             this.lblEtiqueta12.Name = "lblEtiqueta12";
             this.lblEtiqueta12.Size = new System.Drawing.Size(60, 13);
             this.lblEtiqueta12.TabIndex = 62;
@@ -415,7 +415,7 @@
             // 
             this.txtFabricanteMedidor.BackColor = System.Drawing.Color.White;
             this.txtFabricanteMedidor.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtFabricanteMedidor.Location = new System.Drawing.Point(430, 58);
+            this.txtFabricanteMedidor.Location = new System.Drawing.Point(108, 142);
             this.txtFabricanteMedidor.MaxLength = 50;
             this.txtFabricanteMedidor.Name = "txtFabricanteMedidor";
             this.txtFabricanteMedidor.ReadOnly = true;
@@ -451,7 +451,7 @@
             // lblEtiqueta10
             // 
             this.lblEtiqueta10.AutoSize = true;
-            this.lblEtiqueta10.Location = new System.Drawing.Point(362, 38);
+            this.lblEtiqueta10.Location = new System.Drawing.Point(13, 119);
             this.lblEtiqueta10.Name = "lblEtiqueta10";
             this.lblEtiqueta10.Size = new System.Drawing.Size(42, 13);
             this.lblEtiqueta10.TabIndex = 58;
@@ -461,7 +461,7 @@
             // 
             this.txtMedidorModelo.BackColor = System.Drawing.Color.White;
             this.txtMedidorModelo.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtMedidorModelo.Location = new System.Drawing.Point(430, 32);
+            this.txtMedidorModelo.Location = new System.Drawing.Point(108, 116);
             this.txtMedidorModelo.MaxLength = 50;
             this.txtMedidorModelo.Name = "txtMedidorModelo";
             this.txtMedidorModelo.ReadOnly = true;

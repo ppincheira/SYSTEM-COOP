@@ -44,11 +44,8 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
             _dtCombo.Columns.Add("DctDescripcion", typeof(string));
             DetallesColumnasTablasBus oDetalleBus = new DetallesColumnasTablasBus();
             /* 
-            *  SE RECUPERA LAS COLUMAS DE LA TABLA QUE SE VA A CARGAR 
-            *  DETALLES COLUMNAS TABLAS TRAE MUCHA INFORMACION 
-            *  DE LOS CAMPOS DE LA BASE DE DATOS Y DE LAS TABLAS 
-            *  A TRABAJAR, CONTROLAR BIEN CUALES SON ESOS DATOS,
-            *  Y INDICAR PARA QUE SIRVE CADA CAMPO, COMO VA A MODIFICAR LA EJECUCION DEL PROGRAMA?
+            *  SE RECUPERA LAS COLUMAS DE LA TABLA QUE SE VA A CARGAR DE
+            *  DETALLES COLUMNAS TABLAS 
             */
             List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo(tabla);
 
@@ -74,13 +71,6 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                             break;
                         }
                 }
-                //CASO PARA LA TABLA ROLES
-                /*          DCTCOLUMNA                              DCTDESCRIPCION
-                 *          ROL_CODIGO                              CODIGO
-                 *          SBS_CODIGO                              SUBSISTEMAS
-                 *          ROL_DESCRIPCION                         DESCRIPCION
-                 *          ROL_TIPO                                TIPO
-                 */
                 _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
                 // ROL_CODIGO CODIGO, SBS_CODIGO SUBSISTEMAS, ROL_DESCRIPCION DESCRIPCION, ROL_TIPO TIPO,
 
@@ -208,14 +198,22 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                             _vista.grilla.Columns[indice].Visible = false;
                             break;
                         }
-                    case "FECHA":
+                    case "DATE":
                         {
-                            break; 
+                            ColumnaCalendario col = new ColumnaCalendario();
+                            col.HeaderText = oDetalle.DctDescripcion;
+                            col.Name = oDetalle.DctColumna;
+                            _vista.grilla.Columns.Add(col);
+                            //_vista.grilla.RowCount = 5;
+                            foreach (DataGridViewRow row in _vista.grilla.Rows)
+                                row.Cells[_vista.grilla.ColumnCount - 1].Value = row.Cells[indice].Value;
+                            //{
+                            //    row.Cells[0].Value = DateTime.Now;
+                            //}
+                            _vista.grilla.Columns[indice].Visible = false;
+                            break;
                         }
                 }
-                //LA FUNCION DE ESTA VARIABLE ES QUE VA REGISTRANDO EL INDICE DE COLUMNA QUE SE RECORRE
-                //PARA ASI CUANDO LLEGA A UN CONTROL QUE SE TIENE QUE AGREGAR UN NUEVO TIPO DE CELDA
-                //OCULTA LA COLUMNA Y PASA LOS VALORES A LA NUEVA COLUMNA CON EL NUEVO CONTROL
                 indice++;
             }
             //FIN DEL FOREACH
@@ -399,6 +397,7 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                                         }
                                     case "DATE":
                                         {
+                                            //valoresCampos[valoresCampos.Length - 1] = ((DataGridViewComboBoxCell)celda).Value.ToString();
                                             //    valoresCampos[valoresCampos.Length - 1] = (DataGridView)
                                             break;
                                         }

@@ -157,12 +157,12 @@ namespace Implement
                                    " FROM   conceptos_tipos_comprobantes c," +
                                    "        tipos_comprobantes t " +
                                    " WHERE  t.tco_codigo = c.tco_codigo " +
-                                   " AND    cpt_numero =  '" + numero + "' " +
-                                   " UNION ALL " +
-                                   " SELECT NULL numero," +
-                                   "        NULL codigo," +
-                                   "        NULL descripcion" +
-                                   " FROM    dual ";
+                                   " AND    cpt_numero =  '" + numero + "' ";
+                                   //" UNION ALL " +
+                                   //" SELECT NULL numero," +
+                                   //"        NULL codigo," +
+                                   //"        NULL descripcion" +
+                                   //" FROM    dual ";
                 Console.WriteLine(sqlSelect);
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);

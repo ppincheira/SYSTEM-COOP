@@ -341,6 +341,8 @@ namespace GesConfiguracion.controles.forms
                 this.tttEtiqueta.SetToolTip(this.txtFraccionaPor, "Indicar por que cantidad es fraccionado");
                 this.tttEtiqueta.SetToolTip(this.btnConceptoPadre, "Carga el Concepto relacionado");
                 this.tttEtiqueta.SetToolTip(this.btnCargarImagen, "Carga Imagen");
+                this.tttEtiqueta.SetToolTip(this.btnNuevoTipoCmp, "Nuevo Tipo de Comprobante");
+                this.tttEtiqueta.SetToolTip(this.btnEliminarTipoCmp, "Eliminar Tipo de Comprobante");
 
                 if (this.chkControlaStock.Checked)
                     this.gesControlaStock.Enabled = true;
@@ -524,116 +526,144 @@ namespace GesConfiguracion.controles.forms
             }
         }
 
-        private void grdTiposComprobantes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (!e.ColumnIndex.ToString().Equals("-1"))
-                {
-                    if (this.grdTiposComprobantes.Columns[e.ColumnIndex].Name == "selector")
-                    {
-                        FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
-                        Admin oAdmin = new Admin();
-                        oAdmin.TabCodigo = "TCO";
-                        oAdmin.Tipo = Admin.enumTipoForm.Selector;
-                        FormsAuxiliares.frmFormAdminMini frmConcepto = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
-                        if (frmConcepto.ShowDialog() == DialogResult.OK)
-                        {
-                            string strCodRes = frmConcepto.striRdoCodigo;
-                            Console.WriteLine("strCodRes " + strCodRes);
-                            bool resultado =_oConceptosCrud.CargarTipoComprobante(strCodRes, e.RowIndex);
-                            if(!resultado)
-                                MessageBox.Show("El tipo de comprobante seleccionado ya esta ingresado!");
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                e.ToString(),
-                                ((Control)sender).Name,
-                                this.FindForm().Name);
-            }
-        }
+        //private void grdTiposComprobantes_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+            //try
+            //{
+            //    if (!e.ColumnIndex.ToString().Equals("-1"))
+            //    {
+            //        if (this.grdTiposComprobantes.Columns[e.ColumnIndex].Name == "selector")
+            //        {
+            //            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
+            //            Admin oAdmin = new Admin();
+            //            oAdmin.TabCodigo = "TCO";
+            //            oAdmin.Tipo = Admin.enumTipoForm.Selector;
+            //            FormsAuxiliares.frmFormAdminMini frmConcepto = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            //            if (frmConcepto.ShowDialog() == DialogResult.OK)
+            //            {
+            //                string strCodRes = frmConcepto.striRdoCodigo;
+            //                Console.WriteLine("strCodRes " + strCodRes);
+            //                bool resultado =_oConceptosCrud.CargarTipoComprobante(strCodRes, e.RowIndex);
+            //                if(!resultado)
+            //                    MessageBox.Show("El tipo de comprobante seleccionado ya esta ingresado!");
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Cursor.Current = Cursors.Default;
+            //    ManejarError Err = new ManejarError();
+            //    Err.CargarError(ex,
+            //                    e.ToString(),
+            //                    ((Control)sender).Name,
+            //                    this.FindForm().Name);
+            //}
+        //}
 
-        private void grdTiposComprobantes_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
-        {
-            try
-            {
-                if (!e.Row.Index.ToString().Equals("-1"))
-                {
-                    if (!this.grdTiposComprobantes.Rows[e.Row.Index].Cells[1].Value.ToString().Equals("0"))
-                    {
-                        string strCodigo = this.grdTiposComprobantes.Rows[e.Row.Index].Cells[2].Value.ToString();
-                        long lonCodigo = long.Parse(this.grdTiposComprobantes.Rows[e.Row.Index].Cells[1].Value.ToString());
-                        Console.WriteLine("tipo a borrar " + lonCodigo+"-"+ strCodigo);
-                        _oConceptosCrud.EliminarTipoComprobante (strCodigo,lonCodigo);
-                    }
-                }
+        //private void grdTiposComprobantes_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (!e.Row.Index.ToString().Equals("-1"))
+        //        {
+        //            if (!this.grdTiposComprobantes.Rows[e.Row.Index].Cells[1].Value.ToString().Equals("0"))
+        //            {
+        //                string strCodigo = this.grdTiposComprobantes.Rows[e.Row.Index].Cells[2].Value.ToString();
+        //                long lonCodigo = long.Parse(this.grdTiposComprobantes.Rows[e.Row.Index].Cells[1].Value.ToString());
+        //                Console.WriteLine("tipo a borrar " + lonCodigo+"-"+ strCodigo);
+        //                _oConceptosCrud.EliminarTipoComprobante (strCodigo,lonCodigo);
+        //            }
+        //        }
 
-            }
-            catch (Exception ex)
-            {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                e.ToString(),
-                                ((Control)sender).Name,
-                                this.FindForm().Name);
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Cursor.Current = Cursors.Default;
+        //        ManejarError Err = new ManejarError();
+        //        Err.CargarError(ex,
+        //                        e.ToString(),
+        //                        ((Control)sender).Name,
+        //                        this.FindForm().Name);
+        //    }
+        //}
 
-        private void grdFabricado_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (!e.ColumnIndex.ToString().Equals("-1"))
-                {
-                    if (this.grdFabricado.Columns[e.ColumnIndex].Name == "selector")
-                    {
-                        FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
-                        Admin oAdmin = new Admin();
-                        oAdmin.TabCodigo = "CPT";
-                        oAdmin.Tipo = Admin.enumTipoForm.Selector;
-                        FormsAuxiliares.frmFormAdminMini frmConcepto = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
-                        if (frmConcepto.ShowDialog() == DialogResult.OK)
-                        {
-                            string strCodRes = frmConcepto.striRdoCodigo;
-                            bool resultado = _oConceptosCrud.CargarConceptoFabricado(strCodRes, e.RowIndex);
-                            if (!resultado)
-                                MessageBox.Show("El concepto seleccionado ya esta ingresado!");
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                e.ToString(),
-                                ((Control)sender).Name,
-                                this.FindForm().Name);
-            }
-        }
+        //private void grdFabricado_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (!e.ColumnIndex.ToString().Equals("-1"))
+        //        {
+        //            if (this.grdFabricado.Columns[e.ColumnIndex].Name == "selector")
+        //            {
+        //                FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
+        //                Admin oAdmin = new Admin();
+        //                oAdmin.TabCodigo = "CPT";
+        //                oAdmin.Tipo = Admin.enumTipoForm.Selector;
+        //                FormsAuxiliares.frmFormAdminMini frmConcepto = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+        //                if (frmConcepto.ShowDialog() == DialogResult.OK)
+        //                {
+        //                    string strCodRes = frmConcepto.striRdoCodigo;
+        //                    bool resultado = _oConceptosCrud.CargarConceptoFabricado(strCodRes, e.RowIndex);
+        //                    if (!resultado)
+        //                        MessageBox.Show("El concepto seleccionado ya esta ingresado!");
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Cursor.Current = Cursors.Default;
+        //        ManejarError Err = new ManejarError();
+        //        Err.CargarError(ex,
+        //                        e.ToString(),
+        //                        ((Control)sender).Name,
+        //                        this.FindForm().Name);
+        //    }
+        //}
 
-        private void grdFabricado_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
-        {
-            try
-            {
-                if (!e.Row.Index.ToString().Equals("-1"))
-                {
-                    if(!this.grdFabricado.Rows[e.Row.Index].Cells[1].Value.ToString().Equals("0"))
-                    {                        
-                        long lonCodigo = long.Parse(this.grdFabricado.Rows[e.Row.Index].Cells[2].Value.ToString());
-                        Console.WriteLine("fabricado concepto borrar " + lonCodigo);
-                        _oConceptosCrud.EliminarConceptoFabricado(lonCodigo);
-                    }                    
-                }
+        //private void grdFabricado_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (!e.Row.Index.ToString().Equals("-1"))
+        //        {
+        //            if(!this.grdFabricado.Rows[e.Row.Index].Cells[1].Value.ToString().Equals("0"))
+        //            {                        
+        //                long lonCodigo = long.Parse(this.grdFabricado.Rows[e.Row.Index].Cells[2].Value.ToString());
+        //                Console.WriteLine("fabricado concepto borrar " + lonCodigo);
+        //                _oConceptosCrud.EliminarConceptoFabricado(lonCodigo);
+        //            }                    
+        //        }
                  
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Cursor.Current = Cursors.Default;
+        //        ManejarError Err = new ManejarError();
+        //        Err.CargarError(ex,
+        //                        e.ToString(),
+        //                        ((Control)sender).Name,
+        //                        this.FindForm().Name);
+        //    }            
+        //}
+        private void btnNuevoTipoCmp_Click(object sender, EventArgs e)
+        {
+            try
+            {                
+                FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
+                Admin oAdmin = new Admin();
+                oAdmin.TabCodigo = "TCO";
+                oAdmin.Tipo = Admin.enumTipoForm.Selector;
+                FormsAuxiliares.frmFormAdminMini frmConcepto = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+                if (frmConcepto.ShowDialog() == DialogResult.OK)
+                {
+                    string strCodRes = frmConcepto.striRdoCodigo;
+                    //Console.WriteLine("strCodRes " + strCodRes);
+                    bool resultado = _oConceptosCrud.CargarTipoComprobante(strCodRes);
+                    if (!resultado)
+                        MessageBox.Show("El tipo de comprobante seleccionado ya esta ingresado!");
+                }                
             }
             catch (Exception ex)
             {
@@ -643,8 +673,98 @@ namespace GesConfiguracion.controles.forms
                                 e.ToString(),
                                 ((Control)sender).Name,
                                 this.FindForm().Name);
-            }            
+            }
         }
+
+        private void btnEliminarTipoCmp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = this.grdTiposComprobantes.CurrentRow;
+                if (row == null)
+                {
+                    MessageBox.Show("Debe seleccionar un tipo de comprobante!");
+                }
+                else
+                {                                           
+                        string strCodigo = row.Cells[1].Value.ToString();
+                        long lonCodigo = long.Parse(row.Cells[0].Value.ToString());
+                       // Console.WriteLine("tipo a borrar " + lonCodigo + "-" + strCodigo);
+                        _oConceptosCrud.EliminarTipoComprobante(strCodigo, lonCodigo);                                     
+                }
+                     
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+
+        }
+
+        private void btnNuevoFabricado_Click(object sender, EventArgs e)
+        {
+            try
+            {                
+                FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
+                Admin oAdmin = new Admin();
+                oAdmin.TabCodigo = "CPT";
+                oAdmin.Tipo = Admin.enumTipoForm.Selector;
+                FormsAuxiliares.frmFormAdminMini frmConcepto = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+                if (frmConcepto.ShowDialog() == DialogResult.OK)
+                {
+                    string strCodRes = frmConcepto.striRdoCodigo;
+                    //bool resultado = _oConceptosCrud.CargarConceptoFabricado(strCodRes, e.RowIndex);
+                    bool resultado = _oConceptosCrud.CargarConceptoFabricado(strCodRes);
+                    if (!resultado)
+                        MessageBox.Show("El concepto seleccionado ya esta ingresado!");
+                }                                    
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+
+        private void btnEliminarFabricado_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = this.grdFabricado.CurrentRow;
+                if (row == null)
+                {
+                    MessageBox.Show("Debe seleccionar un componente!");
+                }
+                else
+                {
+                    long lonCodigo = long.Parse(row.Cells[0].Value.ToString());
+                  //  Console.WriteLine("fabricado concepto borrar " + lonCodigo);
+                    _oConceptosCrud.EliminarConceptoFabricado(lonCodigo);                    
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+
         #endregion
+
+
     }
 }

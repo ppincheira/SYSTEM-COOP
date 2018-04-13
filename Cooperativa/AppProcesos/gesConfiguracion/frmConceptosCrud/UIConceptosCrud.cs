@@ -172,40 +172,40 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
 
         public void CargarGrillaTiposComprobantes()
         {
-            //--carga la grilla de fabricado
-            DataGridViewButtonColumn colBotones = new DataGridViewButtonColumn();
-            colBotones.Name = "selector";
-            colBotones.HeaderText = " ";
-            colBotones.Text = "Tipo Comprobante";
-            colBotones.UseColumnTextForButtonValue = true;
-            _vista.grdCptTipoCmp.Columns.Add(colBotones);
+            //--carga la grilla de tipos comprobantes
+            //DataGridViewButtonColumn colBotones = new DataGridViewButtonColumn();
+            //colBotones.Name = "selector";
+            //colBotones.HeaderText = " ";
+            //colBotones.Text = "Tipo Comprobante";
+            //colBotones.UseColumnTextForButtonValue = true;
+            //_vista.grdCptTipoCmp.Columns.Add(colBotones);
 
             ConceptosTiposComprobantesBus oCtcBus = new ConceptosTiposComprobantesBus();
             DataTable dt = oCtcBus.ConceptosTiposComprobantesGetByFilter(_vista.logCptNumero);
             _vista.strCantidadComprobantes = "Se encontraron " + oUtil.CargarGrilla(_vista.grdCptTipoCmp, dt) + " registros";
             //oculta la pk 
-            _vista.grdCptTipoCmp.Columns[1].Visible = false;
-            _vista.grdCptTipoCmp.Columns[2].ReadOnly = true;
-            _vista.grdCptTipoCmp.Columns[3].ReadOnly = true;
+            _vista.grdCptTipoCmp.Columns[0].Visible = false;           
+            _vista.grdCptTipoCmp.Columns[1].ReadOnly = true;            
+            _vista.grdCptTipoCmp.Columns[2].ReadOnly = true;                    
         }
         public void CargarGrillaFabricados()
         {
             //--carga la grilla de fabricado
-            DataGridViewButtonColumn colBotones = new DataGridViewButtonColumn();
-            colBotones.Name = "selector";
-            colBotones.HeaderText = " ";
-            colBotones.Text = "Concepto";
-            colBotones.UseColumnTextForButtonValue = true;
-            _vista.grdCptFabricado.Columns.Add(colBotones);
+            //DataGridViewButtonColumn colBotones = new DataGridViewButtonColumn();
+            //colBotones.Name = "selector";
+            //colBotones.HeaderText = " ";
+            //colBotones.Text = "Concepto";
+            //colBotones.UseColumnTextForButtonValue = true;
+            //_vista.grdCptFabricado.Columns.Add(colBotones);
 
             ConceptosFabricadosBus oCompFabBus = new ConceptosFabricadosBus();
             DataTable dt = oCompFabBus.ConceptosFabricadosGetByFilter(_vista.logCptNumero);
             _vista.strCantidadComponentes = "Se encontraron " + oUtil.CargarGrilla(_vista.grdCptFabricado, dt) + " registros";
             //oculta la pk y fk
+            _vista.grdCptFabricado.Columns[0].Visible = false;
             _vista.grdCptFabricado.Columns[1].Visible = false;
-            _vista.grdCptFabricado.Columns[2].Visible = false;
+            _vista.grdCptFabricado.Columns[2].ReadOnly = true;
             _vista.grdCptFabricado.Columns[3].ReadOnly = true;
-            _vista.grdCptFabricado.Columns[4].ReadOnly = true;
         }
 
         public long Guardar()
@@ -363,7 +363,7 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             //if (_vista.adjuntoFileName != null)
             if (!string.IsNullOrEmpty(_vista.adjuntoFileName))
             {
-                Console.WriteLine("pasa para actualizar");
+                //Console.WriteLine("pasa para actualizar");
                 if (_vista.adjunto.AdjNombre != "")
                 {
                     _vista.adjunto.AdjCodigoRegistro = _vista.logCptNumero.ToString();
@@ -383,12 +383,13 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             }
             if (oConceptos.cptFabricado.Equals("S"))
             {
-                Console.WriteLine("sale4 guarda grilla de fabricados------------");
+               // Console.WriteLine("sale4 guarda grilla de fabricados------------");
                 ConceptosFabricados oCfb = new ConceptosFabricados();
                 ConceptosFabricadosBus oCfbBus = new ConceptosFabricadosBus();
                 //elimina  grilla de fabricado                      
                 foreach (ConceptosFabricados oCof in ListaDelFabricados)
                 {
+                 //   Console.WriteLine("borro fabricado ------------");
                     oCfb.cfbCodigo = oCof.cfbCodigo;
                     oCfbBus.ConceptosFabricadosDelete(oCfb);
                 }         
@@ -401,12 +402,12 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                     {
                         foreach (DataGridViewCell dc in dr.Cells)
                         {
-                            if (dc.ColumnIndex == 2)
+                            if (dc.ColumnIndex == 0)
                             {
                                 if (!string.IsNullOrEmpty(dc.Value.ToString()))
                                     oCfb.cfbCodigo = long.Parse(dc.Value.ToString());
                             }
-                            if (dc.ColumnIndex == 3)
+                            if (dc.ColumnIndex == 1)
                             {
                                 if (!string.IsNullOrEmpty(dc.Value.ToString()))
                                 {
@@ -414,7 +415,7 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                                     valido1 = true;
                                 }
                             }
-                            if (dc.ColumnIndex == 6)
+                            if (dc.ColumnIndex == 4)
                             {
                                 if (!string.IsNullOrEmpty(dc.Value.ToString()))
                                     oCfb.cfbCantidadParte = int.Parse(dc.Value.ToString());
@@ -426,13 +427,13 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                             if (oCfb.cfbCodigo.ToString().Equals("0"))
                             {
                                 oCfb.cptCodigoFabricado = _vista.logCptNumero;
-                                 Console.WriteLine("dc.inserta ------------");
+                                // Console.WriteLine("dc.inserta ------------");
                                 oCfbBus.ConceptosFabricadosAdd(oCfb);
                             }
                             else
                             {
                                 oCfb.cptCodigoFabricado = _vista.logCptNumero;
-                                Console.WriteLine("dc.actualiza------------");
+                              //  Console.WriteLine("dc.actualiza------------");
                                 oCfbBus.ConceptosFabricadosUpdate(oCfb);
                             }
                         }
@@ -452,7 +453,7 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                 }
             }
             /////////////////////////////////////////////////////////////////
-            Console.WriteLine("sale4 guarda tipos comprobantes  ------------");
+           // Console.WriteLine("sale4 guarda tipos comprobantes  ------------");
             ConceptosTiposComprobantes oCtc = new ConceptosTiposComprobantes();
             ConceptosTiposComprobantesBus oCtcBus = new ConceptosTiposComprobantesBus();
             //elimina  grilla de tipos comprobantes                      
@@ -471,7 +472,7 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                 {
                     foreach (DataGridViewCell dc in dr.Cells)
                     {
-                        if (dc.ColumnIndex == 2)
+                        if (dc.ColumnIndex == 1)
                         {
                               if (!string.IsNullOrEmpty(dc.Value.ToString()))
                               {
@@ -479,7 +480,7 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                                     valido = true;
                               }                              
                         }                            
-                        if (dc.ColumnIndex == 1)
+                        if (dc.ColumnIndex == 0)
                         {
                             if (!string.IsNullOrEmpty(dc.Value.ToString()))
                                 oCtc.cptNumero = long.Parse(dc.Value.ToString());
@@ -566,47 +567,10 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             _vista.pbxImagenP.Image = new System.Drawing.Bitmap(_vista.adjunto.AdjAdjunto);            
             _vista.adjunto.TabCodigo = "CPT";
 
-        }
+        }        
 
-        public bool CargarTipoComprobante(string idTipo, int indice)
-        {
-            // valida la existencia en la tabla
-            foreach (DataGridViewRow dr in _vista.grdCptTipoCmp.Rows)
-            {                
-                if (!dr.IsNewRow)
-                {
-                    foreach (DataGridViewCell dc in dr.Cells)
-                    {
-                        if (dc.ColumnIndex == 2)//cantidad
-                        {
-                            if (!string.IsNullOrEmpty(dc.Value.ToString()))
-                            {
-                                //Console.WriteLine("idTipo------------" + idTipo);
-                                //Console.WriteLine("dc------------" + dc.Value.ToString());
-                                if (dc.Value.ToString().Equals(idTipo))
-                                   return false;
-                                //Console.WriteLine("dc------------" + dc.Value.ToString());
-                            }
-                        }                       
-                    }
-                }                
-            }        
-
-            TiposComprobante oTco = new TiposComprobante();
-            TiposComprobanteBus oTcoBus = new TiposComprobanteBus();
-            oTco = oTcoBus.TiposComprobanteGetById(idTipo);
-
-            DataTable dt = (DataTable)_vista.grdCptTipoCmp.DataSource;
-            DataRow row = dt.NewRow(); 
-            row["numero"] = "0"; 
-            row["codigo"] = idTipo;
-            row["descripcion"] = oTco.tcoDescripcion;       
-            dt.Rows.InsertAt(row, indice);  
-            _vista.grdCptTipoCmp.DataSource = dt;
-            return true;
-        }
-
-        public bool CargarConceptoFabricado(string idConcepto,int indice)
+        //public bool CargarConceptoFabricado(string idConcepto,int indice)
+        public bool CargarConceptoFabricado(string idConcepto)
         {
             // valida la existencia en la tabla
             foreach (DataGridViewRow dr in _vista.grdCptFabricado.Rows)
@@ -615,7 +579,7 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                 {
                     foreach (DataGridViewCell dc in dr.Cells)
                     {
-                        if (dc.ColumnIndex == 3)//
+                        if (dc.ColumnIndex == 1)//
                         {
                             if (!string.IsNullOrEmpty(dc.Value.ToString()))
                             {                               
@@ -641,31 +605,83 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             row["codigo"] = oCpt.cptCodigo;
             row["descripcion"] = oCpt.cptDescripcion;
             row["cantidad"] = DBNull.Value;
-            dt.Rows.InsertAt(row, indice);            
+            dt.Rows.Add(row);
+            
             _vista.grdCptFabricado.DataSource = dt;                       
 
             //_vista.grdCptFabricado.Rows[indice].Cells["pk"].Value = "0";
             //_vista.grdCptFabricado.Rows[indice].Cells["fk"].Value= idConcepto;
             //_vista.grdCptFabricado.Rows[indice].Cells["Codigo"].Value = oCpt.cptCodigo;
             //_vista.grdCptFabricado.Rows[indice].Cells["Descripcion"].Value = oCpt.cptDescripcion;
-            _vista.grdCptFabricado.CurrentCell = _vista.grdCptFabricado.Rows[indice].Cells["Cantidad"];
+            _vista.grdCptFabricado.CurrentCell = _vista.grdCptFabricado.Rows[_vista.grdCptFabricado.RowCount-1].Cells["Cantidad"];
             _vista.grdCptFabricado.BeginEdit(true); //ABRIR LA EDICION DE LA CELDA
             return true;
         }
 
         public void EliminarConceptoFabricado(long idConcepto)
         {
-            ConceptosFabricados oCof = new ConceptosFabricados();
-            oCof.cfbCodigo = idConcepto;      
-            ListaDelFabricados.Add(oCof);
+            if (idConcepto > 0)
+            {
+                ConceptosFabricados oCof = new ConceptosFabricados();
+                oCof.cfbCodigo = idConcepto;
+                ListaDelFabricados.Add(oCof);
+            }
+            DataTable dt = (DataTable)_vista.grdCptFabricado.DataSource;
+            dt.Rows.RemoveAt(_vista.grdCptFabricado.CurrentRow.Index);
+            _vista.grdCptFabricado.DataSource = dt;
+        }
+
+        //public bool CargarTipoComprobante(string idTipo, int indice)
+        public bool CargarTipoComprobante(string idTipo)
+        {
+            // valida la existencia en la tabla
+            foreach (DataGridViewRow dr in _vista.grdCptTipoCmp.Rows)
+            {
+                if (!dr.IsNewRow)
+                {
+                    foreach (DataGridViewCell dc in dr.Cells)
+                    {
+                        if (dc.ColumnIndex == 1)//
+                        {
+                            if (!string.IsNullOrEmpty(dc.Value.ToString()))
+                            {
+                                //Console.WriteLine("idTipo------------" + idTipo);
+                                //Console.WriteLine("dc------------" + dc.Value.ToString());
+                                if (dc.Value.ToString().Equals(idTipo))
+                                    return false;
+                                //Console.WriteLine("dc------------" + dc.Value.ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            TiposComprobante oTco = new TiposComprobante();
+            TiposComprobanteBus oTcoBus = new TiposComprobanteBus();
+            oTco = oTcoBus.TiposComprobanteGetById(idTipo);
+
+            DataTable dt = (DataTable)_vista.grdCptTipoCmp.DataSource;
+            DataRow row = dt.NewRow();
+            row["numero"] = "0";
+            row["codigo"] = idTipo;
+            row["descripcion"] = oTco.tcoDescripcion;
+            dt.Rows.Add(row);
+            _vista.grdCptTipoCmp.DataSource = dt;
+            return true;
         }
 
         public void EliminarTipoComprobante(string idTipo, long idCptnumero)
         {
-            ConceptosTiposComprobantes oCtc = new ConceptosTiposComprobantes();
-            oCtc.cptNumero = idCptnumero;
-            oCtc.tcoCodigo = idTipo;
-            ListaDelTipos.Add(oCtc);
+            if (idCptnumero > 0)
+            {
+                ConceptosTiposComprobantes oCtc = new ConceptosTiposComprobantes();
+                oCtc.cptNumero = idCptnumero;
+                oCtc.tcoCodigo = idTipo;
+                ListaDelTipos.Add(oCtc);
+            }
+        
+            DataTable dt = (DataTable)_vista.grdCptTipoCmp.DataSource;
+            dt.Rows.RemoveAt(_vista.grdCptTipoCmp.CurrentRow.Index);
+            _vista.grdCptTipoCmp.DataSource = dt;
         }
 
         public bool ValidarGrillaFabricado()
@@ -678,23 +694,23 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                 concepto = false;
                 if (!dr.IsNewRow)
                 {
-                    Console.WriteLine("dc1-----zzzz");
+                   // Console.WriteLine("dc1-----zzzz");
                     foreach (DataGridViewCell dc in dr.Cells)
                     {
-                        if (dc.ColumnIndex == 6)//cantidad
+                        if (dc.ColumnIndex == 4)//cantidad
                         {
                             if (!string.IsNullOrEmpty(dc.Value.ToString()))
                             {
                                 cantidad = true;
-                                Console.WriteLine("cantidad------------" + dc.Value.ToString());
+                               // Console.WriteLine("cantidad------------" + dc.Value.ToString());
                             }
                         }
-                        if (dc.ColumnIndex == 3)//concepto
+                        if (dc.ColumnIndex == 2)//concepto
                         {
                             if (!string.IsNullOrEmpty(dc.Value.ToString()))
                             {
                                 concepto = true;
-                                Console.WriteLine("conepto------------" + dc.Value.ToString());
+                               // Console.WriteLine("conepto------------" + dc.Value.ToString());
                             }
                         }
                     }                    

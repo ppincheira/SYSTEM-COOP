@@ -23,22 +23,22 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = " SELECT f.cfb_codigo pk, " +//2
-                                   "        f.cpt_codigo_parte fk, " +//3
-                                   "        c.cpt_codigo codigo, " +  //4                                 
-                                   "        c.cpt_descripcion descripcion, " +//5
-                                   "        f.cfb_cantidad_parte cantidad " +//6
+                string sqlSelect = " SELECT f.cfb_codigo pk, " +//0 oculto
+                                   "        f.cpt_codigo_parte fk, " +//1 oculto
+                                   "        c.cpt_codigo codigo, " +  //2                                 
+                                   "        c.cpt_descripcion descripcion, " +//3
+                                   "        f.cfb_cantidad_parte cantidad " +//4
                                    " FROM   conceptos c," +
                                    "        conceptos_fabricados f " +
                                    " WHERE  c.cpt_numero = f.cpt_codigo_parte " +
-                                   " AND    f.cpt_codigo_fabricado =  '" + CodigoFabricado + "' " +
-                                   " UNION ALL " +
-                                   " SELECT NULL pk, " +
-                                   "        NULL fk, " +
-                                   "        NULL codigo, " +
-                                   "        NULL descripcion, " +
-                                   "        NULL cantidad " +
-                                   " FROM    dual ";
+                                   " AND    f.cpt_codigo_fabricado =  '" + CodigoFabricado + "' ";
+                                   //" UNION ALL " +
+                                   //" SELECT NULL pk, " +
+                                   //"        NULL fk, " +
+                                   //"        NULL codigo, " +
+                                   //"        NULL descripcion, " +
+                                   //"        NULL cantidad " +
+                                   //" FROM    dual ";
 
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);

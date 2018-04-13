@@ -745,6 +745,12 @@ namespace FormsAuxiliares
                     if (oFrmUsuCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
+                case "CPT":
+                    long idCpt = Convert.ToInt64(row.Cells[0].Value);
+                    frmConceptosCrud oFrmCptCrud = new frmConceptosCrud(idCpt, "V");
+                    if (oFrmCptCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
             }
         }
 
@@ -793,6 +799,12 @@ namespace FormsAuxiliares
                 case "USUS":
                     int idUsu = Convert.ToInt32(row.Cells[0].Value);
                     frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "B", 0);
+                    _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
+                case "CPT":
+                    long idCpt = Convert.ToInt64(row.Cells[0].Value);
+                    frmConceptosCrud oFrmCptCrud = new frmConceptosCrud(idCpt, "B");
+                    //if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
                     _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
             }
@@ -875,6 +887,12 @@ namespace FormsAuxiliares
                     int idUsu = Convert.ToInt32(row.Cells[0].Value);
                     frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "E", 0);
                     if (oFrmUsuCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
+                case "CPT":
+                    long idConcepto = Convert.ToInt64(row.Cells[0].Value);
+                    frmConceptosCrud oFrmCptCrud = new frmConceptosCrud(idConcepto, "E");
+                    if (oFrmCptCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
             }
