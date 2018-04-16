@@ -124,17 +124,22 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                 oDEnBus.DomiciliosEntidadesAdd(oDEn);
                 oSMe.SmeFechaAlta = oSum.SumFechaAlta;
                 oSMe.EstCodigo = oSum.EstCodigo;
-                oSMe.MedNumero = _vista.numMedidor;
-                oSMe.SumNumero = oSum.SumNumero;
-                oSMe.SmeNumero = oSMeBus.SuministrosMedidoresAdd(oSMe);
-                Medidores oMed = new Medidores();
-                MedidoresBus oMedBus = new MedidoresBus();
-                oMed = oMedBus.MedidoresGetById(oSMe.MedNumero);
-                oMed.EstCodigo = "I";
-                oMedBus.MedidoresUpdate(oMed);
+                if (_vista.numMedidor==0)
+                { 
+                    oSMe.MedNumero = _vista.numMedidor;
+                    oSMe.SumNumero = oSum.SumNumero;
+                    oSMe.SmeNumero = oSMeBus.SuministrosMedidoresAdd(oSMe);
+                    Medidores oMed = new Medidores();
+                    MedidoresBus oMedBus = new MedidoresBus();
+                    oMed = oMedBus.MedidoresGetById(oSMe.MedNumero);
+                    oMed.EstCodigo = "I";
+                    oMedBus.MedidoresUpdate(oMed);
+                }
 
             }
             else
+                // Si cambia medidor tengo que poner fecha baja al que tenia asignado 
+                //y al nuevo la fecha del dia
                 rtdo = (oSumBus.SuministrosUpdate(oSum)) ? oSum.SumNumero : 0;
         }
 
@@ -167,14 +172,14 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             TiposIva oTipoIva = new TiposIva();
             TiposIvaBus oTipoIvaBus = new TiposIvaBus();
             oTipoIva= oTipoIvaBus.TiposIvaGetById(id);
-            _vista.strRespIva= oTipoIva.TivDescripcion;
+            _vista.strRespIva= oTipoIva.TivCodigo;
         }
         private void CargarTipoDni(string id)
         {
             TiposIdentificadores oTipoDoc = new TiposIdentificadores();
             TiposIdentificadoresBus oTiposDocsBus = new TiposIdentificadoresBus();
             oTipoDoc = oTiposDocsBus.TiposIdentificadoresGetById(id);
-            _vista.strTipoDoc = oTipoDoc.TidDescripcion;
+            _vista.strTipoDoc = oTipoDoc.TidCodigo;
         }
         private void CargarSocio(long id)
         {

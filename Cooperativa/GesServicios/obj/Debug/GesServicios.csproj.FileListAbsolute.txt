@@ -100,3 +100,38 @@ D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServ
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.csproj.GenerateResource.Cache
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.exe
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\GesServicios.exe
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\GesServicios.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\AppProcesos.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Business.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Controles.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\FormsAuxiliares.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Model.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Service.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Implement.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Oracle.DataAccess.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\AppProcesos.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Business.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Controles.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Model.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Service.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\Implement.pdb
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.csprojResolveAssemblyReference.cache
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmLecturasCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmLecturasModosCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmSuministrosAdmin.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmLecturasConceptosCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmMedidoresMasivosCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmCategoriasCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmMedidoresCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmMedidoresModelosCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmRutasCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmSuministrosCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmTiposConexionesCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.controles.forms.frmTiposMedidoresCrud.resources
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.csproj.GenerateResource.Cache
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.csproj.CoreCompileInputs.cache
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.exe
+C:\GitHub\SYSTEM-COOP\Cooperativa\GesServicios\obj\Debug\GesServicios.pdb

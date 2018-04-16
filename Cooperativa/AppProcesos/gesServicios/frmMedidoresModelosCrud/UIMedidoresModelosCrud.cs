@@ -54,6 +54,7 @@ namespace AppProcesos.gesServicios.frmMedidoresModelosCrud
                 _vista.Clase = oMedidoresModelos.MMoClase;
                 _vista.FechaCarga = oMedidoresModelos.MMoFechaCarga;
                 _vista.EstCodigo = oMedidoresModelos.EstCodigo;
+
             }
         }
 
@@ -95,7 +96,7 @@ namespace AppProcesos.gesServicios.frmMedidoresModelosCrud
             MedidoresModelos oMMO = oMMOBus.MedidoresModelosGetById(idMedidor);
             oMMO.EstCodigo = "B";
             return oMMOBus.MedidoresModelosUpdate(oMMO);
-       }
+        }
 
 
     }

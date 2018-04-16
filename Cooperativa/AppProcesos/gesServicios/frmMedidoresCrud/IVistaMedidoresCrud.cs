@@ -8,9 +8,9 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
 
         long Numero { get; set; }
         long NumeroSerie { get; set; }
-        cmbLista NumeroProv { get; set; }
+        long NumeroProv { get; set; }
         int Digitos { get; set; }
-        string EstCodigo { get; set; }
+        cmbLista EstCodigo { get; set; }
         double FactorCalib { get; set; }
         decimal? GisX { get; set; }
         decimal? GisY { get; set; }
@@ -18,6 +18,7 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
         DateTime FechaCarga { get; set; }
         cmbLista MmoCodigo { get; set; }
         cmbLista LemCodigo { get; set; }
+        string strRazonSocial { get; set; }
 
     }
 }

@@ -402,21 +402,30 @@ namespace GesServicios.controles.forms
 
         private void cmbServicio_Leave(object sender, EventArgs e)
         {
-            Servicios oSer = new Servicios();
-            ServiciosBus oSerBus = new ServiciosBus();
-            oSer = oSerBus.ServiciosGetById(cmbServicio.SelectedValue.ToString());
-            if (oSer.SrvRequiereMedidor=="S")
+            if (cmbServicio.SelectedIndex == 0)
             {
-                chkMedido.Checked = true;
-                tabSumnistros.TabPages[0]. Enabled = true;
+                cmbServicio.Focus();
+                cmbTipoConexion.Enabled = false;
             }
             else
             {
-                chkMedido.Checked = false;
-                tabSumnistros.TabPages[0].Enabled = false;
+                cmbTipoConexion.Enabled = true;
+                Servicios oSer = new Servicios();
+                ServiciosBus oSerBus = new ServiciosBus();
+                oSer = oSerBus.ServiciosGetById(cmbServicio.SelectedValue.ToString());
+                if (oSer.SrvRequiereMedidor == "S")
+                {
+                    chkMedido.Checked = true;
+                    tabSumnistros.TabPages[0].Enabled = true;
+                }
+                else
+                {
+                    chkMedido.Checked = false;
+                    tabSumnistros.TabPages[0].Enabled = false;
+                }
+                _oSuministrosCrud.CargarCategorias();
+                _oSuministrosCrud.CargarTiposConexiones();
             }
-            _oSuministrosCrud.CargarCategorias();
-            _oSuministrosCrud.CargarTiposConexiones();
         }
 
         private void cmbZona_SelectedIndexChanged(object sender, EventArgs e)
@@ -475,6 +484,11 @@ namespace GesServicios.controles.forms
             //                    ((Control)sender).Name,
             //                    this.FindForm().Name);
             //}
+
+        }
+
+        private void grdGrillaAdmin1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
 

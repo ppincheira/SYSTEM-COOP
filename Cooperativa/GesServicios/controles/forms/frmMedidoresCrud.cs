@@ -2,8 +2,10 @@
 using Controles.datos;
 using Controles.form;
 using Service;
+using Model;
 using System;
 using System.Windows.Forms;
+using FormsAuxiliares;
 
 namespace GesServicios.controles.forms
 {
@@ -34,20 +36,20 @@ namespace GesServicios.controles.forms
             set { this.TextBoxNumeroSerie.Text = value.ToString(); }
         }
 
-        public cmbLista NumeroProv
+        public long NumeroProv
         {
-            get { return this.cmbNumeroProv; }
-            set { this.cmbNumeroProv = value; }
+            get { return long.Parse(txtEmpNumero.Text); }
+            set { txtEmpNumero.Text = value.ToString(); }
         }
         public int Digitos
         {
             get { return int.Parse(TextBoxDigitos.Text); }
             set { TextBoxDigitos.Text = value.ToString(); }
         }
-        public string EstCodigo
+        public cmbLista EstCodigo
         {
-            get { return this.chkEstado.Checked ? "H" : "I"; }
-            set { this.chkEstado.Checked = (value == "H"); }
+            get { return cmbEstado; }
+            set { this.cmbEstado = value; }
         }
 
         public double FactorCalib
@@ -91,6 +93,11 @@ namespace GesServicios.controles.forms
             set { this.cmbLmeCodigo = value; }
         }
         //public decimal Registrador { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string strRazonSocial
+        {
+            get { return this.txtEmpRazonSocial.Text; }
+            set { this.txtEmpRazonSocial.Text = value; }
+        }
 
         #endregion
         public frmMedidoresCrud(long NumeroMedidor, string Estado, int Usuario)
@@ -184,6 +191,24 @@ namespace GesServicios.controles.forms
                                 e.ToString(),
                                 ((Control)sender).Name,
                                 this.FindForm().Name);
+            }
+
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("100047", "100048", "100049", "0", "0", "100050");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "CLIE";
+            oAdmin.Tipo = Admin.enumTipoForm.Selector;
+            oAdmin.FiltroCampos = "e.emp_proveedor&e.est_codigo_pro&";
+            oAdmin.FiltroOperador = "1&1&";
+            oAdmin.FiltroValores = "S&H&";
+            frmFormAdmin frmbus = new frmFormAdmin(oAdmin, oPermiso);
+            if (frmbus.ShowDialog() == DialogResult.OK)
+            {
+                string id = frmbus.striRdoCodigo;
+                _oMedidoresCrud.CargarProveedor(long.Parse(id));
             }
 
         }

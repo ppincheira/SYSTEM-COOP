@@ -147,10 +147,11 @@
             // 
             // dtpFechaCarga
             // 
+            this.dtpFechaCarga.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaCarga.Location = new System.Drawing.Point(110, 273);
             this.dtpFechaCarga.Name = "dtpFechaCarga";
             this.dtpFechaCarga.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.dtpFechaCarga.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaCarga.Size = new System.Drawing.Size(121, 20);
             this.dtpFechaCarga.TabIndex = 14;
             // 
             // lblTipoMedidor
@@ -450,10 +451,10 @@
         private Controles.labels.lblEtiqueta lblTipoConexion;
         private Controles.labels.lblEtiqueta lblTipoMedidor;
         private Controles.datos.cmbLista cmbTipoMedidor;
-        private Controles.Fecha.dtpFecha dtpFechaCarga;
         private Controles.labels.lblEtiqueta lblEtiqueta1;
         private Controles.datos.cmbLista cmbTipoConexion;
         private Controles.datos.cmbLista cmbTipoContador;
         private Controles.textBoxes.txtDescripcion TextBoxAmperaje;
+        public Controles.Fecha.dtpFecha dtpFechaCarga;
     }
 }
