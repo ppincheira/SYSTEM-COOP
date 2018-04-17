@@ -18,16 +18,6 @@ D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\B
 D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\Business\obj\Debug\Business.dll
 D:\DESARROLLO\SYSTEM-COOP-c772d18c41e3b1c278b09211b82b7932c85364f3\Cooperativa\Business\obj\Debug\Business.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Business.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Business.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Implement.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Model.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Oracle.DataAccess.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Implement.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Model.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Business\obj\Debug\Business.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\Business\obj\Debug\Business.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Business.dll
 C:\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Business.pdb
 C:\GitHub\SYSTEM-COOP\Cooperativa\Business\bin\Debug\Implement.dll

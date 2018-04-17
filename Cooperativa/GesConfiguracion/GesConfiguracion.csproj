@@ -54,6 +54,9 @@
     <Compile Include="controles\forms\frmConceptosCrud.designer.cs">
       <DependentUpon>frmConceptosCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="controles\forms\frmCuadrosTarifariosCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="controles\forms\frmTiposComprobantesCrud.cs">
       <SubType>Form</SubType>
     </Compile>

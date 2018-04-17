@@ -114,6 +114,8 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             SuministrosMedidoresBus oSMeBus = new SuministrosMedidoresBus();
 
             if (_vista.Numero == 0){
+
+
                 oSum.SumNumero =  oSumBus.SuministrosAdd(oSum);
                 DomiciliosEntidades oDEn = new DomiciliosEntidades();
                 DomiciliosEntidadesBus oDEnBus = new DomiciliosEntidadesBus();

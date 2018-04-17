@@ -89,6 +89,7 @@
     <Compile Include="ConceptosFabricados.cs" />
     <Compile Include="ConceptosTiposComprobantes.cs" />
     <Compile Include="ConceptosUnidadesMedidas.cs" />
+    <Compile Include="CuadrosTarifarios.cs" />
     <Compile Include="LecturasModosConceptos.cs" />
     <Compile Include="LecturasSuministrosItems.cs" />
     <Compile Include="LecturasSuministros.cs" />

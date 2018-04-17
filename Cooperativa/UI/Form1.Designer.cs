@@ -67,6 +67,7 @@
             this.btnBarrios = new System.Windows.Forms.Button();
             this.btnFuncionalidadesRoles = new System.Windows.Forms.Button();
             this.btnFuncionalidadesUsuarios = new System.Windows.Forms.Button();
+            this.btnCuadrosTarifariosCrud = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -437,7 +438,7 @@
             // 
             // btnConceptos
             // 
-            this.btnConceptos.Location = new System.Drawing.Point(185, 463);
+            this.btnConceptos.Location = new System.Drawing.Point(138, 440);
             this.btnConceptos.Name = "btnConceptos";
             this.btnConceptos.Size = new System.Drawing.Size(125, 27);
             this.btnConceptos.TabIndex = 28;
@@ -485,11 +486,22 @@
             this.btnFuncionalidadesUsuarios.UseVisualStyleBackColor = true;
             this.btnFuncionalidadesUsuarios.Click += new System.EventHandler(this.btnFuncionalidadesUsuarios_Click);
             // 
+            // btnCuadrosTarifariosCrud
+            // 
+            this.btnCuadrosTarifariosCrud.Location = new System.Drawing.Point(138, 473);
+            this.btnCuadrosTarifariosCrud.Name = "btnCuadrosTarifariosCrud";
+            this.btnCuadrosTarifariosCrud.Size = new System.Drawing.Size(125, 27);
+            this.btnCuadrosTarifariosCrud.TabIndex = 33;
+            this.btnCuadrosTarifariosCrud.Text = "Cuadros Tarifarios";
+            this.btnCuadrosTarifariosCrud.UseVisualStyleBackColor = true;
+            this.btnCuadrosTarifariosCrud.Click += new System.EventHandler(this.btnCuadrosTarifariosCrud_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 521);
+            this.Controls.Add(this.btnCuadrosTarifariosCrud);
             this.Controls.Add(this.btnFuncionalidadesUsuarios);
             this.Controls.Add(this.btnFuncionalidadesRoles);
             this.Controls.Add(this.btnBarrios);
@@ -578,6 +590,7 @@
         private System.Windows.Forms.Button btnBarrios;
         private System.Windows.Forms.Button btnFuncionalidadesRoles;
         private System.Windows.Forms.Button btnFuncionalidadesUsuarios;
+        private System.Windows.Forms.Button btnCuadrosTarifariosCrud;
     }
 }
 

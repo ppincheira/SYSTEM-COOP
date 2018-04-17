@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Business;
 using GesServicios.controles.forms;
+using GesConfiguracion.controles.forms;
 using Model;
 
 namespace UI
@@ -338,6 +339,11 @@ namespace UI
             oAdmin.TabCodigo = "MED";
             FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
             frmbus.ShowDialog();
+        }
+
+        private void btnCuadrosTarifariosCrud_Click(object sender, EventArgs e)
+        {
+            frmCua
         }
     }
 }

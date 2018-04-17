@@ -90,6 +90,7 @@
     <Compile Include="ConceptosTiposComprobantesImpl.cs" />
     <Compile Include="ConceptosUnidadesMedidasImpl.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="CuadrosTarifariosImpl.cs" />
     <Compile Include="DepartamentosImpl.cs" />
     <Compile Include="DetallesAuditoriaImpl.cs" />
     <Compile Include="DetallesColumnasTablasImpl.cs" />
