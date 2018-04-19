@@ -9,7 +9,8 @@ using Model;
 using Controles.form;
 using AppProcesos.gesConfiguracion.frmCuadrosTarifariosCrud;
 
-namespace GesConfiguracion.Controles.forms
+
+namespace GesConfiguracion.controles.forms
 {
     public partial class frmCuadrosTarifariosCrud : gesForm , IVistaCuadrosTarifariosCrud
     {

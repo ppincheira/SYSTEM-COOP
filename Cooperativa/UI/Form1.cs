@@ -343,7 +343,7 @@ namespace UI
 
         private void btnCuadrosTarifariosCrud_Click(object sender, EventArgs e)
         {
-            frmCua
+                       
         }
     }
 }

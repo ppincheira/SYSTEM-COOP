@@ -98,3 +98,8 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.exe
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.Form1.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
