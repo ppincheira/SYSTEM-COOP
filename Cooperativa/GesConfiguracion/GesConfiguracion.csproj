@@ -92,6 +92,9 @@
     <EmbeddedResource Include="controles\forms\frmConceptosCrud.resx">
       <DependentUpon>frmConceptosCrud.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmCuadrosTarifariosCrud.resx">
+      <DependentUpon>frmCuadrosTarifariosCrud.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmTiposComprobantesCrud.resx">
       <DependentUpon>frmTiposComprobantesCrud.cs</DependentUpon>
     </EmbeddedResource>

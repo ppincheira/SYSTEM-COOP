@@ -1139,8 +1139,7 @@ namespace FormsAuxiliares
             switch (_oAdmin.TabCodigo)
             {
                 case "DOMB":
-
-                    
+                                   
                     frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(_oAdmin.CodigoEditar==null?0:long.Parse(_oAdmin.CodigoEditar), _oAdmin);
                     if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);

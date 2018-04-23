@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Service;
 using Controles.datos;
+using System.Windows.Forms;
 using Model;
 using Controles.form;
 using AppProcesos.gesConfiguracion.frmCuadrosTarifariosCrud;
@@ -19,9 +20,9 @@ namespace GesConfiguracion.controles.forms
 
        //public Admin _oAdmin;
        // private string _Tabla;
-       // Utility _oUtil;
+        //Utility _oUtil;
         //public string _strRdoCodigo;
-        private UICuadrosTarifariosCrud _oCuadrosTarifariosCrud;
+        UICuadrosTarifariosCrud _oCuadrosTarifariosCrud;
         #endregion
 
         #region Implementation of IVistaCuadrosTarifariosCrud
@@ -63,21 +64,21 @@ namespace GesConfiguracion.controles.forms
         private void InitializeComponent()
         {
             this.gesGroup1 = new Controles.contenedores.gesGroup();
-            this.gesGroup2 = new Controles.contenedores.gesGroup();
-            this.gesGroup3 = new Controles.contenedores.gesGroup();
-            this.gesGroup4 = new Controles.contenedores.gesGroup();
             this.grdCuadrosTarifarios = new Controles.datos.grdGrillaAdmin();
+            this.gesGroup2 = new Controles.contenedores.gesGroup();
             this.grdConceptosGenerales = new Controles.datos.grdGrillaAdmin();
-            this.grdCategorias = new Controles.datos.grdGrillaAdmin();
+            this.gesGroup3 = new Controles.contenedores.gesGroup();
             this.grdConceptosCategorias = new Controles.datos.grdGrillaAdmin();
+            this.gesGroup4 = new Controles.contenedores.gesGroup();
+            this.grdCategorias = new Controles.datos.grdGrillaAdmin();
             this.gesGroup1.SuspendLayout();
-            this.gesGroup2.SuspendLayout();
-            this.gesGroup3.SuspendLayout();
-            this.gesGroup4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCuadrosTarifarios)).BeginInit();
+            this.gesGroup2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdConceptosGenerales)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCategorias)).BeginInit();
+            this.gesGroup3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdConceptosCategorias)).BeginInit();
+            this.gesGroup4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCategorias)).BeginInit();
             this.SuspendLayout();
             // 
             // gesGroup1
@@ -90,6 +91,14 @@ namespace GesConfiguracion.controles.forms
             this.gesGroup1.TabStop = false;
             this.gesGroup1.Text = "Cuadros Tarifarios";
             // 
+            // grdCuadrosTarifarios
+            // 
+            this.grdCuadrosTarifarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCuadrosTarifarios.Location = new System.Drawing.Point(6, 19);
+            this.grdCuadrosTarifarios.Name = "grdCuadrosTarifarios";
+            this.grdCuadrosTarifarios.Size = new System.Drawing.Size(195, 654);
+            this.grdCuadrosTarifarios.TabIndex = 0;
+            // 
             // gesGroup2
             // 
             this.gesGroup2.Controls.Add(this.grdConceptosGenerales);
@@ -99,6 +108,14 @@ namespace GesConfiguracion.controles.forms
             this.gesGroup2.TabIndex = 1;
             this.gesGroup2.TabStop = false;
             this.gesGroup2.Text = "Conceptos Generales";
+            // 
+            // grdConceptosGenerales
+            // 
+            this.grdConceptosGenerales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdConceptosGenerales.Location = new System.Drawing.Point(6, 19);
+            this.grdConceptosGenerales.Name = "grdConceptosGenerales";
+            this.grdConceptosGenerales.Size = new System.Drawing.Size(1026, 235);
+            this.grdConceptosGenerales.TabIndex = 1;
             // 
             // gesGroup3
             // 
@@ -110,6 +127,14 @@ namespace GesConfiguracion.controles.forms
             this.gesGroup3.TabStop = false;
             this.gesGroup3.Text = "Conceptos por Categoria";
             // 
+            // grdConceptosCategorias
+            // 
+            this.grdConceptosCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdConceptosCategorias.Location = new System.Drawing.Point(6, 19);
+            this.grdConceptosCategorias.Name = "grdConceptosCategorias";
+            this.grdConceptosCategorias.Size = new System.Drawing.Size(769, 438);
+            this.grdConceptosCategorias.TabIndex = 1;
+            // 
             // gesGroup4
             // 
             this.gesGroup4.Controls.Add(this.grdCategorias);
@@ -120,22 +145,6 @@ namespace GesConfiguracion.controles.forms
             this.gesGroup4.TabStop = false;
             this.gesGroup4.Text = "Categorias";
             // 
-            // grdCuadrosTarifarios
-            // 
-            this.grdCuadrosTarifarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCuadrosTarifarios.Location = new System.Drawing.Point(6, 19);
-            this.grdCuadrosTarifarios.Name = "grdCuadrosTarifarios";
-            this.grdCuadrosTarifarios.Size = new System.Drawing.Size(195, 654);
-            this.grdCuadrosTarifarios.TabIndex = 0;
-            // 
-            // grdConceptosGenerales
-            // 
-            this.grdConceptosGenerales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdConceptosGenerales.Location = new System.Drawing.Point(6, 19);
-            this.grdConceptosGenerales.Name = "grdConceptosGenerales";
-            this.grdConceptosGenerales.Size = new System.Drawing.Size(1026, 235);
-            this.grdConceptosGenerales.TabIndex = 1;
-            // 
             // grdCategorias
             // 
             this.grdCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -144,15 +153,7 @@ namespace GesConfiguracion.controles.forms
             this.grdCategorias.Size = new System.Drawing.Size(239, 438);
             this.grdCategorias.TabIndex = 1;
             // 
-            // grdConceptosCategorias
-            // 
-            this.grdConceptosCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdConceptosCategorias.Location = new System.Drawing.Point(6, 19);
-            this.grdConceptosCategorias.Name = "grdConceptosCategorias";
-            this.grdConceptosCategorias.Size = new System.Drawing.Size(769, 438);
-            this.grdConceptosCategorias.TabIndex = 1;
-            // 
-            // frmCuadrosTarifarios
+            // frmCuadrosTarifariosCrud
             // 
             this.ClientSize = new System.Drawing.Size(1275, 751);
             this.Controls.Add(this.gesGroup4);
@@ -160,16 +161,62 @@ namespace GesConfiguracion.controles.forms
             this.Controls.Add(this.gesGroup2);
             this.Controls.Add(this.gesGroup1);
             this.Name = "frmCuadrosTarifariosCrud";
+            this.Load += new System.EventHandler(this.frmCuadrosTarifariosCrud_Load);
             this.gesGroup1.ResumeLayout(false);
-            this.gesGroup2.ResumeLayout(false);
-            this.gesGroup3.ResumeLayout(false);
-            this.gesGroup4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdCuadrosTarifarios)).EndInit();
+            this.gesGroup2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdConceptosGenerales)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCategorias)).EndInit();
+            this.gesGroup3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdConceptosCategorias)).EndInit();
+            this.gesGroup4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdCategorias)).EndInit();
             this.ResumeLayout(false);
 
         }
+
+        #region << EVENTOS >>
+        public frmCuadrosTarifariosCrud()
+        {
+            try
+            {
+                InitializeComponent();
+                _oCuadrosTarifariosCrud = new UICuadrosTarifariosCrud(this);
+               
+                 
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                "frmCuadrosTarifariosCrud",
+                                "frmCuadrosTarifariosCrud",
+                                this.FindForm().Name);
+            }
+        }
+        private void frmCuadrosTarifariosCrud_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                _oCuadrosTarifariosCrud.Inicializar();
+                //oUtil = new Utility();
+
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+
+        #endregion
+
+
     }
+
+
 }

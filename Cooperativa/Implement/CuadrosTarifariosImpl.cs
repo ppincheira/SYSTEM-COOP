@@ -200,7 +200,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from CUADROS_TARIFARIOS "; 
+                string sqlSelect = "select CDT_CODIGO CODIGO, CDT_FECHA_VIGENCIA VIGENCIA from CUADROS_TARIFARIOS ORDER BY CDT_FECHA_VIGENCIA"; 
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
