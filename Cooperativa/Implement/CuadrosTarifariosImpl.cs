@@ -221,8 +221,8 @@ namespace Implement
                 oCdt.CdtCodigo = long.Parse(dr["CDT_CODIGO"].ToString());
                 if (dr["CDT_FECHA_VIGENCIA"].ToString() != "")
                     oCdt.CdtFechaVigencia = DateTime.Parse(dr["CDT_FECHA_VIGENCIA"].ToString());
-                if (dr["CDT_FEHCA_ALTA"].ToString() != "")
-                    oCdt.CdtFechaAlta = DateTime.Parse(dr["CDT_FEHCA_ALTA"].ToString());
+                if (dr["CDT_FECHA_ALTA"].ToString() != "")
+                    oCdt.CdtFechaAlta = DateTime.Parse(dr["CDT_FECHA_ALTA"].ToString());
                 oCdt.SrvCodigo = dr["SRV_CODIGO"].ToString();
                 return oCdt;
             }

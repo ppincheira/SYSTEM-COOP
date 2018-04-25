@@ -84,7 +84,9 @@
     <Compile Include="AuditoriasImpl.cs" />
     <Compile Include="BarriosLocalidadesImpl.cs" />
     <Compile Include="CallesLocalidadesImpl.cs" />
+    <Compile Include="CdtConceptosCategoriasImpl.cs" />
     <Compile Include="CodigosPostalesLocalidadesImpl.cs" />
+    <Compile Include="ConceptosCuadrosTarifariosImpl.cs" />
     <Compile Include="ConceptosFabricadosImpl.cs" />
     <Compile Include="ConceptosImpl.cs" />
     <Compile Include="ConceptosTiposComprobantesImpl.cs" />
@@ -112,6 +114,8 @@
     <Compile Include="FuncionalidadesImpl.cs" />
     <Compile Include="FuncionalidadesUsuariosImpl.cs" />
     <Compile Include="GruposDetallesImpl.cs" />
+    <Compile Include="MonedasImpl.cs" />
+    <Compile Include="MonedasTasasCambioImpl.cs" />
     <Compile Include="SuministrosConceptosImpl.cs" />
     <Compile Include="TelefonosEntidadesImpl.cs" />
     <Compile Include="TiposComprobanteImpl.cs" />

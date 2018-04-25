@@ -85,7 +85,9 @@
     <Compile Include="Auditorias.cs" />
     <Compile Include="BarriosLocalidades.cs" />
     <Compile Include="CallesLocalidades.cs" />
+    <Compile Include="CdtConceptosCategorias.cs" />
     <Compile Include="Conceptos.cs" />
+    <Compile Include="ConceptosCuadrosTarifarios.cs" />
     <Compile Include="ConceptosFabricados.cs" />
     <Compile Include="ConceptosTiposComprobantes.cs" />
     <Compile Include="ConceptosUnidadesMedidas.cs" />
@@ -120,6 +122,8 @@
     <Compile Include="Medidores.cs" />
     <Compile Include="MenuItems.cs" />
     <Compile Include="MenuItemsUsuarios.cs" />
+    <Compile Include="Monedas.cs" />
+    <Compile Include="MonedasTasasCambio.cs" />
     <Compile Include="Observaciones.cs" />
     <Compile Include="Paises.cs" />
     <Compile Include="ParametrosGenerales.cs" />
