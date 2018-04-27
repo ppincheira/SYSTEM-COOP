@@ -7,7 +7,6 @@ namespace Business
 {
     public class PersonasBus
     {
-
         public long PersonasAdd(Personas oPersonas)
         {
             PersonasImpl oPersonasImpl = new PersonasImpl();

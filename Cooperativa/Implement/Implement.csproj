@@ -89,6 +89,8 @@
     <Compile Include="ConceptosCuadrosTarifariosImpl.cs" />
     <Compile Include="ConceptosFabricadosImpl.cs" />
     <Compile Include="ConceptosImpl.cs" />
+    <Compile Include="ConceptosImpuestosItemsImpl.cs" />
+    <Compile Include="ConceptosServiciosImpl.cs" />
     <Compile Include="ConceptosTiposComprobantesImpl.cs" />
     <Compile Include="ConceptosUnidadesMedidasImpl.cs" />
     <Compile Include="Conexion.cs" />
@@ -97,6 +99,8 @@
     <Compile Include="DetallesAuditoriaImpl.cs" />
     <Compile Include="DetallesColumnasTablasImpl.cs" />
     <Compile Include="DetallesIvaImpl.cs" />
+    <Compile Include="GruposConceptosImpuestosImpl.cs" />
+    <Compile Include="GruposImpuestosItemsImpl.cs" />
     <Compile Include="LecturasConceptosImpl.cs" />
     <Compile Include="LecturasModosImpl.cs" />
     <Compile Include="LecturasSuministrosImpl.cs" />
@@ -116,10 +120,12 @@
     <Compile Include="GruposDetallesImpl.cs" />
     <Compile Include="MonedasImpl.cs" />
     <Compile Include="MonedasTasasCambioImpl.cs" />
+    <Compile Include="PuntosVentasImpl.cs" />
     <Compile Include="SuministrosConceptosImpl.cs" />
     <Compile Include="TelefonosEntidadesImpl.cs" />
     <Compile Include="TiposComprobanteImpl.cs" />
     <Compile Include="TiposConceptosImpl.cs" />
+    <Compile Include="TiposGruposConceptosImpl.cs" />
     <Compile Include="TiposGruposImpl.cs" />
     <Compile Include="LocalidadesImpl.cs" />
     <Compile Include="MedidoresImpl.cs" />

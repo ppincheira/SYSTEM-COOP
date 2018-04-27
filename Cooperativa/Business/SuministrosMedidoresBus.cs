@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using Implement;
 using Model;
 
@@ -35,7 +36,11 @@ namespace Business
             SuministrosMedidoresImpl oSuministrosMedidoresImpl = new SuministrosMedidoresImpl();
             return oSuministrosMedidoresImpl.SuministrosMedidoresGetBySuministro(Id);
         }
-
+        public DataTable SuministrosMedidoresGetBySuministroDT(long Id)
+        {
+            SuministrosMedidoresImpl oSuministrosMedidoresImpl = new SuministrosMedidoresImpl();
+            return oSuministrosMedidoresImpl.SuministrosMedidoresGetBySuministroDT(Id);
+        }
         public List<SuministrosMedidores> SuministrosMedidoresGetAll()
         {
             SuministrosMedidoresImpl oSuministrosMedidoresImpl = new SuministrosMedidoresImpl();

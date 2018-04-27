@@ -30,6 +30,7 @@ namespace AppProcesos.gesConfiguracion.frmCuadrosTarifariosCrud
         {
             //Obtengo los cuadros tarifarios
             CargarGrillaCuadrosTarifarios();
+            CargarGrillaCategorias();
          
          }
         private void CargarGrillaCuadrosTarifarios (){
@@ -41,7 +42,16 @@ namespace AppProcesos.gesConfiguracion.frmCuadrosTarifariosCrud
             _vista.grillaCuadrosTarifarios.AutoResizeColumns();
            
         }
+        private void CargarGrillaCategorias()
+        {
+            ServiciosCategoriasBus oSC = new ServiciosCategoriasBus();
+            DataTable dt = oSC.ServiciosCategoriasCdtGetbySrv("1");
 
-       
+            oUtil.CargarGrilla(_vista.grillaCategorias, dt);
+            _vista.grillaCategorias.ReadOnly = true;
+            _vista.grillaCategorias.AutoResizeColumns();
+
+        }
+
     }
 }

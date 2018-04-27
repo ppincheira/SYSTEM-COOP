@@ -12,6 +12,12 @@ namespace Business
             return oSuministrosImpl.SuministrosAdd(oSuministros);
         }
 
+        public bool SuministrosAddCompleto(Suministros oSuministros, DomiciliosEntidades oSDE, SuministrosMedidores oSMe)
+        {
+            SuministrosImpl oSuministrosImpl = new SuministrosImpl();
+            return oSuministrosImpl.SuministrosAddCompleto(oSuministros, oSDE, oSMe);
+        }
+
         public bool SuministrosUpdate(Suministros oSuministros)
         {
             SuministrosImpl oSuministrosImpl = new SuministrosImpl();

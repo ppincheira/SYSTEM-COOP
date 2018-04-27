@@ -22,7 +22,7 @@ namespace AppProcesos.gesSeguridad.frmPersonasCrud
             oUtil.CargarCombo(_vista.cmbPrsProvincia, oProvinciasBus.ProvinciasGetByFilter("ARG"), "PRV_CODIGO", "PRV_DESCRIPCION", "Seleccione Provincia");
             _vista.cmbPrsProvincia.SelectedValue = "NQ";
             LocalidadesBus oLocalidadesBus = new LocalidadesBus();          
-            oUtil.CargarCombo(_vista.cmbPrsLocalidad, oLocalidadesBus.LocalidadesGetByProvincia(_vista.cmbPrsLocalidad.SelectedValue.ToString()), "LOC_NUMERO", "LOC_DESCRIPCION", "Seleccione Localidad");
+            oUtil.CargarCombo(_vista.cmbPrsLocalidad, oLocalidadesBus.LocalidadesGetByProvincia(_vista.cmbPrsProvincia.SelectedValue.ToString()), "LOC_NUMERO", "LOC_DESCRIPCION", "Seleccione Localidad");
 
             DominiosBus oDonBus = new DominiosBus();
             oUtil.CargarCombo(_vista.cmbPrsCivil, oDonBus.DominiosGetByFilter("ESTADO_CIVIL_PER"), "dmn_valor", "dmn_descripcion", "Seleccione Estado");
@@ -81,12 +81,16 @@ namespace AppProcesos.gesSeguridad.frmPersonasCrud
             long logResultado;
             Personas oPersonas = new Personas();
             PersonasBus oPersonasBus = new PersonasBus();
+
             oPersonas.PrsEstadoCivil = _vista.cmbPrsCivil.SelectedValue.ToString();
             oPersonas.PrsSexo =_vista.cmbPrsSexo.SelectedValue.ToString();
+
             if (_vista.cmbPrsCargo.SelectedValue.ToString() != "0")
                 oPersonas.PrsCargo = _vista.cmbPrsCargo.SelectedValue.ToString();
+
             if (_vista.cmbPrsBaja.SelectedValue.ToString() != "0")
                 oPersonas.PrsMotivoBaja = _vista.cmbPrsBaja.SelectedValue.ToString();
+
             oPersonas.PrsTipoDoc =_vista.cmbPrsTpoDni.SelectedValue.ToString();            
             oPersonas.PrsNumero = _vista.logPrsNumero;
             oPersonas.PrsApellido = _vista.strPrsApellido;
@@ -117,8 +121,10 @@ namespace AppProcesos.gesSeguridad.frmPersonasCrud
                 return logResultado;
             }
         }
+
         public bool EliminarPersona(long idPersona)
-        {   
+        {
+            
             PersonasBus oPersonasBus = new PersonasBus();
             Personas oPersonas = oPersonasBus.PersonasGetById(idPersona);
             oPersonas.EstCodigo = "B";
@@ -126,6 +132,7 @@ namespace AppProcesos.gesSeguridad.frmPersonasCrud
         }
         public int ConsultarUsuario(long idPersona)
         {
+
             UsuariosBus oUsuariosBus = new UsuariosBus();
             Usuarios oUsuarios = oUsuariosBus.PersonaUsuarios(idPersona.ToString());          
             return oUsuarios.UsrNumero;

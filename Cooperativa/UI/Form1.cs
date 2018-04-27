@@ -346,5 +346,38 @@ namespace UI
             frmCuadrosTarifariosCrud ofrmCTCrud = new frmCuadrosTarifariosCrud();
             ofrmCTCrud.ShowDialog();
         }
+
+        private void btnGruposConceptos_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("TGC", "TGC_CODIGO", false);
+            frmbus.ShowDialog();
+        }
+
+        private void btnGruposConceptosImpuestos_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("GCI", "GCI_CODIGO", false);
+            frmbus.ShowDialog();
+        }
+
+        private void btnGruposConceptosItems_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "GII";
+            FormsAuxiliares.frmFormAdminMini frmGii = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            frmGii.ShowDialog();
+        }
+
+        private void btnPuntosVenta_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("PVT", "CODIGO", false);
+            frmbus.ShowDialog();
+        }
+
+        private void btnPVTipoCompr_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("PVC", "CODIGO", true);
+            frmbus.ShowDialog();
+        }
     }
 }

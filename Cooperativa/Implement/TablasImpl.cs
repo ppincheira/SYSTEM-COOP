@@ -499,7 +499,46 @@ namespace Implement
                     };
                     comando += " ( " + listaCampos + ") values(" + listaValores + ")";
                     break;
-                    /*
+                /*
+                 * ESTE METODO SE AGREGO PARA PODER INSERTAR REGISTROS QUE DEPENDAN DE LA CLAVE POR SECUENCIA
+                 * LA SECUENCIA TINE QUE TENER EL MISMO NOMBRE QUE EL CAMPO CLAVE 
+                 */
+                //case "IN":
+                //    {
+                //        criterio = criterio.Substring(0, criterio.Length - 3);
+                //        listaCampos = "";
+                //        listaValores = "";
+                //        for (int pos = 0; pos < columnas.Length; pos++)
+                //        {
+                //            listaCampos += columnas[pos];
+                //            listaValores += "'" + valores[pos] + "'";
+                //            if (columnas.Length > pos + 1)
+                //            {
+                //                listaCampos += ", ";
+                //                listaValores += ", ";
+
+                //            }
+                //        };
+                //        comando += " ( ROL_CODIGO, " + listaCampos + ") values(IDTEMP," + listaValores + ")";
+
+
+                //        /*             query = " DECLARE IDTEMP NUMBER(15,0); " +
+                //                   " BEGIN " +
+                //                   " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('" +
+                //                   criterio +
+                //                   "')) into IDTEMP from dual; " +
+                //                   "insert into " + tabla + comando + "RETURNING IDTEMP INTO :id;END;";                */
+
+                //        comando = " DECLARE IDTEMP NUMBER(15,0); " +
+                //       " BEGIN " +
+                //       " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('" +
+                //       criterio +
+                //       "')) into IDTEMP from dual; " +
+                //       "insert into " + tabla + comando + "RETURNING IDTEMP INTO :id;END;";
+
+                //    }
+                //    break;
+                /*
                      * ESTE METODO SE AGREGO PARA PODER INSERTAR REGISTROS QUE DEPENDAN DE LA CLAVE POR SECUENCIA
                      * LA SECUENCIA TINE QUE TENER EL MISMO NOMBRE QUE EL CAMPO CLAVE 
                      */
@@ -519,7 +558,7 @@ namespace Implement
 
                             }
                         };
-                        comando += " ( ROL_CODIGO, " + listaCampos + ") values(IDTEMP," + listaValores + ")";
+                        comando += " ( " + criterio + ", " + listaCampos + ") values(IDTEMP," + listaValores + ")";
 
 
                         /*             query = " DECLARE IDTEMP NUMBER(15,0); " +

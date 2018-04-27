@@ -91,8 +91,9 @@ D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\Imp
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.controles.forms.frmConceptosCrud.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.controles.forms.frmCuadrosTarifariosCrud.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.controles.forms.frmGruposImpuestosItemsCrud.resources
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.frmTiposComprobantesCrud.resources
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.csproj.GenerateResource.Cache
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.pdb
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.controles.forms.frmCuadrosTarifariosCrud.resources

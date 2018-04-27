@@ -694,6 +694,11 @@ namespace FormsAuxiliares
                     if (oFrmCptCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
+                case "GII":
+                    frmGruposImpuestosItemsCrud oFrmGiiCrud = new frmGruposImpuestosItemsCrud(0, "I");
+                    if (oFrmGiiCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
 
             }
 
@@ -751,6 +756,12 @@ namespace FormsAuxiliares
                     if (oFrmCptCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
+                case "GII":
+                    int idGii = Convert.ToInt32(row.Cells[0].Value);
+                    frmGruposImpuestosItemsCrud oFrmGiiCrud = new frmGruposImpuestosItemsCrud(idGii, "V");
+                    if (oFrmGiiCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;          
             }
         }
 
@@ -804,6 +815,12 @@ namespace FormsAuxiliares
                 case "CPT":
                     long idCpt = Convert.ToInt64(row.Cells[0].Value);
                     frmConceptosCrud oFrmCptCrud = new frmConceptosCrud(idCpt, "B");
+                    //if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
+                    _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
+                case "GII":
+                    int idGii = Convert.ToInt32(row.Cells[0].Value);
+                    frmGruposImpuestosItemsCrud oFrmGiiCrud = new frmGruposImpuestosItemsCrud(idGii, "B");
                     //if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
                     _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
@@ -895,18 +912,16 @@ namespace FormsAuxiliares
                     if (oFrmCptCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
+                case "GII":
+                    int idGii = Convert.ToInt32(row.Cells[0].Value);
+                    frmGruposImpuestosItemsCrud oFrmGiiCrud = new frmGruposImpuestosItemsCrud(idGii, "E");
+                    if (oFrmGiiCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
             }
 
         }
-
-
-
-
-
-
-
         #endregion
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             _strDatosSeleccionados = _oFormAdmin.GuardarSeleccionados();

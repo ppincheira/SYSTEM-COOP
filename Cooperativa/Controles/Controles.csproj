@@ -172,7 +172,6 @@
     <Compile Include="datos\cmbLista.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="datos\ColumnaCalendario.cs" />
     <Compile Include="datos\gesCheckBox.cs">
       <SubType>Component</SubType>
     </Compile>

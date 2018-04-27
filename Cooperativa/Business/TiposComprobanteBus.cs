@@ -26,7 +26,7 @@ namespace Business
             TiposComprobanteImpl otcmImpl = new TiposComprobanteImpl();
             return otcmImpl.TiposComprobanteGetById(id);
         }
-        public List<TiposComprobante> TiposComprobanteGetAll(string id)
+        public List<TiposComprobante> TiposComprobanteGetAll()
         {
             TiposComprobanteImpl otcmImpl = new TiposComprobanteImpl();
             return otcmImpl.TiposMedidoresGetAll();

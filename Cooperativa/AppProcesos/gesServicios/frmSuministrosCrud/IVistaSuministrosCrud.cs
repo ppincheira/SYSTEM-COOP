@@ -54,6 +54,12 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
         string strDepartamento { get; set; }
         string strPiso { get; set; }
         grdGrillaAdmin grdSumConceptos  { get; set; }
-
+        cmbLista EstMedidorActual { get; set; }
+        grdGrillaAdmin grdSumMedidores  { get; set; }
+        long numCodigoObservacion  { get; set; }
+        string strObservacion { get; set; }
+        grdGrillaAdmin grdSumObservaciones  { get; set; }
+        long numDomicilioAnterior { get; set; }
+        long numMedidorAnterior { get; set; }
     }
 }

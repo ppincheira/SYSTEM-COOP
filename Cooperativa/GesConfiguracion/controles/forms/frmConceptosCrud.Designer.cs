@@ -114,6 +114,11 @@
             this.txtCodigo = new Controles.textBoxes.txtDescripcion();
             this.chkHabilitado = new Controles.datos.chkBox();
             this.tttEtiqueta = new Controles.objects.tttEtiqueta();
+            this.tabServicios = new System.Windows.Forms.TabPage();
+            this.btnEliminarServicio = new Controles.buttons.btnEliminar();
+            this.btnNuevoServicio = new Controles.buttons.btnNuevo();
+            this.grdServicios = new Controles.datos.grdGrillaEdit();
+            this.lblCantidadServicios = new Controles.labels.lblEtiqueta();
             this.gbDatos.SuspendLayout();
             this.gpbImagen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
@@ -130,6 +135,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdFabricado)).BeginInit();
             this.tabClasificación.SuspendLayout();
             this.gpbDetalle.SuspendLayout();
+            this.tabServicios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdServicios)).BeginInit();
             this.SuspendLayout();
             // 
             // gbDatos
@@ -213,6 +220,7 @@
             this.tabDetalle.Controls.Add(this.tabPageComponentes);
             this.tabDetalle.Controls.Add(this.tabClasificación);
             this.tabDetalle.Controls.Add(this.tabImpositivas);
+            this.tabDetalle.Controls.Add(this.tabServicios);
             this.tabDetalle.Location = new System.Drawing.Point(12, 101);
             this.tabDetalle.Name = "tabDetalle";
             this.tabDetalle.SelectedIndex = 0;
@@ -1061,6 +1069,60 @@
             this.chkHabilitado.Text = "Habilitado";
             this.chkHabilitado.UseVisualStyleBackColor = true;
             // 
+            // tabServicios
+            // 
+            this.tabServicios.Controls.Add(this.lblCantidadServicios);
+            this.tabServicios.Controls.Add(this.btnEliminarServicio);
+            this.tabServicios.Controls.Add(this.btnNuevoServicio);
+            this.tabServicios.Controls.Add(this.grdServicios);
+            this.tabServicios.Location = new System.Drawing.Point(4, 22);
+            this.tabServicios.Name = "tabServicios";
+            this.tabServicios.Padding = new System.Windows.Forms.Padding(3);
+            this.tabServicios.Size = new System.Drawing.Size(572, 276);
+            this.tabServicios.TabIndex = 6;
+            this.tabServicios.Text = "Servicios";
+            this.tabServicios.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarServicio
+            // 
+            this.btnEliminarServicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarServicio.BackgroundImage")));
+            this.btnEliminarServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarServicio.Location = new System.Drawing.Point(524, 219);
+            this.btnEliminarServicio.Name = "btnEliminarServicio";
+            this.btnEliminarServicio.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminarServicio.TabIndex = 5;
+            this.btnEliminarServicio.UseVisualStyleBackColor = false;
+            this.btnEliminarServicio.Click += new System.EventHandler(this.btnEliminar1_Click);
+            // 
+            // btnNuevoServicio
+            // 
+            this.btnNuevoServicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevoServicio.BackgroundImage")));
+            this.btnNuevoServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevoServicio.Location = new System.Drawing.Point(523, 7);
+            this.btnNuevoServicio.Name = "btnNuevoServicio";
+            this.btnNuevoServicio.Size = new System.Drawing.Size(40, 40);
+            this.btnNuevoServicio.TabIndex = 4;
+            this.btnNuevoServicio.UseVisualStyleBackColor = false;
+            this.btnNuevoServicio.Click += new System.EventHandler(this.btnNuevoServicio_Click);
+            // 
+            // grdServicios
+            // 
+            this.grdServicios.AllowUserToAddRows = false;
+            this.grdServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdServicios.Location = new System.Drawing.Point(7, 7);
+            this.grdServicios.Name = "grdServicios";
+            this.grdServicios.Size = new System.Drawing.Size(510, 251);
+            this.grdServicios.TabIndex = 3;
+            // 
+            // lblCantidadServicios
+            // 
+            this.lblCantidadServicios.AutoSize = true;
+            this.lblCantidadServicios.Location = new System.Drawing.Point(6, 260);
+            this.lblCantidadServicios.Name = "lblCantidadServicios";
+            this.lblCantidadServicios.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidadServicios.TabIndex = 67;
+            this.lblCantidadServicios.Text = "Cantidad";
+            // 
             // frmConceptosCrud
             // 
             this.ClientSize = new System.Drawing.Size(813, 419);
@@ -1094,6 +1156,9 @@
             this.tabClasificación.PerformLayout();
             this.gpbDetalle.ResumeLayout(false);
             this.gpbDetalle.PerformLayout();
+            this.tabServicios.ResumeLayout(false);
+            this.tabServicios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdServicios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1184,5 +1249,10 @@
         private Controles.buttons.btnNuevo btnNuevoTipoCmp;
         private Controles.buttons.btnEliminar btnEliminarFabricado;
         private Controles.buttons.btnNuevo btnNuevoFabricado;
+        private System.Windows.Forms.TabPage tabServicios;
+        private Controles.labels.lblEtiqueta lblCantidadServicios;
+        private Controles.buttons.btnEliminar btnEliminarServicio;
+        private Controles.buttons.btnNuevo btnNuevoServicio;
+        private Controles.datos.grdGrillaEdit grdServicios;
     }
 }

@@ -15,6 +15,7 @@ namespace Implement
         private OracleCommand cmd;
         private DataSet ds;
         private int response;
+        private string strsql ;
 
 
         public int EmpresasGetID()
@@ -123,7 +124,7 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                cmd = new OracleCommand("update Empresas " +
+                strsql = "update Empresas " +
                     "SET EMP_RAZON_SOCIAL='" + oEmp.EmpRazonSocial + "'," +
                     "EMP_DENOMINACION_COMERCIAL='" + oEmp.EmpDenominacionComercial + "'," +
                     "EMP_CUIT='" + oEmp.EmpCuit + "'," +
@@ -149,8 +150,37 @@ namespace Implement
                     "EMP_LIMITE_CREDITO=" + oEmp.EmpLimiteCredito + "," +
                     "EST_CODIGO_CREDITO='" + oEmp.EstCodigoCredito + "'," +
                     "EMP_NUMERO_TRANSPORTE=" + oEmp.EmpNumeroTransporte + "," +
-                    "PRS_NUMERO=" + oEmp.PrsNumero + 
-                    " WHERE EMP_NUMERO=" + oEmp.EmpNumero, cn);
+                    "PRS_NUMERO=" + oEmp.PrsNumero +
+                    " WHERE EMP_NUMERO=" + oEmp.EmpNumero;
+                cmd = new OracleCommand(strsql, cn);
+                //cmd = new OracleCommand("update Empresas " +
+                //    "SET EMP_RAZON_SOCIAL='" + oEmp.EmpRazonSocial + "'," +
+                //    "EMP_DENOMINACION_COMERCIAL='" + oEmp.EmpDenominacionComercial + "'," +
+                //    "EMP_CUIT='" + oEmp.EmpCuit + "'," +
+                //    "TIV_CODIGO='" + oEmp.TivCodigo + "'," +
+                //    "EMP_FECHA_ALTA_PRO='" + oEmp.EmpFechaAltaPro.ToString("dd/MM/yyyy") + "'," +
+                //    "EMP_FECHA_BAJA_PRO='" + oEmp.EmpFechaBajaPro.Value.ToString("dd/MM/yyyy") + "'," +
+                //    "EMP_OBSERVACION='" + oEmp.EmpObservacion + "'," +
+                //    "EMP_TITULAR_CHEQUES='" + oEmp.EmpTitularCheques + "'," +
+                //    "EMP_PROPIA='" + oEmp.EmpPropia + "'," +
+                //    "EMP_PROVEEDOR='" + oEmp.EmpProveedor + "'," +
+                //    "EMP_CLIENTE='" + oEmp.EmpCliente + "'," +
+                //    "EMP_FECHA_ALTA_CLI='" + oEmp.EmpFechaAltaCli.Value.ToString("dd/MM/yyyy") + "'," +
+                //    "EMP_FECHA_BAJA_CLI='" + oEmp.EmpFechaBajaCli.Value.ToString("dd/MM/yyyy") + "'," +
+                //    "EMP_CATEGORIA_MONOTRIBUTO='" + oEmp.EmpCategoriaMonotributo + "'," +
+                //    "TID_CODIGO='" + oEmp.TidCodigo + "'," +
+                //    "EMP_DOCUMENTO_NUMERO='" + oEmp.EmpDocumentoNumero + "'," +
+                //    "EMP_FECHA_ALTA='" + oEmp.EmpFechaAlta.Value.ToString("dd/MM/yyyy") + "'," +
+                //    "USR_NUMERO_CARGA=" + oEmp.UsrNumeroCarga + "," +
+                //    "EMP_APELLIDOS='" + oEmp.EmpApellidos + "'," +
+                //    "EMP_NOMBRES='" + oEmp.EmpNombres + "'," +
+                //    "EST_CODIGO_PRO='" + oEmp.EstCodigoPro + "'," +
+                //    "EST_CODIGO_CLI='" + oEmp.EstCodigoCli + "'," +
+                //    "EMP_LIMITE_CREDITO=" + oEmp.EmpLimiteCredito + "," +
+                //    "EST_CODIGO_CREDITO='" + oEmp.EstCodigoCredito + "'," +
+                //    "EMP_NUMERO_TRANSPORTE=" + oEmp.EmpNumeroTransporte + "," +
+                //    "PRS_NUMERO=" + oEmp.PrsNumero + 
+                //    " WHERE EMP_NUMERO=" + oEmp.EmpNumero, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();

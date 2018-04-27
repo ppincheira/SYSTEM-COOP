@@ -51,6 +51,12 @@ namespace GesConfiguracion.controles.forms
             set { this.grdTiposComprobantes = value; }
         }
 
+        public grdGrillaEdit grdCptServicio
+        {
+            get { return this.grdServicios; }
+            set { this.grdServicios = value; }
+        }
+
         public grdGrillaEdit grdCptFabricado
         {
             get { return this.grdFabricado; }
@@ -79,6 +85,12 @@ namespace GesConfiguracion.controles.forms
         {
             get { return this.lblCantidadComponentes.Text; }
             set { this.lblCantidadComponentes.Text = value; }
+        }
+
+        public string strCantidadServicios
+        {
+            get { return this.lblCantidadServicios.Text; }
+            set { this.lblCantidadServicios.Text = value; }
         }
 
         public string strCptDescripcion
@@ -343,6 +355,10 @@ namespace GesConfiguracion.controles.forms
                 this.tttEtiqueta.SetToolTip(this.btnCargarImagen, "Carga Imagen");
                 this.tttEtiqueta.SetToolTip(this.btnNuevoTipoCmp, "Nuevo Tipo de Comprobante");
                 this.tttEtiqueta.SetToolTip(this.btnEliminarTipoCmp, "Eliminar Tipo de Comprobante");
+                this.tttEtiqueta.SetToolTip(this.btnNuevoFabricado, "Nuevo Componente");
+                this.tttEtiqueta.SetToolTip(this.btnEliminarFabricado, "Eliminar Componente");
+                this.tttEtiqueta.SetToolTip(this.btnNuevoServicio, "Nuevo Servicio");
+                this.tttEtiqueta.SetToolTip(this.btnEliminarServicio, "Eliminar Servicio");
 
                 if (this.chkControlaStock.Checked)
                     this.gesControlaStock.Enabled = true;
@@ -749,6 +765,63 @@ namespace GesConfiguracion.controles.forms
                     long lonCodigo = long.Parse(row.Cells[0].Value.ToString());
                   //  Console.WriteLine("fabricado concepto borrar " + lonCodigo);
                     _oConceptosCrud.EliminarConceptoFabricado(lonCodigo);                    
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+
+        private void btnNuevoServicio_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
+                Admin oAdmin = new Admin();
+                oAdmin.TabCodigo = "SRV";
+                oAdmin.Tipo = Admin.enumTipoForm.Selector;
+                FormsAuxiliares.frmFormAdminMini frmServicio = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+                if (frmServicio.ShowDialog() == DialogResult.OK)
+                {
+                    string strCodRes = frmServicio.striRdoCodigo;
+                    //bool resultado = _oConceptosCrud.CargarConceptoFabricado(strCodRes, e.RowIndex);
+                    bool resultado = _oConceptosCrud.CargarServicio(strCodRes);
+                    if (!resultado)
+                        MessageBox.Show("El servicio seleccionado ya esta ingresado!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+
+        private void btnEliminar1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = this.grdServicios.CurrentRow;
+                if (row == null)
+                {
+                    MessageBox.Show("Debe seleccionar un servicio!");
+                }
+                else
+                {
+                    long lonCodigo = long.Parse(row.Cells[0].Value.ToString());
+                    //  Console.WriteLine("fabricado concepto borrar " + lonCodigo);
+                    _oConceptosCrud.EliminarServicio(lonCodigo);
                 }
 
             }

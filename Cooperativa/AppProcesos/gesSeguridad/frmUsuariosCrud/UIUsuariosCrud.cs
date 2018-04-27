@@ -29,9 +29,10 @@ namespace AppProcesos.gesSeguridad.frmUsuariosCrud
                 UsuariosBus oUsuariosBus = new UsuariosBus();
 
                 oUsuarios = oUsuariosBus.UsuariosGetById(_vista.intUsrNumero);                    
-                _vista.cmbUsrPerfil.SelectedValue = oUsuarios.UsrPerfil;             
+                _vista.cmbUsrPerfil.SelectedValue = oUsuarios.UsrPerfil;
                 //deberia buscar la descripcion de la persona
-                _vista.strPrsDescripcion = oUsuarios.PrsNumero.ToString();               
+                _vista.logPrsNumero = oUsuarios.PrsNumero;
+                CargarPersona(int.Parse(oUsuarios.PrsNumero.ToString()));               
                 _vista.strUsrNombre = oUsuarios.UsrNombre;
                 _vista.strUsrClave = oUsuarios.UsrClave;
                 _vista.datUsrAlta = oUsuarios.UsrFechaAlta;
@@ -65,8 +66,8 @@ namespace AppProcesos.gesSeguridad.frmUsuariosCrud
             oUsuarios.PrsNumero = int.Parse(_vista.logPrsNumero.ToString());
             oUsuarios.UsrNombre = _vista.strUsrNombre;
             oUsuarios.UsrClave = _vista.strUsrClave;
-            oUsuarios.UsrFechaAlta = _vista.datUsrAlta;      
-            
+            oUsuarios.UsrFechaAlta = _vista.datUsrAlta;
+            oUsuarios.UsrFechaBaja = _vista.datUsrBaja;
             if (_vista.booUsrBloqueado)
                 oUsuarios.UsrBloqueado = "S";
             else
@@ -101,6 +102,7 @@ namespace AppProcesos.gesSeguridad.frmUsuariosCrud
             Personas oPersonas = new Personas();
             PersonasBus oPersonasBus = new PersonasBus();
             oPersonas = oPersonasBus.PersonasGetById(id);
+            Console.WriteLine("persona dsp " + oPersonas.PrsNumero + " - " + oPersonas.PrsNombre + " - " + oPersonas.PrsApellido);
             _vista.strPrsDescripcion = oPersonas.PrsNumero + " - " + oPersonas.PrsNombre + " - " + oPersonas.PrsApellido;
         }
     }

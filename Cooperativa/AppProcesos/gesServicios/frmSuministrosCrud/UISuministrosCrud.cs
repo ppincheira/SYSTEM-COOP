@@ -32,9 +32,10 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             //// Obtengo los estados de suministros
             EstadosBus oEstados = new EstadosBus();
             oUtil.CargarCombo(_vista.EstCodigo, oEstados.EstadosGetByFilterDT("SUMINISTROS", "EST_CODIGO"), "EST_CODIGO", "EST_DESCRIPCION", "SELECCIONE..");
-
+            oUtil.CargarCombo(_vista.EstMedidorActual, oEstados.EstadosGetByFilterDT("MEDIDORES", "EST_CODIGO"), "EST_CODIGO", "EST_DESCRIPCION", "SELECCIONE..");
             if (_vista.Numero != 0)
             {
+                //Edicion de un suministros
                 Suministros oSuministros = new Suministros();
                 SuministrosBus oSuministrosBus = new SuministrosBus();
                 //Obtengo datos de la entidad principal que trabajo
@@ -73,10 +74,13 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                 oSMe = oSMeBus.SuministrosMedidoresGetBySuministro(oSuministros.SumNumero);
                 _vista.numMedidor = oSMe.MedNumero;
                 CargarMedidor(_vista.numMedidor);
-                CargarGrillaConceptos();
-
-
+                CargarGrilla(_vista.grdSumConceptos, "SCO", "", "");
+                CargarGrilla(_vista.grdSumObservaciones, "OBS", "TOB.TOB_CODIGO", "1");
+                _vista.numMedidorAnterior = _vista.numMedidor;
+                _vista.numDomicilioAnterior = _vista.numDomicilio;
             }
+            //_vista.numMedidorAnterior = _vista.numMedidor;
+            //_vista.numDomicilioAnterior = _vista.numDomicilio;
         }
 
 
@@ -113,36 +117,81 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             SuministrosMedidores oSMe = new SuministrosMedidores();
             SuministrosMedidoresBus oSMeBus = new SuministrosMedidoresBus();
 
-            if (_vista.Numero == 0){
-
-
-                oSum.SumNumero =  oSumBus.SuministrosAdd(oSum);
-                DomiciliosEntidades oDEn = new DomiciliosEntidades();
-                DomiciliosEntidadesBus oDEnBus = new DomiciliosEntidadesBus();
+            DomiciliosEntidades oDEn = new DomiciliosEntidades();
+            DomiciliosEntidadesBus oDEnBus = new DomiciliosEntidadesBus();
+            if (_vista.Numero == 0)
+            {
+                // Agregar un suministro con el codigo de domicilio y numero de medidor
+                //oSum.SumNumero =  oSumBus.SuministrosAdd(oSum);
                 oDEn.TdoCodigo = "C";
-                oDEn.DenCodigoRegistro = oSum.SumNumero;
+                //oDEn.DenCodigoRegistro = oSum.SumNumero;
                 oDEn.TabCodigo = "SUM";
                 oDEn.DomCodigo = _vista.numDomicilio;
-                oDEnBus.DomiciliosEntidadesAdd(oDEn);
+                //oDEnBus.DomiciliosEntidadesAdd(oDEn);
                 oSMe.SmeFechaAlta = oSum.SumFechaAlta;
+                oSMe.MedNumero = _vista.numMedidor;
                 oSMe.EstCodigo = oSum.EstCodigo;
-                if (_vista.numMedidor==0)
-                { 
-                    oSMe.MedNumero = _vista.numMedidor;
-                    oSMe.SumNumero = oSum.SumNumero;
-                    oSMe.SmeNumero = oSMeBus.SuministrosMedidoresAdd(oSMe);
+                if (oSumBus.SuministrosAddCompleto(oSum, oDEn, oSMe))
+                {
+                    // Si pude agregar el suministro y todas sus dependencias cambio estado del medidor asignado a Instalado
                     Medidores oMed = new Medidores();
                     MedidoresBus oMedBus = new MedidoresBus();
                     oMed = oMedBus.MedidoresGetById(oSMe.MedNumero);
                     oMed.EstCodigo = "I";
                     oMedBus.MedidoresUpdate(oMed);
                 }
+                //if (_vista.numMedidor==0)
+                //{ 
+                //    oSMe.MedNumero = _vista.numMedidor;
+                //    oSMe.SumNumero = oSum.SumNumero;
+                //    oSMe.SmeNumero = oSMeBus.SuministrosMedidoresAdd(oSMe);
+                //    Medidores oMed = new Medidores();
+                //    MedidoresBus oMedBus = new MedidoresBus();
+                //    oMed = oMedBus.MedidoresGetById(oSMe.MedNumero);
+                //    oMed.EstCodigo = "I";
+                //    oMedBus.MedidoresUpdate(oMed);
+                //}
 
             }
             else
-                // Si cambia medidor tengo que poner fecha baja al que tenia asignado 
-                //y al nuevo la fecha del dia
+            {
+                // Si cambia medidor tengo que poner fecha baja al que tenia 
+                //asignado ese suminstro 
+                //y agregar un nuevo registro con el medidor actual
+                // y la fecha de alta del dia (en suministros_medidores)
+                //cambio el estado del medidor o de suministros_medidores?
+                // Agrego un nuevo registro a domicilios entidades con el nuevo domicilio o modifico el ya existente??
+
+                //Actualizo registro anterior de domicilios entidades si cambio el domicilio
+                // para eso tengo que guardar el domicilio anterior y compararlo con el actual
+                //_vista.
+                if (_vista.numDomicilio != _vista.numDomicilioAnterior)
+                {
+                    oDEn = oDEnBus.DomiciliosEntidadesGetById(_vista.numDomicilio);
+                    oDEn.DenDefecto = "N";
+                    oDEnBus.DomiciliosEntidadesUpdate(oDEn);
+                    // Creo un nuevo registro de domicilios entidades 
+                    oDEn.DomCodigo = _vista.numDomicilio;
+                    oDEn.DenDefecto = "S";
+                    oDEnBus.DomiciliosEntidadesAdd(oDEn);
+                }
+
+                if (_vista.numMedidor != _vista.numMedidorAnterior)
+                {
+                    // Cambio el medidor actual swi cambio el medidor, 
+                    // para eso tyengo que guardar el medidor anterior en la interfase para poder compararlo con el actual
+                    oSMe.SmeFechaBaja = DateTime.Now;
+                    oSMe.EstCodigo = _vista.EstMedidorActual.SelectedValue.ToString();
+                    oSMeBus.SuministrosMedidoresUpdate(oSMe);
+                    // Cambio el estado del medidor asignado como Instalado
+                    Medidores oMed = new Medidores();
+                    MedidoresBus oMedBus = new MedidoresBus();
+                    oMed = oMedBus.MedidoresGetById(_vista.numMedidor);
+                    oMed.EstCodigo = "I";
+                    oMedBus.MedidoresUpdate(oMed);
+                }
                 rtdo = (oSumBus.SuministrosUpdate(oSum)) ? oSum.SumNumero : 0;
+            }
         }
 
         public bool EliminarSuministro(long idMedidor)
@@ -264,7 +313,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             MedidoresModelos oMedidorModelo = new MedidoresModelos();
             MedidoresModelosBus oMedModeloBus = new MedidoresModelosBus();
             if (oMedidor.MmoCodigo.ToString() != "")
-               ModMedidor = short.Parse(oMedidor.MmoCodigo.ToString());
+                ModMedidor = short.Parse(oMedidor.MmoCodigo.ToString());
             oMedidorModelo = oMedModeloBus.MedidoresModelosGetById(ModMedidor);
             _vista.strModeloMedidor = oMedidorModelo.MMoDescripcion;
             TiposMedidoresBus oTipoMedBus = new TiposMedidoresBus();
@@ -273,28 +322,34 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             _vista.strFabricante = oFabricantesBus.FabricantesGetById(oMedidorModelo.FabNumero).FabDescripcion;
             LecturasModosBus oLecturasModosBus = new LecturasModosBus();
             _vista.strLecturaModo = oLecturasModosBus.LecturasModosGetById(oMedidor.LemCodigo).lemDescripcion;
+            _vista.EstMedidorActual.SelectedValue = oMedidor.EstCodigo;
+            SuministrosMedidoresBus oSMeBus = new SuministrosMedidoresBus();
+            DataTable dt = oSMeBus.SuministrosMedidoresGetBySuministroDT(_vista.Numero);
+            oUtil.CargarGrilla(_vista.grdSumMedidores, dt);
 
         }
-        public void CargarGrillaConceptos()
+        public void CargarObservaciones(long CodigoRegistro, string TabCodigo)
         {
-            int indice = 0;
-            SuministrosConceptosBus oSCoBus = new SuministrosConceptosBus();
-            DataTable dt = oSCoBus.SuministrosConceptosGetBySuministroDT(_vista.Numero);
-
-            oUtil.CargarGrilla(_vista.grdSumConceptos, dt);
-
-            //_vista.grdSumConceptos.Columns["cpt_numero"].Visible = false;
-            //Cambio los headers por defecto por los definidos en detalles columnas tablas 
-            DetallesColumnasTablasBus oDetalleBus = new DetallesColumnasTablasBus();
-            List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo("SCO");
-            foreach (DetallesColumnasTablas oDetalle in ListDetalle)
-            {
-                _vista.grdSumConceptos.Columns[indice].HeaderText = oDetalle.DctDescripcion.Replace('"', ' ');
-                //_vista.grdSumConceptos.Columns[indice].HeaderText = oDetalle.DctDescripcion.Replace("AS ","");
-                indice++;
-            }
+            ObservacionesBus oObsBus = new ObservacionesBus();
+            Observaciones oObs = new Observaciones();
+            oObs = oObsBus.ObservacionesGetByCodigoRegistroDefecto(CodigoRegistro, TabCodigo);
+            _vista.strObservacion = oObs.ObsDetalle;
         }
+        public void CargarGrilla(Controles.datos.grdGrillaAdmin grilla, string tabla, string camposFiltro, string valoresFiltro)
+        {
+            string _Campo = "";
+            DetallesColumnasTablasBus oDetalleBus = new DetallesColumnasTablasBus();
+            List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo(tabla);
+            foreach (DetallesColumnasTablas oDetalle in ListDetalle)
+                _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
+            if (_Campo.Length > 0)
+                _Campo = _Campo.Substring(0, _Campo.Length - 1);
 
+            TablasBus oTablasBus = new TablasBus();
+            DataTable dt = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, camposFiltro, valoresFiltro);
+            oUtil.CargarGrilla(grilla, dt);
+            grilla.Columns["CODIGO"].Visible = false;
+        }
     }
 }
 //select conceptos.*, srv_descripcion from conceptos, servicios se inner join suministros su on su.srv_codigo= se.srv_codigo

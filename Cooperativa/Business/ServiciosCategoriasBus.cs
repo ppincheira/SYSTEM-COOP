@@ -41,6 +41,11 @@ namespace Business
             ServiciosCategoriasImpl oServiciosCategoriasImpl = new ServiciosCategoriasImpl();
             return oServiciosCategoriasImpl.ServiciosCategoriasGetbySrv(srvCodigo);
         }
-
+        public DataTable ServiciosCategoriasCdtGetbySrv(string srvCodigo)
+        {
+            ServiciosCategoriasImpl oServiciosCategoriasImpl = new ServiciosCategoriasImpl();
+            return oServiciosCategoriasImpl.ServiciosCategoriasCdtGetbySrv(srvCodigo);
+        }
+       
     }
 }

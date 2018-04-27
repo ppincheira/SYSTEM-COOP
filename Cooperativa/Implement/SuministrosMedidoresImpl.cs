@@ -167,6 +167,28 @@ namespace Implement
                 }
             }
 
+            public DataTable SuministrosMedidoresGetBySuministroDT(long Id)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    Conexion oConexion = new Conexion();
+                    OracleConnection cn = oConexion.getConexion();
+                    cn.Open();
+                    string sqlSelect = "select * from Suministros_Medidores " +
+                         "WHERE SME_FECHA_BAJA IS NULL AND SUM_NUMERO=" + Id.ToString();
+                    cmd = new OracleCommand(sqlSelect, cn);
+                    adapter = new OracleDataAdapter(cmd);
+                    cmd.ExecuteNonQuery();
+                    adapter.Fill(ds);
+                    return ds.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
             public List<SuministrosMedidores> SuministrosMedidoresGetAll()
             {
                 List<SuministrosMedidores> lstSuministrosMedidores = new List<SuministrosMedidores>();

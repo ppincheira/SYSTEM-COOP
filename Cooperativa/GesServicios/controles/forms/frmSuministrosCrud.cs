@@ -17,7 +17,7 @@ namespace GesServicios.controles.forms
         UISuministrosCrud _oSuministrosCrud;
         Utility oUtil;
 
-        long _SumNumero, _MedNumero, _DomNumero;
+        long _SumNumero, _MedNumero, _DomNumero, _CodigoObservacion, _MedAntNumero, _DomAntNumero;
         string _EstCodigo;
 
         #endregion
@@ -138,8 +138,6 @@ namespace GesServicios.controles.forms
 
         public DateTime FechaCarga
         {
-            //get { return FechaCarga; }
-            //set { FechaCarga = value; }
             get { return dtpFechaCarga.Value; }
             set { dtpFechaCarga.Value = value; }
         }
@@ -253,6 +251,42 @@ namespace GesServicios.controles.forms
             get { return grdSuministrosConceptos; }
             set { grdSuministrosConceptos = value; }
         }
+        public cmbLista EstMedidorActual
+        {
+            get { return cmbEstadoMedidor; }
+            set { this.cmbEstadoMedidor = value; }
+        }
+        public grdGrillaAdmin grdSumMedidores
+        {
+            get { return grdMedidores; }
+            set { grdMedidores = value; }
+        }
+
+        public long numCodigoObservacion
+        {
+            get { return _CodigoObservacion; }
+            set { _CodigoObservacion = value; }
+        }
+        public string strObservacion
+        {
+            get { return this.txtObservaciones.Text; }
+            set { this.txtObservaciones.Text = value; }
+        }
+        public grdGrillaAdmin grdSumObservaciones
+        { 
+            get { return grdSuministrosObservaciones; }
+            set { grdSuministrosObservaciones = value; }
+        }
+        public long numMedidorAnterior
+        {
+            get { return _MedAntNumero; }
+            set { _MedAntNumero = value; }
+        }
+        public long numDomicilioAnterior
+        {
+            get { return _DomAntNumero; }
+            set { _DomAntNumero = value; }
+        }
 
         #endregion
         public frmSuministrosCrud(long Suministro, string Estado)
@@ -339,24 +373,32 @@ namespace GesServicios.controles.forms
         private void btnMedidor_Click(object sender, EventArgs e)
         {
             Medidores oMedidor = new Medidores();
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10121", "10122", "10123", "0", "0", "10124");
-            Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "MED";
-            oAdmin.Tipo = Admin.enumTipoForm.Selector;
-            oAdmin.CodigoRegistro = _SumNumero.ToString();
-            oAdmin.CodigoEditar = _MedNumero.ToString();
-            oAdmin.TabCodigoRegistro = "SUM";
-            oAdmin.FiltroCampos = "TCS_DESCRIPCION&M.EST_CODIGO&";
-            oAdmin.FiltroOperador = "1&1&";
-            oAdmin.FiltroValores = cmbTipoConexion.Text + "&D&";
-            oAdmin.TabCodigo = "MED";
-            oAdmin.Tipo = Admin.enumTipoForm.Selector;
-            frmFormAdmin frmbus = new frmFormAdmin(oAdmin, oPermiso);
-            if (frmbus.ShowDialog() == DialogResult.OK)
+            MedidoresBus oMedidoresBus = new MedidoresBus();
+            oMedidor = oMedidoresBus.MedidoresGetById(_MedNumero);
+            if (oMedidor.EstCodigo == EstMedidorActual.SelectedValue && _SumNumero!=0)
+                MessageBox.Show("Debe cambiar el estado del medidor antes de asignar otro al suministro","", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            else
             {
-                string medidor = frmbus.striRdoCodigo;
+                FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10121", "10122", "10123", "0", "0", "10124");
+                Admin oAdmin = new Admin();
+                oAdmin.TabCodigo = "MED";
+                oAdmin.Tipo = Admin.enumTipoForm.Selector;
+                oAdmin.CodigoRegistro = _SumNumero.ToString();
+                oAdmin.CodigoEditar = _MedNumero.ToString();
+                oAdmin.TabCodigoRegistro = "SUM";
+                oAdmin.FiltroCampos = "TCS_DESCRIPCION&M.EST_CODIGO&";
+                oAdmin.FiltroOperador = "1&1&";
+                oAdmin.FiltroValores = cmbTipoConexion.Text + "&D&";
+                oAdmin.TabCodigo = "MED";
+                oAdmin.Tipo = Admin.enumTipoForm.Selector;
+                frmFormAdmin frmbus = new frmFormAdmin(oAdmin, oPermiso);
+                if (frmbus.ShowDialog() == DialogResult.OK)
+                {
+                    string medidor = frmbus.striRdoCodigo;
 
-                _oSuministrosCrud.CargarMedidor(long.Parse(medidor));
+                    _oSuministrosCrud.CargarMedidor(long.Parse(medidor));
+                }
+
             }
 
         }
@@ -492,6 +534,12 @@ namespace GesServicios.controles.forms
 
         }
 
+        private void btnNuevaObs_Click(object sender, EventArgs e)
+        {
+            NuevaObservacion();
+
+        }
+
         private void cmbTipoConexion_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbTipoConexion.SelectedIndex > 0)
@@ -504,6 +552,30 @@ namespace GesServicios.controles.forms
         {
             this.txtOrdenRuta.Enabled=true;
         }
+        private void NuevaObservacion()
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            AdminObs oAdmin = new AdminObs();
+            oAdmin.TabCodigo = "SUM";
+            if (this.numCodigoObservacion == 0)
+                oAdmin.Tipo = AdminObs.enumTipoForm.FiltroAndAlta;
+            else
+                oAdmin.Tipo = AdminObs.enumTipoForm.Filtro;
+
+            oAdmin.CodigoRegistro = _SumNumero.ToString();
+            oAdmin.TabCodigoRegistro = "SUM";
+            oAdmin.FiltroCampos = "OBS_CODIGO_REGISTRO&";
+            oAdmin.FiltroValores = _SumNumero.ToString() + "&";
+            oAdmin.TobCodigo = 2;
+            FormsAuxiliares.frmObservacionesAdmin frmobs = new FormsAuxiliares.frmObservacionesAdmin(oAdmin, oPermiso);
+            if (frmobs.ShowDialog() == DialogResult.OK)
+            {
+                string id = frmobs._strRdoCodigo;
+                _oSuministrosCrud.CargarObservaciones(_SumNumero, "SUM");
+
+            }
+    }
+
     }
 
 }

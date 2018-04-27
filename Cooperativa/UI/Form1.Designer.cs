@@ -68,6 +68,11 @@
             this.btnFuncionalidadesRoles = new System.Windows.Forms.Button();
             this.btnFuncionalidadesUsuarios = new System.Windows.Forms.Button();
             this.btnCuadrosTarifariosCrud = new System.Windows.Forms.Button();
+            this.btnGruposConceptos = new System.Windows.Forms.Button();
+            this.btnGruposConceptosImpuestos = new System.Windows.Forms.Button();
+            this.btnGruposConceptosItems = new System.Windows.Forms.Button();
+            this.btnPuntosVenta = new System.Windows.Forms.Button();
+            this.btnPVTipoCompr = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -496,11 +501,66 @@
             this.btnCuadrosTarifariosCrud.UseVisualStyleBackColor = true;
             this.btnCuadrosTarifariosCrud.Click += new System.EventHandler(this.btnCuadrosTarifariosCrud_Click);
             // 
+            // btnGruposConceptos
+            // 
+            this.btnGruposConceptos.Location = new System.Drawing.Point(138, 506);
+            this.btnGruposConceptos.Name = "btnGruposConceptos";
+            this.btnGruposConceptos.Size = new System.Drawing.Size(125, 27);
+            this.btnGruposConceptos.TabIndex = 34;
+            this.btnGruposConceptos.Text = "Grupos Conceptos";
+            this.btnGruposConceptos.UseVisualStyleBackColor = true;
+            this.btnGruposConceptos.Click += new System.EventHandler(this.btnGruposConceptos_Click);
+            // 
+            // btnGruposConceptosImpuestos
+            // 
+            this.btnGruposConceptosImpuestos.Location = new System.Drawing.Point(138, 539);
+            this.btnGruposConceptosImpuestos.Name = "btnGruposConceptosImpuestos";
+            this.btnGruposConceptosImpuestos.Size = new System.Drawing.Size(172, 27);
+            this.btnGruposConceptosImpuestos.TabIndex = 35;
+            this.btnGruposConceptosImpuestos.Text = "Grupos Conceptos Impuestos";
+            this.btnGruposConceptosImpuestos.UseVisualStyleBackColor = true;
+            this.btnGruposConceptosImpuestos.Click += new System.EventHandler(this.btnGruposConceptosImpuestos_Click);
+            // 
+            // btnGruposConceptosItems
+            // 
+            this.btnGruposConceptosItems.Location = new System.Drawing.Point(138, 581);
+            this.btnGruposConceptosItems.Name = "btnGruposConceptosItems";
+            this.btnGruposConceptosItems.Size = new System.Drawing.Size(172, 27);
+            this.btnGruposConceptosItems.TabIndex = 36;
+            this.btnGruposConceptosItems.Text = "Grupos Impuestos Items";
+            this.btnGruposConceptosItems.UseVisualStyleBackColor = true;
+            this.btnGruposConceptosItems.Click += new System.EventHandler(this.btnGruposConceptosItems_Click);
+            // 
+            // btnPuntosVenta
+            // 
+            this.btnPuntosVenta.Location = new System.Drawing.Point(342, 527);
+            this.btnPuntosVenta.Name = "btnPuntosVenta";
+            this.btnPuntosVenta.Size = new System.Drawing.Size(125, 27);
+            this.btnPuntosVenta.TabIndex = 37;
+            this.btnPuntosVenta.Text = "Puntos Ventas";
+            this.btnPuntosVenta.UseVisualStyleBackColor = true;
+            this.btnPuntosVenta.Click += new System.EventHandler(this.btnPuntosVenta_Click);
+            // 
+            // btnPVTipoCompr
+            // 
+            this.btnPVTipoCompr.Location = new System.Drawing.Point(342, 560);
+            this.btnPVTipoCompr.Name = "btnPVTipoCompr";
+            this.btnPVTipoCompr.Size = new System.Drawing.Size(160, 27);
+            this.btnPVTipoCompr.TabIndex = 38;
+            this.btnPVTipoCompr.Text = "Puntos Ventas T Compr";
+            this.btnPVTipoCompr.UseVisualStyleBackColor = true;
+            this.btnPVTipoCompr.Click += new System.EventHandler(this.btnPVTipoCompr_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 521);
+            this.ClientSize = new System.Drawing.Size(545, 703);
+            this.Controls.Add(this.btnPVTipoCompr);
+            this.Controls.Add(this.btnPuntosVenta);
+            this.Controls.Add(this.btnGruposConceptosItems);
+            this.Controls.Add(this.btnGruposConceptosImpuestos);
+            this.Controls.Add(this.btnGruposConceptos);
             this.Controls.Add(this.btnCuadrosTarifariosCrud);
             this.Controls.Add(this.btnFuncionalidadesUsuarios);
             this.Controls.Add(this.btnFuncionalidadesRoles);
@@ -591,6 +651,11 @@
         private System.Windows.Forms.Button btnFuncionalidadesRoles;
         private System.Windows.Forms.Button btnFuncionalidadesUsuarios;
         private System.Windows.Forms.Button btnCuadrosTarifariosCrud;
+        private System.Windows.Forms.Button btnGruposConceptos;
+        private System.Windows.Forms.Button btnGruposConceptosImpuestos;
+        private System.Windows.Forms.Button btnGruposConceptosItems;
+        private System.Windows.Forms.Button btnPuntosVenta;
+        private System.Windows.Forms.Button btnPVTipoCompr;
     }
 }
 

@@ -44,8 +44,10 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
         bool booCptEstado { get; set; }
         grdGrillaEdit grdCptTipoCmp { get; set; }
         grdGrillaEdit grdCptFabricado { get; set; }
+        grdGrillaEdit grdCptServicio { get; set; }
         string strCantidadComprobantes { set; }
         string strCantidadComponentes { set; }
+        string strCantidadServicios { set; }
         Adjuntos adjunto { get; set; }
         string adjuntoFileName { get; set; }
         pbxImagen pbxImagenP { get; set; }     

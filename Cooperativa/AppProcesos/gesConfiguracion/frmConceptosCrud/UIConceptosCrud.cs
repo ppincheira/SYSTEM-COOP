@@ -20,6 +20,7 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
         string strTgrEstacionalidad = "7";
         List<ConceptosFabricados> ListaDelFabricados = new List<ConceptosFabricados>();
         List<ConceptosTiposComprobantes> ListaDelTipos = new List<ConceptosTiposComprobantes>();
+        List<ConceptosServicios> ConceptosServicios = new List<ConceptosServicios>();
         //---------------------------------------------------
 
         public UIConceptosCrud(IVistaConceptosCrud vista)
@@ -51,6 +52,7 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             //-------------------
             //CONSULTA Y CARGA LA GRILLA TIPOS DE COMPROBANTES
             CargarGrillaTiposComprobantes();
+            CargarGrillaServicios();
 
             if (_vista.logCptNumero != 0)
             {
@@ -188,6 +190,20 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             _vista.grdCptTipoCmp.Columns[1].ReadOnly = true;            
             _vista.grdCptTipoCmp.Columns[2].ReadOnly = true;                    
         }
+
+        public void CargarGrillaServicios()
+        {
+            ConceptosServiciosBus oCseBus = new ConceptosServiciosBus();
+            DataTable dt = oCseBus.ConceptosServiciosGetByFilter(_vista.logCptNumero);
+            _vista.strCantidadComprobantes = "Se encontraron " + oUtil.CargarGrilla(_vista.grdCptServicio, dt) + " registros";
+            //oculta la pk 
+            _vista.grdCptServicio.Columns[0].Visible = false;
+            _vista.grdCptServicio.Columns[1].Visible = false;
+            _vista.grdCptServicio.Columns[2].ReadOnly = true;
+            _vista.grdCptServicio.Columns[3].ReadOnly = true;
+            _vista.grdCptServicio.Columns[4].ReadOnly = true;
+        }
+
         public void CargarGrillaFabricados()
         {
             //--carga la grilla de fabricado
@@ -500,6 +516,66 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
 
             }
             /////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////
+            Console.WriteLine("sale4 guarda conceptos servicios  ------------");
+            ConceptosServicios oCse = new ConceptosServicios();
+            ConceptosServiciosBus oCseBus = new ConceptosServiciosBus();
+            //elimina  grilla de conceptos servicios                      
+            foreach (ConceptosServicios oCtcs in ConceptosServicios)
+            {
+                oCse.cosCodigo = oCtcs.cosCodigo;                
+                oCseBus.ConceptosServiciosDelete(oCse);
+            }
+            // guarda o actualiza conceptos servicios 
+            bool valido2;
+            foreach (DataGridViewRow dr in _vista.grdCptServicio.Rows)
+            {
+                valido2 = false;
+                if (!dr.IsNewRow)
+                {
+                    foreach (DataGridViewCell dc in dr.Cells)
+                    {
+                        if (dc.ColumnIndex == 2)
+                        {
+                            if (!string.IsNullOrEmpty(dc.Value.ToString()))
+                            {
+                                oCse.srvCodigo = dc.Value.ToString();
+                                Console.WriteLine("inserta  ------------"+ oCse.srvCodigo);
+                                valido2 = true;
+                            }
+                        }
+                        if (dc.ColumnIndex == 4)
+                        {
+                            if (!string.IsNullOrEmpty(dc.Value.ToString()))
+                            {
+                                oCse.cosFechaCarga = Convert.ToDateTime(dc.Value.ToString());
+                                Console.WriteLine("inserta  ------------" + oCse.cosFechaCarga);
+                            }
+                        }
+                        if (dc.ColumnIndex == 1)
+                        {
+                            if (!string.IsNullOrEmpty(dc.Value.ToString()))
+                            {
+                                oCse.cptNumero = long.Parse(dc.Value.ToString());
+                                Console.WriteLine("inserta  ------------" + oCse.cptNumero);
+                            }
+                        }
+
+                    }
+                    ///actualizo o inserto el registro       
+                    if (valido2)
+                    {
+                        if (oCse.cptNumero.ToString().Equals("0"))
+                        {
+                            Console.WriteLine("inserta  ------------");
+                            oCse.cptNumero = _vista.logCptNumero;
+                            oCseBus.ConceptosServiciosAdd(oCse);
+                        }
+                    }
+                }
+
+            }
+            /////////////////////////////////////////////////////////////////
             return _vista.logCptNumero;
         }
 
@@ -560,6 +636,7 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             CargarGrillaTiposComprobantes();
 
         }
+
         public void AgregarImagen()
         {                            
             _vista.adjunto = oUtil.Adjunto_Agregar(_vista.adjunto);            
@@ -629,6 +706,59 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             DataTable dt = (DataTable)_vista.grdCptFabricado.DataSource;
             dt.Rows.RemoveAt(_vista.grdCptFabricado.CurrentRow.Index);
             _vista.grdCptFabricado.DataSource = dt;
+        }
+
+        public bool CargarServicio(string idServicio)
+        {
+            // valida la existencia en la tabla
+            foreach (DataGridViewRow dr in _vista.grdCptServicio.Rows)
+            {
+                if (!dr.IsNewRow)
+                {
+                    foreach (DataGridViewCell dc in dr.Cells)
+                    {
+                        if (dc.ColumnIndex == 2)//
+                        {
+                            if (!string.IsNullOrEmpty(dc.Value.ToString()))
+                            {
+                                if (dc.Value.ToString().Equals(idServicio))
+                                {
+                                    return false;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            Servicios oSer = new Servicios();
+            ServiciosBus oSerBus = new ServiciosBus();
+            oSer = oSerBus.ServiciosGetById(idServicio);
+
+            DataTable dt = (DataTable)_vista.grdCptServicio.DataSource;
+            DataRow row = dt.NewRow();
+            row["pk"] = "0";
+            row["fk"] = "0";
+            row["codigo"] = idServicio;
+            row["descripcion"] = oSer.SrvDescripcion;
+            row["fecha"] = DateTime.Now.ToString("dd/MM/yyyy");
+            dt.Rows.Add(row);
+            _vista.grdCptServicio.DataSource = dt;            
+            return true;
+        }
+
+        public void EliminarServicio(long idConServicio)
+        {
+            if (idConServicio > 0)
+            {
+                ConceptosServicios oCse = new ConceptosServicios();
+                oCse.cosCodigo = idConServicio;
+                ConceptosServicios.Add(oCse);
+            }
+            DataTable dt = (DataTable)_vista.grdCptServicio.DataSource;
+            dt.Rows.RemoveAt(_vista.grdCptServicio.CurrentRow.Index);
+            _vista.grdCptServicio.DataSource = dt;
         }
 
         //public bool CargarTipoComprobante(string idTipo, int indice)

@@ -66,12 +66,22 @@ namespace GesSeguridad.controles.forms
         {
             get { return DateTime.Parse(this.dtpFechaAlta.Text); }
             set { this.dtpFechaAlta.Text = value.ToString(); }
+
         }
 
         public DateTime? datUsrBaja
-        {
-            get { return DateTime.Parse(this.dtpFechaBaja.Text); }
-            set { this.dtpFechaBaja.Text = value.ToString(); }
+        {           
+            get
+            {
+                if (this.dtpFechaBaja.Checked)
+                    return DateTime.Parse(this.dtpFechaBaja.Text);
+                else
+                    return null;
+            }
+            set
+            {
+                this.dtpFechaBaja.Text = value.ToString();
+            }
         }
 
         public Boolean booUsrBloqueado
