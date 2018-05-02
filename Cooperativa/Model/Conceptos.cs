@@ -20,7 +20,8 @@ namespace Model
         public virtual long? cptCodigoPadre { get; set; }        
         public virtual int? cptFraccionadoPor { get; set; } 
         public virtual string cptMedible { get; set; } 
-        public virtual string cptFabricado { get; set; } 
+        public virtual string cptFabricado { get; set; }
+        public virtual string cptImpuesto { get; set; }
         public virtual decimal? cptPeso { get; set; }
         public virtual decimal? cptAncho { get; set; }
         public virtual decimal? cptLargo { get; set; }

@@ -34,8 +34,8 @@ namespace Implement
                     "values(IDTEMP," + oMed.MedNumeroserie + "," + oMed.EmpNumeroProveedor + "," +
                     oMed.MedDigitos + ",'" + oMed.EstCodigo + "'," + oMed.MedFactorCalib + "," +
                     (oMed.GisX == null ? "null" : oMed.GisX.ToString()) + "," + 
-                    (oMed.GisY == null ? "null" : oMed.GisY.ToString()) + "," + oMed.UsrNumero + ",'" + 
-                    oMed.MedFechaCarga.ToString("dd/MM/yyyy") + "'," + oMed.MmoCodigo +  "," +oMed.LemCodigo +
+                    (oMed.GisY == null ? "null" : oMed.GisY.ToString()) + "," + oMed.UsrNumero + ",TO_DATE('" + 
+                    oMed.MedFechaCarga.ToString("dd/MM/yyyy") + "','dd/mm/yyyy')," + oMed.MmoCodigo +  "," +oMed.LemCodigo +
                     ") RETURNING IDTEMP INTO :id;" +
                     " END;";
                 cmd = new OracleCommand(query, cn);

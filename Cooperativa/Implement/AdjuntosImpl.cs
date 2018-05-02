@@ -17,6 +17,7 @@ namespace Implement
         private OracleCommand cmd;
         private DataSet ds;
         private long response;
+
         public long AdjuntosAdd(Adjuntos oAdjunto)
         {
             try
@@ -34,7 +35,7 @@ namespace Implement
                 string query =
                       " DECLARE IDTEMP NUMBER(15,0); " +
                       " BEGIN " +
-                      " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('ADJ_NUMERO')) INTO IDTEMP FROM DUAL; " +
+                      " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('ADJ_CODIGO')) INTO IDTEMP FROM DUAL; " +
                       " INSERT INTO ADJUNTOS( ADJ_CODIGO,ADJ_CODIGO_REGISTRO,ADJ_NOMBRE, ADJ_EXTENSION, ADJ_FECHA, TAB_CODIGO, ADJ_ADJUNTO) " +
                       " values(IDTEMP,'" + oAdjunto.AdjCodigoRegistro + "'," +
                       "'" + oAdjunto.AdjNombre + "'," +
@@ -101,17 +102,12 @@ namespace Implement
                 //response = cmd.ExecuteNonQuery();
                 //cn.Close();
                 //return response;
-
-
-
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
-
 
         public bool AdjuntosUpdate(Adjuntos oAdjunto)
         {
@@ -153,6 +149,75 @@ namespace Implement
                 {
                     return false;
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones AdjuntosAddTrans(Adjuntos oAdjunto)
+        {
+            try
+            {                
+                MemoryStream ms = new MemoryStream();
+                FileStream fs = new FileStream(oAdjunto.AdjAdjunto, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                ms.SetLength(fs.Length);
+                fs.Read(ms.GetBuffer(), 0, (int)fs.Length);
+                byte[] blob = ms.GetBuffer();
+                ms.Flush();
+                fs.Close();
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = " DECLARE IDTEMP NUMBER(15,0); " +
+                                  " BEGIN " +
+                                  " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('ADJ_CODIGO')) INTO IDTEMP FROM DUAL; " +
+                                  " INSERT INTO ADJUNTOS( ADJ_CODIGO,ADJ_CODIGO_REGISTRO,ADJ_NOMBRE, ADJ_EXTENSION, ADJ_FECHA, TAB_CODIGO, ADJ_ADJUNTO) " +
+                                  " values(IDTEMP,'" + oAdjunto.AdjCodigoRegistro + "'," +
+                                  "'" + oAdjunto.AdjNombre + "'," +
+                                  "'" + oAdjunto.AdjExtencion + "'," +
+                                  "'" + oAdjunto.AdjFecha.ToString("dd/MM/yyyy") + "'," +
+                                  "'" + oAdjunto.TabCodigo + "'," +
+                                  " :BlobParameter) RETURNING IDTEMP INTO :id;" +
+                                  " END;";
+                             
+                oTrans.traParametroInBlob = ":BlobParameter";
+                oTrans.traParametroOutLog = ":id";
+                oTrans.traParametroBlob = blob;
+
+                return oTrans;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones AdjuntosUpdateTrans(Adjuntos oAdjunto)
+        {
+            try
+            {                
+                MemoryStream ms = new MemoryStream();
+                FileStream fs = new FileStream(oAdjunto.AdjAdjunto, FileMode.Open, FileAccess.Read);
+                byte[] blob = new byte[fs.Length];
+                fs.Read(blob, 0, System.Convert.ToInt32(fs.Length));
+                fs.Close();
+
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery =   " UPDATE ADJUNTOS " +
+                                    " SET ADJ_CODIGO=" + oAdjunto.AdjCodigo + "," +
+                                    " ADJ_CODIGO_REGISTRO='" + oAdjunto.AdjCodigoRegistro + "'," +
+                                    " ADJ_NOMBRE='" + oAdjunto.AdjNombre + "'," +
+                                    " ADJ_EXTENSION='" + oAdjunto.AdjExtencion + "'," +
+                                    " ADJ_FECHA='" + oAdjunto.AdjFecha.ToString("dd/MM/yyyy") + "'," +
+                                    " TAB_CODIGO='" + oAdjunto.TabCodigo + "'," +
+                                    " ADJ_ADJUNTO=:BlobParameter " +
+                                    " WHERE ADJ_CODIGO='" + oAdjunto.AdjCodigo + "'";
+
+                oTrans.traParametroInBlob = ":BlobParameter";
+                oTrans.traParametroOutLog = ":id";
+                oTrans.traParametroBlob = blob;                
+
+                return oTrans;
             }
             catch (Exception ex)
             {
@@ -218,9 +283,8 @@ namespace Implement
             {
                 throw ex;
             }
-
-
         }
+
         public DataTable AdjuntoGetAdjuntoById(long Id)
         {
 

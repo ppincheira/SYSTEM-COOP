@@ -67,13 +67,14 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("update Suministros_Medidores " +
-                        "SET Sme_FECHA_ALTA='" + oSMe.SmeFechaAlta.ToString("dd/MM/yyyy") +
-                        "', Sme_FECHA_BAJA='" + oSMe.SmeFechaBaja == null ? "null, " : "'" + oSMe.SmeFechaBaja.Value.ToString("dd/MM/yyyy") +
-                        "', EST_CODIGO='" + oSMe.EstCodigo +
-                        "', MED_NUMERO=" + oSMe.MedNumero +
-                        ", SUM_NUMERO=" + oSMe.SumNumero +
-                        " WHERE Sme_NUMERO=" + oSMe.SmeNumero.ToString(), cn);
+                string strsql = "update Suministros_Medidores " +
+                    "SET Sme_FECHA_ALTA=TO_DATE('" + oSMe.SmeFechaAlta.ToString("dd/MM/yyyy") +
+                    "','dd/mm/yyyy'), Sme_FECHA_BAJA=" + (oSMe.SmeFechaBaja == null ? "null," : "TO_DATE('" + oSMe.SmeFechaBaja.Value.ToString("dd/MM/yyyy") +
+                    "','dd/mm/yyyy')")+", EST_CODIGO='" + oSMe.EstCodigo +
+                    "', MED_NUMERO=" + oSMe.MedNumero +
+                    ", SUM_NUMERO=" + oSMe.SumNumero +
+                    " WHERE Sme_NUMERO=" + oSMe.SmeNumero.ToString();
+                cmd = new OracleCommand(strsql, cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -130,6 +131,58 @@ namespace Implement
                         NewEnt = CargarSuministrosMedidores(dr);
                     }
                     return NewEnt;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+            public SuministrosMedidores SuministrosMedidoresGetBySuministro(long Id)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    Conexion oConexion = new Conexion();
+                    OracleConnection cn = oConexion.getConexion();
+                    cn.Open();
+                    string sqlSelect = "select * from Suministros_Medidores " +
+                         "WHERE SME_FECHA_BAJA IS NULL AND SUM_NUMERO=" + Id.ToString();
+                    cmd = new OracleCommand(sqlSelect, cn);
+                    adapter = new OracleDataAdapter(cmd);
+                    cmd.ExecuteNonQuery();
+                    adapter.Fill(ds);
+                    DataTable dt;
+                    dt = ds.Tables[0];
+                    SuministrosMedidores NewEnt = new SuministrosMedidores();
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow dr = dt.Rows[0];
+                        NewEnt = CargarSuministrosMedidores(dr);
+                    }
+                    return NewEnt;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+            public DataTable SuministrosMedidoresGetBySuministroDT(long Id)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    Conexion oConexion = new Conexion();
+                    OracleConnection cn = oConexion.getConexion();
+                    cn.Open();
+                    string sqlSelect = "select * from Suministros_Medidores " +
+                         "WHERE SME_FECHA_BAJA IS NULL AND SUM_NUMERO=" + Id.ToString();
+                    cmd = new OracleCommand(sqlSelect, cn);
+                    adapter = new OracleDataAdapter(cmd);
+                    cmd.ExecuteNonQuery();
+                    adapter.Fill(ds);
+                    return ds.Tables[0];
                 }
                 catch (Exception ex)
                 {

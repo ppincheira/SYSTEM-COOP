@@ -23,22 +23,22 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = " SELECT f.cfb_codigo pk, " +//2
-                                   "        f.cpt_codigo_parte fk, " +//3
-                                   "        c.cpt_codigo codigo, " +  //4                                 
-                                   "        c.cpt_descripcion descripcion, " +//5
-                                   "        f.cfb_cantidad_parte cantidad " +//6
+                string sqlSelect = " SELECT f.cfb_codigo pk, " +//0 oculto
+                                   "        f.cpt_codigo_parte fk, " +//1 oculto
+                                   "        c.cpt_codigo codigo, " +  //2                                 
+                                   "        c.cpt_descripcion descripcion, " +//3
+                                   "        f.cfb_cantidad_parte cantidad " +//4
                                    " FROM   conceptos c," +
                                    "        conceptos_fabricados f " +
                                    " WHERE  c.cpt_numero = f.cpt_codigo_parte " +
-                                   " AND    f.cpt_codigo_fabricado =  '" + CodigoFabricado + "' " +
-                                   " UNION ALL " +
-                                   " SELECT NULL pk, " +
-                                   "        NULL fk, " +
-                                   "        NULL codigo, " +
-                                   "        NULL descripcion, " +
-                                   "        NULL cantidad " +
-                                   " FROM    dual ";
+                                   " AND    f.cpt_codigo_fabricado =  '" + CodigoFabricado + "' ";
+                                   //" UNION ALL " +
+                                   //" SELECT NULL pk, " +
+                                   //"        NULL fk, " +
+                                   //"        NULL codigo, " +
+                                   //"        NULL descripcion, " +
+                                   //"        NULL cantidad " +
+                                   //" FROM    dual ";
 
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
@@ -158,6 +158,76 @@ namespace Implement
             }
         }
 
+        public Transacciones ConceptosFabricadosAddTrans(ConceptosFabricados oCfb)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = "insert into Conceptos_Fabricados(CFB_CODIGO, " +
+                                                                    "CPT_CODIGO_FABRICADO, " +
+                                                                    "CPT_CODIGO_PARTE, " +
+                                                                    "CFB_CANTIDAD_PARTE) " +
+                                "values(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('CFB_CODIGO'), " +
+                                        " '" + oCfb.cptCodigoFabricado + "', " +
+                                        " '" + oCfb.cptCodigoParte + "', " +
+                                        " '" + oCfb.cfbCantidadParte + "' " +
+                                        ")";
+                
+                return oTrans;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones ConceptosFabricadosDeleteTrans(ConceptosFabricados oCfb)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = "  DELETE Conceptos_Fabricados " +
+                                  "  WHERE  CFB_CODIGO='" + oCfb.cfbCodigo + "'";
+                return oTrans;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones ConceptosFabricadosDeleteAllTrans(ConceptosFabricados oCfb)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = "  DELETE Conceptos_Fabricados " +
+                                 "  WHERE  CPT_CODIGO_FABRICADO='" + oCfb.cptCodigoFabricado + "'";
+                return oTrans;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones ConceptosFabricadosUpdateTrans(ConceptosFabricados oConceptosFabricados)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = "update Conceptos_Fabricados SET " +
+                                    " CPT_CODIGO_FABRICADO='" + oConceptosFabricados.cptCodigoFabricado + "'," +
+                                    " CPT_CODIGO_PARTE='" + oConceptosFabricados.cptCodigoParte + "'," +
+                                    " CFB_CANTIDAD_PARTE='" + oConceptosFabricados.cfbCantidadParte + "' " +
+                            "WHERE CFB_CODIGO='" + oConceptosFabricados.cfbCodigo + "' ";
+                return oTrans;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         #endregion
     }

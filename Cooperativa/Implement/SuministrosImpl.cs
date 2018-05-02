@@ -37,7 +37,7 @@ namespace Implement
                     "values(IDTEMP,'" + oSum.SrvCodigo + "', '" + oSum.TcsCodigo + "'," + oSum.ScaNumero + "," +
                     oSum.SumOrdenRuta + "," + oSum.EmpNumero + ",'" + oSum.SumFechaAlta.ToString("dd/MM/yyyy") + "','" +
                     oSum.EstCodigo + "'," + oSum.SumConsumoEstimado + "," + oSum.SumVoltaje + ",'" +
-                    oSum.SumConexion + "'," + oSum.SumPotenciaL1 + "," +
+                    oSum.SumConexion + "'," + oSum.SumPotenciaL1 + "," + oSum.SumPotenciaL2 + "," +
                     oSum.SumPotenciaL3 + "," + oSum.SumRegistrador + ",'"  + oSum.SumPermiteCorte + "', '" +
                     oSum.SumMedido + "'," + oSum.SruNumero + "," + oSum.SzoNumero + ", '"+
                     oSum.SumPermiteFactura+"', '"+DateTime.Now.ToString("dd/MM/yyyy") +"') RETURNING IDTEMP INTO :id;" +
@@ -61,6 +61,108 @@ namespace Implement
             }
         }
 
+        public bool SuministrosAddCompleto(Suministros oSum, DomiciliosEntidades oDomSum, SuministrosMedidores oMedSum)
+        {
+            try
+            {
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                // Clave Secuencia SUM_NUMERO
+                ds = new DataSet();
+                string query =
+
+                    " DECLARE IDTEMP NUMBER(15,0); " +
+                    " BEGIN " +
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('SUM_NUMERO')) into IDTEMP from dual; " +
+                    " insert into Suministros " +
+                    "(SUM_NUMERO, SRV_CODIGO, TCS_CODIGO, " +
+                    "SCA_NUMERO, SUM_ORDEN_RUTA, EMP_NUMERO, SUM_FECHA_ALTA, EST_CODIGO," +
+                    "SUM_CONSUMO_ESTIMADO, SUM_VOLTAJE, SUM_CONEXION, SUM_POTENCIA_L1, " +
+                    "SUM_POTENCIA_L2, SUM_POTENCIA_L3, SUM_REGISTRADOR, SUM_PERMITE_CORTE, " +
+                    "SUM_MEDIDO, SRU_NUMERO, SZO_NUMERO, SUM_PERMITE_FACTURACION, SUM_FECHA_CARGA) " +
+                    "values(IDTEMP,'" + oSum.SrvCodigo + "', '" + oSum.TcsCodigo + "'," + oSum.ScaNumero + "," +
+                    oSum.SumOrdenRuta + "," + oSum.EmpNumero + ", to_date('" + oSum.SumFechaAlta.ToString("dd/MM/yyyy") + "','dd/mm/yyyy'),'" +
+                    oSum.EstCodigo + "'," + oSum.SumConsumoEstimado + "," + oSum.SumVoltaje + ",'" +
+                    oSum.SumConexion + "'," + oSum.SumPotenciaL1 + "," + oSum.SumPotenciaL2 + "," +
+                    oSum.SumPotenciaL3 + "," + oSum.SumRegistrador + ",'"  + oSum.SumPermiteCorte + "', '" +
+                    oSum.SumMedido + "'," + oSum.SruNumero + "," + oSum.SzoNumero + ", '"+
+                    oSum.SumPermiteFactura+"', to_date('"+DateTime.Now.ToString("dd/MM/yyyy") +"','dd/mm/yyyy')) RETURNING IDTEMP INTO :id;" +
+                    " END;";
+                cmd = new OracleCommand(query, cn);
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                oSum.SumNumero = long.Parse(cmd.Parameters[":id"].Value.ToString());
+
+                //Agrega registro a Domicilios entidades
+                oDomSum.DenCodigoRegistro = oSum.SumNumero;
+                query =
+                    " DECLARE IDTEMP NUMBER(15,0); " +
+                    " BEGIN " +
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('DEN_NUMERO')) into IDTEMP from dual; " +
+                    "INSERT INTO DOMICILIOS_ENTIDADES(DEN_NUMERO,TDO_CODIGO,DEN_CODIGO_REGISTRO, TAB_CODIGO, " +
+                    "DOM_CODIGO, DEN_DEFECTO)  VALUES(IDTEMP,'" +
+                    oDomSum.TdoCodigo + "'," + oDomSum.DenCodigoRegistro + ", '" + oDomSum.TabCodigo + "'," +
+                    oDomSum.DomCodigo + ", '" + oDomSum.DenDefecto + "') RETURNING IDTEMP INTO :id;" +
+                    " END;";
+
+                cmd = new OracleCommand(query, cn);
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
+
+                cmd.ExecuteNonQuery();
+                oDomSum.DenNumero = long.Parse(cmd.Parameters[":id"].Value.ToString());
+
+                if (oMedSum.MedNumero != 0)
+                {
+                    oMedSum.SumNumero = oSum.SumNumero;
+                    //Agrego registro Suministro Medidores
+                    query =
+                        " DECLARE IDTEMP NUMBER(15,0); " +
+                        " BEGIN " +
+                        " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('SME_NUMERO')) into IDTEMP from dual; " +
+                        " insert into Suministros_Medidores " +
+                        "(SME_NUMERO, SME_FECHA_ALTA, SME_FECHA_BAJA, " +
+                        "EST_CODIGO, MED_NUMERO, SUM_NUMERO) " +
+                        "values(IDTEMP,'" + oMedSum.SmeFechaAlta.ToString("dd/MM/yyyy") + "',";
+                    if (oMedSum.SmeFechaBaja == null)
+                        query += "null, '";
+                    else
+                        query += "'" + oMedSum.SmeFechaBaja.Value.ToString("dd/MM/yyyy") + "','";
+                    query += oMedSum.EstCodigo + "'," + oMedSum.MedNumero + "," + oMedSum.SumNumero + ") RETURNING IDTEMP INTO :id;" +
+                            " END;";
+                    cmd = new OracleCommand(query, cn);
+                    cmd.Parameters.Add(new OracleParameter
+                    {
+                        ParameterName = ":id",
+                        OracleDbType = OracleDbType.Int64,
+                        Direction = ParameterDirection.Output
+                    });
+                    adapter = new OracleDataAdapter(cmd);
+                    cmd.ExecuteNonQuery();
+                    oMedSum.SmeNumero = long.Parse(cmd.Parameters[":id"].Value.ToString());
+                }
+                // Agregar el medidor del suministro si es necesario (numero de medidor != 0)
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+       }
+
         public bool SuministrosUpdate(Suministros oSum)
         {
             try
@@ -74,13 +176,13 @@ namespace Implement
                     "TCS_CODIGO='" + oSum.TcsCodigo + "', " +
                     "SCA_NUMERO=" + oSum.ScaNumero + ", " +
                     "SUM_ORDEN_RUTA=" + oSum.SumOrdenRuta + ", " +
-                    "EMP_NUMERO=" + oSum.EmpNumero + ", '" +
+                    "EMP_NUMERO=" + oSum.EmpNumero + ", " +
                     "SUM_FECHA_ALTA='" + oSum.SumFechaAlta.ToString("dd/MM/yyyy") + "', " +
                     "EST_CODIGO='" + oSum.EstCodigo + "', " +
                     "SUM_CONSUMO_ESTIMADO=" + oSum.SumConsumoEstimado + ", " +
                     "SUM_VOLTAJE=" + oSum.SumVoltaje + ", " +
                     "SUM_CONEXION='" + oSum.SumConexion + "', " +
-                    "SUM_POTENCIA_L1=" + oSum.SumPotenciaL1 + " " +
+                    "SUM_POTENCIA_L1=" + oSum.SumPotenciaL1 + ", " +
                     "SUM_POTENCIA_L2=" + oSum.SumPotenciaL2 + ", " +
                     "SUM_POTENCIA_L3=" + oSum.SumPotenciaL3 + ", " +
                     "SUM_REGISTRADOR=" + oSum.SumRegistrador + ", " +
@@ -225,6 +327,8 @@ namespace Implement
                 oObjeto.SumMedido = dr["SUM_MEDIDO"].ToString();
                 oObjeto.SruNumero = long.Parse(dr["SRU_NUMERO"].ToString());
                 oObjeto.SzoNumero = long.Parse(dr["SZO_NUMERO"].ToString());
+                if (dr["SUM_FECHA_CARGA"].ToString() != "")
+                    oObjeto.SumFechaCarga =DateTime.Parse(dr["SUM_FECHA_CARGA"].ToString());
                 return oObjeto;
             }
             catch (Exception ex)

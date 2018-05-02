@@ -82,8 +82,17 @@ namespace GesSeguridad.controles.forms
 
         public DateTime? datPrsIngreso
         {
-            get { return DateTime.Parse(this.dtpFechaIngreso.Text); }
-            set { this.dtpFechaIngreso.Text = value.ToString(); }
+            get
+            {
+                if (this.dtpFechaIngreso.Checked)
+                    return DateTime.Parse(this.dtpFechaIngreso.Text);
+                else
+                    return null;
+            }
+            set
+            {
+                this.dtpFechaIngreso.Text = value.ToString();
+            }
         }
 
         public string strPrsCuil
@@ -105,9 +114,18 @@ namespace GesSeguridad.controles.forms
         }
 
         public DateTime? datPrsBaja
-        {
-            get { return DateTime.Parse(this.dtpFechaBaja.Text); }
-            set { this.dtpFechaBaja.Text = value.ToString(); }
+        {         
+            get
+            {
+                if (this.dtpFechaBaja.Checked)
+                    return DateTime.Parse(this.dtpFechaBaja.Text);
+                else
+                    return null;
+            }
+            set
+            {
+                this.dtpFechaBaja.Text = value.ToString();
+            }
         }
 
         public cmbLista cmbPrsBaja

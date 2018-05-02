@@ -311,7 +311,13 @@ namespace FormsAuxiliares
                     Console.WriteLine("Case 1");
                     break;
                 case "frmRutas":
-                    Console.WriteLine("Case 2");
+                    //Aqui se utiliza una clase para asignar la funcionalidad a formularios admin cargados dinamicamente
+                    FuncionalidadesFoms oRutPermiso = new FuncionalidadesFoms("10001", "10002", "10003", "10005", "10006", "10004");
+                    //Se instancia un objeto de la clase formulario admin al cual se le pasa por parametro el COD_TABLA
+                    Admin oRutAdmin = new Admin();
+                    oRutAdmin.TabCodigo = "SRUT";
+                    FormsAuxiliares.frmFormAdminMini frmRut = new FormsAuxiliares.frmFormAdminMini(oRutAdmin, oRutPermiso);
+                    frmRut.ShowDialog();
                     break;
                 case "frmCategorias":
                     FuncionalidadesFoms oCatPermiso = new FuncionalidadesFoms("100011", "100012", "100013", "100016", "100014", "100015");
@@ -339,8 +345,20 @@ namespace FormsAuxiliares
                     frmML.ShowDialog();
                     break;
                 case "frmClientes":
-                    Console.WriteLine("Case 2");
+                    FuncionalidadesFoms oCliPermiso = new FuncionalidadesFoms("51", "52", "53", "55", "56", "54");
+                    Admin oCliAdmin = new Admin();
+                    oCliAdmin.TabCodigo = "CLIE";
+                    FormsAuxiliares.frmFormAdmin frmAdmin = new FormsAuxiliares.frmFormAdmin(oCliAdmin, oCliPermiso);
+                    frmAdmin.ShowDialog();
                     break;
+                case "frmTiposConexiones":
+                    FuncionalidadesFoms oTCPermiso = new FuncionalidadesFoms("10111", "10112", "10113", "10115", "10116", "10114");
+                    Admin oTCAdmin = new Admin();
+                    oTCAdmin.TabCodigo = "TCS";
+                    FormsAuxiliares.frmFormAdminMini frmTC = new FormsAuxiliares.frmFormAdminMini(oTCAdmin, oTCPermiso);
+                    frmTC.ShowDialog();
+                    break;
+             
 
             }
         }

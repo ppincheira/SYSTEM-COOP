@@ -14,6 +14,7 @@ namespace Implement
         private OracleCommand cmd;
         private DataSet ds;
         private long response;
+
         public long GruposDetallesAdd(GruposDetalles oGrD)
         {
             try
@@ -45,6 +46,30 @@ namespace Implement
                 response = long.Parse(cmd.Parameters[":id"].Value.ToString());
                 cn.Close();
                 return response;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones GruposDetallesAddTrans(GruposDetalles oGrD)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery =   " DECLARE IDTEMP NUMBER(10,0); " +
+                                    " BEGIN " +
+                                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('GRD_CODIGO')) into IDTEMP from dual; " +
+                                    " insert into Grupos_Detalles " +
+                                    "(GRD_CODIGO, GRD_CODIGO_REGISTRO, GRP_CODIGO) " +
+                                    "values(IDTEMP,'" + oGrD.GrdCodigoRegistro + "', '" + oGrD.GrpCodigo +
+                                    "') RETURNING IDTEMP INTO :id;" +
+                                    " END;";
+
+                oTrans.traParametroOutLog = ":id";
+
+                return oTrans;
             }
             catch (Exception ex)
             {
@@ -119,6 +144,25 @@ namespace Implement
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
                 return response > 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones GruposDetallesTipoDeleteTrans(string CodReg, string CodTipo)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = " DELETE grupos_detalles " +
+                                  " WHERE  grd_codigo = (select gd.grd_codigo " +
+                                                   " from   grupos_detalles gd, grupos g " +
+                                                   " where  g.grp_codigo = gd.grp_codigo " +
+                                                   " and    gd.grd_codigo_registro='" + CodReg + "' " +
+                                                   " and    g.tgr_codigo ='" + CodTipo + "') ";
+                return oTrans;
             }
             catch (Exception ex)
             {

@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FormsAuxiliares">
-      <HintPath>..\..\..\Cooperativa\Cooperativa\Referencias\FormsAuxiliares.dll</HintPath>
+      <HintPath>..\Referencias\FormsAuxiliares.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,6 +53,15 @@
     </Compile>
     <Compile Include="controles\forms\frmConceptosCrud.designer.cs">
       <DependentUpon>frmConceptosCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles\forms\frmCuadrosTarifariosCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmGruposImpuestosItemsCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmGruposImpuestosItemsCrud.designer.cs">
+      <DependentUpon>frmGruposImpuestosItemsCrud.cs</DependentUpon>
     </Compile>
     <Compile Include="controles\forms\frmTiposComprobantesCrud.cs">
       <SubType>Form</SubType>
@@ -88,6 +97,12 @@
   <ItemGroup>
     <EmbeddedResource Include="controles\forms\frmConceptosCrud.resx">
       <DependentUpon>frmConceptosCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmCuadrosTarifariosCrud.resx">
+      <DependentUpon>frmCuadrosTarifariosCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmGruposImpuestosItemsCrud.resx">
+      <DependentUpon>frmGruposImpuestosItemsCrud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmTiposComprobantesCrud.resx">
       <DependentUpon>frmTiposComprobantesCrud.cs</DependentUpon>

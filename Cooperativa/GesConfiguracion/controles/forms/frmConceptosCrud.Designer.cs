@@ -78,10 +78,14 @@
             this.chkFraccionado = new Controles.datos.chkBox();
             this.chkControlaStock = new Controles.datos.chkBox();
             this.tabPageTComprobantes = new System.Windows.Forms.TabPage();
+            this.btnEliminarTipoCmp = new Controles.buttons.btnEliminar();
+            this.btnNuevoTipoCmp = new Controles.buttons.btnNuevo();
             this.grdTiposComprobantes = new Controles.datos.grdGrillaEdit();
             this.lblCantidadComprobantes = new Controles.labels.lblEtiqueta();
             this.tabPageComponentes = new System.Windows.Forms.TabPage();
             this.gesFabricado = new Controles.contenedores.gesGroup();
+            this.btnEliminarFabricado = new Controles.buttons.btnEliminar();
+            this.btnNuevoFabricado = new Controles.buttons.btnNuevo();
             this.lblCantidadComponentes = new Controles.labels.lblEtiqueta();
             this.grdFabricado = new Controles.datos.grdGrillaEdit();
             this.chkFabricado = new Controles.datos.chkBox();
@@ -95,6 +99,18 @@
             this.cmbLinea = new Controles.datos.cmbLista();
             this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
             this.tabImpositivas = new System.Windows.Forms.TabPage();
+            this.chkImpuesto = new Controles.datos.chkBox();
+            this.gesImpuesto = new Controles.contenedores.gesGroup();
+            this.btnGrupoImpuesto = new Controles.buttons.btnGeneral();
+            this.lblEtiqueta27 = new Controles.labels.lblEtiqueta();
+            this.txtGrupoImpuesto = new Controles.textBoxes.txtDescripcion();
+            this.dtpVigenciaDesde = new Controles.Fecha.dtpFecha();
+            this.lblEtiqueta25 = new Controles.labels.lblEtiqueta();
+            this.tabServicios = new System.Windows.Forms.TabPage();
+            this.lblCantidadServicios = new Controles.labels.lblEtiqueta();
+            this.btnEliminarServicio = new Controles.buttons.btnEliminar();
+            this.btnNuevoServicio = new Controles.buttons.btnNuevo();
+            this.grdServicios = new Controles.datos.grdGrillaEdit();
             this.gpbDetalle = new Controles.contenedores.gpbGrupo();
             this.btnConceptoPadre = new Controles.buttons.btnGeneral();
             this.txtDescripcionCorta = new Controles.textBoxes.txtDescripcion();
@@ -125,6 +141,10 @@
             this.gesFabricado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdFabricado)).BeginInit();
             this.tabClasificación.SuspendLayout();
+            this.tabImpositivas.SuspendLayout();
+            this.gesImpuesto.SuspendLayout();
+            this.tabServicios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdServicios)).BeginInit();
             this.gpbDetalle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,6 +229,7 @@
             this.tabDetalle.Controls.Add(this.tabPageComponentes);
             this.tabDetalle.Controls.Add(this.tabClasificación);
             this.tabDetalle.Controls.Add(this.tabImpositivas);
+            this.tabDetalle.Controls.Add(this.tabServicios);
             this.tabDetalle.Location = new System.Drawing.Point(12, 101);
             this.tabDetalle.Name = "tabDetalle";
             this.tabDetalle.SelectedIndex = 0;
@@ -659,6 +680,8 @@
             // 
             // tabPageTComprobantes
             // 
+            this.tabPageTComprobantes.Controls.Add(this.btnEliminarTipoCmp);
+            this.tabPageTComprobantes.Controls.Add(this.btnNuevoTipoCmp);
             this.tabPageTComprobantes.Controls.Add(this.grdTiposComprobantes);
             this.tabPageTComprobantes.Controls.Add(this.lblCantidadComprobantes);
             this.tabPageTComprobantes.Location = new System.Drawing.Point(4, 22);
@@ -669,15 +692,36 @@
             this.tabPageTComprobantes.Text = "Tipos Comprobantes";
             this.tabPageTComprobantes.UseVisualStyleBackColor = true;
             // 
+            // btnEliminarTipoCmp
+            // 
+            this.btnEliminarTipoCmp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarTipoCmp.BackgroundImage")));
+            this.btnEliminarTipoCmp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarTipoCmp.Location = new System.Drawing.Point(523, 218);
+            this.btnEliminarTipoCmp.Name = "btnEliminarTipoCmp";
+            this.btnEliminarTipoCmp.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminarTipoCmp.TabIndex = 2;
+            this.btnEliminarTipoCmp.UseVisualStyleBackColor = false;
+            this.btnEliminarTipoCmp.Click += new System.EventHandler(this.btnEliminarTipoCmp_Click);
+            // 
+            // btnNuevoTipoCmp
+            // 
+            this.btnNuevoTipoCmp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevoTipoCmp.BackgroundImage")));
+            this.btnNuevoTipoCmp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevoTipoCmp.Location = new System.Drawing.Point(522, 6);
+            this.btnNuevoTipoCmp.Name = "btnNuevoTipoCmp";
+            this.btnNuevoTipoCmp.Size = new System.Drawing.Size(40, 40);
+            this.btnNuevoTipoCmp.TabIndex = 1;
+            this.btnNuevoTipoCmp.UseVisualStyleBackColor = false;
+            this.btnNuevoTipoCmp.Click += new System.EventHandler(this.btnNuevoTipoCmp_Click);
+            // 
             // grdTiposComprobantes
             // 
+            this.grdTiposComprobantes.AllowUserToAddRows = false;
             this.grdTiposComprobantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdTiposComprobantes.Location = new System.Drawing.Point(6, 6);
             this.grdTiposComprobantes.Name = "grdTiposComprobantes";
-            this.grdTiposComprobantes.Size = new System.Drawing.Size(559, 251);
+            this.grdTiposComprobantes.Size = new System.Drawing.Size(510, 251);
             this.grdTiposComprobantes.TabIndex = 0;
-            this.grdTiposComprobantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTiposComprobantes_CellClick);
-            this.grdTiposComprobantes.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.grdTiposComprobantes_UserDeletingRow);
             // 
             // lblCantidadComprobantes
             // 
@@ -702,6 +746,8 @@
             // 
             // gesFabricado
             // 
+            this.gesFabricado.Controls.Add(this.btnEliminarFabricado);
+            this.gesFabricado.Controls.Add(this.btnNuevoFabricado);
             this.gesFabricado.Controls.Add(this.lblCantidadComponentes);
             this.gesFabricado.Controls.Add(this.grdFabricado);
             this.gesFabricado.Location = new System.Drawing.Point(6, 39);
@@ -709,6 +755,28 @@
             this.gesFabricado.Size = new System.Drawing.Size(559, 231);
             this.gesFabricado.TabIndex = 19;
             this.gesFabricado.TabStop = false;
+            // 
+            // btnEliminarFabricado
+            // 
+            this.btnEliminarFabricado.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarFabricado.BackgroundImage")));
+            this.btnEliminarFabricado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarFabricado.Location = new System.Drawing.Point(513, 165);
+            this.btnEliminarFabricado.Name = "btnEliminarFabricado";
+            this.btnEliminarFabricado.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminarFabricado.TabIndex = 69;
+            this.btnEliminarFabricado.UseVisualStyleBackColor = false;
+            this.btnEliminarFabricado.Click += new System.EventHandler(this.btnEliminarFabricado_Click);
+            // 
+            // btnNuevoFabricado
+            // 
+            this.btnNuevoFabricado.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevoFabricado.BackgroundImage")));
+            this.btnNuevoFabricado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevoFabricado.Location = new System.Drawing.Point(513, 9);
+            this.btnNuevoFabricado.Name = "btnNuevoFabricado";
+            this.btnNuevoFabricado.Size = new System.Drawing.Size(40, 40);
+            this.btnNuevoFabricado.TabIndex = 68;
+            this.btnNuevoFabricado.UseVisualStyleBackColor = false;
+            this.btnNuevoFabricado.Click += new System.EventHandler(this.btnNuevoFabricado_Click);
             // 
             // lblCantidadComponentes
             // 
@@ -721,13 +789,12 @@
             // 
             // grdFabricado
             // 
+            this.grdFabricado.AllowUserToAddRows = false;
             this.grdFabricado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdFabricado.Location = new System.Drawing.Point(6, 9);
             this.grdFabricado.Name = "grdFabricado";
-            this.grdFabricado.Size = new System.Drawing.Size(547, 196);
+            this.grdFabricado.Size = new System.Drawing.Size(501, 196);
             this.grdFabricado.TabIndex = 0;
-            this.grdFabricado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFabricado_CellClick);
-            this.grdFabricado.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.grdFabricado_UserDeletingRow);
             // 
             // chkFabricado
             // 
@@ -837,6 +904,8 @@
             // 
             // tabImpositivas
             // 
+            this.tabImpositivas.Controls.Add(this.chkImpuesto);
+            this.tabImpositivas.Controls.Add(this.gesImpuesto);
             this.tabImpositivas.Location = new System.Drawing.Point(4, 22);
             this.tabImpositivas.Name = "tabImpositivas";
             this.tabImpositivas.Padding = new System.Windows.Forms.Padding(3);
@@ -844,6 +913,139 @@
             this.tabImpositivas.TabIndex = 5;
             this.tabImpositivas.Text = "Impositivas";
             this.tabImpositivas.UseVisualStyleBackColor = true;
+            // 
+            // chkImpuesto
+            // 
+            this.chkImpuesto.AutoSize = true;
+            this.chkImpuesto.Location = new System.Drawing.Point(6, 28);
+            this.chkImpuesto.Name = "chkImpuesto";
+            this.chkImpuesto.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.chkImpuesto.Size = new System.Drawing.Size(69, 17);
+            this.chkImpuesto.TabIndex = 76;
+            this.chkImpuesto.Text = "Impuesto";
+            this.chkImpuesto.UseVisualStyleBackColor = true;
+            this.chkImpuesto.CheckedChanged += new System.EventHandler(this.chkImpuesto_CheckedChanged);
+            // 
+            // gesImpuesto
+            // 
+            this.gesImpuesto.Controls.Add(this.btnGrupoImpuesto);
+            this.gesImpuesto.Controls.Add(this.lblEtiqueta27);
+            this.gesImpuesto.Controls.Add(this.txtGrupoImpuesto);
+            this.gesImpuesto.Controls.Add(this.dtpVigenciaDesde);
+            this.gesImpuesto.Controls.Add(this.lblEtiqueta25);
+            this.gesImpuesto.Location = new System.Drawing.Point(6, 53);
+            this.gesImpuesto.Name = "gesImpuesto";
+            this.gesImpuesto.Size = new System.Drawing.Size(559, 213);
+            this.gesImpuesto.TabIndex = 75;
+            this.gesImpuesto.TabStop = false;
+            // 
+            // btnGrupoImpuesto
+            // 
+            this.btnGrupoImpuesto.Location = new System.Drawing.Point(103, 47);
+            this.btnGrupoImpuesto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrupoImpuesto.Name = "btnGrupoImpuesto";
+            this.btnGrupoImpuesto.Size = new System.Drawing.Size(21, 19);
+            this.btnGrupoImpuesto.TabIndex = 69;
+            this.btnGrupoImpuesto.Text = "...";
+            this.btnGrupoImpuesto.UseVisualStyleBackColor = true;
+            this.btnGrupoImpuesto.Click += new System.EventHandler(this.btnGrupoImpuesto_Click);
+            // 
+            // lblEtiqueta27
+            // 
+            this.lblEtiqueta27.AutoSize = true;
+            this.lblEtiqueta27.Location = new System.Drawing.Point(8, 51);
+            this.lblEtiqueta27.Name = "lblEtiqueta27";
+            this.lblEtiqueta27.Size = new System.Drawing.Size(90, 13);
+            this.lblEtiqueta27.TabIndex = 71;
+            this.lblEtiqueta27.Text = "Grupo Impuestos:";
+            // 
+            // txtGrupoImpuesto
+            // 
+            this.txtGrupoImpuesto.BackColor = System.Drawing.Color.White;
+            this.txtGrupoImpuesto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtGrupoImpuesto.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtGrupoImpuesto.Location = new System.Drawing.Point(129, 47);
+            this.txtGrupoImpuesto.MaxLength = 100;
+            this.txtGrupoImpuesto.Multiline = true;
+            this.txtGrupoImpuesto.Name = "txtGrupoImpuesto";
+            this.txtGrupoImpuesto.ReadOnly = true;
+            this.txtGrupoImpuesto.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtGrupoImpuesto.Size = new System.Drawing.Size(413, 40);
+            this.txtGrupoImpuesto.TabIndex = 70;
+            this.txtGrupoImpuesto.TextoVacio = "<Descripcion>";
+            this.txtGrupoImpuesto.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            // 
+            // dtpVigenciaDesde
+            // 
+            this.dtpVigenciaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpVigenciaDesde.Location = new System.Drawing.Point(129, 101);
+            this.dtpVigenciaDesde.Name = "dtpVigenciaDesde";
+            this.dtpVigenciaDesde.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.dtpVigenciaDesde.Size = new System.Drawing.Size(151, 20);
+            this.dtpVigenciaDesde.TabIndex = 65;
+            // 
+            // lblEtiqueta25
+            // 
+            this.lblEtiqueta25.AutoSize = true;
+            this.lblEtiqueta25.Location = new System.Drawing.Point(8, 107);
+            this.lblEtiqueta25.Name = "lblEtiqueta25";
+            this.lblEtiqueta25.Size = new System.Drawing.Size(85, 13);
+            this.lblEtiqueta25.TabIndex = 66;
+            this.lblEtiqueta25.Text = "Vigencia Desde:";
+            // 
+            // tabServicios
+            // 
+            this.tabServicios.Controls.Add(this.lblCantidadServicios);
+            this.tabServicios.Controls.Add(this.btnEliminarServicio);
+            this.tabServicios.Controls.Add(this.btnNuevoServicio);
+            this.tabServicios.Controls.Add(this.grdServicios);
+            this.tabServicios.Location = new System.Drawing.Point(4, 22);
+            this.tabServicios.Name = "tabServicios";
+            this.tabServicios.Padding = new System.Windows.Forms.Padding(3);
+            this.tabServicios.Size = new System.Drawing.Size(572, 276);
+            this.tabServicios.TabIndex = 6;
+            this.tabServicios.Text = "Servicios";
+            this.tabServicios.UseVisualStyleBackColor = true;
+            // 
+            // lblCantidadServicios
+            // 
+            this.lblCantidadServicios.AutoSize = true;
+            this.lblCantidadServicios.Location = new System.Drawing.Point(6, 260);
+            this.lblCantidadServicios.Name = "lblCantidadServicios";
+            this.lblCantidadServicios.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidadServicios.TabIndex = 67;
+            this.lblCantidadServicios.Text = "Cantidad";
+            // 
+            // btnEliminarServicio
+            // 
+            this.btnEliminarServicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarServicio.BackgroundImage")));
+            this.btnEliminarServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarServicio.Location = new System.Drawing.Point(524, 219);
+            this.btnEliminarServicio.Name = "btnEliminarServicio";
+            this.btnEliminarServicio.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminarServicio.TabIndex = 5;
+            this.btnEliminarServicio.UseVisualStyleBackColor = false;
+            this.btnEliminarServicio.Click += new System.EventHandler(this.btnEliminar1_Click);
+            // 
+            // btnNuevoServicio
+            // 
+            this.btnNuevoServicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevoServicio.BackgroundImage")));
+            this.btnNuevoServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevoServicio.Location = new System.Drawing.Point(523, 7);
+            this.btnNuevoServicio.Name = "btnNuevoServicio";
+            this.btnNuevoServicio.Size = new System.Drawing.Size(40, 40);
+            this.btnNuevoServicio.TabIndex = 4;
+            this.btnNuevoServicio.UseVisualStyleBackColor = false;
+            this.btnNuevoServicio.Click += new System.EventHandler(this.btnNuevoServicio_Click);
+            // 
+            // grdServicios
+            // 
+            this.grdServicios.AllowUserToAddRows = false;
+            this.grdServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdServicios.Location = new System.Drawing.Point(7, 7);
+            this.grdServicios.Name = "grdServicios";
+            this.grdServicios.Size = new System.Drawing.Size(510, 251);
+            this.grdServicios.TabIndex = 3;
             // 
             // gpbDetalle
             // 
@@ -1042,6 +1244,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdFabricado)).EndInit();
             this.tabClasificación.ResumeLayout(false);
             this.tabClasificación.PerformLayout();
+            this.tabImpositivas.ResumeLayout(false);
+            this.tabImpositivas.PerformLayout();
+            this.gesImpuesto.ResumeLayout(false);
+            this.gesImpuesto.PerformLayout();
+            this.tabServicios.ResumeLayout(false);
+            this.tabServicios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdServicios)).EndInit();
             this.gpbDetalle.ResumeLayout(false);
             this.gpbDetalle.PerformLayout();
             this.ResumeLayout(false);
@@ -1130,5 +1339,21 @@
         private Controles.labels.lblEtiqueta lblCantidadComponentes;
         private Controles.datos.cmbLista cmbRubro;
         private Controles.datos.grdGrillaEdit grdTiposComprobantes;
+        private Controles.buttons.btnEliminar btnEliminarTipoCmp;
+        private Controles.buttons.btnNuevo btnNuevoTipoCmp;
+        private Controles.buttons.btnEliminar btnEliminarFabricado;
+        private Controles.buttons.btnNuevo btnNuevoFabricado;
+        private System.Windows.Forms.TabPage tabServicios;
+        private Controles.labels.lblEtiqueta lblCantidadServicios;
+        private Controles.buttons.btnEliminar btnEliminarServicio;
+        private Controles.buttons.btnNuevo btnNuevoServicio;
+        private Controles.datos.grdGrillaEdit grdServicios;
+        private Controles.contenedores.gesGroup gesImpuesto;
+        private Controles.buttons.btnGeneral btnGrupoImpuesto;
+        private Controles.labels.lblEtiqueta lblEtiqueta27;
+        private Controles.textBoxes.txtDescripcion txtGrupoImpuesto;
+        private Controles.Fecha.dtpFecha dtpVigenciaDesde;
+        private Controles.labels.lblEtiqueta lblEtiqueta25;
+        private Controles.datos.chkBox chkImpuesto;
     }
 }

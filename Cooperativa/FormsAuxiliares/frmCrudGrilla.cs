@@ -113,7 +113,8 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oCrudGrilla.Inicializar(_Tabla, _campoClave, _claveSecuencia);
+                // _oCrudGrilla.Inicializar(_Tabla, _campoClave, _claveSecuencia);
+                _oCrudGrilla.Inicializar(_Tabla, _claveSecuencia);
             }
             catch (Exception ex)
             {
@@ -248,6 +249,8 @@ namespace FormsAuxiliares
             this.grdGrillaEdit1.TabIndex = 3;
             this.grdGrillaEdit1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.grdGrillaEdit1_CellBeginEdit);
             this.grdGrillaEdit1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdGrillaEdit1_CellEndEdit);
+            this.grdGrillaEdit1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdGrillaEdit1_CellLeave);
+            this.grdGrillaEdit1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdGrillaEdit1_DataError);
             this.grdGrillaEdit1.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.grdGrillaEdit1_UserAddedRow);
             this.grdGrillaEdit1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.grdGrillaEdit1_UserDeletingRow);
             // 
@@ -368,25 +371,36 @@ namespace FormsAuxiliares
 
         private void btnAceptar1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea Confirmar los cambios que se realizaran?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            try
             {
-                _oCrudGrilla.ActualizaTabla(_Tabla, _campoClave, _claveSecuencia);
-
-
-                //Retorna los colores de las filas despues de realizar las modificaciones
-                foreach (DataGridViewRow row in grdGrillaEdit1.Rows)
+                if (MessageBox.Show("Desea Confirmar los cambios que se realizaran?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (!row.IsNewRow && row.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
-                        row.DefaultCellStyle.BackColor = Color.White;
-                    if (!row.IsNewRow && row.DefaultCellStyle.BackColor == Color.Red && row.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
-                        row.Visible = false;
+                    _oCrudGrilla.ActualizaTabla(_Tabla, _campoClave, _claveSecuencia);
+
+
+                    //Retorna los colores de las filas despues de realizar las modificaciones
+                    foreach (DataGridViewRow row in grdGrillaEdit1.Rows)
+                    {
+                        //   if (!row.IsNewRow && row.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
+                        if (!row.IsNewRow && row.Cells["ALTERADO"].Value == "0")
+                            row.DefaultCellStyle.BackColor = Color.White;
+                        if (!row.IsNewRow && row.DefaultCellStyle.BackColor == Color.Red && row.Cells["ALTERADO"].Value == "0")
+                            row.Visible = false;
+                    }
+                    _oCrudGrilla.CargarGrilla(_Tabla, _campoClave, _claveSecuencia);
+
+                    MessageBox.Show("Cambios realizados correctamente", "Cooperativa");
+
+                    // obtener el objeto en cuestion para cada elemento modificado usando el id , por ej AreasGetById(columnaClave)
+                    // Hacer un porje Areas Update(area obtenida en el paso anterior)
+                    //  this.Close();
                 }
-
-
-                // obtener el objeto en cuestion para cada elemento modificado usando el id , por ej AreasGetById(columnaClave)
-                // Hacer un porje Areas Update(area obtenida en el paso anterior)
-                //  this.Close();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("La operacion no se pudo concretar correctamente, por favor revise que los campos esten completados correctamente", "Error al guardar");
+            }
+
 
         }
 
@@ -407,13 +421,15 @@ namespace FormsAuxiliares
             }
 
         }
+
         String temp = "";
         private void grdGrillaEdit1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            if (grdGrillaEdit1.CurrentCell.Value == null)
-                temp = "";
-            else
-                temp = grdGrillaEdit1.CurrentCell.Value.ToString();
+            if (grdGrillaEdit1.CurrentCell != null)
+                if (grdGrillaEdit1.CurrentCell.Value == null)
+                    temp = "";
+                else
+                    temp = grdGrillaEdit1.CurrentCell.Value.ToString();
         }
 
         private void grdGrillaEdit1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
@@ -454,7 +470,29 @@ namespace FormsAuxiliares
             }
 
         }
-        
+
+        private void grdGrillaEdit1_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+         
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+
+        private void grdGrillaEdit1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Esta ingresando un valor incorrecto para la celda seleccionada, por favor ingrese un valor correcto.", "Error en el ingreso de datos");
+        }
+
         private void grdGrillaEdit1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (grdGrillaEdit1.CurrentCell != null)

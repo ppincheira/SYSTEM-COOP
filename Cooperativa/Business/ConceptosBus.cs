@@ -14,10 +14,22 @@ namespace Business
             return oConceptosImpl.ConceptosAdd(oConceptos);
         }
 
+        public Transacciones ConceptosAddTrans(Conceptos oConceptos)
+        {
+            ConceptosImpl oConceptosImpl = new ConceptosImpl();
+            return oConceptosImpl.ConceptosAddTrans(oConceptos);
+        }
+
         public bool ConceptosUpdate(Conceptos oConceptos)
         {
             ConceptosImpl oConceptosImpl = new ConceptosImpl();
             return oConceptosImpl.ConceptosUpdate(oConceptos);
+        }
+
+        public Transacciones ConceptosUpdateTrans(Conceptos oConceptos)
+        {
+            ConceptosImpl oConceptosImpl = new ConceptosImpl();
+            return oConceptosImpl.ConceptosUpdateTrans(oConceptos);
         }
 
         public bool ConceptosDelete(int Id)

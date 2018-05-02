@@ -52,9 +52,9 @@ namespace AppProcesos.gesServicios.frmMedidoresModelosCrud
                 _vista.KWVueltas = oMedidoresModelos.MMoKwVueltas;
                 _vista.Amperaje = oMedidoresModelos.MMoAmperaje;
                 _vista.Clase = oMedidoresModelos.MMoClase;
-                _vista.Registrador = oMedidoresModelos.MMoRegistrador;
                 _vista.FechaCarga = oMedidoresModelos.MMoFechaCarga;
                 _vista.EstCodigo = oMedidoresModelos.EstCodigo;
+
             }
         }
 
@@ -76,7 +76,6 @@ namespace AppProcesos.gesServicios.frmMedidoresModelosCrud
             oMMO.MMoKwVueltas = _vista.KWVueltas;
             oMMO.MMoAmperaje = _vista.Amperaje;
             oMMO.MMoClase = _vista.Clase;
-            oMMO.MMoRegistrador = _vista.Registrador;
             oMMO.MMoFechaCarga = _vista.FechaCarga;
             oMMO.MMoTipoContador = _vista.TipoContador.SelectedValue.ToString();
             oMMO.TCSCodigo = _vista.TipoConexion.SelectedValue.ToString();
@@ -97,7 +96,7 @@ namespace AppProcesos.gesServicios.frmMedidoresModelosCrud
             MedidoresModelos oMMO = oMMOBus.MedidoresModelosGetById(idMedidor);
             oMMO.EstCodigo = "B";
             return oMMOBus.MedidoresModelosUpdate(oMMO);
-       }
+        }
 
 
     }

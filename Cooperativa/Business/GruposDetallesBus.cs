@@ -12,6 +12,12 @@ namespace Business
             return oGruposDetallesImpl.GruposDetallesAdd(oGruposDetalles);
         }
 
+        public Transacciones GruposDetallesAddTrans(GruposDetalles oGruposDetalles)
+        {
+            GruposDetallesImpl oGruposDetallesImpl = new GruposDetallesImpl();
+            return oGruposDetallesImpl.GruposDetallesAddTrans(oGruposDetalles);
+        }
+
         public bool GruposDetallesUpdate(GruposDetalles oGruposDetalles)
         {
             GruposDetallesImpl oGruposDetallesImpl = new GruposDetallesImpl();
@@ -34,6 +40,12 @@ namespace Business
         {
             GruposDetallesImpl oGruposDetallesImpl = new GruposDetallesImpl();
             return oGruposDetallesImpl.GruposDetallesTipoDelete(CodReg, CodTipo);
+        }
+
+        public Transacciones GruposDetallesTipoDeleteTrans(string CodReg, string CodTipo)
+        {
+            GruposDetallesImpl oGruposDetallesImpl = new GruposDetallesImpl();
+            return oGruposDetallesImpl.GruposDetallesTipoDeleteTrans(CodReg, CodTipo);
         }
 
         public GruposDetalles GruposDetallesGetByCodReg(string Id)

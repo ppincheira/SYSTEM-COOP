@@ -22,14 +22,18 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
             MedidoresModelosBus oMModelo = new MedidoresModelosBus();
             oUtil.CargarCombo(_vista.MmoCodigo, oMModelo.MedidoresModelosGetAllDT(), "MMO_CODIGO", "MMO_DESCRIPCION", "SELECCIONE..");
 
-            // Obtengo las empresas Proveedoras
-            EmpresasBus oEmpresas = new EmpresasBus();
-            oUtil.CargarCombo(_vista.NumeroProv, oEmpresas.EmpresasGetAllDT(), "EMP_NUMERO", "EMP_RAZON_SOCIAL", "SELECCIONE..");
+            //// Obtengo las empresas Proveedoras
+            //EmpresasBus oEmpresas = new EmpresasBus();
+            //oUtil.CargarCombo(_vista.NumeroProv, oEmpresas.EmpresasGetAllDT(), "EMP_NUMERO", "EMP_RAZON_SOCIAL", "SELECCIONE..");
 
             //Obtengo los Modos de lectura de medidores
             LecturasModosBus oLeModo = new LecturasModosBus();
             oUtil.CargarCombo(_vista.LemCodigo, oLeModo.LecturasModosGetAllDT(), "LEM_CODIGO", "LEM_DESCRIPCION", "SELECCIONE..");
 
+            //// Obtengo los estados de Medidores
+            EstadosBus oEstados = new EstadosBus();
+            oUtil.CargarCombo(_vista.EstCodigo, oEstados.EstadosGetByFilterDT("MEDIDORES", "EST_CODIGO"), "EST_CODIGO", "EST_DESCRIPCION", "SELECCIONE..");
+            _vista.EstCodigo.SelectedValue = "D";
 
             if (_vista.Numero != 0)
             {
@@ -37,17 +41,18 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
                 MedidoresBus oMedidoresBus = new MedidoresBus();
                 //Obtengo datos de la entidad principal que trabajo
                 oMedidores = oMedidoresBus.MedidoresGetById(_vista.Numero);
-                _vista.NumeroProv.SelectedValue = oMedidores.EmpNumeroProveedor;
+                _vista.NumeroProv = oMedidores.EmpNumeroProveedor;
                 _vista.MmoCodigo.SelectedValue = oMedidores.MmoCodigo;
                 _vista.NumeroSerie = oMedidores.MedNumeroserie;
                 _vista.Digitos = oMedidores.MedDigitos;
-                _vista.EstCodigo = oMedidores.EstCodigo;
+                _vista.EstCodigo.SelectedValue = oMedidores.EstCodigo;
                 _vista.FactorCalib = oMedidores.MedFactorCalib;
                 _vista.GisX = oMedidores.GisX;
                 _vista.GisY = oMedidores.GisY;
                 _vista.UsrNumero = oMedidores.UsrNumero;
                 _vista.FechaCarga = oMedidores.MedFechaCarga;
                 _vista.LemCodigo.SelectedValue = oMedidores.LemCodigo;
+                CargarProveedor(_vista.NumeroProv);
             }
         }
 
@@ -62,9 +67,9 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
 
             oMMO.MedNumero = _vista.Numero;
             oMMO.MedNumeroserie = _vista.NumeroSerie;
-            oMMO.EmpNumeroProveedor = long.Parse(_vista.NumeroProv.SelectedValue.ToString());
+            oMMO.EmpNumeroProveedor = _vista.NumeroProv;
             oMMO.MedDigitos = _vista.Digitos;
-            oMMO.EstCodigo = _vista.EstCodigo;
+            oMMO.EstCodigo = _vista.EstCodigo.SelectedValue.ToString();
             oMMO.MedFactorCalib = _vista.FactorCalib;
             oMMO.GisX = _vista.GisX;
             oMMO.GisY = _vista.GisY;
@@ -74,7 +79,7 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
             oMMO.LemCodigo = long.Parse(_vista.LemCodigo.SelectedValue.ToString());
 
             if (_vista.Numero == 0)
-                oMMO.MedNumero =  oMMOBus.MedidoresAdd(oMMO);
+                oMMO.MedNumero = oMMOBus.MedidoresAdd(oMMO);
             else
                 rtdo = (oMMOBus.MedidoresUpdate(oMMO)) ? oMMO.MedNumero : 0;
         }
@@ -85,8 +90,14 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
             Medidores oMMO = oMMOBus.MedidoresGetById(idMedidor);
             oMMO.EstCodigo = "B";
             return oMMOBus.MedidoresUpdate(oMMO);
-       }
-
-
+        }
+        public void CargarProveedor(long id)
+        {
+            Empresas oEmpresa = new Empresas();
+            EmpresasBus oEmpresasBus = new EmpresasBus();
+            oEmpresa = oEmpresasBus.EmpresasGetById(id);
+            _vista.NumeroProv = oEmpresa.EmpNumero;
+            _vista.strRazonSocial = oEmpresa.EmpRazonSocial;
+        }
     }
 }

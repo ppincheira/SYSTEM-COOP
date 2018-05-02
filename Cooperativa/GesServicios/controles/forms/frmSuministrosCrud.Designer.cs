@@ -29,11 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSuministrosCrud));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gesGroup2 = new Controles.contenedores.gesGroup();
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.lbSumNumero = new Controles.labels.lblEtiqueta();
             this.gbDatos = new Controles.contenedores.gesGroup();
+            this.dtpFechaCarga = new Controles.Fecha.dtpFecha();
+            this.lblFechaCarga = new Controles.labels.lblEtiqueta();
             this.gesGroup1 = new Controles.contenedores.gesGroup();
             this.cmbServicio = new Controles.datos.cmbLista();
             this.dtpFechaAlta = new Controles.Fecha.dtpFecha();
@@ -46,7 +57,10 @@
             this.btnCliente = new Controles.buttons.btnGeneral();
             this.lblNumeroProv = new Controles.labels.lblEtiqueta();
             this.tabSumnistros = new Controles.contenedores.tabSolapas();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPageMedidores = new System.Windows.Forms.TabPage();
+            this.grdMedidores = new Controles.datos.grdGrillaAdmin();
+            this.cmbEstadoMedidor = new Controles.datos.cmbLista();
+            this.lblEstadoMedidor = new Controles.labels.lblEtiqueta();
             this.lblEtiqueta16 = new Controles.labels.lblEtiqueta();
             this.txtLecturaModoMedidor = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta12 = new Controles.labels.lblEtiqueta();
@@ -58,10 +72,13 @@
             this.lblEtiqueta9 = new Controles.labels.lblEtiqueta();
             this.btnMedidor = new Controles.buttons.btnGeneral();
             this.txtMedNumeroSerie = new Controles.textBoxes.txtDescripcion();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageObservaciones = new System.Windows.Forms.TabPage();
+            this.grdSuministrosObservaciones = new Controles.datos.grdGrillaAdmin();
             this.btnNuevaObs = new Controles.buttons.btnNuevo();
             this.txtObservaciones = new Controles.textBoxes.txtDescripcion();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPageDatosTecnicos = new System.Windows.Forms.TabPage();
+            this.txtRegistrador = new Controles.textBoxes.gesTextBox();
+            this.lblRegistrador = new Controles.labels.lblEtiqueta();
             this.txtVoltaje = new Controles.textBoxes.gesTextBox();
             this.lblVoltaje = new Controles.labels.lblEtiqueta();
             this.txtConsumoEstimado = new Controles.textBoxes.gesTextBox();
@@ -72,6 +89,11 @@
             this.lblPotenciaL3 = new Controles.labels.lblEtiqueta();
             this.lblPotenciaL1 = new Controles.labels.lblEtiqueta();
             this.txtPotenciaL2 = new Controles.textBoxes.txtDescripcionCorta();
+            this.tabPageConceptos = new System.Windows.Forms.TabPage();
+            this.grdSuministrosConceptos = new Controles.datos.grdGrillaAdmin();
+            this.btnEliminar1 = new Controles.buttons.btnEliminar();
+            this.btnEditar1 = new Controles.buttons.btnEditar();
+            this.btnNuevo1 = new Controles.buttons.btnNuevo();
             this.gesGroup3 = new Controles.contenedores.gesGroup();
             this.cmbEstado = new Controles.datos.cmbLista();
             this.chkPermiteFacturacion = new Controles.datos.chkBox();
@@ -118,14 +140,16 @@
             this.lblEtiqueta4 = new Controles.labels.lblEtiqueta();
             this.txtDomCodigo = new Controles.textBoxes.txtDescripcion();
             this.btnDomicilio = new Controles.buttons.btnGeneral();
-            this.lblRegistrador = new Controles.labels.lblEtiqueta();
-            this.txtRegistrador = new Controles.textBoxes.gesTextBox();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.tabSumnistros.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabPageMedidores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMedidores)).BeginInit();
+            this.tabPageObservaciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSuministrosObservaciones)).BeginInit();
+            this.tabPageDatosTecnicos.SuspendLayout();
+            this.tabPageConceptos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSuministrosConceptos)).BeginInit();
             this.gesGroup3.SuspendLayout();
             this.gesGroup4.SuspendLayout();
             this.gesGroup5.SuspendLayout();
@@ -135,16 +159,16 @@
             // 
             this.gesGroup2.Controls.Add(this.btnCancelar);
             this.gesGroup2.Controls.Add(this.btnAceptar);
-            this.gesGroup2.Location = new System.Drawing.Point(453, 579);
+            this.gesGroup2.Location = new System.Drawing.Point(399, 605);
             this.gesGroup2.Name = "gesGroup2";
-            this.gesGroup2.Size = new System.Drawing.Size(378, 94);
+            this.gesGroup2.Size = new System.Drawing.Size(378, 78);
             this.gesGroup2.TabIndex = 4;
             this.gesGroup2.TabStop = false;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(166, 19);
+            this.btnCancelar.Location = new System.Drawing.Point(164, 12);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 60);
             this.btnCancelar.TabIndex = 4;
@@ -154,7 +178,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
-            this.btnAceptar.Location = new System.Drawing.Point(272, 19);
+            this.btnAceptar.Location = new System.Drawing.Point(258, 12);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(80, 60);
             this.btnAceptar.TabIndex = 5;
@@ -172,6 +196,8 @@
             // 
             // gbDatos
             // 
+            this.gbDatos.Controls.Add(this.dtpFechaCarga);
+            this.gbDatos.Controls.Add(this.lblFechaCarga);
             this.gbDatos.Controls.Add(this.gesGroup1);
             this.gbDatos.Controls.Add(this.cmbServicio);
             this.gbDatos.Controls.Add(this.dtpFechaAlta);
@@ -186,6 +212,26 @@
             this.gbDatos.TabIndex = 5;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
+            // 
+            // dtpFechaCarga
+            // 
+            this.dtpFechaCarga.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaCarga.Location = new System.Drawing.Point(669, 25);
+            this.dtpFechaCarga.Name = "dtpFechaCarga";
+            this.dtpFechaCarga.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.dtpFechaCarga.Size = new System.Drawing.Size(106, 20);
+            this.dtpFechaCarga.TabIndex = 47;
+            this.dtpFechaCarga.Visible = false;
+            // 
+            // lblFechaCarga
+            // 
+            this.lblFechaCarga.AutoSize = true;
+            this.lblFechaCarga.Location = new System.Drawing.Point(574, 29);
+            this.lblFechaCarga.Name = "lblFechaCarga";
+            this.lblFechaCarga.Size = new System.Drawing.Size(86, 13);
+            this.lblFechaCarga.TabIndex = 48;
+            this.lblFechaCarga.Text = "Fecha de Carga:";
+            this.lblFechaCarga.Visible = false;
             // 
             // gesGroup1
             // 
@@ -308,46 +354,106 @@
             // 
             // tabSumnistros
             // 
-            this.tabSumnistros.Controls.Add(this.tabPage1);
-            this.tabSumnistros.Controls.Add(this.tabPage2);
-            this.tabSumnistros.Controls.Add(this.tabPage3);
+            this.tabSumnistros.Controls.Add(this.tabPageMedidores);
+            this.tabSumnistros.Controls.Add(this.tabPageObservaciones);
+            this.tabSumnistros.Controls.Add(this.tabPageDatosTecnicos);
+            this.tabSumnistros.Controls.Add(this.tabPageConceptos);
             this.tabSumnistros.Location = new System.Drawing.Point(4, 382);
             this.tabSumnistros.Margin = new System.Windows.Forms.Padding(2);
             this.tabSumnistros.Name = "tabSumnistros";
             this.tabSumnistros.SelectedIndex = 0;
-            this.tabSumnistros.Size = new System.Drawing.Size(827, 192);
+            this.tabSumnistros.Size = new System.Drawing.Size(827, 221);
             this.tabSumnistros.TabIndex = 7;
             this.tabSumnistros.Tag = "";
             // 
-            // tabPage1
+            // tabPageMedidores
             // 
-            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPage1.Controls.Add(this.lblEtiqueta16);
-            this.tabPage1.Controls.Add(this.txtLecturaModoMedidor);
-            this.tabPage1.Controls.Add(this.lblEtiqueta12);
-            this.tabPage1.Controls.Add(this.txtFabricanteMedidor);
-            this.tabPage1.Controls.Add(this.lblEtiqueta11);
-            this.tabPage1.Controls.Add(this.txtTipoMedidor);
-            this.tabPage1.Controls.Add(this.lblEtiqueta10);
-            this.tabPage1.Controls.Add(this.txtMedidorModelo);
-            this.tabPage1.Controls.Add(this.lblEtiqueta9);
-            this.tabPage1.Controls.Add(this.btnMedidor);
-            this.tabPage1.Controls.Add(this.txtMedNumeroSerie);
-            this.tabPage1.Controls.Add(this.cmbTipoConexion);
-            this.tabPage1.Controls.Add(this.lblTipoConexion);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(819, 166);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Medidores";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageMedidores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPageMedidores.Controls.Add(this.grdMedidores);
+            this.tabPageMedidores.Controls.Add(this.cmbEstadoMedidor);
+            this.tabPageMedidores.Controls.Add(this.lblEstadoMedidor);
+            this.tabPageMedidores.Controls.Add(this.lblEtiqueta16);
+            this.tabPageMedidores.Controls.Add(this.txtLecturaModoMedidor);
+            this.tabPageMedidores.Controls.Add(this.lblEtiqueta12);
+            this.tabPageMedidores.Controls.Add(this.txtFabricanteMedidor);
+            this.tabPageMedidores.Controls.Add(this.lblEtiqueta11);
+            this.tabPageMedidores.Controls.Add(this.txtTipoMedidor);
+            this.tabPageMedidores.Controls.Add(this.lblEtiqueta10);
+            this.tabPageMedidores.Controls.Add(this.txtMedidorModelo);
+            this.tabPageMedidores.Controls.Add(this.lblEtiqueta9);
+            this.tabPageMedidores.Controls.Add(this.btnMedidor);
+            this.tabPageMedidores.Controls.Add(this.txtMedNumeroSerie);
+            this.tabPageMedidores.Controls.Add(this.cmbTipoConexion);
+            this.tabPageMedidores.Controls.Add(this.lblTipoConexion);
+            this.tabPageMedidores.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMedidores.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPageMedidores.Name = "tabPageMedidores";
+            this.tabPageMedidores.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPageMedidores.Size = new System.Drawing.Size(819, 195);
+            this.tabPageMedidores.TabIndex = 0;
+            this.tabPageMedidores.Text = "Medidores";
+            this.tabPageMedidores.UseVisualStyleBackColor = true;
+            // 
+            // grdMedidores
+            // 
+            this.grdMedidores.AllowUserToAddRows = false;
+            this.grdMedidores.AllowUserToDeleteRows = false;
+            this.grdMedidores.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMedidores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.grdMedidores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdMedidores.DefaultCellStyle = dataGridViewCellStyle2;
+            this.grdMedidores.Location = new System.Drawing.Point(379, 28);
+            this.grdMedidores.Name = "grdMedidores";
+            this.grdMedidores.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMedidores.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.grdMedidores.Size = new System.Drawing.Size(405, 153);
+            this.grdMedidores.TabIndex = 68;
+            // 
+            // cmbEstadoMedidor
+            // 
+            this.cmbEstadoMedidor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbEstadoMedidor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbEstadoMedidor.FormattingEnabled = true;
+            this.cmbEstadoMedidor.Location = new System.Drawing.Point(108, 162);
+            this.cmbEstadoMedidor.Name = "cmbEstadoMedidor";
+            this.cmbEstadoMedidor.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.cmbEstadoMedidor.Size = new System.Drawing.Size(165, 21);
+            this.cmbEstadoMedidor.TabIndex = 66;
+            // 
+            // lblEstadoMedidor
+            // 
+            this.lblEstadoMedidor.AutoSize = true;
+            this.lblEstadoMedidor.Location = new System.Drawing.Point(5, 170);
+            this.lblEstadoMedidor.Name = "lblEstadoMedidor";
+            this.lblEstadoMedidor.Size = new System.Drawing.Size(84, 13);
+            this.lblEstadoMedidor.TabIndex = 67;
+            this.lblEstadoMedidor.Text = "Estado Medidor:";
             // 
             // lblEtiqueta16
             // 
             this.lblEtiqueta16.AutoSize = true;
-            this.lblEtiqueta16.Location = new System.Drawing.Point(11, 100);
+            this.lblEtiqueta16.Location = new System.Drawing.Point(6, 91);
             this.lblEtiqueta16.Name = "lblEtiqueta16";
             this.lblEtiqueta16.Size = new System.Drawing.Size(91, 13);
             this.lblEtiqueta16.TabIndex = 64;
@@ -357,7 +463,7 @@
             // 
             this.txtLecturaModoMedidor.BackColor = System.Drawing.Color.White;
             this.txtLecturaModoMedidor.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtLecturaModoMedidor.Location = new System.Drawing.Point(108, 93);
+            this.txtLecturaModoMedidor.Location = new System.Drawing.Point(108, 84);
             this.txtLecturaModoMedidor.MaxLength = 50;
             this.txtLecturaModoMedidor.Name = "txtLecturaModoMedidor";
             this.txtLecturaModoMedidor.ReadOnly = true;
@@ -370,7 +476,7 @@
             // lblEtiqueta12
             // 
             this.lblEtiqueta12.AutoSize = true;
-            this.lblEtiqueta12.Location = new System.Drawing.Point(364, 64);
+            this.lblEtiqueta12.Location = new System.Drawing.Point(5, 143);
             this.lblEtiqueta12.Name = "lblEtiqueta12";
             this.lblEtiqueta12.Size = new System.Drawing.Size(60, 13);
             this.lblEtiqueta12.TabIndex = 62;
@@ -380,7 +486,7 @@
             // 
             this.txtFabricanteMedidor.BackColor = System.Drawing.Color.White;
             this.txtFabricanteMedidor.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtFabricanteMedidor.Location = new System.Drawing.Point(430, 58);
+            this.txtFabricanteMedidor.Location = new System.Drawing.Point(108, 136);
             this.txtFabricanteMedidor.MaxLength = 50;
             this.txtFabricanteMedidor.Name = "txtFabricanteMedidor";
             this.txtFabricanteMedidor.ReadOnly = true;
@@ -393,7 +499,7 @@
             // lblEtiqueta11
             // 
             this.lblEtiqueta11.AutoSize = true;
-            this.lblEtiqueta11.Location = new System.Drawing.Point(10, 64);
+            this.lblEtiqueta11.Location = new System.Drawing.Point(6, 65);
             this.lblEtiqueta11.Name = "lblEtiqueta11";
             this.lblEtiqueta11.Size = new System.Drawing.Size(31, 13);
             this.lblEtiqueta11.TabIndex = 60;
@@ -403,7 +509,7 @@
             // 
             this.txtTipoMedidor.BackColor = System.Drawing.Color.White;
             this.txtTipoMedidor.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtTipoMedidor.Location = new System.Drawing.Point(108, 64);
+            this.txtTipoMedidor.Location = new System.Drawing.Point(108, 58);
             this.txtTipoMedidor.MaxLength = 50;
             this.txtTipoMedidor.Name = "txtTipoMedidor";
             this.txtTipoMedidor.ReadOnly = true;
@@ -416,17 +522,17 @@
             // lblEtiqueta10
             // 
             this.lblEtiqueta10.AutoSize = true;
-            this.lblEtiqueta10.Location = new System.Drawing.Point(362, 38);
+            this.lblEtiqueta10.Location = new System.Drawing.Point(6, 117);
             this.lblEtiqueta10.Name = "lblEtiqueta10";
-            this.lblEtiqueta10.Size = new System.Drawing.Size(42, 13);
+            this.lblEtiqueta10.Size = new System.Drawing.Size(45, 13);
             this.lblEtiqueta10.TabIndex = 58;
-            this.lblEtiqueta10.Text = "Modelo";
+            this.lblEtiqueta10.Text = "Modelo:";
             // 
             // txtMedidorModelo
             // 
             this.txtMedidorModelo.BackColor = System.Drawing.Color.White;
             this.txtMedidorModelo.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtMedidorModelo.Location = new System.Drawing.Point(430, 32);
+            this.txtMedidorModelo.Location = new System.Drawing.Point(108, 110);
             this.txtMedidorModelo.MaxLength = 50;
             this.txtMedidorModelo.Name = "txtMedidorModelo";
             this.txtMedidorModelo.ReadOnly = true;
@@ -439,7 +545,7 @@
             // lblEtiqueta9
             // 
             this.lblEtiqueta9.AutoSize = true;
-            this.lblEtiqueta9.Location = new System.Drawing.Point(9, 35);
+            this.lblEtiqueta9.Location = new System.Drawing.Point(6, 39);
             this.lblEtiqueta9.Name = "lblEtiqueta9";
             this.lblEtiqueta9.Size = new System.Drawing.Size(46, 13);
             this.lblEtiqueta9.TabIndex = 56;
@@ -448,7 +554,7 @@
             // btnMedidor
             // 
             this.btnMedidor.Enabled = false;
-            this.btnMedidor.Location = new System.Drawing.Point(301, 36);
+            this.btnMedidor.Location = new System.Drawing.Point(301, 32);
             this.btnMedidor.Margin = new System.Windows.Forms.Padding(2);
             this.btnMedidor.Name = "btnMedidor";
             this.btnMedidor.Size = new System.Drawing.Size(39, 19);
@@ -461,7 +567,7 @@
             // 
             this.txtMedNumeroSerie.BackColor = System.Drawing.Color.White;
             this.txtMedNumeroSerie.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtMedNumeroSerie.Location = new System.Drawing.Point(108, 35);
+            this.txtMedNumeroSerie.Location = new System.Drawing.Point(108, 32);
             this.txtMedNumeroSerie.MaxLength = 50;
             this.txtMedNumeroSerie.Name = "txtMedNumeroSerie";
             this.txtMedNumeroSerie.ReadOnly = true;
@@ -471,67 +577,128 @@
             this.txtMedNumeroSerie.TextoVacio = "<Descripcion>";
             this.txtMedNumeroSerie.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
-            // tabPage2
+            // tabPageObservaciones
             // 
-            this.tabPage2.Controls.Add(this.btnNuevaObs);
-            this.tabPage2.Controls.Add(this.txtObservaciones);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(819, 166);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Observaciones";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageObservaciones.Controls.Add(this.grdSuministrosObservaciones);
+            this.tabPageObservaciones.Controls.Add(this.btnNuevaObs);
+            this.tabPageObservaciones.Controls.Add(this.txtObservaciones);
+            this.tabPageObservaciones.Location = new System.Drawing.Point(4, 22);
+            this.tabPageObservaciones.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPageObservaciones.Name = "tabPageObservaciones";
+            this.tabPageObservaciones.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPageObservaciones.Size = new System.Drawing.Size(819, 195);
+            this.tabPageObservaciones.TabIndex = 1;
+            this.tabPageObservaciones.Text = "Observaciones";
+            this.tabPageObservaciones.UseVisualStyleBackColor = true;
+            // 
+            // grdSuministrosObservaciones
+            // 
+            this.grdSuministrosObservaciones.AllowUserToAddRows = false;
+            this.grdSuministrosObservaciones.AllowUserToDeleteRows = false;
+            this.grdSuministrosObservaciones.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdSuministrosObservaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.grdSuministrosObservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdSuministrosObservaciones.DefaultCellStyle = dataGridViewCellStyle5;
+            this.grdSuministrosObservaciones.Location = new System.Drawing.Point(10, 22);
+            this.grdSuministrosObservaciones.Name = "grdSuministrosObservaciones";
+            this.grdSuministrosObservaciones.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdSuministrosObservaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.grdSuministrosObservaciones.Size = new System.Drawing.Size(303, 153);
+            this.grdSuministrosObservaciones.TabIndex = 69;
             // 
             // btnNuevaObs
             // 
             this.btnNuevaObs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevaObs.BackgroundImage")));
             this.btnNuevaObs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevaObs.Location = new System.Drawing.Point(540, 53);
+            this.btnNuevaObs.Location = new System.Drawing.Point(326, 22);
             this.btnNuevaObs.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevaObs.Name = "btnNuevaObs";
             this.btnNuevaObs.Size = new System.Drawing.Size(33, 37);
             this.btnNuevaObs.TabIndex = 1;
             this.btnNuevaObs.UseVisualStyleBackColor = true;
+            this.btnNuevaObs.Click += new System.EventHandler(this.btnNuevaObs_Click);
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.BackColor = System.Drawing.Color.Beige;
+            this.txtObservaciones.BackColor = System.Drawing.Color.White;
             this.txtObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtObservaciones.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtObservaciones.Location = new System.Drawing.Point(16, 21);
+            this.txtObservaciones.Location = new System.Drawing.Point(371, 22);
             this.txtObservaciones.Margin = new System.Windows.Forms.Padding(2);
             this.txtObservaciones.MaxLength = 50;
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtObservaciones.Size = new System.Drawing.Size(503, 94);
+            this.txtObservaciones.Size = new System.Drawing.Size(213, 89);
             this.txtObservaciones.TabIndex = 0;
             this.txtObservaciones.TextoVacio = "<Descripcion>";
             this.txtObservaciones.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
-            // tabPage3
+            // tabPageDatosTecnicos
             // 
-            this.tabPage3.Controls.Add(this.txtRegistrador);
-            this.tabPage3.Controls.Add(this.lblRegistrador);
-            this.tabPage3.Controls.Add(this.txtVoltaje);
-            this.tabPage3.Controls.Add(this.lblVoltaje);
-            this.tabPage3.Controls.Add(this.txtConsumoEstimado);
-            this.tabPage3.Controls.Add(this.lblConsumoEstimado);
-            this.tabPage3.Controls.Add(this.lblPotenciaL2);
-            this.tabPage3.Controls.Add(this.txtPotenciaL1);
-            this.tabPage3.Controls.Add(this.txtPotenciaL3);
-            this.tabPage3.Controls.Add(this.lblPotenciaL3);
-            this.tabPage3.Controls.Add(this.lblPotenciaL1);
-            this.tabPage3.Controls.Add(this.txtPotenciaL2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(819, 166);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Datos tecnicos";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPageDatosTecnicos.Controls.Add(this.txtRegistrador);
+            this.tabPageDatosTecnicos.Controls.Add(this.lblRegistrador);
+            this.tabPageDatosTecnicos.Controls.Add(this.txtVoltaje);
+            this.tabPageDatosTecnicos.Controls.Add(this.lblVoltaje);
+            this.tabPageDatosTecnicos.Controls.Add(this.txtConsumoEstimado);
+            this.tabPageDatosTecnicos.Controls.Add(this.lblConsumoEstimado);
+            this.tabPageDatosTecnicos.Controls.Add(this.lblPotenciaL2);
+            this.tabPageDatosTecnicos.Controls.Add(this.txtPotenciaL1);
+            this.tabPageDatosTecnicos.Controls.Add(this.txtPotenciaL3);
+            this.tabPageDatosTecnicos.Controls.Add(this.lblPotenciaL3);
+            this.tabPageDatosTecnicos.Controls.Add(this.lblPotenciaL1);
+            this.tabPageDatosTecnicos.Controls.Add(this.txtPotenciaL2);
+            this.tabPageDatosTecnicos.Location = new System.Drawing.Point(4, 22);
+            this.tabPageDatosTecnicos.Name = "tabPageDatosTecnicos";
+            this.tabPageDatosTecnicos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDatosTecnicos.Size = new System.Drawing.Size(819, 195);
+            this.tabPageDatosTecnicos.TabIndex = 2;
+            this.tabPageDatosTecnicos.Text = "Datos tecnicos";
+            this.tabPageDatosTecnicos.UseVisualStyleBackColor = true;
+            // 
+            // txtRegistrador
+            // 
+            this.txtRegistrador.BackColor = System.Drawing.Color.Red;
+            this.txtRegistrador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtRegistrador.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtRegistrador.Location = new System.Drawing.Point(575, 81);
+            this.txtRegistrador.MaxLength = 15;
+            this.txtRegistrador.Name = "txtRegistrador";
+            this.txtRegistrador.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtRegistrador.Size = new System.Drawing.Size(132, 20);
+            this.txtRegistrador.TabIndex = 41;
+            this.txtRegistrador.TextoVacio = "<Descripcion>";
+            this.txtRegistrador.TipoControl = Controles.util.Enumerados.enumTipos.Decimal;
+            // 
+            // lblRegistrador
+            // 
+            this.lblRegistrador.AutoSize = true;
+            this.lblRegistrador.Location = new System.Drawing.Point(505, 84);
+            this.lblRegistrador.Name = "lblRegistrador";
+            this.lblRegistrador.Size = new System.Drawing.Size(64, 13);
+            this.lblRegistrador.TabIndex = 42;
+            this.lblRegistrador.Text = "Registrador:";
             // 
             // txtVoltaje
             // 
@@ -590,7 +757,7 @@
             // 
             // txtPotenciaL1
             // 
-            this.txtPotenciaL1.BackColor = System.Drawing.Color.Beige;
+            this.txtPotenciaL1.BackColor = System.Drawing.Color.White;
             this.txtPotenciaL1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPotenciaL1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPotenciaL1.ColorTextoVacio = System.Drawing.Color.Gray;
@@ -649,6 +816,87 @@
             this.txtPotenciaL2.TextoVacio = "<Descripcion>";
             this.txtPotenciaL2.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
+            // tabPageConceptos
+            // 
+            this.tabPageConceptos.Controls.Add(this.grdSuministrosConceptos);
+            this.tabPageConceptos.Controls.Add(this.btnEliminar1);
+            this.tabPageConceptos.Controls.Add(this.btnEditar1);
+            this.tabPageConceptos.Controls.Add(this.btnNuevo1);
+            this.tabPageConceptos.Location = new System.Drawing.Point(4, 22);
+            this.tabPageConceptos.Name = "tabPageConceptos";
+            this.tabPageConceptos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageConceptos.Size = new System.Drawing.Size(819, 195);
+            this.tabPageConceptos.TabIndex = 3;
+            this.tabPageConceptos.Text = "Conceptos";
+            this.tabPageConceptos.UseVisualStyleBackColor = true;
+            // 
+            // grdSuministrosConceptos
+            // 
+            this.grdSuministrosConceptos.AllowUserToAddRows = false;
+            this.grdSuministrosConceptos.AllowUserToDeleteRows = false;
+            this.grdSuministrosConceptos.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdSuministrosConceptos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.grdSuministrosConceptos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdSuministrosConceptos.DefaultCellStyle = dataGridViewCellStyle8;
+            this.grdSuministrosConceptos.Location = new System.Drawing.Point(34, 10);
+            this.grdSuministrosConceptos.Name = "grdSuministrosConceptos";
+            this.grdSuministrosConceptos.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdSuministrosConceptos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.grdSuministrosConceptos.Size = new System.Drawing.Size(405, 153);
+            this.grdSuministrosConceptos.TabIndex = 46;
+            // 
+            // btnEliminar1
+            // 
+            this.btnEliminar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar1.BackgroundImage")));
+            this.btnEliminar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar1.Location = new System.Drawing.Point(445, 102);
+            this.btnEliminar1.Name = "btnEliminar1";
+            this.btnEliminar1.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminar1.TabIndex = 3;
+            this.btnEliminar1.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar1
+            // 
+            this.btnEditar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar1.BackgroundImage")));
+            this.btnEditar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar1.Location = new System.Drawing.Point(445, 56);
+            this.btnEditar1.Name = "btnEditar1";
+            this.btnEditar1.Size = new System.Drawing.Size(40, 40);
+            this.btnEditar1.TabIndex = 2;
+            this.btnEditar1.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevo1
+            // 
+            this.btnNuevo1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo1.BackgroundImage")));
+            this.btnNuevo1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevo1.Location = new System.Drawing.Point(445, 10);
+            this.btnNuevo1.Name = "btnNuevo1";
+            this.btnNuevo1.Size = new System.Drawing.Size(40, 40);
+            this.btnNuevo1.TabIndex = 1;
+            this.btnNuevo1.UseVisualStyleBackColor = true;
+            this.btnNuevo1.Click += new System.EventHandler(this.btnNuevo1_Click);
+            // 
             // gesGroup3
             // 
             this.gesGroup3.Controls.Add(this.cmbEstado);
@@ -670,7 +918,7 @@
             this.cmbEstado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbEstado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(103, 49);
+            this.cmbEstado.Location = new System.Drawing.Point(109, 49);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbEstado.Size = new System.Drawing.Size(165, 21);
@@ -720,7 +968,7 @@
             this.cmbCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(103, 22);
+            this.cmbCategoria.Location = new System.Drawing.Point(109, 22);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbCategoria.Size = new System.Drawing.Size(165, 21);
@@ -731,9 +979,9 @@
             this.lblEstado.AutoSize = true;
             this.lblEstado.Location = new System.Drawing.Point(12, 53);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(43, 13);
+            this.lblEstado.Size = new System.Drawing.Size(94, 13);
             this.lblEstado.TabIndex = 44;
-            this.lblEstado.Text = "Estado:";
+            this.lblEstado.Text = "Estado Suministro:";
             // 
             // lblCategoria
             // 
@@ -1214,29 +1462,6 @@
             this.btnDomicilio.UseVisualStyleBackColor = true;
             this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
             // 
-            // lblRegistrador
-            // 
-            this.lblRegistrador.AutoSize = true;
-            this.lblRegistrador.Location = new System.Drawing.Point(505, 84);
-            this.lblRegistrador.Name = "lblRegistrador";
-            this.lblRegistrador.Size = new System.Drawing.Size(64, 13);
-            this.lblRegistrador.TabIndex = 42;
-            this.lblRegistrador.Text = "Registrador:";
-            // 
-            // txtRegistrador
-            // 
-            this.txtRegistrador.BackColor = System.Drawing.Color.White;
-            this.txtRegistrador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtRegistrador.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtRegistrador.Location = new System.Drawing.Point(575, 81);
-            this.txtRegistrador.MaxLength = 15;
-            this.txtRegistrador.Name = "txtRegistrador";
-            this.txtRegistrador.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtRegistrador.Size = new System.Drawing.Size(132, 20);
-            this.txtRegistrador.TabIndex = 41;
-            this.txtRegistrador.TextoVacio = "<Descripcion>";
-            this.txtRegistrador.TipoControl = Controles.util.Enumerados.enumTipos.Decimal;
-            // 
             // frmSuministrosCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1257,12 +1482,16 @@
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
             this.tabSumnistros.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tabPageMedidores.ResumeLayout(false);
+            this.tabPageMedidores.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMedidores)).EndInit();
+            this.tabPageObservaciones.ResumeLayout(false);
+            this.tabPageObservaciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSuministrosObservaciones)).EndInit();
+            this.tabPageDatosTecnicos.ResumeLayout(false);
+            this.tabPageDatosTecnicos.PerformLayout();
+            this.tabPageConceptos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdSuministrosConceptos)).EndInit();
             this.gesGroup3.ResumeLayout(false);
             this.gesGroup3.PerformLayout();
             this.gesGroup4.ResumeLayout(false);
@@ -1287,8 +1516,8 @@
         private Controles.labels.lblEtiqueta lblServicio;
         private Controles.labels.lblEtiqueta lblNumeroProv;
         private Controles.contenedores.tabSolapas tabSumnistros;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPageMedidores;
+        private System.Windows.Forms.TabPage tabPageObservaciones;
         private Controles.buttons.btnNuevo btnNuevaObs;
         private Controles.textBoxes.txtDescripcion txtObservaciones;
         private Controles.buttons.btnGeneral btnCliente;
@@ -1311,7 +1540,7 @@
         private Controles.textBoxes.txtDescripcionCorta txtOrdenRuta;
         private Controles.contenedores.gesGroup gesGroup4;
         private Controles.contenedores.gesGroup gesGroup5;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPageDatosTecnicos;
         private Controles.labels.lblEtiqueta lblEtiqueta1;
         private Controles.textBoxes.txtDescripcion txtSocio;
         private Controles.textBoxes.txtDescripcion txtEmpNumero;
@@ -1366,5 +1595,16 @@
         private Controles.labels.lblEtiqueta lblEstado;
         private Controles.textBoxes.gesTextBox txtRegistrador;
         private Controles.labels.lblEtiqueta lblRegistrador;
+        private Controles.Fecha.dtpFecha dtpFechaCarga;
+        private Controles.labels.lblEtiqueta lblFechaCarga;
+        private System.Windows.Forms.TabPage tabPageConceptos;
+        private Controles.buttons.btnEliminar btnEliminar1;
+        private Controles.buttons.btnEditar btnEditar1;
+        private Controles.buttons.btnNuevo btnNuevo1;
+        private Controles.datos.grdGrillaAdmin grdSuministrosConceptos;
+        private Controles.datos.cmbLista cmbEstadoMedidor;
+        private Controles.labels.lblEtiqueta lblEstadoMedidor;
+        private Controles.datos.grdGrillaAdmin grdMedidores;
+        private Controles.datos.grdGrillaAdmin grdSuministrosObservaciones;
     }
 }

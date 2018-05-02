@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Business;
 using GesServicios.controles.forms;
+using GesConfiguracion.controles.forms;
 using Model;
 
 namespace UI
@@ -158,11 +159,13 @@ namespace UI
 
         private void btnFabricantes_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "FAB";
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
-            frmbus.Text = "Administrador Fabricantes";
+            //FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            //Admin oAdmin = new Admin();
+            //oAdmin.TabCodigo = "FAB";
+            //FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            //frmbus.Text = "Administrador Fabricantes";
+            //frmbus.ShowDialog();
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("FAB", "CODIGO", true);
             frmbus.ShowDialog();
         }
 
@@ -296,7 +299,7 @@ namespace UI
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "CPTS";
+            oAdmin.TabCodigo = "CPT";
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.ShowDialog();
         }
@@ -328,6 +331,51 @@ namespace UI
 
         private void btnPersonalizado9_Click(object sender, EventArgs e)
         {
+
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10101", "10102", "10103", "10105", "10106", "10104");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "MED";
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+            frmbus.ShowDialog();
+        }
+
+        private void btnCuadrosTarifariosCrud_Click(object sender, EventArgs e)
+        {
+            frmCuadrosTarifariosCrud ofrmCTCrud = new frmCuadrosTarifariosCrud();
+            ofrmCTCrud.ShowDialog();
+        }
+
+        private void btnGruposConceptos_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("TGC", "TGC_CODIGO", false);
+            frmbus.ShowDialog();
+        }
+
+        private void btnGruposConceptosImpuestos_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("GCI", "CODIGO", false);
+            frmbus.ShowDialog();
+        }
+
+        private void btnGruposConceptosItems_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "GII";
+            FormsAuxiliares.frmFormAdminMini frmGii = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            frmGii.ShowDialog();
+        }
+
+        private void btnPuntosVenta_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("PVT", "CODIGO", false);
+            frmbus.ShowDialog();
+        }
+
+        private void btnPVTipoCompr_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("PVC", "CODIGO", true);
+            frmbus.ShowDialog();
 
         }
     }

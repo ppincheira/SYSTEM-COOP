@@ -33,6 +33,11 @@
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gbDatos = new Controles.contenedores.gesGroup();
+            this.txtEmpNumero = new Controles.textBoxes.txtDescripcion();
+            this.txtEmpRazonSocial = new Controles.textBoxes.txtDescripcion();
+            this.btnCliente = new Controles.buttons.btnGeneral();
+            this.cmbLmeCodigo = new Controles.datos.cmbLista();
+            this.lblLecturaModo = new Controles.labels.lblEtiqueta();
             this.TextBoxGisY = new Controles.textBoxes.txtDescripcion();
             this.TextBoxGisX = new Controles.textBoxes.txtDescripcion();
             this.TextBoxFactorCalib = new Controles.textBoxes.txtDescripcion();
@@ -41,9 +46,7 @@
             this.dtpFechaCarga = new Controles.Fecha.dtpFecha();
             this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.cmbMmoCodigo = new Controles.datos.cmbLista();
-            this.chkEstado = new Controles.datos.chkBox();
             this.lblGisY = new Controles.labels.lblEtiqueta();
-            this.cmbNumeroProv = new Controles.datos.cmbLista();
             this.lblMmoCodigo = new Controles.labels.lblEtiqueta();
             this.lblDecimales = new Controles.labels.lblEtiqueta();
             this.lblNumeroProv = new Controles.labels.lblEtiqueta();
@@ -51,8 +54,7 @@
             this.lblEstado = new Controles.labels.lblEtiqueta();
             this.lblDigitos = new Controles.labels.lblEtiqueta();
             this.lbDescripcion = new Controles.labels.lblEtiqueta();
-            this.cmbLmeCodigo = new Controles.datos.cmbLista();
-            this.lblLecturaModo = new Controles.labels.lblEtiqueta();
+            this.cmbEstado = new Controles.datos.cmbLista();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +91,10 @@
             // 
             // gbDatos
             // 
+            this.gbDatos.Controls.Add(this.cmbEstado);
+            this.gbDatos.Controls.Add(this.txtEmpNumero);
+            this.gbDatos.Controls.Add(this.txtEmpRazonSocial);
+            this.gbDatos.Controls.Add(this.btnCliente);
             this.gbDatos.Controls.Add(this.cmbLmeCodigo);
             this.gbDatos.Controls.Add(this.lblLecturaModo);
             this.gbDatos.Controls.Add(this.TextBoxGisY);
@@ -99,9 +105,7 @@
             this.gbDatos.Controls.Add(this.dtpFechaCarga);
             this.gbDatos.Controls.Add(this.lblEtiqueta1);
             this.gbDatos.Controls.Add(this.cmbMmoCodigo);
-            this.gbDatos.Controls.Add(this.chkEstado);
             this.gbDatos.Controls.Add(this.lblGisY);
-            this.gbDatos.Controls.Add(this.cmbNumeroProv);
             this.gbDatos.Controls.Add(this.lblMmoCodigo);
             this.gbDatos.Controls.Add(this.lblDecimales);
             this.gbDatos.Controls.Add(this.lblNumeroProv);
@@ -115,6 +119,69 @@
             this.gbDatos.TabIndex = 4;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
+            // 
+            // txtEmpNumero
+            // 
+            this.txtEmpNumero.BackColor = System.Drawing.Color.White;
+            this.txtEmpNumero.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtEmpNumero.Enabled = false;
+            this.txtEmpNumero.Location = new System.Drawing.Point(175, 58);
+            this.txtEmpNumero.MaxLength = 50;
+            this.txtEmpNumero.Name = "txtEmpNumero";
+            this.txtEmpNumero.ReadOnly = true;
+            this.txtEmpNumero.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtEmpNumero.Size = new System.Drawing.Size(47, 20);
+            this.txtEmpNumero.TabIndex = 37;
+            this.txtEmpNumero.TextoVacio = "<Descripcion>";
+            this.txtEmpNumero.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            // 
+            // txtEmpRazonSocial
+            // 
+            this.txtEmpRazonSocial.BackColor = System.Drawing.Color.White;
+            this.txtEmpRazonSocial.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtEmpRazonSocial.Enabled = false;
+            this.txtEmpRazonSocial.Location = new System.Drawing.Point(228, 58);
+            this.txtEmpRazonSocial.MaxLength = 50;
+            this.txtEmpRazonSocial.Multiline = true;
+            this.txtEmpRazonSocial.Name = "txtEmpRazonSocial";
+            this.txtEmpRazonSocial.ReadOnly = true;
+            this.txtEmpRazonSocial.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtEmpRazonSocial.Size = new System.Drawing.Size(344, 40);
+            this.txtEmpRazonSocial.TabIndex = 36;
+            this.txtEmpRazonSocial.TextoVacio = "<Descripcion>";
+            this.txtEmpRazonSocial.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            // 
+            // btnCliente
+            // 
+            this.btnCliente.Location = new System.Drawing.Point(127, 58);
+            this.btnCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(35, 19);
+            this.btnCliente.TabIndex = 2;
+            this.btnCliente.Text = "...";
+            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
+            // cmbLmeCodigo
+            // 
+            this.cmbLmeCodigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbLmeCodigo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbLmeCodigo.FormattingEnabled = true;
+            this.cmbLmeCodigo.Location = new System.Drawing.Point(427, 173);
+            this.cmbLmeCodigo.Name = "cmbLmeCodigo";
+            this.cmbLmeCodigo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.cmbLmeCodigo.Size = new System.Drawing.Size(165, 21);
+            this.cmbLmeCodigo.TabIndex = 9;
+            this.cmbLmeCodigo.Text = "<Seleccione Modelo>";
+            // 
+            // lblLecturaModo
+            // 
+            this.lblLecturaModo.AutoSize = true;
+            this.lblLecturaModo.Location = new System.Drawing.Point(312, 176);
+            this.lblLecturaModo.Name = "lblLecturaModo";
+            this.lblLecturaModo.Size = new System.Drawing.Size(91, 13);
+            this.lblLecturaModo.TabIndex = 26;
+            this.lblLecturaModo.Text = "Modo de Lectura:";
             // 
             // TextBoxGisY
             // 
@@ -210,19 +277,6 @@
             this.cmbMmoCodigo.TabIndex = 8;
             this.cmbMmoCodigo.Text = "<Seleccione Modelo>";
             // 
-            // chkEstado
-            // 
-            this.chkEstado.AutoSize = true;
-            this.chkEstado.Checked = true;
-            this.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEstado.Location = new System.Drawing.Point(128, 249);
-            this.chkEstado.Name = "chkEstado";
-            this.chkEstado.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.chkEstado.Size = new System.Drawing.Size(73, 17);
-            this.chkEstado.TabIndex = 11;
-            this.chkEstado.Text = "Habilitado";
-            this.chkEstado.UseVisualStyleBackColor = true;
-            // 
             // lblGisY
             // 
             this.lblGisY.AutoSize = true;
@@ -231,17 +285,6 @@
             this.lblGisY.Size = new System.Drawing.Size(35, 13);
             this.lblGisY.TabIndex = 22;
             this.lblGisY.Text = "GIS Y";
-            // 
-            // cmbNumeroProv
-            // 
-            this.cmbNumeroProv.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbNumeroProv.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbNumeroProv.FormattingEnabled = true;
-            this.cmbNumeroProv.Location = new System.Drawing.Point(128, 62);
-            this.cmbNumeroProv.Name = "cmbNumeroProv";
-            this.cmbNumeroProv.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.cmbNumeroProv.Size = new System.Drawing.Size(165, 21);
-            this.cmbNumeroProv.TabIndex = 2;
             // 
             // lblMmoCodigo
             // 
@@ -306,26 +349,16 @@
             this.lbDescripcion.TabIndex = 0;
             this.lbDescripcion.Text = "Numero de Serie:";
             // 
-            // cmbLmeCodigo
+            // cmbEstado
             // 
-            this.cmbLmeCodigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbLmeCodigo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbLmeCodigo.FormattingEnabled = true;
-            this.cmbLmeCodigo.Location = new System.Drawing.Point(427, 173);
-            this.cmbLmeCodigo.Name = "cmbLmeCodigo";
-            this.cmbLmeCodigo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.cmbLmeCodigo.Size = new System.Drawing.Size(165, 21);
-            this.cmbLmeCodigo.TabIndex = 9;
-            this.cmbLmeCodigo.Text = "<Seleccione Modelo>";
-            // 
-            // lblLecturaModo
-            // 
-            this.lblLecturaModo.AutoSize = true;
-            this.lblLecturaModo.Location = new System.Drawing.Point(312, 176);
-            this.lblLecturaModo.Name = "lblLecturaModo";
-            this.lblLecturaModo.Size = new System.Drawing.Size(91, 13);
-            this.lblLecturaModo.TabIndex = 26;
-            this.lblLecturaModo.Text = "Modo de Lectura:";
+            this.cmbEstado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbEstado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(127, 244);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.cmbEstado.Size = new System.Drawing.Size(165, 21);
+            this.cmbEstado.TabIndex = 45;
             // 
             // frmMedidoresCrud
             // 
@@ -353,9 +386,7 @@
         private Controles.Fecha.dtpFecha dtpFechaCarga;
         private Controles.labels.lblEtiqueta lblEtiqueta1;
         private Controles.datos.cmbLista cmbMmoCodigo;
-        private Controles.datos.chkBox chkEstado;
         private Controles.labels.lblEtiqueta lblGisY;
-        private Controles.datos.cmbLista cmbNumeroProv;
         private Controles.labels.lblEtiqueta lblMmoCodigo;
         private Controles.labels.lblEtiqueta lblDecimales;
         private Controles.labels.lblEtiqueta lblNumeroProv;
@@ -370,5 +401,9 @@
         private Controles.textBoxes.txtDescripcion TextBoxDigitos;
         private Controles.datos.cmbLista cmbLmeCodigo;
         private Controles.labels.lblEtiqueta lblLecturaModo;
+        private Controles.buttons.btnGeneral btnCliente;
+        private Controles.textBoxes.txtDescripcion txtEmpRazonSocial;
+        private Controles.textBoxes.txtDescripcion txtEmpNumero;
+        private Controles.datos.cmbLista cmbEstado;
     }
 }
