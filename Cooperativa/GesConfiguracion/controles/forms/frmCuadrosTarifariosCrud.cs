@@ -59,10 +59,14 @@ namespace GesConfiguracion.controles.forms
         private grdGrillaAdmin grdConceptosGenerales;
         private grdGrillaAdmin grdConceptosCategorias;
         private grdGrillaAdmin grdCategorias;
+        private Controles.buttons.btnEliminar btnEliminarConcepto;
+        private Controles.buttons.btnNuevo btnNuevoConcepto;
+        private Controles.buttons.btnEditar btnEditar;
         private Controles.contenedores.gesGroup gesGroup4;
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCuadrosTarifariosCrud));
             this.gesGroup1 = new Controles.contenedores.gesGroup();
             this.grdCuadrosTarifarios = new Controles.datos.grdGrillaAdmin();
             this.gesGroup2 = new Controles.contenedores.gesGroup();
@@ -71,6 +75,9 @@ namespace GesConfiguracion.controles.forms
             this.grdConceptosCategorias = new Controles.datos.grdGrillaAdmin();
             this.gesGroup4 = new Controles.contenedores.gesGroup();
             this.grdCategorias = new Controles.datos.grdGrillaAdmin();
+            this.btnEliminarConcepto = new Controles.buttons.btnEliminar();
+            this.btnNuevoConcepto = new Controles.buttons.btnNuevo();
+            this.btnEditar = new Controles.buttons.btnEditar();
             this.gesGroup1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCuadrosTarifarios)).BeginInit();
             this.gesGroup2.SuspendLayout();
@@ -119,10 +126,13 @@ namespace GesConfiguracion.controles.forms
             // 
             // gesGroup3
             // 
+            this.gesGroup3.Controls.Add(this.btnEditar);
+            this.gesGroup3.Controls.Add(this.btnEliminarConcepto);
+            this.gesGroup3.Controls.Add(this.btnNuevoConcepto);
             this.gesGroup3.Controls.Add(this.grdConceptosCategorias);
             this.gesGroup3.Location = new System.Drawing.Point(482, 278);
             this.gesGroup3.Name = "gesGroup3";
-            this.gesGroup3.Size = new System.Drawing.Size(781, 463);
+            this.gesGroup3.Size = new System.Drawing.Size(829, 463);
             this.gesGroup3.TabIndex = 2;
             this.gesGroup3.TabStop = false;
             this.gesGroup3.Text = "Conceptos por Categoria";
@@ -153,9 +163,41 @@ namespace GesConfiguracion.controles.forms
             this.grdCategorias.Size = new System.Drawing.Size(239, 438);
             this.grdCategorias.TabIndex = 1;
             // 
+            // btnEliminarConcepto
+            // 
+            this.btnEliminarConcepto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarConcepto.BackgroundImage")));
+            this.btnEliminarConcepto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarConcepto.Location = new System.Drawing.Point(781, 114);
+            this.btnEliminarConcepto.Name = "btnEliminarConcepto";
+            this.btnEliminarConcepto.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminarConcepto.TabIndex = 7;
+            this.btnEliminarConcepto.UseVisualStyleBackColor = false;
+            // 
+            // btnNuevoConcepto
+            // 
+            this.btnNuevoConcepto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevoConcepto.BackgroundImage")));
+            this.btnNuevoConcepto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevoConcepto.Location = new System.Drawing.Point(781, 19);
+            this.btnNuevoConcepto.Name = "btnNuevoConcepto";
+            this.btnNuevoConcepto.Size = new System.Drawing.Size(40, 40);
+            this.btnNuevoConcepto.TabIndex = 6;
+            this.btnNuevoConcepto.UseVisualStyleBackColor = false;
+            this.btnNuevoConcepto.Click += new System.EventHandler(this.btnNuevoConcepto_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.Enabled = false;
+            this.btnEditar.Location = new System.Drawing.Point(781, 65);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(40, 40);
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            // 
             // frmCuadrosTarifariosCrud
             // 
-            this.ClientSize = new System.Drawing.Size(1275, 751);
+            this.ClientSize = new System.Drawing.Size(1371, 751);
             this.Controls.Add(this.gesGroup4);
             this.Controls.Add(this.gesGroup3);
             this.Controls.Add(this.gesGroup2);
@@ -213,9 +255,13 @@ namespace GesConfiguracion.controles.forms
             }
         }
 
+
         #endregion
 
+        private void btnNuevoConcepto_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 
 

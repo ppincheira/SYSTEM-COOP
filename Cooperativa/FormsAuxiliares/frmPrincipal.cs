@@ -174,78 +174,10 @@ namespace FormsAuxiliares
                     break;
 
                 case "CFG":
+                    AbrirFormulariosConfiguracion();
                     break;
 
             }
-            
-            //string strFormulario = _oPrincipal.FormularioActivo(this.trvMenu.SelectedNode);
-
-            //switch (strFormulario)
-            //{
-            //    case "frmFabricantes":
-            //        Console.WriteLine("Case 1");
-            //        break;
-            //    case "frmTiposMedidores":
-            //        Console.WriteLine("Case 2");
-            //        break;
-            //    case "frmModelosMedidiores":
-            //        Console.WriteLine("Case 1");
-            //        break;
-            //    case "frmTelefonos":
-            //        Console.WriteLine("Case 2");
-            //        break;
-            //    case "frmCalles":
-            //        Console.WriteLine("Case 1");
-            //        break;
-            //    case "frmDomicilios":
-            //        FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("31", "32", "33", "35", "36", "34");
-            //        Admin oAdmin = new Admin();
-            //        oAdmin.TabCodigo = "DOMB";
-
-            //        FormsAuxiliares.frmFormAdmin frm = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
-            //        frm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            //        frm.ShowDialog();
-
-            //        break;
-            //    case "frmObservaciones":
-            //        Console.WriteLine("Case 1");
-            //        break;
-            //    case "frmRutas":
-            //        Console.WriteLine("Case 2");
-            //        break;
-            //    case "frmCategorias":
-            //        FuncionalidadesFoms oCatPermiso = new FuncionalidadesFoms("100011", "100012", "100013", "100016", "100014", "100015");
-            //        Admin oCatAdmin = new Admin();
-            //        oCatAdmin.TabCodigo = "SCAT";
-            //        FormsAuxiliares.frmFormAdminMini frmCat = new FormsAuxiliares.frmFormAdminMini(oCatAdmin, oCatPermiso);
-            //        frmCat.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            //        frmCat.ShowDialog();
-            //        //Console.WriteLine("Case 1");
-            //        break;
-            //    case "frmSuministros":
-            //        Console.WriteLine("Case 2");
-            //        break;
-            //    case "frmConceptosLecturas":
-            //        FuncionalidadesFoms oCLPermiso = new FuncionalidadesFoms("100031", "100032", "100033", "100035", "100036", "100034");
-            //        Admin oCLAdmin = new Admin();
-            //        oCLAdmin.TabCodigo = "LEC";
-            //        FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oCLAdmin, oCLPermiso);
-            //        frmbus.Text = "Administrador Lecturas Conceptos";
-            //        frmbus.ShowDialog();
-            //        break;
-            //    case "frmModosLecturas":
-            //        FuncionalidadesFoms oMLPermiso = new FuncionalidadesFoms("100041", "100042", "100043", "100045", "100046", "100044");
-            //        Admin oMLAdmin = new Admin();
-            //        oMLAdmin.TabCodigo = "LEM";
-            //        FormsAuxiliares.frmFormAdminMini frmML = new FormsAuxiliares.frmFormAdminMini(oMLAdmin, oMLPermiso);
-            //        frmML.Text = "Administrador de Modos Lecturas";
-            //        frmML.ShowDialog();
-            //        break;
-            //    case "frmClientes":
-            //        Console.WriteLine("Case 2");
-            //        break;
-
-            //}
         }
 
         private void AbrirFormulariosServicios() {
@@ -360,6 +292,24 @@ namespace FormsAuxiliares
                     break;
              
 
+            }
+        }
+
+        private void AbrirFormulariosConfiguracion()
+        {
+            string strFormulario = _oPrincipal.FormularioActivo(this.trvMenu.SelectedNode);
+            switch (strFormulario)
+            {
+                case "frmConceptos":
+                    FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+                    Admin oAdmin = new Admin();
+                    oAdmin.TabCodigo = "CPT";
+                    FormsAuxiliares.frmFormAdminMini frmCpt = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+                    frmCpt.ShowDialog();
+                    break;
+                case "frmFabricantes":
+
+                    break;
             }
         }
         #endregion
