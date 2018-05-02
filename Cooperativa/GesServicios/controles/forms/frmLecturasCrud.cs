@@ -27,6 +27,18 @@ namespace GesServicios.controles.forms
 
         #region Implementation of IVistaLecturasCrud
 
+        public DateTime dtFechaDesde
+        {
+            get { return this.dtpFechaDesde.Value; }
+            set { this.dtpFechaDesde.Value = value; }
+        }
+
+        public DateTime dtFechaHasta
+        {
+            get { return this.dtpFechaHasta.Value; }
+            set { this.dtpFechaHasta.Value = value; }
+        }
+
         public long sumNumero
         {
             get { return _sumNumero; }
@@ -36,39 +48,6 @@ namespace GesServicios.controles.forms
         {
             get { return this.txtSuministro.Text; }
             set { this.txtSuministro.Text = value; }
-        }
-        public string strRuta
-        {
-            get { return this.txtRuta.Text; }
-            set { this.txtRuta.Text = value; }
-        }
-
-        public string strNroOrden
-        {
-            get { return this.txtNroOrden.Text; }
-            set { this.txtNroOrden.Text = value; }
-        }
-
-        public string strNroSuministro
-        {
-            get { return this.txtNroSuministro.Text; }
-            set { this.txtNroSuministro.Text = value; }
-        }
-        public string strFechaAlta
-        {
-            get { return this.txtFechaAlta.Text; }
-            set { this.txtFechaAlta.Text = value; }
-        }
-
-        public string strCategoria
-        {
-            get { return this.txtCategortia.Text; }
-            set { this.txtCategortia.Text = value; }
-        }
-        public string strTitular
-        {
-            get { return this.txtTitular.Text; }
-            set { this.txtTitular.Text = value; }
         }
         public string strEstado
         {
@@ -85,46 +64,138 @@ namespace GesServicios.controles.forms
             get { return this.txtCantidadMedidores.Text; }
             set { this.txtCantidadMedidores.Text = value; }
         }
+        public string strCUIT
+        {
+            get { return this.txtCUIT.Text; }
+            set { this.txtCUIT.Text = value; }
+        }
+        public string strTitular
+        {
+            get { return this.txtTitular.Text; }
+            set { this.txtTitular.Text = value; }
+        }
+        public string strPeriodo
+        {
+            get { return this.mtxtPeriodo.Text; }
+            set { this.mtxtPeriodo.Text = value; }
+        }
+        public string strRuta
+        {
+            get { return this.txtRuta.Text; }
+            set { this.txtRuta.Text = value; }
+        }
+        public string strNroOrden
+        {
+            get { return this.txtNroOrden.Text; }
+            set { this.txtNroOrden.Text = value; }
+        }
+        public string strModos
+        {
+            get { return this.txtModos.Text; }
+            set { this.txtModos.Text = value; }
+        }
+        public string strFechaAlta
+        {
+            get { return this.txtFechaAlta.Text; }
+            set { this.txtFechaAlta.Text = value; }
+        }
+        public string strCategoria
+        {
+            get { return this.txtTitular.Text; }
+            set { this.txtTitular.Text = value; }
+        }
+
+
+
 
         public string strFecha
         {
             get { return this.txtFecha.Text; }
             set { this.txtFecha.Text = value; }
         }
-
         public string strRegistrador
         {
             get { return this.txtRegistrador.Text; }
             set { this.txtRegistrador.Text = value; }
         }
-
         public string strDigitos
         {
             get { return this.txtDigitos.Text; }
             set { this.txtDigitos.Text = value; }
         }
-
         public string strTipoMedidor
         {
             get { return this.txtTipoMedidor.Text; }
             set { this.txtTipoMedidor.Text = value; }
         }
-
+        public string strDecimal
+        {
+            get { return this.txtDecimal.Text; }
+            set { this.txtDecimal.Text = value; }
+        }
         public string strRubro
         {
             get { return this.txtRubro.Text; }
             set { this.txtRubro.Text = value; }
-        }   
+        }
+
         public string strNroTransaccion
         {
             get { return this.txtNroTransaccion.Text; }
             set { this.txtNroTransaccion.Text = value; }
         }
+        public string strConexion
+        {
+            get { return this.txtConexion.Text; }
+            set { this.txtConexion.Text = value; }
+        }
+
         public grdGrillaEdit grdiLecturas
         {
-            get { return this.grdiLecturas; }
-            set { this.grdiLecturas = value; }
+            get { return this.grdLecturas; }
+            set { this.grdLecturas = value; }
         }
+
+
+
+        public Controles.datos.chkBox chkiTodos
+        {
+            get { return this.chkTodos; }
+            set { this.chkTodos = value; }
+        }
+    
+    public Controles.datos.chkBox chkiPendiente {
+        get { return this.chkPendiente; }
+        set { this.chkPendiente = value; }
+    }
+    public Controles.datos.chkBox chkiFacturado {
+            get { return this.chkFacturado; }
+            set { this.chkFacturado = value; }
+        }
+    public Controles.datos.chkBox chkiInstalado {
+            get { return this.chkInstalado; }
+            set { this.chkInstalado = value; }
+        }
+    public Controles.datos.chkBox chkiCorregido {
+            get { return this.chkPendiente; }
+            set { this.chkiCorregido = value; }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         #endregion
         public frmLecturasCrud()
@@ -142,7 +213,79 @@ namespace GesServicios.controles.forms
 
         private void frmLecturasCrud_Load(object sender, EventArgs e)
         {
+            try
+            {
 
+                oUtil = new Utility();
+                _oLecturasCrud.Inicializar();
+
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+
+        private void btnSuministro_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "SUM";
+            oAdmin.Tipo = Admin.enumTipoForm.Selector;
+            FormsAuxiliares.frmFormAdmin oFrmAdmin = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+            oFrmAdmin.ShowDialog();
+            if (oFrmAdmin.ShowDialog() == DialogResult.OK)
+            {
+                string id = oFrmAdmin.striRdoCodigo;
+                _sumNumero = long.Parse(id);
+                _oLecturasCrud.CargarLecturaSuministro(_sumNumero);
+            }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            _oLecturasCrud.Guardar();
+        }
+
+        private void mtxtPeriodo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void mtxtPeriodo_Leave(object sender, EventArgs e)
+        {
+            
+            _oLecturasCrud.CargarLecturaAsociada();
+        }
+
+        private void chkTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            _oLecturasCrud.SetChkAll();
+        }
+
+        private void chkPendiente_CheckedChanged(object sender, EventArgs e)
+        {
+            _oLecturasCrud.setChkPendiente();
+        }
+
+        private void chkFacturado_CheckedChanged(object sender, EventArgs e)
+        {
+            _oLecturasCrud.setChkFacturado();
+        }
+
+        private void chkInstalado_CheckedChanged(object sender, EventArgs e)
+        {
+            _oLecturasCrud.setChkInstalado();
+        }
+
+        private void chkCorregido_CheckedChanged(object sender, EventArgs e)
+        {
+            _oLecturasCrud.setChkCorregido();
         }
     }
 }

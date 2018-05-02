@@ -214,7 +214,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
         public void Seleccion()
         {
             DataGridViewRow row = _vista.grilla.CurrentRow;
-            _vista.striRdoCodigo =row.Cells["CODIGO"].Value.ToString();
+            _vista.striRdoCodigo =row.Cells[0].Value.ToString();
         }
 
 

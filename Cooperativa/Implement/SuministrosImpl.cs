@@ -202,7 +202,7 @@ namespace Implement
                 oObjeto.TcsCodigo = dr["TCS_CODIGO"].ToString();
                 oObjeto.ScaNumero = long.Parse(dr["SCA_NUMERO"].ToString());
                 if (dr["SUM_ORDEN_RUTA"].ToString() != "")
-                    oObjeto.SumNumero = long.Parse(dr["SUM_ORDEN_RUTA"].ToString());
+                    oObjeto.SumOrdenRuta = long.Parse(dr["SUM_ORDEN_RUTA"].ToString());
                 if (dr["EMP_NUMERO"].ToString() != "")
                     oObjeto.EmpNumero = long.Parse(dr["EMP_NUMERO"].ToString());
                 if (dr["SUM_FECHA_ALTA"].ToString() != "")

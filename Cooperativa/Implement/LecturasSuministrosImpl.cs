@@ -201,6 +201,74 @@ namespace Implement
             }
         }
 
+
+        public DataTable LecturasSuministrosGetByIdSuministro(long sumNumero, string Periodo, string EstadosLecturas)
+        {
+            try
+            {
+
+                //EL OPERADOR SELECCIONADO
+             
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = " SELECT " +
+                " LMC.LEM_CODIGO, " +
+                " LC.LEC_DESCRIPCION CONCEPTOS," +
+                " LS.LES_PERIODO PERIODO ," +
+                " LS.EST_CODIGO ESTADO," +
+                " LS.LES_FECHA_ALTA FECHA," +
+                " LSI.LSI_LECTURA_ACTUAL LECTURA," +
+                " LS.LES_FECHA_ANTERIOR FECHA_ANT," +
+                " LSI.LSI_LECTURA_ANTERIOR LECTURA_ANT," +
+                " LSI.LSI_CANTIDAD_UNIDADES CANT" +
+                // " LC.LEC_CODIGO,"+
+                // " LSI.LEC_CODIGO,"+
+                // " LMC.LEM_CODIGO,"+
+                // " LMC.LEC_CODIGO "+
+                " FROM LECTURAS_MODOS_CONCEPTOS LMC " +
+                " INNER JOIN LECTURAS_MODOS LM ON LM.LEM_CODIGO = LMC.LEM_CODIGO " +
+                " INNER JOIN  LECTURAS_SUMINISTROS LS ON LS.LEM_CODIGO = LM.LEM_CODIGO " +
+                " INNER JOIN LECTURAS_SUMINISTROS_ITEMS LSI ON LS.LES_CODIGO = LSI.LES_CODIGO " +
+                " INNER JOIN LECTURAS_CONCEPTOS LC ON LC.LEC_CODIGO = LMC.LEC_CODIGO " +
+                " WHERE LS.SUM_NUMERO=" + sumNumero + " AND LS.LES_PERIODO='" + Periodo.Remove(4, 1) + "'";
+
+                string[] strEstados = null;
+                if (EstadosLecturas != null)
+                {
+                    strEstados = System.Text.RegularExpressions.Regex.Split(EstadosLecturas, "&");
+                    if (strEstados.Length>1)
+                    {
+                        sqlSelect += " AND ( LS.EST_CODIGO IN ( ";
+                       
+                        for (int j = 0; j < strEstados.Length; j++)
+                        {
+                            if (strEstados[j]!="")
+                                sqlSelect += " '" + strEstados[j] + "',";
+                        }
+                        sqlSelect = sqlSelect.Remove(sqlSelect.Length-1, 1);
+                        sqlSelect += " ) )";
+                    }
+                }
+
+
+
+
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                dt = ds.Tables[0];
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
 
     }

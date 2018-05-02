@@ -26,16 +26,22 @@ namespace Business
             return oEstadosImpl.EstadosDelete(Id);
         }
 
-        public Estados EstadosGetById(string Id)
+        public Estados EstadosGetById(string Id, string tabNombre)
         {
             EstadosImpl oEstadosImpl = new EstadosImpl();
-            return oEstadosImpl.EstadosGetById(Id);
+            return oEstadosImpl.EstadosGetById(Id,tabNombre);
         }
 
         public List<Estados> EstadosGetAll()
         {
             EstadosImpl oEstadosImpl = new EstadosImpl();
             return oEstadosImpl.EstadosGetAll();
+        }
+
+        public Estados EstadosGetByFilter(string tabNombre, string estColumnaTabla, string estCodigo)
+        {
+            EstadosImpl oEstadosImpl = new EstadosImpl();
+            return oEstadosImpl.EstadosGetByFilter(tabNombre, estColumnaTabla, estCodigo);
         }
         public DataTable EstadosGetByFilterDT(string tabNombre, string estColumnaTabla)
         {

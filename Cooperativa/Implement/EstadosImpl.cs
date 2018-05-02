@@ -27,7 +27,7 @@ namespace Implement
                     cmd = new OracleCommand("insert into Estados (EST_CODIGO, " +
                         "EST_DESCRIPCION, EST_DESCRIPCION_CORTA, EST_ENTIDAD, EST_TIPO_DATO) " +
                         "values('" + oEst.EstCodigo + "','" + oEst.EstDescripcion + "','" +
-                        oEst.EstDescripcionCorta + "','"+ oEst.EstEntidad  + "','"+ oEst.EstTipoDato+ "')", cn);
+                        oEst.EstDescripcionCorta +  "')", cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -50,8 +50,6 @@ namespace Implement
                     cmd = new OracleCommand("update Estados " +
                         "SET EST_CODIGO='" + oEst.EstCodigo +
                         "', EST_DESCRIPCION_CORTA='" + oEst.EstDescripcionCorta +
-                        "', EST_ENTIDAD='" + oEst.EstEntidad +
-                        "', EST_TIPO_DATO='" + oEst.EstTipoDato +
                         "' WHERE EST_DESCRIPCION=" + oEst.EstDescripcion , cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
@@ -87,7 +85,7 @@ namespace Implement
 
             }
 
-            public Estados EstadosGetById(string Id)
+            public Estados EstadosGetById(string Id, string tabNombre)
             {
                 try
                 {
@@ -95,8 +93,9 @@ namespace Implement
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
-                    string sqlSelect = "select * from Estados " +
-                         "WHERE EST_DESCRIPCION=" + Id;
+                    string sqlSelect = " SELECT * FROM ESTADOS "+
+                    " where TAB_NOMBRE = '"+tabNombre+"'"+
+                    " AND EST_CODIGO = '" + Id+"'";
                     cmd = new OracleCommand(sqlSelect, cn);
                     adapter = new OracleDataAdapter(cmd);
                     cmd.ExecuteNonQuery();
@@ -117,7 +116,41 @@ namespace Implement
                 }
             }
 
-            public List<Estados> EstadosGetAll()
+        public Estados EstadosGetByFilter(string tabNombre, string estColumnaTabla, string estCodigo)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Estados " +
+                     " WHERE TAB_NOMBRE='" + tabNombre + "' " +
+                     " AND " +
+                     " EST_COLUMNA_TABLA='"+estColumnaTabla+"' " +
+                     " AND " +
+                     " EST_CODIGO='"+estCodigo+"' ";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                dt = ds.Tables[0];
+                Estados NewEnt = new Estados();
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow dr = dt.Rows[0];
+                    NewEnt = CargarEstados(dr);
+                }
+                return NewEnt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Estados> EstadosGetAll()
             {
                 List<Estados> lstEstados = new List<Estados>();
                 try
@@ -157,11 +190,13 @@ namespace Implement
                 try
                 {
                     Estados oObjeto = new Estados();
+                    oObjeto.EstNumero = long.Parse(dr["EST_NUMERO"].ToString());
                     oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
                     oObjeto.EstDescripcion = dr["EST_DESCRIPCION"].ToString();
                     oObjeto.EstDescripcionCorta = dr["EST_DESCRIPCION_CORTA"].ToString();
-                    oObjeto.EstEntidad = dr["EST_ENTIDAD"].ToString();
-                    oObjeto.EstTipoDato = dr["EST_TIPO_DATO"].ToString();
+                    oObjeto.tabNombre = dr["TAB_NOMBRE"].ToString();
+                    oObjeto.EstColumnaTabla = dr["EST_COLUMNA_TABLA"].ToString();
+                    oObjeto.EstTipoDato = dr["EST_TIPO_DATO"] == null ? "" : dr["EST_TIPO_DATO"].ToString() ;
                     return oObjeto;
                 }
                 catch (Exception ex)

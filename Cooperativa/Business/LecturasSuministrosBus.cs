@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Implement;
 using Model;
+using System.Data;
 
 namespace Business
 {
@@ -40,10 +41,12 @@ namespace Business
             LecturasSuministrosImpl oLecSumImpl = new LecturasSuministrosImpl();
             return oLecSumImpl.LecturasSuministrosGetAll();
         }
-        //public DataTable FabricantesGetAllDT()
-        //{
-        //    FabricantesImpl oFabricantesImpl = new FabricantesImpl();
-        //    return oFabricantesImpl.FabricantesGetAllDT();
-        //}
+
+
+        public DataTable LecturasSuministrosGetByIdSuministro(long Id, string Periodo, string EstadosLecturas)
+        {
+            LecturasSuministrosImpl oLecSumImpl = new LecturasSuministrosImpl();
+            return oLecSumImpl.LecturasSuministrosGetByIdSuministro(Id, Periodo, EstadosLecturas);
+        }
     }
 }

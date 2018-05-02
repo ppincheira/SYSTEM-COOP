@@ -18,6 +18,7 @@ namespace Model
         public virtual long lemCodigo { get; set; }
         public virtual string estCodigo { get; set; }
         public virtual long cbpNumero { get; set; }
+        public virtual List<LecturasSuministrosItems> Items { get; set; }
 
 
     }
