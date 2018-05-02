@@ -14,7 +14,7 @@ namespace Model
         public virtual string lesPeriodo { get; set; }
         public virtual long sumNumero { get; set; }
         public virtual int medNumero { get; set; }
-        public virtual int sruNumero { get; set; }
+        public virtual long sruNumero { get; set; }
         public virtual long lemCodigo { get; set; }
         public virtual string estCodigo { get; set; }
         public virtual long cbpNumero { get; set; }

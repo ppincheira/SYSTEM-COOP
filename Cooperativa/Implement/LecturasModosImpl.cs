@@ -307,21 +307,13 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                string query = "insert into LECTURAS_MODOS_CONCEPTOS(LEM_CODIGO, LEC_CODIGO, " +
-                            "values('" + lemCodigo + "','" + lecCodigo + ")" + "RETURNING IDTEMP INTO :id;END;";
-                 query = "insert into LECTURAS_MODOS_CONCEPTOS(LEM_CODIGO, LEC_CODIGO) " +
+                string query = "insert into LECTURAS_MODOS_CONCEPTOS(LEM_CODIGO, LEC_CODIGO) " +
                            "values('" + lemCodigo + "','" + lecCodigo + "')";
 
                 cmd = new OracleCommand(query, cn);
                 adapter = new OracleDataAdapter(cmd);
-       /*         cmd.Parameters.Add(new OracleParameter
-                {
-                    ParameterName = ":id",
-                    OracleDbType = OracleDbType.Int64,
-                    Direction = ParameterDirection.Output
-                });*/
+  
                 cmd.ExecuteNonQuery();
-       //         aux = long.Parse(cmd.Parameters[":id"].Value.ToString());
                 return 1;
             }
             catch (Exception ex)

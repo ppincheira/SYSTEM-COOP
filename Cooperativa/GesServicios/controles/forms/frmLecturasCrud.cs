@@ -15,13 +15,14 @@ using System.Windows.Forms;
 
 namespace GesServicios.controles.forms
 {
-    public partial class frmLecturasCrud : gesForm,IVistaLecturasCrud
+    public partial class frmLecturasCrud : gesForm, IVistaLecturasCrud
     {
 
         #region << PROPIEDADES >>
         UILecturasCrud _oLecturasCrud;
         Utility oUtil;
         long _sumNumero;
+        long _lecSum;
         Enumeration.Acciones _oAccion;
         #endregion
 
@@ -42,7 +43,7 @@ namespace GesServicios.controles.forms
         public long sumNumero
         {
             get { return _sumNumero; }
-            set { _sumNumero = value;}
+            set { _sumNumero = value; }
         }
         public string strSuministro
         {
@@ -163,20 +164,24 @@ namespace GesServicios.controles.forms
             get { return this.chkTodos; }
             set { this.chkTodos = value; }
         }
-    
-    public Controles.datos.chkBox chkiPendiente {
-        get { return this.chkPendiente; }
-        set { this.chkPendiente = value; }
-    }
-    public Controles.datos.chkBox chkiFacturado {
+
+        public Controles.datos.chkBox chkiPendiente
+        {
+            get { return this.chkPendiente; }
+            set { this.chkPendiente = value; }
+        }
+        public Controles.datos.chkBox chkiFacturado
+        {
             get { return this.chkFacturado; }
             set { this.chkFacturado = value; }
         }
-    public Controles.datos.chkBox chkiInstalado {
+        public Controles.datos.chkBox chkiInstalado
+        {
             get { return this.chkInstalado; }
             set { this.chkInstalado = value; }
         }
-    public Controles.datos.chkBox chkiCorregido {
+        public Controles.datos.chkBox chkiCorregido
+        {
             get { return this.chkPendiente; }
             set { this.chkiCorregido = value; }
         }
@@ -200,15 +205,14 @@ namespace GesServicios.controles.forms
         #endregion
         public frmLecturasCrud()
         {
-            InitializeComponent();
 
+            InitializeComponent();
             _sumNumero = sumNumero;
             if (sumNumero == 0)
                 _oAccion = Enumeration.Acciones.New;
             else
                 _oAccion = Enumeration.Acciones.Edit;
             _oLecturasCrud = new UILecturasCrud(this);
-
         }
 
         private void frmLecturasCrud_Load(object sender, EventArgs e)
@@ -233,59 +237,156 @@ namespace GesServicios.controles.forms
 
         private void btnSuministro_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "SUM";
-            oAdmin.Tipo = Admin.enumTipoForm.Selector;
-            FormsAuxiliares.frmFormAdmin oFrmAdmin = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
-            oFrmAdmin.ShowDialog();
-            if (oFrmAdmin.ShowDialog() == DialogResult.OK)
+            try
             {
-                string id = oFrmAdmin.striRdoCodigo;
-                _sumNumero = long.Parse(id);
-                _oLecturasCrud.CargarLecturaSuministro(_sumNumero);
+
+                FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+                Admin oAdmin = new Admin();
+                oAdmin.TabCodigo = "SUM";
+                oAdmin.Tipo = Admin.enumTipoForm.Selector;
+                FormsAuxiliares.frmFormAdmin oFrmAdmin = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+                oFrmAdmin.ShowDialog();
+                if (oFrmAdmin.ShowDialog() == DialogResult.OK)
+                {
+                    string id = oFrmAdmin.striRdoCodigo;
+                    _sumNumero = long.Parse(id);
+                    _oLecturasCrud.CargarLecturaSuministro(_sumNumero);
+                }
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                        ((Control)sender).Name,
+                                        this.FindForm().Name);
             }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            _oLecturasCrud.Guardar();
+            try
+            {
+                _oLecturasCrud.Guardar(0);
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                        ((Control)sender).Name,
+                                        this.FindForm().Name);
+            }
         }
 
         private void mtxtPeriodo_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
         }
 
         private void mtxtPeriodo_Leave(object sender, EventArgs e)
         {
-            
-            _oLecturasCrud.CargarLecturaAsociada();
+            try
+            {
+                _oLecturasCrud.CargarLecturaAsociada();
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                        ((Control)sender).Name,
+                                        this.FindForm().Name);
+            }
         }
 
         private void chkTodos_CheckedChanged(object sender, EventArgs e)
         {
-            _oLecturasCrud.SetChkAll();
+            try
+            {
+                _oLecturasCrud.SetChkAll();
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                        ((Control)sender).Name,
+                                        this.FindForm().Name);
+            }
         }
 
         private void chkPendiente_CheckedChanged(object sender, EventArgs e)
         {
-            _oLecturasCrud.setChkPendiente();
+            try
+            {
+                _oLecturasCrud.setChkPendiente();
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                        ((Control)sender).Name,
+                                        this.FindForm().Name);
+            }
         }
 
         private void chkFacturado_CheckedChanged(object sender, EventArgs e)
         {
-            _oLecturasCrud.setChkFacturado();
+            try
+            {
+
+                _oLecturasCrud.setChkFacturado();
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                        ((Control)sender).Name,
+                                        this.FindForm().Name);
+            }
         }
 
         private void chkInstalado_CheckedChanged(object sender, EventArgs e)
         {
-            _oLecturasCrud.setChkInstalado();
+            try
+            {
+                _oLecturasCrud.setChkInstalado();
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                        ((Control)sender).Name,
+                                        this.FindForm().Name);
+            }
         }
 
         private void chkCorregido_CheckedChanged(object sender, EventArgs e)
         {
-            _oLecturasCrud.setChkCorregido();
+            try
+            {
+                _oLecturasCrud.setChkCorregido();
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                        ((Control)sender).Name,
+                                        this.FindForm().Name);
+            }
         }
     }
 }

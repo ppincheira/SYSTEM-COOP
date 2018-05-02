@@ -51,3 +51,4 @@ D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\Ges
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.dll
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.pdb
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.controles.forms.frmConceptosCategoriasCrud.resources
+C:\Users\Pablo Pincheira\Documents\GitHub\SYSTEM-COOP\Cooperativa\GesConfiguracion\obj\Debug\GesConfiguracion.controles.forms.frmConceptosCategoriasCrud.resources

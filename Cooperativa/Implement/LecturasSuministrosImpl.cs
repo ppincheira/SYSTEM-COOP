@@ -39,6 +39,7 @@ namespace Implement
                     " END;";
 
                 cmd = new OracleCommand(query, cn);
+                adapter = new OracleDataAdapter(cmd);
                 cmd.Parameters.Add(new OracleParameter
                 {
                     ParameterName = ":id",
@@ -48,6 +49,13 @@ namespace Implement
                 cmd.ExecuteNonQuery();
                 response = long.Parse(cmd.Parameters[":id"].Value.ToString());
                 cn.Close();
+                //   Lectura Suministros Items
+                foreach (LecturasSuministrosItems oLecSumItem in oLecSum.Items)
+                {
+                    oLecSumItem.lesCodigo = response;
+                    LecturasSuministrosItemsImpl oLecSumItemImpl = new LecturasSuministrosItemsImpl();
+                    oLecSumItemImpl.LecturasSuministrosItemsAdd(oLecSumItem);
+                }
 
                 return response;
             }
@@ -215,6 +223,7 @@ namespace Implement
                 cn.Open();
                 string sqlSelect = " SELECT " +
                 " LMC.LEM_CODIGO, " +
+                " LC.LEC_CODIGO, "+
                 " LC.LEC_DESCRIPCION CONCEPTOS," +
                 " LS.LES_PERIODO PERIODO ," +
                 " LS.EST_CODIGO ESTADO," +

@@ -373,3 +373,13 @@ Error: ORA-01830: date format picture ends before converting entire input string
 Usuario: 1
 Subsistema: ALL
 Terminal: 1
+Fecha: 02/05/2018 9:50:58
+Error: ORA-04063: package body "OWNER.PKG_SECUENCIAS" has errors
+Usuario: 1
+Subsistema: ALL
+Terminal: 1
+Fecha: 02/05/2018 9:51:02
+Error: ORA-04063: package body "OWNER.PKG_SECUENCIAS" has errors
+Usuario: 1
+Subsistema: ALL
+Terminal: 1

@@ -36,8 +36,7 @@ namespace AppProcesos.gesServicios.frmLecturasCrud
         public void CargarLecturaSuministro(long sumNumero)
         {
 
-            //_vista.strSuministro = oLecSuministro.lesCodigo.ToString();
-
+            
             Suministros oSuministro = new Suministros();
             SuministrosBus oSuministrosBus = new SuministrosBus();
             oSuministro = oSuministrosBus.SuministrosGetById(sumNumero);
@@ -57,8 +56,7 @@ namespace AppProcesos.gesServicios.frmLecturasCrud
             _vista.strCUIT = oEmpresa.EmpCuit;
             _vista.strTitular = oEmpresa.EmpRazonSocial == "" ? oEmpresa.EmpApellidos + " " + oEmpresa.EmpNombres : oEmpresa.EmpRazonSocial;
             /****Medidor ***/
-
-
+            // falta implementar la parate de medidor
 
 
 
@@ -146,25 +144,29 @@ namespace AppProcesos.gesServicios.frmLecturasCrud
 
     
 
-    public void Guardar()
+    public void Guardar(long lonLesCodigo)
     {
             long rtdo;
+            Suministros oSuministro = new Suministros();
+            SuministrosBus oSuministroBus = new SuministrosBus();
+            oSuministro = oSuministroBus.SuministrosGetById(_vista.sumNumero);
             LecturasSuministros oLecturaSuministro = new LecturasSuministros();
-            
-            oLecturaSuministro.Items = CargarLecturasItem(_vista.grdiLecturas);
-            oLecturaSuministro.estCodigo = "";
-            oLecturaSuministro.lemCodigo = 0;
+            LecturasSuministrosBus oLecturaSuministrosBus = new LecturasSuministrosBus();
             oLecturaSuministro.lesCodigo = 0;
-            oLecturaSuministro.lesFechaAnterior = DateTime.Now;
-            oLecturaSuministro.lesFechaAlta = DateTime.Now;
-            oLecturaSuministro.lesPeriodo = "";
-            oLecturaSuministro.medNumero =0;
-            oLecturaSuministro.sruNumero = 0;
-            oLecturaSuministro.sumNumero = 0;
-            //if (_vista. == 0)
-            //    rtdo = oSMeBus.LecturasModosAdd(oSLecturas);
-            //else
-            //oSMeBus.LecturasModosUpdate(oSLecturas);
+            oLecturaSuministro.Items = CargarLecturasItem(_vista.grdiLecturas);
+            oLecturaSuministro.estCodigo = "I";//Paso Instalado ver si es necesario poner un combo
+            oLecturaSuministro.lemCodigo = 0;// Ver de Poner un combo 
+            oLecturaSuministro.lesFechaAnterior = DateTime.MinValue;//coloco minima fecha despues en implement hay que preguntar si es ultima fecha
+            oLecturaSuministro.lesFechaAlta = DateTime.Parse(_vista.strFechaAlta);
+            oLecturaSuministro.lesPeriodo = _vista.strPeriodo.Remove(4, 1);
+            oLecturaSuministro.medNumero = 2;// esto esta harcode falta ver como asociar la carga;
+            oLecturaSuministro.sruNumero = oSuministro.SruNumero;
+            oLecturaSuministro.sumNumero = _vista.sumNumero;
+
+            if (lonLesCodigo == 0)
+                rtdo = oLecturaSuministrosBus.LecturasSuministrosAdd(oLecturaSuministro);
+            else
+                oLecturaSuministrosBus.LecturasSuministrosUpdate(oLecturaSuministro);
     }
 
     private List<LecturasSuministrosItems> CargarLecturasItem(grdGrillaEdit grdSuministrosItem)
@@ -176,12 +178,12 @@ namespace AppProcesos.gesServicios.frmLecturasCrud
         {
         if ((dgrvRow.Cells[0].Value != null) && (dgrvRow.Cells[0].Value.ToString() != "0")) { 
             LecturasSuministrosItems oLecSumItem = new LecturasSuministrosItems();
-            oLecSumItem.lecCodigo = 0;
             oLecSumItem.lesCodigo = 0;
-            oLecSumItem.lsiCantidadUnidades = 0;
-            oLecSumItem.lsiDescripcion = "";
-            oLecSumItem.lsiLecturaActual = 0;
-            oLecSumItem.lsiLecturaAnterior = 0;
+            oLecSumItem.lecCodigo = long.Parse(dgrvRow.Cells[1].Value.ToString());
+            oLecSumItem.lsiCantidadUnidades = long.Parse(dgrvRow.Cells[9].Value.ToString());
+            oLecSumItem.lsiDescripcion = dgrvRow.Cells[2].Value.ToString();
+            oLecSumItem.lsiLecturaActual = long.Parse(dgrvRow.Cells[6].Value.ToString());
+            oLecSumItem.lsiLecturaAnterior = long.Parse(dgrvRow.Cells[8].Value.ToString());
             oListSumItem.Add(oLecSumItem);
         }
     }
