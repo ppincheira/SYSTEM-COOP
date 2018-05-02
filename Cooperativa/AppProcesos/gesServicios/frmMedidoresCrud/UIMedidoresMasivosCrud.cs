@@ -22,6 +22,11 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
             MedidoresModelosBus oMModelo = new MedidoresModelosBus();
             oUtil.CargarCombo(_vista.MmoCodigo, oMModelo.MedidoresModelosGetAllDT(), "MMO_CODIGO", "MMO_DESCRIPCION", "SELECCIONE..");
 
+            //Obtengo los Modos de lectura de medidores
+            LecturasModosBus oLeModo = new LecturasModosBus();
+            oUtil.CargarCombo(_vista.LemCodigo, oLeModo.LecturasModosGetAllDT(), "LEM_CODIGO", "LEM_DESCRIPCION", "SELECCIONE..");
+
+
             // Obtengo las empresas Proveedoras
             EmpresasBus oEmpresas = new EmpresasBus();
             oUtil.CargarCombo(_vista.NumeroProv, oEmpresas.EmpresasGetAllDT(), "EMP_NUMERO", "EMP_RAZON_SOCIAL", "SELECCIONE..");

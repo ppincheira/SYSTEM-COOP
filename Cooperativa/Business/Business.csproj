@@ -151,6 +151,7 @@
     <Compile Include="TelefonosBus.cs" />
     <Compile Include="TipoBarriosLocalidadesBus.cs" />
     <Compile Include="TipoConexionServiciosBus.cs" />
+    <Compile Include="TiposGruposConceptosBus.cs" />
     <Compile Include="TiposIdentificadoresBus.cs" />
     <Compile Include="TiposIvaBus.cs" />
     <Compile Include="TiposLocalidadesBus.cs" />

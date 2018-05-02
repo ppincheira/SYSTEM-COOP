@@ -98,6 +98,11 @@ C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.exe
 C:\GitHub\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.pdb
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.Form1.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
+D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\UI.exe.config
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\UI.exe
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\UI.pdb
@@ -124,10 +129,5 @@ D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\AppProcesos.pdb
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\Service.pdb
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\GesSeguridad.pdb
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.Form1.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
-D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.exe
 D:\DESARROLLO\NEW PROJECT\SYSTEM-COOP\Cooperativa\UI\obj\Debug\UI.pdb

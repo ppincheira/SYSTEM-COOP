@@ -296,6 +296,12 @@ namespace GesServicios.controles.forms
             //_usrNumero = Usuario;
             _oSuministrosCrud = new UISuministrosCrud(this);
             InitializeComponent();
+            if (_SumNumero == 0)
+            {
+                tabSumnistros.TabPages[1].Enabled = false;
+                tabSumnistros.TabPages[3].Enabled = false;
+            }
+
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

@@ -50,6 +50,12 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
         string strCantidadServicios { set; }
         Adjuntos adjunto { get; set; }
         string adjuntoFileName { get; set; }
-        pbxImagen pbxImagenP { get; set; }     
+        pbxImagen pbxImagenP { get; set; }
+
+        long logCiiNumero { get; set; }
+        int intGiiNumero { get; set; }
+        bool booCptImpuesto { get; set; }        
+        string strGrupoImpuestosItems { get; set; }       
+        DateTime datCiiVigenciaDesde { get; set; }
     }
 }

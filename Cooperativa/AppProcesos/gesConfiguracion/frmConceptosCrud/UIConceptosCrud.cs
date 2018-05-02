@@ -1,6 +1,7 @@
 ﻿using Business;
 using Model;
 using Service;
+using Implement;
 using System.Windows.Forms;
 using System;
 using System.Data;
@@ -28,6 +29,7 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             _vista = vista;
             oUtil = new Utility();
         }
+
         public void Inicializar()
         {       
             TiposConceptosBus oTicBus = new TiposConceptosBus();
@@ -115,12 +117,7 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                 if (oConceptos.cptModificableImporte == "S")
                     _vista.booModificaCmpImp = true;
                 else
-                    _vista.booModificaCmpImp = false;
-
-                if (oConceptos.cptFabricado == "S")
-                    _vista.booCptFabricado = true;
-                else
-                    _vista.booCptFabricado = false;
+                    _vista.booModificaCmpImp = false;                
 
                 _vista.decCptPeso = oConceptos.cptPeso;
                 _vista.decCptAncho = oConceptos.cptAncho;
@@ -166,10 +163,20 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                 if (oConceptos.cptFabricado == "S")
                 {
                     CargarGrillaFabricados();
-                }                
+                }
+                //impuestos               
+                if (oConceptos.cptImpuesto == "S")
+                    _vista.booCptImpuesto = true;
+                else
+                    _vista.booCptImpuesto = false;
+
+                if (oConceptos.cptImpuesto == "S")
+                {
+                    CagarImpuestos();
+                }
             }
             else
-                _vista.booCptEstado = true; ;
+                _vista.booCptEstado = true; 
         }
 
         public void CargarGrillaTiposComprobantes()
@@ -189,6 +196,20 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             _vista.grdCptTipoCmp.Columns[0].Visible = false;           
             _vista.grdCptTipoCmp.Columns[1].ReadOnly = true;            
             _vista.grdCptTipoCmp.Columns[2].ReadOnly = true;                    
+        }
+        
+        public void CagarImpuestos()
+        {
+            ConceptosImpuestosItems oGci = new ConceptosImpuestosItems();
+            ConceptosImpuestosItemsBus oGciBus = new ConceptosImpuestosItemsBus();
+            oGci = oGciBus.ConceptosImpuestosItemsGetByCptNumero(_vista.logCptNumero);
+            Console.WriteLine("valor "+ oGci.giiNumero.ToString());
+            if (!string.IsNullOrEmpty(oGci.giiNumero.ToString()) && oGci.giiNumero > 0 )
+            {
+                CargarGrupoImpuesto(oGci.giiNumero.ToString());
+                _vista.datCiiVigenciaDesde = oGci.ciiVigenciaDesde;
+                _vista.logCiiNumero = oGci.ciiNumero;
+            }               
         }
 
         public void CargarGrillaServicios()
@@ -229,6 +250,8 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             long logResultado;
             long logRtdo;
             bool booRest;
+            bool booRestimp;
+            int intRtdo;
             Conceptos oConceptos = new Conceptos();
             ConceptosBus oConceptosBus = new ConceptosBus();
 
@@ -293,9 +316,23 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             else
                 oConceptos.EstCodigo = "I";
 
+            if (_vista.booCptImpuesto)
+                oConceptos.cptImpuesto = "S";
+            else
+                oConceptos.cptImpuesto = "N";
+
+            //inicia la transaccion unica para toda la actualizacion
+            TransaccionesImpl oTransImpl = new TransaccionesImpl();
+            oTransImpl.IniciarTransaccion();
+
             if (_vista.logCptNumero == 0)
             {
-                _vista.logCptNumero = oConceptosBus.ConceptosAdd(oConceptos);
+                //_vista.logCptNumero = oConceptosBus.ConceptosAdd(oConceptos);
+                //ejecuto la transaccion principal con el parametro de id
+                Transacciones oTrans = new Transacciones();               
+                oTrans = oConceptosBus.ConceptosAddTrans(oConceptos);                
+                _vista.logCptNumero = long.Parse(oTransImpl.EjecutarTransaccion(oTrans));                   
+
                 //--rubro
                 if (_vista.cmbCodRubro.SelectedValue.ToString() != "0")
                 {
@@ -303,7 +340,10 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                     GruposDetallesBus oGDeBus = new GruposDetallesBus();
                     oGDe.GrpCodigo = long.Parse(_vista.cmbCodRubro.SelectedValue.ToString());
                     oGDe.GrdCodigoRegistro = _vista.logCptNumero.ToString();
-                    logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    //logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    Transacciones oTrans1 = new Transacciones();
+                    oTrans1 = oGDeBus.GruposDetallesAddTrans(oGDe);
+                    logRtdo = long.Parse(oTransImpl.EjecutarTransaccion(oTrans1));
                 }
                 //--linea
                 if (_vista.cmbCodLinea.SelectedValue.ToString() != "0")
@@ -312,7 +352,10 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                     GruposDetallesBus oGDeBus = new GruposDetallesBus();
                     oGDe.GrpCodigo = long.Parse(_vista.cmbCodLinea.SelectedValue.ToString());
                     oGDe.GrdCodigoRegistro = _vista.logCptNumero.ToString();
-                    logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    //logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    Transacciones oTrans1 = new Transacciones();
+                    oTrans1 = oGDeBus.GruposDetallesAddTrans(oGDe);
+                    logRtdo = long.Parse(oTransImpl.EjecutarTransaccion(oTrans1));
                 }
                 //--clase
                 if (_vista.cmbCodClase.SelectedValue.ToString() != "0")
@@ -321,7 +364,10 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                     GruposDetallesBus oGDeBus = new GruposDetallesBus();
                     oGDe.GrpCodigo = long.Parse(_vista.cmbCodClase.SelectedValue.ToString());
                     oGDe.GrdCodigoRegistro = _vista.logCptNumero.ToString();
-                    logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    //logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    Transacciones oTrans1 = new Transacciones();
+                    oTrans1 = oGDeBus.GruposDetallesAddTrans(oGDe);
+                    logRtdo = long.Parse(oTransImpl.EjecutarTransaccion(oTrans1));
                 }
                 //--estacionalidad
                 if (_vista.cmbCodEstacionalidad.SelectedValue.ToString() != "0")
@@ -330,51 +376,108 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                     GruposDetallesBus oGDeBus = new GruposDetallesBus();
                     oGDe.GrpCodigo = long.Parse(_vista.cmbCodEstacionalidad.SelectedValue.ToString());
                     oGDe.GrdCodigoRegistro = _vista.logCptNumero.ToString();
-                    logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
-                }
-
+                    //logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    Transacciones oTrans1 = new Transacciones();
+                    oTrans1 = oGDeBus.GruposDetallesAddTrans(oGDe);
+                    logRtdo = long.Parse(oTransImpl.EjecutarTransaccion(oTrans1));
+                }                
             }
             else
             {
-                logResultado = (oConceptosBus.ConceptosUpdate(oConceptos)) ? oConceptos.cptNumero : 0;
+                //logResultado = (oConceptosBus.ConceptosUpdate(oConceptos)) ? oConceptos.cptNumero : 0;
+                Transacciones oTrans = new Transacciones();
+                oTrans = oConceptosBus.ConceptosUpdateTrans(oConceptos);
+                oTransImpl.EjecutarTransaccion(oTrans);
                 //-------------------
                 GruposDetalles oGDe = new GruposDetalles();
                 GruposDetallesBus oGDeBus = new GruposDetallesBus();
                 //--rubro
-                booRest = oGDeBus.GruposDetallesTipoDelete(_vista.logCptNumero.ToString(), strTgrRubro);
+                //booRest = oGDeBus.GruposDetallesTipoDelete(_vista.logCptNumero.ToString(), strTgrRubro);
+                Transacciones oTrans1 = new Transacciones();
+                oTrans1 = oGDeBus.GruposDetallesTipoDeleteTrans(_vista.logCptNumero.ToString(), strTgrRubro);
+                oTransImpl.EjecutarTransaccion(oTrans1);
                 if (_vista.cmbCodRubro.SelectedValue.ToString() != "0")
                 {
                     oGDe.GrpCodigo = long.Parse(_vista.cmbCodRubro.SelectedValue.ToString());
                     oGDe.GrdCodigoRegistro = _vista.logCptNumero.ToString();
-                    logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    //logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    Transacciones oTrans2 = new Transacciones();
+                    oTrans2 = oGDeBus.GruposDetallesAddTrans(oGDe);
+                    logRtdo = long.Parse(oTransImpl.EjecutarTransaccion(oTrans2));
                 }
                 //--linea
-                booRest = oGDeBus.GruposDetallesTipoDelete(_vista.logCptNumero.ToString(), strTgrLinea);
+                //booRest = oGDeBus.GruposDetallesTipoDelete(_vista.logCptNumero.ToString(), strTgrLinea);
+                oTrans1 = oGDeBus.GruposDetallesTipoDeleteTrans(_vista.logCptNumero.ToString(), strTgrLinea);
+                oTransImpl.EjecutarTransaccion(oTrans1);
                 if (_vista.cmbCodLinea.SelectedValue.ToString() != "0")
                 {
                     oGDe.GrpCodigo = long.Parse(_vista.cmbCodLinea.SelectedValue.ToString());
                     oGDe.GrdCodigoRegistro = _vista.logCptNumero.ToString();
-                    logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    //logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    Transacciones oTrans2 = new Transacciones();
+                    oTrans2 = oGDeBus.GruposDetallesAddTrans(oGDe);
+                    logRtdo = long.Parse(oTransImpl.EjecutarTransaccion(oTrans2));
                 }
                 //--clase
-                booRest = oGDeBus.GruposDetallesTipoDelete(_vista.logCptNumero.ToString(), strTgrClase);
+                //booRest = oGDeBus.GruposDetallesTipoDelete(_vista.logCptNumero.ToString(), strTgrClase);
+                oTrans1 = oGDeBus.GruposDetallesTipoDeleteTrans(_vista.logCptNumero.ToString(), strTgrClase);
+                oTransImpl.EjecutarTransaccion(oTrans1);
                 if (_vista.cmbCodClase.SelectedValue.ToString() != "0")
                 {
                     oGDe.GrpCodigo = long.Parse(_vista.cmbCodClase.SelectedValue.ToString());
                     oGDe.GrdCodigoRegistro = _vista.logCptNumero.ToString();
-                    logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    //logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    Transacciones oTrans2 = new Transacciones();
+                    oTrans2 = oGDeBus.GruposDetallesAddTrans(oGDe);
+                    logRtdo = long.Parse(oTransImpl.EjecutarTransaccion(oTrans2));
                 }
                 //--estacionalidad
-                booRest = oGDeBus.GruposDetallesTipoDelete(_vista.logCptNumero.ToString(), strTgrEstacionalidad);
+                //booRest = oGDeBus.GruposDetallesTipoDelete(_vista.logCptNumero.ToString(), strTgrEstacionalidad);
+                oTrans1 = oGDeBus.GruposDetallesTipoDeleteTrans(_vista.logCptNumero.ToString(), strTgrEstacionalidad);
+                oTransImpl.EjecutarTransaccion(oTrans1);
                 if (_vista.cmbCodEstacionalidad.SelectedValue.ToString() != "0")
                 {
                     oGDe.GrpCodigo = long.Parse(_vista.cmbCodEstacionalidad.SelectedValue.ToString());
                     oGDe.GrdCodigoRegistro = _vista.logCptNumero.ToString();
-                    logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    //logRtdo = oGDeBus.GruposDetallesAdd(oGDe);
+                    Transacciones oTrans2 = new Transacciones();
+                    oTrans2 = oGDeBus.GruposDetallesAddTrans(oGDe);
+                    logRtdo = long.Parse(oTransImpl.EjecutarTransaccion(oTrans2));
                 }
 
                 //-------------------                
             }
+
+            if (oConceptos.cptImpuesto == "S")
+            {
+                if (_vista.logCiiNumero > 0)
+                {//actualiza
+                    ConceptosImpuestosItems oGci = new ConceptosImpuestosItems();
+                    ConceptosImpuestosItemsBus oGciBus = new ConceptosImpuestosItemsBus();
+                    oGci.ciiNumero = _vista.logCiiNumero;
+                    oGci.ciiVigenciaDesde = _vista.datCiiVigenciaDesde;
+                    oGci.cptNumero = _vista.logCptNumero;
+                    oGci.giiNumero = _vista.intGiiNumero;
+                    //booRestimp = oGciBus.ConceptosImpuestosItemsUpdate(oGci);
+                    Transacciones oTrans1 = new Transacciones();
+                    oTrans1 = oGciBus.ConceptosImpuestosItemsUpdateTrans(oGci);
+                    oTransImpl.EjecutarTransaccion(oTrans1);
+                }
+                else
+                {//inserta
+                    ConceptosImpuestosItems oGci = new ConceptosImpuestosItems();
+                    ConceptosImpuestosItemsBus oGciBus = new ConceptosImpuestosItemsBus();
+                    oGci.ciiVigenciaDesde = _vista.datCiiVigenciaDesde;
+                    oGci.cptNumero = _vista.logCptNumero;
+                    oGci.giiNumero = _vista.intGiiNumero;                    
+                    //intRtdo = oGciBus.ConceptosImpuestosItemsAdd(oGci);
+                    Transacciones oTrans1 = new Transacciones();
+                    oTrans1 = oGciBus.ConceptosImpuestosItemsAddTrans(oGci);
+                    oTransImpl.EjecutarTransaccion(oTrans1);
+                }
+                
+            }
+
             // guarda o actualiza imagen
             //if (_vista.adjuntoFileName != null)
             if (!string.IsNullOrEmpty(_vista.adjuntoFileName))
@@ -388,15 +491,23 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                     {                        
                         if (!string.IsNullOrEmpty(_vista.adjuntoFileName))
                         {                            
-                            oAdjuntoBus.AdjuntoUpdate(_vista.adjunto);
+                            //oAdjuntoBus.AdjuntoUpdate(_vista.adjunto);
+                            Transacciones oTrans1 = new Transacciones();
+                            oTrans1 = oAdjuntoBus.AdjuntoUpdateTrans(_vista.adjunto);
+                            oTransImpl.EjecutarTransaccion(oTrans1);
                         }                        
                     }
                     else
                     {                       
-                        oAdjuntoBus.AdjuntosAdd(_vista.adjunto);
+                        //oAdjuntoBus.AdjuntosAdd(_vista.adjunto)
+                        Transacciones oTrans1 = new Transacciones();
+                        oTrans1 = oAdjuntoBus.AdjuntosAddTrans(_vista.adjunto);
+                        oTransImpl.EjecutarTransaccion(oTrans1);
                     }
                 }
             }
+
+            //fabricados
             if (oConceptos.cptFabricado.Equals("S"))
             {
                // Console.WriteLine("sale4 guarda grilla de fabricados------------");
@@ -407,7 +518,10 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                 {
                  //   Console.WriteLine("borro fabricado ------------");
                     oCfb.cfbCodigo = oCof.cfbCodigo;
-                    oCfbBus.ConceptosFabricadosDelete(oCfb);
+                    //oCfbBus.ConceptosFabricadosDelete(oCfb);
+                    Transacciones oTrans1 = new Transacciones();
+                    oTrans1 = oCfbBus.ConceptosFabricadosDeleteTrans(oCfb);
+                    oTransImpl.EjecutarTransaccion(oTrans1);
                 }         
                 // guarda o actualiza grilla de fabricado
                 bool valido1;
@@ -444,13 +558,19 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                             {
                                 oCfb.cptCodigoFabricado = _vista.logCptNumero;
                                 // Console.WriteLine("dc.inserta ------------");
-                                oCfbBus.ConceptosFabricadosAdd(oCfb);
+                                //oCfbBus.ConceptosFabricadosAdd(oCfb);
+                                Transacciones oTrans1 = new Transacciones();
+                                oTrans1 = oCfbBus.ConceptosFabricadosAddTrans(oCfb);
+                                oTransImpl.EjecutarTransaccion(oTrans1);
                             }
                             else
                             {
                                 oCfb.cptCodigoFabricado = _vista.logCptNumero;
                               //  Console.WriteLine("dc.actualiza------------");
-                                oCfbBus.ConceptosFabricadosUpdate(oCfb);
+                               // oCfbBus.ConceptosFabricadosUpdate(oCfb);
+                                Transacciones oTrans1 = new Transacciones();
+                                oTrans1 = oCfbBus.ConceptosFabricadosUpdateTrans(oCfb);
+                                oTransImpl.EjecutarTransaccion(oTrans1);
                             }
                         }
 
@@ -465,7 +585,10 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                     ConceptosFabricados oCfb = new ConceptosFabricados();
                     ConceptosFabricadosBus oCfbBus = new ConceptosFabricadosBus();
                     oCfb.cptCodigoFabricado = _vista.logCptNumero;
-                    oCfbBus.ConceptosFabricadosDeleteAll(oCfb);
+                    //oCfbBus.ConceptosFabricadosDeleteAll(oCfb);
+                    Transacciones oTrans1 = new Transacciones();
+                    oTrans1 = oCfbBus.ConceptosFabricadosDeleteAllTrans(oCfb);
+                    oTransImpl.EjecutarTransaccion(oTrans1);
                 }
             }
             /////////////////////////////////////////////////////////////////
@@ -477,7 +600,10 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             {
                 oCtc.cptNumero = oCtcs.cptNumero;
                 oCtc.tcoCodigo = oCtcs.tcoCodigo;
-                oCtcBus.ConceptosTiposComprobantesDelete(oCtc);
+                //oCtcBus.ConceptosTiposComprobantesDelete(oCtc);
+                Transacciones oTrans1 = new Transacciones();
+                oTrans1 = oCtcBus.ConceptosTiposComprobantesDeleteTrans(oCtc);
+                oTransImpl.EjecutarTransaccion(oTrans1);
             }
             // guarda o actualiza tipos comprobantes 
             bool valido;
@@ -509,7 +635,10 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                         if (oCtc.cptNumero.ToString().Equals("0"))
                         {
                             oCtc.cptNumero = _vista.logCptNumero;
-                            oCtcBus.ConceptosTiposComprobantesAdd(oCtc);
+                            //oCtcBus.ConceptosTiposComprobantesAdd(oCtc);
+                            Transacciones oTrans1 = new Transacciones();
+                            oTrans1 = oCtcBus.ConceptosTiposComprobantesAddTrans(oCtc);
+                            oTransImpl.EjecutarTransaccion(oTrans1);
                         }
                     }                                     
                 }
@@ -524,7 +653,10 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
             foreach (ConceptosServicios oCtcs in ConceptosServicios)
             {
                 oCse.cosCodigo = oCtcs.cosCodigo;                
-                oCseBus.ConceptosServiciosDelete(oCse);
+                //oCseBus.ConceptosServiciosDelete(oCse);
+                Transacciones oTrans1 = new Transacciones();
+                oTrans1 = oCseBus.ConceptosServiciosDeleteTrans(oCse);
+                oTransImpl.EjecutarTransaccion(oTrans1);
             }
             // guarda o actualiza conceptos servicios 
             bool valido2;
@@ -569,13 +701,19 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                         {
                             Console.WriteLine("inserta  ------------");
                             oCse.cptNumero = _vista.logCptNumero;
-                            oCseBus.ConceptosServiciosAdd(oCse);
+                            //oCseBus.ConceptosServiciosAdd(oCse);
+                            Transacciones oTrans1 = new Transacciones();
+                            oTrans1 = oCseBus.ConceptosServiciosAddTrans(oCse);
+                            oTransImpl.EjecutarTransaccion(oTrans1);
                         }
                     }
                 }
 
             }
             /////////////////////////////////////////////////////////////////
+            //finaliza la transaccion
+            oTransImpl.FinalizarTransaccion();
+
             return _vista.logCptNumero;
         }
 
@@ -640,10 +778,9 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
         public void AgregarImagen()
         {                            
             _vista.adjunto = oUtil.Adjunto_Agregar(_vista.adjunto);            
-            _vista.adjuntoFileName = _vista.adjunto.AdjNombre;
+            _vista.adjuntoFileName = _vista.adjunto.AdjNombre;            
             _vista.pbxImagenP.Image = new System.Drawing.Bitmap(_vista.adjunto.AdjAdjunto);            
-            _vista.adjunto.TabCodigo = "CPT";
-
+            _vista.adjunto.TabCodigo = "CPT";            
         }        
 
         //public bool CargarConceptoFabricado(string idConcepto,int indice)
@@ -852,6 +989,42 @@ namespace AppProcesos.gesConfiguracion.frmConceptosCrud
                 }
             }
             return true;
+        }
+
+        public bool ValidarImpuestos()
+        {
+            if (_vista.booCptImpuesto)
+            {
+                if (string.IsNullOrEmpty(_vista.strGrupoImpuestosItems.ToString()))
+                    return false;
+            }
+            return true;
+        }
+
+        public void CargarGrupoImpuesto(string id)
+        {
+            GruposImpuestosItems oCii = new GruposImpuestosItems();
+            GruposImpuestosItemsBus oCiiBus = new GruposImpuestosItemsBus();
+            oCii = oCiiBus.GruposImpuestosItemsGetById(long.Parse(id));
+
+            TiposIva oTii = new TiposIva();
+            TiposIvaBus oTiiBus = new TiposIvaBus();
+            oTii = oTiiBus.TiposIvaGetById(oCii.tivCodigo);
+
+            Conceptos oCpt = new Conceptos();
+            ConceptosBus oCptBus = new ConceptosBus();
+            oCpt = oCptBus.ConceptosGetById(oCii.cptNumero);
+
+            GruposConceptosImpuestos oGci = new GruposConceptosImpuestos();
+            GruposConceptosImpuestosBus oGciBus = new GruposConceptosImpuestosBus();
+            oGci = oGciBus.GruposConceptosImpuestosGetById(oCii.gciCodigo);
+
+            _vista.strGrupoImpuestosItems = oTii.TivCodigo + " - " + oTii.TivDescripcion + 
+                                            " / " + oCii.giiPorcentaje +
+                                            " % / Vigencia " + oCii.giiVigenciaDesde.ToShortDateString() +
+                                            " / " + oCpt.cptCodigo + " - " + oCpt.cptDescripcion + 
+                                            " / " + oGci.GciCodigo + " - " + oGci.GciDescripcion;
+            _vista.intGiiNumero = int.Parse(id);
         }
     }
 }

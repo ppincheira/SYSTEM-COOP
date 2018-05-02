@@ -144,6 +144,10 @@
       <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>
       <Name>Controles</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Implement\Implement.csproj">
+      <Project>{ee5dde2e-f621-444b-9b23-e4a1e7638264}</Project>
+      <Name>Implement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{30b38eed-bf12-4118-8492-53051e87d716}</Project>
       <Name>Model</Name>

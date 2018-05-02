@@ -13,5 +13,10 @@ namespace Business
             GruposConceptosImpuestosImpl oGruposConceptosImpuestosImpl = new GruposConceptosImpuestosImpl();
             return oGruposConceptosImpuestosImpl.GruposConceptosImpuestosGetAllDT();
         }
+        public GruposConceptosImpuestos GruposConceptosImpuestosGetById(string Id)
+        {
+            GruposConceptosImpuestosImpl oGruposConceptosImpuestosImpl = new GruposConceptosImpuestosImpl();
+            return oGruposConceptosImpuestosImpl.GruposConceptosImpuestosGetById(Id);
+        }
     }
 }

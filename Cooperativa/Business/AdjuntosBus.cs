@@ -23,6 +23,18 @@ namespace Business
             return oAdjuntoImpl.AdjuntosUpdate(oAdjunto);
         }
 
+        public Transacciones AdjuntosAddTrans(Adjuntos oAdjunto)
+        {
+            AdjuntosImpl oAdjuntoImpl = new AdjuntosImpl();
+            return oAdjuntoImpl.AdjuntosAddTrans(oAdjunto);
+        }
+
+        public Transacciones AdjuntoUpdateTrans(Adjuntos oAdjunto)
+        {
+            AdjuntosImpl oAdjuntoImpl = new AdjuntosImpl();
+            return oAdjuntoImpl.AdjuntosUpdateTrans(oAdjunto);
+        }
+
         public bool AdjuntosDelete(long Id)
         {
             AdjuntosImpl oAdjuntoImpl = new AdjuntosImpl();

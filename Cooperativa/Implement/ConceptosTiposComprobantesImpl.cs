@@ -39,8 +39,6 @@ namespace Implement
 
         public bool ConceptosTiposComprobantesDelete(ConceptosTiposComprobantes oCtc)
         {
-
-
             try
             {
                 Conexion oConexion = new Conexion();
@@ -59,9 +57,39 @@ namespace Implement
             {
                 throw ex;
             }
-
-
         }
+
+        public Transacciones ConceptosTiposComprobantesAddTrans(ConceptosTiposComprobantes oCtc)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = "insert into Conceptos_Tipos_Comprobantes(CPT_NUMERO, TCO_CODIGO) " +
+                                        "values('" + oCtc.cptNumero + "','" + oCtc.tcoCodigo + "')";
+                return oTrans;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones ConceptosTiposComprobantesDeleteTrans(ConceptosTiposComprobantes oCtc)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = "  DELETE Conceptos_Tipos_Comprobantes " +
+                                  "  WHERE CPT_NUMERO='" + oCtc.cptNumero +
+                                  "' AND TCO_CODIGO='" + oCtc.tcoCodigo + "'";
+                return oTrans;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
         public ConceptosTiposComprobantes ConceptosTiposComprobantesGetById(int numero)
         {

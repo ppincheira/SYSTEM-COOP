@@ -10,8 +10,7 @@ namespace Model
     {
         public virtual long ciiNumero { get; set; }//50 caracteres no null
         public virtual long cptNumero { get; set; }//50 caracteres no null
-        public virtual int giiNumero { get; set; }//50 caracteres no null
-        public virtual string gciCodigo { get; set; } // 10 caracteres no null
-        public virtual DateTime? ciiVigenciaDesde { get; set; } // 10 caracteres no null
+        public virtual int giiNumero { get; set; }//50 caracteres no null        
+        public virtual DateTime ciiVigenciaDesde { get; set; } // 10 caracteres no null
     }
 }

@@ -23,6 +23,9 @@ namespace GesConfiguracion.controles.forms
         string _DescripcionPath;
         string _strAccion;
         Adjuntos _Adjunto;
+        long _logCiiNumero;
+        int _intGiiNumero;
+
         #endregion
 
         #region Implementation of IVistaConceptosCrud
@@ -31,6 +34,36 @@ namespace GesConfiguracion.controles.forms
         {
             get { return _logCptNumero; }
             set { _logCptNumero = value; }
+        }
+
+        public long logCiiNumero
+        {
+            get { return _logCiiNumero; }
+            set { _logCiiNumero = value; }
+        }
+
+        public int intGiiNumero
+        {
+            get { return _intGiiNumero; }
+            set { _intGiiNumero = value; }
+        }
+
+        public bool booCptImpuesto
+        {
+            get { return this.chkImpuesto.Checked; }
+            set { this.chkImpuesto.Checked = value; }
+        }
+
+        public string strGrupoImpuestosItems
+        {
+            get { return this.txtGrupoImpuesto.Text; }
+            set { this.txtGrupoImpuesto.Text = value; }
+        }
+
+        public DateTime datCiiVigenciaDesde
+        {
+            get { return DateTime.Parse(this.dtpVigenciaDesde.Text); }
+            set { this.dtpVigenciaDesde.Text = value.ToString(); }
         }
 
         public Adjuntos adjunto
@@ -359,7 +392,11 @@ namespace GesConfiguracion.controles.forms
                 this.tttEtiqueta.SetToolTip(this.btnEliminarFabricado, "Eliminar Componente");
                 this.tttEtiqueta.SetToolTip(this.btnNuevoServicio, "Nuevo Servicio");
                 this.tttEtiqueta.SetToolTip(this.btnEliminarServicio, "Eliminar Servicio");
-
+                this.tttEtiqueta.SetToolTip(this.chkImpuesto, "Indica si es Concepto Impuesto");
+                this.tttEtiqueta.SetToolTip(this.btnEliminarServicio, "Cargar Grupo Impuesto");
+                this.tttEtiqueta.SetToolTip(this.dtpVigenciaDesde, "Fecha de Vigencia Desde");
+                this.tttEtiqueta.SetToolTip(this.txtGrupoImpuesto, "Grupo Impuesto");
+                
                 if (this.chkControlaStock.Checked)
                     this.gesControlaStock.Enabled = true;
                 else
@@ -369,6 +406,11 @@ namespace GesConfiguracion.controles.forms
                     this.gesFabricado.Enabled = true;
                 else
                     this.gesFabricado.Enabled = false;
+
+                if (this.chkImpuesto.Checked)
+                    this.gesImpuesto.Enabled = true;
+                else
+                    this.gesImpuesto.Enabled = false;
 
                 if (_strAccion == "V")
                 {
@@ -399,7 +441,11 @@ namespace GesConfiguracion.controles.forms
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             try
-            {                
+            {
+                bool booImpuestoVacio = _oConceptosCrud.ValidarImpuestos();
+                if (!booImpuestoVacio)
+                    MessageBox.Show("Debe ingresar datos Impositivos!");
+
                 bool booCampoVacio = _oConceptosCrud.ValidarGrillaFabricado();
                 if (!booCampoVacio)
                     MessageBox.Show("Debe ingresar la cantidad en la Grilla Componetes!");
@@ -407,7 +453,7 @@ namespace GesConfiguracion.controles.forms
                 long logResultado;
                 this.VALIDARFORM = true;
                 oUtility.ValidarFormularioEP(this, this, 7);
-                if (this.VALIDARFORM && booCampoVacio)
+                if (this.VALIDARFORM && booCampoVacio && booImpuestoVacio)
                 {
                     DialogResult = DialogResult.OK;
                     Cursor.Current = Cursors.WaitCursor;
@@ -824,6 +870,58 @@ namespace GesConfiguracion.controles.forms
                     _oConceptosCrud.EliminarServicio(lonCodigo);
                 }
 
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+        private void chkImpuesto_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.chkImpuesto.Checked)
+                {
+                    this.gesImpuesto.Enabled = true;
+                    _oConceptosCrud.CagarImpuestos();
+                }
+                else
+                {
+                    this.gesImpuesto.Enabled = false;
+                    this.txtGrupoImpuesto.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+
+        private void btnGrupoImpuesto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
+                Admin oAdmin = new Admin();
+                oAdmin.TabCodigo = "GII";
+                oAdmin.Tipo = Admin.enumTipoForm.Selector;
+                FormsAuxiliares.frmFormAdminMini frmConcepto = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+                if (frmConcepto.ShowDialog() == DialogResult.OK)
+                {
+                    string strCodRes = frmConcepto.striRdoCodigo;
+                    Console.WriteLine("--strCodconsepto  -" + strCodRes);                    
+                    _oConceptosCrud.CargarGrupoImpuesto(strCodRes);
+                }
             }
             catch (Exception ex)
             {

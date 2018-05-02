@@ -67,13 +67,14 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("update Suministros_Medidores " +
-                        "SET Sme_FECHA_ALTA='" + oSMe.SmeFechaAlta.ToString("dd/MM/yyyy") +
-                        "', Sme_FECHA_BAJA='" + oSMe.SmeFechaBaja == null ? "null, " : "'" + oSMe.SmeFechaBaja.Value.ToString("dd/MM/yyyy") +
-                        "', EST_CODIGO='" + oSMe.EstCodigo +
-                        "', MED_NUMERO=" + oSMe.MedNumero +
-                        ", SUM_NUMERO=" + oSMe.SumNumero +
-                        " WHERE Sme_NUMERO=" + oSMe.SmeNumero.ToString(), cn);
+                string strsql = "update Suministros_Medidores " +
+                    "SET Sme_FECHA_ALTA=TO_DATE('" + oSMe.SmeFechaAlta.ToString("dd/MM/yyyy") +
+                    "','dd/mm/yyyy'), Sme_FECHA_BAJA=" + (oSMe.SmeFechaBaja == null ? "null," : "TO_DATE('" + oSMe.SmeFechaBaja.Value.ToString("dd/MM/yyyy") +
+                    "','dd/mm/yyyy')")+", EST_CODIGO='" + oSMe.EstCodigo +
+                    "', MED_NUMERO=" + oSMe.MedNumero +
+                    ", SUM_NUMERO=" + oSMe.SumNumero +
+                    " WHERE Sme_NUMERO=" + oSMe.SmeNumero.ToString();
+                cmd = new OracleCommand(strsql, cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();

@@ -55,6 +55,7 @@ namespace Implement
                                             " CPT_MODIFICABLE_EN_CBTE_DESCRI, " +
                                             " CPT_CODIGO_RECARGO, " +
                                             " CPT_CODIGO_BONIFICACION, " +
+                                            " CPT_IMPUESTO, " +
                                             " CPT_CODIGO_ENVASE_REP " +
                                             " ) " +
                                 "      values(IDTEMP,'"                                          
@@ -83,6 +84,7 @@ namespace Implement
                                             + oCpt.cptModificableDescripcion + "', '"
                                             + oCpt.cptCodigoRecargo + "', '"
                                             + oCpt.cptCodigoBonificacion + "', '"
+                                            + oCpt.cptImpuesto + "', '"
                                             + oCpt.cptCodigoEnvase +
                                             "') " +
                     " RETURNING IDTEMP INTO :id;" +
@@ -101,6 +103,127 @@ namespace Implement
                 cn.Close();
                 return response;
                 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones ConceptosAddTrans(Conceptos oCpt)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery =   " DECLARE IDTEMP NUMBER; " +
+                                    " BEGIN " +
+                                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('CPT_NUMERO')) into IDTEMP from dual; " +
+                                    " insert into Conceptos(  CPT_NUMERO," +
+                                                            " CPT_CODIGO, " +
+                                                            " CPT_DESCRIPCION," +
+                                                            " CPT_DESCRIPCION_CORTA," +
+                                                            " CPT_CONTROLA_STOCK, " +
+                                                            " CPT_FRACCIONADO, " +
+                                                            " CUM_CODIGO, " +
+                                                            " CPT_CODIGO_BARRA, " +
+                                                            " CPT_CODIGO_QR, " +
+                                                            " CPT_CODIGO_PADRE, " +
+                                                            " CPT_FRACCIONA_POR, " +
+                                                            " CPT_MEDIBLE, " +
+                                                            " CPT_FABRICADO, " +
+                                                            " CPT_PESO, " +
+                                                            " CPT_ANCHO, " +
+                                                            " CPT_LARGO, " +
+                                                            " CPT_PROFUNDIDAD, " +
+                                                            " CPT_STOCK_MINIMO," +
+                                                            " CPT_STOCK_MAXIMO," +
+                                                            " CPT_STOCK_REPOSICION," +
+                                                            " TIC_CODIGO, " +
+                                                            " EST_CODIGO, " +
+                                                            " CPT_MODIFICABLE_EN_CBTE_IMPORT, " +
+                                                            " CPT_MODIFICABLE_EN_CBTE_DESCRI, " +
+                                                            " CPT_CODIGO_RECARGO, " +
+                                                            " CPT_CODIGO_BONIFICACION, " +
+                                                            " CPT_IMPUESTO, " +
+                                                            " CPT_CODIGO_ENVASE_REP " +
+                                                            " ) " +
+                                                "      values(IDTEMP,'"
+                                                            + oCpt.cptCodigo + "', '"
+                                                            + oCpt.cptDescripcion + "', '"
+                                                            + oCpt.cptDescripcionCorta + "', '"
+                                                            + oCpt.cptControlaStock + "', '"
+                                                            + oCpt.cptFraccionado + "', '"
+                                                            + oCpt.cumCodigo + "', '"
+                                                            + oCpt.cptCodigoBarra + "', '"
+                                                            + oCpt.cptCodigoQr + "', '"
+                                                            + oCpt.cptCodigoPadre + "', '"
+                                                            + oCpt.cptFraccionadoPor + "', '"
+                                                            + oCpt.cptMedible + "', '"
+                                                            + oCpt.cptFabricado + "', '"
+                                                            + oCpt.cptPeso + "', '"
+                                                            + oCpt.cptAncho + "', '"
+                                                            + oCpt.cptLargo + "', '"
+                                                            + oCpt.cptProfundidad + "', '"
+                                                            + oCpt.cptStockMinimo + "', '"
+                                                            + oCpt.cptStockMaximo + "', '"
+                                                            + oCpt.cptStockReposicion + "', '"
+                                                            + oCpt.ticCodigo + "', '"
+                                                            + oCpt.EstCodigo + "', '"
+                                                            + oCpt.cptModificableImporte + "', '"
+                                                            + oCpt.cptModificableDescripcion + "', '"
+                                                            + oCpt.cptCodigoRecargo + "', '"
+                                                            + oCpt.cptCodigoBonificacion + "', '"
+                                                            + oCpt.cptImpuesto + "', '"
+                                                            + oCpt.cptCodigoEnvase +
+                                                            "') " +
+                                    " RETURNING IDTEMP INTO :id;" +
+                                    " END;";
+
+                oTrans.traParametroOutLog = ":id";
+
+                return oTrans;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones ConceptosUpdateTrans(Conceptos oCpt)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = "update Conceptos SET " +
+                                                    "CPT_CODIGO='" + oCpt.cptCodigo + "'," +
+                                                    "CPT_DESCRIPCION='" + oCpt.cptDescripcion + "'," +
+                                                    "CPT_DESCRIPCION_CORTA='" + oCpt.cptDescripcionCorta + "'," +
+                                                    "CPT_CONTROLA_STOCK='" + oCpt.cptControlaStock + "'," +
+                                                    "CPT_FRACCIONADO='" + oCpt.cptFraccionado + "'," +
+                                                    "CUM_CODIGO='" + oCpt.cumCodigo + "'," +
+                                                    "CPT_CODIGO_BARRA='" + oCpt.cptCodigoBarra + "', " +
+                                                    "CPT_CODIGO_QR='" + oCpt.cptCodigoQr + "', " +
+                                                    "CPT_CODIGO_PADRE='" + oCpt.cptCodigoPadre + "',  " +
+                                                    "CPT_FRACCIONA_POR='" + oCpt.cptFraccionadoPor + "', " +
+                                                    "CPT_MEDIBLE='" + oCpt.cptMedible + "'," +
+                                                    "CPT_FABRICADO='" + oCpt.cptFabricado + "'," +
+                                                    "CPT_PESO='" + oCpt.cptPeso + "', " +
+                                                    "CPT_ANCHO='" + oCpt.cptAncho + "'," +
+                                                    "CPT_LARGO='" + oCpt.cptLargo + "', " +
+                                                    "CPT_PROFUNDIDAD='" + oCpt.cptProfundidad + "'," +
+                                                    "CPT_STOCK_MINIMO='" + oCpt.cptStockMinimo + "'," +
+                                                    "CPT_STOCK_MAXIMO='" + oCpt.cptStockMaximo + "'," +
+                                                    "CPT_STOCK_REPOSICION='" + oCpt.cptStockReposicion + "'," +
+                                                    "TIC_CODIGO='" + oCpt.ticCodigo + "'," +
+                                                    "EST_CODIGO='" + oCpt.EstCodigo + "', " +
+                                                    "CPT_MODIFICABLE_EN_CBTE_IMPORT='" + oCpt.cptModificableImporte + "', " +
+                                                    "CPT_MODIFICABLE_EN_CBTE_DESCRI='" + oCpt.cptModificableDescripcion + "', " +
+                                                    "CPT_CODIGO_RECARGO='" + oCpt.cptCodigoRecargo + "', " +
+                                                    "CPT_CODIGO_BONIFICACION='" + oCpt.cptCodigoBonificacion + "', " +
+                                                    "CPT_IMPUESTO='" + oCpt.cptImpuesto + "', " +
+                                                    "CPT_CODIGO_ENVASE_REP='" + oCpt.cptCodigoEnvase + "' " +
+                                            "WHERE CPT_NUMERO='" + oCpt.cptNumero + "' ";
+                return oTrans;
             }
             catch (Exception ex)
             {
@@ -142,6 +265,7 @@ namespace Implement
                                 "CPT_MODIFICABLE_EN_CBTE_DESCRI='" + oCpt.cptModificableDescripcion + "', " +
                                 "CPT_CODIGO_RECARGO='" + oCpt.cptCodigoRecargo + "', " +
                                 "CPT_CODIGO_BONIFICACION='" + oCpt.cptCodigoBonificacion + "', " +
+                                "CPT_IMPUESTO='" + oCpt.cptImpuesto + "', " +
                                 "CPT_CODIGO_ENVASE_REP='" + oCpt.cptCodigoEnvase + "' " +
                         "WHERE CPT_NUMERO='" + oCpt.cptNumero + "' ";
                 //Console.WriteLine("sql");
@@ -272,6 +396,8 @@ namespace Implement
                     oCpt.cptMedible = dr["CPT_MEDIBLE"].ToString();
                 if (dr["CPT_FABRICADO"].ToString() != "")
                     oCpt.cptFabricado = dr["CPT_FABRICADO"].ToString();
+                if (dr["CPT_IMPUESTO"].ToString() != "")
+                    oCpt.cptImpuesto = dr["CPT_IMPUESTO"].ToString();
                 if (dr["CPT_PESO"].ToString() != "")
                     oCpt.cptPeso = decimal.Parse(dr["CPT_PESO"].ToString());
                 if (dr["CPT_ANCHO"].ToString() != "")

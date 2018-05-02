@@ -99,6 +99,18 @@
             this.cmbLinea = new Controles.datos.cmbLista();
             this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
             this.tabImpositivas = new System.Windows.Forms.TabPage();
+            this.chkImpuesto = new Controles.datos.chkBox();
+            this.gesImpuesto = new Controles.contenedores.gesGroup();
+            this.btnGrupoImpuesto = new Controles.buttons.btnGeneral();
+            this.lblEtiqueta27 = new Controles.labels.lblEtiqueta();
+            this.txtGrupoImpuesto = new Controles.textBoxes.txtDescripcion();
+            this.dtpVigenciaDesde = new Controles.Fecha.dtpFecha();
+            this.lblEtiqueta25 = new Controles.labels.lblEtiqueta();
+            this.tabServicios = new System.Windows.Forms.TabPage();
+            this.lblCantidadServicios = new Controles.labels.lblEtiqueta();
+            this.btnEliminarServicio = new Controles.buttons.btnEliminar();
+            this.btnNuevoServicio = new Controles.buttons.btnNuevo();
+            this.grdServicios = new Controles.datos.grdGrillaEdit();
             this.gpbDetalle = new Controles.contenedores.gpbGrupo();
             this.btnConceptoPadre = new Controles.buttons.btnGeneral();
             this.txtDescripcionCorta = new Controles.textBoxes.txtDescripcion();
@@ -114,11 +126,6 @@
             this.txtCodigo = new Controles.textBoxes.txtDescripcion();
             this.chkHabilitado = new Controles.datos.chkBox();
             this.tttEtiqueta = new Controles.objects.tttEtiqueta();
-            this.tabServicios = new System.Windows.Forms.TabPage();
-            this.btnEliminarServicio = new Controles.buttons.btnEliminar();
-            this.btnNuevoServicio = new Controles.buttons.btnNuevo();
-            this.grdServicios = new Controles.datos.grdGrillaEdit();
-            this.lblCantidadServicios = new Controles.labels.lblEtiqueta();
             this.gbDatos.SuspendLayout();
             this.gpbImagen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
@@ -134,9 +141,11 @@
             this.gesFabricado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdFabricado)).BeginInit();
             this.tabClasificación.SuspendLayout();
-            this.gpbDetalle.SuspendLayout();
+            this.tabImpositivas.SuspendLayout();
+            this.gesImpuesto.SuspendLayout();
             this.tabServicios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdServicios)).BeginInit();
+            this.gpbDetalle.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDatos
@@ -895,6 +904,8 @@
             // 
             // tabImpositivas
             // 
+            this.tabImpositivas.Controls.Add(this.chkImpuesto);
+            this.tabImpositivas.Controls.Add(this.gesImpuesto);
             this.tabImpositivas.Location = new System.Drawing.Point(4, 22);
             this.tabImpositivas.Name = "tabImpositivas";
             this.tabImpositivas.Padding = new System.Windows.Forms.Padding(3);
@@ -902,6 +913,139 @@
             this.tabImpositivas.TabIndex = 5;
             this.tabImpositivas.Text = "Impositivas";
             this.tabImpositivas.UseVisualStyleBackColor = true;
+            // 
+            // chkImpuesto
+            // 
+            this.chkImpuesto.AutoSize = true;
+            this.chkImpuesto.Location = new System.Drawing.Point(6, 28);
+            this.chkImpuesto.Name = "chkImpuesto";
+            this.chkImpuesto.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.chkImpuesto.Size = new System.Drawing.Size(69, 17);
+            this.chkImpuesto.TabIndex = 76;
+            this.chkImpuesto.Text = "Impuesto";
+            this.chkImpuesto.UseVisualStyleBackColor = true;
+            this.chkImpuesto.CheckedChanged += new System.EventHandler(this.chkImpuesto_CheckedChanged);
+            // 
+            // gesImpuesto
+            // 
+            this.gesImpuesto.Controls.Add(this.btnGrupoImpuesto);
+            this.gesImpuesto.Controls.Add(this.lblEtiqueta27);
+            this.gesImpuesto.Controls.Add(this.txtGrupoImpuesto);
+            this.gesImpuesto.Controls.Add(this.dtpVigenciaDesde);
+            this.gesImpuesto.Controls.Add(this.lblEtiqueta25);
+            this.gesImpuesto.Location = new System.Drawing.Point(6, 53);
+            this.gesImpuesto.Name = "gesImpuesto";
+            this.gesImpuesto.Size = new System.Drawing.Size(559, 213);
+            this.gesImpuesto.TabIndex = 75;
+            this.gesImpuesto.TabStop = false;
+            // 
+            // btnGrupoImpuesto
+            // 
+            this.btnGrupoImpuesto.Location = new System.Drawing.Point(103, 47);
+            this.btnGrupoImpuesto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrupoImpuesto.Name = "btnGrupoImpuesto";
+            this.btnGrupoImpuesto.Size = new System.Drawing.Size(21, 19);
+            this.btnGrupoImpuesto.TabIndex = 69;
+            this.btnGrupoImpuesto.Text = "...";
+            this.btnGrupoImpuesto.UseVisualStyleBackColor = true;
+            this.btnGrupoImpuesto.Click += new System.EventHandler(this.btnGrupoImpuesto_Click);
+            // 
+            // lblEtiqueta27
+            // 
+            this.lblEtiqueta27.AutoSize = true;
+            this.lblEtiqueta27.Location = new System.Drawing.Point(8, 51);
+            this.lblEtiqueta27.Name = "lblEtiqueta27";
+            this.lblEtiqueta27.Size = new System.Drawing.Size(90, 13);
+            this.lblEtiqueta27.TabIndex = 71;
+            this.lblEtiqueta27.Text = "Grupo Impuestos:";
+            // 
+            // txtGrupoImpuesto
+            // 
+            this.txtGrupoImpuesto.BackColor = System.Drawing.Color.White;
+            this.txtGrupoImpuesto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtGrupoImpuesto.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtGrupoImpuesto.Location = new System.Drawing.Point(129, 47);
+            this.txtGrupoImpuesto.MaxLength = 100;
+            this.txtGrupoImpuesto.Multiline = true;
+            this.txtGrupoImpuesto.Name = "txtGrupoImpuesto";
+            this.txtGrupoImpuesto.ReadOnly = true;
+            this.txtGrupoImpuesto.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtGrupoImpuesto.Size = new System.Drawing.Size(413, 40);
+            this.txtGrupoImpuesto.TabIndex = 70;
+            this.txtGrupoImpuesto.TextoVacio = "<Descripcion>";
+            this.txtGrupoImpuesto.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            // 
+            // dtpVigenciaDesde
+            // 
+            this.dtpVigenciaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpVigenciaDesde.Location = new System.Drawing.Point(129, 101);
+            this.dtpVigenciaDesde.Name = "dtpVigenciaDesde";
+            this.dtpVigenciaDesde.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.dtpVigenciaDesde.Size = new System.Drawing.Size(151, 20);
+            this.dtpVigenciaDesde.TabIndex = 65;
+            // 
+            // lblEtiqueta25
+            // 
+            this.lblEtiqueta25.AutoSize = true;
+            this.lblEtiqueta25.Location = new System.Drawing.Point(8, 107);
+            this.lblEtiqueta25.Name = "lblEtiqueta25";
+            this.lblEtiqueta25.Size = new System.Drawing.Size(85, 13);
+            this.lblEtiqueta25.TabIndex = 66;
+            this.lblEtiqueta25.Text = "Vigencia Desde:";
+            // 
+            // tabServicios
+            // 
+            this.tabServicios.Controls.Add(this.lblCantidadServicios);
+            this.tabServicios.Controls.Add(this.btnEliminarServicio);
+            this.tabServicios.Controls.Add(this.btnNuevoServicio);
+            this.tabServicios.Controls.Add(this.grdServicios);
+            this.tabServicios.Location = new System.Drawing.Point(4, 22);
+            this.tabServicios.Name = "tabServicios";
+            this.tabServicios.Padding = new System.Windows.Forms.Padding(3);
+            this.tabServicios.Size = new System.Drawing.Size(572, 276);
+            this.tabServicios.TabIndex = 6;
+            this.tabServicios.Text = "Servicios";
+            this.tabServicios.UseVisualStyleBackColor = true;
+            // 
+            // lblCantidadServicios
+            // 
+            this.lblCantidadServicios.AutoSize = true;
+            this.lblCantidadServicios.Location = new System.Drawing.Point(6, 260);
+            this.lblCantidadServicios.Name = "lblCantidadServicios";
+            this.lblCantidadServicios.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidadServicios.TabIndex = 67;
+            this.lblCantidadServicios.Text = "Cantidad";
+            // 
+            // btnEliminarServicio
+            // 
+            this.btnEliminarServicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarServicio.BackgroundImage")));
+            this.btnEliminarServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarServicio.Location = new System.Drawing.Point(524, 219);
+            this.btnEliminarServicio.Name = "btnEliminarServicio";
+            this.btnEliminarServicio.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminarServicio.TabIndex = 5;
+            this.btnEliminarServicio.UseVisualStyleBackColor = false;
+            this.btnEliminarServicio.Click += new System.EventHandler(this.btnEliminar1_Click);
+            // 
+            // btnNuevoServicio
+            // 
+            this.btnNuevoServicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevoServicio.BackgroundImage")));
+            this.btnNuevoServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevoServicio.Location = new System.Drawing.Point(523, 7);
+            this.btnNuevoServicio.Name = "btnNuevoServicio";
+            this.btnNuevoServicio.Size = new System.Drawing.Size(40, 40);
+            this.btnNuevoServicio.TabIndex = 4;
+            this.btnNuevoServicio.UseVisualStyleBackColor = false;
+            this.btnNuevoServicio.Click += new System.EventHandler(this.btnNuevoServicio_Click);
+            // 
+            // grdServicios
+            // 
+            this.grdServicios.AllowUserToAddRows = false;
+            this.grdServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdServicios.Location = new System.Drawing.Point(7, 7);
+            this.grdServicios.Name = "grdServicios";
+            this.grdServicios.Size = new System.Drawing.Size(510, 251);
+            this.grdServicios.TabIndex = 3;
             // 
             // gpbDetalle
             // 
@@ -1069,60 +1213,6 @@
             this.chkHabilitado.Text = "Habilitado";
             this.chkHabilitado.UseVisualStyleBackColor = true;
             // 
-            // tabServicios
-            // 
-            this.tabServicios.Controls.Add(this.lblCantidadServicios);
-            this.tabServicios.Controls.Add(this.btnEliminarServicio);
-            this.tabServicios.Controls.Add(this.btnNuevoServicio);
-            this.tabServicios.Controls.Add(this.grdServicios);
-            this.tabServicios.Location = new System.Drawing.Point(4, 22);
-            this.tabServicios.Name = "tabServicios";
-            this.tabServicios.Padding = new System.Windows.Forms.Padding(3);
-            this.tabServicios.Size = new System.Drawing.Size(572, 276);
-            this.tabServicios.TabIndex = 6;
-            this.tabServicios.Text = "Servicios";
-            this.tabServicios.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminarServicio
-            // 
-            this.btnEliminarServicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarServicio.BackgroundImage")));
-            this.btnEliminarServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminarServicio.Location = new System.Drawing.Point(524, 219);
-            this.btnEliminarServicio.Name = "btnEliminarServicio";
-            this.btnEliminarServicio.Size = new System.Drawing.Size(40, 40);
-            this.btnEliminarServicio.TabIndex = 5;
-            this.btnEliminarServicio.UseVisualStyleBackColor = false;
-            this.btnEliminarServicio.Click += new System.EventHandler(this.btnEliminar1_Click);
-            // 
-            // btnNuevoServicio
-            // 
-            this.btnNuevoServicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevoServicio.BackgroundImage")));
-            this.btnNuevoServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevoServicio.Location = new System.Drawing.Point(523, 7);
-            this.btnNuevoServicio.Name = "btnNuevoServicio";
-            this.btnNuevoServicio.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevoServicio.TabIndex = 4;
-            this.btnNuevoServicio.UseVisualStyleBackColor = false;
-            this.btnNuevoServicio.Click += new System.EventHandler(this.btnNuevoServicio_Click);
-            // 
-            // grdServicios
-            // 
-            this.grdServicios.AllowUserToAddRows = false;
-            this.grdServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdServicios.Location = new System.Drawing.Point(7, 7);
-            this.grdServicios.Name = "grdServicios";
-            this.grdServicios.Size = new System.Drawing.Size(510, 251);
-            this.grdServicios.TabIndex = 3;
-            // 
-            // lblCantidadServicios
-            // 
-            this.lblCantidadServicios.AutoSize = true;
-            this.lblCantidadServicios.Location = new System.Drawing.Point(6, 260);
-            this.lblCantidadServicios.Name = "lblCantidadServicios";
-            this.lblCantidadServicios.Size = new System.Drawing.Size(49, 13);
-            this.lblCantidadServicios.TabIndex = 67;
-            this.lblCantidadServicios.Text = "Cantidad";
-            // 
             // frmConceptosCrud
             // 
             this.ClientSize = new System.Drawing.Size(813, 419);
@@ -1154,11 +1244,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdFabricado)).EndInit();
             this.tabClasificación.ResumeLayout(false);
             this.tabClasificación.PerformLayout();
-            this.gpbDetalle.ResumeLayout(false);
-            this.gpbDetalle.PerformLayout();
+            this.tabImpositivas.ResumeLayout(false);
+            this.tabImpositivas.PerformLayout();
+            this.gesImpuesto.ResumeLayout(false);
+            this.gesImpuesto.PerformLayout();
             this.tabServicios.ResumeLayout(false);
             this.tabServicios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdServicios)).EndInit();
+            this.gpbDetalle.ResumeLayout(false);
+            this.gpbDetalle.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1254,5 +1348,12 @@
         private Controles.buttons.btnEliminar btnEliminarServicio;
         private Controles.buttons.btnNuevo btnNuevoServicio;
         private Controles.datos.grdGrillaEdit grdServicios;
+        private Controles.contenedores.gesGroup gesImpuesto;
+        private Controles.buttons.btnGeneral btnGrupoImpuesto;
+        private Controles.labels.lblEtiqueta lblEtiqueta27;
+        private Controles.textBoxes.txtDescripcion txtGrupoImpuesto;
+        private Controles.Fecha.dtpFecha dtpVigenciaDesde;
+        private Controles.labels.lblEtiqueta lblEtiqueta25;
+        private Controles.datos.chkBox chkImpuesto;
     }
 }

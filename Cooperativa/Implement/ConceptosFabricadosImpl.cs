@@ -158,6 +158,76 @@ namespace Implement
             }
         }
 
+        public Transacciones ConceptosFabricadosAddTrans(ConceptosFabricados oCfb)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = "insert into Conceptos_Fabricados(CFB_CODIGO, " +
+                                                                    "CPT_CODIGO_FABRICADO, " +
+                                                                    "CPT_CODIGO_PARTE, " +
+                                                                    "CFB_CANTIDAD_PARTE) " +
+                                "values(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('CFB_CODIGO'), " +
+                                        " '" + oCfb.cptCodigoFabricado + "', " +
+                                        " '" + oCfb.cptCodigoParte + "', " +
+                                        " '" + oCfb.cfbCantidadParte + "' " +
+                                        ")";
+                
+                return oTrans;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones ConceptosFabricadosDeleteTrans(ConceptosFabricados oCfb)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = "  DELETE Conceptos_Fabricados " +
+                                  "  WHERE  CFB_CODIGO='" + oCfb.cfbCodigo + "'";
+                return oTrans;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones ConceptosFabricadosDeleteAllTrans(ConceptosFabricados oCfb)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = "  DELETE Conceptos_Fabricados " +
+                                 "  WHERE  CPT_CODIGO_FABRICADO='" + oCfb.cptCodigoFabricado + "'";
+                return oTrans;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Transacciones ConceptosFabricadosUpdateTrans(ConceptosFabricados oConceptosFabricados)
+        {
+            try
+            {
+                Transacciones oTrans = new Transacciones();
+                oTrans.traQuery = "update Conceptos_Fabricados SET " +
+                                    " CPT_CODIGO_FABRICADO='" + oConceptosFabricados.cptCodigoFabricado + "'," +
+                                    " CPT_CODIGO_PARTE='" + oConceptosFabricados.cptCodigoParte + "'," +
+                                    " CFB_CANTIDAD_PARTE='" + oConceptosFabricados.cfbCantidadParte + "' " +
+                            "WHERE CFB_CODIGO='" + oConceptosFabricados.cfbCodigo + "' ";
+                return oTrans;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         #endregion
     }

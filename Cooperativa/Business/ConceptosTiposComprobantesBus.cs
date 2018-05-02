@@ -21,6 +21,18 @@ namespace Business
             return oConceptosTiposComprobantesImpl.ConceptosTiposComprobantesDelete(oConceptosTiposComprobante);
         }
 
+        public Transacciones ConceptosTiposComprobantesAddTrans(ConceptosTiposComprobantes oConceptosTiposComprobantes)
+        {
+            ConceptosTiposComprobantesImpl oConceptosTiposComprobantesImpl = new ConceptosTiposComprobantesImpl();
+            return oConceptosTiposComprobantesImpl.ConceptosTiposComprobantesAddTrans(oConceptosTiposComprobantes);
+        }
+
+        public Transacciones ConceptosTiposComprobantesDeleteTrans(ConceptosTiposComprobantes oConceptosTiposComprobante)
+        {
+            ConceptosTiposComprobantesImpl oConceptosTiposComprobantesImpl = new ConceptosTiposComprobantesImpl();
+            return oConceptosTiposComprobantesImpl.ConceptosTiposComprobantesDeleteTrans(oConceptosTiposComprobante);
+        }
+
         public ConceptosTiposComprobantes ConceptosTiposComprobantesGetById(int numero)
         {
             ConceptosTiposComprobantesImpl oConceptosTiposComprobantesImpl = new ConceptosTiposComprobantesImpl();

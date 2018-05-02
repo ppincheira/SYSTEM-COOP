@@ -73,14 +73,13 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                 SuministrosMedidoresBus oSMeBus = new SuministrosMedidoresBus();
                 oSMe = oSMeBus.SuministrosMedidoresGetBySuministro(oSuministros.SumNumero);
                 _vista.numMedidor = oSMe.MedNumero;
-                CargarMedidor(_vista.numMedidor);
+                if (_vista.numMedidor!=0)
+                    CargarMedidor(_vista.numMedidor);
                 CargarGrilla(_vista.grdSumConceptos, "SCO", "", "");
                 CargarGrilla(_vista.grdSumObservaciones, "OBS", "TOB.TOB_CODIGO", "1");
                 _vista.numMedidorAnterior = _vista.numMedidor;
                 _vista.numDomicilioAnterior = _vista.numDomicilio;
             }
-            //_vista.numMedidorAnterior = _vista.numMedidor;
-            //_vista.numDomicilioAnterior = _vista.numDomicilio;
         }
 
 
@@ -127,6 +126,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                 //oDEn.DenCodigoRegistro = oSum.SumNumero;
                 oDEn.TabCodigo = "SUM";
                 oDEn.DomCodigo = _vista.numDomicilio;
+                oDEn.DenDefecto = "S";
                 //oDEnBus.DomiciliosEntidadesAdd(oDEn);
                 oSMe.SmeFechaAlta = oSum.SumFechaAlta;
                 oSMe.MedNumero = _vista.numMedidor;
@@ -139,6 +139,10 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                     oMed = oMedBus.MedidoresGetById(oSMe.MedNumero);
                     oMed.EstCodigo = "I";
                     oMedBus.MedidoresUpdate(oMed);
+                }
+                else
+                {
+                    
                 }
                 //if (_vista.numMedidor==0)
                 //{ 
@@ -169,9 +173,13 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                 {
                     oDEn = oDEnBus.DomiciliosEntidadesGetById(_vista.numDomicilio);
                     oDEn.DenDefecto = "N";
-                    oDEnBus.DomiciliosEntidadesUpdate(oDEn);
+                    if (_vista.numDomicilioAnterior!=0)
+                        oDEnBus.DomiciliosEntidadesUpdate(oDEn);
                     // Creo un nuevo registro de domicilios entidades 
+                    oDEn.DenCodigoRegistro = oSum.SumNumero;
                     oDEn.DomCodigo = _vista.numDomicilio;
+                    oDEn.TdoCodigo = "C";
+                    oDEn.TabCodigo = "SUM";
                     oDEn.DenDefecto = "S";
                     oDEnBus.DomiciliosEntidadesAdd(oDEn);
                 }
@@ -243,8 +251,8 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
         {
             Domicilios oDomicilio = new Domicilios();
             DomiciliosBus oDomicilioBus = new DomiciliosBus();
-            //oDomicilio = oDomicilioBus.DomiciliosGetById(id);
-            oDomicilio = oDomicilioBus.DomiciliosGetByCodigoRegistroDefecto(idEntidad, "CLIE");
+             oDomicilio = oDomicilioBus.DomiciliosGetByCodigoRegistroDefecto(idEntidad, "CLIE");
+
             if (oDomicilio.DomCodigo != 0)
             {
                 CallesLocalidadesBus oCalleBus = new CallesLocalidadesBus();
@@ -252,26 +260,31 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                     + " Dpto:" + oDomicilio.DomDepartamento;
             }
 
-        }
+}
         public void CargarDomicilioSum(long idEntidad)
         {
             Domicilios oDomicilio = new Domicilios();
             DomiciliosBus oDomicilioBus = new DomiciliosBus();
-            oDomicilio = oDomicilioBus.DomiciliosGetById(idEntidad);
-            _vista.numDomicilio = oDomicilio.DomCodigo;
-            CallesLocalidadesBus oCalleBus = new CallesLocalidadesBus();
-            _vista.strCalle = oCalleBus.CallesLocalidadesGetById(oDomicilio.CalNumero).CalDescripcion;
-            _vista.strCalleNumero = oDomicilio.DomNumero.ToString();
-            _vista.strDepartamento = oDomicilio.DomDepartamento.ToString();
-            _vista.strBloque = oDomicilio.DomBloque.ToString();
-            _vista.strPiso = oDomicilio.DomPiso.ToString();
-            BarriosLocalidadesBus oBarriosBus = new BarriosLocalidadesBus();
-            _vista.strBarrio = oBarriosBus.BarriosLocalidadesGetById(oDomicilio.BarNumero).BarDescripcion;
-            Localidades oLoc = new Localidades();
-            LocalidadesBus oLocBus = new LocalidadesBus();
-            oLoc = oLocBus.LocalidadesGetById(oDomicilio.LocNumero);
-            ProvinciasBus oProvinciasBus = new ProvinciasBus();
-            _vista.strProvLoc = oLoc.LocDescripcion.Trim() + " / " + oProvinciasBus.ProvinciasGetById(oLoc.PrvCodigo).PrvDescripcion;
+            if (idEntidad != 0)
+            {
+                oDomicilio = oDomicilioBus.DomiciliosGetById(idEntidad);
+                _vista.numDomicilio = oDomicilio.DomCodigo;
+                CallesLocalidadesBus oCalleBus = new CallesLocalidadesBus();
+                _vista.strCalle = oCalleBus.CallesLocalidadesGetById(oDomicilio.CalNumero).CalDescripcion;
+                _vista.strCalleNumero = oDomicilio.DomNumero.ToString();
+                _vista.strDepartamento = oDomicilio.DomDepartamento.ToString();
+                _vista.strBloque = oDomicilio.DomBloque.ToString();
+                _vista.strPiso = oDomicilio.DomPiso.ToString();
+                BarriosLocalidadesBus oBarriosBus = new BarriosLocalidadesBus();
+                _vista.strBarrio = oBarriosBus.BarriosLocalidadesGetById(oDomicilio.BarNumero).BarDescripcion;
+                Localidades oLoc = new Localidades();
+                LocalidadesBus oLocBus = new LocalidadesBus();
+                oLoc = oLocBus.LocalidadesGetById(oDomicilio.LocNumero);
+                ProvinciasBus oProvinciasBus = new ProvinciasBus();
+                _vista.strProvLoc = oLoc.LocDescripcion.Trim() + " / " + oProvinciasBus.ProvinciasGetById(oLoc.PrvCodigo).PrvDescripcion;
+            }
+            else
+                _vista.numDomicilio = oDomicilio.DomCodigo;
 
             return ;
         }
@@ -324,8 +337,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             _vista.strLecturaModo = oLecturasModosBus.LecturasModosGetById(oMedidor.LemCodigo).lemDescripcion;
             _vista.EstMedidorActual.SelectedValue = oMedidor.EstCodigo;
             SuministrosMedidoresBus oSMeBus = new SuministrosMedidoresBus();
-            DataTable dt = oSMeBus.SuministrosMedidoresGetBySuministroDT(_vista.Numero);
-            oUtil.CargarGrilla(_vista.grdSumMedidores, dt);
+            CargarGrilla(_vista.grdSumMedidores, "SME", "SME.SUM_NUMERO", _vista.Numero.ToString());
 
         }
         public void CargarObservaciones(long CodigoRegistro, string TabCodigo)

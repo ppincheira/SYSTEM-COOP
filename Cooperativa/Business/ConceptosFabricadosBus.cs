@@ -36,5 +36,29 @@ namespace Business
             ConceptosFabricadosImpl oConceptosFabricadosImpl = new ConceptosFabricadosImpl();
             return oConceptosFabricadosImpl.ConceptosFabricadosDeleteAll(oConceptosTiposComprobante);
         }
+
+        public Transacciones ConceptosFabricadosAddTrans(ConceptosFabricados oConceptosFabricados)
+        {
+            ConceptosFabricadosImpl oConceptosFabricadosImpl = new ConceptosFabricadosImpl();
+            return oConceptosFabricadosImpl.ConceptosFabricadosAddTrans(oConceptosFabricados);
+        }
+
+        public Transacciones ConceptosFabricadosUpdateTrans(ConceptosFabricados oConceptosFabricados)
+        {
+            ConceptosFabricadosImpl oConceptosFabricadosImpl = new ConceptosFabricadosImpl();
+            return oConceptosFabricadosImpl.ConceptosFabricadosUpdateTrans(oConceptosFabricados);
+        }
+
+        public Transacciones ConceptosFabricadosDeleteTrans(ConceptosFabricados oConceptosTiposComprobante)
+        {
+            ConceptosFabricadosImpl oConceptosFabricadosImpl = new ConceptosFabricadosImpl();
+            return oConceptosFabricadosImpl.ConceptosFabricadosDeleteTrans(oConceptosTiposComprobante);
+        }
+
+        public Transacciones ConceptosFabricadosDeleteAllTrans(ConceptosFabricados oConceptosTiposComprobante)
+        {
+            ConceptosFabricadosImpl oConceptosFabricadosImpl = new ConceptosFabricadosImpl();
+            return oConceptosFabricadosImpl.ConceptosFabricadosDeleteAllTrans(oConceptosTiposComprobante);
+        }
     }
 }

@@ -355,7 +355,7 @@ namespace UI
 
         private void btnGruposConceptosImpuestos_Click(object sender, EventArgs e)
         {
-            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("GCI", "GCI_CODIGO", false);
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("GCI", "CODIGO", false);
             frmbus.ShowDialog();
         }
 

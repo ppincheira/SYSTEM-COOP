@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gesGroup2 = new Controles.contenedores.gesGroup();
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
@@ -57,7 +57,7 @@
             this.btnCliente = new Controles.buttons.btnGeneral();
             this.lblNumeroProv = new Controles.labels.lblEtiqueta();
             this.tabSumnistros = new Controles.contenedores.tabSolapas();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPageMedidores = new System.Windows.Forms.TabPage();
             this.grdMedidores = new Controles.datos.grdGrillaAdmin();
             this.cmbEstadoMedidor = new Controles.datos.cmbLista();
             this.lblEstadoMedidor = new Controles.labels.lblEtiqueta();
@@ -72,10 +72,11 @@
             this.lblEtiqueta9 = new Controles.labels.lblEtiqueta();
             this.btnMedidor = new Controles.buttons.btnGeneral();
             this.txtMedNumeroSerie = new Controles.textBoxes.txtDescripcion();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageObservaciones = new System.Windows.Forms.TabPage();
+            this.grdSuministrosObservaciones = new Controles.datos.grdGrillaAdmin();
             this.btnNuevaObs = new Controles.buttons.btnNuevo();
             this.txtObservaciones = new Controles.textBoxes.txtDescripcion();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPageDatosTecnicos = new System.Windows.Forms.TabPage();
             this.txtRegistrador = new Controles.textBoxes.gesTextBox();
             this.lblRegistrador = new Controles.labels.lblEtiqueta();
             this.txtVoltaje = new Controles.textBoxes.gesTextBox();
@@ -88,7 +89,7 @@
             this.lblPotenciaL3 = new Controles.labels.lblEtiqueta();
             this.lblPotenciaL1 = new Controles.labels.lblEtiqueta();
             this.txtPotenciaL2 = new Controles.textBoxes.txtDescripcionCorta();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPageConceptos = new System.Windows.Forms.TabPage();
             this.grdSuministrosConceptos = new Controles.datos.grdGrillaAdmin();
             this.btnEliminar1 = new Controles.buttons.btnEliminar();
             this.btnEditar1 = new Controles.buttons.btnEditar();
@@ -139,20 +140,19 @@
             this.lblEtiqueta4 = new Controles.labels.lblEtiqueta();
             this.txtDomCodigo = new Controles.textBoxes.txtDescripcion();
             this.btnDomicilio = new Controles.buttons.btnGeneral();
-            this.grdSuministrosObservaciones = new Controles.datos.grdGrillaAdmin();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.tabSumnistros.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabPageMedidores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMedidores)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.tabPageObservaciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSuministrosObservaciones)).BeginInit();
+            this.tabPageDatosTecnicos.SuspendLayout();
+            this.tabPageConceptos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdSuministrosConceptos)).BeginInit();
             this.gesGroup3.SuspendLayout();
             this.gesGroup4.SuspendLayout();
             this.gesGroup5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdSuministrosObservaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // gesGroup2
@@ -354,10 +354,10 @@
             // 
             // tabSumnistros
             // 
-            this.tabSumnistros.Controls.Add(this.tabPage1);
-            this.tabSumnistros.Controls.Add(this.tabPage2);
-            this.tabSumnistros.Controls.Add(this.tabPage3);
-            this.tabSumnistros.Controls.Add(this.tabPage4);
+            this.tabSumnistros.Controls.Add(this.tabPageMedidores);
+            this.tabSumnistros.Controls.Add(this.tabPageObservaciones);
+            this.tabSumnistros.Controls.Add(this.tabPageDatosTecnicos);
+            this.tabSumnistros.Controls.Add(this.tabPageConceptos);
             this.tabSumnistros.Location = new System.Drawing.Point(4, 382);
             this.tabSumnistros.Margin = new System.Windows.Forms.Padding(2);
             this.tabSumnistros.Name = "tabSumnistros";
@@ -366,33 +366,33 @@
             this.tabSumnistros.TabIndex = 7;
             this.tabSumnistros.Tag = "";
             // 
-            // tabPage1
+            // tabPageMedidores
             // 
-            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPage1.Controls.Add(this.grdMedidores);
-            this.tabPage1.Controls.Add(this.cmbEstadoMedidor);
-            this.tabPage1.Controls.Add(this.lblEstadoMedidor);
-            this.tabPage1.Controls.Add(this.lblEtiqueta16);
-            this.tabPage1.Controls.Add(this.txtLecturaModoMedidor);
-            this.tabPage1.Controls.Add(this.lblEtiqueta12);
-            this.tabPage1.Controls.Add(this.txtFabricanteMedidor);
-            this.tabPage1.Controls.Add(this.lblEtiqueta11);
-            this.tabPage1.Controls.Add(this.txtTipoMedidor);
-            this.tabPage1.Controls.Add(this.lblEtiqueta10);
-            this.tabPage1.Controls.Add(this.txtMedidorModelo);
-            this.tabPage1.Controls.Add(this.lblEtiqueta9);
-            this.tabPage1.Controls.Add(this.btnMedidor);
-            this.tabPage1.Controls.Add(this.txtMedNumeroSerie);
-            this.tabPage1.Controls.Add(this.cmbTipoConexion);
-            this.tabPage1.Controls.Add(this.lblTipoConexion);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(819, 195);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Medidores";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageMedidores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPageMedidores.Controls.Add(this.grdMedidores);
+            this.tabPageMedidores.Controls.Add(this.cmbEstadoMedidor);
+            this.tabPageMedidores.Controls.Add(this.lblEstadoMedidor);
+            this.tabPageMedidores.Controls.Add(this.lblEtiqueta16);
+            this.tabPageMedidores.Controls.Add(this.txtLecturaModoMedidor);
+            this.tabPageMedidores.Controls.Add(this.lblEtiqueta12);
+            this.tabPageMedidores.Controls.Add(this.txtFabricanteMedidor);
+            this.tabPageMedidores.Controls.Add(this.lblEtiqueta11);
+            this.tabPageMedidores.Controls.Add(this.txtTipoMedidor);
+            this.tabPageMedidores.Controls.Add(this.lblEtiqueta10);
+            this.tabPageMedidores.Controls.Add(this.txtMedidorModelo);
+            this.tabPageMedidores.Controls.Add(this.lblEtiqueta9);
+            this.tabPageMedidores.Controls.Add(this.btnMedidor);
+            this.tabPageMedidores.Controls.Add(this.txtMedNumeroSerie);
+            this.tabPageMedidores.Controls.Add(this.cmbTipoConexion);
+            this.tabPageMedidores.Controls.Add(this.lblTipoConexion);
+            this.tabPageMedidores.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMedidores.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPageMedidores.Name = "tabPageMedidores";
+            this.tabPageMedidores.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPageMedidores.Size = new System.Drawing.Size(819, 195);
+            this.tabPageMedidores.TabIndex = 0;
+            this.tabPageMedidores.Text = "Medidores";
+            this.tabPageMedidores.UseVisualStyleBackColor = true;
             // 
             // grdMedidores
             // 
@@ -577,19 +577,55 @@
             this.txtMedNumeroSerie.TextoVacio = "<Descripcion>";
             this.txtMedNumeroSerie.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
-            // tabPage2
+            // tabPageObservaciones
             // 
-            this.tabPage2.Controls.Add(this.grdSuministrosObservaciones);
-            this.tabPage2.Controls.Add(this.btnNuevaObs);
-            this.tabPage2.Controls.Add(this.txtObservaciones);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(819, 195);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Observaciones";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageObservaciones.Controls.Add(this.grdSuministrosObservaciones);
+            this.tabPageObservaciones.Controls.Add(this.btnNuevaObs);
+            this.tabPageObservaciones.Controls.Add(this.txtObservaciones);
+            this.tabPageObservaciones.Location = new System.Drawing.Point(4, 22);
+            this.tabPageObservaciones.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPageObservaciones.Name = "tabPageObservaciones";
+            this.tabPageObservaciones.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPageObservaciones.Size = new System.Drawing.Size(819, 195);
+            this.tabPageObservaciones.TabIndex = 1;
+            this.tabPageObservaciones.Text = "Observaciones";
+            this.tabPageObservaciones.UseVisualStyleBackColor = true;
+            // 
+            // grdSuministrosObservaciones
+            // 
+            this.grdSuministrosObservaciones.AllowUserToAddRows = false;
+            this.grdSuministrosObservaciones.AllowUserToDeleteRows = false;
+            this.grdSuministrosObservaciones.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdSuministrosObservaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.grdSuministrosObservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdSuministrosObservaciones.DefaultCellStyle = dataGridViewCellStyle5;
+            this.grdSuministrosObservaciones.Location = new System.Drawing.Point(10, 22);
+            this.grdSuministrosObservaciones.Name = "grdSuministrosObservaciones";
+            this.grdSuministrosObservaciones.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdSuministrosObservaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.grdSuministrosObservaciones.Size = new System.Drawing.Size(303, 153);
+            this.grdSuministrosObservaciones.TabIndex = 69;
             // 
             // btnNuevaObs
             // 
@@ -605,7 +641,7 @@
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.BackColor = System.Drawing.Color.Beige;
+            this.txtObservaciones.BackColor = System.Drawing.Color.White;
             this.txtObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtObservaciones.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtObservaciones.Location = new System.Drawing.Point(371, 22);
@@ -619,27 +655,27 @@
             this.txtObservaciones.TextoVacio = "<Descripcion>";
             this.txtObservaciones.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
-            // tabPage3
+            // tabPageDatosTecnicos
             // 
-            this.tabPage3.Controls.Add(this.txtRegistrador);
-            this.tabPage3.Controls.Add(this.lblRegistrador);
-            this.tabPage3.Controls.Add(this.txtVoltaje);
-            this.tabPage3.Controls.Add(this.lblVoltaje);
-            this.tabPage3.Controls.Add(this.txtConsumoEstimado);
-            this.tabPage3.Controls.Add(this.lblConsumoEstimado);
-            this.tabPage3.Controls.Add(this.lblPotenciaL2);
-            this.tabPage3.Controls.Add(this.txtPotenciaL1);
-            this.tabPage3.Controls.Add(this.txtPotenciaL3);
-            this.tabPage3.Controls.Add(this.lblPotenciaL3);
-            this.tabPage3.Controls.Add(this.lblPotenciaL1);
-            this.tabPage3.Controls.Add(this.txtPotenciaL2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(819, 195);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Datos tecnicos";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPageDatosTecnicos.Controls.Add(this.txtRegistrador);
+            this.tabPageDatosTecnicos.Controls.Add(this.lblRegistrador);
+            this.tabPageDatosTecnicos.Controls.Add(this.txtVoltaje);
+            this.tabPageDatosTecnicos.Controls.Add(this.lblVoltaje);
+            this.tabPageDatosTecnicos.Controls.Add(this.txtConsumoEstimado);
+            this.tabPageDatosTecnicos.Controls.Add(this.lblConsumoEstimado);
+            this.tabPageDatosTecnicos.Controls.Add(this.lblPotenciaL2);
+            this.tabPageDatosTecnicos.Controls.Add(this.txtPotenciaL1);
+            this.tabPageDatosTecnicos.Controls.Add(this.txtPotenciaL3);
+            this.tabPageDatosTecnicos.Controls.Add(this.lblPotenciaL3);
+            this.tabPageDatosTecnicos.Controls.Add(this.lblPotenciaL1);
+            this.tabPageDatosTecnicos.Controls.Add(this.txtPotenciaL2);
+            this.tabPageDatosTecnicos.Location = new System.Drawing.Point(4, 22);
+            this.tabPageDatosTecnicos.Name = "tabPageDatosTecnicos";
+            this.tabPageDatosTecnicos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDatosTecnicos.Size = new System.Drawing.Size(819, 195);
+            this.tabPageDatosTecnicos.TabIndex = 2;
+            this.tabPageDatosTecnicos.Text = "Datos tecnicos";
+            this.tabPageDatosTecnicos.UseVisualStyleBackColor = true;
             // 
             // txtRegistrador
             // 
@@ -780,19 +816,19 @@
             this.txtPotenciaL2.TextoVacio = "<Descripcion>";
             this.txtPotenciaL2.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
-            // tabPage4
+            // tabPageConceptos
             // 
-            this.tabPage4.Controls.Add(this.grdSuministrosConceptos);
-            this.tabPage4.Controls.Add(this.btnEliminar1);
-            this.tabPage4.Controls.Add(this.btnEditar1);
-            this.tabPage4.Controls.Add(this.btnNuevo1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(819, 195);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Conceptos";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPageConceptos.Controls.Add(this.grdSuministrosConceptos);
+            this.tabPageConceptos.Controls.Add(this.btnEliminar1);
+            this.tabPageConceptos.Controls.Add(this.btnEditar1);
+            this.tabPageConceptos.Controls.Add(this.btnNuevo1);
+            this.tabPageConceptos.Location = new System.Drawing.Point(4, 22);
+            this.tabPageConceptos.Name = "tabPageConceptos";
+            this.tabPageConceptos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageConceptos.Size = new System.Drawing.Size(819, 195);
+            this.tabPageConceptos.TabIndex = 3;
+            this.tabPageConceptos.Text = "Conceptos";
+            this.tabPageConceptos.UseVisualStyleBackColor = true;
             // 
             // grdSuministrosConceptos
             // 
@@ -1426,42 +1462,6 @@
             this.btnDomicilio.UseVisualStyleBackColor = true;
             this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
             // 
-            // grdSuministrosObservaciones
-            // 
-            this.grdSuministrosObservaciones.AllowUserToAddRows = false;
-            this.grdSuministrosObservaciones.AllowUserToDeleteRows = false;
-            this.grdSuministrosObservaciones.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdSuministrosObservaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.grdSuministrosObservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdSuministrosObservaciones.DefaultCellStyle = dataGridViewCellStyle5;
-            this.grdSuministrosObservaciones.Location = new System.Drawing.Point(10, 22);
-            this.grdSuministrosObservaciones.Name = "grdSuministrosObservaciones";
-            this.grdSuministrosObservaciones.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdSuministrosObservaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.grdSuministrosObservaciones.Size = new System.Drawing.Size(303, 153);
-            this.grdSuministrosObservaciones.TabIndex = 69;
-            // 
             // frmSuministrosCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1482,14 +1482,15 @@
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
             this.tabSumnistros.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabPageMedidores.ResumeLayout(false);
+            this.tabPageMedidores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMedidores)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
+            this.tabPageObservaciones.ResumeLayout(false);
+            this.tabPageObservaciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSuministrosObservaciones)).EndInit();
+            this.tabPageDatosTecnicos.ResumeLayout(false);
+            this.tabPageDatosTecnicos.PerformLayout();
+            this.tabPageConceptos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdSuministrosConceptos)).EndInit();
             this.gesGroup3.ResumeLayout(false);
             this.gesGroup3.PerformLayout();
@@ -1497,7 +1498,6 @@
             this.gesGroup4.PerformLayout();
             this.gesGroup5.ResumeLayout(false);
             this.gesGroup5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdSuministrosObservaciones)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1516,8 +1516,8 @@
         private Controles.labels.lblEtiqueta lblServicio;
         private Controles.labels.lblEtiqueta lblNumeroProv;
         private Controles.contenedores.tabSolapas tabSumnistros;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPageMedidores;
+        private System.Windows.Forms.TabPage tabPageObservaciones;
         private Controles.buttons.btnNuevo btnNuevaObs;
         private Controles.textBoxes.txtDescripcion txtObservaciones;
         private Controles.buttons.btnGeneral btnCliente;
@@ -1540,7 +1540,7 @@
         private Controles.textBoxes.txtDescripcionCorta txtOrdenRuta;
         private Controles.contenedores.gesGroup gesGroup4;
         private Controles.contenedores.gesGroup gesGroup5;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPageDatosTecnicos;
         private Controles.labels.lblEtiqueta lblEtiqueta1;
         private Controles.textBoxes.txtDescripcion txtSocio;
         private Controles.textBoxes.txtDescripcion txtEmpNumero;
@@ -1597,7 +1597,7 @@
         private Controles.labels.lblEtiqueta lblRegistrador;
         private Controles.Fecha.dtpFecha dtpFechaCarga;
         private Controles.labels.lblEtiqueta lblFechaCarga;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPageConceptos;
         private Controles.buttons.btnEliminar btnEliminar1;
         private Controles.buttons.btnEditar btnEditar1;
         private Controles.buttons.btnNuevo btnNuevo1;

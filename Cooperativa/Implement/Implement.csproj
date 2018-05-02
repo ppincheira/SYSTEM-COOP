@@ -162,6 +162,7 @@
     <Compile Include="TiposMedidoresFabricantesImpl.cs" />
     <Compile Include="TiposMedidoresImpl.cs" />
     <Compile Include="TiposObservacionesTablasImpl.cs" />
+    <Compile Include="TransaccionesImpl.cs" />
     <Compile Include="UsuariosImpl.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -166,6 +166,7 @@
     <Compile Include="TiposMedidores.cs" />
     <Compile Include="TiposMedidoresFabricantes.cs" />
     <Compile Include="TiposObservacionesTablas.cs" />
+    <Compile Include="Transacciones.cs" />
     <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

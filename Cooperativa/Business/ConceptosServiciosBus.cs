@@ -24,7 +24,18 @@ namespace Business
         {
             ConceptosServiciosImpl oConceptosServiciosImpl = new ConceptosServiciosImpl();
             return oConceptosServiciosImpl.ConceptosServiciosDelete(oConceptosServicios);
-        }        
-        
+        }
+
+        public Transacciones ConceptosServiciosAddTrans(ConceptosServicios oConceptosServicios)
+        {
+            ConceptosServiciosImpl oConceptosServiciosImpl = new ConceptosServiciosImpl();
+            return oConceptosServiciosImpl.ConceptosServiciosAddTrans(oConceptosServicios);
+        }
+
+        public Transacciones ConceptosServiciosDeleteTrans(ConceptosServicios oConceptosServicios)
+        {
+            ConceptosServiciosImpl oConceptosServiciosImpl = new ConceptosServiciosImpl();
+            return oConceptosServiciosImpl.ConceptosServiciosDeleteTrans(oConceptosServicios);
+        }
     }
 }

@@ -536,6 +536,22 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                                         cmb.ValueMember = "PvtNumero";
                                         break;
                                     }
+                                //case "GRUPOS_CONCEPTOS_IMPUESTOS":
+                                //    {
+                                //        GruposConceptosImpuestosBus oGCI = new GruposConceptosImpuestosBus();
+                                //        cmb.DataSource = oGCI.GruposConceptosImpuestosGetAll();
+                                //        cmb.DisplayMember = "GciDescripcion";
+                                //        cmb.ValueMember = "GciCodigo";
+                                //        break;
+                                //    }
+                                case "TIPOS_GRUPOS_CONCEPTOS":
+                                    {
+                                        TiposGruposConceptosBus oTGC = new TiposGruposConceptosBus();
+                                        cmb.DataSource = oTGC.TiposGruposConceptosGetAll();
+                                        cmb.DisplayMember = "TgcDescripcion";
+                                        cmb.ValueMember = "TgcCodigo";
+                                        break;
+                                    }
                                 default: break;
                             }
                             _vista.grilla.Columns.Add(cmb);
